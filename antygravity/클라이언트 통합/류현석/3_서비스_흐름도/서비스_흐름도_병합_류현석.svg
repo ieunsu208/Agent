@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <rect width="1000" height="480" fill="#f4f7f4" rx="12"/>
+  <rect x="330" y="20" width="340" height="45" rx="8" fill="#1b382b" stroke="#13271e" stroke-width="2"/>
+  <text x="500" y="48" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="15" font-weight="900" text-anchor="middle">사단(士團) 류현석 최적 병합 서비스 흐름도</text>
+
+  <!-- 4 Tracks -->
+  <g font-family="'Pretendard', sans-serif" font-size="12" font-weight="800" text-anchor="middle">
+    <!-- Start -->
+    <circle cx="500" cy="95" r="16" fill="#2d523e"/>
+    <text x="500" y="99" fill="#ffffff" font-size="10">진입</text>
+
+    <!-- Lines to Tracks -->
+    <line x1="500" y1="111" x2="140" y2="140" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="380" y2="140" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="620" y2="140" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="860" y2="140" stroke="#a3b899" stroke-width="1.5"/>
+
+    <!-- Track 1 -->
+    <rect x="50" y="140" width="180" height="40" rx="6" fill="#2d523e"/>
+    <text x="140" y="165" fill="#ffffff">트랙 A: 360° 감정 진단</text>
+
+    <!-- Track 2 -->
+    <rect x="290" y="140" width="180" height="40" rx="6" fill="#2d523e"/>
+    <text x="380" y="165" fill="#ffffff">트랙 B: 사운드 명상</text>
+
+    <!-- Track 3 -->
+    <rect x="530" y="140" width="180" height="40" rx="6" fill="#2d523e"/>
+    <text x="620" y="165" fill="#ffffff">트랙 C: 숙면 나이트 키트</text>
+
+    <!-- Track 4 -->
+    <rect x="770" y="140" width="180" height="40" rx="6" fill="#2d523e"/>
+    <text x="860" y="165" fill="#ffffff">트랙 D: 웰니스 정기구독</text>
+  </g>
+
+  <!-- Decision Nodes & Actions -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#1b382b">
+    <line x1="140" y1="180" x2="500" y2="230" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="380" y1="180" x2="500" y2="230" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="620" y1="180" x2="500" y2="230" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="860" y1="180" x2="500" y2="230" stroke="#a3b899" stroke-width="1.5"/>
+
+    <rect x="340" y="230" width="320" height="45" rx="8" fill="#e8eee6" stroke="#a3b899" stroke-width="1.5"/>
+    <text x="500" y="258" font-weight="900">7대 감정별 맞춤 아로마 &amp; 432Hz 호흡 동기화</text>
+
+    <line x1="500" y1="275" x2="320" y2="320" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="500" y1="275" x2="680" y2="320" stroke="#a3b899" stroke-width="1.5"/>
+
+    <rect x="200" y="320" width="240" height="40" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="320" y="345">놋쇠 마패 롤온 &amp; 필로우 미스트</text>
+
+    <rect x="560" y="320" width="240" height="40" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="680" y="345">월간 감정 치유 리필 팟 구독 (15% DC)</text>
+
+    <line x1="320" y1="360" x2="500" y2="400" stroke="#a3b899" stroke-width="1.5"/>
+    <line x1="680" y1="360" x2="500" y2="400" stroke="#a3b899" stroke-width="1.5"/>
+
+    <rect x="340" y="400" width="320" height="50" rx="8" fill="#1b382b" stroke="#13271e" stroke-width="1.5"/>
+    <text x="500" y="430" fill="#ffffff" font-weight="900">심신 치유 패키지 발송 &amp; 마인드 리포트 발급</text>
+  </g>
+</svg>

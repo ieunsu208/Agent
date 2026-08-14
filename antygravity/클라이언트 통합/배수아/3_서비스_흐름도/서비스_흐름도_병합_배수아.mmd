@@ -1,0 +1,26 @@
+graph TD
+    Start(["사용자 진입"]) --> TrackA["트랙 A: 일월오봉도 캔버스"]
+    Start --> TrackB["트랙 B: 한정판 넘버링 드롭"]
+    Start --> TrackC["트랙 C: 버추얼 도슨트 투어"]
+    Start --> TrackD["트랙 D: 글로벌 팝업 티켓팅"]
+
+    TrackA --> Hotspot["4K 핫스팟 탐색"]
+    Hotspot --> NoteMapping["민화 조향 노트 매핑"]
+
+    TrackB --> PickNumber["1~1,000번 넘버링 선택"]
+    TrackC --> AudioDocent["도슨트 오디오 청취"]
+
+    NoteMapping --> Showroom["3D 아트 보틀 쇼룸"]
+    PickNumber --> Showroom
+    AudioDocent --> Showroom
+
+    Showroom --> BundleSelect{"패키지 구성 선택?"}
+    BundleSelect -- 포스터 동봉 풀번들 --> FullBundle["아트 보틀 & 포스터 번들"]
+    BundleSelect -- 아트 보틀 단품 --> SingleBottle["아트 보틀 단품"]
+
+    FullBundle --> Cart["장바구니 담기"]
+    SingleBottle --> Cart
+    TrackD --> Cart
+
+    Cart --> Checkout["안전 결제 & 한정판 보증서 발급"]
+    Checkout --> Complete(["주문 완료 & VIP 전시 패스"])

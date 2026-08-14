@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <rect width="1000" height="450" fill="#f4f7f4" rx="12"/>
+  <rect x="330" y="20" width="340" height="50" rx="8" fill="#1b382b" stroke="#13271e" stroke-width="2"/>
+  <text x="500" y="52" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">사단(士團) 류현석 최적 병합 사이트맵 IA</text>
+
+  <!-- Level 1 Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="13" font-weight="800" text-anchor="middle">
+    <!-- 1.0 Salon -->
+    <line x1="500" y1="70" x2="110" y2="120" stroke="#a3b899" stroke-width="2"/>
+    <rect x="20" y="120" width="180" height="45" rx="6" fill="#2d523e" stroke="#1b382b" stroke-width="1.5"/>
+    <text x="110" y="148" fill="#ffffff">1.0 칠정 치유 살롱</text>
+
+    <!-- 2.0 Dial -->
+    <line x1="500" y1="70" x2="305" y2="120" stroke="#a3b899" stroke-width="2"/>
+    <rect x="215" y="120" width="180" height="45" rx="6" fill="#2d523e" stroke="#1b382b" stroke-width="1.5"/>
+    <text x="305" y="148" fill="#ffffff">2.0 360° 감정 다이얼</text>
+
+    <!-- 3.0 Sound -->
+    <line x1="500" y1="70" x2="500" y2="120" stroke="#a3b899" stroke-width="2"/>
+    <rect x="410" y="120" width="180" height="45" rx="6" fill="#2d523e" stroke="#1b382b" stroke-width="1.5"/>
+    <text x="500" y="148" fill="#ffffff">3.0 사운드스케이프</text>
+
+    <!-- 4.0 Kit -->
+    <line x1="500" y1="70" x2="695" y2="120" stroke="#a3b899" stroke-width="2"/>
+    <rect x="605" y="120" width="180" height="45" rx="6" fill="#2d523e" stroke="#1b382b" stroke-width="1.5"/>
+    <text x="695" y="148" fill="#ffffff">4.0 나이트 리추얼 킷</text>
+
+    <!-- 5.0 Membership -->
+    <line x1="500" y1="70" x2="890" y2="120" stroke="#a3b899" stroke-width="2"/>
+    <rect x="800" y="120" width="180" height="45" rx="6" fill="#2d523e" stroke="#1b382b" stroke-width="1.5"/>
+    <text x="890" y="148" fill="#ffffff">5.0 웰니스 멤버십</text>
+  </g>
+
+  <!-- Level 2 Sub Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1b382b">
+    <!-- Sub 1 -->
+    <line x1="110" y1="165" x2="110" y2="200" stroke="#c8d6c1" stroke-width="1.5"/>
+    <rect x="20" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="110" y="225">· 동의보감 칠정조식 원리</text>
+    <text x="110" y="245">· 7대 감정별 향기 매핑</text>
+
+    <!-- Sub 2 -->
+    <line x1="305" y1="165" x2="305" y2="200" stroke="#c8d6c1" stroke-width="1.5"/>
+    <rect x="215" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="305" y="225">· 감정 자가진단 원형 휠</text>
+    <text x="305" y="245">· 맞춤 아로마 오일 추천</text>
+
+    <!-- Sub 3 -->
+    <line x1="500" y1="165" x2="500" y2="200" stroke="#c8d6c1" stroke-width="1.5"/>
+    <rect x="410" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="500" y="225">· 432Hz 싱잉볼 플레이어</text>
+    <text x="500" y="245">· 4-4-6 호흡 주기 캔버스</text>
+
+    <!-- Sub 4 -->
+    <line x1="695" y1="165" x2="695" y2="200" stroke="#c8d6c1" stroke-width="1.5"/>
+    <rect x="605" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="695" y="225">· 놋쇠 롤온 &amp; 미스트</text>
+    <text x="695" y="245">· 삼베 안대 패키지</text>
+
+    <!-- Sub 5 -->
+    <line x1="890" y1="165" x2="890" y2="200" stroke="#c8d6c1" stroke-width="1.5"/>
+    <rect x="800" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#a3b899" stroke-width="1"/>
+    <text x="890" y="225">· 월간 맞춤 리필 구독</text>
+    <text x="890" y="245">· 100% 환급 디스커버리 킷</text>
+  </g>
+</svg>

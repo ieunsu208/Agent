@@ -23,6 +23,7 @@
 2. **목업(Mockup) 로고 절대 금지**: 3D 입체 효과, 종이 엠보싱, 질감(texture), 그림자(shadow), 패키지/병/명함 합성 목업 금지 (`no 3d effects, no mockup, no realistic photo, no shadow, no paper texture`).
 3. **텍스트 / 글자 / 문자 포함 절대 금지**: 알파벳, 한글, 브랜드명, 폰트, 타이포그래피 완전 배제 (`symbol mark only, no text, no letters, no words, no font, no typography`).
 4. **복잡하고 과도한 디테일 금지**: 지나치게 복잡한 선이나 조밀한 pattern 제외 (`clean simple vector lines, no complex lines, no cluttered lines`).
+5. **중국풍/동양풍 클리셰 디테일 금지**: 중국 전통 문양, 용/봉황, 한자 느낌의 과도한 장식이나 중국풍 일러스트 요소 완전 배제 (`no chinese style, no chinese motifs, no chinese patterns, no ornate oriental elements`).
 
 ---
 
@@ -34,5 +35,5 @@
 A sophisticated haute perfumery logo mark combining Neo-Korean minimalist aesthetic with modern line art, reinterpreting the traditional Korean Mapae horse token into a contemporary fragrance icon. Featuring an abstract horse head silhouette with sleek horizontal mane lines symbolizing scent diffusion, topped with a delicate starburst motif representing fragrance concentration, monochrome solid black on pure flat white background, symbol mark only, clean simple vector lines, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
-color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, realistic photo, ornate patterns
+color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, realistic photo, ornate patterns, chinese style, chinese motifs, chinese patterns
 ```

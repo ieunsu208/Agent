@@ -1,161 +1,212 @@
-~<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[강현우 PM] 사단(士團) 어사 출두 팝업 갤러리 회색 박스 와이어프레임</title>
+    <title>사단(士團) — [강현우 PM] 친환경 알루미늄 리필 스테이션 &amp; 클린 뷰티 와이어프레임 (Type 5: 논픽션형)</title>
     <style>
         :root {
-            --bg-body: #f8f9fa;
-            --bg-card: #ffffff;
-            --bg-dark: #1e293b;
-            --bg-gray-light: #f1f5f9;
-            --bg-gray-mid: #e2e8f0;
-            --bg-gray-dark: #cbd5e1;
-            --border-color: #94a3b8;
-            --text-dark: #0f172a;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 25px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 12px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
 
-        header { background: #ffffff; border: 2px solid var(--border-color); padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .logo-box { display: flex; align-items: center; gap: 14px; }
-        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 10px 16px; font-weight: 900; font-size: 18px; border-radius: 6px; }
-        .logo-title { font-size: 20px; font-weight: 900; }
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 15px 34px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; }
 
-        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 14px 24px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; }
-        nav span { padding: 8px 16px; border-radius: 6px; background: var(--bg-gray-mid); }
-        nav span.active { background: var(--bg-dark); color: #ffffff; }
+        /* Top Bar */
+        .top-utility-bar { background: var(--bg-dark); color: #ffffff; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; }
 
-        .hero-box { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 10px; padding: 35px; text-align: center; margin-bottom: 25px; }
-        .hero-title { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
-        .hero-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
-        .hero-grey-placeholder { background: var(--bg-gray-dark); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #475569; font-size: 15px; }
+        /* GNB */
+        header.gnb-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-logo { display: flex; align-items: center; gap: 12px; }
+        .gnb-logo-mark { background: var(--bg-dark); color: #ffffff; width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; }
+        .gnb-logo-text { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; }
+        .gnb-nav { display: flex; gap: 28px; font-size: 14px; font-weight: 800; }
+        .gnb-nav a { text-decoration: none; color: var(--text-secondary); }
+        .gnb-nav a.active { color: var(--text-primary); }
 
-        .showcase-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
-        .showcase-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 12px; margin-bottom: 20px; }
-        .showcase-title { font-size: 20px; font-weight: 900; }
-        
-        .goods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .goods-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; }
-        .goods-img-greybox { background: var(--bg-gray-dark); border: 1px dashed var(--border-color); height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #334155; margin-bottom: 12px; font-size: 13px; }
+        /* Hero */
+        .hero-section { padding: 110px 0 90px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 70%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-gray-200); padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-title { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 740px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-canvas-frame { max-width: 1000px; margin: 0 auto; height: 380px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 15px; font-weight: 700; }
 
-        .layout-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 25px; }
-        .section-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; margin-bottom: 25px; }
-        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 10px; }
+        /* SEC-03: 2-Column Symmetrical Clean Commerce */
+        .commerce-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .commerce-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .commerce-card { border: 1px solid var(--border-subtle); border-radius: 8px; padding: 36px; text-align: center; }
+        .commerce-img { height: 280px; background: var(--bg-gray-100); border: 1px dashed var(--border-mid); border-radius: 6px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--text-muted); }
 
-        .slot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 15px; }
-        .slot-box { background: var(--bg-gray-light); border: 1px solid var(--border-color); padding: 14px; text-align: center; border-radius: 6px; font-weight: 800; font-size: 13px; }
-        .slot-box.active { background: var(--bg-dark); color: #ffffff; }
+        /* SEC-04: Sticky Aluminum Refill Bar */
+        .refill-bar-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .accordion-item { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 24px 30px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
 
-        aside { display: flex; flex-direction: column; gap: 20px; }
-        .aside-widget { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; }
+        /* SEC-05: Carbon Offset Calculator */
+        .carbon-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .carbon-box { background: var(--bg-light); border: 1px solid var(--border-mid); border-radius: 12px; padding: 45px; text-align: center; }
+        .carbon-metric { font-size: 48px; font-weight: 900; font-family: var(--font-mono); color: var(--text-primary); margin: 20px 0; }
 
-        footer { background: var(--bg-dark); color: #94a3b8; padding: 30px; border-radius: 10px; font-size: 13px; text-align: center; margin-top: 30px; }
-        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--bg-dark); color: #ffffff; padding: 15px 28px; border-radius: 35px; font-weight: 900; font-size: 14px; border: 2px solid #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        /* Footer */
+        footer.lab-footer { padding: 70px 0; background: var(--bg-dark); color: #94a3b8; font-size: 13px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        [회색 띠 배너] 사단(士團) 어사 출두 성수 팝업 스토어 사전예약 진행 중 (회색 텍스트 바)
+    <div class="top-utility-bar">
+        🌱 SADAN ECO LAB — [강현우 PM] 100% 무한 재활용 알루미늄 리필 스테이션 &amp; 제로 플라스틱
     </div>
 
-    <header>
-        <div class="logo-box">
-            <div class="logo-badge">士團</div>
-            <div>
-                <div class="logo-title">사단(SADAN) 어사 출두 팝업 갤러리</div>
-                <div style="font-size: 12px; color: var(--text-muted);">강현우 PM 전용 회색 박스 와이어프레임 명세서</div>
+    <!-- GNB -->
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <div class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div class="gnb-logo-text">SADAN ECO REFILL</div>
             </div>
-        </div>
-        <div>
-            <button style="background:var(--bg-gray-mid); border:1px solid var(--border-color); padding:10px 18px; border-radius:6px; font-weight:800; margin-right:10px;">성수 / 인사동 지점</button>
-            <button style="background:var(--bg-dark); color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:800;">어사 패스 QR 발급</button>
+            <nav class="gnb-nav">
+                <a href="#hero" class="active">에코 리필</a>
+                <a href="#commerce">클린 컬렉션</a>
+                <a href="#refill">리필 스테이션</a>
+                <a href="#carbon">탄소저감 계산기</a>
+            </nav>
+            <div class="gnb-actions">
+                <div class="btn-primary" style="padding:8px 16px; font-size:12px;">리필 카트리지 담기 &gt;</div>
+            </div>
         </div>
     </header>
 
-    <nav>
-        <span class="active">1.0 Eosa Pass Booking</span>
-        <span>2.0 Pop-up Gallery (3D 맵)</span>
-        <span>3.0 Brass Goods Showcase</span>
-        <span>4.0 Scent Masterclass</span>
-        <span>5.0 Visitor Community</span>
-    </nav>
-
-    <div class="hero-box">
-        <div class="hero-title">어사 출두 3D 공간 인터랙티브 맵 &amp; 타임슬롯 사전 예약</div>
-        <div class="hero-sub">조선 암행어사 마패 헤리티지와 수제 놋쇠 키체인 백꾸 룩북을 성수 팝업 갤러리에서 직접 경험하세요.</div>
-        <div class="hero-grey-placeholder">
-            [ 4K 풀스크린 팝업 스토어 3D 실내 공간 투어 인터랙티브 회색 박스 영역 ]
-        </div>
-    </div>
-
-    <div class="showcase-container">
-        <div class="showcase-header">
-            <div class="showcase-title">🎁 [강현우 전용 제품 전시 구간] 무형문화재 놋쇠 마패 키체인 굿즈 3D 쇼케이스 &amp; 현장 수령 팩</div>
-            <div style="background:var(--bg-dark); color:#fff; padding:4px 12px; border-radius:4px; font-weight:800; font-size:12px;">현장 한정 굿즈 회색 뱃지</div>
-        </div>
-        <div class="goods-grid">
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ 1마패 놋쇠 키체인 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">1마패 시그니처 참 굿즈</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">에코백 &amp; 캔버스 백꾸 전용 놋쇠 키체인</div>
+    <!-- SEC-02: Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-badge">
+                <span>ZERO-PLASTICS ECO SYSTEM</span>
+                <span>·</span>
+                <span>PM KANG HYUN-WOO</span>
             </div>
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ 2마패 듀얼 참 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">2마패 듀얼 참 굿즈</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">가죽 백팩 백꾸 레이어링 참 키체인</div>
-            </div>
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ 3마패 팝업 수령 팩 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">3마패 성수 팝업 풀패키지 팩</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">놋쇠 참 + 웰컴 시향 킷 + 스탬프 북</div>
+            <h1 class="hero-title">
+                버려지지 않는 향기,<br>100% 무한 순환 알루미늄 리필 스테이션
+            </h1>
+            <p class="hero-subtitle">
+                무형문화재 놋쇠 마패 본품 보틀을 영구히 소장하고, 100% 재활용 알루미늄 리필 카트리지로 지속 가능한 향기 생활을 시작하세요.
+            </p>
+            <div class="hero-canvas-frame">
+                <div style="font-size:18px; font-weight:900; color:#334155; margin-bottom:8px;">[ 초경량 알루미늄 리필 카트리지 &amp; 놋쇠 본품 결착 회색 박스 ]</div>
+                <div style="font-size:13px; color:#64748b;">플라스틱 0% 친환경 패키징과 리사이클링 라이프사이클 렌더링</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="layout-grid">
-        <main>
-            <div class="section-box">
-                <div class="section-title">📅 팝업 방문 타임슬롯 선택 (모바일 QR 티켓 발급)</div>
-                <div class="slot-grid">
-                    <div class="slot-box active">11:00 AM (마감임박)</div>
-                    <div class="slot-box">01:00 PM (예약가능)</div>
-                    <div class="slot-box">03:00 PM (예약가능)</div>
-                    <div class="slot-box">05:00 PM (마감)</div>
+    <!-- SEC-03: 2-Column Symmetrical Clean Commerce -->
+    <section id="commerce" class="commerce-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. CLEAN COMMERCE</span>
+                <h2 class="section-title">본품 &amp; 알루미늄 리필 세트</h2>
+                <p class="section-desc">한 번 구매하면 평생 쓰는 놋쇠 본품과 부담 없는 알루미늄 리필 카트리지입니다.</p>
+            </div>
+
+            <div class="commerce-grid-2col">
+                <div class="commerce-card">
+                    <div class="commerce-img">[ 놋쇠 마패 본품 50ml 회색 박스 ]</div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:8px;">영구 소장용 놋쇠 본품 보틀</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">평생 리필 교체가 가능한 수제 주조 유리 보틀</p>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">89,000 KRW</div>
+                    <a href="#" class="btn-primary" style="width:100%;">본품 구매하기</a>
+                </div>
+
+                <div class="commerce-card">
+                    <div class="commerce-img">[ 100% 알루미늄 리필 카트리지 50ml 회색 박스 ]</div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:8px;">알루미늄 에코 리필 카트리지</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">본품 대비 40% 저렴한 순환 카트리지</p>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">49,000 KRW</div>
+                    <a href="#" class="btn-primary" style="width:100%;">리필 카트리지 구매</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="section-box">
-                <div class="section-title">👜 백꾸(가방 꾸미기) 스타일링 룩북 &amp; 방문자 포토 피드</div>
-                <div style="background:var(--bg-gray-mid); height:140px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#475569; font-size:14px;">
-                    [ 인스타그램 #사단어사출두 실시간 가방 꾸미기 포토 갤러리 회색 영역 ]
+    <!-- SEC-04: Sticky Aluminum Refill Bar -->
+    <section id="refill" class="refill-bar-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. REFILL ACCORDION</span>
+                <h2 class="section-title">스마트 알루미늄 리필 교체 3단계</h2>
+                <p class="section-desc">누구나 5초 만에 손쉽게 교체할 수 있는 원터치 결착 시스템입니다.</p>
+            </div>
+
+            <div class="accordion-item">
+                <div>
+                    <h4 style="font-size:17px; font-weight:900;">STEP 01. 놋쇠 마패 캡을 시계 반대 방향으로 회전 분리</h4>
+                    <p style="font-size:13px; color:var(--text-secondary);">마패 캡 상단 결착부를 살짝 돌려 오픈합니다.</p>
                 </div>
+                <div style="font-size:20px; font-weight:900;">➔</div>
             </div>
-        </main>
 
-        <aside>
-            <div class="aside-widget">
-                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">📌 팝업 오시는 길</div>
-                <p style="font-size:12px; color:var(--text-muted);">성수역 3번 출구 도보 5분 어사 갤러리 1F~2F</p>
+            <div class="accordion-item">
+                <div>
+                    <h4 style="font-size:17px; font-weight:900;">STEP 02. 다 쓴 카트리지를 꺼내고 새 알루미늄 팟 삽입</h4>
+                    <p style="font-size:13px; color:var(--text-secondary);">알루미늄 팟을 딸깍 소리가 날 때까지 밀어 넣습니다.</p>
+                </div>
+                <div style="font-size:20px; font-weight:900;">➔</div>
             </div>
-            <div class="aside-widget">
-                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">💬 팝업 문의하기</div>
-                <button style="width:100%; padding:10px; background:var(--bg-gray-mid); border:1px solid var(--border-color); border-radius:6px; font-weight:800;">카카오 알림톡 문의 버튼</button>
-            </div>
-        </aside>
-    </div>
 
-    <footer>
-        &copy; 2026 SADAN Heritage Pop-up Gallery (강현우 PM). All rights reserved.
+            <div class="accordion-item">
+                <div>
+                    <h4 style="font-size:17px; font-weight:900;">STEP 03. 다 쓴 공병은 사단 수거 봉투에 넣어 무료 반납</h4>
+                    <p style="font-size:13px; color:var(--text-secondary);">반납 즉시 5,000원 적립금이 자동 지급됩니다.</p>
+                </div>
+                <div style="font-size:20px; font-weight:900;">✓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: Carbon Offset Calculator -->
+    <section id="carbon" class="carbon-section">
+        <div class="container">
+            <div class="carbon-box">
+                <span class="section-tag">CARBON REDUCTION IMPACT</span>
+                <h2 class="section-title">당신의 리필 선택이 줄인 탄소량</h2>
+                <p class="section-desc">사단 알루미늄 리필 1회 이용 시 플라스틱 45g과 탄소 배출량 1.2kg이 감축됩니다.</p>
+
+                <div class="carbon-metric">- 1,420,850 kg CO₂</div>
+                <p style="font-size:14px; color:var(--text-secondary); margin-bottom:30px;">
+                    사단 에코 클럽 회원들이 지금까지 함께 감축한 누적 탄소량입니다.
+                </p>
+
+                <a href="#" class="btn-primary">사단 에코 리필 클럽 동참하기 &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="lab-footer">
+        <div class="container">
+            <h3 style="font-size:22px; font-weight:900; color:#fff; margin-bottom:14px;">士團 SADAN ECO LAB</h3>
+            <p>100% 무한 순환 알루미늄과 클린 오리엔탈 헤리티지</p>
+            <p style="color:#64748b; font-size:12px; margin-top:8px;">© 2026 SADAN Eco Refill Lab. All Rights Reserved.</p>
+        </div>
     </footer>
-
-    <div class="floating-btn">⚡ 팝업 어사 패스 예매하기</div>
 
 </body>
 </html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — [배수아 큐레이터] 조선 궁중 민화 &amp; 팝아트 미디어 갤러리 와이어프레임</title>
+    <style>
+        :root {
+            --bg-base: #0f111a;
+            --bg-card: #181a26;
+            --bg-surface: #222536;
+            --accent-indigo: #6366f1;
+            --accent-indigo-light: #c7d2fe;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #818cf8;
+            --border-line: #2d3148;
+            --border-dark: #373b57;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-indigo-light); border-bottom: 1px solid var(--accent-indigo); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.35; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-secondary); max-width: 720px; margin: 0 auto; word-break: keep-all; }
+
+        .btn-gallery { background: var(--accent-indigo); color: #ffffff; padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; cursor: pointer; text-align: center; border: none; }
+        .btn-outline-indigo { background: transparent; color: var(--accent-indigo-light); padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-line); cursor: pointer; text-align: center; }
+
+        .wireframe-box { background: var(--bg-surface); border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary); text-align: center; padding: 24px; }
+
+        /* SEC-01: Top Curatorial Status Bar */
+        .top-gallery-bar { background: #08090e; color: var(--accent-indigo-light); font-size: 11px; padding: 8px 0; border-bottom: 1px solid var(--border-line); }
+        .top-gallery-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Sticky Gallery Header */
+        header.gallery-header { position: sticky; top: 0; background: rgba(15, 17, 26, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-line); z-index: 1000; padding: 16px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .brand-emblem { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+        .emblem-mark { width: 38px; height: 38px; border: 1.5px solid var(--accent-indigo-light); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: var(--font-serif); }
+        .brand-text { font-size: 16px; font-weight: 900; letter-spacing: -0.5px; font-family: var(--font-serif); }
+        .gallery-nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
+        .gallery-nav a { text-decoration: none; color: var(--text-secondary); }
+        .gallery-nav a.active { color: var(--accent-indigo-light); border-bottom: 2px solid var(--accent-indigo); padding-bottom: 2px; }
+
+        /* SEC-02: Hero 4K Media Canvas Stage */
+        .hero-gallery-section { padding: 90px 0 100px; border-bottom: 1px solid var(--border-line); background: radial-gradient(circle at 50% 30%, #202438 0%, var(--bg-base) 80%); text-align: center; }
+        .hero-canvas-viewport { max-width: 1080px; margin: 40px auto 0; height: 480px; background: var(--bg-card); border: 2px solid var(--border-line); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+
+        /* SEC-03: 4-Hotspot Interactive Pan-Zoom Canvas */
+        .hotspot-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .hotspot-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+        .hotspot-canvas-box { height: 440px; background: var(--bg-surface); border: 2px dashed var(--border-line); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; }
+
+        /* SEC-04: 360° Silkscreen Art Bottle Showroom */
+        .showroom-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .showroom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .showroom-card { background: var(--bg-card); border: 1px solid var(--border-line); padding: 32px 24px; border-radius: 4px; text-align: center; }
+
+        /* SEC-05: 1,000-Piece Serial Number Matrix Picker */
+        .matrix-picker-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); text-align: center; }
+        .picker-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; max-width: 800px; margin: 30px auto; }
+        .picker-node { background: var(--bg-surface); border: 1px solid var(--border-line); padding: 10px 0; font-size: 11px; font-family: var(--font-mono); color: var(--accent-indigo-light); border-radius: 2px; }
+        .picker-node.active { background: var(--accent-indigo); color: #fff; }
+
+        /* SEC-06: Curatorial Audio Docent & 3D Virtual Room */
+        .docent-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .docent-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+
+        /* SEC-07: Chaekgado Bento Asymmetric Mosaic */
+        .bento-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 200px 200px; gap: 20px; }
+        .bento-item { background: var(--bg-surface); border: 1px solid var(--border-line); padding: 24px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
+        .bento-item.large { grid-column: span 2; }
+
+        /* SEC-08: Master Art Bundle & Poster */
+        .bundle-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .bundle-stage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 45px; align-items: center; }
+
+        /* SEC-09: Global Traveling Pop-up Ticketing */
+        .popup-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .popup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .popup-card { background: var(--bg-surface); border: 1px solid var(--border-line); padding: 28px; border-radius: 4px; text-align: center; }
+
+        /* SEC-10: 100% Refundable Discovery Sampler */
+        .sampler-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+
+        /* SEC-11: Collaborative Artist Profile */
+        .artist-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+
+        /* SEC-12: Master Footer */
+        footer.gallery-footer { padding: 80px 0; background: #08090e; color: #94a3b8; font-size: 12px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 16px; font-family: var(--font-serif); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Curatorial Status Bar -->
+    <div class="top-gallery-bar">
+        <div class="container top-gallery-inner">
+            <div>🎨 사단 K-아트 미디어 갤러리 · 1,000개 한정판 일월오봉도 아트 에디션 론칭</div>
+            <div style="display:flex; gap:16px;">
+                <span>현재 잔여 수량: 142 / 1,000</span>
+                <span>|</span>
+                <span>오디오 도슨트: ON</span>
+                <span>|</span>
+                <span>글로벌 팝업 예매</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Gallery Header -->
+    <header class="gallery-header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-emblem">
+                <div class="emblem-mark">畫</div>
+                <div>
+                    <div class="brand-text">사단 K-컬처 미디어아트 갤러리</div>
+                    <div style="font-size:10px; color:var(--accent-indigo-light); letter-spacing:1px;">SADAN MEDIA ART CONVERGENCE</div>
+                </div>
+            </a>
+            <nav class="gallery-nav">
+                <a href="#hotspot" class="active">일월오봉도 캔버스</a>
+                <a href="#showroom">3D 아트 쇼룸</a>
+                <a href="#picker">1,000 넘버링 픽커</a>
+                <a href="#bento">책가도 서재 벤토</a>
+                <a href="#popup">글로벌 팝업 티켓</a>
+            </nav>
+            <div>
+                <a href="#bundle" class="btn-gallery" style="padding:10px 20px; font-size:12px;">아트 번들 주문 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero 4K Media Canvas Stage -->
+    <section id="hero" class="hero-gallery-section">
+        <div class="container">
+            <span class="section-tag">CURATOR BAE SOO-AH</span>
+            <h1 class="section-title" style="font-size:46px; margin: 12px 0 16px;">
+                조선 궁중 회화의 찬란한 숨결,<br>4K 일월오봉도 미디어아트 갤러리 향수
+            </h1>
+            <p class="section-desc">
+                왕의 위엄을 상징하는 일월오봉도의 태양과 달, 다섯 봉우리를 현대 팝아트 실크스크린으로 재해석하여<br>
+                1,000개 한정 넘버링 아트 보틀과 오디오 도슨트로 선보입니다.
+            </p>
+
+            <div class="hero-canvas-viewport">
+                <div style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">[ 4K 일월오봉도 미디어아트 풀스크린 인터랙티브 뷰포트 ]</div>
+                <div style="font-size:13px; color:var(--accent-indigo-light); max-width:600px; line-height:1.8;">
+                    마우스로 화면을 드래그하여 확대/축소하고, 그림 속 오브제를 클릭하여 조향 노트를 확인하세요.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: 4-Hotspot Interactive Pan-Zoom Canvas -->
+    <section id="hotspot" class="hotspot-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. INTERACTIVE HOTSPOT CANVAS</span>
+                <h2 class="section-title">일월오봉도 4대 핵심 오브제 핫스팟 탐색</h2>
+                <p class="section-desc">민화 속 요소를 클릭하여 상징하는 향기 노트와 공감각적 해설을 확인하세요.</p>
+            </div>
+
+            <div class="hotspot-grid">
+                <div class="hotspot-canvas-box">
+                    <strong style="font-size:18px; margin-bottom:12px;">[ 4K 일월오봉도 핫스팟 핀 뷰어 ]</strong>
+                    <div style="font-size:12px; line-height:2;">
+                        · 🔴 붉은 태양 (완도 유자 &amp; 베르가못)<br>
+                        · ⚪ 은빛 달 (차분한 서재 묵향 &amp; 백단)<br>
+                        · 🌲 붉은 소나무 (지리산 천연 적송 추출)<br>
+                        · 🌊 다섯 봉우리 폭포 (맑은 계곡 미네랄 워터)
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-surface); border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">CURATOR'S NOTE</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">'오봉(五峰)' — 왕의 기품을 담은 백단목</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        다섯 봉우리는 변치 않는 군주의 절개를 상징하며, 오대산 백단목과 침향의 깊은 우디 베이스로 조향되었습니다.
+                    </p>
+                    <a href="#showroom" class="btn-gallery" style="width:100%;">이 향기로 아트 보틀 보기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 360° Silkscreen Art Bottle Showroom -->
+    <section id="showroom" class="showroom-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 3D ART SHOWROOM</span>
+                <h2 class="section-title">1,000개 한정판 아트 콜라보 에디션</h2>
+                <p class="section-desc">팝아티스트의 실크스크린 라벨과 매트 블랙 놋쇠 마패 캡이 체결된 한정판입니다.</p>
+            </div>
+
+            <div class="showroom-grid">
+                <div class="showroom-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-indigo-light); margin-bottom:6px;">EDITION #01</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">일월오봉도: 붉은 태양 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">완도 유자와 묵직한 오대산 백단향</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">118,000 KRW</div>
+                    <a href="#picker" class="btn-gallery" style="width:100%;">넘버링 선택 &gt;</a>
+                </div>
+
+                <div class="showroom-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-indigo-light); margin-bottom:6px;">EDITION #02</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">책가도: 선비의 서재 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">전통 묵향과 마른 서책의 고아한 종이향</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">118,000 KRW</div>
+                    <a href="#picker" class="btn-gallery" style="width:100%;">넘버링 선택 &gt;</a>
+                </div>
+
+                <div class="showroom-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-indigo-light); margin-bottom:6px;">EDITION #03</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">십장생도: 영원의 숲 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">지리산 적송과 제주 야생화의 생명력</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">118,000 KRW</div>
+                    <a href="#picker" class="btn-gallery" style="width:100%;">넘버링 선택 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 1,000-Piece Serial Number Matrix Picker -->
+    <section id="picker" class="matrix-picker-section">
+        <div class="container">
+            <span class="section-tag">03. 1,000 SERIAL NUMBER MATRIX</span>
+            <h2 class="section-title">선착순 1,000개 고유 시리얼 넘버 지정</h2>
+            <p class="section-desc">원하시는 번호를 선택하시면 매트 블랙 놋쇠 마패 캡에 해당 번호가 영구 각인됩니다.</p>
+
+            <div class="picker-grid">
+                <div class="picker-node">#001 (선점)</div>
+                <div class="picker-node">#002 (선점)</div>
+                <div class="picker-node">#003 (선점)</div>
+                <div class="picker-node active">#088 (선택중)</div>
+                <div class="picker-node">#089</div>
+                <div class="picker-node">#090</div>
+                <div class="picker-node">#091</div>
+                <div class="picker-node">#092</div>
+                <div class="picker-node">#093</div>
+                <div class="picker-node">#094</div>
+            </div>
+
+            <div style="margin-top:20px;">
+                <a href="#bundle" class="btn-gallery">선택한 시리얼 #088로 주문 진행 &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Curatorial Audio Docent & 3D Virtual Room -->
+    <section class="docent-section">
+        <div class="container">
+            <div class="docent-grid">
+                <div>
+                    <span class="section-tag">04. AUDIO DOCENT TOUR</span>
+                    <h2 class="section-title">큐레이터 배수아의 음성 도슨트 투어</h2>
+                    <p class="section-desc">
+                        조선 궁중 회화의 시각적 상징과 니치 조향의 예술적 결합을 설명하는 15분 전용 오디오 가이드입니다.
+                    </p>
+                    <div style="margin-top:24px;">
+                        <button class="btn-gallery" style="margin-right:10px;">▶ 도슨트 오디오 재생</button>
+                        <button class="btn-outline-indigo">스크립트 전문 보기</button>
+                    </div>
+                </div>
+
+                <div class="wireframe-box" style="height:340px; background:var(--bg-surface);">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 3D 버추얼 갤러리 룸 시점 투어 ]</div>
+                    <div style="font-size:12px; color:var(--accent-indigo-light);">
+                        전시관 중앙 아일랜드에 놓인 아트 보틀과 벽면 미디어아트 동기화
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Chaekgado Bento Asymmetric Mosaic -->
+    <section id="bento" class="bento-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05. CHAEKGADO BENTO MOSAIC</span>
+                <h2 class="section-title">책가도(冊架圖) 서재 원료 아카이브</h2>
+                <p class="section-desc">조선 선비의 서재를 재해석한 비대칭 벤토 그리드 레이아웃입니다.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <h3 style="font-size:20px; font-weight:900;">문방사우 전통 묵향 (墨香)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary);">참나무 숯가루와 송연묵의 그윽한 먹 냄새를 현대적으로 치환한 시그니처 베이스</p>
+                </div>
+                <div class="bento-item">
+                    <h3 style="font-size:18px; font-weight:900;">마른 서책의 지향 (紙香)</h3>
+                    <p style="font-size:12px; color:var(--text-secondary);">안동 닥나무 한지의 마른 숲 냄새</p>
+                </div>
+                <div class="bento-item">
+                    <h3 style="font-size:18px; font-weight:900;">선비의 백단 붓걸이</h3>
+                    <p style="font-size:12px; color:var(--text-secondary);">오대산 백단목의 서늘한 정취</p>
+                </div>
+                <div class="bento-item large">
+                    <h3 style="font-size:20px; font-weight:900;">조선 도자기의 백색 청량감</h3>
+                    <p style="font-size:13px; color:var(--text-secondary);">백자 달항아리의 차가운 흙내음과 은은한 화이트 머스크의 조화</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Master Art Bundle & Poster -->
+    <section id="bundle" class="bundle-section">
+        <div class="container">
+            <div class="bundle-stage">
+                <div class="wireframe-box" style="height:400px; background:var(--bg-surface);">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 실크스크린 한지 포스터 &amp; 아트 보틀 풀패키지 회색 박스 ]</div>
+                    <div style="font-size:12px;">하드 튜브 케이스 + A2 수제 한지 포스터 + 친필 서명 보증서</div>
+                </div>
+
+                <div>
+                    <span class="section-tag">LIMITED ART BUNDLE</span>
+                    <h3 style="font-size:28px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">일월오봉도 마스터 아트 콜렉터스 팩</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">
+                        50ml 아트 보틀 (시리얼 넘버 각인) + A2 실크스크린 한지 포스터 + 작가 서명 보증서 + 국립박물관 특별전 VIP 프리패스
+                    </p>
+                    <div style="font-size:28px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px; color:var(--accent-indigo-light);">188,000 KRW</div>
+                    <button class="btn-gallery" style="width:100%; text-align:center;">한정판 풀번들 주문</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Global Traveling Pop-up Ticketing -->
+    <section id="popup" class="popup-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06. GLOBAL POP-UP EXHIBITION</span>
+                <h2 class="section-title">서울 · 파리 · 도쿄 글로벌 순회 전시 티켓팅</h2>
+                <p class="section-desc">오프라인 전시장에서 4K 미디어아트와 향기를 직접 체험하세요.</p>
+            </div>
+
+            <div class="popup-grid">
+                <div class="popup-card">
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">서울 경복궁 야간 특별전</h3>
+                    <p style="font-size:12px; color:var(--text-secondary); margin-bottom:16px;">2026. 09. 01 ~ 09. 30</p>
+                    <button class="btn-gallery" style="width:100%;">모바일 QR 패스 발권</button>
+                </div>
+                <div class="popup-card">
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">파리 루브르 아트 팝업</h3>
+                    <p style="font-size:12px; color:var(--text-secondary); margin-bottom:16px;">2026. 10. 15 ~ 10. 25</p>
+                    <button class="btn-outline-indigo" style="width:100%;">사전 예약 신청</button>
+                </div>
+                <div class="popup-card">
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">도쿄 롯폰기 힐즈 전시</h3>
+                    <p style="font-size:12px; color:var(--text-secondary); margin-bottom:16px;">2026. 11. 10 ~ 11. 20</p>
+                    <button class="btn-outline-indigo" style="width:100%;">사전 예약 신청</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: 100% Refundable Discovery Sampler -->
+    <section class="sampler-section">
+        <div class="container">
+            <span class="section-tag">07. 100% REFUNDABLE SAMPLER</span>
+            <h2 class="section-title">3종 아트 디스커버리 샘플러 킷</h2>
+            <p class="section-desc">
+                일월오봉도, 책가도, 십장생도 3종의 향기를 먼저 시향해 보세요. 본품 구매 시 100% 환급 쿠폰을 지급합니다.
+            </p>
+            <div style="margin-top:24px;">
+                <button class="btn-gallery" style="padding:16px 36px;">디스커버리 킷 24,000원 신청 &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Collaborative Artist Profile -->
+    <section class="artist-section">
+        <div class="container">
+            <div class="artist-grid">
+                <div>
+                    <span class="section-tag">08. COLLABORATIVE ARTIST</span>
+                    <h2 class="section-title">현대 팝아티스트 이도경 x 사단</h2>
+                    <p class="section-desc">
+                        조선의 전통 오방색을 현대적 네온 컬러와 실크스크린 판화로 재해석하여 전 세계 미술관에서 주목받는 아티스트와의 공식 협업입니다.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:260px; background:var(--bg-surface);">
+                    <strong>[ 아티스트 작업실 인터뷰 영상 &amp; 실크스크린 인쇄 공정 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: Master Footer -->
+    <footer class="gallery-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">士團 K-컬처 미디어아트 갤러리</div>
+                    <p style="line-height:1.8;">
+                        조선 궁중 회화의 시각적 서사와 현대 니치 조향의 공감각적 미디어아트 갤러리.<br>
+                        서울시 종로구 삼청로 52 사단 아트 스페이스<br>
+                        총괄 큐레이터: 배수아 · 문의: 02-391-2910
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">전시 및 에디션</div>
+                    <p style="line-height:2;">
+                        · 일월오봉도 (붉은 태양)<br>
+                        · 책가도 (선비의 서재)<br>
+                        · 십장생도 (영원의 숲)<br>
+                        · 실크스크린 한지 포스터
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">도슨트 및 예매</div>
+                    <p style="line-height:2;">
+                        · 오디오 도슨트 듣기<br>
+                        · 경복궁 특별전 예약<br>
+                        · 글로벌 투어 일정<br>
+                        · 1,000 시리얼 넘버 조회
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">고객 지원</div>
+                    <p style="line-height:2;">
+                        · 정품 보증서 재발급<br>
+                        · 포스터 지관통 안심배송<br>
+                        · B2B 기업 VIP 기프트<br>
+                        · 100% 환급 규정
+                    </p>
+                </div>
+            </div>
+            <div style="border-top:1px solid #1e2235; padding-top:24px; text-align:center; color:#64748b;">
+                © 2026 SADAN Media Art Convergence Lab. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

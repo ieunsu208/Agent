@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — [장예은 조향사] 조선 전통 혼례 백년가약 마패 향수 &amp; 비단 보자기 스토리보드 와이어프레임</title>
+    <style>
+        :root {
+            --bg-base: #fdfbf7;
+            --bg-split-groom: #f4f6fa;
+            --bg-split-bride: #fbf5f5;
+            --bg-card: #ffffff;
+            --bg-dark: #2a1b20;
+            --text-primary: #2a1b20;
+            --text-groom: #1e3a5f;
+            --text-bride: #7c2d37;
+            --text-muted: #8c7d83;
+            --border-line: #ecdcd5;
+            --border-groom: #cbd5e1;
+            --border-bride: #f2d2d6;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--text-muted); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.35; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-muted); max-width: 720px; margin: 0 auto; word-break: keep-all; }
+
+        .btn-wedding { background: var(--bg-dark); color: #ffffff; padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; cursor: pointer; text-align: center; border: none; }
+        .btn-groom { background: var(--text-groom); color: #ffffff; padding: 12px 24px; border-radius: 2px; font-weight: 800; font-size: 13px; text-decoration: none; display: inline-block; }
+        .btn-bride { background: var(--text-bride); color: #ffffff; padding: 12px 24px; border-radius: 2px; font-weight: 800; font-size: 13px; text-decoration: none; display: inline-block; }
+
+        .wireframe-box { background: #faf8f5; border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 24px; }
+
+        /* SEC-01: Top Wedding Bar */
+        .top-wedding-bar { background: var(--bg-dark); color: #f5eae8; font-size: 11px; padding: 8px 0; }
+        .top-wedding-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Sticky Wedding Header */
+        header.wedding-header { position: sticky; top: 0; background: rgba(253, 251, 247, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-line); z-index: 1000; padding: 16px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .brand-emblem { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+        .emblem-mark { width: 38px; height: 38px; border: 1.5px solid var(--text-primary); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: var(--font-serif); }
+        .brand-text { font-size: 16px; font-weight: 900; letter-spacing: -0.5px; font-family: var(--font-serif); }
+        .wedding-nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
+        .wedding-nav a { text-decoration: none; color: var(--text-muted); }
+        .wedding-nav a.active { color: var(--text-bride); border-bottom: 2px solid var(--text-bride); padding-bottom: 2px; }
+
+        /* SEC-02: Hero 50:50 Vertical Split Viewport */
+        .hero-split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; border-bottom: 1px solid var(--border-line); }
+        .hero-split-left { background: var(--bg-split-groom); padding: 70px 48px; border-right: 1px solid var(--border-groom); display: flex; flex-direction: column; justify-content: space-between; }
+        .hero-split-right { background: var(--bg-split-bride); padding: 70px 48px; display: flex; flex-direction: column; justify-content: space-between; }
+
+        /* SEC-03: 1:1 Couple Scent Harmony Interactive Balancer */
+        .harmony-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .harmony-canvas-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 30px; align-items: center; margin-top: 30px; }
+        .harmony-slider-box { background: #faf8f5; border: 1px solid var(--border-line); padding: 28px; border-radius: 4px; text-align: center; }
+
+        /* SEC-04: Yin-Yang Brass Vow Engraving Console */
+        .vow-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .vow-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-05: 4-Step Silk Bojagi Knot Unfolding */
+        .bojagi-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .bojagi-step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+        .bojagi-step-card { border: 1px solid var(--border-line); padding: 24px; background: #faf8f5; text-align: center; }
+
+        /* SEC-06: Master 2-Bottle Gift Chest */
+        .gift-master-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .gift-stage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 45px; align-items: center; }
+
+        /* SEC-07: 15ml Guest Wedding Favor Bulk Calculator */
+        .favor-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .calc-matrix-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 13px; }
+        .calc-matrix-table th { background: var(--bg-dark); color: #fff; padding: 14px; text-align: center; }
+        .calc-matrix-table td { padding: 16px; border-bottom: 1px solid var(--border-line); text-align: center; }
+
+        /* SEC-08: Guest Calligraphy Tag */
+        .tag-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .tag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+
+        /* SEC-09: Wedding Venue Delivery Scheduler */
+        .delivery-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .delivery-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+
+        /* SEC-10: Private Consultation Booking */
+        .booking-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+
+        /* SEC-11: Mobile Invitation Scent QR */
+        .invitation-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .invitation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-12: Master Footer */
+        footer.wedding-footer { padding: 80px 0; background: var(--bg-dark); color: #e5dcdb; font-size: 12px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 16px; font-family: var(--font-serif); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Wedding Bar -->
+    <div class="top-wedding-bar">
+        <div class="container top-wedding-inner">
+            <div>💍 조선 가례(嘉禮) 전통 혼례 백년가약 비스포크 아틀리에 · VIP 부부 각인 서비스</div>
+            <div style="display:flex; gap:16px;">
+                <span>신랑·신부 1:1 상담 예약</span>
+                <span>|</span>
+                <span>하객 답례품 견적서</span>
+                <span>|</span>
+                <span>모바일 청첩장 연동</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Wedding Header -->
+    <header class="wedding-header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-emblem">
+                <div class="emblem-mark">鴛</div>
+                <div>
+                    <div class="brand-text">사단 백년가약 혼례 비스포크 살롱</div>
+                    <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px;">SADAN WEDDING BESPOKE ATELIER</div>
+                </div>
+            </a>
+            <nav class="wedding-nav">
+                <a href="#harmony" class="active">듀얼 하모니 조향</a>
+                <a href="#vow">부부 서약 각인실</a>
+                <a href="#bojagi">비단 보자기 패키징</a>
+                <a href="#favor">하객 답례품 계산기</a>
+                <a href="#invitation">모바일 청첩장 QR</a>
+            </nav>
+            <div>
+                <a href="#booking" class="btn-wedding" style="padding:10px 20px; font-size:12px;">살롱 1:1 예약 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero 50:50 Vertical Split Viewport -->
+    <section id="hero" class="hero-split-section">
+        <!-- Groom Side (Blue) -->
+        <div class="hero-split-left">
+            <div>
+                <span class="section-tag" style="color:var(--text-groom); border-color:var(--text-groom);">GROOM'S VOW (신랑의 약조)</span>
+                <h2 style="font-size:36px; font-weight:900; color:var(--text-groom); margin:12px 0; font-family:var(--font-serif);">
+                    청송(靑松)의 신뢰와<br>오대산 흑단목의 묵직한 기품
+                </h2>
+                <p style="font-size:14px; color:var(--text-groom); line-height:1.7;">
+                    가족을 지키는 변치 않는 소나무와 선비의 묵향이 완성하는 남성적 신뢰의 향 (1마패 보틀)
+                </p>
+            </div>
+            <div class="wireframe-box" style="height:240px; background:#ffffff; border-color:var(--border-groom); margin:20px 0;">
+                <strong style="color:var(--text-groom);">[ 신랑 1마패 흑단목 향수 50ml 3D 렌더링 ]</strong>
+                <span style="font-size:12px; margin-top:8px;">푸른 비단 청실 매듭 체결</span>
+            </div>
+            <div>
+                <a href="#harmony" class="btn-groom">신랑 향수 노트 조율하기 &gt;</a>
+            </div>
+        </div>
+
+        <!-- Bride Side (Red) -->
+        <div class="hero-split-right">
+            <div>
+                <span class="section-tag" style="color:var(--text-bride); border-color:var(--text-bride);">BRIDE'S VOW (신부의 약조)</span>
+                <h2 style="font-size:36px; font-weight:900; color:var(--text-bride); margin:12px 0; font-family:var(--font-serif);">
+                    홍화(紅花)의 설렘과<br>남원 야생 국화의 고아한 온기
+                </h2>
+                <p style="font-size:14px; color:var(--text-bride); line-height:1.7;">
+                    새로운 시작을 축복하는 붉은 홍화 꽃잎과 완도 유자의 싱그러운 빛 (2마패 보틀)
+                </p>
+            </div>
+            <div class="wireframe-box" style="height:240px; background:#ffffff; border-color:var(--border-bride); margin:20px 0;">
+                <strong style="color:var(--text-bride);">[ 신부 2마패 홍화 향수 50ml 3D 렌더링 ]</strong>
+                <span style="font-size:12px; margin-top:8px;">붉은 비단 홍실 매듭 체결</span>
+            </div>
+            <div>
+                <a href="#harmony" class="btn-bride">신부 향수 노트 조율하기 &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: 1:1 Couple Scent Harmony Interactive Balancer -->
+    <section id="harmony" class="harmony-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. DUAL SCENT HARMONY BALANCER</span>
+                <h2 class="section-title">신랑 &amp; 신부 듀얼 잔향 공명 시뮬레이터</h2>
+                <p class="section-desc">
+                    신랑과 신부의 서로 다른 향수가 한 공간에 머물 때 발생하는 잔향 조화(Layering Harmony)를 슬라이더로 조절해 보세요.
+                </p>
+            </div>
+
+            <div class="harmony-canvas-grid">
+                <!-- Groom Slider -->
+                <div class="harmony-slider-box">
+                    <h3 style="font-size:18px; font-weight:900; color:var(--text-groom); margin-bottom:12px;">신랑: 흑단목 우디</h3>
+                    <div style="font-size:32px; font-weight:900; font-family:var(--font-mono); color:var(--text-groom);">50 %</div>
+                    <div style="margin:20px 0;">
+                        <input type="range" style="width:100%;" value="50">
+                    </div>
+                    <div style="font-size:12px; color:var(--text-muted);">오대산 백단 60% · 먹 묵향 40%</div>
+                </div>
+
+                <!-- Central Resonance Wave -->
+                <div class="wireframe-box" style="height:280px; background:#fff;">
+                    <div style="font-size:16px; font-weight:900; margin-bottom:8px; font-family:var(--font-serif);">[ 청홍 잔향 결합 파동 시각화 ]</div>
+                    <div style="font-size:12px; color:var(--text-muted); line-height:1.8;">
+                        두 향이 50:50으로 만났을 때<br>
+                        '백년해로(百年偕老)' 시그니처 우디-플로럴 잔향 100% 공명
+                    </div>
+                </div>
+
+                <!-- Bride Slider -->
+                <div class="harmony-slider-box">
+                    <h3 style="font-size:18px; font-weight:900; color:var(--text-bride); margin-bottom:12px;">신부: 남원 홍화</h3>
+                    <div style="font-size:32px; font-weight:900; font-family:var(--font-mono); color:var(--text-bride);">50 %</div>
+                    <div style="margin:20px 0;">
+                        <input type="range" style="width:100%;" value="50">
+                    </div>
+                    <div style="font-size:12px; color:var(--text-muted);">남원 국화 55% · 완도 유자 45%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: Yin-Yang Brass Vow Engraving Console -->
+    <section id="vow" class="vow-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. YIN-YANG VOW ENGRAVING</span>
+                <h2 class="section-title">부부 서약 &amp; 혼례 일자 음양 태극 놋쇠 각인실</h2>
+                <p class="section-desc">두 개의 놋쇠 마패 캡이 맞닿을 때 하나의 완전한 태극 문양이 완성되는 특수 양각 각인 콘솔입니다.</p>
+            </div>
+
+            <div class="vow-grid">
+                <div class="wireframe-box" style="height:360px; background:#fff;">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 360° 맞물림 음양 마패 캡 3D 렌더링 ]</div>
+                    <div style="font-size:12px;">신랑 캡(양)과 신부 캡(음)이 자석으로 체결되는 결합 구조</div>
+                </div>
+
+                <div>
+                    <div style="background:#fff; border:1px solid var(--border-line); padding:32px; border-radius:4px;">
+                        <div style="margin-bottom:16px;">
+                            <label style="display:block; font-size:13px; font-weight:800; margin-bottom:6px;">신랑 성명 &amp; 신부 성명</label>
+                            <input type="text" value="이은수 ♡ 장예은" style="width:100%; padding:12px; border:1px solid var(--border-line);">
+                        </div>
+                        <div style="margin-bottom:16px;">
+                            <label style="display:block; font-size:13px; font-weight:800; margin-bottom:6px;">혼례 일자 (결혼기념일)</label>
+                            <input type="date" value="2026-10-24" style="width:100%; padding:12px; border:1px solid var(--border-line);">
+                        </div>
+                        <div style="margin-bottom:20px;">
+                            <label style="display:block; font-size:13px; font-weight:800; margin-bottom:6px;">부부 서약 문구 (최대 16자)</label>
+                            <input type="text" value="처음 마음 그대로, 영원한 약조" style="width:100%; padding:12px; border:1px solid var(--border-line);">
+                        </div>
+                        <button class="btn-wedding" style="width:100%;">서약 각인 시뮬레이션 적용</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 4-Step Silk Bojagi Knot Unfolding -->
+    <section id="bojagi" class="bojagi-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. 4-STEP SILK BOJAGI UNBOXING</span>
+                <h2 class="section-title">궁중 침선 장인의 청실홍실 비단 보자기 4단계</h2>
+                <p class="section-desc">조선 왕실 가례에서 예를 갖추어 예단을 전달하던 전통 4대 매듭 언박싱 과정입니다.</p>
+            </div>
+
+            <div class="bojagi-step-grid">
+                <div class="bojagi-step-card">
+                    <strong style="color:var(--text-bride);">STEP 01</strong>
+                    <div style="font-size:16px; font-weight:900; margin:8px 0;">청실홍실 매듭 체결</div>
+                    <div style="font-size:12px; color:var(--text-muted);">부부의 인연을 묶는 나비 매듭</div>
+                </div>
+                <div class="bojagi-step-card">
+                    <strong style="color:var(--text-bride);">STEP 02</strong>
+                    <div style="font-size:16px; font-weight:900; margin:8px 0;">자개 노리개 참 분리</div>
+                    <div style="font-size:12px; color:var(--text-muted);">천연 자개로 깎아낸 복(福) 참</div>
+                </div>
+                <div class="bojagi-step-card">
+                    <strong style="color:var(--text-bride);">STEP 03</strong>
+                    <div style="font-size:16px; font-weight:900; margin:8px 0;">안동 한지 서약서 개봉</div>
+                    <div style="font-size:12px; color:var(--text-muted);">수제 한지에 인쇄된 축문</div>
+                </div>
+                <div class="bojagi-step-card">
+                    <strong style="color:var(--text-bride);">STEP 04</strong>
+                    <div style="font-size:16px; font-weight:900; margin:8px 0;">듀얼 마패 향수 안치</div>
+                    <div style="font-size:12px; color:var(--text-muted);">오동나무 보석함 속 2종 보틀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Master 2-Bottle Gift Chest -->
+    <section id="chest" class="gift-master-section">
+        <div class="container">
+            <div class="gift-stage">
+                <div class="wireframe-box" style="height:400px; background:#fff;">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 백년가약 2종 마스터 풀패키지 회색 박스 ]</div>
+                    <div style="font-size:12px;">청실홍실 비단 보자기 + 놋쇠 각인 보틀 2종 + 자개 참 + 오동나무 함</div>
+                </div>
+
+                <div>
+                    <span class="section-tag">ROYAL WEDDING SIGNATURE</span>
+                    <h3 style="font-size:28px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">백년가약 2종 마스터 비단 세트</h3>
+                    <p style="font-size:14px; color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+                        신랑 50ml + 신부 50ml + 음양 놋쇠 캡 레이저 각인 + 천연 자개 노리개 참 + 궁중 비단 보자기 + 수제 오동나무 보석함
+                    </p>
+                    <div style="font-size:28px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px;">248,000 KRW</div>
+                    <a href="#scheduler" class="btn-wedding" style="width:100%; text-align:center;">백년가약 마스터 세트 주문</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: 15ml Guest Wedding Favor Bulk Calculator -->
+    <section id="favor" class="favor-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. BULK FAVOR CALCULATOR</span>
+                <h2 class="section-title">하객 웨딩 답례품 15ml 미니어처 수량 할인 계산기</h2>
+                <p class="section-desc">예식에 참석해 주신 하객분들께 감사의 마음을 전하는 15ml 휴대용 마패 향수 대량 주문 견적표입니다.</p>
+            </div>
+
+            <table class="calc-matrix-table">
+                <thead>
+                    <tr>
+                        <th>주문 수량</th>
+                        <th>정가 (개당)</th>
+                        <th>할인율</th>
+                        <th>최종 할인가 (개당)</th>
+                        <th>추가 증정 혜택</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>50개</strong></td>
+                        <td>28,000원</td>
+                        <td><strong>15% OFF</strong></td>
+                        <td>23,800원</td>
+                        <td>캘리그라피 감사 태그 무료</td>
+                    </tr>
+                    <tr>
+                        <td><strong>100개</strong></td>
+                        <td>28,000원</td>
+                        <td><strong>25% OFF</strong></td>
+                        <td>21,000원</td>
+                        <td>감사 태그 + 예식장 당일 직배송</td>
+                    </tr>
+                    <tr>
+                        <td><strong>200개 이상</strong></td>
+                        <td>28,000원</td>
+                        <td><strong>35% OFF</strong></td>
+                        <td>18,200원</td>
+                        <td>풀패키징 + 부부 본품 세트 1개 무상 증정</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SEC-08: Guest Calligraphy Tag -->
+    <section class="tag-section">
+        <div class="container">
+            <div class="tag-grid">
+                <div>
+                    <span class="section-tag">05. CALLIGRAPHY FAVOR TAG</span>
+                    <h2 class="section-title">하객 감사 캘리그라피 태그 맞춤 제작</h2>
+                    <p class="section-desc">
+                        하객 한 분 한 분께 신랑·신부의 마음을 전할 수 있도록 고급 안동 한지 태그에 감사의 글귀를 인쇄해 드립니다.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:240px; background:#fff;">
+                    <strong>[ 한지 캘리그라피 감사 태그 시안 3D 프리뷰 ]</strong>
+                    <span style="font-size:12px; margin-top:8px;">"귀한 걸음으로 저희의 시작을 축복해 주셔서 감사합니다."</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Wedding Venue Delivery Scheduler -->
+    <section class="delivery-section">
+        <div class="container">
+            <div class="delivery-grid">
+                <div>
+                    <span class="section-tag">06. VENUE DELIVERY SCHEDULER</span>
+                    <h2 class="section-title">예식 당일 식장 안심 직배송 예약</h2>
+                    <p class="section-desc">
+                        무거운 답례품을 직접 운반하실 필요 없이, 예식 당일 예식장 신부대기실 및 로비로 정해진 시간에 직배송합니다.
+                    </p>
+                </div>
+                <div style="background:#faf8f5; border:1px solid var(--border-line); padding:28px; border-radius:4px;">
+                    <div style="margin-bottom:14px;">
+                        <label style="display:block; font-size:12px; font-weight:800; margin-bottom:4px;">예식장 명칭</label>
+                        <input type="text" placeholder="예: 신라호텔 다이너스티홀" style="width:100%; padding:10px; border:1px solid var(--border-line);">
+                    </div>
+                    <button class="btn-wedding" style="width:100%;">배송 스케줄 예약</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: Private Consultation Booking -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <span class="section-tag">07. PRIVATE ATELIER CONSULTATION</span>
+            <h2 class="section-title">성수 프라이빗 웨딩 살롱 1:1 수석 조향사 비스포크 예약</h2>
+            <p class="section-desc">성수동 살롱에서 신랑·신부가 직접 향을 시향하고 맞춤 배합을 진행하는 1:1 프라이빗 세션입니다.</p>
+            <div style="margin-top:30px;">
+                <button class="btn-wedding" style="padding:16px 40px; font-size:14px;">1:1 살롱 세션 날짜 선택 &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Mobile Invitation Scent QR -->
+    <section id="invitation" class="invitation-section">
+        <div class="container">
+            <div class="invitation-grid">
+                <div>
+                    <span class="section-tag">08. DIGITAL INVITATION SCENT QR</span>
+                    <h2 class="section-title">모바일 청첩장 향기 스토리 연동</h2>
+                    <p class="section-desc">
+                        모바일 청첩장에 신랑·신부만의 향기 스토리와 마패 문양을 담은 디지털 카드를 무료로 생성해 드립니다.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:240px; background:#fff;">
+                    <strong>[ 모바일 청첩장 속 향기 스토리 뷰어 화면 렌더링 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: Master Footer -->
+    <footer class="wedding-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">士團 백년가약 혼례 비스포크 살롱</div>
+                    <p style="line-height:1.8;">
+                        두 개의 영혼이 하나로 맺어지는 시간, 조선 가례 비스포크 조향.<br>
+                        서울시 성동구 연무장길 88 사단 웨딩 아틀리에<br>
+                        대표 조향사: 장예은 · 고객센터: 02-588-2910
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">백년가약 컬렉션</div>
+                    <p style="line-height:2;">
+                        · 신랑 1마패 흑단향<br>
+                        · 신부 2마패 홍화향<br>
+                        · 놋쇠 캡 음양 각인<br>
+                        · 비단 보자기 세트
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">웨딩 컨시어지</div>
+                    <p style="line-height:2;">
+                        · 하객 답례품 계산기<br>
+                        · 식장 당일 직배송<br>
+                        · 1:1 살롱 방문 예약<br>
+                        · 모바일 청첩장 연동
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">고객 지원</div>
+                    <p style="line-height:2;">
+                        · 예식 일정 변경 신청<br>
+                        · 대량 주문 B2B 상담<br>
+                        · 각인 시안 카카오톡 검수<br>
+                        · 100% 안심 교환 규정
+                    </p>
+                </div>
+            </div>
+            <div style="border-top:1px solid #3d2b30; padding-top:24px; text-align:center; color:#8c7d83;">
+                © 2026 SADAN Wedding Bespoke Salon. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

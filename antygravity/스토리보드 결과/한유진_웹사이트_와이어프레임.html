@@ -3,326 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사단(士團) 한유진 한옥 플래그십 & 3D 쇼케이스 웹사이트 와이어프레임 (Grey-box & Text Only)</title>
+    <title>사단(士團) — [한유진 디렉터] 글로벌 익스클루시브 &amp; 12종 한방 믹싱 아틀리에</title>
     <style>
         :root {
-            --bg-body: #FFFFFF;
-            --bg-section: #F8FAFC;
-            --bg-card: #F1F5F9;
-            --bg-grey-box: #CBD5E1;
-            --text-main: #0F172A;
-            --text-sub: #475569;
-            --border-light: #E2E8F0;
-            --border-dark: #94A3B8;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
 
-        /* SEC-01 Header */
-        header {
-            position: sticky; top: 0; z-index: 100;
-            background: #FFFFFF;
-            border-bottom: 2px solid var(--border-dark);
-            height: 80px; display: flex; justify-content: space-between; align-items: center;
-            padding: 0 40px;
-        }
-        .logo { font-size: 24px; font-weight: 800; color: var(--text-main); letter-spacing: 2px; }
-        nav { display: flex; gap: 24px; }
-        nav a { color: var(--text-sub); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
-        nav a:hover { color: var(--text-main); text-decoration: underline; }
-        .header-actions { display: flex; gap: 16px; align-items: center; }
-        .lang-btn { background: var(--bg-card); border: 1px solid var(--border-dark); color: var(--text-main); padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        /* Container & Section Base */
-        .section-container { max-width: 1280px; margin: 0 auto; padding: 80px 24px; }
-        .section-title { font-size: 28px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; text-align: center; }
-        .section-subtitle { font-size: 14px; color: var(--text-sub); margin-bottom: 48px; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
 
-        /* SEC-02 Hero */
-        #sec-hero { background: var(--bg-section); border-bottom: 1px solid var(--border-light); }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 480px; }
-        .hero-badge { display: inline-block; background: var(--bg-grey-box); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; margin-bottom: 16px; border: 1px solid var(--border-dark); }
-        .hero-heading { font-size: 38px; font-weight: 800; line-height: 1.3; margin-bottom: 20px; color: var(--text-main); }
-        .hero-desc { color: var(--text-sub); margin-bottom: 32px; font-size: 15px; }
-        .btn-group { display: flex; gap: 16px; }
-        .btn-primary { background: var(--text-main); color: #FFFFFF; padding: 14px 28px; border: none; font-weight: 700; cursor: pointer; border-radius: 4px; }
-        .btn-secondary { background: var(--bg-card); border: 1px solid var(--border-dark); color: var(--text-main); padding: 14px 28px; font-weight: 600; cursor: pointer; border-radius: 4px; }
-        
-        .wireframe-box { background: var(--bg-grey-box); border: 2px dashed var(--border-dark); border-radius: 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--text-main); text-align: center; min-height: 360px; padding: 24px; font-weight: 700; }
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 15px 34px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; }
+        .btn-secondary { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: 1.5px solid var(--border-mid); letter-spacing: 0.5px; cursor: default; }
 
-        /* SEC-03 Product Showcase (★ 필수배치 구역) */
-        #sec-showcase { background: var(--bg-body); border-bottom: 1px solid var(--border-light); }
-        .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-        .card { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-img-box { background: var(--bg-grey-box); height: 240px; border-radius: 6px; margin-bottom: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--text-main); font-weight: 700; border: 1px dashed var(--border-dark); }
-        .card-title { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
-        .card-price { font-size: 16px; font-weight: 700; color: var(--text-sub); margin-bottom: 12px; }
-        .card-desc { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; }
+        /* Top Bar */
+        .top-utility-bar { background: var(--bg-dark); color: #ffffff; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; }
 
-        /* SEC-04 Custom Studio */
-        #sec-custom { background: var(--bg-section); border-bottom: 1px solid var(--border-light); }
-        .custom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .option-group { margin-bottom: 24px; }
-        .option-label { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
-        .input-text { width: 100%; padding: 12px; background: #FFFFFF; border: 1px solid var(--border-dark); color: var(--text-main); border-radius: 4px; margin-bottom: 12px; }
-        .radio-group { display: flex; gap: 12px; }
-        .radio-btn { flex: 1; padding: 10px; background: #FFFFFF; border: 1px solid var(--border-dark); border-radius: 4px; text-align: center; cursor: pointer; font-size: 13px; color: var(--text-main); font-weight: 600; }
-        .radio-btn.selected { background: var(--bg-grey-box); border-width: 2px; }
+        /* GNB */
+        header.gnb-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-logo { display: flex; align-items: center; gap: 12px; }
+        .gnb-logo-mark { background: var(--bg-dark); color: #ffffff; width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; }
+        .gnb-logo-text { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; }
+        .gnb-nav { display: flex; gap: 28px; font-size: 14px; font-weight: 800; }
+        .gnb-nav a { text-decoration: none; color: var(--text-secondary); }
+        .gnb-nav a.active { color: var(--text-primary); }
 
-        /* SEC-05 Discovery Quiz */
-        #sec-quiz { background: var(--bg-body); border-bottom: 1px solid var(--border-light); }
-        .quiz-box { background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: 8px; padding: 40px; text-align: center; max-width: 800px; margin: 0 auto; }
-        .quiz-step { font-size: 12px; color: var(--text-sub); font-weight: 700; margin-bottom: 8px; }
-        .quiz-question { font-size: 20px; font-weight: 700; margin-bottom: 24px; color: var(--text-main); }
-        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .quiz-opt-item { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 16px; border-radius: 6px; cursor: pointer; text-align: left; font-size: 14px; color: var(--text-main); }
+        /* Hero */
+        .hero-section { padding: 110px 0 90px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 70%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-gray-200); padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-title { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 740px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-canvas-frame { max-width: 1000px; margin: 0 auto; height: 380px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 15px; font-weight: 700; }
 
-        /* SEC-06 Vegan & Ingredients */
-        #sec-vegan { background: var(--bg-section); border-bottom: 1px solid var(--border-light); }
-        .vegan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .vegan-card { background: #FFFFFF; border: 1px solid var(--border-dark); padding: 24px; border-radius: 6px; text-align: center; }
+        /* SEC-03: 12 Oriental Herb Mixing Bar */
+        .mixing-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .herb-wheel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .herb-node-card { background: var(--bg-light); border: 1.5px solid var(--border-subtle); border-radius: 10px; padding: 24px; text-align: center; }
+        .herb-node-card.selected { border-color: var(--bg-dark); background: var(--bg-dark); color: #ffffff; }
+        .herb-num { font-size: 11px; font-weight: 800; opacity: 0.7; margin-bottom: 6px; }
+        .herb-name { font-size: 18px; font-weight: 900; margin-bottom: 6px; }
+        .herb-char { font-size: 12px; opacity: 0.8; }
 
-        /* SEC-07 Reservation & Subscription */
-        #sec-reserve { background: var(--bg-body); border-bottom: 1px solid var(--border-light); }
-        .reserve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        /* SEC-04: 3D Mapae Bag Charm Customizer */
+        .charm-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .charm-stage { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        .charm-3d-box { height: 420px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
+        .charm-control-box { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 36px; }
 
-        /* SEC-08 Footer */
-        footer { background: var(--bg-section); border-top: 2px solid var(--border-dark); padding: 60px 40px; color: var(--text-sub); font-size: 13px; }
-        .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; }
-        .footer-logo { font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
+        /* SEC-05: 1·2·3 Mapae Master Showcase */
+        .showcase-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .showcase-card { border: 1px solid var(--border-subtle); border-radius: 10px; overflow: hidden; background: var(--bg-white); }
+        .showcase-img-holder { height: 260px; background: var(--bg-gray-100); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--text-muted); text-align: center; padding: 20px; }
+        .showcase-body { padding: 28px; text-align: center; }
+
+        /* SEC-06: VIP Secret Membership */
+        .vip-section { padding: 100px 0; background: var(--bg-dark); color: #ffffff; border-bottom: 1px solid var(--border-subtle); }
+        .vip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .vip-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 32px 24px; text-align: center; }
+
+        /* Footer */
+        footer.lab-footer { padding: 70px 0; background: var(--bg-dark); color: #94a3b8; font-size: 13px; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; font-weight: 700; }
+        .footer-links a { color: #cbd5e1; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <!-- SEC-01 Header -->
-    <header id="sec-header">
-        <div class="logo">사단 (士團)</div>
-        <nav>
-            <a href="#sec-hero">Brand</a>
-            <a href="#sec-showcase">Collection</a>
-            <a href="#sec-custom">Custom Studio</a>
-            <a href="#sec-quiz">Discovery</a>
-            <a href="#sec-reserve">Flagship Store</a>
-            <a href="#sec-vegan">Ingredients</a>
-            <a href="#sec-reserve">Membership</a>
-            <a href="#sec-footer">Reviews</a>
-        </nav>
-        <div class="header-actions">
-            <button class="lang-btn">KOR / ENG</button>
-            <button class="btn-primary" style="padding: 8px 16px; font-size: 12px;">어사 첩보 클럽</button>
+    <div class="top-utility-bar">
+        🏛️ SADAN GLOBAL LAB — [한유진 디렉터] 글로벌 익스클루시브 &amp; 12종 한방 믹싱 아틀리에
+    </div>
+
+    <!-- GNB -->
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <div class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div class="gnb-logo-text">SADAN GLOBAL EXCLUSIVE</div>
+            </div>
+            <nav class="gnb-nav">
+                <a href="#hero" class="active">글로벌 믹싱</a>
+                <a href="#mixing">12방 원료 랩</a>
+                <a href="#charm">마패 백꾸 참</a>
+                <a href="#showcase">마스터 컬렉션</a>
+                <a href="#vip">VIP 어사 클럽</a>
+            </nav>
+            <div class="gnb-actions">
+                <div class="btn-primary" style="padding:8px 16px; font-size:12px;">글로벌 배송 조회 &gt;</div>
+            </div>
         </div>
     </header>
 
-    <!-- SEC-02 Hero -->
-    <section id="sec-hero">
-        <div class="section-container hero-grid">
-            <div>
-                <span class="hero-badge">HANOK DIGITAL FLAGSHIP</span>
-                <h1 class="hero-heading">조선 암행어사 마패의<br>은은한 향을 담다, 사단</h1>
-                <p class="hero-desc">삼청동 한옥의 정갈한 여백미와 놋쇠 아티산 세공이 결합된 하이엔드 니치 오리엔탈 퍼퓸 컬렉션을 만나보세요.</p>
-                <div class="btn-group">
-                    <button class="btn-primary">3D 마패 쇼케이스 보기</button>
-                    <button class="btn-secondary">한옥 클래스 예약</button>
-                </div>
+    <!-- SEC-02: Hero Stage -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-badge">
+                <span>GLOBAL EXCLUSIVE ATELIER</span>
+                <span>·</span>
+                <span>DIRECTOR HAN YU-JIN</span>
             </div>
-            <div class="wireframe-box">
-                <p>[ 회색 박스: 3D 한옥 중정 &amp; 마패 오브제 ]</p>
-                <span style="font-size: 11px; margin-top: 8px; font-weight:400;">(Interactive WebGL Canvas Area)</span>
+            <h1 class="hero-title">
+                조선의 비밀 첩보 조향술,<br>세계 무대에 피어나는 오리엔탈 럭셔리
+            </h1>
+            <p class="hero-subtitle">
+                12종 동양 약재 원료를 자유롭게 커스텀 믹싱하고,<br>
+                무형문화재 놋쇠 마패 참(Charm)으로 가방과 일상에 나만의 헤리티지를 장식하세요.
+            </p>
+            <div class="hero-canvas-frame">
+                <div style="font-size:18px; font-weight:900; color:#334155; margin-bottom:8px;">[ 12종 한방 원료 추출 &amp; 글로벌 마패 3D 렌더링 회색 박스 ]</div>
+                <div style="font-size:13px; color:#64748b;">전 세계 프리미엄 고객을 위한 동양 전통 증류 추출 공법 시각화</div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-03 Product Showcase (★ 필수배치 구역) -->
-    <section id="sec-showcase">
-        <div class="section-container">
-            <h2 class="section-title">MASTER COLLECTION SHOWCASE</h2>
-            <p class="section-subtitle">한유진 디렉터가 엄선한 사단 시그니처 1·2·3 마패 대표 컬렉션 (SEC-03 필수 배치)</p>
-            
+    <!-- SEC-03: 12 Oriental Herb Mixing Bar -->
+    <section id="mixing" class="mixing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. 12 ORIENTAL HERBS</span>
+                <h2 class="section-title">조선 12종 전통 한방 원료 커스텀 믹싱</h2>
+                <p class="section-desc">원하는 원료를 클릭하여 나만의 글로벌 비스포크 향수 포뮬러를 조합하세요.</p>
+            </div>
+
+            <div class="herb-wheel-grid">
+                <div class="herb-node-card selected">
+                    <div class="herb-num">HERB 01</div>
+                    <h3 class="herb-name">오대산 백단목</h3>
+                    <div class="herb-char">차분한 우디 베이스</div>
+                </div>
+                <div class="herb-node-card selected">
+                    <div class="herb-num">HERB 02</div>
+                    <h3 class="herb-name">지리산 적송</h3>
+                    <div class="herb-char">청량한 피톤치드</div>
+                </div>
+                <div class="herb-node-card selected">
+                    <div class="herb-num">HERB 03</div>
+                    <h3 class="herb-name">완도 완숙유자</h3>
+                    <div class="herb-char">싱그러운 시트러스</div>
+                </div>
+                <div class="herb-node-card">
+                    <div class="herb-num">HERB 04</div>
+                    <h3 class="herb-name">제주 침향</h3>
+                    <div class="herb-char">깊고 묵직한 오리엔탈</div>
+                </div>
+                <div class="herb-node-card">
+                    <div class="herb-num">HERB 05</div>
+                    <h3 class="herb-name">강화 쑥향</h3>
+                    <div class="herb-char">마음을 정화하는 허브</div>
+                </div>
+                <div class="herb-node-card">
+                    <div class="herb-num">HERB 06</div>
+                    <h3 class="herb-name">영주 풍기 홍삼</h3>
+                    <div class="herb-char">따뜻하고 은은한 진액</div>
+                </div>
+                <div class="herb-node-card">
+                    <div class="herb-num">HERB 07</div>
+                    <h3 class="herb-name">남원 들국화</h3>
+                    <div class="herb-char">고아한 야생 플로럴</div>
+                </div>
+                <div class="herb-node-card">
+                    <div class="herb-num">HERB 08</div>
+                    <h3 class="herb-name">문경 전통 묵향</h3>
+                    <div class="herb-char">선비의 서재 먹 냄새</div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="#charm" class="btn-primary">선택 원료로 커스텀 보틀 조합 &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 3D Mapae Bag Charm Customizer -->
+    <section id="charm" class="charm-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 3D MAPAE BAG CHARM</span>
+                <h2 class="section-title">무형문화재 놋쇠 마패 참(Charm) 백꾸 커스터마이징</h2>
+                <p class="section-desc">향수 보틀과 가방에 장착하는 수제 놋쇠 마패 참에 영문/이니셜을 레이저 각인하세요.</p>
+            </div>
+
+            <div class="charm-stage">
+                <div class="charm-3d-box">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:10px;">[ 360° 마패 참 백꾸 3D 시뮬레이터 회색 박스 ]</div>
+                    <div style="font-size:13px; max-width:380px;">가죽 가방 스트랩에 결착된 놋쇠 마패 참의 광택과 흔들림을 3D로 확인하세요.</div>
+                </div>
+
+                <div class="charm-control-box">
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">1. 참(Charm) 스타일 선택</label>
+                        <div style="display:flex; gap:10px;">
+                            <div style="flex:1; padding:12px; background:var(--bg-dark); color:#fff; text-align:center; font-weight:800; font-size:12px; border-radius:4px;">1마패 원형 참</div>
+                            <div style="flex:1; padding:12px; background:var(--bg-light); border:1px solid var(--border-mid); text-align:center; font-weight:800; font-size:12px; border-radius:4px;">3마패 각인 참</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">2. 글로벌 이니셜 각인</label>
+                        <div style="background:var(--bg-light); border:1px solid var(--border-mid); padding:12px; font-size:15px; font-weight:900; font-family:var(--font-mono);">
+                            HAN YU JIN — SEOUL / PARIS
+                        </div>
+                    </div>
+
+                    <a href="#showcase" class="btn-primary" style="display:block; text-align:center;">참 결합 세트 주문하기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 1·2·3 Mapae Master Showcase -->
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. GLOBAL MASTER COLLECTION</span>
+                <h2 class="section-title">사단 1·2·3마패 글로벌 에디션</h2>
+                <p class="section-desc">전 세계 무료 특급 배송(DHL)이 지원되는 사단 시그니처 3종 컬렉션입니다.</p>
+            </div>
+
             <div class="showcase-grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <div class="card-img-box">
-                        <p>[ 회색 박스: 1마패 자수 팩 ]</p>
-                        <span style="font-size:11px; font-weight:400;">(50ml / 단아한 비단 패키지)</span>
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 1마패 오리엔탈 베이스 보틀 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">1마패 오대산 백단향 (50ml)</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">글로벌 에디션 놋쇠 마패 캡</p>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:18px;">$ 85 USD</div>
+                        <a href="#" class="btn-primary" style="width:100%; display:block; text-align:center;">Global Checkout</a>
                     </div>
-                    <div>
-                        <h3 class="card-title">1마패 자수 에디션 (50ml)</h3>
-                        <p class="card-price">₩ 95,000</p>
-                        <p class="card-desc">조선 양반가의 은은한 비단 자수 봉인 팩에 담긴 고즈넉한 백단향 오드퍼퓸</p>
-                    </div>
-                    <button class="btn-primary" style="width:100%;">3D 커스텀 각인하기</button>
                 </div>
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="card-img-box">
-                        <p>[ 회색 박스: 2마패 놋쇠 레거시 팩 ]</p>
-                        <span style="font-size:11px; font-weight:400;">(100ml / 수제 놋쇠 합금 캡)</span>
+
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 2마패 포인트 솔잎유자 보틀 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">2마패 솔잎 &amp; 유자 (50ml)</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">청량한 동양 피톤치드</p>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:18px;">$ 95 USD</div>
+                        <a href="#" class="btn-primary" style="width:100%; display:block; text-align:center;">Global Checkout</a>
                     </div>
-                    <div>
-                        <h3 class="card-title">2마패 놋쇠 레거시 에디션 (100ml)</h3>
-                        <p class="card-price">₩ 185,000</p>
-                        <p class="card-desc">장인의 손끝에서 탄생한 수제 놋쇠 합금 캡과 중후한 묵향의 프리미엄 팩</p>
-                    </div>
-                    <button class="btn-primary" style="width:100%;">3D 커스텀 각인하기</button>
                 </div>
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="card-img-box">
-                        <p>[ 회색 박스: 3마패 왕실 실버 팩 ]</p>
-                        <span style="font-size:11px; font-weight:400;">(100ml / 실버 봉인 실린더)</span>
+
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 3마패 마스터 참 풀세트 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">3마패 마스터 삼단 보석함</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">1·2·3마패 풀세트 + 놋쇠 참 각인</p>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:18px;">$ 210 USD</div>
+                        <a href="#" class="btn-primary" style="width:100%; display:block; text-align:center;">Global Checkout</a>
                     </div>
-                    <div>
-                        <h3 class="card-title">3마패 왕실 실버 에디션 (100ml)</h3>
-                        <p class="card-price">₩ 280,000</p>
-                        <p class="card-desc">암행어사 비밀 실버 봉인 실린더와 12가지 희귀 한방 원료 디스커버리 킷</p>
-                    </div>
-                    <button class="btn-primary" style="width:100%;">3D 커스텀 각인하기</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-04 Custom Studio -->
-    <section id="sec-custom">
-        <div class="section-container">
-            <h2 class="section-title">3D CUSTOM BRASS ENGRAVING</h2>
-            <p class="section-subtitle">마패 놋쇠 용기에 자신만의 한글·한자 초성 실시간 레이저 각인 스튜디오</p>
-            
-            <div class="custom-grid">
-                <div class="wireframe-box" style="min-height: 400px;">
-                    <p>[ 회색 박스: 3D 레이저 각인 실시간 캔버스 ]</p>
-                    <span style="font-size: 11px; margin-top: 8px; font-weight:400;">(Rotatable GLTF Model Preview)</span>
+    <!-- SEC-06: VIP Secret Membership -->
+    <section id="vip" class="vip-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color:#94a3b8;">SECRET INSPECTOR VIP CLUB</span>
+                <h2 class="section-title" style="color:#ffffff;">암행어사 VIP 글로벌 멤버십 등급</h2>
+                <p class="section-desc" style="color:#cbd5e1;">구매 누적에 따라 조선 왕실 마패 등급이 승급되며 한정판 디스커버리 킷을 무료 배송합니다.</p>
+            </div>
+
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 01</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px;">1마패 수습 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.6;">첫 구매 고객 · 전 세계 무료 배송</p>
                 </div>
-                <div>
-                    <div class="option-group">
-                        <div class="option-label">1. 각인문구 입력 (최대 6자)</div>
-                        <input type="text" class="input-text" value="士團 - 韓有珍" placeholder="문구를 입력하세요">
-                    </div>
-                    <div class="option-group">
-                        <div class="option-label">2. 놋쇠 캡 소재 선택</div>
-                        <div class="radio-group">
-                            <div class="radio-btn selected">황동 놋쇠</div>
-                            <div class="radio-btn">왕실 실버</div>
-                            <div class="radio-btn">흑담 옻칠</div>
-                        </div>
-                    </div>
-                    <div class="option-group">
-                        <div class="option-label">3. 서체 고르기</div>
-                        <div class="radio-group">
-                            <div class="radio-btn selected">조선 훈민정음체</div>
-                            <div class="radio-btn">클래식 한자 서체</div>
-                        </div>
-                    </div>
-                    <button class="btn-primary" style="width:100%; padding: 16px; margin-top: 12px;">커스텀 마패 패키지 담기 (₩ 185,000)</button>
+                <div class="vip-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 02</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px;">2마패 봉인 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.6;">2회 이상 구매 · 신규 향수 샘플 선배송</p>
+                </div>
+                <div class="vip-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 03</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px;">3마패 특명 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.6;">VIP 전용 수제 놋쇠 마패 참 무료 증정</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-05 Discovery Quiz -->
-    <section id="sec-quiz">
-        <div class="section-container">
-            <h2 class="section-title">1:1 OLFACTORY DISCOVERY QUIZ</h2>
-            <p class="section-subtitle">암행어사 비밀 첩보 진단 퀴즈로 만나는 나만의 오리엔탈 시그니처 노트</p>
-            
-            <div class="quiz-box">
-                <div class="quiz-step">QUESTION 03 / 05</div>
-                <h3 class="quiz-question">당신이 가장 머물고 싶은 한옥의 순간은 언제인가요?</h3>
-                <div class="quiz-options">
-                    <div class="quiz-opt-item">A. 든 새벽 한옥 중정에 피어오르는 물안개와 흙향</div>
-                    <div class="quiz-opt-item">B. 정오의 툇마루에서 느껴지는 따뜻한 햇살과 대나무 바람</div>
-                    <div class="quiz-opt-item">C. 비 내리는 저녁 기와 지붕 아래 퍼지는 먹향</div>
-                    <div class="quiz-opt-item">D. 달빛 아래 은은하게 감도는 침향과 침묵의 시간</div>
-                </div>
+    <!-- Footer -->
+    <footer class="lab-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#hero">글로벌 믹싱</a>
+                <a href="#mixing">12방 원료 랩</a>
+                <a href="#charm">마패 백꾸 참</a>
+                <a href="#showcase">마스터 컬렉션</a>
+                <a href="#vip">VIP 멤버십</a>
+                <a href="#">IFRA Global Safe</a>
             </div>
-        </div>
-    </section>
-
-    <!-- SEC-06 Vegan & Ingredients -->
-    <section id="sec-vegan">
-        <div class="section-container">
-            <h2 class="section-title">NATURAL INGREDIENTS &amp; VEGAN CERTIFIED</h2>
-            <p class="section-subtitle">100% 비건 인증 유기농 한방 성분과 원산지 투명성 지표</p>
-            
-            <div class="vegan-grid">
-                <div class="vegan-card">
-                    <div style="font-size:20px; font-weight:800; color:var(--text-main); margin-bottom:8px;">K-VEGAN</div>
-                    <p style="font-size:12px; color:var(--text-sub);">한국 비건 인증원 공식 검증 100% 완료</p>
-                </div>
-                <div class="vegan-card">
-                    <div style="font-size:20px; font-weight:800; color:var(--text-main); margin-bottom:8px;">ECOCERT</div>
-                    <p style="font-size:12px; color:var(--text-sub);">유럽 에코서트 유기농 성분 인가 완료</p>
-                </div>
-                <div class="vegan-card">
-                    <div style="font-size:20px; font-weight:800; color:var(--text-main); margin-bottom:8px;">IFRA SAFE</div>
-                    <p style="font-size:12px; color:var(--text-sub);">국제향료협회 안전기준 100% 준수</p>
-                </div>
-                <div class="vegan-card">
-                    <div style="font-size:20px; font-weight:800; color:var(--text-main); margin-bottom:8px;">CRUELTY FREE</div>
-                    <p style="font-size:12px; color:var(--text-sub);">동물 실험 전면 금지 및 무해 원료</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEC-07 Reservation & Subscription -->
-    <section id="sec-reserve">
-        <div class="section-container">
-            <h2 class="section-title">FLAGSHIP RESERVATION &amp; SUBSCRIPTION</h2>
-            <p class="section-subtitle">삼청동 오프라인 한옥 클래스 예약 및 계절별 어사 팩 정기구독</p>
-            
-            <div class="reserve-grid">
-                <div style="background:var(--bg-card); padding:32px; border-radius:8px; border:1px solid var(--border-dark);">
-                    <h3 style="color:var(--text-main); font-size:18px; margin-bottom:16px;">🏛️ 삼청 한옥 클래스 타임 피커</h3>
-                    <p style="font-size:13px; color:var(--text-sub); margin-bottom:20px;">마스터 조향사와 함께하는 1:1 맞춤 나만의 마패 향수 제조 클래스</p>
-                    <input type="date" class="input-text">
-                    <div class="radio-group" style="margin-bottom:20px;">
-                        <div class="radio-btn">10:00 세션</div>
-                        <div class="radio-btn selected">14:00 세션</div>
-                        <div class="radio-btn">17:00 세션</div>
-                    </div>
-                    <button class="btn-primary" style="width:100%;">한옥 클래스 수강 신청 (₩ 120,000)</button>
-                </div>
-                <div style="background:var(--bg-card); padding:32px; border-radius:8px; border:1px solid var(--border-dark);">
-                    <h3 style="color:var(--text-main); font-size:18px; margin-bottom:16px;">📦 계절별 어사 디스커버리 정기구독</h3>
-                    <p style="font-size:13px; color:var(--text-sub); margin-bottom:20px;">사계절마다 전해지는 새로운 오리엔탈 마패 디스커버리 팩 정기 배송</p>
-                    <div class="radio-group" style="margin-bottom:20px;">
-                        <div class="radio-btn selected">3개월 주기</div>
-                        <div class="radio-btn">6개월 주기</div>
-                        <div class="radio-btn">1년 주기</div>
-                    </div>
-                    <button class="btn-secondary" style="width:100%;">어사 첩보 클럽 구독하기 (월 ₩ 35,000)</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEC-08 Footer -->
-    <footer id="sec-footer">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-logo">사단 (士團)</div>
-                <p>조선 암행어사 마패의 감각적 헤리티지를 현대적 니치 향수로 재해석하는 럭셔리 퍼퓸 브랜드입니다.</p>
-                <p style="margin-top:12px; font-size:11px; color:var(--text-sub);">(주)사단 해외 사업부 | 총괄 디렉터: 한유진 | 사업자등록번호: 104-81-99881</p>
-            </div>
-            <div>
-                <h4 style="color:var(--text-main); margin-bottom:12px;">COLLECTION</h4>
-                <p>1마패 자수 에디션</p>
-                <p>2마패 놋쇠 에디션</p>
-                <p>3마패 왕실 실버</p>
-            </div>
-            <div>
-                <h4 style="color:var(--text-main); margin-bottom:12px;">STUDIO &amp; STORE</h4>
-                <p>3D 놋쇠 각인기</p>
-                <p>삼청 한옥 오프라인</p>
-                <p>어사 조향 퀴즈</p>
-            </div>
-            <div>
-                <h4 style="color:var(--text-main); margin-bottom:12px;">CS CONCIERGE</h4>
-                <p>1:1 라이브 카카오 챗</p>
-                <p>글로벌 해외 배송 정책</p>
-                <p>FAQ 자주 묻는 질문</p>
-            </div>
+            <p>사단(士團) 헤리티지 조향 연구소 | 글로벌 디스커버리 디렉터 한유진</p>
+            <p style="color:#64748b; font-size:12px; margin-top:8px;">© 2026 SADAN Heritage Global Lab. All Rights Reserved.</p>
         </div>
     </footer>
 

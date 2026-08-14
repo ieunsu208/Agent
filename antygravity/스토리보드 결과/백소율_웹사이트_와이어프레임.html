@@ -3,158 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[백소율 PM] 사단(士團) AI 맞춤 조향 스마트 랩 회색 박스 와이어프레임</title>
+    <title>사단(士團) — [백소율 디렉터] Z세대 모던 젠더리스 프래그런스 &amp; 벤토 룩북 (Type 4: 탬버린즈형)</title>
     <style>
         :root {
-            --bg-body: #f8f9fa;
-            --bg-card: #ffffff;
-            --bg-dark: #1e293b;
-            --bg-gray-light: #f1f5f9;
-            --bg-gray-mid: #e2e8f0;
-            --bg-gray-dark: #cbd5e1;
-            --border-color: #94a3b8;
-            --text-dark: #0f172a;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 25px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 12px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
 
-        header { background: #ffffff; border: 2px solid var(--border-color); padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .logo-box { display: flex; align-items: center; gap: 14px; }
-        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 10px 16px; font-weight: 900; font-size: 18px; border-radius: 6px; }
-        .logo-title { font-size: 20px; font-weight: 900; }
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 15px 34px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; }
 
-        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 14px 24px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; }
-        nav span { padding: 8px 16px; border-radius: 6px; background: var(--bg-gray-mid); }
-        nav span.active { background: var(--bg-dark); color: #ffffff; }
+        /* Top Bar */
+        .top-utility-bar { background: var(--bg-dark); color: #ffffff; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; }
 
-        .hero-box { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 10px; padding: 35px; text-align: center; margin-bottom: 25px; }
-        .hero-title { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
-        .hero-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
-        .hero-grey-placeholder { background: var(--bg-gray-dark); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #475569; font-size: 15px; }
+        /* GNB */
+        header.gnb-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-logo { display: flex; align-items: center; gap: 12px; }
+        .gnb-logo-mark { background: var(--bg-dark); color: #ffffff; width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; }
+        .gnb-logo-text { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; }
+        .gnb-nav { display: flex; gap: 28px; font-size: 14px; font-weight: 800; }
+        .gnb-nav a { text-decoration: none; color: var(--text-secondary); }
+        .gnb-nav a.active { color: var(--text-primary); }
 
-        .showcase-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
-        .showcase-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 12px; margin-bottom: 20px; }
-        .showcase-title { font-size: 20px; font-weight: 900; }
-        
-        .goods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .goods-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; }
-        .goods-img-greybox { background: var(--bg-gray-dark); border: 1px dashed var(--border-color); height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #334155; margin-bottom: 12px; font-size: 13px; }
+        /* Hero */
+        .hero-section { padding: 110px 0 90px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 70%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-gray-200); padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-title { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 740px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-canvas-frame { max-width: 1000px; margin: 0 auto; height: 380px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 15px; font-weight: 700; }
 
-        .layout-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 25px; }
-        .section-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; margin-bottom: 25px; }
-        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 10px; }
+        /* SEC-03: Irregular Bento Mosaic Grid (Type 4 Tamburins Signature) */
+        .bento-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .bento-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 20px; }
+        .bento-card-large { grid-row: span 2; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); padding: 30px; text-align: center; }
+        .bento-tile { background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
 
-        .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .plan-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); padding: 16px; border-radius: 6px; text-align: center; font-weight: 800; }
-        .plan-card.active { background: var(--bg-dark); color: #ffffff; }
+        /* SEC-04: Genderless Mix & Match */
+        .genderless-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .mix-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+        .mix-card { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 32px 24px; text-align: center; }
 
-        aside { display: flex; flex-direction: column; gap: 20px; }
-        .aside-widget { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; }
+        /* SEC-05: 4K Object Zoom Showcase */
+        .zoom-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .zoom-holder { height: 420px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-muted); text-align: center; padding: 30px; }
 
-        footer { background: var(--bg-dark); color: #94a3b8; padding: 30px; border-radius: 10px; font-size: 13px; text-align: center; margin-top: 30px; }
-        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--bg-dark); color: #ffffff; padding: 15px 28px; border-radius: 35px; font-weight: 900; font-size: 14px; border: 2px solid #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        /* Footer */
+        footer.lab-footer { padding: 70px 0; background: var(--bg-dark); color: #94a3b8; font-size: 13px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        [회색 띠 배너] 나만의 AI 무드 조향 진단 알고리즘 오픈 (3종 디스커버리 샘플 킷 0원 증정 바)
+    <div class="top-utility-bar">
+        ⚡ SADAN MODERN LAB — [백소율 디렉터] Z세대 젠더리스 오리엔탈 프래그런스 &amp; 벤토 룩북
     </div>
 
-    <header>
-        <div class="logo-box">
-            <div class="logo-badge">士團</div>
-            <div>
-                <div class="logo-title">사단(SADAN) AI 조향 스마트 랩</div>
-                <div style="font-size: 12px; color: var(--text-muted);">백소율 PM 전용 회색 박스 와이어프레임 명세서</div>
+    <!-- GNB -->
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <div class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div class="gnb-logo-text">SADAN GENDERLESS</div>
             </div>
-        </div>
-        <div>
-            <button style="background:var(--bg-gray-mid); border:1px solid var(--border-color); padding:10px 18px; border-radius:6px; font-weight:800; margin-right:10px;">0원 샘플 킷</button>
-            <button style="background:var(--bg-dark); color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:800;">AI 조향 진단 시작</button>
+            <nav class="gnb-nav">
+                <a href="#hero" class="active">모던 젠더리스</a>
+                <a href="#bento">벤토 룩북</a>
+                <a href="#mix">믹스앤매치</a>
+                <a href="#zoom">4K 오브제 줌</a>
+            </nav>
+            <div class="gnb-actions">
+                <div class="btn-primary" style="padding:8px 16px; font-size:12px;">젠더리스 킷 구매 &gt;</div>
+            </div>
         </div>
     </header>
 
-    <nav>
-        <span class="active">1.0 AI Scent Lab (AI 진단)</span>
-        <span>2.0 Secret Membership (구독 클럽)</span>
-        <span>3.0 Discovery Kit (0원 샘플)</span>
-        <span>4.0 My Certificate</span>
-        <span>5.0 Formula Review</span>
-    </nav>
-
-    <div class="hero-box">
-        <div class="hero-title">4단계 AI 무드 &amp; 성향 진단 알고리즘 인터랙티브 랩</div>
-        <div class="hero-sub">조선 어사 비밀 레시피 알고리즘이 당신의 라이프스타일에 맞춘 1·2·3마패 최적 레이어링 비율을 계산합니다.</div>
-        <div class="hero-grey-placeholder">
-            [ 4단계 AI 무드 슬라이더 &amp; 실시간 마패 향료 추천 믹스 비율 회색 박스 영역 ]
-        </div>
-    </div>
-
-    <div class="showcase-container">
-        <div class="showcase-header">
-            <div class="showcase-title">🤖 [백소율 전용 제품 전시 구간] AI 알고리즘 맞춤 1·2·3마패 레이어링 향수 세트 &amp; 정기 구독 카트리지 킷</div>
-            <div style="background:var(--bg-dark); color:#fff; padding:4px 12px; border-radius:4px; font-weight:800; font-size:12px;">AI 알고리즘 추천 완료 회색 뱃지</div>
-        </div>
-        <div class="goods-grid">
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ AI 맞춤 마패 향수 실물 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">AI 맞춤 1·2·3마패 세트</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">침향 40% + 백단향 35% + 묵향 25% 조합</div>
+    <!-- SEC-02: Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-badge">
+                <span>GENDERLESS AVANT-GARDE</span>
+                <span>·</span>
+                <span>DIRECTOR BAEK SO-YUL</span>
             </div>
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ 월간 첩보 카트리지 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">매월 첩보 카트리지 구독 킷</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">한정판 향료 주간 정기 배송 패키지</div>
-            </div>
-            <div class="goods-card">
-                <div class="goods-img-greybox">[ 3종 디스커버리 킷 회색 Box ]</div>
-                <div style="font-size:15px; font-weight:800;">3종 시향 디스커버리 0원 킷</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">체험 후 100% 포인트 환급 샘플 팩</div>
+            <h1 class="hero-title">
+                경계를 허무는 동양의 미학,<br>오리엔탈 젠더리스 프래그런스
+            </h1>
+            <p class="hero-subtitle">
+                남성과 여성의 구분을 넘어 오직 감각과 개성으로 착향하는 사단 모던 컬렉션.<br>
+                감각적인 벤토 모자이크 비주얼과 파격적인 놋쇠 오브제 디자인을 만나보세요.
+            </p>
+            <div class="hero-canvas-frame">
+                <div style="font-size:18px; font-weight:900; color:#334155; margin-bottom:8px;">[ Z세대 젠더리스 4K 초근접 오브제 아트 렌더링 회색 박스 ]</div>
+                <div style="font-size:13px; color:#64748b;">매트 블랙 놋쇠 마패와 투명 글래스 오브제의 파격적 대비 룩북</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="layout-grid">
-        <main>
-            <div class="section-box">
-                <div class="section-title">📦 암행어사 비밀 레시피 정기 구독 클럽 플랜</div>
-                <div class="plan-grid">
-                    <div class="plan-card">싱글 마패 플랜<br><span style="font-size:16px;">29,000원 / 월</span></div>
-                    <div class="plan-card active">듀얼 레이어링 플랜<br><span style="font-size:16px;">49,000원 / 월</span></div>
-                    <div class="plan-card">3마패 마스터 플랜<br><span style="font-size:16px;">69,000원 / 월</span></div>
+    <!-- SEC-03: Irregular Bento Mosaic Grid -->
+    <section id="bento" class="bento-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. BENTO LOOKBOOK</span>
+                <h2 class="section-title">불규칙 벤토 모자이크 비주얼 갤러리</h2>
+                <p class="section-desc">타일을 클릭하여 각 에디션의 초근접 질감과 조향 노트를 확인하세요.</p>
+            </div>
+
+            <div class="bento-mosaic">
+                <div class="bento-card-large">
+                    <div style="font-size:22px; font-weight:900; margin-bottom:10px;">[ 1·2·3마패 대형 오브제 줌 회색 박스 ]</div>
+                    <div style="font-size:13px;">4K 매크로 질감과 조향 원료 물방울 텍스처</div>
+                </div>
+
+                <div class="bento-tile">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">#01 BASE</div>
+                    <h4 style="font-size:18px; font-weight:900;">오대산 딥 백단향</h4>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-mono);">89,000 KRW</div>
+                </div>
+
+                <div class="bento-tile">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">#02 POINT</div>
+                    <h4 style="font-size:18px; font-weight:900;">지리산 네온 솔잎</h4>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-mono);">119,000 KRW</div>
+                </div>
+
+                <div class="bento-tile">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">#03 MASTER</div>
+                    <h4 style="font-size:18px; font-weight:900;">제주 스모키 침향</h4>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-mono);">139,000 KRW</div>
+                </div>
+
+                <div class="bento-tile">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted);">#04 OBJECT</div>
+                    <h4 style="font-size:18px; font-weight:900;">블랙 놋쇠 마패 캡</h4>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-mono);">39,000 KRW</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="section-box">
-                <div class="section-title">📜 디지털 암행어사 첩보 보증서 시리얼 조회</div>
-                <div style="background:var(--bg-gray-mid); height:100px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#475569; font-size:14px;">
-                    [ 놋쇠 마패 고유 시리얼 번호 입력 및 PDF 보증서 즉시 다운로드 회색 UI ]
+    <!-- SEC-04: Genderless Mix & Match -->
+    <section id="mix" class="genderless-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. GENDERLESS MIX &amp; MATCH</span>
+                <h2 class="section-title">성별을 초월한 3대 믹스앤매치 가이드</h2>
+                <p class="section-desc">중성적 매력을 극대화하는 사단만의 자유로운 레이어링 공식입니다.</p>
+            </div>
+
+            <div class="mix-grid">
+                <div class="mix-card">
+                    <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">MINIMAL CHIC</h4>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">1마패 백단 60% + 2마패 솔잎 40%</p>
+                    <div style="font-size:12px; color:var(--text-muted);">단정하고 세련된 미니멀 룩북</div>
+                </div>
+
+                <div class="mix-card">
+                    <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">AVANT-GARDE</h4>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">2마패 유자 30% + 3마패 침향 70%</p>
+                    <div style="font-size:12px; color:var(--text-muted);">강렬하고 신비로운 나이트 룩북</div>
+                </div>
+
+                <div class="mix-card">
+                    <h4 style="font-size:18px; font-weight:900; margin-bottom:8px;">ALL-DAY FREEDOM</h4>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">15ml 3종 올데이 포터블 세트</p>
+                    <div style="font-size:12px; color:var(--text-muted);">하루 종일 자유롭게 변주하는 향</div>
                 </div>
             </div>
-        </main>
+        </div>
+    </section>
 
-        <aside>
-            <div class="aside-widget">
-                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">🎁 0원 샘플 킷 신청</div>
-                <button style="width:100%; padding:10px; background:var(--bg-dark); color:#fff; border:none; border-radius:6px; font-weight:800;">0원 샘플 신청하기</button>
+    <!-- SEC-05: 4K Object Zoom Showcase -->
+    <section id="zoom" class="zoom-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. 4K OBJECT ZOOM</span>
+                <h2 class="section-title">조각품 같은 마패 오브제 컬렉션</h2>
+                <p class="section-desc">화장대 위에 두는 것만으로 하나의 현대 미술 설치 작품이 되는 패키지입니다.</p>
             </div>
-            <div class="aside-widget">
-                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">⚙️ 구독 옵션 관리</div>
-                <button style="width:100%; padding:10px; background:var(--bg-gray-mid); border:1px solid var(--border-color); border-radius:6px; font-weight:800;">구독 주기 변경</button>
-            </div>
-        </aside>
-    </div>
 
-    <footer>
-        &copy; 2026 SADAN AI Smart Perfume Lab (백소율 PM). All rights reserved.
+            <div class="zoom-holder">
+                <div style="font-size:22px; font-weight:900; margin-bottom:10px;">[ 4K 블랙 놋쇠 마패 오브제 초근접 렌더링 회색 박스 ]</div>
+                <p style="font-size:14px; max-width:500px;">마우스 휠로 줌인하여 놋쇠 표면의 미세한 스크래치 질감과 각인을 감상하세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="lab-footer">
+        <div class="container">
+            <h3 style="font-size:22px; font-weight:900; color:#fff; margin-bottom:14px;">士團 SADAN MODERN GENDERLESS</h3>
+            <p>규정되지 않는 감각의 자유, 조선 젠더리스 오리엔탈 아방가르드</p>
+            <p style="color:#64748b; font-size:12px; margin-top:8px;">© 2026 SADAN Modern Lab. All Rights Reserved.</p>
+        </div>
     </footer>
-
-    <div class="floating-btn">🧪 4단계 AI 무드 진단 시작하기</div>
 
 </body>
 </html>

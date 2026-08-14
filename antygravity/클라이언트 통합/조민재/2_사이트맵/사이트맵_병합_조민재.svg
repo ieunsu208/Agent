@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <rect width="1000" height="450" fill="#090a0f" rx="12"/>
+  <rect x="330" y="20" width="340" height="50" rx="8" fill="#1e1b18" stroke="#d97706" stroke-width="1.5"/>
+  <text x="500" y="52" fill="#fef3c7" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">사단(士團) 조민재 최적 병합 사이트맵 IA</text>
+
+  <!-- Level 1 Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="13" font-weight="800" text-anchor="middle">
+    <!-- 1.0 Salon -->
+    <line x1="500" y1="70" x2="110" y2="120" stroke="#78350f" stroke-width="2"/>
+    <rect x="20" y="120" width="180" height="45" rx="6" fill="#27272a" stroke="#d97706" stroke-width="1"/>
+    <text x="110" y="148" fill="#fef3c7">1.0 조선 야행 살롱</text>
+
+    <!-- 2.0 Bar -->
+    <line x1="500" y1="70" x2="305" y2="120" stroke="#78350f" stroke-width="2"/>
+    <rect x="215" y="120" width="180" height="45" rx="6" fill="#27272a" stroke="#d97706" stroke-width="1"/>
+    <text x="305" y="148" fill="#fef3c7">2.0 스모키 페어링 바</text>
+
+    <!-- 3.0 Incense -->
+    <line x1="500" y1="70" x2="500" y2="120" stroke="#78350f" stroke-width="2"/>
+    <rect x="410" y="120" width="180" height="45" rx="6" fill="#27272a" stroke="#d97706" stroke-width="1"/>
+    <text x="500" y="148" fill="#fef3c7">3.0 놋쇠 인센스 홀더</text>
+
+    <!-- 4.0 Gift -->
+    <line x1="500" y1="70" x2="695" y2="120" stroke="#78350f" stroke-width="2"/>
+    <rect x="605" y="120" width="180" height="45" rx="6" fill="#27272a" stroke="#d97706" stroke-width="1"/>
+    <text x="695" y="148" fill="#fef3c7">4.0 미드나잇 기프트 팩</text>
+
+    <!-- 5.0 Pass -->
+    <line x1="500" y1="70" x2="890" y2="120" stroke="#78350f" stroke-width="2"/>
+    <rect x="800" y="120" width="180" height="45" rx="6" fill="#27272a" stroke="#d97706" stroke-width="1"/>
+    <text x="890" y="148" fill="#fef3c7">5.0 비밀 암행 패스</text>
+  </g>
+
+  <!-- Level 2 Sub Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#d4d4d8">
+    <!-- Sub 1 -->
+    <line x1="110" y1="165" x2="110" y2="200" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="20" y="200" width="180" height="70" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="110" y="225">· 달빛 순찰 야행록</text>
+    <text x="110" y="245">· 딥 우디·레더·훈증 숯</text>
+
+    <!-- Sub 2 -->
+    <line x1="305" y1="165" x2="305" y2="200" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="215" y="200" width="180" height="70" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="305" y="225">· 스모키 칵테일 페어링</text>
+    <text x="305" y="245">· 잔향 &amp; 풍미 시뮬레이터</text>
+
+    <!-- Sub 3 -->
+    <line x1="500" y1="165" x2="500" y2="200" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="410" y="200" width="180" height="70" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="500" y="225">· 3D 놋쇠 홀더 연기 뷰어</text>
+    <text x="500" y="245">· 담양 죽탄 인센스 스틱</text>
+
+    <!-- Sub 4 -->
+    <line x1="695" y1="165" x2="695" y2="200" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="605" y="200" width="180" height="70" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="695" y="225">· 향수 &amp; 인센스 풀세트</text>
+    <text x="695" y="245">· 매트 블랙 옻칠 박스</text>
+
+    <!-- Sub 5 -->
+    <line x1="890" y1="165" x2="890" y2="200" stroke="#3f3f46" stroke-width="1.5"/>
+    <rect x="800" y="200" width="180" height="70" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="890" y="225">· 심야 바 예약 &amp; 암호 발급</text>
+    <text x="890" y="245">· 100% 환급 디스커버리 킷</text>
+  </g>
+</svg>

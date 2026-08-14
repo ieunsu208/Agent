@@ -1,0 +1,29 @@
+graph TD
+    Start(["사용자 진입"]) --> TrackA["트랙 A: 의궤 원전 탐색"]
+    Start --> TrackB["트랙 B: 12종 원료 도록"]
+    Start --> TrackC["트랙 C: 복원 에디션 쇼케이스"]
+    Start --> TrackD["트랙 D: VIP 후원 레지스트리"]
+
+    TrackA --> Branch1{"3D 고서 플립 여부?"}
+    Branch1 -- 3D 플립 --> Book3D["3D 의궤 책장 넘기기"]
+    Branch1 -- 텍스트 대조 --> TextArchive["한자/한글 원문 대조록"]
+
+    Book3D --> SelectScent["5대 복원 향방 선택"]
+    TextArchive --> SelectScent
+    TrackB --> SelectScent
+    TrackC --> SelectScent
+
+    SelectScent --> Branch2{"패키징 선택?"}
+    Branch2 -- 오동나무 옻칠함 --> Paulownia["오동나무 옻칠함 세트"]
+    Branch2 -- 단품 보틀 --> Standard["단품 보틀 에디션"]
+
+    Paulownia --> Branch3{"놋쇠 캡 각인?"}
+    Standard --> Branch3
+
+    Branch3 -- 각인 신청 --> Engrave["실시간 레이저 각인"]
+    Branch3 -- 미각인 --> DirectCart["장바구니 담기"]
+
+    Engrave --> DirectCart
+    DirectCart --> Checkout["안전 결제 & 보증서 발급"]
+    TrackD --> Checkout
+    Checkout --> End(["완료: 고유 시리얼 조회"])

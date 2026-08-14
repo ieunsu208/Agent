@@ -1,0 +1,29 @@
+graph TD
+    Start(["사용자 진입"]) --> TrackA["트랙 A: 감정 자가진단"]
+    Start --> TrackB["트랙 B: 사운드스케이프"]
+    Start --> TrackC["트랙 C: 숙면 나이트 리추얼"]
+    Start --> TrackD["트랙 D: 웰니스 정기구독"]
+
+    TrackA --> Dial["360° 감정 휠 조작"]
+    Dial --> MatchScent["맞춤 한방 아로마 매칭"]
+
+    TrackB --> Sound["432Hz 싱잉볼 & 호흡 가이드"]
+    Sound --> MatchScent
+
+    MatchScent --> PackageSelect{"제형 및 패키지 선택?"}
+    PackageSelect -- 놋쇠 롤온 10ml --> RollOn["놋쇠 롤온"]
+    PackageSelect -- 필로우 미스트 50ml --> Mist["필로우 미스트"]
+    PackageSelect -- 풀패키지 세트 --> FullKit["나이트 웰니스 풀세트"]
+
+    RollOn --> Cart["장바구니 담기"]
+    Mist --> Cart
+    FullKit --> Cart
+    TrackC --> Cart
+    TrackD --> Cart
+
+    Cart --> SubBranch{"구매 방식 선택?"}
+    SubBranch -- 월간 정기구독 --> SubPay["구독 15% 할인 결제"]
+    SubBranch -- 1회 구매 --> OncePay["단품 일반 결제"]
+
+    SubPay --> Complete(["완료: 웰니스 리포트 발송"])
+    OncePay --> Complete

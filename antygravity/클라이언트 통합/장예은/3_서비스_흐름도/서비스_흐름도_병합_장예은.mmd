@@ -1,0 +1,23 @@
+graph TD
+    Start(["사용자 진입"]) --> TrackA["트랙 A: 커플 듀얼 비스포크"]
+    Start --> TrackB["트랙 B: 비단 보자기 패키징"]
+    Start --> TrackC["트랙 C: 웨딩 답례품 견적"]
+    Start --> TrackD["트랙 D: 프라이빗 살롱 예약"]
+
+    TrackA --> Balance["듀얼 하모니 조향"]
+    Balance --> Engrave["부부 서약 놋쇠 각인"]
+    
+    TrackB --> Bojagi["청실홍실 매듭 선택"]
+    TrackC --> Calc["답례품 수량 할인 계산"]
+
+    Engrave --> Cart["백년가약 세트 담기"]
+    Bojagi --> Cart
+    Calc --> Cart
+    TrackD --> Cart
+
+    Cart --> Branch1{"배송 장소?"}
+    Branch1 -- 예식장 직배송 --> WeddingVenue["예식장 안심 직배송"]
+    Branch1 -- 자택 배송 --> HomeDelivery["자택 특급 배송"]
+
+    WeddingVenue --> Complete(["주문 완료 & 모바일 청첩장 연동"])
+    HomeDelivery --> Complete

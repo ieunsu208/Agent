@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) SADAN — 마스터 플래그십 최종 통합 웹사이트 와이어프레임</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --border-dark: #334155;
+            --accent-brass: #b45309;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+        .section-title { font-size: 38px; font-weight: 900; letter-spacing: -0.8px; line-height: 1.3; color: var(--text-primary); margin-bottom: 16px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 720px; margin: 0 auto; line-height: 1.8; }
+
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 16px 36px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; transition: background 0.2s; }
+        .btn-primary:hover { background: #1e293b; }
+        .btn-secondary { background: transparent; color: var(--text-primary); padding: 15px 32px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: 1.5px solid var(--border-mid); letter-spacing: 0.5px; cursor: default; }
+        .btn-secondary:hover { background: var(--bg-light); }
+
+        /* Top Utility Bar */
+        .top-utility-bar { background: var(--bg-darker); color: #94a3b8; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .top-utility-bar strong { color: #f8fafc; }
+
+        /* GNB Header */
+        header.master-gnb { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary); }
+        .gnb-brand-seal { background: var(--bg-dark); color: #ffffff; width: 36px; height: 36px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; }
+        .gnb-brand-title { font-size: 19px; font-weight: 900; letter-spacing: -0.5px; }
+        .gnb-brand-sub { font-size: 10px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
+
+        .gnb-menu { display: flex; gap: 24px; font-size: 13px; font-weight: 800; list-style: none; }
+        .gnb-menu a { text-decoration: none; color: var(--text-secondary); transition: color 0.2s; }
+        .gnb-menu a:hover { color: var(--text-primary); }
+
+        .gnb-actions { display: flex; align-items: center; gap: 14px; }
+        .lang-switch { font-size: 12px; font-weight: 800; color: var(--text-muted); border: 1px solid var(--border-subtle); padding: 6px 10px; border-radius: 4px; }
+
+        /* Hero Section */
+        .hero-section { padding: 120px 0 100px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 75%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-pill { display: inline-flex; align-items: center; gap: 10px; background: var(--bg-gray-200); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 28px; }
+        .hero-title { font-size: 56px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 780px; margin: 0 auto 40px; line-height: 1.8; }
+        .hero-canvas { max-width: 1080px; margin: 0 auto; height: 440px; background: var(--bg-gray-200); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); padding: 40px; text-align: center; }
+
+        /* Section Layout Styles */
+        .section-white { padding: 110px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .section-light { padding: 110px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .section-dark { padding: 110px 0; background: var(--bg-dark); color: #ffffff; border-bottom: 1px solid var(--border-subtle); }
+
+        /* SEC-02: 3-Axis Formulation & AI Balancer */
+        .formulation-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+        .pipette-stage { height: 460px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); padding: 30px; text-align: center; }
+        .formulation-controls { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+        .axis-slider-box { margin-bottom: 24px; }
+        .axis-label { display: flex; justify-content: space-between; font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+        .axis-bar-mock { height: 12px; background: var(--bg-gray-200); border-radius: 6px; position: relative; overflow: hidden; }
+        .axis-bar-fill { height: 100%; background: var(--bg-dark); width: 60%; }
+
+        /* SEC-03: 24H Timeline & Multi-Scenario TPO */
+        .time-slider-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+        .time-card { background: var(--bg-white); border: 1.5px solid var(--border-subtle); border-radius: 8px; padding: 24px; text-align: center; }
+        .time-card.active { border-color: var(--bg-dark); background: var(--bg-dark); color: #ffffff; }
+        .scenario-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 40px; }
+
+        /* SEC-04: 12 Botanical Herbarium */
+        .herb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .herb-card { background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 24px; text-align: center; }
+        .herb-tag { font-size: 11px; font-weight: 800; color: var(--text-muted); margin-bottom: 6px; }
+        .herb-title { font-size: 18px; font-weight: 900; margin-bottom: 6px; }
+        .herb-meta { font-size: 12px; color: var(--text-secondary); }
+
+        /* SEC-05: 360° Brass Mapae Engraving & Charm */
+        .engrave-stage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: center; }
+        .engrave-3d-box { height: 440px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
+        .engrave-input-box { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 36px; }
+
+        /* SEC-06: Master Jewel Chest & Refill Station */
+        .showcase-2col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+        .chest-box { border: 1px solid var(--border-subtle); border-radius: 12px; padding: 36px; background: var(--bg-white); text-align: center; }
+        .chest-img { height: 280px; background: var(--bg-gray-100); border: 1px dashed var(--border-mid); border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--text-muted); }
+        .refill-accordion-bar { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* SEC-07: Royal Tea & Scent Pairing Salon */
+        .tea-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .tea-wheel { height: 400px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 24px; }
+        .sound-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+        .sound-item { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 18px 14px; text-align: center; font-size: 12px; font-weight: 800; }
+
+        /* SEC-08: Gyeongbokgung Popup & Mobile QR Pass */
+        .popup-stage { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        .popup-map { height: 420px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
+        .pass-form { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 36px; }
+
+        /* SEC-09: VIP Secret Inspector Membership */
+        .vip-grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .vip-tier-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 36px 28px; text-align: center; }
+
+        /* Footer */
+        footer.master-footer { padding: 80px 0 60px; background: var(--bg-darker); color: #94a3b8; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        .footer-col h5 { color: #f8fafc; font-size: 14px; font-weight: 900; margin-bottom: 16px; letter-spacing: 0.5px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-col ul a { color: #94a3b8; text-decoration: none; }
+        .footer-col ul a:hover { color: #f8fafc; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; text-align: center; font-size: 12px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-utility-bar">
+        🏛️ <strong>사단(士團) 마스터 플래그십 아틀리에</strong> — 조선 왕실 비전(秘傳) 조향술 &amp; 무형문화재 놋쇠 마패 헤리티지
+    </div>
+
+    <!-- Master GNB Header -->
+    <header class="master-gnb">
+        <div class="container gnb-inner">
+            <a href="#hero" class="gnb-brand">
+                <div class="gnb-brand-seal">士</div>
+                <div>
+                    <div class="gnb-brand-title">士團 SADAN HERITAGE</div>
+                    <div class="gnb-brand-sub">ROYAL SECRET ATELIER</div>
+                </div>
+            </a>
+            <ul class="gnb-menu">
+                <li><a href="#formulation">3축 맞춤 조향</a></li>
+                <li><a href="#timeline">24H 시간축</a></li>
+                <li><a href="#herbarium">12종 자생 원료</a></li>
+                <li><a href="#engraving">놋쇠 마패 각인실</a></li>
+                <li><a href="#showcase">100년 보석함</a></li>
+                <li><a href="#tea-salon">다도 페어링</a></li>
+                <li><a href="#popup">경복궁 팝업 패스</a></li>
+            </ul>
+            <div class="gnb-actions">
+                <span class="lang-switch">KR / EN</span>
+                <a href="#showcase" class="btn-primary" style="padding:10px 20px; font-size:13px;">디스커버리 킷 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-01: Hero Atelier Stage -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-pill">
+                <span>ROYAL SECRET INSPECTOR FORMULATION</span>
+                <span>·</span>
+                <span>MASTERPIECE FLAGSHIP</span>
+            </div>
+            <h1 class="hero-title">
+                조선 암행어사의 비밀 첩보 서사,<br>현대적 감각으로 피어나는 오리엔탈 럭셔리
+            </h1>
+            <p class="hero-subtitle">
+                12종 동양 자생 약재의 고요한 침묵과 1,200℃ 가마터에서 단조된 무형문화재 놋쇠 마패의 묵직한 손맛.<br>
+                당신만을 위해 조향되는 단 하나의 비스포크 헤리티지 향수를 경험하세요.
+            </p>
+            <div class="hero-canvas">
+                <div style="font-size:20px; font-weight:900; color:#334155; margin-bottom:10px;">[ 조선 왕실 비밀 서재 &amp; 3D 놋쇠 마패 시그니처 4K 렌더링 회색 박스 ]</div>
+                <div style="font-size:14px; max-width:600px; color:#64748b;">
+                    500년 오대산 백단목 증류 추출과 황동 마패 캡의 실시간 광택 및 에이징 파티나 시뮬레이션
+                </div>
+            </div>
+            <div style="margin-top:40px; display:flex; justify-content:center; gap:16px;">
+                <a href="#formulation" class="btn-primary">비밀 조향 아틀리에 시작하기 &gt;</a>
+                <a href="#popup" class="btn-secondary">경복궁 팝업 패스 발권 &gt;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-02: 3-Axis Pipette Formulation & AI Balancer -->
+    <section id="formulation" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. 3-AXIS FORMULATION ATELIER</span>
+                <h2 class="section-title">3축 피펫 맞춤 조향 캔버스 &amp; AI 취향 밸런서</h2>
+                <p class="section-desc">베이스, 포인트, 마스터 3대 원료의 비율을 미세 조율하여 오직 나만을 위한 포뮬러를 완성하세요.</p>
+            </div>
+
+            <div class="formulation-grid">
+                <div class="pipette-stage">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:12px;">[ 3축 피펫 한 방울 추출 &amp; 향 피라미드 3D 렌더링 회색 박스 ]</div>
+                    <div style="font-size:13px; max-width:440px;">
+                        Top(완도 유자 20%) ➔ Middle(지리산 솔잎 35%) ➔ Base(오대산 백단향 45%)<br>
+                        실시간 피펫 방울 수와 원료 배합 곡선 시각화
+                    </div>
+                </div>
+
+                <div class="formulation-controls">
+                    <div class="axis-slider-box">
+                        <div class="axis-label">
+                            <span>1. 베이스 축 (Base Note)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">오대산 백단목 (45%)</span>
+                        </div>
+                        <div class="axis-bar-mock"><div class="axis-bar-fill" style="width:45%;"></div></div>
+                    </div>
+
+                    <div class="axis-slider-box">
+                        <div class="axis-label">
+                            <span>2. 포인트 축 (Heart Note)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">지리산 적송 솔잎 (35%)</span>
+                        </div>
+                        <div class="axis-bar-mock"><div class="axis-bar-fill" style="width:35%;"></div></div>
+                    </div>
+
+                    <div class="axis-slider-box">
+                        <div class="axis-label">
+                            <span>3. 마스터 축 (Top Note)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">완도 완숙유자 (20%)</span>
+                        </div>
+                        <div class="axis-bar-mock"><div class="axis-bar-fill" style="width:20%;"></div></div>
+                    </div>
+
+                    <div style="background:var(--bg-light); border:1px solid var(--border-subtle); padding:16px; border-radius:6px; margin-bottom:24px; font-size:13px;">
+                        <strong>✨ AI 조향사 추천 조합:</strong> 차분한 우디 위에 청량한 솔잎과 시트러스가 감도는 '아침 이슬의 선비' 포뮬러입니다.
+                    </div>
+
+                    <a href="#engraving" class="btn-primary" style="width:100%; text-align:center;">이 포뮬러로 마패 캡 각인실 이동 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: 24H Timeline & Multi-Scenario TPO -->
+    <section id="timeline" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 24-HOUR SCENT ARCHITECTURE</span>
+                <h2 class="section-title">24H 시간축 &amp; 상황별 TPO 듀얼 레이어링</h2>
+                <p class="section-desc">하루의 흐름(새벽·정오·황혼·심야)과 당신의 라이프스타일에 맞춘 최적의 착향 시나리오를 제안합니다.</p>
+            </div>
+
+            <div class="time-slider-track">
+                <div class="time-card">
+                    <div style="font-size:11px; font-weight:800; margin-bottom:4px;">07:00 AM</div>
+                    <h4 style="font-size:16px; font-weight:900;">새벽 (Dawn)</h4>
+                    <p style="font-size:12px; opacity:0.8;">맑은 백단과 솔잎의 각성</p>
+                </div>
+                <div class="time-card active">
+                    <div style="font-size:11px; font-weight:800; margin-bottom:4px;">01:00 PM</div>
+                    <h4 style="font-size:16px; font-weight:900;">정오 (Noon)</h4>
+                    <p style="font-size:12px; opacity:0.8;">싱그러운 완도 유자 집중</p>
+                </div>
+                <div class="time-card">
+                    <div style="font-size:11px; font-weight:800; margin-bottom:4px;">07:00 PM</div>
+                    <h4 style="font-size:16px; font-weight:900;">황혼 (Twilight)</h4>
+                    <p style="font-size:12px; opacity:0.8;">우아한 야생화의 잔향</p>
+                </div>
+                <div class="time-card">
+                    <div style="font-size:11px; font-weight:800; margin-bottom:4px;">11:00 PM</div>
+                    <h4 style="font-size:16px; font-weight:900;">심야 (Midnight)</h4>
+                    <p style="font-size:12px; opacity:0.8;">깊고 그윽한 침향의 안식</p>
+                </div>
+            </div>
+
+            <div class="scenario-stage">
+                <div style="height:300px; background:var(--bg-gray-200); border:1px dashed var(--border-mid); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--text-muted); text-align:center; padding:20px;">
+                    [ 15ml 듀얼 포터블 보틀 체결 &amp; 가죽 슬리브 3D 렌더링 회색 박스 ]
+                </div>
+                <div>
+                    <span class="section-tag">SELECTED TPO SCENARIO</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:12px;">비즈니스 미팅 &amp; 오후의 집중</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        손목에는 1마패 백단향으로 신뢰감 있는 무게감을 유지하고, 옷깃에는 2마패 유자를 가볍게 터치하여 맑고 지적인 인상을 완성합니다.
+                    </p>
+                    <a href="#showcase" class="btn-primary">15ml 올데이 듀얼 키트 보기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 12 Oriental Herbarium -->
+    <section id="herbarium" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. BOTANICAL ARCHIVE</span>
+                <h2 class="section-title">조선 12종 전통 한방 약재 원료 도록</h2>
+                <p class="section-desc">초임계 CO2 추출 및 충북 음성 쌀 100% 식물성 발효 주정으로 빚어낸 순수 자생 원료입니다.</p>
+            </div>
+
+            <div class="herb-grid">
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #01 · 강원 오대산</div>
+                    <h3 class="herb-title">오대산 백단목</h3>
+                    <div class="herb-meta">깊고 정갈한 수제 우디</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #02 · 전남 지리산</div>
+                    <h3 class="herb-title">지리산 적송</h3>
+                    <div class="herb-meta">청량한 피톤치드 솔잎</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #03 · 전남 완도</div>
+                    <h3 class="herb-title">완도 완숙유자</h3>
+                    <div class="herb-meta">풍성한 천연 시트러스</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #04 · 제주 한라산</div>
+                    <h3 class="herb-title">제주 침향</h3>
+                    <div class="herb-meta">묵직하고 신비로운 오리엔탈</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #05 · 인천 강화도</div>
+                    <h3 class="herb-title">강화 사자발쑥</h3>
+                    <div class="herb-meta">마음을 정화하는 아로마 허브</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #06 · 경북 영주</div>
+                    <h3 class="herb-title">풍기 6년근 홍삼</h3>
+                    <div class="herb-meta">따뜻하고 은은한 진액 노트</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #07 · 전북 남원</div>
+                    <h3 class="herb-title">지리산 야생 국화</h3>
+                    <div class="herb-meta">고아한 조선 전통 플로럴</div>
+                </div>
+                <div class="herb-card">
+                    <div class="herb-tag">HERB #08 · 경북 문경</div>
+                    <h3 class="herb-title">문경 전통 묵향</h3>
+                    <div class="herb-meta">선비의 서재 먹 냄새</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 360° Brass Mapae Engraving & Charm -->
+    <section id="engraving" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. BRASS ATELIER &amp; CHARM</span>
+                <h2 class="section-title">무형문화재 놋쇠 마패 캡 &amp; 백꾸 참(Charm) 각인실</h2>
+                <p class="section-desc">180g 묵직한 방짜 놋쇠 캡과 백꾸 참에 영문 이름, 비밀 암호, 서명을 실시간 레이저 각인하세요.</p>
+            </div>
+
+            <div class="engrave-stage">
+                <div class="engrave-3d-box">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:12px;">[ 360° 놋쇠 마패 캡 &amp; 참 실시간 3D 각인 렌더링 회색 박스 ]</div>
+                    <div style="font-size:13px; max-width:420px;">
+                        골드 놋쇠의 황금빛 광택과 마우스 회전에 따른 빛 반사, 실시간 레이저 각인 시뮬레이션
+                    </div>
+                </div>
+
+                <div class="engrave-input-box">
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">1. 마패 헤리티지 등급 선택</label>
+                        <div style="display:flex; gap:10px;">
+                            <div style="flex:1; padding:12px; background:var(--bg-dark); color:#fff; text-align:center; font-weight:800; font-size:12px; border-radius:4px;">1마패 원형 캡</div>
+                            <div style="flex:1; padding:12px; background:var(--bg-light); border:1px solid var(--border-mid); text-align:center; font-weight:800; font-size:12px; border-radius:4px;">2마패 쌍두마 캡</div>
+                            <div style="flex:1; padding:12px; background:var(--bg-light); border:1px solid var(--border-mid); text-align:center; font-weight:800; font-size:12px; border-radius:4px;">3마패 마스터 캡</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">2. 암행어사 이니셜 &amp; 서명 각인 (최대 16자)</label>
+                        <div style="background:var(--bg-light); border:1.5px solid var(--border-mid); padding:14px; font-size:16px; font-weight:900; font-family:var(--font-mono);">
+                            SADAN — CIPHER #088
+                        </div>
+                    </div>
+
+                    <a href="#showcase" class="btn-primary" style="width:100%; text-align:center;">각인 완료 후 보석함 패키지 담기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Master Jewel Chest & Refill Station -->
+    <section id="showcase" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05. MASTERPIECE &amp; ZERO-PLASTIC REFILL</span>
+                <h2 class="section-title">100년 자개 마패 보석함 &amp; 알루미늄 리필 스테이션</h2>
+                <p class="section-desc">평생 소장하는 나전칠기 자개 보석함과 100% 무한 순환 알루미늄 리필 카트리지의 완벽한 조화입니다.</p>
+            </div>
+
+            <div class="showcase-2col">
+                <div class="chest-box">
+                    <div class="chest-img">[ 전통 나전칠기 3단 마패 보석함 실물 회색 박스 ]</div>
+                    <span class="section-tag">100-YEAR HERITAGE EDITION</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:10px;">사단 마스터 삼단 보석함 풀세트</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        1·2·3마패 본품 3종 (50ml x 3) + 놋쇠 마패 캡 각인 + 수제 자개 보석함 + 암행어사 밀서
+                    </p>
+                    <div style="font-size:28px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px;">289,000 KRW</div>
+                    <a href="#" class="btn-primary" style="width:100%; text-align:center;">보석함 주문하기</a>
+                </div>
+
+                <div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:16px;">🌱 100% 알루미늄 에코 리필 스테이션</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:24px;">
+                        플라스틱을 전혀 사용하지 않는 알루미늄 리필 팟으로 탄소 배출량을 85% 감축하고 본품 대비 40% 저렴하게 향을 리필하세요.
+                    </p>
+
+                    <div class="refill-accordion-bar">
+                        <div>
+                            <h4 style="font-size:15px; font-weight:900;">STEP 01. 놋쇠 마패 캡 원터치 분리</h4>
+                            <p style="font-size:12px; color:var(--text-secondary);">반시계 방향으로 부드럽게 회전</p>
+                        </div>
+                        <div style="font-size:18px; font-weight:900;">➔</div>
+                    </div>
+
+                    <div class="refill-accordion-bar">
+                        <div>
+                            <h4 style="font-size:15px; font-weight:900;">STEP 02. 알루미늄 리필 카트리지 딸깍 결착</h4>
+                            <p style="font-size:12px; color:var(--text-secondary);">5초 만에 완료되는 원터치 교체</p>
+                        </div>
+                        <div style="font-size:18px; font-weight:900;">➔</div>
+                    </div>
+
+                    <div class="refill-accordion-bar">
+                        <div>
+                            <h4 style="font-size:15px; font-weight:900;">STEP 03. 공병 무료 반납 &amp; 5,000원 적립</h4>
+                            <p style="font-size:12px; color:var(--text-secondary);">동봉된 수거 봉투로 집 앞 반납</p>
+                        </div>
+                        <div style="font-size:18px; font-weight:900;">✓</div>
+                    </div>
+
+                    <div style="background:var(--bg-light); border:1px solid var(--border-mid); border-radius:8px; padding:20px; text-align:center; margin-top:20px;">
+                        <div style="font-size:12px; font-weight:800; color:var(--text-muted);">누적 탄소 저감량</div>
+                        <div style="font-size:26px; font-weight:900; font-family:var(--font-mono);">- 1,420,850 kg CO₂</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Royal Tea & Scent Pairing Salon -->
+    <section id="tea-salon" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06. SENSORY TEA &amp; SCENT SALON</span>
+                <h2 class="section-title">조선 왕실 다도(茶道) &amp; 향수 오리엔탈 페어링</h2>
+                <p class="section-desc">미각과 후각을 동시에 깨우는 다도 페어링과 한국 자연의 백색 소음 앰비언트를 경험하세요.</p>
+            </div>
+
+            <div class="tea-stage">
+                <div class="tea-wheel">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:10px;">[ 360° 전통 차 &amp; 마패 향수 페어링 다이얼 회색 박스 ]</div>
+                    <div style="font-size:13px;">하동 잭설 발효차 ➔ 1마패 백단향 / 완도 유자차 ➔ 2마패 솔잎유자</div>
+                </div>
+
+                <div>
+                    <span class="section-tag">SELECTED PAIRING SALON</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:12px;">하동 잭설차 + 1마패 백단향 페어링</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        발효차의 구수한 탄닌감과 손목의 백단목 잔향이 어우러져 깊은 명상과 내면의 평온을 선사합니다.
+                    </p>
+
+                    <div class="sound-card-grid">
+                        <div class="sound-item">
+                            <div>오대산 숲 바람</div>
+                            <div style="margin-top:6px; color:var(--accent-brass);">▶ 15분 재생</div>
+                        </div>
+                        <div class="sound-item">
+                            <div>지리산 솔잎 비</div>
+                            <div style="margin-top:6px; color:var(--accent-brass);">▶ 15분 재생</div>
+                        </div>
+                        <div class="sound-item">
+                            <div>한옥 달빛 풍경</div>
+                            <div style="margin-top:6px; color:var(--accent-brass);">▶ 15분 재생</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Gyeongbokgung Popup & Mobile QR Pass -->
+    <section id="popup" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07. POPUP &amp; MOBILE MAPAE PASS</span>
+                <h2 class="section-title">경복궁 야간 팝업 스토어 3D 공간 맵 &amp; 실시간 QR 패스</h2>
+                <p class="section-desc">대기 없는 1초 모바일 입장과 현장 한정판 놋쇠 굿즈 수령을 예약하세요.</p>
+            </div>
+
+            <div class="popup-stage">
+                <div class="popup-map">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:10px;">[ 경복궁 생과방 팝업 부스 3D 공간 평면도 회색 박스 ]</div>
+                    <div style="font-size:13px;">Zone A(비밀 시향실) ➔ Zone B(놋쇠 가마터) ➔ Zone C(다도 살롱)</div>
+                </div>
+
+                <div class="pass-form">
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:14px;">2026 경복궁 야간 특별 관람 어사 패스</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        휴대폰 번호 입력 시 1초 만에 카카오톡으로 디지털 마패 입장권이 발송됩니다.
+                    </p>
+                    <div style="background:var(--bg-light); border:1.5px solid var(--border-mid); padding:14px; font-size:16px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">
+                        010 - 5678 - 1234 (예약자: 암행어사)
+                    </div>
+                    <a href="#" class="btn-primary" style="width:100%; text-align:center;">모바일 QR 어사 패스 무료 발권 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: VIP Secret Inspector Membership -->
+    <section id="vip" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color:#94a3b8;">SECRET INSPECTOR VIP CLUB</span>
+                <h2 class="section-title" style="color:#ffffff;">암행어사 VIP 멤버십 &amp; 100% 환급 디스커버리 킷</h2>
+                <p class="section-desc" style="color:#cbd5e1;">구매 누적에 따라 조선 왕실 마패 등급이 승급되며 본품 구매 시 100% 전액 환급 바우처를 제공합니다.</p>
+            </div>
+
+            <div class="vip-grid-3col">
+                <div class="vip-tier-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 01</div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:12px;">1마패 수습 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.7;">첫 구매 고객 · 전 세계 무료 배송 및 5종 디스커버리 킷 100% 환급권</p>
+                </div>
+
+                <div class="vip-tier-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 02</div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:12px;">2마패 봉인 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.7;">2회 이상 구매 · 신규 조향 포뮬러 선배송 &amp; 경복궁 팝업 패스트트랙</p>
+                </div>
+
+                <div class="vip-tier-card">
+                    <div style="font-size:12px; font-weight:800; color:#94a3b8; margin-bottom:6px;">TIER 03</div>
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:12px;">3마패 특명 어사</h3>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.7;">VIP 최상위 등급 · 수제 놋쇠 마패 참 무료 증정 및 1:1 비스포크 조향</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="master-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h5 style="font-size:18px;">士團 SADAN HERITAGE</h5>
+                    <p style="font-size:13px; color:#94a3b8; line-height:1.8; margin-top:10px; max-width:320px;">
+                        조선의 비밀 첩보 조향술과 무형문화재 놋쇠 공예의 현대적 재해석. 사단은 100% 식물성 발효 주정과 지속 가능한 알루미늄 리필 시스템을 고집합니다.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>아틀리에 경험</h5>
+                    <ul>
+                        <li><a href="#formulation">3축 맞춤 조향</a></li>
+                        <li><a href="#timeline">24H 시간축 향수</a></li>
+                        <li><a href="#herbarium">12종 한방 원료</a></li>
+                        <li><a href="#engraving">3D 놋쇠 마패 각인</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>컬렉션 &amp; 팝업</h5>
+                    <ul>
+                        <li><a href="#showcase">100년 자개 보석함</a></li>
+                        <li><a href="#showcase">알루미늄 리필 스테이션</a></li>
+                        <li><a href="#tea-salon">전통 다도 페어링 살롱</a></li>
+                        <li><a href="#popup">경복궁 팝업 어사 패스</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>고객 &amp; 인증</h5>
+                    <ul>
+                        <li><a href="#vip">VIP 어사 클럽</a></li>
+                        <li><a href="#">IFRA 국제 안전 기준</a></li>
+                        <li><a href="#">무형문화재 제77호 인증</a></li>
+                        <li><a href="#">공병 반납 리워드</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>주식회사 사단 헤리티지 | 대표자: 사단 조향 연구소 | 사업자등록번호: 100-88-00000 | 통신판매업신고: 2026-서울종로-0888</p>
+                <p style="margin-top:8px;">© 2026 SADAN Heritage Master Atelier. All Rights Reserved. Pure HTML/CSS Master Wireframe.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

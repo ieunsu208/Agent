@@ -1,0 +1,27 @@
+graph TD
+    Start(["사용자 진입"]) --> TrackA["트랙 A: 칵테일 페어링 바"]
+    Start --> TrackB["트랙 B: 놋쇠 인센스 홀더"]
+    Start --> TrackC["트랙 C: 미드나잇 기프트 팩"]
+    Start --> TrackD["트랙 D: 비밀 심야 바 예약"]
+
+    TrackA --> MatchCocktail["스모키 칵테일 매칭"]
+    MatchCocktail --> ScentDetail["딥 우디/레더 향수 선택"]
+
+    TrackB --> Incense3D["3D 연기 피어오름 뷰어"]
+    Incense3D --> SelectStick["담양 죽탄 스틱 선택"]
+
+    TrackD --> SecretCode["심야 바 예약 & 암호 발급"]
+
+    ScentDetail --> PackChoice{"패키징 선택?"}
+    SelectStick --> PackChoice
+    TrackC --> PackChoice
+
+    PackChoice -- 옻칠 풀패키지 세트 --> LacquerPack["매트 블랙 옻칠 세트"]
+    PackChoice -- 단품 보틀/홀더 --> StandardPack["단품 에디션"]
+
+    LacquerPack --> Cart["장바구니 담기"]
+    StandardPack --> Cart
+    SecretCode --> Cart
+
+    Cart --> Checkout["안전 결제 & 암행 VIP 등록"]
+    Checkout --> Complete(["주문 완료 & 암호 코드 발송"])

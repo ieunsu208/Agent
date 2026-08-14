@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — [류현석 마스터] 동의보감 칠정(七情) 치유 360° 아로마 휠 &amp; 싱잉볼 명상 와이어프레임</title>
+    <style>
+        :root {
+            --bg-base: #f3f6f3;
+            --bg-card: #ffffff;
+            --bg-soft-green: #e9efe9;
+            --bg-dark: #14241c;
+            --text-primary: #14241c;
+            --text-secondary: #2d4538;
+            --text-muted: #5e796b;
+            --border-line: #cbd8ce;
+            --border-dark: #1b3327;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--text-muted); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.35; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-secondary); max-width: 720px; margin: 0 auto; word-break: keep-all; }
+
+        .btn-wellness { background: var(--bg-dark); color: #ffffff; padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; cursor: pointer; text-align: center; border: none; }
+        .btn-outline-green { background: transparent; color: var(--text-primary); padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-line); cursor: pointer; text-align: center; }
+
+        .wireframe-box { background: var(--bg-soft-green); border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 24px; }
+
+        /* SEC-01: Top Mindfulness Audio Bar */
+        .top-audio-bar { background: var(--bg-dark); color: #d5e5db; font-size: 11px; padding: 8px 0; border-bottom: 1px solid var(--border-dark); }
+        .top-audio-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Sticky Wellness Header */
+        header.wellness-header { position: sticky; top: 0; background: rgba(243, 246, 243, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-line); z-index: 1000; padding: 16px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .brand-emblem { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+        .emblem-mark { width: 38px; height: 38px; border: 1.5px solid var(--text-primary); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: var(--font-serif); }
+        .brand-text { font-size: 16px; font-weight: 900; letter-spacing: -0.5px; font-family: var(--font-serif); }
+        .wellness-nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
+        .wellness-nav a { text-decoration: none; color: var(--text-muted); }
+        .wellness-nav a.active { color: var(--text-primary); border-bottom: 2px solid var(--text-primary); padding-bottom: 2px; }
+
+        /* SEC-02: Hero Radial Mandala Viewport */
+        .hero-mandala-section { padding: 90px 0 100px; border-bottom: 1px solid var(--border-line); background: radial-gradient(circle at 50% 30%, #ffffff 0%, var(--bg-base) 85%); text-align: center; }
+        .mandala-stage { max-width: 900px; margin: 40px auto 0; height: 440px; background: var(--bg-card); border: 2px solid var(--border-line); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; box-shadow: 0 10px 30px rgba(20,36,28,0.05); }
+
+        /* SEC-03: 360° Interactive 7-Emotions Diagnostic Dial */
+        .dial-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .dial-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+        .dial-circle-box { height: 420px; background: var(--bg-soft-green); border: 2px dashed var(--border-line); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+
+        /* SEC-04: 432Hz Sound Wave & 4-4-6 Breathing Canvas */
+        .sound-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .sound-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+
+        /* SEC-05: 12 Oriental Medicinal Botanical Oils Matrix */
+        .herb-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .herb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .herb-card { background: var(--bg-soft-green); border: 1px solid var(--border-line); padding: 24px; border-radius: 4px; }
+
+        /* SEC-06: Night Sleep Care Ritual 3-Step Showcase */
+        .ritual-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .ritual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .ritual-card { background: var(--bg-card); border: 1px solid var(--border-line); padding: 32px 24px; text-align: center; }
+
+        /* SEC-07: Circadian Scent Tracker & Journal */
+        .journal-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .journal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+
+        /* SEC-08: Monthly Subscription Tier Matrix */
+        .sub-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .sub-card { background: var(--bg-card); border: 1.5px solid var(--border-line); padding: 36px 28px; border-radius: 4px; text-align: center; }
+        .sub-card.featured { border-color: var(--bg-dark); }
+
+        /* SEC-09: Discovery Kit & Trial Results */
+        .trial-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .trial-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-10: 1:1 Aromatherapist Consultation */
+        .counsel-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+
+        /* SEC-11: Mindfulness Sound Archive */
+        .sound-archive-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .sound-list-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .sound-item { background: var(--bg-soft-green); border: 1px solid var(--border-line); padding: 20px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* SEC-12: Master Footer */
+        footer.wellness-footer { padding: 80px 0; background: var(--bg-dark); color: #b7cfc2; font-size: 12px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 16px; font-family: var(--font-serif); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Mindfulness Audio Bar -->
+    <div class="top-audio-bar">
+        <div class="container top-audio-inner">
+            <div>🌿 동의보감 칠정(七情) 심신 치유 아로마 휠 · 432Hz 뇌파 안정 싱잉볼 명상</div>
+            <div style="display:flex; gap:16px;">
+                <span>▶ 432Hz 앰비언트 사운드 재생 중</span>
+                <span>|</span>
+                <span>호흡 주기: 4-4-6 동기화</span>
+                <span>|</span>
+                <span>1:1 테라피스트 문의</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Wellness Header -->
+    <header class="wellness-header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-emblem">
+                <div class="emblem-mark">調</div>
+                <div>
+                    <div class="brand-text">사단 칠정 심신치유 연구소</div>
+                    <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px;">SADAN 7-EMOTIONS WELLNESS LAB</div>
+                </div>
+            </a>
+            <nav class="wellness-nav">
+                <a href="#dial" class="active">360° 감정 휠</a>
+                <a href="#sound">싱잉볼 호흡</a>
+                <a href="#herbs">12종 한방 오일</a>
+                <a href="#ritual">숙면 나이트 킷</a>
+                <a href="#subscription">월간 웰니스 구독</a>
+            </nav>
+            <div>
+                <a href="#counsel" class="btn-wellness" style="padding:10px 20px; font-size:12px;">감정 진단 시작 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero Radial Mandala Viewport -->
+    <section id="hero" class="hero-mandala-section">
+        <div class="container">
+            <span class="section-tag">WELLNESS MASTER RYU HYUN-SEOK</span>
+            <h1 class="section-title" style="font-size:46px; margin: 12px 0 16px;">
+                마음의 파도를 잠재우는 침묵,<br>동의보감 칠정(七情) 맞춤 아로마 휠
+            </h1>
+            <p class="section-desc">
+                기쁨과 노여움, 불안과 피로로 흩어진 7가지 감정을 조선 한방 천연 에센셜 오일로 다스리고,<br>
+                432Hz 싱잉볼 공명음과 함께 깊은 숙면과 내면의 평온을 되찾으세요.
+            </p>
+
+            <div class="mandala-stage">
+                <div style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">[ 360° 칠정조식(七情調息) 만다라 인터랙티브 캔버스 ]</div>
+                <div style="font-size:13px; color:var(--text-muted); max-width:550px; line-height:1.8;">
+                    (喜: 기쁨) · (怒: 노여움) · (憂: 근심) · (思: 생각) · (悲: 슬픔) · (恐: 두려움) · (驚: 놀람)<br>
+                    마우스를 다이얼 위에 올려 현재 당신의 감정 궤적을 측정하세요.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: 360° Interactive 7-Emotions Diagnostic Dial -->
+    <section id="dial" class="dial-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. 360° EMOTION WHEEL</span>
+                <h2 class="section-title">360° 칠정(七情) 감정 자가진단 아로마 휠</h2>
+                <p class="section-desc">현재 당신을 가장 괴롭히는 감정 상태를 휠에서 선택하면 즉시 맞춤 한방 처방이 도출됩니다.</p>
+            </div>
+
+            <div class="dial-grid">
+                <div class="dial-circle-box">
+                    <strong style="font-size:18px; margin-bottom:10px;">[ 360° 원형 감정 회전 다이얼 회색 박스 ]</strong>
+                    <div style="font-size:12px; line-height:1.8;">
+                        · 분노/스트레스 ➔ 오대산 백단목 (신경 안정)<br>
+                        · 불안/초조 ➔ 제주 침향 (심신 평정)<br>
+                        · 우울/무기력 ➔ 강화 사자발쑥 (기운 회복)
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-soft-green); border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">PRESCRIPTION RESULT</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">처방: '심신평정(心身平靜)' 아로마 롤온</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">
+                        오대산 백단목 60% + 강화 사자발쑥 40%의 따뜻하고 묵직한 허브 우디가 교감신경을 안정시키고 맥박을 가라앉힙니다.
+                    </p>
+                    <a href="#ritual" class="btn-wellness" style="width:100%;">이 처방으로 롤온 세트 담기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 432Hz Sound Wave & 4-4-6 Breathing Canvas -->
+    <section id="sound" class="sound-section">
+        <div class="container">
+            <div class="sound-grid">
+                <div>
+                    <span class="section-tag">02. 432HZ ACOUSTIC RITUAL</span>
+                    <h2 class="section-title">432Hz 싱잉볼 사운드 &amp; 4-4-6 호흡 리추얼</h2>
+                    <p class="section-desc">
+                        사운드를 재생하고 화면의 원형 파동에 맞춰 4초 들이쉬고, 4초 멈추고, 6초 내쉬세요.
+                    </p>
+                    <div style="margin-top:24px;">
+                        <button class="btn-wellness" style="margin-right:10px;">▶ 싱잉볼 사운드 재생</button>
+                        <button class="btn-outline-green">⏸ 일시정지</button>
+                    </div>
+                </div>
+
+                <div class="wireframe-box" style="height:360px; background:#fff;">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 4-4-6 호흡 파동 원형 애니메이션 캔버스 ]</div>
+                    <div style="font-size:12px; color:var(--text-muted);">
+                        4초 팽창 (Inhale) ➔ 4초 유지 (Hold) ➔ 6초 수축 (Exhale)<br>
+                        뇌파 알파파(Alpha Wave 8~12Hz) 유도 공명
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 12 Oriental Medicinal Botanical Oils Matrix -->
+    <section id="herbs" class="herb-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. BOTANICAL PHARMACOPEIA</span>
+                <h2 class="section-title">조선 12종 한방 천연 에센셜 오일 도록</h2>
+                <p class="section-desc">동의보감 신형편에 근거하여 엄선된 100% 식물성 유기농 추출 원료입니다.</p>
+            </div>
+
+            <div class="herb-grid">
+                <div class="herb-card">
+                    <strong>01. 오대산 백단목</strong>
+                    <div style="font-size:12px; color:var(--text-muted); margin:6px 0;">Santalum Album</div>
+                    <div style="font-size:12px;">스트레스 완화 및 심신 진정</div>
+                </div>
+                <div class="herb-card">
+                    <strong>02. 제주 침향</strong>
+                    <div style="font-size:12px; color:var(--text-muted); margin:6px 0;">Aquilaria Agallocha</div>
+                    <div style="font-size:12px;">숙면 유도 및 불안감 해소</div>
+                </div>
+                <div class="herb-card">
+                    <strong>03. 강화 사자발쑥</strong>
+                    <div style="font-size:12px; color:var(--text-muted); margin:6px 0;">Artemisia Princeps</div>
+                    <div style="font-size:12px;">혈액순환 촉진 및 온기 회복</div>
+                </div>
+                <div class="herb-card">
+                    <strong>04. 지리산 천연 적송</strong>
+                    <div style="font-size:12px; color:var(--text-muted); margin:6px 0;">Pinus Densiflora</div>
+                    <div style="font-size:12px;">호흡기 정화 및 두뇌 명료화</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Night Sleep Care Ritual 3-Step Showcase -->
+    <section id="ritual" class="ritual-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. NIGHT WELLNESS SHOWCASE</span>
+                <h2 class="section-title">사단 숙면 &amp; 스트레스 케어 나이트 리추얼 킷</h2>
+                <p class="section-desc">잠들기 전 10분, 하루의 피로를 씻어내는 3단계 슬립 테라피 세트입니다.</p>
+            </div>
+
+            <div class="ritual-grid">
+                <div class="ritual-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:6px;">STEP 01</div>
+                    <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">놋쇠 마패 롤온 오일 (10ml)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">손목 맥박과 관자놀이에 부드럽게 롤링</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">38,000 KRW</div>
+                    <button class="btn-wellness" style="width:100%;">단품 주문</button>
+                </div>
+
+                <div class="ritual-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:6px;">STEP 02</div>
+                    <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">한방 필로우 미스트 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">베개와 침구에 2~3회 가볍게 분사</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">48,000 KRW</div>
+                    <button class="btn-wellness" style="width:100%;">단품 주문</button>
+                </div>
+
+                <div class="ritual-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:6px;">STEP 03</div>
+                    <h3 style="font-size:19px; font-weight:900; margin-bottom:8px;">나이트 리추얼 풀세트</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">롤온 + 미스트 + 천연 삼베 수면 안대</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">89,000 KRW</div>
+                    <button class="btn-wellness" style="width:100%;">풀세트 주문</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Circadian Scent Tracker & Journal -->
+    <section class="journal-section">
+        <div class="container">
+            <div class="journal-grid">
+                <div>
+                    <span class="section-tag">05. CIRCADIAN SCENT JOURNAL</span>
+                    <h2 class="section-title">24시간 생체 리듬 감정 다이어리</h2>
+                    <p class="section-desc">
+                        기상 직후, 업무 중, 취침 전 시간대별로 당신의 뇌파와 호흡을 기록하고 최적의 아로마 리추얼을 안내받으세요.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:240px; background:#fff;">
+                    <strong>[ 일간 감정 변화 그래프 &amp; 추천 아로마 타임테이블 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Monthly Subscription Tier Matrix -->
+    <section id="subscription" class="sub-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06. MONTHLY WELLNESS SUBSCRIPTION</span>
+                <h2 class="section-title">사단 월간 감정 치유 리필 정기구독 플랜</h2>
+                <p class="section-desc">매월 계절과 생체 리듬에 맞춘 맞춤 향기 카트리지와 마인드풀니스 일기를 정기 배송받으세요.</p>
+            </div>
+
+            <div class="sub-grid">
+                <div class="sub-card">
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">1개월 플랜 (스타터)</h3>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin:14px 0;">34,000 KRW / 월</div>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:20px;">매월 맞춤 롤온 카트리지 1종 배송</p>
+                    <button class="btn-outline-green" style="width:100%;">구독 신청</button>
+                </div>
+
+                <div class="sub-card featured">
+                    <span class="section-tag" style="color:var(--text-primary);">BEST RECOMMENDED</span>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">3개월 플랜 (리추얼)</h3>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin:14px 0;">28,900 KRW / 월 (15% DC)</div>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:20px;">롤온 + 필로우 미스트 + 432Hz 전용 음원</p>
+                    <button class="btn-wellness" style="width:100%;">15% 할인 구독</button>
+                </div>
+
+                <div class="sub-card">
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:8px;">12개월 플랜 (마스터)</h3>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin:14px 0;">24,500 KRW / 월 (28% DC)</div>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:20px;">풀세트 배송 + 1:1 테라피스트 분기 상담</p>
+                    <button class="btn-outline-green" style="width:100%;">구독 신청</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Discovery Kit & Trial Results -->
+    <section class="trial-section">
+        <div class="container">
+            <div class="trial-grid">
+                <div>
+                    <span class="section-tag">07. 100% REFUNDABLE STARTER</span>
+                    <h2 class="section-title">100% 환급 칠정 스타터 테이스팅 킷</h2>
+                    <p class="section-desc">
+                        7가지 감정별 한방 아로마 샘플을 7일간 먼저 체험해 보세요. 본품 또는 정기구독 시 결제 금액 100%를 즉시 차감해 드립니다.
+                    </p>
+                </div>
+                <div style="text-align:right;">
+                    <button class="btn-wellness" style="padding:16px 36px;">스타터 킷 19,000원 신청 &gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: 1:1 Aromatherapist Consultation -->
+    <section id="counsel" class="counsel-section">
+        <div class="container">
+            <span class="section-tag">08. 1:1 PRIVATE THERAPY</span>
+            <h2 class="section-title">수석 아로마테라피스트 류현석 1:1 비대면 감정 코칭</h2>
+            <p class="section-desc">수면 장애와 번아웃으로 힘든 현대인을 위한 30분 1:1 심신 치유 맞춤 컨설팅 세션입니다.</p>
+            <div style="margin-top:30px;">
+                <button class="btn-wellness" style="padding:16px 40px; font-size:14px;">1:1 코칭 예약하기 &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Mindfulness Sound Archive -->
+    <section class="sound-archive-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">09. SOUNDSCAPE ARCHIVE</span>
+                <h2 class="section-title">조선 자연 앰비언트 사운드스케이프 라이브러리</h2>
+            </div>
+            <div class="sound-list-grid">
+                <div class="sound-item">
+                    <span>🌧️ 비 내리는 한옥 처마 물소리</span>
+                    <button class="btn-wellness" style="padding:6px 12px; font-size:11px;">재생</button>
+                </div>
+                <div class="sound-item">
+                    <span>🌲 오대산 전나무 숲 바람소리</span>
+                    <button class="btn-wellness" style="padding:6px 12px; font-size:11px;">재생</button>
+                </div>
+                <div class="sound-item">
+                    <span>🔔 경주 남산 풍경소리 &amp; 싱잉볼</span>
+                    <button class="btn-wellness" style="padding:6px 12px; font-size:11px;">재생</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: Master Footer -->
+    <footer class="wellness-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">士團 칠정 심신치유 연구소</div>
+                    <p style="line-height:1.8;">
+                        동의보감 칠정조식과 432Hz 싱잉볼 공명, 마음을 치유하는 조선 아로마테라피.<br>
+                        서울시 종로구 옥인동 47 사단 웰니스 살롱<br>
+                        연구소장: 류현석 · 고객센터: 02-733-2910
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">치유 프로그램</div>
+                    <p style="line-height:2;">
+                        · 360° 감정 휠 진단<br>
+                        · 432Hz 싱잉볼 호흡<br>
+                        · 12종 한방 오일 도록<br>
+                        · 나이트 슬립 리추얼
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">구독 및 멤버십</div>
+                    <p style="line-height:2;">
+                        · 월간 맞춤 리필 구독<br>
+                        · 100% 환급 스타터 킷<br>
+                        · 1:1 테라피스트 코칭<br>
+                        · 생체 리듬 다이어리
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">학술 및 인증</div>
+                    <p style="line-height:2;">
+                        · 동의보감 신형편 고증<br>
+                        · EWG 올그린 전성분<br>
+                        · 피부 저자극 임상 완료<br>
+                        · IFRA 안전 인증서
+                    </p>
+                </div>
+            </div>
+            <div style="border-top:1px solid #1b3327; padding-top:24px; text-align:center; color:#5e796b;">
+                © 2026 SADAN 7-Emotions Wellness Healing Lab. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

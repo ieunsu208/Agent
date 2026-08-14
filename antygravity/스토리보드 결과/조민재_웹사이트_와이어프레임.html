@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — [조민재 마스터] 조선 야행(夜行) 스모키 인센스 &amp; 칵테일 페어링 바 스토리보드 와이어프레임</title>
+    <style>
+        :root {
+            --bg-base: #0a0b10;
+            --bg-card: #13151f;
+            --bg-surface: #1d202d;
+            --accent-amber: #f59e0b;
+            --accent-amber-light: #fef3c7;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-line: #2b2f42;
+            --border-dark: #3a3f58;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-amber); border-bottom: 1px solid var(--accent-amber); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.35; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-muted); max-width: 720px; margin: 0 auto; word-break: keep-all; }
+
+        .btn-bar { background: var(--accent-amber); color: #000000; padding: 14px 32px; border-radius: 2px; font-weight: 900; font-size: 13px; display: inline-block; text-decoration: none; cursor: pointer; text-align: center; border: none; }
+        .btn-outline-amber { background: transparent; color: var(--accent-amber); padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-line); cursor: pointer; text-align: center; }
+
+        .wireframe-box { background: var(--bg-surface); border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 24px; }
+
+        /* SEC-01: Top Speakeasy Bar */
+        .top-speakeasy-bar { background: #000000; color: var(--accent-amber-light); font-size: 11px; padding: 8px 0; border-bottom: 1px solid var(--border-line); }
+        .top-speakeasy-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Sticky Midnight Header */
+        header.midnight-header { position: sticky; top: 0; background: rgba(10, 11, 16, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-line); z-index: 1000; padding: 16px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .brand-emblem { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+        .emblem-mark { width: 38px; height: 38px; border: 1.5px solid var(--accent-amber); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: var(--accent-amber); font-family: var(--font-serif); }
+        .brand-text { font-size: 16px; font-weight: 900; letter-spacing: -0.5px; font-family: var(--font-serif); }
+        .midnight-nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
+        .midnight-nav a { text-decoration: none; color: var(--text-muted); }
+        .midnight-nav a.active { color: var(--accent-amber); border-bottom: 2px solid var(--accent-amber); padding-bottom: 2px; }
+
+        /* SEC-02: Hero Midnight Asymmetric Bar Viewport */
+        .hero-midnight-section { padding: 90px 0 100px; border-bottom: 1px solid var(--border-line); background: radial-gradient(circle at 50% 20%, #1f2335 0%, var(--bg-base) 80%); text-align: center; }
+        .hero-bar-stage { max-width: 1080px; margin: 40px auto 0; height: 480px; background: var(--bg-card); border: 2px solid var(--border-line); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 16px 40px rgba(0,0,0,0.6); }
+
+        /* SEC-03: Midnight Cocktail & Smoked Perfume Pairing Console */
+        .pair-console-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .pair-card { background: var(--bg-surface); border: 1px solid var(--border-line); padding: 32px; border-radius: 4px; }
+
+        /* SEC-04: 360° Heavy Brass Incense Burner 3D Particle Stage */
+        .burner-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .burner-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+        .burner-3d-box { height: 440px; background: var(--bg-card); border: 2px dashed var(--border-line); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; }
+
+        /* SEC-05: 3 Deep Midnight Smoky Perfumes */
+        .smoky-perfume-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .smoky-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .smoky-card { background: var(--bg-surface); border: 1px solid var(--border-line); padding: 32px 24px; border-radius: 4px; text-align: center; }
+
+        /* SEC-06: Damyang Bamboo Charcoal Incense Tube */
+        .bamboo-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .bamboo-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-07: Matte Black Lacquer Master Gift Box */
+        .lacquer-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .lacquer-stage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 45px; align-items: center; }
+
+        /* SEC-08: Secret Speakeasy Keypad Code Lock UI */
+        .keypad-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+        .keypad-box { max-width: 480px; margin: 30px auto; background: var(--bg-card); border: 1px solid var(--border-line); padding: 36px; border-radius: 6px; }
+        .pin-display { font-size: 28px; font-family: var(--font-mono); letter-spacing: 8px; color: var(--accent-amber); background: #000; padding: 14px; margin-bottom: 20px; border-radius: 4px; }
+
+        /* SEC-09: VIP Midnight Black Card */
+        .black-card-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .black-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+
+        /* SEC-10: 100% Refundable Discovery Box */
+        .discovery-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+
+        /* SEC-11: Mixologist Menu & Story */
+        .mixology-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .mixology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+
+        /* SEC-12: Master Footer */
+        footer.midnight-footer { padding: 80px 0; background: #000000; color: #64748b; font-size: 12px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 16px; font-family: var(--font-serif); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Speakeasy Bar -->
+    <div class="top-speakeasy-bar">
+        <div class="container top-speakeasy-inner">
+            <div>🥃 성수 비밀 심야 바 (22:00 ~ 02:00) 오픈 · 암호 코드 소지자 전용 입장</div>
+            <div style="display:flex; gap:16px;">
+                <span>오늘의 시그니처 칵테일: 훈증 하이볼</span>
+                <span>|</span>
+                <span>비밀 암행 패스 발급 중</span>
+                <span>|</span>
+                <span>VIP 라운지</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Midnight Header -->
+    <header class="midnight-header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-emblem">
+                <div class="emblem-mark">夜</div>
+                <div>
+                    <div class="brand-text">사단 조선 야행 스모키 바 &amp; 아틀리에</div>
+                    <div style="font-size:10px; color:var(--accent-amber); letter-spacing:1px;">SADAN MIDNIGHT SMOKY ATELIER</div>
+                </div>
+            </a>
+            <nav class="midnight-nav">
+                <a href="#pairing" class="active">칵테일 페어링 바</a>
+                <a href="#burner">놋쇠 인센스 홀더</a>
+                <a href="#smoky">3대 스모키 향수</a>
+                <a href="#lacquer">옻칠 기프트 팩</a>
+                <a href="#keypad">비밀 암행 코드</a>
+            </nav>
+            <div>
+                <a href="#keypad" class="btn-bar" style="padding:10px 20px; font-size:12px;">심야 바 예약 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero Midnight Asymmetric Bar Viewport -->
+    <section id="hero" class="hero-midnight-section">
+        <div class="container">
+            <span class="section-tag">MIDNIGHT MIXOLOGIST CHO MIN-JAE</span>
+            <h1 class="section-title" style="font-size:46px; margin: 12px 0 16px;">
+                어둠이 짙어질 때 피어나는 관능,<br>조선 야행(夜行) 딥 스모키 인센스 &amp; 향수
+            </h1>
+            <p class="section-desc">
+                순라군이 순찰하던 조선의 깊은 밤, 훈증 숯과 묵향, 딥 레더가 완성하는 강렬한 스모키 아로마.<br>
+                성수동 비밀 심야 바에서 전통주 칵테일과 놋쇠 인센스 페어링을 경험하세요.
+            </p>
+
+            <div class="hero-bar-stage">
+                <div style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px; color:var(--accent-amber);">
+                    [ 달빛 아래 심야 한옥 바 &amp; 놋쇠 인센스 3D 연기 파티클 뷰포트 ]
+                </div>
+                <div style="font-size:13px; color:var(--text-muted); max-width:600px; line-height:1.8;">
+                    스모키 오일 농도 조절 시 잔향 그래프와 파티클 연기 모션이 실시간 동기화됩니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: Midnight Cocktail & Smoked Perfume Pairing Console -->
+    <section id="pairing" class="pair-console-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. MIDNIGHT SENSORY PAIRING</span>
+                <h2 class="section-title">전통주 칵테일 &amp; 스모키 향수 공감각 페어링 콘솔</h2>
+                <p class="section-desc">입안 가득 퍼지는 스모키 칵테일의 풍미와 코끝을 스치는 딥 우디의 조화입니다.</p>
+            </div>
+
+            <div class="pair-grid">
+                <div class="pair-card">
+                    <span class="section-tag">PAIRING #01</span>
+                    <h3 style="font-size:22px; font-weight:900; margin:8px 0; color:var(--accent-amber);">조선 훈증 하이볼 x 훈증 숯 향수</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+                        문경 사과 증류주와 참나무 훈연칩의 쌉싸름한 타바코 잔향
+                    </p>
+                    <div style="background:#000; padding:12px; font-size:12px; color:var(--accent-amber); font-weight:800; border-radius:4px;">
+                        스모키 강도: ★★★★★ (하드 훈증)
+                    </div>
+                </div>
+
+                <div class="pair-card">
+                    <span class="section-tag">PAIRING #02</span>
+                    <h3 style="font-size:22px; font-weight:900; margin:8px 0; color:var(--accent-amber);">복분자 올드패션드 x 흑단목 레더</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+                        고창 복분자의 묵직한 당도와 오대산 흑단목의 가죽 질감
+                    </p>
+                    <div style="background:#000; padding:12px; font-size:12px; color:var(--accent-amber); font-weight:800; border-radius:4px;">
+                        스모키 강도: ★★★★☆ (스위트 레더)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: 360° Heavy Brass Incense Burner 3D Particle Stage -->
+    <section id="burner" class="burner-section">
+        <div class="container">
+            <div class="burner-grid">
+                <div class="burner-3d-box">
+                    <strong style="font-size:18px; color:var(--accent-amber); margin-bottom:10px;">[ 360° 놋쇠 마패 인센스 연기 피어오름 회색 박스 ]</strong>
+                    <div style="font-size:12px; color:var(--text-muted);">
+                        450g 황동 합금 주조 / 마우스 360° 회전 및 실시간 연기 시뮬레이션
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-card); border:1px solid var(--border-line); padding:36px; border-radius:4px;">
+                    <span class="section-tag">OBJECT SPECIFICATION</span>
+                    <h3 style="font-size:24px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">암행어사 황동 인센스 트레이</h3>
+                    <p style="font-size:14px; color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+                        묵직한 놋쇠 마패 문양이 각인되어 인센스 스틱이 연소될 때 재가 흩날리지 않도록 설계된 하이엔드 오브제입니다.
+                    </p>
+                    <a href="#lacquer" class="btn-bar" style="width:100%;">옻칠 풀패키지로 보기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: 3 Deep Midnight Smoky Perfumes -->
+    <section id="smoky" class="smoky-perfume-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 3 DEEP SMOKY PERFUMES</span>
+                <h2 class="section-title">조선 야행 3대 딥 스모키 향수 컬렉션</h2>
+                <p class="section-desc">관능적이고 강렬한 밤의 서사를 완성하는 50ml 니치 오 드 퍼퓸입니다.</p>
+            </div>
+
+            <div class="smoky-grid">
+                <div class="smoky-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-amber); margin-bottom:6px;">NIGHT RECORD #01</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">훈증 숯 &amp; 타바코 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">불꽃이 사그라든 뒤 남은 묵직한 잔향</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--accent-amber); margin-bottom:20px;">118,000 KRW</div>
+                    <button class="btn-bar" style="width:100%;">단품 주문</button>
+                </div>
+
+                <div class="smoky-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-amber); margin-bottom:6px;">NIGHT RECORD #02</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">흑단목 &amp; 에이징 레더 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">순라군의 가죽 칼집과 마른 나무의 묵직함</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--accent-amber); margin-bottom:20px;">118,000 KRW</div>
+                    <button class="btn-bar" style="width:100%;">단품 주문</button>
+                </div>
+
+                <div class="smoky-card">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-amber); margin-bottom:6px;">NIGHT RECORD #03</div>
+                    <h3 style="font-size:20px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">달빛 침향 &amp; 묵향 (50ml)</h3>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">서늘한 밤공기 속에 피어오르는 침향의 고요</p>
+                    <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--accent-amber); margin-bottom:20px;">118,000 KRW</div>
+                    <button class="btn-bar" style="width:100%;">단품 주문</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Damyang Bamboo Charcoal Incense Tube -->
+    <section class="bamboo-section">
+        <div class="container">
+            <div class="bamboo-grid">
+                <div>
+                    <span class="section-tag">03. DAMYANG BAMBOO INCENSE</span>
+                    <h2 class="section-title">담양 대나무 죽탄 수제 인센스 스틱 (30개입)</h2>
+                    <p class="section-desc">
+                        100% 천연 대나무 숯가루와 한방 향약을 배합하여 그을음 없이 깨끗하고 맑은 훈향을 선사합니다.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:260px; background:var(--bg-card);">
+                    <strong>[ 블랙 알루미늄 지관통 &amp; 죽탄 인센스 스틱 30ea 3D 렌더링 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Matte Black Lacquer Master Gift Box -->
+    <section id="lacquer" class="lacquer-section">
+        <div class="container">
+            <div class="lacquer-stage">
+                <div class="wireframe-box" style="height:400px; background:var(--bg-surface);">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif); color:var(--accent-amber);">
+                        [ 매트 블랙 옻칠 보관함 &amp; 놋쇠 홀더 풀패키지 회색 박스 ]
+                    </div>
+                    <div style="font-size:12px;">스모키 향수 50ml + 놋쇠 마패 홀더 + 인센스 30ea + 옻칠 박스</div>
+                </div>
+
+                <div>
+                    <span class="section-tag">MASTER NIGHT EDITION</span>
+                    <h3 style="font-size:28px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">조선 야행 미드나잇 마스터 세트</h3>
+                    <p style="font-size:14px; color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+                        스모키 향수 50ml + 놋쇠 마패 홀더 + 담양 죽탄 인센스 30ea + 옻칠 박스 + 성수 비밀 바 VIP 웰컴 드링크 패스
+                    </p>
+                    <div style="font-size:28px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px; color:var(--accent-amber);">218,000 KRW</div>
+                    <button class="btn-bar" style="width:100%; text-align:center;">미드나잇 세트 주문하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Secret Speakeasy Keypad Code Lock UI -->
+    <section id="keypad" class="keypad-section">
+        <div class="container">
+            <span class="section-tag">04. SECRET BAR ACCESS CODE</span>
+            <h2 class="section-title">성수 비밀 심야 바(22:00~02:00) 예약 &amp; 암호 발급</h2>
+            <p class="section-desc">간판 없는 성수동 비밀 한옥 바. 예약 완료 시 도어락을 열 수 있는 1회용 암호 코드가 발급됩니다.</p>
+
+            <div class="keypad-box">
+                <div class="pin-display">PIN: • • • •</div>
+                <div style="margin-bottom:16px;">
+                    <input type="date" value="2026-08-20" style="width:100%; padding:12px; background:#000; border:1px solid var(--border-line); color:#fff;">
+                </div>
+                <button class="btn-bar" style="width:100%;">심야 세션 예약 &amp; 암호 발급</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: VIP Midnight Black Card -->
+    <section class="black-card-section">
+        <div class="container">
+            <div class="black-card-grid">
+                <div>
+                    <span class="section-tag">05. VIP BLACK MEMBERSHIP</span>
+                    <h2 class="section-title">사단 야행 VIP 블랙 멤버십</h2>
+                    <p class="section-desc">
+                        연간 4회 계절별 스모키 인센스 리필 팟 자동 배송 및 심야 바 우선 예약 혜택을 제공합니다.
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:240px; background:#000;">
+                    <strong style="color:var(--accent-amber);">[ 메탈 블랙 VIP 멤버십 카드 3D 렌더링 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: 100% Refundable Discovery Box -->
+    <section class="discovery-section">
+        <div class="container">
+            <span class="section-tag">06. 100% REFUNDABLE DISCOVERY</span>
+            <h2 class="section-title">미드나잇 스모키 3종 테이스팅 샘플러</h2>
+            <p class="section-desc">3가지 스모키 향수를 먼저 시향해 보세요. 본품 구매 시 100% 전액 환급 쿠폰을 지급합니다.</p>
+            <div style="margin-top:24px;">
+                <button class="btn-bar" style="padding:16px 36px;">디스커버리 킷 22,000원 신청 &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Mixologist Menu & Story -->
+    <section class="mixology-section">
+        <div class="container">
+            <div class="mixology-grid">
+                <div>
+                    <span class="section-tag">07. HEAD MIXOLOGIST STORY</span>
+                    <h2 class="section-title">마스터 조민재의 스모키 믹솔로지 철학</h2>
+                    <p class="section-desc">
+                        "향수와 칵테일은 모두 시간의 흐름에 따라 변화하는 예술입니다. 코와 입으로 동시에 완성되는 어둠의 미학을 경험해 보세요."
+                    </p>
+                </div>
+                <div class="wireframe-box" style="height:260px; background:var(--bg-surface);">
+                    <strong>[ 바텐더 조주 시연 &amp; 훈연기 연기 추출 영상 뷰어 ]</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: Master Footer -->
+    <footer class="midnight-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">士團 조선 야행 스모키 바 &amp; 아틀리에</div>
+                    <p style="line-height:1.8;">
+                        달빛 아래 펼쳐지는 조선 야행 오리엔탈 스모키 인센스 &amp; 심야 바 살롱.<br>
+                        서울시 성동구 아차산로 103 지하 1층 사단 야행<br>
+                        마스터 믹솔로지스트: 조민재 · 비밀 예약 전용
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">나이트 컬렉션</div>
+                    <p style="line-height:2;">
+                        · 훈증 숯 &amp; 타바코<br>
+                        · 흑단목 &amp; 에이징 레더<br>
+                        · 달빛 침향 &amp; 묵향<br>
+                        · 놋쇠 마패 인센스 트레이
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">심야 바 예약</div>
+                    <p style="line-height:2;">
+                        · 심야 세션 시간표<br>
+                        · 암호 코드 발급 조회<br>
+                        · VIP 블랙 멤버십<br>
+                        · 칵테일 페어링 메뉴
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">고객 지원</div>
+                    <p style="line-height:2;">
+                        · 죽탄 인센스 안심 배송<br>
+                        · 100% 환급 샘플러 규정<br>
+                        · 기업 단체 대관 문의<br>
+                        · 도어락 암호 재발급
+                    </p>
+                </div>
+            </div>
+            <div style="border-top:1px solid #1e212d; padding-top:24px; text-align:center; color:#475569;">
+                © 2026 SADAN Midnight Smoky Lab. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

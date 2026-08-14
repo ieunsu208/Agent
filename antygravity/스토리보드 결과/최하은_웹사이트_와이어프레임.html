@@ -3,286 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[최하은 PM] 사단(士團) AI 조향 &amp; 3D 각인 메인페이지 통합 롱 스크롤 와이어프레임</title>
+    <title>사단(士團) — [최하은 PM] AI 향 취향 진단 &amp; 3D 레이저 각인 조향 와이어프레임</title>
     <style>
         :root {
-            --bg-body: #f8f9fa;
-            --bg-card: #ffffff;
-            --bg-dark: #1e293b;
-            --bg-gray-light: #f1f5f9;
-            --bg-gray-mid: #e2e8f0;
-            --bg-gray-dark: #cbd5e1;
-            --border-color: #94a3b8;
-            --text-dark: #0f172a;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 25px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 12px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; }
 
-        /* SEC-01: Header */
-        header { background: #ffffff; border: 2px solid var(--border-color); padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .logo-box { display: flex; align-items: center; gap: 14px; }
-        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 10px 16px; font-weight: 900; font-size: 18px; border-radius: 6px; }
-        .logo-title { font-size: 20px; font-weight: 900; }
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 15px 34px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; }
+        .btn-secondary { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: 1.5px solid var(--border-mid); letter-spacing: 0.5px; cursor: default; }
 
-        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 14px 24px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; position: sticky; top: 10px; z-index: 100; }
-        nav span { padding: 8px 16px; border-radius: 6px; background: var(--bg-gray-mid); cursor: pointer; }
-        nav span.active { background: var(--bg-dark); color: #ffffff; }
+        /* Top Bar */
+        .top-utility-bar { background: var(--bg-dark); color: #ffffff; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; }
 
-        /* SEC-02: Hero Section */
-        .hero-box { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 12px; padding: 45px; text-align: center; margin-bottom: 30px; }
-        .hero-title { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
-        .hero-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 25px; }
-        .hero-grey-placeholder { background: var(--bg-gray-dark); height: 220px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: #334155; font-size: 16px; margin-bottom: 20px; }
+        /* GNB */
+        header.gnb-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-logo { display: flex; align-items: center; gap: 12px; }
+        .gnb-logo-mark { background: var(--bg-dark); color: #ffffff; width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; }
+        .gnb-logo-text { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; }
+        .gnb-nav { display: flex; gap: 28px; font-size: 14px; font-weight: 800; }
+        .gnb-nav a { text-decoration: none; color: var(--text-secondary); }
+        .gnb-nav a.active { color: var(--text-primary); }
 
-        /* SEC-03: Product Showcase Section (Main Feature) */
-        .showcase-container { background: #ffffff; border: 3px solid var(--bg-dark); border-radius: 14px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .showcase-header { font-size: 22px; font-weight: 900; border-bottom: 3px solid var(--bg-dark); padding-bottom: 12px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .showcase-badge { background: var(--bg-dark); color: #ffffff; padding: 6px 14px; font-size: 12px; border-radius: 20px; }
+        /* Hero */
+        .hero-section { padding: 110px 0 90px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 70%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-gray-200); padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-title { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 740px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-canvas-frame { max-width: 1000px; margin: 0 auto; height: 380px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 15px; font-weight: 700; }
 
-        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .product-card { background: var(--bg-gray-light); border: 2px solid var(--border-color); border-radius: 10px; padding: 22px; text-align: center; }
-        .product-img-box { background: var(--bg-gray-dark); border: 1px dashed var(--border-color); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #1e293b; margin-bottom: 15px; font-size: 14px; text-align: center; padding: 10px; }
+        /* SEC-03: AI Scent Quiz Stage */
+        .quiz-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .quiz-card-box { background: var(--bg-light); border: 1px solid var(--border-mid); border-radius: 12px; padding: 45px; }
+        .quiz-progress-bar { height: 8px; background: var(--bg-gray-200); border-radius: 4px; margin-bottom: 30px; }
+        .quiz-progress-fill { width: 60%; height: 100%; background: var(--bg-dark); border-radius: 4px; }
+        .quiz-question-title { font-size: 24px; font-weight: 900; margin-bottom: 24px; }
+        .quiz-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 35px; }
+        .quiz-opt-btn { background: var(--bg-white); border: 1.5px solid var(--border-mid); border-radius: 8px; padding: 20px; font-size: 15px; font-weight: 800; text-align: left; }
+        .quiz-opt-btn.selected { border-color: var(--bg-dark); background: var(--bg-dark); color: #ffffff; }
 
-        /* SEC-04: 3D Engraving Dual Split */
-        .dual-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 30px; margin-bottom: 30px; }
-        .viewport-3d-left { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 10px; padding: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 380px; text-align: center; font-weight: 900; }
+        /* SEC-04: Scent Pyramid Balancer Stage */
+        .pyramid-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .pyramid-stage { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+        .pyramid-visual { height: 400px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
+        .pyramid-controls { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 36px; }
+        .pyramid-row { margin-bottom: 20px; }
+        .pyramid-label-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+        .pyramid-track { height: 10px; background: var(--bg-gray-200); border-radius: 5px; }
+        .pyramid-fill { height: 100%; background: var(--bg-dark); border-radius: 5px; }
 
-        /* SEC-05: Bento Note Mixer */
-        .bento-section { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 30px; margin-bottom: 30px; }
-        .bento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .bento-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+        /* SEC-05: 3D Laser Engraving Stage */
+        .engrave-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .engrave-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        .engrave-viewer { height: 420px; background: var(--bg-gray-200); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
 
-        /* SEC-06: Safety Accordion */
-        .accordion-section { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 30px; }
-        .accordion-item { background: var(--bg-gray-light); border: 1px solid var(--border-color); padding: 15px 20px; border-radius: 8px; margin-bottom: 12px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+        /* SEC-06: Eco-Refill Subscription */
+        .refill-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .refill-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+        .refill-card { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 32px 24px; text-align: center; }
+        .refill-tag { font-size: 11px; font-weight: 800; color: var(--text-muted); margin-bottom: 8px; }
+        .refill-title { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+        .refill-price { font-size: 22px; font-weight: 900; font-family: var(--font-mono); margin-bottom: 16px; }
 
-        /* SEC-07: Eco Subscription Bottom Sheet Section */
-        .eco-section { background: var(--bg-dark); color: #ffffff; border-radius: 14px; padding: 30px; margin-bottom: 30px; }
-        .eco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .eco-card { background: #334155; border: 1px solid #475569; padding: 20px; border-radius: 8px; }
-
-        /* Shared Buttons & Form Elements */
-        .btn-grey { background: var(--bg-gray-mid); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: 6px; font-weight: 800; cursor: pointer; }
-        .btn-dark { background: var(--bg-dark); color: #ffffff; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 900; cursor: pointer; }
-        .btn-light { background: #ffffff; color: var(--text-dark); border: none; padding: 12px 24px; border-radius: 6px; font-weight: 900; cursor: pointer; }
-
-        footer { background: var(--bg-dark); color: #94a3b8; padding: 35px; border-radius: 12px; font-size: 13px; text-align: center; margin-top: 40px; }
+        /* Footer */
+        footer.lab-footer { padding: 70px 0; background: var(--bg-dark); color: #94a3b8; font-size: 13px; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; font-weight: 700; }
+        .footer-links a { color: #cbd5e1; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <!-- SEC-01: Top Banner Bar -->
-    <div class="top-bar">
-        [사단(士團) 통합 롱 스크롤 스토리보드] 최하은 PM - AI 조향 LAB &amp; 3D 실시간 마패 용기 레이저 각인 메인 종합 화면 (P-MAIN-01)
+    <div class="top-utility-bar">
+        🏛️ SADAN AI LAB — [최하은 PM] AI 향 취향 진단 &amp; 3D 레이저 각인 조향 연구소
     </div>
 
-    <!-- SEC-01: Header -->
-    <header>
-        <div class="logo-box">
-            <div class="logo-badge">士團</div>
-            <div>
-                <div class="logo-title">사단(SADAN) 커스텀 조향 LAB</div>
-                <div style="font-size: 12px; color: var(--text-muted);">최하은 PM - 8대 풀 섹션 메인페이지 시각적 회색 박스 와이어프레임</div>
+    <!-- GNB Header -->
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <div class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div class="gnb-logo-text">SADAN AI SCENT LAB</div>
             </div>
-        </div>
-        <div>
-            <button class="btn-grey">AI 진단 레시피함</button>
-            <button class="btn-dark">Quick Cart (0)</button>
+            <nav class="gnb-nav">
+                <a href="#hero" class="active">AI 진단</a>
+                <a href="#quiz">취향 퀴즈</a>
+                <a href="#pyramid">노트 밸런서</a>
+                <a href="#engrave">3D 레이저 각인</a>
+                <a href="#refill">친환경 리필구독</a>
+            </nav>
+            <div class="gnb-actions">
+                <div class="btn-primary" style="padding:8px 16px; font-size:12px;">AI 진단 시작 &gt;</div>
+            </div>
         </div>
     </header>
 
-    <!-- SEC-01: Navigation Sticky Bar -->
-    <nav>
-        <span class="active">1.0 AI Scent Finder</span>
-        <span>2.0 Product Showcase</span>
-        <span>3.0 3D Engraving Studio</span>
-        <span>4.0 Custom Note Mixer</span>
-        <span>5.0 Ingredient Safety</span>
-        <span>6.0 Eco Subscription</span>
-    </nav>
-
-    <!-- SEC-02: 3D Visual Hero Section -->
-    <div class="hero-box">
-        <div class="hero-title">"마패가 울리면, 당신만의 시그니처 향이 피어오른다"</div>
-        <div class="hero-sub">조선 암행어사 비밀 레시피 알고리즘 기반 AI 5문항 취향 진단 &amp; 3D 실시간 용기 레이저 각인 자사몰</div>
-        <div class="hero-grey-placeholder">
-            [ 4K 어사 마패 비주얼 3D 모션 비디오 루프 배경 회색 박스 영역 ]<br>
-            - K-HERITAGE AROMA CUSTOMIZATION LAB
-        </div>
-        <button class="btn-dark" style="font-size: 16px; padding: 14px 32px;">⚡ AI 3초 취향 진단 퀴즈 시작하기 (Primary CTA)</button>
-    </div>
-
-    <!-- ★ SEC-03: [필수] 메인 제품 전시 쇼케이스 섹션 (Product Showcase Section) -->
-    <div class="showcase-container">
-        <div class="showcase-header">
-            <div>🎁 [최하은 PM 대표 실물 제품 전시] 무형문화재 놋쇠 마패 3D 용기 각인 &amp; AI 퍼스널 조향 믹싱 세트</div>
-            <div class="showcase-badge">Main Product Showcase</div>
-        </div>
-
-        <div class="product-grid">
-            <!-- Product Card 1 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    [ 놋쇠 마패 3D 회색 박스 ]<br>
-                    훈민정음 한자 "一片丹心"<br>
-                    3D 레이저 각인 용기 50ml
-                </div>
-                <div style="font-weight:900; font-size:16px; margin-bottom:6px;">1. 3D 마패 용기 각인 세트</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">훈민정음 한자/서예 한글 서체 실시간 3D 음각 레이저 투영 놋쇠 용기</div>
-                <button class="btn-dark" style="width:100%;">3D 각인 스튜디오 체험하기</button>
+    <!-- SEC-02: Hero Stage -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-badge">
+                <span>AI MATCHING ENGINE</span>
+                <span>·</span>
+                <span>PM CHOI HA-EUN</span>
             </div>
-
-            <!-- Product Card 2 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    [ 커스텀 조향 믹싱 키트 ]<br>
-                    Top/Middle/Base 3단 스펙트럼<br>
-                    조향 밸런서 키트 세트
-                </div>
-                <div style="font-weight:900; font-size:16px; margin-bottom:6px;">2. AI 퍼스널 향 노트 믹싱 키트</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Top(풋사과), Mid(조선 먹향), Base(놋쇠 앰버) 믹싱 밸런서 포뮬러</div>
-                <button class="btn-grey" style="width:100%;">향 노트 믹싱 랩 이동</button>
-            </div>
-
-            <!-- Product Card 3 -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    [ Digital QR 레시피 카드 ]<br>
-                    Digital QR 보증서 &amp;<br>
-                    비단 보자기 포장 패키지
-                </div>
-                <div style="font-weight:900; font-size:16px; margin-bottom:6px;">3. 어사 비밀 레시피 보증서 세트</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">나만의 향 레시피 넘버 발급 + 고급 옥색 비단 보자기 포장 옵션</div>
-                <button class="btn-grey" style="width:100%;">디지털 보증서 샘플 보기</button>
+            <h1 class="hero-title">
+                당신의 취향을 데이터로 분석하여<br>가장 완벽한 마패 향수를 처방합니다
+            </h1>
+            <p class="hero-subtitle">
+                5가지 라이프스타일 문답으로 나만의 조선 암행어사 마패 향조를 추천받고,<br>
+                3D 실시간 레이저 각인으로 나만의 보틀을 완성하세요.
+            </p>
+            <div class="hero-canvas-frame">
+                <div style="font-size:18px; font-weight:900; color:#334155; margin-bottom:8px;">[ AI 조향 매칭 알고리즘 3D 뇌파/감성 맵 렌더링 회색 박스 ]</div>
+                <div style="font-size:13px; color:#64748b;">5문항 취향 분석 벡터와 1·2·3마패 최적 조향 배합비 실시간 연산</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- SEC-04: 3D Engraving Studio Dual Split -->
-    <div class="dual-container">
-        <div class="viewport-3d-left">
-            [ 360도 3D 마패 용기 회색 UI 뷰포트 ]<br><br>
-            실시간 텍스처 투영: "一片丹心 (일편단심)"<br><br>
-            <div style="display:flex; gap:8px;">
-                <button class="btn-grey" style="font-size:11px;">3D 줌인</button>
-                <button class="btn-grey" style="font-size:11px;">2D 대체 스위치</button>
-                <button class="btn-grey" style="font-size:11px;">각인 캡처 저장</button>
+    <!-- SEC-03: AI Scent Quiz Stage -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. AI SCENT QUIZ</span>
+                <h2 class="section-title">5단계 AI 취향 진단 인터랙티브 퀴즈</h2>
+                <p class="section-desc">평소 선호하는 공간의 분위기와 하루 중 가장 집중하고 싶은 순간을 선택해 주세요.</p>
             </div>
-        </div>
 
-        <div>
-            <div style="font-size:18px; font-weight:900; margin-bottom:15px; border-bottom:2px solid var(--bg-gray-mid); padding-bottom:8px;">
-                🎨 3D 실시간 마패 용기 각인 커스터마이징 툴
-            </div>
-            
-            <div style="margin-bottom:15px;">
-                <div style="font-weight:800; font-size:13px; margin-bottom:6px;">1. 각인 서체 선택:</div>
-                <div style="display:flex; gap:8px;">
-                    <button class="btn-dark" style="flex:1; font-size:12px;">(o) 훈민정음 한자 서체</button>
-                    <button class="btn-grey" style="flex:1; font-size:12px;">( ) 서예 한글 붓글씨</button>
+            <div class="quiz-card-box">
+                <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
+                <div style="font-size:13px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">QUESTION 03 / 05</div>
+                <h3 class="quiz-question-title">당신이 가장 온전하게 휴식을 느끼는 자연의 공간은 어디인가요?</h3>
+                
+                <div class="quiz-options-grid">
+                    <div class="quiz-opt-btn selected">A. 이슬 맺힌 새벽 오대산 숲길의 정갈한 나무 냄새 (Woody)</div>
+                    <div class="quiz-opt-btn">B. 햇살 가득한 지리산 소나무 숲의 청량한 피톤치드 (Citrus Pine)</div>
+                    <div class="quiz-opt-btn">C. 비 내린 뒤 고요한 한옥 서재의 전통 먹 향 (Smoky Ink)</div>
+                    <div class="quiz-opt-btn">D. 남해 바닷바람을 맞고 자란 싱그러운 완도 유자 (Fresh Fruity)</div>
                 </div>
-            </div>
 
-            <div style="margin-bottom:15px;">
-                <div style="font-weight:800; font-size:13px; margin-bottom:6px;">2. 각인 문구 입력 (최대 10자):</div>
-                <input type="text" value="一片丹心" style="width:100%; padding:10px; border:2px solid var(--border-color); border-radius:6px; font-weight:800;" readonly>
-            </div>
-
-            <div>
-                <div style="font-weight:800; font-size:13px; margin-bottom:6px;">3. 놋쇠 참(Charm) &amp; 비단 보자기 포장:</div>
-                <div style="display:flex; gap:8px;">
-                    <button class="btn-grey" style="flex:1; font-size:11px;">3마패 어사 참 결합</button>
-                    <button class="btn-grey" style="flex:1; font-size:11px;">옥색 비단 보자기 포장</button>
+                <div style="text-align:right;">
+                    <a href="#pyramid" class="btn-primary">다음 문항으로 진행 &gt;</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- SEC-05: Bento Note Mixer -->
-    <div class="bento-section">
-        <div style="font-size:18px; font-weight:900; margin-bottom:15px; border-bottom:2px solid var(--bg-gray-mid); padding-bottom:8px;">
-            🧪 Custom Note Mixer (Top / Middle / Base 노트 믹싱 밸런서)
-        </div>
-        
-        <div class="bento-grid">
-            <div class="bento-card">
-                <div style="font-weight:900; margin-bottom:6px;">Top Note Slider (30%)</div>
-                <div style="font-size:12px; color:var(--text-muted);">풋사과 &amp; 베르가못 (첫 30분간 유지되는 청량한 첫향)</div>
-                <div style="background:var(--bg-gray-mid); height:8px; border-radius:4px; margin-top:10px; position:relative;">
-                    <div style="background:var(--bg-dark); width:30%; height:100%; border-radius:4px;"></div>
+    <!-- SEC-04: Scent Pyramid Balancer Stage -->
+    <section id="pyramid" class="pyramid-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. SCENT PYRAMID BALANCER</span>
+                <h2 class="section-title">Top / Middle / Base 노트 믹싱 밸런서</h2>
+                <p class="section-desc">AI가 추천한 배합비에서 슬라이더를 직접 조절하여 나만의 잔향 지속 시간을 조율하세요.</p>
+            </div>
+
+            <div class="pyramid-stage">
+                <div class="pyramid-visual">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:10px;">[ 3D 향 피라미드 볼륨 시각화 회색 박스 ]</div>
+                    <div style="font-size:13px;">Top(유자) ➔ Middle(솔잎) ➔ Base(백단·침향) 입체 확산 곡선</div>
+                </div>
+
+                <div class="pyramid-controls">
+                    <div class="pyramid-row">
+                        <div class="pyramid-label-row">
+                            <span>TOP NOTE (완도 유자 &amp; 베르가못)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">20 %</span>
+                        </div>
+                        <div class="pyramid-track"><div class="pyramid-fill" style="width:20%;"></div></div>
+                    </div>
+
+                    <div class="pyramid-row">
+                        <div class="pyramid-label-row">
+                            <span>MIDDLE NOTE (지리산 적송 솔잎)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">35 %</span>
+                        </div>
+                        <div class="pyramid-track"><div class="pyramid-fill" style="width:35%;"></div></div>
+                    </div>
+
+                    <div class="pyramid-row">
+                        <div class="pyramid-label-row">
+                            <span>BASE NOTE (오대산 백단향 &amp; 제주 침향)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">45 %</span>
+                        </div>
+                        <div class="pyramid-track"><div class="pyramid-fill" style="width:45%;"></div></div>
+                    </div>
+
+                    <div style="margin-top:30px;">
+                        <a href="#engrave" class="btn-primary" style="width:100%; text-align:center;">포뮬러 확정 및 3D 각인실로 이동 &gt;</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bento-card">
-                <div style="font-weight:900; margin-bottom:6px;">Middle Note Slider (40%)</div>
-                <div style="font-size:12px; color:var(--text-muted);">조선 먹향 &amp; 연꽃 (1~3시간 동안 묵직하게 유지되는 향)</div>
-                <div style="background:var(--bg-gray-mid); height:8px; border-radius:4px; margin-top:10px; position:relative;">
-                    <div style="background:var(--bg-dark); width:40%; height:100%; border-radius:4px;"></div>
+    <!-- SEC-05: 3D Laser Engraving Stage -->
+    <section id="engrave" class="engrave-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. 3D LASER ENGRAVING</span>
+                <h2 class="section-title">마패 캡 실시간 3D 레이저 각인실</h2>
+                <p class="section-desc">무형문화재 주조 놋쇠 마패 캡에 원하는 문구를 레이저 각인하고 360도로 검수하세요.</p>
+            </div>
+
+            <div class="engrave-grid">
+                <div class="engrave-viewer">
+                    <div style="font-size:22px; font-weight:900; margin-bottom:12px;">[ 360° 3D 놋쇠 마패 캡 실시간 각인 뷰어 ]</div>
+                    <div style="font-size:13px; max-width:380px;">마우스로 회전하며 글자의 각인 깊이와 광택을 검수하세요.</div>
+                </div>
+                <div style="background:var(--bg-light); border:1px solid var(--border-mid); border-radius:12px; padding:36px;">
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">각인 문구 입력</label>
+                        <div style="background:#fff; border:1px solid var(--border-mid); padding:12px; font-size:15px; font-weight:900; font-family:var(--font-mono);">
+                            CHOI HA EUN — SADAN AI 2026
+                        </div>
+                    </div>
+                    <div style="margin-bottom:24px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">서체 선택</label>
+                        <div style="display:flex; gap:10px;">
+                            <div style="flex:1; padding:10px; background:var(--bg-dark); color:#fff; text-align:center; font-weight:800; font-size:12px; border-radius:4px;">조선 해서체</div>
+                            <div style="flex:1; padding:10px; background:#fff; border:1px solid var(--border-mid); text-align:center; font-weight:800; font-size:12px; border-radius:4px;">모던 고딕</div>
+                        </div>
+                    </div>
+                    <a href="#refill" class="btn-primary" style="display:block; text-align:center;">각인 보틀 주문 및 리필 구독 &gt;</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bento-card">
-                <div style="font-weight:900; margin-bottom:6px;">Base Note Slider (30%)</div>
-                <div style="font-size:12px; color:var(--text-muted);">놋쇠 앰버 &amp; 청송 모스 (5시간 이상 은은하게 매도는 잔향)</div>
-                <div style="background:var(--bg-gray-mid); height:8px; border-radius:4px; margin-top:10px; position:relative;">
-                    <div style="background:var(--bg-dark); width:30%; height:100%; border-radius:4px;"></div>
+    <!-- SEC-06: Eco-Refill Subscription -->
+    <section id="refill" class="refill-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. ECO-REFILL &amp; REWARD</span>
+                <h2 class="section-title">친환경 알루미늄 카트리지 정기구독</h2>
+                <p class="section-desc">공병 반납 시 10,000원 리워드를 제공하며, 완성된 AI 포뮬러 카트리지를 정기 배송합니다.</p>
+            </div>
+
+            <div class="refill-grid">
+                <div class="refill-card">
+                    <div class="refill-tag">STARTER ONBOARDING</div>
+                    <h3 class="refill-title">AI 맞춤 본품 50ml + 놋쇠 각인 캡</h3>
+                    <div class="refill-price">98,000 KRW</div>
+                    <a href="#" class="btn-primary" style="width:100%;">맞춤 주문하기</a>
+                </div>
+
+                <div class="refill-card">
+                    <div class="refill-tag">ECO SUBSCRIPTION</div>
+                    <h3 class="refill-title">알루미늄 리필 카트리지 (3개월 주기)</h3>
+                    <div class="refill-price">32,000 KRW / 회</div>
+                    <a href="#" class="btn-primary" style="width:100%;">정기구독 신청</a>
+                </div>
+
+                <div class="refill-card">
+                    <div class="refill-tag">BOTTLE RETURN REWARD</div>
+                    <h3 class="refill-title">사단 공병 반납 리워드 센터</h3>
+                    <div class="refill-price">10,000 KRW 환급</div>
+                    <a href="#" class="btn-secondary" style="width:100%;">공병 반납 신청</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bento-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--bg-gray-mid);">
-                <div style="font-weight:900;">[ 향 성상 3단 피라미드 Visual 회색 박스 ]</div>
-                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">잔향 예상치: 약 6시간 30분 (AI 밸런스 PASS)</div>
+    <!-- Footer -->
+    <footer class="lab-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#hero">AI 진단</a>
+                <a href="#quiz">취향 퀴즈</a>
+                <a href="#pyramid">노트 밸런서</a>
+                <a href="#engrave">3D 레이저 각인</a>
+                <a href="#refill">친환경 리필구독</a>
+                <a href="#">IFRA 인증 열람</a>
             </div>
+            <p>사단(士團) 헤리티지 조향 연구소 | AI 맞춤 조향 PM 최하은</p>
+            <p style="color:#64748b; font-size:12px; margin-top:8px;">© 2026 SADAN AI Olfactive Lab. All Rights Reserved.</p>
         </div>
-    </div>
-
-    <!-- SEC-06: Ingredient Safety Accordion -->
-    <div class="accordion-section">
-        <div style="font-size:18px; font-weight:900; margin-bottom:15px; border-bottom:2px solid var(--bg-gray-mid); padding-bottom:8px;">
-            🌿 화해 100% 비건 성분 인증 &amp; IFRA 안전성 검증
-        </div>
-
-        <div class="accordion-item">
-            <span>[v] 화해 기준 100% 비건 인증 성분표 (클릭 시 세부 성분 수직 펼침)</span>
-            <span>+</span>
-        </div>
-        <div class="accordion-item">
-            <span>[v] IFRA 국제 향료 협회 인증 및 알레르기 유발 물질 26종 필터링</span>
-            <span>+</span>
-        </div>
-    </div>
-
-    <!-- SEC-07: Eco Refill Subscription -->
-    <div class="eco-section">
-        <div style="font-size:20px; font-weight:900; margin-bottom:10px;">🌱 친환경 리필 카트리지 정기 구독 &amp; 공병 회수 어사 리워드</div>
-        <div style="font-size:13px; color:#cbd5e1;">지속 가능한 향 환경을 위해 다 쓴 놋쇠 공병을 반납하시면 3,000 포인트를 적립해 드립니다.</div>
-
-        <div class="eco-grid">
-            <div class="eco-card">
-                <div style="font-weight:900; margin-bottom:6px;">1. 정기 구독 플랜 선택</div>
-                <div style="font-size:13px;">(o) 1개월 배송 주기 (15% 할인 적용)</div>
-                <div style="font-size:13px;">( ) 2개월 배송 주기 (10% 할인 적용)</div>
-            </div>
-
-            <div class="eco-card">
-                <div style="font-weight:900; margin-bottom:6px;">2. 공병 반납 회수 바코드</div>
-                <div style="font-size:13px;">[x] 공병 방문 수거 신청 (+3,000 P 적립)</div>
-                <div style="font-size:11px; color:#94a3b8; margin-top:4px;">* 신청 완료 시 전용 QR 회수 바코드가 문자로 발송됩니다.</div>
-            </div>
-        </div>
-
-        <div style="margin-top:20px; text-align:right;">
-            <button class="btn-light">친환경 커스텀 카트리지 구독 신청하기 (Primary CTA)</button>
-        </div>
-    </div>
-
-    <!-- SEC-08: Footer -->
-    <footer>
-        사단(士團) 커스텀 조향 LAB | UX 총괄 PM 최하은 | CS Center 1588-0000 | 화해 100% 비건 성분 검증 완료 | 무채색 8대 섹션 통합 롱 스크롤 와이어프레임
     </footer>
 
 </body>

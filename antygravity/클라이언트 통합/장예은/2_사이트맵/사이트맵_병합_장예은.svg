@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <rect width="1000" height="450" fill="#fdfaf8" rx="12"/>
+  <rect x="330" y="20" width="340" height="50" rx="8" fill="#4a1525" stroke="#38101d" stroke-width="2"/>
+  <text x="500" y="52" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">사단(士團) 장예은 최적 병합 사이트맵 IA</text>
+
+  <!-- Level 1 Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="13" font-weight="800" text-anchor="middle">
+    <!-- 1.0 Salon -->
+    <line x1="500" y1="70" x2="110" y2="120" stroke="#d4b2b9" stroke-width="2"/>
+    <rect x="20" y="120" width="180" height="45" rx="6" fill="#782d3f" stroke="#4a1525" stroke-width="1.5"/>
+    <text x="110" y="148" fill="#ffffff">1.0 백년가약 살롱</text>
+
+    <!-- 2.0 Harmony -->
+    <line x1="500" y1="70" x2="305" y2="120" stroke="#d4b2b9" stroke-width="2"/>
+    <rect x="215" y="120" width="180" height="45" rx="6" fill="#782d3f" stroke="#4a1525" stroke-width="1.5"/>
+    <text x="305" y="148" fill="#ffffff">2.0 듀얼 하모니 밸런서</text>
+
+    <!-- 3.0 Engraving -->
+    <line x1="500" y1="70" x2="500" y2="120" stroke="#d4b2b9" stroke-width="2"/>
+    <rect x="410" y="120" width="180" height="45" rx="6" fill="#782d3f" stroke="#4a1525" stroke-width="1.5"/>
+    <text x="500" y="148" fill="#ffffff">3.0 부부 서약 각인실</text>
+
+    <!-- 4.0 Packaging -->
+    <line x1="500" y1="70" x2="695" y2="120" stroke="#d4b2b9" stroke-width="2"/>
+    <rect x="605" y="120" width="180" height="45" rx="6" fill="#782d3f" stroke="#4a1525" stroke-width="1.5"/>
+    <text x="695" y="148" fill="#ffffff">4.0 비단 보자기 패키징</text>
+
+    <!-- 5.0 Concierge -->
+    <line x1="500" y1="70" x2="890" y2="120" stroke="#d4b2b9" stroke-width="2"/>
+    <rect x="800" y="120" width="180" height="45" rx="6" fill="#782d3f" stroke="#4a1525" stroke-width="1.5"/>
+    <text x="890" y="148" fill="#ffffff">5.0 답례품 컨시어지</text>
+  </g>
+
+  <!-- Level 2 Sub Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#4a1525">
+    <!-- Sub 1 -->
+    <line x1="110" y1="165" x2="110" y2="200" stroke="#e8d5d9" stroke-width="1.5"/>
+    <rect x="20" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#d4b2b9" stroke-width="1"/>
+    <text x="110" y="225">· 신랑 1마패 백단·묵향</text>
+    <text x="110" y="245">· 신부 2마패 국화·유자</text>
+
+    <!-- Sub 2 -->
+    <line x1="305" y1="165" x2="305" y2="200" stroke="#e8d5d9" stroke-width="1.5"/>
+    <rect x="215" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#d4b2b9" stroke-width="1"/>
+    <text x="305" y="225">· 커플 조향 비율 슬라이더</text>
+    <text x="305" y="245">· 잔향 공명 3D 시각화</text>
+
+    <!-- Sub 3 -->
+    <line x1="500" y1="165" x2="500" y2="200" stroke="#e8d5d9" stroke-width="1.5"/>
+    <rect x="410" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#d4b2b9" stroke-width="1"/>
+    <text x="500" y="225">· 부부 성명 및 기념일 양각</text>
+    <text x="500" y="245">· 놋쇠 마패 캡 각인 뷰어</text>
+
+    <!-- Sub 4 -->
+    <line x1="695" y1="165" x2="695" y2="200" stroke="#e8d5d9" stroke-width="1.5"/>
+    <rect x="605" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#d4b2b9" stroke-width="1"/>
+    <text x="695" y="225">· 청실홍실 4대 매듭 선택</text>
+    <text x="695" y="245">· 자개 노리개 참 결합</text>
+
+    <!-- Sub 5 -->
+    <line x1="890" y1="165" x2="890" y2="200" stroke="#e8d5d9" stroke-width="1.5"/>
+    <rect x="800" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#d4b2b9" stroke-width="1"/>
+    <text x="890" y="225">· 15ml 수량 할인 계산기</text>
+    <text x="890" y="245">· 예식 당일 안심 직배송</text>
+  </g>
+</svg>

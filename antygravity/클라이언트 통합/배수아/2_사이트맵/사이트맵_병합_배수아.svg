@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <rect width="1000" height="450" fill="#f8fafc" rx="12"/>
+  <rect x="330" y="20" width="340" height="50" rx="8" fill="#1e1b4b" stroke="#0f172a" stroke-width="2"/>
+  <text x="500" y="52" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="16" font-weight="900" text-anchor="middle">사단(士團) 배수아 최적 병합 사이트맵 IA</text>
+
+  <!-- Level 1 Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="13" font-weight="800" text-anchor="middle">
+    <!-- 1.0 Canvas -->
+    <line x1="500" y1="70" x2="110" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="20" y="120" width="180" height="45" rx="6" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+    <text x="110" y="148" fill="#ffffff">1.0 일월오봉도 캔버스</text>
+
+    <!-- 2.0 Showroom -->
+    <line x1="500" y1="70" x2="305" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="215" y="120" width="180" height="45" rx="6" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+    <text x="305" y="148" fill="#ffffff">2.0 아트 콜라보 쇼룸</text>
+
+    <!-- 3.0 Docent -->
+    <line x1="500" y1="70" x2="500" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="410" y="120" width="180" height="45" rx="6" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+    <text x="500" y="148" fill="#ffffff">3.0 오디오 도슨트 투어</text>
+
+    <!-- 4.0 Bundle -->
+    <line x1="500" y1="70" x2="695" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="605" y="120" width="180" height="45" rx="6" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+    <text x="695" y="148" fill="#ffffff">4.0 마스터 아트 번들</text>
+
+    <!-- 5.0 Collectors -->
+    <line x1="500" y1="70" x2="890" y2="120" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="800" y="120" width="180" height="45" rx="6" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+    <text x="890" y="148" fill="#ffffff">5.0 컬렉터스 클럽</text>
+  </g>
+
+  <!-- Level 2 Sub Menu Boxes -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1e1b4b">
+    <!-- Sub 1 -->
+    <line x1="110" y1="165" x2="110" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="20" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="110" y="225">· 4K 민화 핫스팟 인터랙션</text>
+    <text x="110" y="245">· 오봉도 조향 노트 매핑</text>
+
+    <!-- Sub 2 -->
+    <line x1="305" y1="165" x2="305" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="215" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="305" y="225">· 360° 실크스크린 보틀</text>
+    <text x="305" y="245">· 1,000개 한정 넘버링</text>
+
+    <!-- Sub 3 -->
+    <line x1="500" y1="165" x2="500" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="410" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="500" y="225">· 큐레이터 음성 가이드</text>
+    <text x="500" y="245">· 3D 메타버스 전시관</text>
+
+    <!-- Sub 4 -->
+    <line x1="695" y1="165" x2="695" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="605" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="695" y="225">· 아트 보틀 &amp; 한지 포스터</text>
+    <text x="695" y="245">· 매트 블랙 마패 캡 각인</text>
+
+    <!-- Sub 5 -->
+    <line x1="890" y1="165" x2="890" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="800" y="200" width="180" height="70" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="890" y="225">· VIP 전시 프리패스 발권</text>
+    <text x="890" y="245">· 100% 환급 아트 샘플러</text>
+  </g>
+</svg>

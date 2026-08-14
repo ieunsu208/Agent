@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <rect width="1000" height="480" fill="#f8fafc" rx="12"/>
+  <rect x="330" y="20" width="340" height="45" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="500" y="48" fill="#ffffff" font-family="'Pretendard', sans-serif" font-size="15" font-weight="900" text-anchor="middle">사단(士團) 오세훈 최적 병합 서비스 흐름도</text>
+
+  <!-- 4 Tracks -->
+  <g font-family="'Pretendard', sans-serif" font-size="12" font-weight="800" text-anchor="middle">
+    <!-- Start -->
+    <circle cx="500" cy="95" r="16" fill="#475569"/>
+    <text x="500" y="99" fill="#ffffff" font-size="10">진입</text>
+
+    <!-- Lines to Tracks -->
+    <line x1="500" y1="111" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="380" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="620" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="500" y1="111" x2="860" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <!-- Track 1 -->
+    <rect x="50" y="140" width="180" height="40" rx="6" fill="#334155"/>
+    <text x="140" y="165" fill="#ffffff">트랙 A: 3D 고서 탐색</text>
+
+    <!-- Track 2 -->
+    <rect x="290" y="140" width="180" height="40" rx="6" fill="#334155"/>
+    <text x="380" y="165" fill="#ffffff">트랙 B: 12종 원료 도록</text>
+
+    <!-- Track 3 -->
+    <rect x="530" y="140" width="180" height="40" rx="6" fill="#334155"/>
+    <text x="620" y="165" fill="#ffffff">트랙 C: 복원 쇼케이스</text>
+
+    <!-- Track 4 -->
+    <rect x="770" y="140" width="180" height="40" rx="6" fill="#334155"/>
+    <text x="860" y="165" fill="#ffffff">트랙 D: VIP 후원</text>
+  </g>
+
+  <!-- Decision Nodes & Actions -->
+  <g font-family="'Pretendard', sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#0f172a">
+    <!-- Convergence to Scent Selection -->
+    <line x1="140" y1="180" x2="500" y2="230" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="380" y1="180" x2="500" y2="230" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="620" y1="180" x2="500" y2="230" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="860" y1="180" x2="500" y2="230" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <rect x="360" y="230" width="280" height="45" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="500" y="258" font-weight="900">5대 왕실 복원 향방 선택 (건룡향/정향/사계향)</text>
+
+    <!-- Branching Packaging -->
+    <line x1="500" y1="275" x2="320" y2="320" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="500" y1="275" x2="680" y2="320" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <rect x="200" y="320" width="240" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="320" y="345">수제 오동나무 옻칠함 패키지</text>
+
+    <rect x="560" y="320" width="240" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="680" y="345">친환경 단품 보틀 패키지</text>
+
+    <!-- Laser Engraving -->
+    <line x1="320" y1="360" x2="500" y2="400" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="680" y1="360" x2="500" y2="400" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <rect x="340" y="400" width="320" height="50" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="500" y="430" fill="#ffffff" font-weight="900">3D 놋쇠 마패 캡 각인 &amp; 보증서 발급 완료</text>
+  </g>
+</svg>

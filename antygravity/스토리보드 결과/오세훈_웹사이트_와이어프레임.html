@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단(士團) — [오세훈 연구원] 조선 왕실 의궤 조향 복원 연구소 아카이브 스토리보드 와이어프레임</title>
+    <style>
+        :root {
+            --bg-base: #f7f6f2;
+            --bg-paper: #f0eee6;
+            --bg-card: #ffffff;
+            --bg-dark: #1a1815;
+            --text-primary: #1a1815;
+            --text-secondary: #4a463e;
+            --text-muted: #7d776a;
+            --border-line: #d9d4c7;
+            --border-dark: #2c2822;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Nanum Myeongjo', serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-base); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--text-muted); padding-bottom: 4px; margin-bottom: 14px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.35; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); }
+        .section-desc { font-size: 15px; color: var(--text-secondary); max-width: 720px; margin: 0 auto; word-break: keep-all; }
+
+        .btn-black { background: var(--bg-dark); color: #ffffff; padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-dark); cursor: pointer; text-align: center; }
+        .btn-outline { background: transparent; color: var(--text-primary); padding: 14px 32px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-line); cursor: pointer; text-align: center; }
+
+        .wireframe-box { background: var(--bg-paper); border: 1.5px dashed var(--border-line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; padding: 24px; }
+
+        /* SEC-01: Top Archival Utility Bar */
+        .top-utility-bar { background: var(--bg-dark); color: #e5e0d3; font-size: 11px; padding: 8px 0; border-bottom: 1px solid var(--border-dark); }
+        .top-utility-inner { display: flex; justify-content: space-between; align-items: center; }
+
+        /* Sticky Heritage Header */
+        header.heritage-header { position: sticky; top: 0; background: rgba(247, 246, 242, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-line); z-index: 1000; padding: 16px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .brand-emblem { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+        .emblem-mark { width: 38px; height: 38px; border: 1.5px solid var(--text-primary); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: var(--font-serif); }
+        .brand-text { font-size: 16px; font-weight: 900; letter-spacing: -0.5px; font-family: var(--font-serif); }
+        .era-filter-nav { display: flex; gap: 20px; font-size: 13px; font-weight: 700; }
+        .era-filter-nav a { text-decoration: none; color: var(--text-muted); }
+        .era-filter-nav a.active { color: var(--text-primary); border-bottom: 2px solid var(--text-primary); padding-bottom: 2px; }
+
+        /* SEC-02: Hero Open Book Stage */
+        .hero-section { padding: 90px 0 100px; border-bottom: 1px solid var(--border-line); background: radial-gradient(circle at 50% 20%, #ffffff 0%, var(--bg-base) 80%); }
+        .hero-meta { text-align: center; margin-bottom: 40px; }
+        .book-open-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--bg-card); border: 2px solid var(--border-line); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; min-height: 520px; }
+        .book-page-left { padding: 48px; border-right: 1px solid var(--border-line); background: #faf9f5; position: relative; }
+        .book-page-right { padding: 48px; background: #ffffff; position: relative; }
+        .page-spine { position: absolute; top: 0; right: -8px; width: 16px; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.05), transparent); pointer-events: none; }
+
+        /* SEC-03: Manuscript Comparative Table */
+        .manuscript-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .comparative-table { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 13px; }
+        .comparative-table th { background: var(--bg-dark); color: #ffffff; padding: 16px; text-align: left; font-weight: 800; }
+        .comparative-table td { padding: 18px 16px; border-bottom: 1px solid var(--border-line); vertical-align: top; }
+        .comparative-table tr:hover { background: var(--bg-paper); }
+
+        /* SEC-04: 3 Restored Formulations Matrix */
+        .matrix-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .formulation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .formulation-card { background: var(--bg-card); border: 1px solid var(--border-line); padding: 36px 28px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
+        .pyramid-box { margin: 20px 0; padding: 14px; background: var(--bg-paper); border: 1px solid var(--border-line); font-size: 12px; }
+
+        /* SEC-05: Botanical Timeline & Extraction */
+        .botanical-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .botanical-split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+        .timeline-rail { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+        .timeline-step { display: flex; gap: 16px; align-items: flex-start; padding: 14px; background: var(--bg-paper); border-left: 3px solid var(--text-primary); }
+
+        /* SEC-06: Paulownia Wood Chest Unboxing */
+        .chest-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .chest-stage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 45px; align-items: center; }
+        .chest-schematic { height: 420px; background: var(--bg-card); border: 1.5px solid var(--border-line); padding: 30px; display: grid; grid-template-rows: 1fr 1fr 1fr; gap: 12px; }
+
+        /* SEC-07: Brass Cap Engraving Console */
+        .engraving-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .engrave-console { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--bg-paper); border: 1px solid var(--border-line); padding: 40px; border-radius: 4px; }
+
+        /* SEC-08: Heritage Serial Registry Search */
+        .registry-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); text-align: center; }
+        .search-bar-wrap { max-width: 600px; margin: 30px auto; display: flex; gap: 10px; }
+        .search-input { flex: 1; padding: 14px 18px; border: 1px solid var(--border-line); font-size: 14px; background: #fff; }
+
+        /* SEC-09: Discovery Kit & Fund Pledge */
+        .pledge-section { padding: 100px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .pledge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .pledge-box { border: 1px solid var(--border-line); padding: 36px; border-radius: 4px; background: var(--bg-paper); }
+
+        /* SEC-10: Advisory Academic Board */
+        .board-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-base); }
+        .board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .board-card { background: var(--bg-card); border: 1px solid var(--border-line); padding: 24px; text-align: center; }
+
+        /* SEC-11: Concierge Order Scheduler */
+        .scheduler-section { padding: 90px 0; border-bottom: 1px solid var(--border-line); background: var(--bg-card); }
+        .schedule-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-12: Master Footer */
+        footer.master-footer { padding: 80px 0; background: var(--bg-dark); color: #a8a294; font-size: 12px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-size: 14px; font-weight: 900; color: #ffffff; margin-bottom: 16px; font-family: var(--font-serif); }
+    </style>
+</head>
+<body>
+
+    <!-- SEC-01: Top Archival Utility Bar -->
+    <div class="top-utility-bar">
+        <div class="container top-utility-inner">
+            <div>📜 규장각 의궤 복원 번호: ARCHIVE-KR-1452 · 국가기록원 고증 검수 완료</div>
+            <div style="display:flex; gap:16px;">
+                <span>국문 (KR)</span>
+                <span>|</span>
+                <span>학술 원문 DB</span>
+                <span>|</span>
+                <span>연구원 로그인</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Heritage Header -->
+    <header class="heritage-header">
+        <div class="container header-inner">
+            <a href="#hero" class="brand-emblem">
+                <div class="emblem-mark">儀</div>
+                <div>
+                    <div class="brand-text">사단 왕실 향기의궤 복원연구소</div>
+                    <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px;">SADAN ROYAL UIGWE SCENT ARCHIVE</div>
+                </div>
+            </a>
+            <nav class="era-filter-nav">
+                <a href="#manuscript" class="active">세종조 향약록</a>
+                <a href="#formulations">숙종 대제향</a>
+                <a href="#botanical">영조 어제향방</a>
+                <a href="#chest">오동나무 옻칠함</a>
+                <a href="#registry">복원 레지스트리</a>
+            </nav>
+            <div>
+                <a href="#scheduler" class="btn-black" style="padding:10px 20px; font-size:12px;">복원 에디션 신청 &gt;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero Open Book Stage -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-meta">
+                <span class="section-tag">HERITAGE ARCHIVE DIRECTOR OH SE-HOON</span>
+                <h1 class="section-title" style="font-size:46px; margin: 12px 0 16px;">
+                    규장각 고서 속 500년 잠들었던<br>조선 왕실 향방(香方)의 디지털 복원
+                </h1>
+                <p class="section-desc">
+                    세종실록지리지와 조선 왕실의궤 원전에 기록된 실제 궁중 처방전을 3D 양면 고서 뷰어로 탐색하고,<br>
+                    국가기록원 고증을 거쳐 현대적으로 재현된 단 하나의 복원 향수를 만나보세요.
+                </p>
+            </div>
+
+            <!-- Open Book 2-Page Stage -->
+            <div class="book-open-stage">
+                <!-- Page Left: Ancient Manuscript -->
+                <div class="book-page-left">
+                    <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:16px;">
+                        <span>규장각 소장 제1452호 [의궤 향방 원문]</span>
+                        <span>肅宗 28年 (1702)</span>
+                    </div>
+                    <div class="wireframe-box" style="height:320px; background:#fff; font-family:var(--font-serif); font-size:14px; line-height:2.2; text-align:left; padding:24px;">
+                        【原文 影印】<br>
+                        上曰: "大殿與中宮殿 香火宜嚴. 五臺山 白檀木 三兩, 智異山 赤松葉 蒸餾, 雜以 莞島 柚子皮, 爲國泰民安之香..."<br><br>
+                        <span style="font-size:12px; color:var(--text-muted);">[ 3D 고서 양면 플립 인터랙션 — 마우스로 책장을 넘겨 다음 원문을 확인하세요 ]</span>
+                    </div>
+                    <div style="margin-top:16px; font-size:12px; color:var(--text-secondary);">
+                        · 지질: 조선 닥종이 수제 순지(純紙) · 보존상태: 국보급 A등급 복원
+                    </div>
+                    <div class="page-spine"></div>
+                </div>
+
+                <!-- Page Right: Modern Scientific Scent Translation -->
+                <div class="book-page-right">
+                    <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:16px;">
+                        <span>현대 조향 과학 성분 번역 리포트</span>
+                        <span>IFRA SAFETY VERIFIED</span>
+                    </div>
+                    <div class="wireframe-box" style="height:320px; background:var(--bg-paper); text-align:left; padding:24px;">
+                        <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">제1호 복원 포뮬러: 건룡향 (乾龍香)</div>
+                        <div style="font-size:13px; color:var(--text-secondary); margin-bottom:12px;">
+                            · 탑 노트: 완도 천연 유자(Citrus Junos) 냉압착 오일 18%<br>
+                            · 미들 노트: 지리산 솔잎(Pinus Densiflora) 초임계 추출 42%<br>
+                            · 베이스 노트: 오대산 백단목(Santalum Album) 감압 증류 40%
+                        </div>
+                        <div style="font-size:12px; color:var(--text-muted); border-top:1px dashed var(--border-line); padding-top:10px;">
+                            · 알코올 베이스: 충북 음성 유기농 쌀 100% 발효 비건 주정
+                        </div>
+                    </div>
+                    <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:13px; font-weight:800;">복원 포뮬러 No. 1702-KR</span>
+                        <a href="#formulations" class="btn-black" style="padding:8px 18px; font-size:12px;">이 향방으로 복원 향수 확인 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: Manuscript Comparative Table -->
+    <section id="manuscript" class="manuscript-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. HISTORICAL MANUSCRIPT COMPARISON</span>
+                <h2 class="section-title">조선 왕조 실록 및 의궤 향방 원문 대조록</h2>
+                <p class="section-desc">세종실록부터 승정원일기까지 500년간 기록된 궁중 향약의 원문 한자와 현대 한글 번역, IFRA 성분 치환 매트릭스입니다.</p>
+            </div>
+
+            <table class="comparative-table">
+                <thead>
+                    <tr>
+                        <th style="width:15%;">연대 및 문헌</th>
+                        <th style="width:25%;">원문 한자 (原文)</th>
+                        <th style="width:35%;">현대 한글 학술 번역</th>
+                        <th style="width:25%;">현대 조향 복원 솔루션</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>세종 14년 (1432)</strong><br>세종실록지리지</td>
+                        <td>江原道 五臺山 産白檀, 氣味辛溫, 辟邪氣...</td>
+                        <td>강원도 오대산에서 백단목이 나니, 기운과 맛이 맵고 따뜻하여 부정한 기운을 물리친다.</td>
+                        <td>오대산 백단목 감압 분별 증류 (신경 안정 세드롤 48% 함유)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>숙종 28년 (1702)</strong><br>종묘대제 의궤</td>
+                        <td>大殿 設香火, 用赤松之葉 雜乾龍香...</td>
+                        <td>대전에 향불을 피우되, 적송 솔잎과 건룡향을 섞어 종묘의 예를 갖춘다.</td>
+                        <td>지리산 적송잎 CO2 초임계 추출 (그린 우디 노트 복원)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>영조 41년 (1765)</strong><br>승정원일기 궁중어의록</td>
+                        <td>中宮殿 納四季香, 濟州沈香 溫和心神...</td>
+                        <td>중궁전에 사계향을 올리니, 제주 침향이 심신을 온화하게 안정시킨다.</td>
+                        <td>제주 침향 복합 오일 치환 (IFRA 안전 규격 100% 충족)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SEC-04: 3 Restored Formulations Matrix -->
+    <section id="formulations" class="matrix-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. 3 RESTORED FORMULATIONS</span>
+                <h2 class="section-title">사단 조선 궁중 3대 복원 향방 에디션</h2>
+                <p class="section-desc">고문헌 고증을 100% 충족한 사단 왕실 복원 시그니처 오 드 퍼퓸 라인업입니다.</p>
+            </div>
+
+            <div class="formulation-grid">
+                <!-- 01. 건룡향 -->
+                <div class="formulation-card">
+                    <div>
+                        <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">RECORD #01 — 궁중 대제향</div>
+                        <h3 style="font-size:24px; font-weight:900; margin-bottom:8px; font-family:var(--font-serif);">건룡향 (乾龍香)</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">오대산 백단목 중심의 묵직하고 장엄한 왕실 제례향</p>
+                        <div class="pyramid-box">
+                            <strong>조향 피라미드</strong><br>
+                            · 탑: 스파이시 정향, 흑후추<br>
+                            · 미들: 오대산 백단목, 패출리<br>
+                            · 베이스: 훈증 숯, 천연 침향
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">98,000 KRW (50ml)</div>
+                        <a href="#chest" class="btn-black" style="width:100%;">오동나무 함 세트로 보기</a>
+                    </div>
+                </div>
+
+                <!-- 02. 정향 -->
+                <div class="formulation-card">
+                    <div>
+                        <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">RECORD #02 — 임금 어향</div>
+                        <h3 style="font-size:24px; font-weight:900; margin-bottom:8px; font-family:var(--font-serif);">정향 (正香)</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">지리산 적송과 완도 유자의 맑고 청량한 군주의 기품</p>
+                        <div class="pyramid-box">
+                            <strong>조향 피라미드</strong><br>
+                            · 탑: 완도 유자, 야생 박하<br>
+                            · 미들: 지리산 적송 솔잎, 대나무 수액<br>
+                            · 베이스: 선비 묵향, 삼나무
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">118,000 KRW (50ml)</div>
+                        <a href="#chest" class="btn-black" style="width:100%;">오동나무 함 세트로 보기</a>
+                    </div>
+                </div>
+
+                <!-- 03. 사계향 -->
+                <div class="formulation-card">
+                    <div>
+                        <div style="font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">RECORD #03 — 중전 비전향</div>
+                        <h3 style="font-size:24px; font-weight:900; margin-bottom:8px; font-family:var(--font-serif);">사계향 (四季香)</h3>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">제주 침향과 남원 야생 국화의 우아하고 따뜻한 잔향</p>
+                        <div class="pyramid-box">
+                            <strong>조향 피라미드</strong><br>
+                            · 탑: 은은한 백차(白茶), 감태<br>
+                            · 미들: 남원 야생 국화, 홍화 꽃잎<br>
+                            · 베이스: 제주 침향, 천연 앰버
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:16px;">138,000 KRW (50ml)</div>
+                        <a href="#chest" class="btn-black" style="width:100%;">오동나무 함 세트로 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: Botanical Timeline & Extraction -->
+    <section id="botanical" class="botanical-section">
+        <div class="container">
+            <div class="botanical-split">
+                <div>
+                    <span class="section-tag">03. BOTANICAL DISTILLATION PROCESS</span>
+                    <h2 class="section-title">조선 팔도 원료 채취 및 3단계 전통 증류 공정</h2>
+                    <p class="section-desc">
+                        조선 8도 청정 지역에서 손으로 채취한 12종 한방 원료를 현대 과학 설비로 정제하는 공정 기록입니다.
+                    </p>
+
+                    <div class="timeline-rail">
+                        <div class="timeline-step">
+                            <strong>01단계</strong>
+                            <div>
+                                <strong>조선 8도 산지 채취 (오대산·지리산·제주)</strong><br>
+                                <span style="font-size:12px; color:var(--text-muted);">이슬이 마르기 전 새벽에 손으로 직접 선별 채취</span>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <strong>02단계</strong>
+                            <div>
+                                <strong>저온 감압 초임계 CO2 추출</strong><br>
+                                <span style="font-size:12px; color:var(--text-muted);">열 손상 없는 35℃ 저온 추출로 고유의 약리 향기 분자 100% 보존</span>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <strong>03단계</strong>
+                            <div>
+                                <strong>충북 음성 쌀 발효 주정 숙성 (100일 옹기 숙성)</strong><br>
+                                <span style="font-size:12px; color:var(--text-muted);">전통 옹기에서 100일간 저온 숙성하여 알코올 자극취 완전 제거</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wireframe-box" style="height:440px;">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">[ 3D 전통 증류 옹기 &amp; 초임계 추출 다이어그램 ]</div>
+                    <div style="font-size:12px; line-height:1.8;">
+                        (상단) 옹기 냉각관 ➔ (중단) CO2 챔버 ➔ (하단) 순수 원액 드롭<br>
+                        IFRA 글로벌 화장품 안전 인증 100% 통과
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Paulownia Wood Chest Unboxing -->
+    <section id="chest" class="chest-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. HANDCRAFTED PAULOWNIA CHEST</span>
+                <h2 class="section-title">국가 무형문화재 목공예 장인의 옻칠 오동나무 함</h2>
+                <p class="section-desc">오동나무는 습기와 해충을 막아 향수의 산화를 방지하며, 평생 소장 가능한 왕실 서고 보관함입니다.</p>
+            </div>
+
+            <div class="chest-stage">
+                <!-- 3-Tier Schematic View -->
+                <div class="chest-schematic">
+                    <div class="wireframe-box" style="background:#fcfbf9;">
+                        <strong>[상단 1단] 놋쇠 마패 캡 각인 보틀 안치대 (50ml x 3종)</strong>
+                    </div>
+                    <div class="wireframe-box" style="background:#fcfbf9;">
+                        <strong>[중단 2단] 규장각 복원 의궤 원전 한지 도록 &amp; 영인본 서책</strong>
+                    </div>
+                    <div class="wireframe-box" style="background:#fcfbf9;">
+                        <strong>[하단 3단] 국가기록원 협업 복원 인증서 &amp; 평생 리필 바우처</strong>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="section-tag">ARCHIVE MASTER EDITION</span>
+                    <h3 style="font-size:28px; font-weight:900; margin-bottom:12px; font-family:var(--font-serif);">궁중 복원 3종 마스터 오동나무 함 세트</h3>
+                    <p style="font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">
+                        건룡향 50ml + 정향 50ml + 사계향 50ml 본품 3종 + 놋쇠 마패 캡 어새 각인 + 안동 한지 보자기 포장 + 옻칠 오동나무 3단 보관함
+                    </p>
+                    <div style="font-size:28px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px;">298,000 KRW</div>
+                    <a href="#scheduler" class="btn-black" style="width:100%; text-align:center;">한정 수량 마스터 함 예약</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Brass Cap Engraving Console -->
+    <section id="engraving" class="engraving-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05. BRASS HORSE EMBLEM ENGRAVING</span>
+                <h2 class="section-title">조선 놋쇠 마패 캡 &amp; 왕실 어새 실시간 각인 콘솔</h2>
+                <p class="section-desc">무형문화재 주조 놋쇠 마패 캡 상단에 구매자 성명 또는 원하시는 가훈을 레이저 양각으로 새깁니다.</p>
+            </div>
+
+            <div class="engrave-console">
+                <div class="wireframe-box" style="height:320px; background:#fff;">
+                    <div style="font-size:18px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">[ 360° 놋쇠 마패 캡 3D 렌더링 ]</div>
+                    <div style="font-size:12px;">입력된 한글/한자 문구가 실시간으로 황금빛 캡에 투영됩니다.</div>
+                </div>
+
+                <div>
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">1. 각인 서체 선택</label>
+                        <select class="search-input" style="width:100%;">
+                            <option>훈민정음 판본체 (기본)</option>
+                            <option>추사 김정희 붓글씨체</option>
+                            <option>왕실 어새 전서체 (한자)</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <label style="display:block; font-size:13px; font-weight:800; margin-bottom:8px;">2. 각인 문구 입력 (최대 12자)</label>
+                        <input type="text" class="search-input" style="width:100%;" value="弘益人間 (홍익인간)" placeholder="이름 또는 문구 입력">
+                    </div>
+
+                    <button class="btn-black" style="width:100%;">실시간 각인 프리뷰 적용</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Heritage Serial Registry Search -->
+    <section id="registry" class="registry-section">
+        <div class="container">
+            <span class="section-tag">06. HERITAGE DIGITAL REGISTRY</span>
+            <h2 class="section-title">국가기록원 협업 복원 시리얼 넘버 조회</h2>
+            <p class="section-desc">사단 복원 에디션에 부여된 500개 한정 고유 시리얼 넘버를 조회하여 진품 여부와 고증 이력을 확인하세요.</p>
+
+            <div class="search-bar-wrap">
+                <input type="text" class="search-input" placeholder="시리얼 번호 입력 (예: UIGWE-2026-088)">
+                <button class="btn-black">조회하기</button>
+            </div>
+
+            <div style="font-size:12px; color:var(--text-muted);">
+                · 정품 인증 시 향후 규장각 특별전 무료 입장권 및 평생 리필 바우처 자동 활성화
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-09: Discovery Kit & Fund Pledge -->
+    <section id="pledge" class="pledge-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07. DISCOVERY KIT &amp; HERITAGE PLEDGE</span>
+                <h2 class="section-title">100% 환급 디스커버리 킷 &amp; 의궤 보존 기금 후원</h2>
+                <p class="section-desc">먼저 시향해보고 결정하세요. 디스커버리 킷 구매 금액은 본품 구매 시 100% 전액 차감 환급됩니다.</p>
+            </div>
+
+            <div class="pledge-grid">
+                <div class="pledge-box">
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">왕실 복원 3종 한지 디스커버리 킷</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">
+                        건룡향·정향·사계향 각 5ml 미니어처 3종 + 안동 수제 한지 시향지 10매 세트
+                    </p>
+                    <div style="font-size:22px; font-weight:900; font-family:var(--font-mono); margin-bottom:20px;">28,000 KRW (100% 환급)</div>
+                    <button class="btn-black" style="width:100%;">디스커버리 킷 신청</button>
+                </div>
+
+                <div class="pledge-box">
+                    <h3 style="font-size:22px; font-weight:900; margin-bottom:10px; font-family:var(--font-serif);">조선 왕실 의궤 보존 연구 기금 후원</h3>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">
+                        본품 구매 금액의 3%는 국가기록원 고문헌 훈증 소독 및 디지털 복원 사업에 자동 기부됩니다.
+                    </p>
+                    <div style="font-size:14px; font-weight:800; color:var(--text-muted); margin-bottom:24px;">후원자 명단 규장각 디지털 서고 등재</div>
+                    <button class="btn-outline" style="width:100%;">후원 현황 보기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-10: Advisory Academic Board -->
+    <section id="board" class="board-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">08. ACADEMIC ADVISORY COMMITTEE</span>
+                <h2 class="section-title">조선 왕실 조향 복원 학술 자문단</h2>
+                <p class="section-desc">국립중앙박물관 및 한국학중앙연구원 전문 학자들의 철저한 문헌 고증을 거칩니다.</p>
+            </div>
+
+            <div class="board-grid">
+                <div class="board-card">
+                    <div style="font-size:18px; font-weight:900; font-family:var(--font-serif);">오세훈 연구원</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin:4px 0 10px;">사단 복원 총괄 디렉터</div>
+                    <div style="font-size:12px; color:var(--text-secondary);">규장각 의궤 10년 연구</div>
+                </div>
+                <div class="board-card">
+                    <div style="font-size:18px; font-weight:900; font-family:var(--font-serif);">김문식 교수</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin:4px 0 10px;">조선왕조의궤 자문위원</div>
+                    <div style="font-size:12px; color:var(--text-secondary);">조선 궁중 의례 고증</div>
+                </div>
+                <div class="board-card">
+                    <div style="font-size:18px; font-weight:900; font-family:var(--font-serif);">이동원 조향사</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin:4px 0 10px;">ISIPCA 수석 연구원</div>
+                    <div style="font-size:12px; color:var(--text-secondary);">천연 오일 초임계 추출</div>
+                </div>
+                <div class="board-card">
+                    <div style="font-size:18px; font-weight:900; font-family:var(--font-serif);">박선영 장인</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin:4px 0 10px;">국가무형문화재 칠장</div>
+                    <div style="font-size:12px; color:var(--text-secondary);">전통 오동나무 옻칠함 제작</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-11: Concierge Order Scheduler -->
+    <section id="scheduler" class="scheduler-section">
+        <div class="container">
+            <div class="schedule-grid">
+                <div>
+                    <span class="section-tag">09. VIP CONCIERGE ORDER</span>
+                    <h2 class="section-title">복원 에디션 맞춤 예약 &amp; 안심 직배송</h2>
+                    <p class="section-desc">
+                        원하시는 수령 희망일과 각인 문구를 지정하시면, 전용 목공예 포장 후 안심 특급 배송으로 전달해 드립니다.
+                    </p>
+                </div>
+                <div style="text-align:right;">
+                    <button class="btn-black" style="padding:18px 40px; font-size:15px;">복원 에디션 최종 주문하기 &gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-12: Master Footer -->
+    <footer class="master-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">士團 왕실 향기의궤 복원연구소</div>
+                    <p style="line-height:1.8;">
+                        500년 조선 왕실 의궤 고증과 현대적 천연 복원 조향 과학.<br>
+                        서울시 종로구 북촌로 142 사단 헤리티지 아카이브<br>
+                        사업자등록번호: 104-88-29104 · 대표 디렉터: 오세훈
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">학술 아카이브</div>
+                    <p style="line-height:2;">
+                        · 세종실록 향약록<br>
+                        · 숙종 대제향 의궤<br>
+                        · 영조 어제향방 도록<br>
+                        · IFRA 안전 인증서
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">복원 에디션</div>
+                    <p style="line-height:2;">
+                        · 건룡향 (제례 어향)<br>
+                        · 정향 (임금 어향)<br>
+                        · 사계향 (왕비 비전향)<br>
+                        · 오동나무 옻칠함
+                    </p>
+                </div>
+                <div>
+                    <div class="footer-title">고객 지원</div>
+                    <p style="line-height:2;">
+                        · 시리얼 정품 조회<br>
+                        · 디스커버리 킷 환급<br>
+                        · 1:1 연구소 투어 예약<br>
+                        · 기금 후원 내역서
+                    </p>
+                </div>
+            </div>
+            <div style="border-top:1px solid #2c2822; padding-top:24px; text-align:center; color:#7d776a;">
+                © 2026 SADAN Royal Uigwe Scent Restoration Lab. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

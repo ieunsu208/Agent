@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[임채원 디렉터] 사단(士團) 24H 타임라인 &amp; TPO 라이프스타일 향수 레이어링 와이어프레임 (Type 3)</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray-100: #f1f5f9;
+            --bg-gray-200: #e2e8f0;
+            --bg-gray-300: #cbd5e1;
+            --bg-dark: #0f172a;
+            --bg-dark-card: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --text-light: #f8f9fa;
+            --border-subtle: #e2e8f0;
+            --border-mid: #cbd5e1;
+            --border-dark: #334155;
+            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); }
+        body { background-color: var(--bg-white); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section-header { text-align: center; margin-bottom: 55px; }
+        .section-tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+        .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.3; color: var(--text-primary); margin-bottom: 14px; }
+        .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 680px; margin: 0 auto; }
+
+        .btn-primary { background: var(--bg-dark); color: #ffffff; padding: 15px 34px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: none; letter-spacing: 0.5px; cursor: default; }
+        .btn-secondary { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 4px; font-weight: 800; font-size: 14px; display: inline-block; text-decoration: none; border: 1.5px solid var(--border-mid); letter-spacing: 0.5px; cursor: default; }
+
+        /* SEC-01: GNB Header Area */
+        .top-utility-bar { background: var(--bg-dark); color: #ffffff; font-size: 12px; padding: 10px 0; text-align: center; font-weight: 700; letter-spacing: 0.5px; }
+        header.gnb-header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-subtle); z-index: 1000; padding: 18px 0; }
+        .gnb-inner { display: flex; justify-content: space-between; align-items: center; }
+        .gnb-logo { display: flex; align-items: center; gap: 12px; }
+        .gnb-logo-mark { background: var(--bg-dark); color: #ffffff; width: 34px; height: 34px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; }
+        .gnb-logo-text { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; }
+        
+        /* Floating Capsule Nav (Type 3 Signature) */
+        .capsule-nav { display: flex; gap: 8px; background: var(--bg-gray-100); padding: 6px; border-radius: 30px; border: 1px solid var(--border-subtle); }
+        .capsule-pill { text-decoration: none; padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 800; color: var(--text-secondary); }
+        .capsule-pill.active { background: var(--bg-dark); color: #ffffff; }
+
+        .gnb-actions { display: flex; align-items: center; gap: 14px; }
+        .gnb-cart-btn { background: var(--bg-gray-100); border: 1px solid var(--border-mid); padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 800; }
+
+        /* SEC-02: Hero Stage */
+        .hero-section { padding: 110px 0 90px; text-align: center; background: radial-gradient(circle at 50% 30%, #f1f5f9 0%, #ffffff 70%); border-bottom: 1px solid var(--border-subtle); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-gray-200); padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 800; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-title { font-size: 52px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 24px; color: var(--text-primary); }
+        .hero-subtitle { font-size: 19px; color: var(--text-secondary); max-width: 760px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-cta-group { display: flex; justify-content: center; gap: 16px; margin-bottom: 50px; }
+        .hero-canvas-frame { max-width: 1000px; margin: 0 auto; height: 380px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 15px; font-weight: 700; }
+
+        /* SEC-03: 24H Timeline Stage */
+        .timeline-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .timeline-slider-card { background: var(--bg-light); border: 1px solid var(--border-mid); border-radius: 12px; padding: 45px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .time-tabs-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 35px; }
+        .time-tab { background: var(--bg-white); border: 1.5px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center; cursor: default; }
+        .time-tab.active { border-color: var(--bg-dark); background: var(--bg-dark); color: #ffffff; }
+        .time-val { font-size: 24px; font-weight: 900; font-family: var(--font-mono); margin-bottom: 4px; }
+        .time-name { font-size: 13px; font-weight: 800; }
+
+        .timeline-focus-card { background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 35px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 35px; align-items: center; }
+        .timeline-img-holder { height: 260px; background: var(--bg-gray-200); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--text-muted); text-align: center; padding: 20px; }
+        .timeline-info-badge { display: inline-block; font-size: 11px; font-weight: 800; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 8px; }
+        .timeline-info-title { font-size: 26px; font-weight: 900; margin-bottom: 10px; }
+        .timeline-info-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+        .timeline-notes-pills { display: flex; gap: 10px; margin-bottom: 24px; }
+        .pill-note { background: var(--bg-gray-100); padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 700; color: var(--text-secondary); }
+
+        /* SEC-04: TPO Scenario Wheel Stage */
+        .tpo-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .tpo-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+        .tpo-wheel-visual { height: 420px; background: var(--bg-gray-300); border: 2px dashed var(--border-mid); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; color: var(--text-secondary); text-align: center; padding: 30px; }
+        .tpo-recipe-panel { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 40px; }
+        .tpo-selector-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+        .tpo-btn-choice { padding: 14px; text-align: center; border: 1px solid var(--border-mid); border-radius: 6px; font-size: 13px; font-weight: 800; background: var(--bg-white); }
+        .tpo-btn-choice.active { background: var(--bg-dark); color: #ffffff; border-color: var(--bg-dark); }
+        .recipe-ratio-box { background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+        .ratio-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+
+        /* SEC-05: Product Showcase Stage */
+        .showcase-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .showcase-card { border: 1px solid var(--border-subtle); border-radius: 10px; overflow: hidden; background: var(--bg-white); }
+        .showcase-img-holder { height: 260px; background: var(--bg-gray-100); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--text-muted); text-align: center; padding: 20px; }
+        .showcase-body { padding: 28px; text-align: center; }
+        .showcase-badge { display: inline-block; font-size: 11px; font-weight: 800; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 8px; }
+        .showcase-name { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+        .showcase-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
+        .showcase-price { font-size: 22px; font-weight: 900; margin-bottom: 20px; font-family: var(--font-mono); }
+        .showcase-btn { display: block; width: 100%; padding: 12px; background: var(--bg-dark); color: #ffffff; text-align: center; border-radius: 4px; font-weight: 800; font-size: 13px; text-decoration: none; cursor: default; }
+
+        /* SEC-06: Routine Scheduler Stage */
+        .scheduler-section { padding: 100px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-subtle); }
+        .scheduler-box { background: var(--bg-white); border: 1px solid var(--border-mid); border-radius: 12px; padding: 45px; }
+        .scheduler-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .routine-slot-card { background: var(--bg-light); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center; }
+        .slot-time { font-size: 16px; font-weight: 900; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 4px; }
+        .slot-scent { font-size: 13px; font-weight: 800; color: var(--text-secondary); }
+
+        /* SEC-07: Discovery Kit & Voucher */
+        .discovery-section { padding: 100px 0; background: var(--bg-white); border-bottom: 1px solid var(--border-subtle); }
+        .discovery-banner { background: var(--bg-dark); color: #ffffff; border-radius: 12px; padding: 60px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+
+        /* SEC-08: Footer Area */
+        footer.lab-footer { padding: 70px 0; background: var(--bg-dark); color: #94a3b8; font-size: 13px; text-align: center; }
+        .footer-logo { font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .footer-meta-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; font-weight: 700; }
+        .footer-meta-links a { color: #cbd5e1; text-decoration: none; }
+        .floating-cart-badge { position: fixed; bottom: 30px; right: 30px; background: var(--bg-dark); color: #ffffff; padding: 14px 28px; border-radius: 40px; font-weight: 900; font-size: 13px; border: 2px solid #ffffff; box-shadow: 0 8px 25px rgba(0,0,0,0.35); display: flex; align-items: center; gap: 10px; z-index: 999; }
+    </style>
+</head>
+<body>
+
+    <div class="top-utility-bar">
+        🏛️ SADAN HERITAGE LAB — [Type 3 : 타임라인] 임채원 디렉터 24H TPO 라이프스타일 큐레이션
+    </div>
+
+    <!-- SEC-01: GNB Header Area -->
+    <header class="gnb-header">
+        <div class="container gnb-inner">
+            <div class="gnb-logo">
+                <div class="gnb-logo-mark">士</div>
+                <div class="gnb-logo-text">SADAN 24H ROUTINE</div>
+            </div>
+            <nav class="capsule-nav">
+                <a href="#hero" class="capsule-pill active">타임라인</a>
+                <a href="#timeline" class="capsule-pill">24H 향기축</a>
+                <a href="#tpo" class="capsule-pill">TPO 큐레이션</a>
+                <a href="#showcase" class="capsule-pill">올데이 포터블 킷</a>
+                <a href="#routine" class="capsule-pill">스마트 루틴</a>
+                <a href="#discovery" class="capsule-pill">테이스팅 킷</a>
+            </nav>
+            <div class="gnb-actions">
+                <div class="gnb-cart-btn">🛒 Cart (1)</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEC-02: Hero Stage -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-badge">
+                <span>24H TIME-SERIES SCENT ROUTINE</span>
+                <span>·</span>
+                <span>DIRECTOR LIM CHAE-WON</span>
+            </div>
+            <h1 class="hero-title">
+                새벽에서 심야까지,<br>당신의 하루를 감싸는 시간의 향기
+            </h1>
+            <p class="hero-subtitle">
+                시간의 흐름과 상황(TPO)에 맞춰 변화하는 사단 24H 타임라인 큐레이션.<br>
+                15ml 올데이 포터블 키트로 언제 어디서나 가장 완벽한 향의 리듬을 경험하세요.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#timeline" class="btn-primary">24시간 타임라인 탐색 &gt;</a>
+                <a href="#showcase" class="btn-secondary">올데이 포터블 킷 보기</a>
+            </div>
+
+            <div class="hero-canvas-frame">
+                <div style="font-size:18px; font-weight:900; color:#334155; margin-bottom:8px;">[ 4K 새벽-정오-황혼-심야 24H 앰비언트 비주얼 회색 박스 ]</div>
+                <div style="font-size:13px; color:#64748b;">시간대별 조도 변화와 향기 지속 곡선 인터랙티브 캔버스</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-03: 24H Timeline Stage -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. 24H TIMELINE SLIDER</span>
+                <h2 class="section-title">24시간 가로 시간축 향 큐레이션</h2>
+                <p class="section-desc">
+                    06:00 새벽의 정갈한 안개부터 24:00 심야의 편안한 침향까지, 당신의 현재 시간에 맞는 향을 선택하세요.
+                </p>
+            </div>
+
+            <div class="timeline-slider-card">
+                <div class="time-tabs-row">
+                    <div class="time-tab">
+                        <div class="time-val">06:00</div>
+                        <div class="time-name">새벽 (Dawn) · 백단향</div>
+                    </div>
+                    <div class="time-tab active">
+                        <div class="time-val">12:00</div>
+                        <div class="time-name">정오 (Noon) · 솔잎유자</div>
+                    </div>
+                    <div class="time-tab">
+                        <div class="time-val">18:00</div>
+                        <div class="time-name">황혼 (Dusk) · 유자시트러스</div>
+                    </div>
+                    <div class="time-tab">
+                        <div class="time-val">24:00</div>
+                        <div class="time-name">심야 (Midnight) · 침향</div>
+                    </div>
+                </div>
+
+                <div class="timeline-focus-card">
+                    <div class="timeline-img-holder">
+                        [ 12:00 정오 지리산 솔잎유자 보틀 실물 회색 박스 ]
+                    </div>
+                    <div>
+                        <span class="timeline-info-badge">CURRENT TIME SELECTION</span>
+                        <h3 class="timeline-info-title">12:00 Noon · 지리산 솔잎유자 (Extrait 25%)</h3>
+                        <p class="timeline-info-desc">
+                            정오의 나른함을 깨우는 청량한 솔잎 피톤치드와 완도 유자의 비타민 향조. 점심 식후 손목에 1회 레이어링하여 오후 집중도를 극대화합니다.
+                        </p>
+                        <div class="timeline-notes-pills">
+                            <span class="pill-note">#피톤치드</span>
+                            <span class="pill-note">#기분전환</span>
+                            <span class="pill-note">#15ml포터블</span>
+                        </div>
+                        <a href="#tpo" class="btn-primary" style="padding:12px 24px; font-size:13px;">이 시간대 레이어링 가이드 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-04: TPO Scenario Wheel Stage -->
+    <section id="tpo" class="tpo-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. TPO SCENARIO CURATION</span>
+                <h2 class="section-title">라이프스타일 상황별 듀얼 레이어링</h2>
+                <p class="section-desc">
+                    비즈니스 미팅, 주말 야외 산책, 저녁 다이닝 등 당신이 마주할 특별한 순간에 최적화된 마패 배합 팁입니다.
+                </p>
+            </div>
+
+            <div class="tpo-grid">
+                <div class="tpo-wheel-visual">
+                    <div style="font-size:20px; font-weight:900; margin-bottom:10px;">[ 360° TPO 상황별 시나리오 휠 회색 박스 ]</div>
+                    <div style="font-size:13px; line-height:1.7; max-width:380px;">
+                        휠을 회전시켜 비즈니스, 운동, 데이트, 휴식 모드를 선택하면 즉각적인 1·2·3마패 레이어링 비율이 계산됩니다.
+                    </div>
+                </div>
+
+                <div class="tpo-recipe-panel">
+                    <div class="tpo-selector-group">
+                        <div class="tpo-btn-choice active">💼 비즈니스 미팅</div>
+                        <div class="tpo-btn-choice">🌿 주말 야외 산책</div>
+                        <div class="tpo-btn-choice">🍷 저녁 다이닝</div>
+                        <div class="tpo-btn-choice">🌙 심야 명상·수면</div>
+                    </div>
+
+                    <div class="recipe-ratio-box">
+                        <div class="ratio-row">
+                            <span>1마패 (베이스 백단향)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">2회 펌핑 (60%)</span>
+                        </div>
+                        <div class="ratio-row">
+                            <span>2마패 (포인트 솔잎유자)</span>
+                            <span style="font-family:var(--font-mono); font-weight:900;">1회 펌핑 (40%)</span>
+                        </div>
+                        <div style="font-size:12px; color:var(--text-secondary); margin-top:10px;">
+                            신뢰감을 주는 묵직한 백단향 위에 스마트한 솔잎을 얹어 프로페셔널한 인상을 연출합니다.
+                        </div>
+                    </div>
+
+                    <a href="#showcase" class="btn-primary" style="display:block; text-align:center;">
+                        이 TPO 듀얼 세트 확인 &gt;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-05: Product Showcase Stage -->
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. PORTABLE ALL-DAY SHOWCASE</span>
+                <h2 class="section-title">15ml 올데이 포터블 컬렉션</h2>
+                <p class="section-desc">
+                    주머니에 쏙 들어가는 15ml 마패 오브제 용기 3종과 수제 베지터블 천연 가죽 트래블 파우치 풀세트입니다.
+                </p>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 15ml 1마패 백단향 포터블 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">DAWN SCENT</span>
+                        <h3 class="showcase-name">15ml 1마패 새벽 백단향</h3>
+                        <p class="showcase-desc">초경량 아노다이징 포켓 보틀</p>
+                        <div class="showcase-price">34,000 KRW</div>
+                        <a href="#" class="showcase-btn">1초 바로구매</a>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 15ml 2마패 솔잎유자 포터블 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">NOON SCENT</span>
+                        <h3 class="showcase-name">15ml 2마패 정오 솔잎유자</h3>
+                        <p class="showcase-desc">오후 리프레시 트래블 에디션</p>
+                        <div class="showcase-price">36,000 KRW</div>
+                        <a href="#" class="showcase-btn">1초 바로구매</a>
+                    </div>
+                </div>
+
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">[ 15ml x 3종 가죽 트래블 풀세트 회색 박스 ]</div>
+                    <div class="showcase-body">
+                        <span class="showcase-badge">ALL-DAY SET</span>
+                        <h3 class="showcase-name">15ml 3종 올데이 가죽 세트</h3>
+                        <p class="showcase-desc">1·2·3마패 3종 + 수제 가죽 파우치 + 각인 스트랩</p>
+                        <div class="showcase-price">98,000 KRW</div>
+                        <a href="#" class="showcase-btn">1초 바로구매</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-06: Routine Scheduler Stage -->
+    <section id="routine" class="scheduler-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. SMART ROUTINE SCHEDULER</span>
+                <h2 class="section-title">카카오 알림톡 24시간 향기 루틴 케어</h2>
+                <p class="section-desc">
+                    출근 시간, 점심 식후, 퇴근길, 취침 시간에 맞추어 최적의 착향 부위와 레이어링 가이드를 알림톡으로 보내드립니다.
+                </p>
+            </div>
+
+            <div class="scheduler-box">
+                <div class="scheduler-grid">
+                    <div class="routine-slot-card">
+                        <div class="slot-time">08:00 AM</div>
+                        <div class="slot-scent">출근 전 손목 1마패 2회</div>
+                    </div>
+                    <div class="routine-slot-card">
+                        <div class="slot-time">13:00 PM</div>
+                        <div class="slot-scent">점심 후 귓불 2마패 1회</div>
+                    </div>
+                    <div class="routine-slot-card">
+                        <div class="slot-time">19:00 PM</div>
+                        <div class="slot-scent">퇴근길 쇄골 2마패 1회</div>
+                    </div>
+                    <div class="routine-slot-card">
+                        <div class="slot-time">23:00 PM</div>
+                        <div class="slot-scent">수면 전 베개 3마패 1회</div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="#" class="btn-primary">내 일과표에 맞춘 알림톡 루틴 구독하기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-07: Discovery Kit & Voucher -->
+    <section id="discovery" class="discovery-section">
+        <div class="container">
+            <div class="discovery-banner">
+                <div>
+                    <span class="section-tag" style="color:#94a3b8;">24H DISCOVERY KIT</span>
+                    <h3 style="font-size:28px; font-weight:900; margin-bottom:14px;">24시간 5종 홈 테이스팅 킷 (전액 환급)</h3>
+                    <p style="font-size:15px; color:#cbd5e1; line-height:1.7; margin-bottom:24px;">
+                        집에서 24시간 동안 새벽-정오-황혼-심야 4대 시간축 향을 모두 경험해 보고, 본품 구매 시 25,000원을 100% 환급받으세요.
+                    </p>
+                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); margin-bottom:24px;">
+                        25,000 KRW (100% 본품 환급 바우처 동봉)
+                    </div>
+                    <a href="#" class="btn-primary" style="background:#ffffff; color:#0f172a;">테이스팅 킷 신청하기 &gt;</a>
+                </div>
+                <div style="height:240px; background:#1e293b; border:1px dashed #475569; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-weight:800; text-align:center; padding:20px;">
+                    [ 24H 5종 바이알 + 환급 바우처 킷 렌더링 회색 박스 ]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEC-08: Footer Area -->
+    <footer class="lab-footer">
+        <div class="container">
+            <div class="footer-logo">士團 SADAN 24H ROUTINE</div>
+            <div class="footer-meta-links">
+                <a href="#hero">타임라인</a>
+                <a href="#timeline">24H 향기축</a>
+                <a href="#tpo">TPO 큐레이션</a>
+                <a href="#showcase">올데이 포터블 킷</a>
+                <a href="#routine">루틴 구독</a>
+                <a href="#">IFRA 인증서 열람</a>
+            </div>
+            <p>사단(士團) 헤리티지 조향 연구소 | TPO 라이프스타일 디렉터 임채원</p>
+            <p style="color:#64748b; font-size:12px; margin-top:8px;">© 2026 SADAN Heritage Olfactive Lab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="floating-cart-badge">
+        <span>🛒</span>
+        <span>Slide Cart (1) — 98,000 KRW</span>
+    </div>
+
+</body>
+</html>
