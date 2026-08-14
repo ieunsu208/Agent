@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1150" width="100%" height="100%" style="background:#F8FAFC; font-family:'Pretendard', 'Noto Sans KR', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 26px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .subtitle { font-size: 14px; fill: #475569; text-anchor: middle; }
+    .legend-text { font-size: 11px; fill: #475569; }
+    .card-title { font-size: 13px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .card-sub { font-size: 10px; fill: #64748B; text-anchor: middle; }
+    .gnb-title { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .gnb-sub { font-size: 11px; fill: #CBD5E1; text-anchor: middle; }
+    .section-head { font-size: 14px; font-weight: 800; fill: #1E293B; }
+    .journey-label { font-size: 12px; font-weight: 700; fill: #334155; }
+    .journey-node { font-size: 11px; fill: #1E293B; text-anchor: middle; }
+    .footnote { font-size: 11px; fill: #64748B; text-anchor: middle; }
+  </style>
+
+  <!-- Header -->
+  <text x="600" y="45" class="title">사단 커스텀 아틀리에 수제 가죽 키링 플랫폼 사이트맵 (서정우)</text>
+  <text x="600" y="70" class="subtitle">3D 실시간 커스텀 ➔ 40년 장인 공방 ➔ B2B 기업 대량 기프트 ➔ 선물 포장 | 최대 3단계 깊이</text>
+
+  <!-- Top Legend Right Bar -->
+  <g transform="translate(820, 30)">
+    <rect x="0" y="0" width="350" height="40" rx="6" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <rect x="15" y="14" width="12" height="12" rx="2" fill="#1E3A8A"/>
+    <text x="32" y="24" class="legend-text">1차/GNB</text>
+    
+    <rect x="95" y="14" width="12" height="12" rx="2" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <text x="112" y="24" class="legend-text">공통</text>
+
+    <rect x="150" y="14" width="12" height="12" rx="2" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="167" y="24" class="legend-text">회원</text>
+
+    <rect x="205" y="14" width="12" height="12" rx="2" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="2,2"/>
+    <text x="222" y="24" class="legend-text">가정</text>
+
+    <rect x="260" y="14" width="12" height="12" rx="2" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="2,2"/>
+    <text x="277" y="24" class="legend-text">예외</text>
+  </g>
+
+  <!-- Root Node -->
+  <rect x="440" y="95" width="320" height="48" rx="8" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="118" class="gnb-title">홈 · 공통</text>
+  <text x="600" y="133" class="gnb-sub">브랜드 메시지 · 핵심 CTA · 전역 내비게이션</text>
+
+  <!-- Main 5 Columns Lines &amp; Headers -->
+  <line x1="600" y1="143" x2="600" y2="165" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="120" y1="165" x2="1080" y2="165" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Column 1 -->
+  <line x1="120" y1="165" x2="120" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="30" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="120" y="212" class="gnb-title">아틀리에 서사 · 1차</text>
+  <text x="120" y="228" class="gnb-sub">전통 가치 ➔ 기술 신뢰</text>
+
+  <!-- Column 2 -->
+  <line x1="360" y1="165" x2="360" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="270" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="360" y="212" class="gnb-title">3D 커스텀 시뮬레이터 · 1차</text>
+  <text x="360" y="228" class="gnb-sub">가죽 선택 ➔ 실시간 각인 ➔ 주문</text>
+
+  <!-- Column 3 -->
+  <line x1="600" y1="165" x2="600" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="510" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="212" class="gnb-title">40년 장인 공방 · 1차</text>
+  <text x="600" y="228" class="gnb-sub">핸드스티치 ➔ 에이징 룩북</text>
+
+  <!-- Column 4 -->
+  <line x1="840" y1="165" x2="840" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="750" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="840" y="212" class="gnb-title">B2B 기업 기프트 · 1차</text>
+  <text x="840" y="228" class="gnb-sub">불박 로고 ➔ 수량 단가 ➔ 견적</text>
+
+  <!-- Column 5 -->
+  <line x1="1080" y1="165" x2="1080" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="990" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="1080" y="212" class="gnb-title">한지 패키지 &amp; 포장 · 1차</text>
+  <text x="1080" y="228" class="gnb-sub">기프트 박스 ➔ 붓글씨 카드 ➔ 전환</text>
+
+  <!-- Nodes Generation for Columns -->
+  <!-- Col 1 Nodes -->
+  <rect x="30" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="278" class="card-title">이탈리안 베지터블 가치</text>
+  <text x="120" y="293" class="card-sub">2차 · 공통</text>
+
+  <rect x="30" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="333" class="card-title">40년 장인 전통 역사</text>
+  <text x="120" y="348" class="card-sub">2차 · 명장 스토리</text>
+
+  <rect x="30" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="388" class="card-title">황동 &amp; 가죽 원천 기술</text>
+  <text x="120" y="403" class="card-sub">2차 · 공통</text>
+
+  <!-- Col 2 Nodes -->
+  <rect x="270" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="278" class="card-title">3D 실시간 가죽/각인 UI</text>
+  <text x="360" y="293" class="card-sub">2차 · 360도 회전</text>
+
+  <rect x="270" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="333" class="card-title">완성 샷 캡처 다운로드</text>
+  <text x="360" y="348" class="card-sub">2차 · 고해상도 PNG</text>
+
+  <rect x="270" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="388" class="card-title">커스텀 완성 &amp; 주문 폼</text>
+  <text x="360" y="403" class="card-sub">2차 · 개별/대량</text>
+
+  <!-- Col 3 Nodes -->
+  <rect x="510" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="600" y="278" class="card-title">장인 공방 소개</text>
+  <text x="600" y="293" class="card-sub">2차 · 공통</text>
+
+  <rect x="510" y="315" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="333" class="card-title">핸드스티치 비하인드 비디오</text>
+  <text x="600" y="348" class="card-sub">2차 · 수제 영상</text>
+
+  <rect x="510" y="370" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="388" class="card-title">가죽 에이징 룩북</text>
+  <text x="600" y="403" class="card-sub">2차 · 경과 갤러리</text>
+
+  <!-- Col 4 Nodes -->
+  <rect x="750" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="278" class="card-title">B2B 기업 불박 로고 샘플</text>
+  <text x="840" y="293" class="card-sub">2차 · 금속 도장</text>
+
+  <rect x="750" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="333" class="card-title">수량별 맞춤 단가 계산기</text>
+  <text x="840" y="348" class="card-sub">2차 · 50개 이상</text>
+
+  <rect x="750" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="388" class="card-title">B2B 대량 견적 신청 모달</text>
+  <text x="840" y="403" class="card-sub">3차 · 1:1 견적</text>
+
+  <!-- Col 5 Nodes -->
+  <rect x="990" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="278" class="card-title">오리엔탈 한지 지함 박스</text>
+  <text x="1080" y="293" class="card-sub">2차 · 기프트 포장</text>
+
+  <rect x="990" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="333" class="card-title">FAQ</text>
+  <text x="1080" y="348" class="card-sub">2차 · 각인/배송/B2B</text>
+
+  <rect x="990" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="388" class="card-title">무료 붓글씨 카드 작성</text>
+  <text x="1080" y="403" class="card-sub">2차 · 전역 Floating CTA</text>
+
+  <!-- Middle Section: Member State Area (Left) &amp; Exception Area (Right) -->
+  <g transform="translate(30, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEF3C7" fill-opacity="0.4" stroke="#F59E0B" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">회원 상태별 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">입력에 인증/마이페이지 명세가 없어 최소 구조로 제안</text>
+
+    <rect x="16" y="60" width="120" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="76" y="78" class="card-title">로그인</text>
+    <text x="76" y="92" class="card-sub">1차 · 비회원 · 가정</text>
+
+    <line x1="136" y1="80" x2="176" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="176" y="60" width="130" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="241" y="78" class="card-title">마이페이지</text>
+    <text x="241" y="92" class="card-sub">1차 · 회원 · 가정</text>
+
+    <line x1="306" y1="80" x2="346" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="346" y="60" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="78" class="card-title">내 커스텀 저장함</text>
+    <text x="443" y="92" class="card-sub">2차 · 3D 캡처 연결</text>
+
+    <rect x="346" y="115" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="133" class="card-title">주문·B2B 견적 내역</text>
+    <text x="443" y="147" class="card-sub">2차 · 견적/배송 연결</text>
+  </g>
+
+  <g transform="translate(610, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEE2E2" fill-opacity="0.4" stroke="#EF4444" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">예외/상태 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">시스템 오류 및 권한 예외 상황 대응 구조</text>
+
+    <rect x="16" y="60" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="76" class="card-title">404 페이지 없음</text>
+    <text x="280" y="89" class="card-sub">홈/GNB로 복구</text>
+
+    <rect x="16" y="103" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="119" class="card-title">각인 문구 오류 / 로고 확장자 거부</text>
+    <text x="280" y="132" class="card-sub">형식 재안내/재업로드</text>
+
+    <rect x="16" y="146" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="162" class="card-title">세션 만료 / 접근 권한 없음</text>
+    <text x="280" y="175" class="card-sub">로그인/아틀리에로 복구</text>
+  </g>
+
+  <!-- Bottom Section: User Journeys &amp; Cross-connections -->
+  <g transform="translate(30, 660)">
+    <rect x="0" y="0" width="1140" height="430" rx="10" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <text x="24" y="32" class="section-head">주요 사용자 여정 및 교차 연결</text>
+
+    <!-- Journey 1 -->
+    <g transform="translate(24, 60)">
+      <text x="0" y="20" class="journey-label">1. 수제 가치 ➔ 3D 커스텀</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">베지터블 가치</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">3D 시뮬레이터</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">가죽/각인 선택</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">완성 샷 캡처</text>
+        <line x1="690" y1="18" x2="720" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="720" y="0" width="170" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="805" y="22" class="journey-node">주문/견적 제출</text>
+      </g>
+    </g>
+
+    <!-- Journey 2 -->
+    <g transform="translate(24, 130)">
+      <text x="0" y="20" class="journey-label">2. 장인 서사 ➔ B2B 전환</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">장인 비하인드</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="255" y="22" class="journey-node">로그인·가정</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="445" y="22" class="journey-node">B2B 불박 샘플</text>
+        <line x1="530" y1="18" x2="560" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="560" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="645" y="22" class="journey-node">대량 견적 신청/완료</text>
+      </g>
+    </g>
+
+    <!-- Journey 3 -->
+    <g transform="translate(24, 200)">
+      <text x="0" y="20" class="journey-label">3. 선물 포장 신청</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">한지 박스 안내</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">붓글씨 카드 작성</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">포장 선택</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">주문서 반영</text>
+      </g>
+    </g>
+
+    <!-- Journey 4 -->
+    <g transform="translate(24, 270)">
+      <text x="0" y="20" class="journey-label">4. 예외 복구</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="190" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="95" y="22" class="journey-node">로고 확장자 오류</text>
+        <line x1="190" y1="18" x2="220" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="220" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="295" y="22" class="journey-node">파일 재첨부</text>
+        <line x1="370" y1="18" x2="400" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="400" y="0" width="180" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="490" y="22" class="journey-node">세션 만료/권한 없음</text>
+        <line x1="580" y1="18" x2="610" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="610" y="0" width="170" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="695" y="22" class="journey-node">로그인 후 원위치</text>
+      </g>
+    </g>
+
+    <!-- Bottom Footnote -->
+    <text x="570" y="380" class="footnote">점선 테두리 = 입력 문서에 없는 최소 보완 가정 · 각 카테고리 간 단일 페이지 재사용 구조 적용</text>
+  </g>
+</svg>

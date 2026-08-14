@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[최하은 PM - 시안 3] 노트 믹싱 벤토 그리드 &amp; 친환경 구독 와이어프레임</title>
+    <style>
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-dark: #1e293b;
+            --bg-gray-light: #f1f5f9;
+            --bg-gray-mid: #e2e8f0;
+            --bg-gray-dark: #cbd5e1;
+            --border-color: #94a3b8;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 20px; }
+
+        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 10px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 15px; }
+
+        header { background: #ffffff; border: 2px solid var(--border-color); padding: 18px 25px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .logo-box { display: flex; align-items: center; gap: 12px; }
+        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 8px 14px; font-weight: 900; font-size: 18px; border-radius: 6px; }
+        .logo-title { font-size: 20px; font-weight: 900; }
+
+        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; font-weight: 800; font-size: 13px; }
+        nav span { padding: 6px 14px; border-radius: 6px; background: var(--bg-gray-mid); }
+        nav span.active { background: var(--bg-dark); color: #ffffff; }
+
+        /* Bento Grid 2x2 Layout */
+        .bento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+        .bento-card { background: #ffffff; border: 2px solid var(--border-color); border-radius: 10px; padding: 20px; }
+        .bento-title { font-size: 16px; font-weight: 900; margin-bottom: 12px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 6px; }
+
+        .slider-box { background: var(--bg-gray-light); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px; margin-bottom: 10px; }
+        .slider-bar { background: var(--bg-gray-mid); height: 10px; border-radius: 5px; position: relative; margin-top: 8px; }
+        .slider-thumb { background: var(--bg-dark); width: 20px; height: 20px; border-radius: 50%; position: absolute; top: -5px; left: 30%; }
+
+        .pyramid-viewport { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #334155; text-align: center; }
+
+        /* Bottom Sheet UI Wireframe */
+        .bottom-sheet-card { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 22px; margin-bottom: 20px; }
+        .sheet-title { font-size: 18px; font-weight: 900; margin-bottom: 12px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 8px; }
+
+        .btn-action-container { display: flex; gap: 12px; }
+        .btn-grey { flex: 1; background: var(--bg-gray-mid); border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; font-weight: 800; text-align: center; }
+        .btn-dark { flex: 2; background: var(--bg-dark); color: #ffffff; border: none; padding: 12px; border-radius: 6px; font-weight: 900; text-align: center; }
+
+        footer { background: var(--bg-dark); color: #94a3b8; padding: 25px; border-radius: 10px; font-size: 12px; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        [시안 3 - Note Mixer &amp; Eco Sub] T/M/B 노트 믹서 벤토 그리드 &amp; 친환경 구독 하단 시트 와이어프레임
+    </div>
+
+    <header>
+        <div class="logo-box">
+            <div class="logo-badge">士團</div>
+            <div>
+                <div class="logo-title">사단(SADAN) 조향 믹싱 랩</div>
+                <div style="font-size: 11px; color: var(--text-muted);">최하은 PM - 시안 3: 벤토 그리드 &amp; 친환경 구독 명세서</div>
+            </div>
+        </div>
+        <div>
+            <button class="btn-grey">화해 비건 성분표</button>
+            <button class="btn-dark">리필 구독 담기</button>
+        </div>
+    </header>
+
+    <nav>
+        <span>1.0 AI Scent Finder</span>
+        <span>2.0 3D Engraving Studio</span>
+        <span class="active">3.0 Custom Note Mixer</span>
+        <span>4.0 Eco Refill Sub</span>
+        <span>5.0 Ingredient Safety</span>
+    </nav>
+
+    <!-- Bento Grid 2x2 Layout -->
+    <div class="bento-grid">
+        <div class="bento-card">
+            <div class="bento-title">Top Note 믹싱 슬라이더 (%)</div>
+            <div class="slider-box">
+                <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
+                    <span>풋사과 &amp; 베르가못</span>
+                    <span>30%</span>
+                </div>
+                <div class="slider-bar"><div class="slider-thumb" style="left:30%;"></div></div>
+            </div>
+            <div style="font-size:12px; color:var(--text-muted);">첫 30분간 은은하고 청량하게 유지되는 첫향입니다.</div>
+        </div>
+
+        <div class="bento-card">
+            <div class="bento-title">Middle Note 믹싱 슬라이더 (%)</div>
+            <div class="slider-box">
+                <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
+                    <span>조선 먹향 &amp; 련(蓮)</span>
+                    <span>40%</span>
+                </div>
+                <div class="slider-bar"><div class="slider-thumb" style="left:40%;"></div></div>
+            </div>
+            <div style="font-size:12px; color:var(--text-muted);">1~3시간 동안 중심을 잡아주는 묵직한 잔향입니다.</div>
+        </div>
+
+        <div class="bento-card">
+            <div class="bento-title">Base Note 믹싱 슬라이더 (%)</div>
+            <div class="slider-box">
+                <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
+                    <span>놋쇠 앰버 &amp; 모스</span>
+                    <span>30%</span>
+                </div>
+                <div class="slider-bar"><div class="slider-thumb" style="left:30%;"></div></div>
+            </div>
+            <div style="font-size:12px; color:var(--text-muted);">5시간 이상 피부에 남아 맴도는 마지막 여운입니다.</div>
+        </div>
+
+        <div class="bento-card">
+            <div class="bento-title">향 성상 피라미드 시각화 모듈</div>
+            <div class="pyramid-viewport">
+                [ 3단 향 피라미드 그래픽 visual 회색 박스 ]<br><br>
+                Top 30% | Mid 40% | Base 30%<br>
+                잔향 예측시간: 6시간 30분
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Sheet Option (Eco Subscription) -->
+    <div class="bottom-sheet-card">
+        <div class="sheet-title">🌱 [최하은 PM 친환경 구독 서비스] 카트리지 정기 배송 &amp; 공병 회수 신청</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:15px;">
+            <div style="background:var(--bg-gray-light); padding:15px; border-radius:8px; border:1px solid var(--border-color);">
+                <div style="font-weight:800; margin-bottom:5px;">1. 정기 구독 주기 선택</div>
+                <div style="font-size:13px;">(o) 1개월 주기 배송 (15% 할인)</div>
+                <div style="font-size:13px;">( ) 2개월 주기 배송 (10% 할인)</div>
+            </div>
+            <div style="background:var(--bg-gray-light); padding:15px; border-radius:8px; border:1px solid var(--border-color);">
+                <div style="font-weight:800; margin-bottom:5px;">2. 공병 수거 &amp; 리워드 포인트</div>
+                <div style="font-size:13px;">[x] 다 쓴 놋쇠 공병 수거 신청 (+3,000 P)</div>
+                <div style="font-size:13px; color:var(--text-muted);">택배 방문 회수 전용 바코드가 발급됩니다.</div>
+            </div>
+        </div>
+
+        <div class="btn-action-container">
+            <div class="btn-grey">화해 비건 성분 100% 검증표 모달</div>
+            <div class="btn-dark">친환경 정기 구독 신청하기 (Primary CTA)</div>
+        </div>
+    </div>
+
+    <footer>
+        사단(士團) 커스텀 조향 LAB | PM 최하은 | CS Center 1588-0000 | 화해 비건 성분 검증 및 공병 반납 시스템 명세
+    </footer>
+
+</body>
+</html>

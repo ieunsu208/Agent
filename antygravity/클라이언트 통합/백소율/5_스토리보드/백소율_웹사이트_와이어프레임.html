@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[백소율 PM] 사단(士團) AI 맞춤 조향 스마트 랩 회색 박스 와이어프레임</title>
+    <style>
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-dark: #1e293b;
+            --bg-gray-light: #f1f5f9;
+            --bg-gray-mid: #e2e8f0;
+            --bg-gray-dark: #cbd5e1;
+            --border-color: #94a3b8;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 25px; }
+
+        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 12px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 20px; }
+
+        header { background: #ffffff; border: 2px solid var(--border-color); padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logo-box { display: flex; align-items: center; gap: 14px; }
+        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 10px 16px; font-weight: 900; font-size: 18px; border-radius: 6px; }
+        .logo-title { font-size: 20px; font-weight: 900; }
+
+        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 14px 24px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; }
+        nav span { padding: 8px 16px; border-radius: 6px; background: var(--bg-gray-mid); }
+        nav span.active { background: var(--bg-dark); color: #ffffff; }
+
+        .hero-box { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 10px; padding: 35px; text-align: center; margin-bottom: 25px; }
+        .hero-title { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
+        .hero-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        .hero-grey-placeholder { background: var(--bg-gray-dark); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #475569; font-size: 15px; }
+
+        .showcase-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
+        .showcase-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 12px; margin-bottom: 20px; }
+        .showcase-title { font-size: 20px; font-weight: 900; }
+        
+        .goods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .goods-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; }
+        .goods-img-greybox { background: var(--bg-gray-dark); border: 1px dashed var(--border-color); height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #334155; margin-bottom: 12px; font-size: 13px; }
+
+        .layout-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 25px; }
+        .section-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; margin-bottom: 25px; }
+        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 10px; }
+
+        .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .plan-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); padding: 16px; border-radius: 6px; text-align: center; font-weight: 800; }
+        .plan-card.active { background: var(--bg-dark); color: #ffffff; }
+
+        aside { display: flex; flex-direction: column; gap: 20px; }
+        .aside-widget { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; }
+
+        footer { background: var(--bg-dark); color: #94a3b8; padding: 30px; border-radius: 10px; font-size: 13px; text-align: center; margin-top: 30px; }
+        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--bg-dark); color: #ffffff; padding: 15px 28px; border-radius: 35px; font-weight: 900; font-size: 14px; border: 2px solid #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        [회색 띠 배너] 나만의 AI 무드 조향 진단 알고리즘 오픈 (3종 디스커버리 샘플 킷 0원 증정 바)
+    </div>
+
+    <header>
+        <div class="logo-box">
+            <div class="logo-badge">士團</div>
+            <div>
+                <div class="logo-title">사단(SADAN) AI 조향 스마트 랩</div>
+                <div style="font-size: 12px; color: var(--text-muted);">백소율 PM 전용 회색 박스 와이어프레임 명세서</div>
+            </div>
+        </div>
+        <div>
+            <button style="background:var(--bg-gray-mid); border:1px solid var(--border-color); padding:10px 18px; border-radius:6px; font-weight:800; margin-right:10px;">0원 샘플 킷</button>
+            <button style="background:var(--bg-dark); color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:800;">AI 조향 진단 시작</button>
+        </div>
+    </header>
+
+    <nav>
+        <span class="active">1.0 AI Scent Lab (AI 진단)</span>
+        <span>2.0 Secret Membership (구독 클럽)</span>
+        <span>3.0 Discovery Kit (0원 샘플)</span>
+        <span>4.0 My Certificate</span>
+        <span>5.0 Formula Review</span>
+    </nav>
+
+    <div class="hero-box">
+        <div class="hero-title">4단계 AI 무드 &amp; 성향 진단 알고리즘 인터랙티브 랩</div>
+        <div class="hero-sub">조선 어사 비밀 레시피 알고리즘이 당신의 라이프스타일에 맞춘 1·2·3마패 최적 레이어링 비율을 계산합니다.</div>
+        <div class="hero-grey-placeholder">
+            [ 4단계 AI 무드 슬라이더 &amp; 실시간 마패 향료 추천 믹스 비율 회색 박스 영역 ]
+        </div>
+    </div>
+
+    <div class="showcase-container">
+        <div class="showcase-header">
+            <div class="showcase-title">🤖 [백소율 전용 제품 전시 구간] AI 알고리즘 맞춤 1·2·3마패 레이어링 향수 세트 &amp; 정기 구독 카트리지 킷</div>
+            <div style="background:var(--bg-dark); color:#fff; padding:4px 12px; border-radius:4px; font-weight:800; font-size:12px;">AI 알고리즘 추천 완료 회색 뱃지</div>
+        </div>
+        <div class="goods-grid">
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ AI 맞춤 마패 향수 실물 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">AI 맞춤 1·2·3마패 세트</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">침향 40% + 백단향 35% + 묵향 25% 조합</div>
+            </div>
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ 월간 첩보 카트리지 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">매월 첩보 카트리지 구독 킷</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">한정판 향료 주간 정기 배송 패키지</div>
+            </div>
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ 3종 디스커버리 킷 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">3종 시향 디스커버리 0원 킷</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">체험 후 100% 포인트 환급 샘플 팩</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-grid">
+        <main>
+            <div class="section-box">
+                <div class="section-title">📦 암행어사 비밀 레시피 정기 구독 클럽 플랜</div>
+                <div class="plan-grid">
+                    <div class="plan-card">싱글 마패 플랜<br><span style="font-size:16px;">29,000원 / 월</span></div>
+                    <div class="plan-card active">듀얼 레이어링 플랜<br><span style="font-size:16px;">49,000원 / 월</span></div>
+                    <div class="plan-card">3마패 마스터 플랜<br><span style="font-size:16px;">69,000원 / 월</span></div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">📜 디지털 암행어사 첩보 보증서 시리얼 조회</div>
+                <div style="background:var(--bg-gray-mid); height:100px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#475569; font-size:14px;">
+                    [ 놋쇠 마패 고유 시리얼 번호 입력 및 PDF 보증서 즉시 다운로드 회색 UI ]
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="aside-widget">
+                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">🎁 0원 샘플 킷 신청</div>
+                <button style="width:100%; padding:10px; background:var(--bg-dark); color:#fff; border:none; border-radius:6px; font-weight:800;">0원 샘플 신청하기</button>
+            </div>
+            <div class="aside-widget">
+                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">⚙️ 구독 옵션 관리</div>
+                <button style="width:100%; padding:10px; background:var(--bg-gray-mid); border:1px solid var(--border-color); border-radius:6px; font-weight:800;">구독 주기 변경</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        &copy; 2026 SADAN AI Smart Perfume Lab (백소율 PM). All rights reserved.
+    </footer>
+
+    <div class="floating-btn">🧪 4단계 AI 무드 진단 시작하기</div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "P-MAIN-01",
+    "name": "메인 홈",
+    "purpose": "글로벌 퍼퓸 모듈 정기 배송 멤버십 브랜드 랜딩 및 3D 마패 히어로",
+    "entryConditions": ["자사몰 URL 접속", "로고 클릭"],
+    "sections": ["GNB 헤더", "3D 글로벌 퍼퓸 히어로 비디오", "첫 달 50% 웰컴 뱃지", "구독 플랜 요약 표", "4계절 조향 큐레이션 카드", "50개국 배송 지도", "푸터"],
+    "actions": ["통화 선택 (USD/KRW)", "3D 비디오 감상", "[멤버십 가입] 클릭"],
+    "states": ["기본(USD 표시)", "KRW 통화 전환", "모바일 반응형"],
+    "nextScreens": ["P-INTRO-01", "P-PLAN-01", "P-PLAN-01-01", "P-CURA-01", "P-GLOB-01"]
+  },
+  {
+    "id": "P-INTRO-01",
+    "name": "멤버십 소개 (Express Intro)",
+    "purpose": "글로벌 사단 멤버십 라이프스타일 및 웰컴 프로모션 제시",
+    "entryConditions": ["GNB [Intro] 클릭"],
+    "sections": ["글로벌 퍼퓸 멤버십 필름", "첫 달 50% 할인 쿠폰 혜택", "친구 추천 프로모션"],
+    "actions": ["[50% 웰컴 쿠폰 발급] 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-INTRO-01-01", "P-PLAN-01-01"]
+  },
+  {
+    "id": "P-INTRO-01-01",
+    "name": "웰컴 쿠폰 팝업",
+    "purpose": "신규 가입자 50% 할인 쿠폰 코드 복사 및 적용",
+    "entryConditions": ["P-INTRO-01에서 [50% 쿠폰 발급] 클릭"],
+    "sections": ["쿠폰 코드 (EXPRESS50)", "복사하기 버튼", "친구 추천 링크"],
+    "actions": ["쿠폰 코드 복사", "[바로 가입하기] 클릭"],
+    "states": ["복사 완료"],
+    "nextScreens": ["P-PLAN-01-01"]
+  },
+  {
+    "id": "P-PLAN-01",
+    "name": "구독 플랜 비교 (Subscription Plan)",
+    "purpose": "월간(Monthly) vs 분기별(Quarterly) 혜택 및 요금 표 비교",
+    "entryConditions": ["GNB [Subscription Plan] 클릭"],
+    "sections": ["월간/분기 탭 스위처", "요금제 비교 표 UI", "회원 전용 사단 가죽 굿즈 안내"],
+    "actions": ["탭 전환", "통화 변경", "[플랜 선택 및 가입] 클릭"],
+    "states": ["월간 선택", "분기별 선택 (17% 할인)", "통화 변경(EUR/KRW)"],
+    "nextScreens": ["P-PLAN-01-01"]
+  },
+  {
+    "id": "P-PLAN-01-01",
+    "name": "멤버십 1-Click 가입 모달",
+    "purpose": "수령 국가 선택, 주소 작성, 결제 카드 입력 및 50% 쿠폰 적용",
+    "entryConditions": ["P-PLAN-01 또는 50% 쿠폰 스티키 뱃지 클릭"],
+    "sections": ["플랜 선택 확인", "수령 국가 콤보박스 (50개국)", "배송지 주소", "해외/국내 카드 결제 정보", "쿠폰 코드 입력"],
+    "actions": ["국가 선택", "주소 작성", "쿠폰 적용", "[가입 신청 확정] 클릭"],
+    "states": ["기본 작성", "50% 할인 적용", "유효성 검사 에러", "제출 중"],
+    "nextScreens": ["P-PLAN-01-02"]
+  },
+  {
+    "id": "P-PLAN-01-02",
+    "name": "가입 완료 & 배송 팝업",
+    "purpose": "멤버십 확정 통보 및 글로벌 배송 조회 안내",
+    "entryConditions": ["P-PLAN-01-01 유효성 통과 및 제출"],
+    "sections": ["멤버십 완료 메시지", "멤버십 번호", "첫 배송 예정일", "배송 추적 버튼"],
+    "actions": ["[확인 및 메인으로] 클릭"],
+    "states": ["완료 표시"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-CURA-01",
+    "name": "계절 큐레이션 (Seasonal Curation)",
+    "purpose": "봄/여름/가을/겨울 사계절 조향사 시그니처 카트리지 룩북 제공",
+    "entryConditions": ["GNB [Seasonal Curation] 클릭"],
+    "sections": ["4계절 퍼퓸 카드 슬라이더", "조향사 테이스팅 노트", "계절별 향 조합 추천"],
+    "actions": ["계절 카드 클릭", "[상세 노트 보기] 클릭"],
+    "states": ["기본", "봄/여름/가을/겨울 필터링"],
+    "nextScreens": ["P-CURA-01-01", "P-PLAN-01-01"]
+  },
+  {
+    "id": "P-CURA-01-01",
+    "name": "카트리지 상세 노트 팝업",
+    "purpose": "개별 향수 탑/미들/베이스 노출 및 큐레이션 스토리 제공",
+    "entryConditions": ["P-CURA-01에서 [상세 노트] 클릭"],
+    "sections": ["향수 성분 비주얼", "조향사 메시지", "추천 사용 TPO"],
+    "actions": ["[이 향으로 정기 구독 가입] 클릭"],
+    "states": ["팝업 구동"],
+    "nextScreens": ["P-PLAN-01-01"]
+  },
+  {
+    "id": "P-GLOB-01",
+    "name": "글로벌 배송 안내 (Global Delivery)",
+    "purpose": "전 세계 50개국 무료 익스프레스 배송망 정보 제공",
+    "entryConditions": ["GNB [Global Delivery] 클릭"],
+    "sections": ["글로벌 배송 인터랙티브 지도 UI", "국가별 예상 배송일 표", "통관 및 배송 FAQ"],
+    "actions": ["지도 노드 클릭", "[배송 기일 계산하기] 클릭"],
+    "states": ["지도 로딩", "국가 검색"],
+    "nextScreens": ["P-GLOB-01-01", "P-PLAN-01-01"]
+  },
+  {
+    "id": "P-GLOB-01-01",
+    "name": "배송 계산기 & FAQ 팝업",
+    "purpose": "국가 선택 시 예상 배송 소요 일수 자동 산출",
+    "entryConditions": ["P-GLOB-01에서 [배송 계산기] 클릭"],
+    "sections": ["국가 선택 드롭다운", "예상 배송 일수 (평균 3~5일)", "통관 관련 안내"],
+    "actions": ["국가 선택", "[계산하기] 클릭"],
+    "states": ["계산 완료"],
+    "nextScreens": ["P-PLAN-01-01"]
+  },
+  {
+    "id": "P-HUB-01-01",
+    "name": "구독 셀프 케어 (Membership Hub)",
+    "purpose": "마이페이지 내 향 변경 및 1회 배송 건너뛰기 일시정지 관리 [가정]",
+    "entryConditions": ["마이페이지 로그인 후 진입"],
+    "sections": ["현재 구독 상태", "차회 배송 예정일", "다음 달 향 선택 콤보박스", "일시정지 버튼"],
+    "actions": ["향 변경 선택", "[일시정지 신청] 클릭"],
+    "states": ["변경 완료", "일시정지 상태"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-01",
+    "name": "이용약관 및 배송 정책",
+    "purpose": "글로벌 회원 약관 및 무료 배송/환불 정책 안내",
+    "entryConditions": ["푸터 약관 링크 클릭"],
+    "sections": ["약관 전문", "글로벌 배송 및 취소 규정"],
+    "actions": ["탭 전환"],
+    "states": ["기본"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-02",
+    "name": "404 / 예외 안내 페이지",
+    "purpose": "잘못된 접근 예외 처리",
+    "entryConditions": ["잘못된 URL 접근"],
+    "sections": ["오류 안내 문구", "메인 이동 버튼"],
+    "actions": ["[메인으로 돌아가기] 클릭"],
+    "states": ["예외"],
+    "nextScreens": ["P-MAIN-01"]
+  }
+]

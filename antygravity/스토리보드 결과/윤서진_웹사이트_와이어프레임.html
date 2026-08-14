@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[윤서진 디렉터] 사단(士團) 글로벌 럭셔리 몰 회색 박스 와이어프레임</title>
+    <style>
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-dark: #1e293b;
+            --bg-gray-light: #f1f5f9;
+            --bg-gray-mid: #e2e8f0;
+            --bg-gray-dark: #cbd5e1;
+            --border-color: #94a3b8;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 25px; }
+
+        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 12px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 20px; }
+
+        header { background: #ffffff; border: 2px solid var(--border-color); padding: 20px 30px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logo-box { display: flex; align-items: center; gap: 14px; }
+        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 10px 16px; font-weight: 900; font-size: 18px; border-radius: 6px; }
+        .logo-title { font-size: 20px; font-weight: 900; }
+
+        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 14px 24px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; }
+        nav span { padding: 8px 16px; border-radius: 6px; background: var(--bg-gray-mid); }
+        nav span.active { background: var(--bg-dark); color: #ffffff; }
+
+        .hero-box { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); border-radius: 10px; padding: 35px; text-align: center; margin-bottom: 25px; }
+        .hero-title { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
+        .hero-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        .hero-grey-placeholder { background: var(--bg-gray-dark); height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #475569; font-size: 15px; }
+
+        .showcase-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
+        .showcase-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 12px; margin-bottom: 20px; }
+        .showcase-title { font-size: 20px; font-weight: 900; }
+        
+        .goods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .goods-card { background: var(--bg-gray-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; }
+        .goods-img-greybox { background: var(--bg-gray-dark); border: 1px dashed var(--border-color); height: 140px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #334155; margin-bottom: 12px; font-size: 13px; }
+
+        .layout-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 25px; }
+        .section-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; margin-bottom: 25px; }
+        .section-title { font-size: 18px; font-weight: 800; margin-bottom: 15px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 10px; }
+
+        aside { display: flex; flex-direction: column; gap: 20px; }
+        .aside-widget { background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; }
+
+        footer { background: var(--bg-dark); color: #94a3b8; padding: 30px; border-radius: 10px; font-size: 13px; text-align: center; margin-top: 30px; }
+        .floating-btn { position: fixed; bottom: 30px; right: 30px; background: var(--bg-dark); color: #ffffff; padding: 15px 28px; border-radius: 35px; font-weight: 900; font-size: 14px; border: 2px solid #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        🌐 Global Boutique — Free Express Worldwide Shipping on Orders Over $200 (회색 바)
+    </div>
+
+    <header>
+        <div class="logo-box">
+            <div class="logo-badge">士團</div>
+            <div>
+                <div class="logo-title">사단(SADAN) 글로벌 럭셔리 몰</div>
+                <div style="font-size: 12px; color: var(--text-muted);">윤서진 총괄 디렉터 전용 회색 박스 와이어프레임 명세서</div>
+            </div>
+        </div>
+        <div>
+            <button style="background:var(--bg-gray-mid); border:1px solid var(--border-color); padding:10px 18px; border-radius:6px; font-weight:800; margin-right:10px;">KOR / ENG / FRA</button>
+            <button style="background:var(--bg-dark); color:#fff; border:none; padding:10px 20px; border-radius:6px; font-weight:800;">3D 참 각인 아틀리에</button>
+        </div>
+    </header>
+
+    <nav>
+        <span class="active">1.0 Heritage History</span>
+        <span>2.0 Master Collection</span>
+        <span>3.0 3D Module Atelier</span>
+        <span>4.0 Artisan Journal</span>
+        <span>5.0 Digital Certificate</span>
+    </nav>
+
+    <div class="hero-box">
+        <div class="hero-title">4K Fullscreen Cinematic Brand Film &amp; Heritage Showcase</div>
+        <div class="hero-sub">조선 암행어사 마패의 역사적 놋쇠 헤리티지와 하이엔드 니치 향수의 오리엔탈 믹스를 선사합니다.</div>
+        <div class="hero-grey-placeholder">
+            [ 4K 풀스크린 비디오 아카이브 &amp; 시네마틱 오프닝 회색 박스 영역 ]
+        </div>
+    </div>
+
+    <div class="showcase-container">
+        <div class="showcase-header">
+            <div class="showcase-title">🏛️ [윤서진 전용 제품 전시 구간] 4K 시네마틱 1·2·3마패 마스터 콜렉터 보석함 에디션 &amp; 놋쇠 참 각인</div>
+            <div style="background:var(--bg-dark); color:#fff; padding:4px 12px; border-radius:4px; font-weight:800; font-size:12px;">Global Heritage 에디션 회색 뱃지</div>
+        </div>
+        <div class="goods-grid">
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ 마스터 보석함 풀패키지 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">1·2·3마패 보석함 에디션</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">오리엔탈 럭셔리 수제 놋쇠 캡 포함</div>
+            </div>
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ 3D 실시간 각인 시뮬레이터 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">3D 참 레이저 커스텀 각인</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">영문/한문 개인 이니셜 위치 프리뷰</div>
+            </div>
+            <div class="goods-card">
+                <div class="goods-img-greybox">[ Stripe / PayPal 결제 회색 Box ]</div>
+                <div style="font-size:15px; font-weight:800;">글로벌 1-Click 체크아웃</div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">다국어 및 관부가가치세 계산표</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-grid">
+        <main>
+            <div class="section-box">
+                <div class="section-title">📜 수제 놋쇠 주조 아카이브 &amp; IFRA 안전성 데이터</div>
+                <div style="background:var(--bg-gray-mid); height:100px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#475569; font-size:14px;">
+                    [ 놋쇠 마패 캡 주조 공정 및 IFRA 국제 안전 인증 명세표 회색 박스 ]
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="aside-widget">
+                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">💳 Global Stripe</div>
+                <button style="width:100%; padding:10px; background:var(--bg-dark); color:#fff; border:none; border-radius:6px; font-weight:800;">Stripe 1-Click 결제</button>
+            </div>
+            <div class="aside-widget">
+                <div style="font-weight:800; font-size:15px; margin-bottom:8px;">💬 VIP Concierge</div>
+                <button style="width:100%; padding:10px; background:var(--bg-gray-mid); border:1px solid var(--border-color); border-radius:6px; font-weight:800;">글로벌 라이브 챗</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        &copy; 2026 SADAN Global Flagship Store (윤서진 디렉터). All rights reserved.
+    </footer>
+
+    <div class="floating-btn">🏛️ 3D 용기 레이저 각인 시작하기</div>
+
+</body>
+</html>

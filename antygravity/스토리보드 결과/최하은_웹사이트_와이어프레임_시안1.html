@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[최하은 PM - 시안 1] 사단(士團) AI 취향 진단 퀴즈 위저드 와이어프레임</title>
+    <style>
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-dark: #1e293b;
+            --bg-gray-light: #f1f5f9;
+            --bg-gray-mid: #e2e8f0;
+            --bg-gray-dark: #cbd5e1;
+            --border-color: #94a3b8;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; padding: 20px; }
+
+        .top-bar { background: var(--bg-dark); color: #ffffff; text-align: center; padding: 10px; font-size: 13px; font-weight: bold; border-radius: 6px; margin-bottom: 15px; }
+
+        header { background: #ffffff; border: 2px solid var(--border-color); padding: 18px 25px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .logo-box { display: flex; align-items: center; gap: 12px; }
+        .logo-badge { background: var(--bg-dark); color: #ffffff; padding: 8px 14px; font-weight: 900; font-size: 18px; border-radius: 6px; }
+        .logo-title { font-size: 20px; font-weight: 900; }
+
+        nav { background: #ffffff; border: 1px solid var(--border-color); padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; font-weight: 800; font-size: 13px; }
+        nav span { padding: 6px 14px; border-radius: 6px; background: var(--bg-gray-mid); }
+        nav span.active { background: var(--bg-dark); color: #ffffff; }
+
+        .wizard-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 20px; }
+        .progress-bar-container { background: var(--bg-gray-mid); height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .progress-bar-fill { background: var(--bg-dark); width: 40%; height: 100%; }
+
+        .quiz-title-box { text-align: center; margin-bottom: 20px; }
+        .quiz-question { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+        .quiz-sub { font-size: 13px; color: var(--text-muted); }
+
+        .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .option-card { background: var(--bg-gray-light); border: 2px solid var(--border-color); border-radius: 8px; padding: 18px; font-weight: 800; font-size: 14px; cursor: pointer; text-align: center; }
+        .option-card.selected { background: var(--bg-gray-dark); border-color: var(--bg-dark); color: var(--text-dark); }
+
+        .nav-btn-box { display: flex; justify-content: space-between; }
+        .btn-grey { background: var(--bg-gray-mid); border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 6px; font-weight: 800; }
+        .btn-dark { background: var(--bg-dark); color: #ffffff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 800; }
+
+        .showcase-container { background: #ffffff; border: 2px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .showcase-header { font-size: 18px; font-weight: 900; margin-bottom: 15px; border-bottom: 2px solid var(--bg-gray-mid); padding-bottom: 8px; }
+
+        .result-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grey-box-viewport { background: var(--bg-gray-mid); border: 2px dashed var(--border-color); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #475569; font-size: 14px; text-align: center; padding: 15px; }
+
+        footer { background: var(--bg-dark); color: #94a3b8; padding: 25px; border-radius: 10px; font-size: 12px; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        [시안 1 - Smart AI Finder] AI 5문항 라이프스타일 퀴즈 전면 위저드 레이아웃 와이어프레임
+    </div>
+
+    <header>
+        <div class="logo-box">
+            <div class="logo-badge">士團</div>
+            <div>
+                <div class="logo-title">사단(SADAN) AI 조향 LAB</div>
+                <div style="font-size: 11px; color: var(--text-muted);">최하은 PM - 시안 1: AI 퀴즈 위저드 메인 회색 박스 명세서</div>
+            </div>
+        </div>
+        <div>
+            <button class="btn-grey">AI 진단 결과함</button>
+            <button class="btn-dark">Quick Cart (0)</button>
+        </div>
+    </header>
+
+    <nav>
+        <span class="active">1.0 AI Scent Finder</span>
+        <span>2.0 3D Engraving Studio</span>
+        <span>3.0 Custom Note Mixer</span>
+        <span>4.0 Eco Refill Sub</span>
+        <span>5.0 Ingredient Safety</span>
+    </nav>
+
+    <!-- Wizard Card Layout -->
+    <div class="wizard-container">
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+        </div>
+        <div class="quiz-title-box">
+            <div class="quiz-question">Q2. 주말 아침, 당신이 가장 몰입하고 싶은 순간의 분위기는?</div>
+            <div class="quiz-sub">조선 어사 첩보 비밀 레시피 알고리즘이 당신의 라이프스타일 향을 추출합니다. (2 / 5 단계)</div>
+        </div>
+
+        <div class="options-grid">
+            <div class="option-card">Option A: 차분한 고택 마루의 맑은 바람 (우디/그린)</div>
+            <div class="option-card selected">Option B: 햇살을 머금은 새벽 꽃밭의 온기 (플로럴/시트러스) [선택됨]</div>
+            <div class="option-card">Option C: 깊은 밤 먹향이 감도는 서재의 고요 (머스크/앰버)</div>
+            <div class="option-card">Option D: 이슬 젖은 숲길의 시원한 감촉 (아쿠아/모스)</div>
+        </div>
+
+        <div class="nav-btn-box">
+            <button class="btn-grey">← 이전 문항</button>
+            <button class="btn-dark">다음 문항 →</button>
+        </div>
+    </div>
+
+    <!-- Product Showcase & Result Preview -->
+    <div class="showcase-container">
+        <div class="showcase-header">🎁 [최하은 PM 전용 제품 전시 구간] 3D 마패 용기 각인 &amp; AI 맞춤 추천 레시피 프리뷰</div>
+        <div class="result-layout">
+            <div class="grey-box-viewport">
+                [ 3D 실시간 마패 용기 렌더링 회색 UI 뷰포트 ]<br>
+                - 훈민정음 한자 "靑雲(청운)" 레이저 각인 투영<br>
+                - 놋쇠 마패 3D 회색 박스 영역
+            </div>
+            <div class="grey-box-viewport">
+                [ AI 맞춤 향 노트 피라미드 시각화 카드 ]<br>
+                ▲ Top: 맑은 풋사과 (25%)<br>
+                ■ Middle: 조선 먹향 &amp; 연꽃 (45%)<br>
+                ▼ Base: 놋쇠 앰버 &amp; 모스 (30%)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        사단(士團) 커스텀 조향 LAB | PM 최하은 | CS Center 1588-0000 | 화해 100% 비건 성분 검증 완료 | 무채색 저충실도 와이어프레임
+    </footer>
+
+</body>
+</html>

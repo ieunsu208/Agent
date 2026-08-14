@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 500" width="100%" height="100%" style="background:#0F1A30; font-family:'Pretendard', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <style>
+    .title { font-size: 22px; font-weight: 800; fill: #C5A059; text-anchor: middle; }
+    .subtitle { font-size: 13px; fill: #CBD5E1; text-anchor: middle; }
+    .node-box { fill: #1E293B; stroke: #C5A059; stroke-width: 2px; rx: 8px; filter: url(#shadow); }
+    .node-title { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .node-desc { font-size: 11px; fill: #CBD5E1; text-anchor: middle; }
+    .arrow { stroke: #C5A059; stroke-width: 2.5px; fill: none; }
+  </style>
+  <text x="700" y="45" class="title">사단(士團) 한유진 서비스 흐름도 최적 병합 (Service Flow SVG)</text>
+  <text x="700" y="70" class="subtitle">[최적 병합 시각화 차트] 6단계 앤드투앤드 서비스 플로우</text>
+  
+  <rect x="50" y="150" width="180" height="90" class="node-box"/>
+  <text x="140" y="190" class="node-title">Step 1. 메인 진입</text>
+  <text x="140" y="215" class="node-desc">한옥 히어로 (SEC-01)</text>
+  
+  <line x1="230" y1="195" x2="270" y2="195" class="arrow"/>
+  
+  <rect x="270" y="150" width="180" height="90" class="node-box"/>
+  <text x="360" y="190" class="node-title">Step 2. 제품 쇼케이스</text>
+  <text x="360" y="215" class="node-desc">1·2·3마패 3열 카드 (SEC-03)</text>
+  
+  <line x1="450" y1="195" x2="490" y2="195" class="arrow"/>
+  
+  <rect x="490" y="150" width="180" height="90" class="node-box"/>
+  <text x="580" y="190" class="node-title">Step 3. 3D 각인</text>
+  <text x="580" y="215" class="node-desc">놋쇠 커스텀 각인 (SEC-04)</text>
+  
+  <line x1="670" y1="195" x2="710" y2="195" class="arrow"/>
+  
+  <rect x="710" y="150" width="180" height="90" class="node-box"/>
+  <text x="800" y="190" class="node-title">Step 4. 조향 퀴즈</text>
+  <text x="800" y="215" class="node-desc">어사 5문답 진단 (SEC-05)</text>
+  
+  <line x1="890" y1="195" x2="930" y2="195" class="arrow"/>
+  
+  <rect x="930" y="150" width="180" height="90" class="node-box"/>
+  <text x="1020" y="190" class="node-title">Step 5. 클래스 예약</text>
+  <text x="1020" y="215" class="node-desc">한옥 클래스 예약 (SEC-07)</text>
+  
+  <line x1="1110" y1="195" x2="1150" y2="195" class="arrow"/>
+  
+  <rect x="1150" y="150" width="180" height="90" class="node-box"/>
+  <text x="1240" y="190" class="node-title">Step 6. 주문 완료</text>
+  <text x="1240" y="215" class="node-desc">체크아웃 결제 (SEC-08)</text>
+</svg>

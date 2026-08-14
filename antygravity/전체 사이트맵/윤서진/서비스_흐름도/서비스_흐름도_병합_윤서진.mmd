@@ -1,0 +1,8 @@
+flowchart TD
+    Start(["4K 시네마틱 론칭 오프닝"]) --> Choice{"탐색 목적"}
+    Choice -->|역사| C1["Heritage History"]
+    Choice -->|각인| C2["3D Module Atelier"]
+    Choice -->|제품| C3["Master Collection"]
+    C1 & C2 & C3 --> Engrave["놋쇠 참 각인 툴"]
+    Engrave --> Checkout["다국어 &amp; Stripe 결제"]
+    Checkout --> Complete(["보증서 발급 &amp; 주문 완료"])

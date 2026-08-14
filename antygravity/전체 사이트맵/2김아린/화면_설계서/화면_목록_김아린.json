@@ -1,0 +1,132 @@
+[
+  {
+    "id": "P-MAIN-01",
+    "name": "메인 홈",
+    "purpose": "한옥 공간 힐링 브랜드 랜딩 및 주요 서비스 탐색 유도",
+    "entryConditions": ["자사몰 URL 접속", "로고 클릭"],
+    "sections": ["GNB 헤더", "한옥 힐링 비디오 히어로", "공간 향 매칭 퀴즈 요약", "스마트 디퓨저 preview", "뇌파 임상 수치", "카트리지 정기구독 요약", "푸터"],
+    "actions": ["퀴즈 시작 버튼 클릭", "정기구독 신청 버튼 클릭", "4종 시향 캡슐 뱃지 클릭"],
+    "states": ["기본(비디오 재생)", "로딩", "모바일 반응형"],
+    "nextScreens": ["P-PHIL-01", "P-TEST-01", "P-TEST-01-01", "P-SUB-01-01", "P-KIT-01-01"]
+  },
+  {
+    "id": "P-PHIL-01",
+    "name": "힐링 철학 (Wellness Philosophy)",
+    "purpose": "한옥 후각 테라피 및 웰니스 철학 서사 전달",
+    "entryConditions": ["GNB [Philosophy] 클릭"],
+    "sections": ["한옥 아침 햇살 비디오", "후각 웰니스 3대 밸류", "차분한 묵향 스토리"],
+    "actions": ["비디오 재생/일시정지", "향 매칭 테스트 이동 버튼 클릭"],
+    "states": ["기본", "탭 전환"],
+    "nextScreens": ["P-TEST-01", "P-SUB-01-01"]
+  },
+  {
+    "id": "P-TEST-01",
+    "name": "공간 향 매칭 안내 (Scent Test)",
+    "purpose": "공간별 맞춤 아로마 테스트 소개 및 참여 유도",
+    "entryConditions": ["GNB [Scent Test] 클릭"],
+    "sections": ["침실/서재/거실 공간 카드", "1분 향 매칭 퀴즈 시작 배너"],
+    "actions": ["[나에게 맞는 공간 향 찾기] 버튼 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-TEST-01-01"]
+  },
+  {
+    "id": "P-TEST-01-01",
+    "name": "1분 공간 퀴즈 모달",
+    "purpose": "3단계 퀴즈를 통한 맞춤 레시피 생성",
+    "entryConditions": ["P-TEST-01에서 [퀴즈 시작] 클릭"],
+    "sections": ["Step 프로그레스 바", "Q1 공간 선택", "Q2 수면/집중 목적", "Q3 선호 향 노트"],
+    "actions": ["옵션 선택", "[다음] 클릭", "[결과 보기] 클릭"],
+    "states": ["Step 1", "Step 2", "Step 3", "유효성 미선택 경고"],
+    "nextScreens": ["P-TEST-01-02"]
+  },
+  {
+    "id": "P-TEST-01-02",
+    "name": "맞춤 향 추천 결과",
+    "purpose": "분석된 맞춤 아로마 레시피 및 카트리지 추천",
+    "entryConditions": ["퀴즈 3문항 선택 완료"],
+    "sections": ["추천 레시피 카트리지 카드", "발향 노트", "뇌파 숙면 임상 수치 탭"],
+    "actions": ["[이 레시피로 정기구독] 클릭", "[다시 테스트] 클릭"],
+    "states": ["결과 표시", "로딩"],
+    "nextScreens": ["P-SUB-01-01", "P-TEST-01-01"]
+  },
+  {
+    "id": "P-DEV-01",
+    "name": "스마트 디퓨저 (Smart Device)",
+    "purpose": "App 연동 스마트 발향 디바이스 기능 및 사양 안내",
+    "entryConditions": ["GNB [Smart Device] 클릭"],
+    "sections": ["3D 디바이스 뷰어", "앱 타이머 & 발향 농도 제어 시뮬레이터", "한옥 기와 디자인 사양"],
+    "actions": ["3D 디바이스 드래그 회전", "농도 수치 슬라이더 조절"],
+    "states": ["기본", "3D 회전 상태"],
+    "nextScreens": ["P-CLIN-01", "P-SUB-01-01"]
+  },
+  {
+    "id": "P-CLIN-01",
+    "name": "뇌파 임상 데이터 (Clinical Science)",
+    "purpose": "숙면 및 알파파 안정 임상 검증 수치 공개",
+    "entryConditions": ["GNB [Clinical Science] 클릭"],
+    "sections": ["숙면 뇌파 파형 그래프", "임상 수치 시각화 표", "검증 기관 배지"],
+    "actions": ["임상 수치 탭 전환", "[구독 신청] 클릭"],
+    "states": ["기본", "탭 활성화"],
+    "nextScreens": ["P-SUB-01-01"]
+  },
+  {
+    "id": "P-SUB-01",
+    "name": "정기구독 안내 (Subscription)",
+    "purpose": "매월 아로마 카트리지 정기 배송 플랜 가격 및 혜택 소개",
+    "entryConditions": ["GNB [Subscription] 클릭"],
+    "sections": ["플랜 비교표", "사전 신청 혜택(무상 디바이스)", "FAQ"],
+    "actions": ["[정기구독 사전 신청] 버튼 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-SUB-01-01"]
+  },
+  {
+    "id": "P-SUB-01-01",
+    "name": "카트리지 구독 신청 폼 모달",
+    "purpose": "사전 구독 신청 정보 및 배송지 수집",
+    "entryConditions": ["각종 [구독 신청] CTA 클릭"],
+    "sections": ["신청자 이름", "휴대전화 번호", "배송지 주소", "카트리지 주기 선택"],
+    "actions": ["입력 폼 작성", "[사전 신청 확정] 클릭"],
+    "states": ["기본 작성", "유효성 오류(레드 보더)", "제출 로딩"],
+    "nextScreens": ["P-SUB-01-02"]
+  },
+  {
+    "id": "P-SUB-01-02",
+    "name": "구독 완료 & 알림톡 팝업",
+    "purpose": "구독 사전 신청 완료 확인 및 카카오 알림톡 발송 안내",
+    "entryConditions": ["P-SUB-01-01 폼 유효성 통과 및 제출"],
+    "sections": ["신청 완료 메시지", "신청 번호", "첫 배송 예정일", "알림톡 재발송"],
+    "actions": ["[확인 및 홈으로] 클릭"],
+    "states": ["완료 표시"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-KIT-01-01",
+    "name": "4종 시향 캡슐 무료 신청 팝업",
+    "purpose": "4종 체험 캡슐 무상 신청 접수",
+    "entryConditions": ["우하단 스티키 뱃지 클릭"],
+    "sections": ["4종 시향 캡슐 구성품", "신청자 정보 폼"],
+    "actions": ["주소 입력", "[무료 시향 캡슐 신청] 클릭"],
+    "states": ["작성", "중복 신청 에러 [가정]", "완료"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-01",
+    "name": "이용약관 및 구독 정책",
+    "purpose": "법적 정보 및 구독 해지/환불 규정 안내",
+    "entryConditions": ["푸터 약관 링크 클릭"],
+    "sections": ["이용약관 전문", "개인정보 처리방침", "구독 정책"],
+    "actions": ["탭 전환"],
+    "states": ["기본"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-02",
+    "name": "404 / 예외 안내 페이지",
+    "purpose": "유효하지 않은 링크 및 에러 처리",
+    "entryConditions": ["잘못된 URL 진입"],
+    "sections": ["오류 안내 문구", "홈으로 이동 버튼"],
+    "actions": ["[메인으로 돌아가기] 클릭"],
+    "states": ["예외"],
+    "nextScreens": ["P-MAIN-01"]
+  }
+]

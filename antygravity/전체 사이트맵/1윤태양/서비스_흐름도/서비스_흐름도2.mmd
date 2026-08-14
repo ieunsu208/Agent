@@ -1,0 +1,31 @@
+flowchart TD
+    classDef startEnd fill:#0F1A30,stroke:#C5A059,stroke-width:2px,color:#FFF;
+    classDef action fill:#1E293B,stroke:#C5A059,stroke-width:1px,color:#FFF;
+    classDef system fill:#00A896,stroke:#004D40,stroke-width:1px,color:#FFF;
+    classDef decision fill:#C5A059,stroke:#78350F,stroke-width:1.5px,color:#0F1A30;
+    classDef error fill:#FEE2E2,stroke:#EF4444,stroke-width:1px,color:#7F1D1D;
+
+    START(["[시작] Live Hub 접속"]):::startEnd --> STEP1["Live Hub 3D 어사 게이지 & 대기 현황 확인
+(P-HUB-02)"]:::action
+    STEP1 --> STEP2["성수·경복궁 듀얼 3D 시향 맵 탐색
+(P-MAP-02)"]:::action
+    STEP2 --> STEP3["Secret Mission 첩보 스탬프 가이드 확인
+(P-MISSION-02)"]:::action
+    STEP3 --> STEP4["[Fast Pass 예매] CTA 터치"]:::action
+    
+    STEP4 --> DEC1{"Fast Pass 잔여 수량 존재?"}:::decision
+    DEC1 -- "아니오 (매진)" --> ERR_SOLD["Fast-Pass 매진 안내 팝업
+(P-ERR-SOLD)"]:::error
+    ERR_SOLD --> STEP1
+    
+    DEC1 -- "예 (잔여 존재)" --> FORM["Fast-Pass 일시/인원/연락처 입력 폼
+(P-PASS-02)"]:::action
+    FORM --> DEC2{"입력 정보 유효성 검사"}:::decision
+    
+    DEC2 -- "오류 발생" --> ERR_VAL["Fast Pass 입력 오류 경고 노출"]:::error
+    ERR_VAL --> FORM
+    
+    DEC2 -- "정상 통과" --> SYS_MSG["카카오 알림톡 모바일 첩보증 즉시 발송"]:::system
+    SYS_MSG --> STEP5["알림톡 링크 클릭 ➔ 마이 어사 첩보증 QR 확인
+(P-MY-02 · 가정)"]:::action
+    STEP5 --> END_NODE(["[종료] 모바일 QR 첩보 키트 교환권 수령 완료"]):::startEnd

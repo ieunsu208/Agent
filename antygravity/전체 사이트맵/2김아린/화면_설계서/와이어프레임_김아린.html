@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사단 웰니스 (김아린) 저충실도 와이어프레임 - SADAN WELLNESS</title>
+  <style>
+    :root {
+      --bg-color: #F4F0EA;
+      --surface-color: #FFFFFF;
+      --primary-color: #5A3E2B;
+      --secondary-color: #8B6B4D;
+      --accent-color: #A8422B;
+      --text-main: #2A2623;
+      --text-muted: #7A7268;
+      --border-color: #E2DAD0;
+      --shadow: 0 4px 16px rgba(42, 38, 35, 0.08);
+      --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background-color: #1E1C1A; color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+    /* Admin Toolbar */
+    #admin-header {
+      position: fixed; top: 0; left: 0; right: 0; height: 50px; background: #2A2623; color: #F4F0EA;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000;
+      border-bottom: 1px solid #4A3F35;
+    }
+    .admin-title { font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .admin-title span { font-size: 11px; background: var(--secondary-color); color: #fff; padding: 2px 8px; border-radius: 12px; }
+    .viewport-controls { display: flex; gap: 8px; }
+    .btn-vp { background: #3E3732; border: 1px solid #5A4F45; color: #D9C3B0; padding: 4px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; transition: 0.2s; }
+    .btn-vp.active, .btn-vp:hover { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
+
+    /* Layout Frame */
+    #app-container { display: flex; width: 100%; height: calc(100vh - 50px); margin-top: 50px; }
+
+    /* Sidebar Navigation */
+    #sidebar { width: 280px; background: #24201D; color: #D9C3B0; border-right: 1px solid #3E3732; overflow-y: auto; padding: 20px 12px; flex-shrink: 0; }
+    .sidebar-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #8A7E72; margin: 16px 8px 8px 8px; letter-spacing: 0.5px; }
+    .nav-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 6px; color: #C5B5A5; text-decoration: none; font-size: 13px; margin-bottom: 4px; cursor: pointer; transition: 0.15s; }
+    .nav-item:hover { background: #342E2A; color: #FFF; }
+    .nav-item.active { background: var(--primary-color); color: #FFF; font-weight: 600; }
+    .badge-id { font-size: 10px; font-family: monospace; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px; }
+
+    /* Main Viewport Stage */
+    #stage { flex: 1; background: #181614; overflow-y: auto; display: flex; justify-content: center; padding: 30px; }
+    .frame-wrapper { background: var(--bg-color); width: 100%; max-width: 1200px; min-height: 840px; border-radius: 8px; box-shadow: var(--shadow); transition: width 0.3s ease; position: relative; display: flex; flex-direction: column; }
+    .frame-wrapper.tablet { width: 800px; }
+    .frame-wrapper.mobile { width: 390px; }
+
+    /* Low-Fi Wireframe Header & Components */
+    .wf-header { background: var(--surface-color); border-bottom: 1px solid var(--border-color); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .wf-logo { font-size: 18px; font-weight: 800; color: var(--primary-color); letter-spacing: 1px; }
+    .wf-gnb { display: flex; gap: 20px; font-size: 14px; font-weight: 600; }
+    .wf-gnb a { color: var(--text-main); text-decoration: none; }
+    .wf-gnb a:hover { color: var(--secondary-color); }
+    .btn-cta { background: var(--primary-color); color: #FFF; border: none; padding: 8px 16px; border-radius: 4px; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .btn-cta:hover { background: var(--secondary-color); }
+
+    /* Screen Views */
+    .screen-view { display: none; padding: 30px; flex: 1; }
+    .screen-view.active { display: block; }
+    .screen-header-info { background: #EAE3D9; border: 1px dashed var(--secondary-color); padding: 12px 16px; border-radius: 6px; margin-bottom: 24px; font-size: 12px; color: var(--text-main); }
+
+    /* Wireframe Blocks */
+    .placeholder-box { background: #E8E2D8; border: 1px dashed #B8ADA0; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 13px; text-align: center; padding: 20px; }
+    .hero-banner { height: 320px; background: linear-gradient(135deg, #5A3E2B, #3E2A1D); color: #FFF; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; padding: 40px; margin-bottom: 30px; position: relative; }
+    .hero-banner h1 { font-size: 28px; margin-bottom: 12px; }
+    .hero-banner p { font-size: 15px; opacity: 0.9; margin-bottom: 20px; }
+
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--primary-color); }
+    .card-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+
+    /* Floating Sticky Badge */
+    .sticky-badge { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: #fff; padding: 12px 20px; border-radius: 30px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 12px rgba(168, 66, 43, 0.4); cursor: pointer; z-index: 90; }
+
+    /* Modal Overlay */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 500; align-items: center; justify-content: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-card { background: #FFF; width: 90%; max-width: 500px; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 16px; font-size: 20px; cursor: pointer; border: none; background: none; color: #888; }
+    
+    /* Form inputs */
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+    .form-control { width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; }
+    .form-control.error { border-color: var(--accent-color); background-color: #FFF5F3; }
+    .error-msg { font-size: 11px; color: var(--accent-color); margin-top: 4px; display: none; }
+    .error-msg.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Viewport Header -->
+  <div id="admin-header">
+    <div class="admin-title">
+      사단 웰니스 저충실도 와이어프레임 <span>김아린 연구원</span>
+    </div>
+    <div class="viewport-controls">
+      <button class="btn-vp active" onclick="setViewport('desktop')">PC Desktop (1200px)</button>
+      <button class="btn-vp" onclick="setViewport('tablet')">Tablet (800px)</button>
+      <button class="btn-vp" onclick="setViewport('mobile')">Mobile (390px)</button>
+    </div>
+  </div>
+
+  <div id="app-container">
+    <!-- Sidebar Screen Selector -->
+    <div id="sidebar">
+      <div class="sidebar-section-title">화면 목록 (11 Screens)</div>
+      <div class="nav-item active" onclick="showScreen('P-MAIN-01', this)">
+        <span>1.0 메인 홈</span> <span class="badge-id">P-MAIN-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-PHIL-01', this)">
+        <span>2.0 힐링 철학</span> <span class="badge-id">P-PHIL-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-TEST-01', this)">
+        <span>3.0 공간 향 매칭</span> <span class="badge-id">P-TEST-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-quiz')">
+        <span>3.1 1분 퀴즈 모달</span> <span class="badge-id">P-TEST-01-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-TEST-01-02', this)">
+        <span>3.2 맞춤 향 추천 결과</span> <span class="badge-id">P-TEST-01-02</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-DEV-01', this)">
+        <span>4.0 스마트 디퓨저</span> <span class="badge-id">P-DEV-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-CLIN-01', this)">
+        <span>5.0 뇌파 임상 데이터</span> <span class="badge-id">P-CLIN-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-SUB-01', this)">
+        <span>6.0 정기구독 안내</span> <span class="badge-id">P-SUB-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-sub')">
+        <span>6.1 구독 신청 폼</span> <span class="badge-id">P-SUB-01-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-sub-done')">
+        <span>6.2 구독 완료 팝업</span> <span class="badge-id">P-SUB-01-02</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-kit')">
+        <span>7.1 시향 캡슐 팝업</span> <span class="badge-id">P-KIT-01-01</span>
+      </div>
+    </div>
+
+    <!-- Interactive Canvas Stage -->
+    <div id="stage">
+      <div class="frame-wrapper" id="frame">
+        <!-- Common Header GNB -->
+        <header class="wf-header">
+          <div class="wf-logo">SADAN WELLNESS</div>
+          <nav class="wf-gnb">
+            <a href="#" onclick="showScreen('P-PHIL-01')">Philosophy</a>
+            <a href="#" onclick="showScreen('P-TEST-01')">Scent Test</a>
+            <a href="#" onclick="showScreen('P-DEV-01')">Smart Device</a>
+            <a href="#" onclick="showScreen('P-CLIN-01')">Clinical Science</a>
+            <a href="#" onclick="showScreen('P-SUB-01')">Subscription</a>
+          </nav>
+          <button class="btn-cta" onclick="openModal('modal-sub')">정기구독 사전 신청</button>
+        </header>
+
+        <!-- SCREEN 1: P-MAIN-01 -->
+        <div id="P-MAIN-01" class="screen-view active">
+          <div class="screen-header-info">
+            <strong>[P-MAIN-01] 메인 홈</strong> | 한옥 대청마루 비디오 히어로 &amp; 공간 향 매칭 퀴즈 랜딩
+          </div>
+          <div class="hero-banner">
+            <h1>한옥 공간 맞춤 후각 힐링, 사단 웰니스</h1>
+            <p>침실·서재·거실의 공간에 맞춰 발향되는 스마트 오리엔탈 아로마 테라피</p>
+            <div>
+              <button class="btn-cta" style="padding:12px 24px; font-size:14px;" onclick="openModal('modal-quiz')">나에게 맞는 공간 향 찾기 (1분 테스트)</button>
+            </div>
+          </div>
+          
+          <div class="grid-cards">
+            <div class="card">
+              <div class="card-title">침실 (Bedroom)</div>
+              <div class="card-desc">뇌파 알파파 유도 및 숙면 장애 완화를 위한 은은한 침향 노트</div>
+              <button class="btn-cta" style="width:100%" onclick="openModal('modal-quiz')">침실 향 매칭 테스트</button>
+            </div>
+            <div class="card">
+              <div class="card-title">서재 (Study Room)</div>
+              <div class="card-desc">집중력 강화와 한옥 묵향의 단정함을 전하는 오리엔탈 테라피</div>
+              <button class="btn-cta" style="width:100%" onclick="openModal('modal-quiz')">서재 향 매칭 테스트</button>
+            </div>
+            <div class="card">
+              <div class="card-title">거실 (Living Room)</div>
+              <div class="card-desc">생쑥과 다도 차 향으로 온 가족의 일상 스트레스를 정화하는 공기 웰니스</div>
+              <button class="btn-cta" style="width:100%" onclick="openModal('modal-quiz')">거실 향 매칭 테스트</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 2: P-PHIL-01 -->
+        <div id="P-PHIL-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-PHIL-01] 힐링 철학 (Wellness Philosophy)</strong> | 브랜드 웰니스 서사
+          </div>
+          <div class="hero-banner" style="background: linear-gradient(135deg, #6E533B, #5A3E2B);">
+            <h1>한옥 후각 테라피의 가치</h1>
+            <p>조선 암행어사 마패의 단정함과 전통 다도 기와 모티브의 힐링 디자인</p>
+          </div>
+          <div class="placeholder-box" style="height: 200px;">
+            [비디오 플레이어: 한옥 대청마루와 아침 햇살 비디오 영역]
+          </div>
+        </div>
+
+        <!-- SCREEN 3: P-TEST-01 -->
+        <div id="P-TEST-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-TEST-01] 공간 향 매칭 안내</strong> | 퀴즈 시작 안내
+          </div>
+          <div class="card" style="text-align: center; padding: 50px;">
+            <h2 style="margin-bottom:12px; color:var(--primary-color);">당신의 공간에 어울리는 최적의 향을 찾아드립니다</h2>
+            <p style="margin-bottom:24px; color:var(--text-muted);">1분 만에 끝나는 3개 문항 분석으로 나만의 아로마 레시피를 추천받으세요.</p>
+            <button class="btn-cta" style="padding: 12px 30px; font-size:15px;" onclick="openModal('modal-quiz')">1분 공간 퀴즈 시작하기</button>
+          </div>
+        </div>
+
+        <!-- SCREEN 5: P-TEST-01-02 -->
+        <div id="P-TEST-01-02" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-TEST-01-02] 맞춤 향 추천 결과</strong> | 분석된 아로마 레시피
+          </div>
+          <div class="card" style="border:2px solid var(--secondary-color);">
+            <span style="background:var(--secondary-color); color:#fff; padding:4px 10px; border-radius:4px; font-size:11px;">침실 맞춤 추천</span>
+            <h2 style="margin: 12px 0; color:var(--primary-color);">수면 유도 침향 &amp; 뇌파 알파파 레시피</h2>
+            <p style="color:var(--text-muted); margin-bottom:20px;">깊은 숙면을 유도하는 오리엔탈 침향 오일 65% + 생쑥 다도 캡슐 35% 조합</p>
+            <button class="btn-cta" onclick="openModal('modal-sub')">이 맞춤 레시피로 정기구독 신청하기</button>
+          </div>
+        </div>
+
+        <!-- SCREEN 6: P-DEV-01 -->
+        <div id="P-DEV-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-DEV-01] 스마트 디퓨저 (Smart Device)</strong> | 3D 디바이스 &amp; App 제어
+          </div>
+          <div class="grid-cards">
+            <div class="placeholder-box" style="height:260px;">[3D 스마트 디퓨저 회전 뷰어 (한옥 기와 디자인)]</div>
+            <div class="card">
+              <div class="card-title">스마트폰 App 타이머 &amp; 농도 제어</div>
+              <div class="card-desc">발향 농도 1~5단계 조절 및 수면 모드 자동 타이머 셧다운 기능</div>
+              <button class="btn-cta" onclick="openModal('modal-sub')">사전 신청 시 무상 디바이스 받기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 7: P-CLIN-01 -->
+        <div id="P-CLIN-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-CLIN-01] 뇌파 임상 데이터 (Clinical Science)</strong> | 과학적 검증
+          </div>
+          <div class="card">
+            <div class="card-title">숙면 뇌파(알파파) 임상 안정 수치 그래프</div>
+            <div class="placeholder-box" style="height:180px; margin: 16px 0;">[임상 수치 그래프: 숙면 도달 시간 42% 단축 시각화]</div>
+            <p style="font-size:12px; color:var(--text-muted);">검증 기관: (주)국제 웰니스 뇌파 임상 센터 공식 입증</p>
+          </div>
+        </div>
+
+        <!-- SCREEN 8: P-SUB-01 -->
+        <div id="P-SUB-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-SUB-01] 정기구독 안내 (Subscription)</strong> | 구독 플랜
+          </div>
+          <div class="card" style="text-align:center; padding:40px;">
+            <h2>매월 계절별 아로마 카트리지 정기 배송 플랜</h2>
+            <p style="margin: 12px 0 24px 0; color:var(--text-muted);">월 29,000원 (사전 신청자 한옥 기와 스마트 디퓨저 디바이스 100% 무상 제공)</p>
+            <button class="btn-cta" style="padding:14px 32px;" onclick="openModal('modal-sub')">카트리지 정기구독 사전 신청</button>
+          </div>
+        </div>
+
+        <!-- Floating Sticky Badge -->
+        <div class="sticky-badge" onclick="openModal('modal-kit')">
+          무료 4종 시향 캡슐 신청 ✦
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: P-TEST-01-01 (1분 공간 퀴즈) -->
+  <div id="modal-quiz" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-quiz')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--secondary-color); margin-bottom:8px;">[P-TEST-01-01] 1분 공간 향 매칭 퀴즈</div>
+      <h3 style="margin-bottom:16px; color:var(--primary-color);">어떤 공간에 향을 채우고 싶으신가요?</h3>
+      <div class="form-group">
+        <button class="btn-cta" style="width:100%; margin-bottom:8px; background:#F4F0EA; color:#2A2623; border:1px solid #D9C3B0;" onclick="finishQuiz('침실')">1. 침실 (숙면 &amp; 휴식)</button>
+        <button class="btn-cta" style="width:100%; margin-bottom:8px; background:#F4F0EA; color:#2A2623; border:1px solid #D9C3B0;" onclick="finishQuiz('서재')">2. 서재 (집중 &amp; 한옥 묵향)</button>
+        <button class="btn-cta" style="width:100%; background:#F4F0EA; color:#2A2623; border:1px solid #D9C3B0;" onclick="finishQuiz('거실')">3. 거실 (다도 차 &amp; 정화)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: P-SUB-01-01 (정기구독 신청 폼) -->
+  <div id="modal-sub" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-sub')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--secondary-color); margin-bottom:8px;">[P-SUB-01-01] 아로마 카트리지 정기구독 신청</div>
+      <h3 style="margin-bottom:16px; color:var(--primary-color);">사전 신청자 무료 디바이스 혜택 포함</h3>
+      <form onsubmit="handleSubSubmit(event)">
+        <div class="form-group">
+          <label>신청자 성함 *</label>
+          <input type="text" id="sub-name" class="form-control" placeholder="성함을 입력해 주세요">
+          <div id="err-name" class="error-msg">성함을 입력해 주세요.</div>
+        </div>
+        <div class="form-group">
+          <label>휴대전화 번호 *</label>
+          <input type="text" id="sub-phone" class="form-control" placeholder="01012345678">
+          <div id="err-phone" class="error-msg">올바른 휴대전화 번호를 입력해 주세요.</div>
+        </div>
+        <div class="form-group">
+          <label>배송지 주소 *</label>
+          <input type="text" id="sub-address" class="form-control" placeholder="기본 배송지 주소 입력">
+          <div id="err-address" class="error-msg">배송지 주소를 입력해 주세요.</div>
+        </div>
+        <button type="submit" class="btn-cta" style="width:100%; padding:12px; margin-top:8px;">사전 신청 확정하기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 3: P-SUB-01-02 (구독 완료) -->
+  <div id="modal-sub-done" class="modal-overlay">
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close" onclick="closeModal('modal-sub-done')">×</button>
+      <div style="font-size:32px; margin-bottom:8px;">🌿</div>
+      <div style="font-size:12px; font-weight:700; color:var(--secondary-color); margin-bottom:8px;">[P-SUB-01-02] 정기구독 사전 신청 완료</div>
+      <h3 style="margin-bottom:12px; color:var(--primary-color);">카카오 알림톡이 발송되었습니다!</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">신청번호: <strong>SD-2026-WELLNESS</strong><br>무상 스마트 디퓨저와 첫 카트리지가 함께 배송됩니다.</p>
+      <button class="btn-cta" style="width:100%; padding:10px;" onclick="closeModal('modal-sub-done')">확인 및 메인으로 이동</button>
+    </div>
+  </div>
+
+  <!-- MODAL 4: P-KIT-01-01 (시향 캡슐) -->
+  <div id="modal-kit" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-kit')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--secondary-color); margin-bottom:8px;">[P-KIT-01-01] 4종 무료 시향 캡슐 신청</div>
+      <h3 style="margin-bottom:16px; color:var(--primary-color);">무료 체험 키트 신청하기</h3>
+      <div class="form-group">
+        <label>신청자 성함</label>
+        <input type="text" class="form-control" placeholder="성함 입력">
+      </div>
+      <div class="form-group">
+        <label>수령 주소</label>
+        <input type="text" class="form-control" placeholder="주소 입력">
+      </div>
+      <button class="btn-cta" style="width:100%; padding:10px;" onclick="alert('시향 캡슐 무상 신청이 완료되었습니다.'); closeModal('modal-kit');">무료 신청 완료 (1인 1회)</button>
+    </div>
+  </div>
+
+  <script>
+    function setViewport(mode) {
+      const frame = document.getElementById('frame');
+      const btns = document.querySelectorAll('.btn-vp');
+      btns.forEach(b => b.classList.remove('active'));
+
+      frame.classList.remove('tablet', 'mobile');
+      if (mode === 'tablet') {
+        frame.classList.add('tablet');
+        event.target.classList.add('active');
+      } else if (mode === 'mobile') {
+        frame.classList.add('mobile');
+        event.target.classList.add('active');
+      } else {
+        event.target.classList.add('active');
+      }
+    }
+
+    function showScreen(screenId, el) {
+      const views = document.querySelectorAll('.screen-view');
+      views.forEach(v => v.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if(target) target.classList.add('active');
+
+      if(el) {
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(n => n.classList.remove('active'));
+        el.classList.add('active');
+      }
+    }
+
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+    }
+
+    function finishQuiz(space) {
+      closeModal('modal-quiz');
+      showScreen('P-TEST-01-02');
+    }
+
+    function handleSubSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('sub-name');
+      const phone = document.getElementById('sub-phone');
+      const address = document.getElementById('sub-address');
+
+      let valid = true;
+
+      if(!name.value.trim()) {
+        name.classList.add('error');
+        document.getElementById('err-name').classList.add('active');
+        valid = false;
+      } else {
+        name.classList.remove('error');
+        document.getElementById('err-name').classList.remove('active');
+      }
+
+      if(!phone.value.trim() || phone.value.trim().length < 10) {
+        phone.classList.add('error');
+        document.getElementById('err-phone').classList.add('active');
+        valid = false;
+      } else {
+        phone.classList.remove('error');
+        document.getElementById('err-phone').classList.remove('active');
+      }
+
+      if(!address.value.trim()) {
+        address.classList.add('error');
+        document.getElementById('err-address').classList.add('active');
+        valid = false;
+      } else {
+        address.classList.remove('error');
+        document.getElementById('err-address').classList.remove('active');
+      }
+
+      if(valid) {
+        closeModal('modal-sub');
+        openModal('modal-sub-done');
+      }
+    }
+  </script>
+</body>
+</html>

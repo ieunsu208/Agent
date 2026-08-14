@@ -1,0 +1,7 @@
+flowchart TD
+    Start(["팝업 랜딩 진입"]) --> Choice{"방문 목적"}
+    Choice -->|사전예약| C1["타임슬롯 선택"]
+    Choice -->|백꾸 룩북| C2["놋쇠 굿즈 구경"]
+    Choice -->|조향 수강| C3["장인 1:1 신청"]
+    C1 &amp; C2 &amp; C3 --> QR["QR 티켓 발급 &amp; 결제"]
+    QR --> End(["현장 입하 &amp; 스탬프 완료"])

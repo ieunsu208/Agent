@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사단 AI 센트 랩 (송현우) 저충실도 와이어프레임 - SADAN AI SCENT LAB</title>
+  <style>
+    :root {
+      --bg-color: #F0F4F8;
+      --surface-color: #FFFFFF;
+      --primary-color: #0A121A;
+      --secondary-color: #132635;
+      --accent-color: #00A896;
+      --accent-hover: #028090;
+      --text-main: #0A121A;
+      --text-muted: #627D98;
+      --border-color: #D9E2EC;
+      --shadow: 0 4px 16px rgba(10, 18, 26, 0.12);
+      --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background-color: #060C12; color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+    /* Admin Toolbar */
+    #admin-header {
+      position: fixed; top: 0; left: 0; right: 0; height: 50px; background: #0A121A; color: #FFFFFF;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000;
+      border-bottom: 1px solid #132635;
+    }
+    .admin-title { font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .admin-title span { font-size: 11px; background: var(--accent-color); color: #0A121A; padding: 2px 8px; border-radius: 12px; font-weight: 800; }
+    .viewport-controls { display: flex; gap: 8px; }
+    .btn-vp { background: #132635; border: 1px solid #1D384D; color: #D9E2EC; padding: 4px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; transition: 0.2s; }
+    .btn-vp.active, .btn-vp:hover { background: var(--accent-color); color: #0A121A; border-color: var(--accent-color); font-weight: 700; }
+
+    /* Layout Frame */
+    #app-container { display: flex; width: 100%; height: calc(100vh - 50px); margin-top: 50px; }
+
+    /* Sidebar Navigation */
+    #sidebar { width: 280px; background: #060C12; color: #D9E2EC; border-right: 1px solid #132635; overflow-y: auto; padding: 20px 12px; flex-shrink: 0; }
+    .sidebar-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #829AB1; margin: 16px 8px 8px 8px; letter-spacing: 0.5px; }
+    .nav-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 6px; color: #BCCCDC; text-decoration: none; font-size: 13px; margin-bottom: 4px; cursor: pointer; transition: 0.15s; }
+    .nav-item:hover { background: #132635; color: #FFF; }
+    .nav-item.active { background: var(--secondary-color); color: #FFF; font-weight: 600; border-left: 3px solid var(--accent-color); }
+    .badge-id { font-size: 10px; font-family: monospace; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px; }
+
+    /* Main Viewport Stage */
+    #stage { flex: 1; background: #03060A; overflow-y: auto; display: flex; justify-content: center; padding: 30px; }
+    .frame-wrapper { background: var(--bg-color); width: 100%; max-width: 1200px; min-height: 840px; border-radius: 8px; box-shadow: var(--shadow); transition: width 0.3s ease; position: relative; display: flex; flex-direction: column; }
+    .frame-wrapper.tablet { width: 800px; }
+    .frame-wrapper.mobile { width: 390px; }
+
+    /* Low-Fi Wireframe Header & Components */
+    .wf-header { background: var(--surface-color); border-bottom: 1px solid var(--border-color); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .wf-logo { font-size: 18px; font-weight: 800; color: var(--primary-color); letter-spacing: 1px; }
+    .wf-gnb { display: flex; gap: 20px; font-size: 14px; font-weight: 600; }
+    .wf-gnb a { color: var(--text-main); text-decoration: none; }
+    .wf-gnb a:hover { color: var(--accent-color); }
+    .btn-cta { background: var(--primary-color); color: #FFF; border: none; padding: 8px 16px; border-radius: 4px; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .btn-cta:hover { background: var(--secondary-color); }
+
+    /* Screen Views */
+    .screen-view { display: none; padding: 30px; flex: 1; }
+    .screen-view.active { display: block; }
+    .screen-header-info { background: #D9E2EC; border: 1px dashed var(--secondary-color); padding: 12px 16px; border-radius: 6px; margin-bottom: 24px; font-size: 12px; color: var(--text-main); }
+
+    /* Wireframe Blocks */
+    .placeholder-box { background: #E4E9F0; border: 1px dashed #9FB3C8; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 13px; text-align: center; padding: 20px; }
+    .hero-banner { height: 320px; background: linear-gradient(135deg, #0A121A, #132635); color: #FFF; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; padding: 40px; margin-bottom: 30px; position: relative; }
+    .hero-banner h1 { font-size: 28px; margin-bottom: 12px; color: #FFFFFF; }
+    .hero-banner p { font-size: 15px; opacity: 0.9; margin-bottom: 20px; color: #D9E2EC; }
+
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--primary-color); }
+    .card-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+
+    /* 1-Min Quiz UI Component */
+    .quiz-container { background: #FFF; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .progress-bar { height: 6px; background: #E4E9F0; border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 25%; background: var(--accent-color); transition: width 0.3s; }
+    
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .quiz-btn { padding: 14px; border: 1px solid var(--border-color); border-radius: 6px; background: #F8FAFC; text-align: left; cursor: pointer; font-size: 13px; font-weight: 600; transition: 0.2s; }
+    .quiz-btn:hover, .quiz-btn.active { border-color: var(--accent-color); background: #E6F7F5; color: var(--accent-color); }
+
+    /* Interactive AI Chatbot UI Component */
+    .chatbot-container { background: #FFF; border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; height: 420px; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+    .chat-bubble { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.5; }
+    .chat-bubble.bot { background: #E6F7F5; color: #0A121A; align-self: flex-start; border-bottom-left-radius: 2px; }
+    .chat-bubble.user { background: var(--primary-color); color: #FFF; align-self: flex-end; border-bottom-right-radius: 2px; }
+    
+    .chat-input-row { display: flex; gap: 8px; margin-top: 12px; }
+
+    /* Floating Sticky Badge */
+    .sticky-badge { position: absolute; bottom: 20px; right: 20px; background: var(--accent-color); color: #FFF; padding: 12px 20px; border-radius: 30px; font-weight: 800; font-size: 13px; box-shadow: 0 4px 12px rgba(0, 168, 150, 0.5); cursor: pointer; z-index: 90; }
+
+    /* Modal Overlay */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.65); z-index: 500; align-items: center; justify-content: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-card { background: #FFF; width: 90%; max-width: 520px; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 16px; font-size: 20px; cursor: pointer; border: none; background: none; color: #888; }
+    
+    /* Form inputs */
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+    .form-control { width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; }
+    .form-control.error { border-color: #8B261D; background-color: #FFF5F3; }
+    .error-msg { font-size: 11px; color: #8B261D; margin-top: 4px; display: none; }
+    .error-msg.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Viewport Header -->
+  <div id="admin-header">
+    <div class="admin-title">
+      사단 AI 센트 랩 저충실도 와이어프레임 <span>송현우 팀장</span>
+    </div>
+    <div class="viewport-controls">
+      <button class="btn-vp active" onclick="setViewport('desktop')">PC Desktop (1200px)</button>
+      <button class="btn-vp" onclick="setViewport('tablet')">Tablet (800px)</button>
+      <button class="btn-vp" onclick="setViewport('mobile')">Mobile (390px)</button>
+    </div>
+  </div>
+
+  <div id="app-container">
+    <!-- Sidebar Screen Selector -->
+    <div id="sidebar">
+      <div class="sidebar-section-title">화면 목록 (11 Screens)</div>
+      <div class="nav-item active" onclick="showScreen('P-MAIN-01', this)">
+        <span>1.0 메인 홈</span> <span class="badge-id">P-MAIN-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-INTRO-01', this)">
+        <span>2.0 AI 기술 소개</span> <span class="badge-id">P-INTRO-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-algo')">
+        <span>2.1 알고리즘 팝업</span> <span class="badge-id">P-INTRO-01-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-DIAG-01', this)">
+        <span>3.0 1분 AI 진단</span> <span class="badge-id">P-DIAG-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-quiz')">
+        <span>3.1 AI 취향 진단 모달</span> <span class="badge-id">P-DIAG-01-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-report')">
+        <span>3.2 AI 결과 보고서</span> <span class="badge-id">P-DIAG-01-02</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-CHAT-01', this)">
+        <span>4.0 실시간 챗봇 UI</span> <span class="badge-id">P-CHAT-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-mix')">
+        <span>4.1 향 믹싱 팝업</span> <span class="badge-id">P-CHAT-01-01</span>
+      </div>
+      <div class="nav-item" onclick="showScreen('P-KIT-01', this)">
+        <span>5.0 샘플 키트 신청</span> <span class="badge-id">P-KIT-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-kit-form')">
+        <span>5.1 샘플 신청 폼</span> <span class="badge-id">P-KIT-01-01</span>
+      </div>
+      <div class="nav-item" onclick="openModal('modal-done')">
+        <span>5.2 신청 완료 팝업</span> <span class="badge-id">P-KIT-01-02</span>
+      </div>
+    </div>
+
+    <!-- Interactive Canvas Stage -->
+    <div id="stage">
+      <div class="frame-wrapper" id="frame">
+        <!-- Common Header GNB -->
+        <header class="wf-header">
+          <div class="wf-logo">SADAN AI SCENT LAB</div>
+          <nav class="wf-gnb">
+            <a href="#" onclick="showScreen('P-INTRO-01')">AI Tech Intro</a>
+            <a href="#" onclick="showScreen('P-DIAG-01')">AI Diagnosis</a>
+            <a href="#" onclick="showScreen('P-CHAT-01')">AI Chatbot</a>
+            <a href="#" onclick="showScreen('P-KIT-01')">AI Sample Kit</a>
+          </nav>
+          <button class="btn-cta" style="background:var(--accent-color); color:#FFF;" onclick="openModal('modal-quiz')">1분 AI 진단 시작</button>
+        </header>
+
+        <!-- SCREEN 1: P-MAIN-01 -->
+        <div id="P-MAIN-01" class="screen-view active">
+          <div class="screen-header-info">
+            <strong>[P-MAIN-01] 메인 홈</strong> | 10만 후각 DB 기반 AI 취향 진단 &amp; 챗봇 랜딩
+          </div>
+          <div class="hero-banner">
+            <h1>10만 건의 후각 데이터가 제안하는 단 하나의 시그니처 향</h1>
+            <p>1분 만에 끝나는 기분·TPO AI 취향 분석과 비대면 대화형 향 추천 챗봇</p>
+            <div>
+              <button class="btn-cta" style="background:var(--accent-color); color:#FFF; padding:12px 24px; font-size:14px;" onclick="openModal('modal-quiz')">1분 AI 취향 진단하기</button>
+            </div>
+          </div>
+          
+          <div class="grid-cards">
+            <div class="card">
+              <div class="card-title">1분 AI 취향 진단</div>
+              <div class="card-desc">기분, 계절, 장소를 조합하는 선택형 퀴즈로 나만의 후각 성향 분석</div>
+              <button class="btn-cta" style="width:100%" onclick="openModal('modal-quiz')">진단 모달 열기</button>
+            </div>
+            <div class="card">
+              <div class="card-title">실시간 AI 추천 챗봇</div>
+              <div class="card-desc">24/7 비대면 대화를 통한 맞춤 향수 제안 및 커스텀 믹싱 팁 제공</div>
+              <button class="btn-cta" style="width:100%" onclick="showScreen('P-CHAT-01')">챗봇 대화하기</button>
+            </div>
+            <div class="card">
+              <div class="card-title">AI 맞춤 3종 샘플 신청</div>
+              <div class="card-desc">AI가 추천한 최적의 퍼퓸 3종 무상 배송 신청 (100% 무료 증정)</div>
+              <button class="btn-cta" style="width:100%" onclick="openModal('modal-kit-form')">3종 샘플 신청</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 4: P-CHAT-01 (INTERACTIVE AI CHATBOT UI) -->
+        <div id="P-CHAT-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-CHAT-01] 실시간 대화형 AI 추천 챗봇 UI</strong> | 비대면 NLP 대화 인터랙션
+          </div>
+          <div class="chatbot-container">
+            <div class="chat-messages" id="chat-box">
+              <div class="chat-bubble bot">
+                안녕하세요! <strong>사단 AI 후각 조향사</strong>입니다. 🤖<br>오늘 기분이나 방문 예정인 장소를 말씀해 주시면 최적의 향을 추천해 드릴게요.
+              </div>
+            </div>
+            
+            <div style="display:flex; gap:6px; margin: 8px 0; overflow-x:auto;">
+              <button class="btn-vp" onclick="sendChatPrompt('비 오는 날 어울리는 우디 향 추천해줘')">🌧️ 비 올 때 우디 향</button>
+              <button class="btn-vp" onclick="sendChatPrompt('소개팅에서 좋은 인상을 주는 플로럴')">💖 소개팅 추천</button>
+              <button class="btn-vp" onclick="sendChatPrompt('휴식할 때 차분해지는 시트러스')">🌿 힐링 시트러스</button>
+            </div>
+
+            <div class="chat-input-row">
+              <input type="text" id="chat-input" class="form-control" placeholder="상황이나 선호하는 향을 입력해 보세요..." onkeypress="if(event.key==='Enter') sendUserMsg()">
+              <button class="btn-cta" style="background:var(--accent-color);" onclick="sendUserMsg()">전송</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 2: P-INTRO-01 -->
+        <div id="P-INTRO-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-INTRO-01] AI 기술 소개 (AI Tech Intro)</strong> | 10만 DB &amp; 98% 만족도
+          </div>
+          <div class="placeholder-box" style="height:240px; margin-bottom:20px;">
+            [10만 건 후각 데이터 알고리즘 &amp; 추천 만족도 98% 그래프 비주얼]
+          </div>
+          <button class="btn-cta" onclick="openModal('modal-algo')">알고리즘 상세 매칭 구조 보기</button>
+        </div>
+
+        <!-- SCREEN 9: P-KIT-01 -->
+        <div id="P-KIT-01" class="screen-view">
+          <div class="screen-header-info">
+            <strong>[P-KIT-01] AI 맞춤 3종 샘플 신청 (AI Sample Kit)</strong> | 무상 배송
+          </div>
+          <div class="card" style="text-align:center; padding:40px;">
+            <h2 style="color:var(--primary-color);">AI가 진단한 최적의 퍼퓸 3종 무상 증정</h2>
+            <p style="margin: 12px 0 24px 0; color:var(--text-muted);">지금 신청하시면 배송비 없이 집 앞으로 3종 샘플 키트가 배송됩니다.</p>
+            <button class="btn-cta" style="padding:14px 32px; background:var(--accent-color); color:#FFF;" onclick="openModal('modal-kit-form')">3종 샘플 키트 1-Click 신청</button>
+          </div>
+        </div>
+
+        <!-- Floating Sticky Badge -->
+        <div class="sticky-badge" onclick="showScreen('P-CHAT-01')">
+          AI 챗봇 대화하기 🤖
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: P-DIAG-01-01 (1분 AI 취향 진단 모달) -->
+  <div id="modal-quiz" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-quiz')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-DIAG-01-01] 1분 AI 향 취향 진단</div>
+      
+      <div class="progress-bar">
+        <div class="progress-fill" id="quiz-progress"></div>
+      </div>
+
+      <div id="quiz-step-1">
+        <h4 style="margin-bottom:12px;">Q1. 오늘 당신의 기분이나 분위기는 어떠신가요?</h4>
+        <div class="quiz-options">
+          <div class="quiz-btn" onclick="nextQuiz(2)">상쾌하고 활기참 ☀️</div>
+          <div class="quiz-btn" onclick="nextQuiz(2)">차분하고 힐링 필요 🌿</div>
+          <div class="quiz-btn" onclick="nextQuiz(2)">로맨틱하고 부드러운 💖</div>
+          <div class="quiz-btn" onclick="nextQuiz(2)">세련되고 도시적인 🏙️</div>
+        </div>
+      </div>
+
+      <div id="quiz-step-2" style="display:none;">
+        <h4 style="margin-bottom:12px;">Q2. 가장 선호하는 계절이나 날씨는 무엇인가요?</h4>
+        <div class="quiz-options">
+          <div class="quiz-btn" onclick="nextQuiz(3)">봄의 따스한 바람 🌸</div>
+          <div class="quiz-btn" onclick="nextQuiz(3)">여름의 시원한 바다 🌊</div>
+          <div class="quiz-btn" onclick="nextQuiz(3)">가을의 숲과 흙내음 🍂</div>
+          <div class="quiz-btn" onclick="nextQuiz(3)">겨울의 포근한 눈 ❄️</div>
+        </div>
+      </div>
+
+      <div id="quiz-step-3" style="display:none;">
+        <h4 style="margin-bottom:12px;">Q3. 주로 향수를 사용할 TPO(상황)는 언제인가요?</h4>
+        <div class="quiz-options">
+          <div class="quiz-btn" onclick="finishQuiz()">데일리 출근/학교 💼</div>
+          <div class="quiz-btn" onclick="finishQuiz()">소개팅 &amp; 데이트 🌹</div>
+          <div class="quiz-btn" onclick="finishQuiz()">주말 야외 활동 🏕️</div>
+          <div class="quiz-btn" onclick="finishQuiz()">취침 전 자기만의 시간 🌙</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: P-DIAG-01-02 (AI 결과 보고서 팝업) -->
+  <div id="modal-report" class="modal-overlay">
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close" onclick="closeModal('modal-report')">×</button>
+      <div style="font-size:32px; margin-bottom:8px;">🧬</div>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-DIAG-01-02] AI 후각 성향 진단 리포트</div>
+      <h3 style="margin-bottom:12px; color:var(--primary-color);">추천 3종: 칠링 시더우드, 오션 브리즈, 한지 머스크</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">10만 후각 데이터 매칭 결과 99.4% 일치하는 추천 퍼퓸 세트입니다.</p>
+      <button class="btn-cta" style="width:100%; background:var(--accent-color); padding:12px;" onclick="closeModal('modal-report'); openModal('modal-kit-form');">맞춤 3종 샘플 무료 신청하기</button>
+    </div>
+  </div>
+
+  <!-- MODAL 3: P-KIT-01-01 (샘플 신청 폼 모달) -->
+  <div id="modal-kit-form" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-kit-form')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-KIT-01-01] AI 맞춤 3종 샘플 1-Click 신청</div>
+      <h3 style="margin-bottom:16px; color:var(--primary-color);">배송지 정보 작성 (무료 배송)</h3>
+      <form onsubmit="handleKitSubmit(event)">
+        <div class="form-group">
+          <label>신청자 성함 *</label>
+          <input type="text" id="kit-name" class="form-control" placeholder="송현우">
+          <div id="err-name" class="error-msg">성함을 입력해 주세요.</div>
+        </div>
+        <div class="form-group">
+          <label>휴대전화 번호 *</label>
+          <input type="text" id="kit-phone" class="form-control" placeholder="01012345678">
+          <div id="err-phone" class="error-msg">올바른 휴대전화 번호를 입력해 주세요.</div>
+        </div>
+        <div class="form-group">
+          <label>배송지 주소 *</label>
+          <input type="text" id="kit-address" class="form-control" placeholder="택배 수령 상세 주소">
+          <div id="err-address" class="error-msg">배송지 주소를 입력해 주세요.</div>
+        </div>
+        <button type="submit" class="btn-cta" style="width:100%; padding:12px; background:var(--accent-color); color:#FFF;">1-Click 무료 신청 확정</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 4: P-KIT-01-02 (신청 완료) -->
+  <div id="modal-done" class="modal-overlay">
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close" onclick="closeModal('modal-done')">×</button>
+      <div style="font-size:32px; margin-bottom:8px;">📦</div>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-KIT-01-02] AI 3종 샘플 신청 완료</div>
+      <h3 style="margin-bottom:12px; color:var(--primary-color);">신청이 접수되었습니다!</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">신청번호: <strong>AI-LAB-2026</strong><br>3일 이내에 우체국 택배로 무료 배송됩니다.</p>
+      <button class="btn-cta" style="width:100%; padding:10px;" onclick="closeModal('modal-done')">확인 및 메인으로 이동</button>
+    </div>
+  </div>
+
+  <!-- MODAL 5: P-INTRO-01-01 (알고리즘 팝업) -->
+  <div id="modal-algo" class="modal-overlay">
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close" onclick="closeModal('modal-algo')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-INTRO-01-01] 10만 후각 DB 알고리즘</div>
+      <h3 style="margin-bottom:12px; color:var(--primary-color);">AI 후각 매칭 프로세스</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">TPO, 기분, 심박수 데이터를 기계 학습하여 퍼퓸 분자 레이어링 비율을 자동 계산합니다.</p>
+      <button class="btn-cta" style="width:100%; padding:10px;" onclick="closeModal('modal-algo'); openModal('modal-quiz');">1분 진단 체험하기</button>
+    </div>
+  </div>
+
+  <!-- MODAL 6: P-CHAT-01-01 (향 믹싱 팝업) -->
+  <div id="modal-mix" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-mix')">×</button>
+      <div style="font-size:12px; font-weight:700; color:var(--accent-color); margin-bottom:8px;">[P-CHAT-01-01] AI 레이어링 향 믹싱 팁</div>
+      <h3 style="margin-bottom:12px; color:var(--primary-color);">우디 70% + 시트러스 30% 믹싱</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">첫 인상은 시트러스의 조화, 잔향은 가을 시더우드의 묵직함이 남는 조향사 추천 비율입니다.</p>
+      <button class="btn-cta" style="width:100%; padding:10px; background:var(--accent-color);" onclick="closeModal('modal-mix'); openModal('modal-kit-form');">이 조합으로 샘플 담기</button>
+    </div>
+  </div>
+
+  <script>
+    function setViewport(mode) {
+      const frame = document.getElementById('frame');
+      const btns = document.querySelectorAll('.btn-vp');
+      btns.forEach(b => b.classList.remove('active'));
+
+      frame.classList.remove('tablet', 'mobile');
+      if (mode === 'tablet') {
+        frame.classList.add('tablet');
+        event.target.classList.add('active');
+      } else if (mode === 'mobile') {
+        frame.classList.add('mobile');
+        event.target.classList.add('active');
+      } else {
+        event.target.classList.add('active');
+      }
+    }
+
+    function showScreen(screenId, el) {
+      const views = document.querySelectorAll('.screen-view');
+      views.forEach(v => v.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if(target) target.classList.add('active');
+
+      if(el) {
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(n => n.classList.remove('active'));
+        el.classList.add('active');
+      }
+    }
+
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+    }
+
+    function nextQuiz(step) {
+      document.getElementById('quiz-step-1').style.display = 'none';
+      document.getElementById('quiz-step-2').style.display = 'none';
+      document.getElementById('quiz-step-3').style.display = 'none';
+
+      document.getElementById('quiz-step-' + step).style.display = 'block';
+      document.getElementById('quiz-progress').style.width = (step * 33) + '%';
+    }
+
+    function finishQuiz() {
+      closeModal('modal-quiz');
+      openModal('modal-report');
+      // Reset quiz
+      nextQuiz(1);
+    }
+
+    function sendChatPrompt(msg) {
+      document.getElementById('chat-input').value = msg;
+      sendUserMsg();
+    }
+
+    function sendUserMsg() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if(!text) return;
+
+      const box = document.getElementById('chat-messages') || document.getElementById('chat-box');
+      
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble user';
+      userBubble.innerText = text;
+      box.appendChild(userBubble);
+
+      input.value = '';
+      box.scrollTop = box.scrollHeight;
+
+      setTimeout(() => {
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-bubble bot';
+        botBubble.innerHTML = 'AI가 10만 후각 데이터베이스에서 <strong>"' + text + '"</strong>에 어울리는 최적의 3종 믹싱 퍼퓸을 찾았습니다! ✨ <br><button class="btn-cta" style="margin-top:6px; font-size:11px; padding:4px 8px;" onclick="openModal(\'modal-kit-form\')">이 추천으로 샘플 신청하기</button>';
+        box.appendChild(botBubble);
+        box.scrollTop = box.scrollHeight;
+      }, 600);
+    }
+
+    function handleKitSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('kit-name');
+      const phone = document.getElementById('kit-phone');
+      const addr = document.getElementById('kit-address');
+
+      let valid = true;
+
+      if(!name.value.trim()) {
+        name.classList.add('error');
+        document.getElementById('err-name').classList.add('active');
+        valid = false;
+      } else {
+        name.classList.remove('error');
+        document.getElementById('err-name').classList.remove('active');
+      }
+
+      if(!phone.value.trim() || phone.value.trim().length < 9) {
+        phone.classList.add('error');
+        document.getElementById('err-phone').classList.add('active');
+        valid = false;
+      } else {
+        phone.classList.remove('error');
+        document.getElementById('err-phone').classList.remove('active');
+      }
+
+      if(!addr.value.trim()) {
+        addr.classList.add('error');
+        document.getElementById('err-address').classList.add('active');
+        valid = false;
+      } else {
+        addr.classList.remove('error');
+        document.getElementById('err-address').classList.remove('active');
+      }
+
+      if(valid) {
+        closeModal('modal-kit-form');
+        openModal('modal-done');
+      }
+    }
+  </script>
+</body>
+</html>

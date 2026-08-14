@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 860" width="100%" height="100%" style="background:#0F1A30; font-family:'Pretendard', 'Noto Sans KR', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 24px; font-weight: 800; fill: #C5A059; text-anchor: middle; }
+    .subtitle { font-size: 13px; fill: #CBD5E1; text-anchor: middle; }
+    
+    /* Shapes */
+    .capsule { fill: #C5A059; stroke: #B45309; stroke-width: 2px; rx: 25px; filter: url(#shadow); }
+    .capsule-text { font-size: 14px; font-weight: 800; fill: #0F1A30; text-anchor: middle; }
+    
+    .action { fill: #1E293B; stroke: #C5A059; stroke-width: 1.5px; rx: 8px; filter: url(#shadow); }
+    .action-text { font-size: 13px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+    
+    .system { fill: #00A896; stroke: #004D40; stroke-width: 1.5px; rx: 12px; filter: url(#shadow); }
+    .system-text { font-size: 13px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    
+    .diamond { fill: #FEF3C7; stroke: #F59E0B; stroke-width: 2px; filter: url(#shadow); }
+    .diamond-text { font-size: 12px; font-weight: 800; fill: #78350F; text-anchor: middle; }
+
+    .error-box { fill: #450A0A; stroke: #EF4444; stroke-width: 1.5px; rx: 6px; filter: url(#shadow); }
+    .error-text { font-size: 12px; font-weight: 700; fill: #FCA5A5; text-anchor: middle; }
+    
+    .line { stroke: #C5A059; stroke-width: 2px; }
+    .line-dash { stroke: #EF4444; stroke-width: 2px; stroke-dasharray: 4,4; }
+    .arrow-text { font-size: 11px; font-weight: 700; fill: #CBD5E1; }
+  </style>
+
+  <!-- Title -->
+  <text x="550" y="45" class="title">사단 어사 출두 페스티벌 서비스 흐름도 (윤태양)</text>
+  <text x="550" y="70" class="subtitle">도형 구별: [캡슐=시작/종료] [사각형=사용자행동] [둥근사각형=시스템] [다이아몬드=판단분기]</text>
+
+  <!-- Flow Diagrams -->
+  <!-- 1. Start -->
+  <rect x="420" y="100" width="260" height="50" class="capsule"/>
+  <text x="550" y="131" class="capsule-text">[시작] 사용자 서비스 접속</text>
+
+  <line x1="550" y1="150" x2="550" y2="185" class="line"/>
+
+  <!-- 2. Main Hero -->
+  <rect x="380" y="185" width="340" height="46" class="action"/>
+  <text x="550" y="213" class="action-text">메인 홈 3D 어사 출두 히어로 시청 (P-MAIN-01)</text>
+
+  <line x1="550" y1="231" x2="550" y2="265" class="line"/>
+
+  <!-- 3. Map & Welcome Kit -->
+  <rect x="380" y="265" width="340" height="46" class="action"/>
+  <text x="550" y="293" class="action-text">시향 부스 지도 &amp; 웰컴 키트 굿즈 탐색 (P-MAP-01)</text>
+
+  <line x1="550" y1="311" x2="550" y2="345" class="line"/>
+
+  <!-- 4. Ticket CTA -->
+  <rect x="380" y="345" width="340" height="46" class="action"/>
+  <text x="550" y="373" class="action-text">[얼리버드 패스 예매] CTA 터치 (P-TICKET-01)</text>
+
+  <line x1="550" y1="391" x2="550" y2="425" class="line"/>
+
+  <!-- 5. Decision 1: Sold Out? -->
+  <polygon points="550,425 680,465 550,505 420,465" class="diamond"/>
+  <text x="550" y="469" class="diamond-text">얼리버드 티켓 잔여 소진?</text>
+
+  <!-- Branch No (Sold out) -->
+  <line x1="420" y1="465" x2="280" y2="465" class="line-dash"/>
+  <text x="325" y="455" class="arrow-text">예 (매진)</text>
+  <rect x="90" y="442" width="190" height="46" class="error-box"/>
+  <text x="185" y="470" class="error-text">매진 안내 &amp; 취소표 알림</text>
+
+  <line x1="185" y1="442" x2="185" y2="208" class="line-dash"/>
+  <line x1="185" y1="208" x2="380" y2="208" class="line-dash"/>
+
+  <!-- Branch Yes (Available) -->
+  <line x1="550" y1="505" x2="550" y2="540" class="line"/>
+  <text x="560" y="525" class="arrow-text">아니오 (티켓 남음)</text>
+
+  <!-- 6. Form Fill -->
+  <rect x="380" y="540" width="340" height="46" class="action"/>
+  <text x="550" y="568" class="action-text">방문일 / 인원 / 예매자 정보 입력</text>
+
+  <line x1="550" y1="586" x2="550" y2="620" class="line"/>
+
+  <!-- 7. Decision 2: Validation -->
+  <polygon points="550,620 670,655 550,690 430,655" class="diamond"/>
+  <text x="550" y="659" class="diamond-text">입력 유효성 검사 통과?</text>
+
+  <!-- Validation Error -->
+  <line x1="670" y1="655" x2="790" y2="655" class="line-dash"/>
+  <text x="695" y="645" class="arrow-text">아니오 (오류)</text>
+  <rect x="790" y="632" width="190" height="46" class="error-box"/>
+  <text x="885" y="660" class="error-text">입력 오류 메시지 경고</text>
+  
+  <line x1="885" y1="632" x2="885" y2="563" class="line-dash"/>
+  <line x1="885" y1="563" x2="720" y2="563" class="line-dash"/>
+
+  <!-- System Processing -->
+  <line x1="550" y1="690" x2="550" y2="725" class="line"/>
+  <text x="560" y="710" class="arrow-text">예 (통과)</text>
+  <rect x="360" y="725" width="380" height="46" class="system"/>
+  <text x="550" y="753" class="system-text">카카오 알림톡 QR 관람권 즉시 자동 발송 (시스템)</text>
+
+  <line x1="550" y1="771" x2="550" y2="795" class="line"/>
+
+  <!-- 8. End Node -->
+  <rect x="400" y="795" width="300" height="50" class="capsule"/>
+  <text x="550" y="826" class="capsule-text">[종료] 현장 입원 QR 관람권 수령 완료</text>
+</svg>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지 스토리보드 와이어프레임 시각화 (P-MAIN-01)</title>
+  <style>
+    /* 기본 리셋 및 회색 톤 와이어프레임 스타일 (자바스크립트 제외) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      padding-bottom: 60px;
+    }
+
+    /* 문서 상단 타이틀 안내 바 */
+    .doc-header {
+      background-color: #374151;
+      color: #ffffff;
+      padding: 16px 24px;
+      text-align: center;
+      border-bottom: 3px solid #1f2937;
+    }
+
+    .doc-header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .doc-header p {
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    /* 전체 와이어프레임 랩퍼 */
+    .wireframe-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      border: 2px solid #9ca3af;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 섹션 공통 구분 스타일 */
+    .wf-section {
+      border-bottom: 2px dashed #9ca3af;
+      padding: 24px;
+      position: relative;
+    }
+
+    .wf-section-label {
+      display: inline-block;
+      background-color: #4b5563;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    /* 회색 박스 공통 */
+    .gray-box {
+      background-color: #e5e7eb;
+      border: 2px solid #9ca3af;
+      color: #374151;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .gray-box-dark {
+      background-color: #d1d5db;
+      border: 2px solid #6b7280;
+    }
+
+    .gray-btn {
+      background-color: #6b7280;
+      color: #ffffff;
+      border: 1px solid #374151;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 1. GNB 헤더 */
+    .gnb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      background-color: #e5e7eb;
+      border: 2px solid #9ca3af;
+      padding: 0 20px;
+    }
+
+    .gnb-logo {
+      width: 160px;
+      height: 38px;
+    }
+
+    .gnb-menu-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .gnb-menu-item {
+      width: 110px;
+      height: 34px;
+      font-size: 12px;
+    }
+
+    /* 2. 3D 히어로 섹션 */
+    .hero-container {
+      height: 380px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    .hero-title-box {
+      width: 70%;
+      height: 60px;
+      font-size: 18px;
+    }
+
+    .hero-sub-box {
+      width: 50%;
+      height: 36px;
+      font-size: 13px;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    /* 3. 부스 위치 지도 섹션 */
+    .map-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tab-item {
+      width: 140px;
+      height: 38px;
+    }
+
+    .map-canvas-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+
+    .map-graphic-box {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .map-pin-row {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .map-pin {
+      width: 150px;
+      height: 48px;
+    }
+
+    .map-info-card {
+      height: 300px;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 16px;
+      text-align: left;
+    }
+
+    /* 4. 타임테이블 섹션 */
+    .timetable-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .time-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 120px;
+      gap: 12px;
+      height: 50px;
+    }
+
+    /* 5. 웰컴 키트 갤러리 섹션 */
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .kit-card {
+      height: 200px;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .kit-image-placeholder {
+      width: 80%;
+      height: 100px;
+    }
+
+    /* 6. 얼리버드 패스 예매 모달 와이어프레임 */
+    .modal-wireframe-overlay {
+      background-color: #d1d5db;
+      border: 2px solid #4b5563;
+      padding: 24px;
+      border-radius: 6px;
+    }
+
+    .modal-form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .form-label {
+      height: 38px;
+      justify-content: flex-start;
+      padding-left: 12px;
+    }
+
+    .form-input {
+      height: 38px;
+      justify-content: flex-start;
+      padding-left: 12px;
+      background-color: #ffffff;
+    }
+
+    /* 7. 푸터 섹션 */
+    .footer-box {
+      height: 90px;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 문서 상단 헤더 -->
+  <header class="doc-header">
+    <h1>📐 메인페이지 스토리보드 회색 박스 와이어프레임 시각화 (P-MAIN-01)</h1>
+    <p>기반 문서: 메인페이지_스토리보드.md | 순수 HTML + CSS 레이아웃 구조 (자바스크립트 미사용)</p>
+  </header>
+
+  <!-- 전체 메인페이지 레이아웃 시각화 용지 -->
+  <div class="wireframe-container">
+
+    <!-- [SEC-01] SCR-MAIN-001: GNB 상단 헤더 & 모바일 스티키 바 -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-01] SCR-MAIN-001 : GNB 상단 헤더 &amp; 스티키 바</span>
+      <div class="gnb-header">
+        <div class="gray-box gnb-logo">[SADAN FESTIVAL 로고]</div>
+        <div class="gnb-menu-group">
+          <div class="gray-box gnb-menu-item">Intro</div>
+          <div class="gray-box gnb-menu-item">Timetable &amp; Map</div>
+          <div class="gray-box gnb-menu-item">Welcome Kit</div>
+        </div>
+        <div class="gray-btn">[ 얼리버드 패스 예매 &gt; ]</div>
+      </div>
+    </section>
+
+    <!-- [SEC-02] SCR-MAIN-002: 3D 어사 출두 인터랙티브 히어로 -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-02] SCR-MAIN-002 : 3D 어사 출두 비주얼 히어로</span>
+      <div class="gray-box hero-container">
+        <p style="font-size: 12px; color: #6b7280;">[ 3D 모션 비디오 루프 배경 영역 (MP4/WebM) ]</p>
+        <div class="gray-box gray-box-dark hero-title-box">
+          "암행어사 출두요! 마패 향이 피어오른다" (H1 메인 타이틀)
+        </div>
+        <div class="gray-box hero-sub-box">
+          2026.09.15 ~ 09.20 @성수 팝업스토어 &amp; 경복궁 시향존
+        </div>
+        <div class="hero-btn-group">
+          <div class="gray-btn" style="padding: 10px 20px;">[ 🎟️ 얼리버드 패스 사전 예매하기 ]</div>
+          <div class="gray-box" style="width: 180px; height: 38px;">[ 📍 부스 지도 보기 ]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [SEC-03] SCR-MAIN-003: 성수/경복궁 시향 부스 인터랙티브 지도 UI -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-03] SCR-MAIN-003 : 성수/경복궁 시향 부스 인터랙티브 지도 UI</span>
+      <div class="map-tabs">
+        <div class="gray-btn tab-item">[ 성수 팝업존 ]</div>
+        <div class="gray-box tab-item">[ 경복궁 시향존 ]</div>
+      </div>
+      <div class="map-canvas-grid">
+        <div class="gray-box map-graphic-box">
+          <p>[ 성수/경복궁 인터랙티브 지도 대화형 베이스 이미지 ]</p>
+          <div class="map-pin-row">
+            <div class="gray-box gray-box-dark map-pin">📍 1마패: 백단향 부스</div>
+            <div class="gray-box gray-box-dark map-pin">📍 2마패: 침향 부스</div>
+            <div class="gray-box gray-box-dark map-pin">📍 3마패: 혜향 부스</div>
+          </div>
+        </div>
+        <div class="gray-box map-info-card">
+          <div class="gray-box gray-box-dark" style="width:100%; height:32px;">[ 선택 부스 향 노트 팝업 ]</div>
+          <p style="font-size: 12px; line-height: 1.5; color: #4b5563;">
+            • 부스명: 1마패 백단향 훈민정음 부스<br>
+            • Top Note: 시트러스 아로마<br>
+            • Middle Note: 은은한 백단향<br>
+            • Base Note: 우디 샌달우드<br>
+            • 혜택: 웰컴 키트 샘플 캡슐 증정
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [SEC-04] SCR-MAIN-004: 날짜/시간별 프로그램 탭 타임테이블 -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-04] SCR-MAIN-004 : 날짜/시간별 프로그램 탭 타임테이블</span>
+      <div class="map-tabs">
+        <div class="gray-btn tab-item">[ DAY 1 (09.15 금) ]</div>
+        <div class="gray-box tab-item">[ DAY 2 (09.16 토) ]</div>
+        <div class="gray-box tab-item">[ DAY 3 (09.17 일) ]</div>
+      </div>
+      <div class="timetable-rows">
+        <div class="time-row">
+          <div class="gray-box">11:00 ~ 12:30</div>
+          <div class="gray-box" style="justify-content: flex-start; padding-left: 16px;">훈민정음 백단향 나만의 향수 만들기 조향 클래스</div>
+          <div class="gray-btn">[ 클래스 예매 &gt; ]</div>
+        </div>
+        <div class="time-row">
+          <div class="gray-box">14:00 ~ 15:00</div>
+          <div class="gray-box" style="justify-content: flex-start; padding-left: 16px;">조선 암행어사 출두 퍼레이드 &amp; 3D 빔 쏘기 퍼포먼스</div>
+          <div class="gray-box">[ 관람 가능 ]</div>
+        </div>
+        <div class="time-row">
+          <div class="gray-box">17:00 ~ 18:30</div>
+          <div class="gray-box" style="justify-content: flex-start; padding-left: 16px;">퓨전 국악 아티스트 라이브 세션 &amp; 시향 파티</div>
+          <div class="gray-box gray-box-dark">[ 마감 임박 ]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [SEC-05] SCR-MAIN-005: 웰컴 키트 & 한정판 굿즈 슬라이더 -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-05] SCR-MAIN-005 : 웰컴 키트 &amp; 한정판 굿즈 소개 Carousel</span>
+      <div class="kit-grid">
+        <div class="gray-box kit-card">
+          <div class="gray-box gray-box-dark kit-image-placeholder">[ 한정판 금속 마패 뱃지 ]</div>
+          <p style="font-size:12px;">어사 출두 3마패 금속 뱃지 (실물)</p>
+        </div>
+        <div class="gray-box kit-card">
+          <div class="gray-box gray-box-dark kit-image-placeholder">[ 패브릭 노리개 키링 ]</div>
+          <p style="font-size:12px;">수공예 은실 패브릭 노리개</p>
+        </div>
+        <div class="gray-box kit-card">
+          <div class="gray-box gray-box-dark kit-image-placeholder">[ 향 캡슐 3종 세트 ]</div>
+          <p style="font-size:12px;">백단/침향/혜향 시향 캡슐</p>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <div class="gray-btn" style="display:inline-block;">[ 📍 웰컴 키트 현장 수령처 약도 보기 ]</div>
+      </div>
+    </section>
+
+    <!-- [SEC-06] SCR-MAIN-006: 얼리버드 패스 1-Click 사전 예매 팝업 모달 -->
+    <section class="wf-section">
+      <span class="wf-section-label">[SEC-06] SCR-MAIN-006 : 얼리버드 패스 1-Click 사전 예매 팝업 모달</span>
+      <div class="modal-wireframe-overlay">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:15px; font-weight:700;">🎟️ 얼리버드 패스 사전 예매 팝업 (Modal Window)</h3>
+          <div class="gray-box" style="width:30px; height:30px; padding:0;">X</div>
+        </div>
+        <div class="modal-form-grid">
+          <div class="form-row">
+            <div class="gray-box form-label">1. 방문 일자 선택</div>
+            <div style="display:flex; gap:8px;">
+              <div class="gray-btn">[ 09.15(금) ]</div>
+              <div class="gray-box" style="width:100px;">[ 09.16(토) ]</div>
+              <div class="gray-box" style="width:100px;">[ 09.17(일) ]</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="gray-box form-label">2. 예매 수량 선택</div>
+            <div class="gray-box form-input" style="width:200px;">[-] &nbsp;&nbsp; 2 매 &nbsp;&nbsp; [+] (최대 4매)</div>
+          </div>
+          <div class="form-row">
+            <div class="gray-box form-label">3. 예매자 성함</div>
+            <div class="gray-box form-input">[ 텍스트 입력 폼: 홍길동 ]</div>
+          </div>
+          <div class="form-row">
+            <div class="gray-box form-label">4. 예매자 연락처</div>
+            <div class="gray-box form-input">[ 전화번호 입력 폼: 010-1234-5678 ]</div>
+          </div>
+          <div class="form-row">
+            <div class="gray-box form-label">약관 동의</div>
+            <div class="gray-box form-input">[v] 개인정보 수집 및 카카오 알림톡 발송 동의 (필수)</div>
+          </div>
+          <div style="margin-top:10px; text-align:center;">
+            <div class="gray-btn" style="width:100%; height:44px; font-size:15px;">[ 💳 얼리버드 패스 예매 완료하기 (0원) ]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [SEC-07] SCR-MAIN-007: 푸터 영역 -->
+    <section class="wf-section" style="border-bottom:none;">
+      <span class="wf-section-label">[SEC-07] SCR-MAIN-007 : 페스티벌 하단 푸터 (Footer)</span>
+      <div class="gray-box footer-box">
+        <p>SADAN FESTIVAL | 사단 어사 출두 K-헤리티지 향 페스티벌 조직위원회 | 대표: 윤태양</p>
+        <p>서울특별시 성동구 성수이로 123 | 고객센터: 02-1234-5678 | [이용약관] [개인정보처리방침] [SNS 링크]</p>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

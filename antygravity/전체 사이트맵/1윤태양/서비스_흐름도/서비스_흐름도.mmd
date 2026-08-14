@@ -1,0 +1,31 @@
+flowchart TD
+    classDef startEnd fill:#0F1A30,stroke:#C5A059,stroke-width:2px,color:#FFF;
+    classDef action fill:#1E293B,stroke:#C5A059,stroke-width:1px,color:#FFF;
+    classDef system fill:#00A896,stroke:#004D40,stroke-width:1px,color:#FFF;
+    classDef decision fill:#C5A059,stroke:#78350F,stroke-width:1.5px,color:#0F1A30;
+    classDef error fill:#FEE2E2,stroke:#EF4444,stroke-width:1px,color:#7F1D1D;
+
+    START(["[시작] 사용자 서비스 접속"]):::startEnd --> STEP1["메인 홈 3D 어사 출두 히어로 시청
+(P-MAIN-01)"]:::action
+    STEP1 --> STEP2["성수/경복궁 시향 부스 지도 탐색
+(P-MAP-01)"]:::action
+    STEP2 --> STEP3["한정판 웰컴 키트 굿즈 확인
+(P-KIT-01)"]:::action
+    STEP3 --> STEP4["[얼리버드 패스 예매] CTA 터치"]:::action
+    
+    STEP4 --> DEC1{"얼리버드 티켓 잔여 수량 존재?"}:::decision
+    DEC1 -- "아니오 (매진)" --> ERR_SOLD["얼리버드 매진 안내 팝업
+(P-ERR-SOLD)"]:::error
+    ERR_SOLD --> STEP1
+    
+    DEC1 -- "예 (잔여 존재)" --> FORM["방문일/인원/연락처 입력 폼
+(P-TICKET-01)"]:::action
+    FORM --> DEC2{"입력 정보 유효성 검사"}:::decision
+    
+    DEC2 -- "오류 발생" --> ERR_VAL["입력 오류 경고 문구 노출"]:::error
+    ERR_VAL --> FORM
+    
+    DEC2 -- "정상 통과" --> SYS_MSG["카카오 알림톡 QR 관람권 즉시 발송"]:::system
+    SYS_MSG --> STEP5["알림톡 링크 클릭 ➔ 내 티켓함 QR 관람권 확인
+(P-MY-01 · 가정)"]:::action
+    STEP5 --> END_NODE(["[종료] 현장 입원 QR 관람권 준비 완료"]):::startEnd

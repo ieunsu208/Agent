@@ -1,0 +1,132 @@
+[
+  {
+    "id": "P-MAIN-01",
+    "name": "메인 홈",
+    "purpose": "AI 후각 성향 분석 & 비대면 추천 챗봇 플랫폼 브랜드 랜딩",
+    "entryConditions": ["자사몰 URL 접속", "로고 클릭"],
+    "sections": ["GNB 헤더", "AI 후각 비어로", "1분 AI 취향 진단 요약", "실시간 대화형 AI 챗봇 미리보기", "10만 DB 알고리즘 지표", "3종 샘플 키트 안내", "푸터"],
+    "actions": ["[1분 AI 진단 시작] 클릭", "[챗봇 대화하기] 클릭", "[3종 샘플 신청] 클릭"],
+    "states": ["기본(AI 노드 비어로)", "로딩", "모바일 반응형"],
+    "nextScreens": ["P-INTRO-01", "P-DIAG-01", "P-DIAG-01-01", "P-CHAT-01", "P-KIT-01", "P-KIT-01-01"]
+  },
+  {
+    "id": "P-INTRO-01",
+    "name": "AI 기술 소개 (AI Tech Intro)",
+    "purpose": "10만 건 후각 DB 및 98% 만족도 추천 알고리즘 소개",
+    "entryConditions": ["GNB [AI Tech Intro] 클릭"],
+    "sections": ["AI 후각 데이터 매칭 영상", "만족도 수치 지표", "데이터 피라미드 그래프"],
+    "actions": ["[알고리즘 상세 구조 보기] 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-INTRO-01-01", "P-DIAG-01-01"]
+  },
+  {
+    "id": "P-INTRO-01-01",
+    "name": "알고리즘 팝업",
+    "purpose": "기분·날씨·TPO 조합 AI 알고리즘 구조도 시뮬레이션",
+    "entryConditions": ["P-INTRO-01에서 [알고리즘 상세] 클릭"],
+    "sections": ["알고리즘 노드 비주얼", "매칭 원리 설명"],
+    "actions": ["[1분 진단 시작] 클릭"],
+    "states": ["팝업 구동"],
+    "nextScreens": ["P-DIAG-01-01"]
+  },
+  {
+    "id": "P-DIAG-01",
+    "name": "1분 AI 진단 (AI Diagnosis)",
+    "purpose": "1분 퀴즈 모달 진입 및 AI 취향 분석 가이드 제공",
+    "entryConditions": ["GNB [AI Diagnosis] 클릭"],
+    "sections": ["1분 퀴즈 가이드", "실시간 참여자 수 카운터"],
+    "actions": ["[1분 취향 진단 시작] 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-DIAG-01-01"]
+  },
+  {
+    "id": "P-DIAG-01-01",
+    "name": "AI 취향 진단 모달",
+    "purpose": "기분/날씨/TPO/스타일 4단계 선택형 퀴즈 작성",
+    "entryConditions": ["P-DIAG-01 또는 메인 홈에서 [진단 시작] 클릭"],
+    "sections": ["프로그레스 바 (1/4~4/4)", "기분 선택 칩", "계절/날씨 선택", "TPO 선택", "스타일 선택"],
+    "actions": ["옵션 선택", "다음 문항 이동", "[AI 분석 결과 보기] 클릭"],
+    "states": ["1~4단계 진행", "AI 연산 렌더링 중"],
+    "nextScreens": ["P-DIAG-01-02"]
+  },
+  {
+    "id": "P-DIAG-01-02",
+    "name": "AI 결과 보고서 팝업",
+    "purpose": "분석된 나만의 후각 정체성 및 AI 추천 3종 향 제시",
+    "entryConditions": ["P-DIAG-01-01 4문항 완료 시 자동 팝업"],
+    "sections": ["후각 정체성 그래픽 리포트", "AI 추천 3종 퍼퓸 카드", "카카오톡 결과 공유 20% 쿠폰"],
+    "actions": ["카카오톡 공유", "[맞춤 3종 샘플 신청] 클릭"],
+    "states": ["결과 표시", "쿠폰 발급 완료"],
+    "nextScreens": ["P-KIT-01-01"]
+  },
+  {
+    "id": "P-CHAT-01",
+    "name": "실시간 챗봇 UI (AI Chatbot)",
+    "purpose": "비대면 대화창에서 AI와 대화하며 실시간 향수 추천 받기",
+    "entryConditions": ["GNB [AI Chatbot] 또는 우하단 챗봇 뱃지 클릭"],
+    "sections": ["대화 메시지 스크롤 영역", "Quick Prompt 칩", "입력창", "추천 향 카드"],
+    "actions": ["질문 작성", "Quick Prompt 클릭", "[이 향으로 샘플 담기] 클릭"],
+    "states": ["대화 중", "AI 답변 작성 중"],
+    "nextScreens": ["P-CHAT-01-01", "P-KIT-01-01"]
+  },
+  {
+    "id": "P-CHAT-01-01",
+    "name": "향 믹싱 팝업",
+    "purpose": "상황별 커스텀 향수 레이어링 비율 및 팁 안내",
+    "entryConditions": ["P-CHAT-01에서 [믹싱 팁 보기] 클릭"],
+    "sections": ["믹싱 비율 그래프", "조향사 AI 가이드"],
+    "actions": ["[샘플 키트에 추가] 클릭"],
+    "states": ["팝업 구동"],
+    "nextScreens": ["P-KIT-01-01"]
+  },
+  {
+    "id": "P-KIT-01",
+    "name": "샘플 키트 신청 (AI Sample Kit)",
+    "purpose": "AI 추천 3종 향 무상 샘플 증정 이벤트 안내",
+    "entryConditions": ["GNB [AI Sample Kit] 클릭"],
+    "sections": ["3종 샘플 키트 컷", "100% 무상 배송 안내", "신청 폼 안내"],
+    "actions": ["[3종 샘플 신청하기] 클릭"],
+    "states": ["기본"],
+    "nextScreens": ["P-KIT-01-01"]
+  },
+  {
+    "id": "P-KIT-01-01",
+    "name": "샘플 신청 폼 모달",
+    "purpose": "수령인 주소 및 연락처 1-Click 작성",
+    "entryConditions": ["P-KIT-01 또는 P-DIAG-01-02에서 [샘플 신청] 클릭"],
+    "sections": ["AI 진단 결과 3종 요약", "신청자 성함", "휴대전화", "배송지 주소"],
+    "actions": ["주소 입력", "[1-Click 샘플 신청 확정] 클릭"],
+    "states": ["작성", "유효성 에러", "제출 중"],
+    "nextScreens": ["P-KIT-01-02"]
+  },
+  {
+    "id": "P-KIT-01-02",
+    "name": "신청 완료 팝업",
+    "purpose": "샘플 신청 접수 통보 및 3일 내 택배 발송 안내",
+    "entryConditions": ["P-KIT-01-01 유효성 통과 및 제출"],
+    "sections": ["신청 완료 메세지", "신청 번호", "택배 발송 예정일"],
+    "actions": ["[확인 및 메인으로] 클릭"],
+    "states": ["완료 표시"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-01",
+    "name": "이용약관 및 데이터 방침",
+    "purpose": "AI 후각 데이터 보안 규정 및 개인정보처리 방침 안내",
+    "entryConditions": ["푸터 약관 링크 클릭"],
+    "sections": ["약관 전문", "AI 보안 처리 방침"],
+    "actions": ["탭 전환"],
+    "states": ["기본"],
+    "nextScreens": ["P-MAIN-01"]
+  },
+  {
+    "id": "P-SYS-01-02",
+    "name": "404 / 예외 안내 페이지",
+    "purpose": "잘못된 접근 예외 처리",
+    "entryConditions": ["잘못된 URL 접근"],
+    "sections": ["오류 안내 문구", "메인 이동 버튼"],
+    "actions": ["[메인으로 돌아가기] 클릭"],
+    "states": ["예외"],
+    "nextScreens": ["P-MAIN-01"]
+  }
+]

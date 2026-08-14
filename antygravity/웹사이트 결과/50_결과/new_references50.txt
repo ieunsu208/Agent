@@ -1,0 +1,349 @@
+브랜드 이름: 메종 루이 마리
+링크: https://maisonlouismarie.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: CSS Grid 비주얼 카드 레이아웃, 향 노트 아코디언 컴포넌트, Quick Add 카트 Drawer
+적합한 이유: 정갈한 여백과 에디토리얼 타이포그래피가 사단의 오리엔탈 모던 무드와 부합함.
+
+브랜드 이름: 이솝
+링크: https://www.aesop.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 미니멀 Sticky 스크롤, 모듈형 탭 가이드, 스톤/용기 시각적 대비 쇼케이스
+적합한 이유: 자연 질감 배경과 견고한 투명 용기의 미니멀 오리엔탈 룩앤필을 구현함.
+
+브랜드 이름: 르 라보
+링크: https://www.lelabofragrances.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 타자기 에디토리얼 그리드, 커스텀 라벨링 실시간 텍스트 프리뷰어
+적합한 이유: 100% 커스텀 레이어링 및 어사 마패 이니셜 각인 프리뷰 모듈에 적합함.
+
+브랜드 이름: 논픽션
+링크: https://nonfiction.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 정갈한 2열 Grid 갤러리, 향 노트 드롭다운 필터, Slide-over 카트 Drawer
+적합한 이유: 정갈하고 차분한 모던 오리엔탈 감성의 이커머스 뼈대로 호환됨.
+
+브랜드 이름: 탬버린즈
+링크: https://www.tamburins.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: HD 3D 오브제 줌 비주얼 쇼케이스, 모듈형 옵션 Selector, Sticky GNB
+적합한 이유: 향수 용기를 오브제 아트워크처럼 극적으로 연출하는 히어로 섹션으로 활용됨.
+
+브랜드 이름: 바이레도
+링크: https://www.byredo.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 대담한 흑백 에디토리얼 타이포그래피, 가로 반응형 칼럼 그리드, 퀵 바잉 모달
+적합한 이유: 극도로 정제된 미니멀 디자인 룩앤필과 명확한 분류 구조를 지님.
+
+브랜드 이름: 딥티크
+링크: https://www.diptyqueparis.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 일러스트 헤리티지 아카이브 카루셀, 향 노트 모듈형 슬라이더
+적합한 이유: 삽화 기반 헤리티지 스토리텔링이 암행어사 세계관 서사 요구사항과 부합함.
+
+브랜드 이름: 마티에르 프르미에르
+링크: https://matiere-premiere.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Interactive Accordion Matrix
+주요 프론트엔드 기능: 원료 중심 롱스크롤 랜딩, 고해상도 질감 파셀 타일, Sticky 카트 Drawer
+적합한 이유: 원료의 본질에 집중하는 단정하고 맑은 톤앤매너를 전달함.
+
+브랜드 이름: 불리 1803
+링크: https://buly1803.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 타이포그래피 고전 헤리티지 갤러리, 19세기 백과사전 도록 스크롤 UI
+적합한 이유: 고전 헤리티지 오브제 감성이 마패 역사 아카이브 도록 연출에 부합함.
+
+브랜드 이름: 그랑핸드
+링크: https://granhand.com
+산업군 카테고리: 향수/뷰티/코스메틱
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 스탬핑/각인 커스텀 프리뷰 컴포넌트, 차분한 오프화이트 스크롤 비주얼
+적합한 이유: 아날로그 도장/각인 입력을 디지털 인터랙션으로 구현하는 프리뷰어를 제공함.
+
+브랜드 이름: 오설록
+링크: https://www.osulloc.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 차 블렌딩 레이어링 가이드 표 UI, 1초 결제 Slide Cart
+적합한 이유: 블렌딩 티 레이어링을 가이드하는 직관적 커스텀 표 모듈을 사단 향 조합에 이식.
+
+브랜드 이름: 쌍계명차
+링크: https://www.sktea.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 한국 전통 다도 역사 타임라인, 스톤/흙 질감 무드컷
+적합한 이유: 전통 차 문화의 정갈한 미학과 수제 블렌딩 서사를 시각화함.
+
+브랜드 이름: 맥파이앤타이거
+링크: https://magpie-and-tiger.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Split-Screen Canvas
+주요 프론트엔드 기능: 동양적 미니멀 50:50 Split 화면, 차 원료 수확 롱스크롤
+적합한 이유: 한지, 우드, 흙 질감과 투명 차 도기의 시각적 대비를 정갈하게 전달함.
+
+브랜드 이름: 티 컬렉티브
+링크: https://tea-collective.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 차 잎 질감 타일 갤러리, 우려내는 시간 타이머 인터랙션
+적합한 이유: 원료의 시각적 텍스처와 우려내는 시간 모션을 결합함.
+
+브랜드 이름: 다도원
+링크: https://www.dadowon.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Interactive Accordion Matrix
+주요 프론트엔드 기능: 전통 다도 도구 아코디언 매트릭스, 차 원료 효능 표
+적합한 이유: 정갈한 정보 구조로 사단 커스텀 베이스 향 노트 정보를 전개함.
+
+브랜드 이름: 메이저선 티
+링크: https://www.meisuntea.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 동양 차 헤리티지 챕터 아카이브, 캘리그라피 폰트
+적합한 이유: 조선 암행어사 마패 헤리티지를 에디토리얼 아카이브 챕터로 연출.
+
+브랜드 이름: 티에리스
+링크: https://tieris.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 싱글 오리진 찻잎 1열 고해상도 쇼케이스, Sticky 구매 바
+적합한 이유: 단일 원료의 맑고 정갈한 본질을 1열 포커스 비주얼로 표현함.
+
+브랜드 이름: 공부차
+링크: https://www.gongboocha.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Minimalist Step-by-Step Flow
+주요 프론트엔드 기능: 체질/취향별 차 추천 3단계 질문 모듈
+적합한 이유: 사용자 취향 기반 맞춤 향수 조합을 찾아주는 Step 진입 흐름에 이식.
+
+브랜드 이름: 포트넘 앤 메이슨 차
+링크: https://www.fortnumandmason.com/tea
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 커스텀 티 틴케이스 이니셜 각인 모듈, 블렌딩 비더
+적합한 이유: 금속 틴케이스 실시간 이니셜 각인 UI를 사단 마패 용기에 적용.
+
+브랜드 이름: T2 티
+링크: https://www.t2tea.com
+산업군 카테고리: 전통 차(Tea) & 음료 블렌딩
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 컬러풀 차 믹스 필터 그리드, Quick Add Drawer
+적합한 이유: 다양한 향 노트를 색상과 질감으로 필터링하는 갤러리 구조 활용.
+
+브랜드 이름: 예거 르쿨트르
+링크: https://www.jaeger-lecoultre.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 3D 다이얼 각인 실시간 컨피규레이터, 줌 비주얼 모듈
+적합한 이유: 마패 용기 이니셜/문구 실시간 각인 프리뷰어 UI의 정석을 제시.
+
+브랜드 이름: 바세론 콘스탄틴
+링크: https://www.vacheron-constantin.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 270년 세계 최고 오래된 시계 제조 헤리티지 가로 스크롤
+적합한 이유: 암행어사 마패 역사를 고풍스러운 수공예 시각 서사로 전개.
+
+브랜드 이름: 아 랑게 운트 죄네
+링크: https://www.alange-soehne.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 독일 정밀 무브먼트 1열 풀블리드 쇼케이스, Sticky 카트
+적합한 이유: 맑고 견고한 투명 용기 내부 조향 메커니즘을 1열 포커스로 부각.
+
+브랜드 이름: 오데마 피게
+링크: https://www.audemarspiguet.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Split-Screen Canvas
+주요 프론트엔드 기능: 옥타곤 케이스 모티브 50:50 Split-Screen 비주얼 캔버스
+적합한 이유: 견고하고 정갈한 미니멀 오리엔탈 메탈 패키징 연출에 호환.
+
+브랜드 이름: 파텍 필립
+링크: https://www.patek.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 세대 계승 에디토리얼 잡지 스타일 아카이브 스토리
+적합한 이유: 대를 이어 전달되는 오리엔탈 럭셔리 포터블 오브제 가치 전달.
+
+브랜드 이름: 브레게
+링크: https://www.breguet.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Interactive Accordion Matrix
+주요 프론트엔드 기능: 고전 길로쉐 문양 기술 아코디언 매트릭스
+적합한 이유: 조선 한지 문양과 스톤 질감을 정갈한 아코디언 표로 정리.
+
+브랜드 이름: 이와씨 (IWC)
+링크: https://www.iwc.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 케이스 소재(세라믹/티타늄) 다차원 필터 그리드
+적합한 이유: 용기 소재 및 향 노트 필터링 갤러리 구조로 활용.
+
+브랜드 이름: 부쉐론
+링크: https://www.boucheron.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 커스텀 콰트로 링 모듈형 조합 시뮬레이터
+적합한 이유: 3가지 향수를 모듈형으로 조립하는 커스텀 레이어링 빌더 적용.
+
+브랜드 이름: 쇼메
+링크: https://www.chaumet.com
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 프랑스 왕실 티아라 200년 헤리티지 타임라인
+적합한 이유: 왕실 마패 아카이브 및 역사 서사를 가로 스크롤로 연출.
+
+브랜드 이름: 티파니 앤 코 커스텀
+링크: https://www.tiffany.com/engraving
+산업군 카테고리: 하이엔드 시계/커스텀 주얼리
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 실시간 손글씨/이니셜 각인 3D 프리뷰 컴포넌트
+적합한 이유: 마패 용기 전면 개인 손글씨 각인 모듈 UX에 완벽 이식.
+
+브랜드 이름: 국립중앙박물관 아카이브
+링크: https://www.museum.go.kr
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 조선시대 유물 3D 가로 스크롤 아카이브, 고해상도 줌
+적합한 이유: 암행어사 마패 유물 아카이브를 고해상도 가로 스크롤로 연출.
+
+브랜드 이름: 고송주 전통주
+링크: https://gosongju.com
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 전통 도자기 수제 주병 1열 풀블리드 visual, Sticky 카트
+적합한 이유: 견고하고 맑은 항아리/투명 병의 시각적 대비를 부각함.
+
+브랜드 이름: 한국공예·디자인문화진흥원 (KCDF)
+링크: https://www.kcdf.or.kr
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 한지, 나전칠기, 옹기 공예품 필터 갤러리, 우수한 여백
+적합한 이유: 한지, 스톤, 자연 질감의 오리엔탈 모던 무드 표준을 제공.
+
+브랜드 이름: 화요 (HWAYO)
+링크: https://www.hwayo.com
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Split-Screen Canvas
+주요 프론트엔드 기능: 도자기 술병과 맑은 증류주 50:50 Split 비주얼
+적합한 이유: 맑은 투명 액체와 스톤 질감의 대비를 캔버스 스크롤로 구현.
+
+브랜드 이름: 국립무형유산원
+링크: https://www.nihc.go.kr
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 인간문화재 장인 노하우 챕터 아카이브, 캘리그라피
+적합한 이유: 조선시대 수제 조향 기술을 장인 챕터로 전개하는 구조.
+
+브랜드 이름: 광주요 (KwangJuYo)
+링크: https://www.kwangjuyo.com
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Interactive Accordion Matrix
+주요 프론트엔드 기능: 왕실 도자기 흙 성분 및 구움 온도 아코디언 표
+적합한 이유: 향수 베이스 원료 성분 표 아코디언 매트릭스로 적용.
+
+브랜드 이름: 삼해소주 아카이브
+링크: https://samhae.kr
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 조선 3대 명주 100% 수제 발효 셀렉터 빌더
+적합한 이유: 사용자가 발효 원료를 조합하는 커스텀 레이어링 빌더 이식.
+
+브랜드 이름: 원소주 (WON SOJU)
+링크: https://wonsoju.com
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 전통 옹기 증류주 힙한 무드컷 풀블리드, 1초 결제
+적합한 이유: K-헤리티지 주류를 2030 디깅족 타깃으로 풀어내는 비주얼.
+
+브랜드 이름: 국립민속박물관
+링크: https://www.nfm.go.kr
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 조선시대 생활 도구 및 마패 가로 스크롤 타임라인
+적합한 이유: 마패 헤리티지의 역사를 학술적/감성적으로 조화시킴.
+
+브랜드 이름: 예술의전당 서예박물관
+링크: https://www.sac.or.kr/calligraphy
+산업군 카테고리: 전통 공예/주류/아카이브 박물관
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 조선 캘리그라피 먹향 챕터 아카이브, 흑백 타이포
+적합한 이유: 한지와 먹, 타이포그래피 중심의 미니멀 룩앤필에 완벽 부합.
+
+브랜드 이름: 키노아이 (Kinoi)
+링크: https://kinoi.jp
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Split-Screen Canvas
+주요 프론트엔드 기능: 일본 미니멀 건축 스튜디오 50:50 Split-Screen, 무채색 톤
+적합한 이유: 스톤, 우드, 여백 중심의 정갈한 오리엔탈 미니멀 레이아웃에 완벽 부합.
+
+브랜드 이름: 스튜디오 고토 (Studio Goto)
+링크: https://studiogoto.co.uk
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 동양적 미학 가로 스크롤 포트폴리오, 텍스처 타일
+적합한 이유: 한지와 스톤 질감을 가로 스크롤 아카이브로 보여주는 구조.
+
+브랜드 이름: 르메르 (Lemaire)
+링크: https://www.lemaire.fr
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Chapter-based Editorial Magazine
+주요 프론트엔드 기능: 절제된 톤앤매너 에디토리얼 룩북, 챕터별 슬라이더
+적합한 이유: 극도로 정제된 여백과 정갈한 컬러 3개 이하 사용의 미학 제시.
+
+브랜드 이름: 더 로우 (The Row)
+링크: https://www.therow.com
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Full-Bleed Object Showcase
+주요 프론트엔드 기능: 극단적 미니멀리즘 1열 풀블리드 visual, 로고 배제 UI
+적합한 이유: 제품 고유의 형태와 질감에만 집중하는 정갈한 룩앤필.
+
+브랜드 이름: 아크네 스튜디오
+링크: https://www.acnestudios.com
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Filter-Driven Dynamic Grid
+주요 프론트엔드 기능: 비대칭 칼럼 그리드, 텍스처 중심 필터, Quick Cart
+적합한 이유: 감각적인 그리드 배합과 직관적 커머스 결합 사례.
+
+브랜드 이름: 질샌더 (Jil Sander)
+링크: https://www.jilsander.com
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Split-Screen Canvas
+주요 프론트엔드 기능: 순백과 대담한 타이포 50:50 Split 비주얼 캔버스
+적합한 이유: 정갈한 흰색(한지)과 대담한 폰트의 시각적 대비를 부각.
+
+브랜드 이름: 보테가 베네타 커스텀
+링크: https://www.bottegaveneta.com/custom
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Interactive Configurator / Builder
+주요 프론트엔드 기능: 가죽 텍스처 및 이니셜 스탬핑 실시간 3D 조립 빌더
+적합한 이유: 사단 마패 용기 이니셜 각인 프리뷰어 UI에 이식 가능.
+
+브랜드 이름: 메종 마르지엘라
+링크: https://www.maisonmargiela.com
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Interactive Accordion Matrix
+주요 프론트엔드 기능: 숫자 아카이브 매트릭스, 무채색 스티치 비주얼
+적합한 이유: 번호별 커스텀 향 라인업을 매트릭스 형태로 정리.
+
+브랜드 이름: 토가 스튜디오 (Toga)
+링크: https://toga.jp
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Horizontal Scroll Timeline
+주요 프론트엔드 기능: 도쿄 동양적 모던 패션 가로 스크롤 아카이브
+적합한 이유: K-헤리티지와 도쿄 오리엔탈 모던의 조화로운 레이아웃.
+
+브랜드 이름: 스튜디오 우드 (Studio Wood)
+링크: https://studiowood.kr
+산업군 카테고리: 에디토리얼 패션/아키텍처/디자인 스튜디오
+UX 레이아웃 아키타입: Minimalist Step-by-Step Flow
+주요 프론트엔드 기능: 원목 공간 컨설팅 4단계 질의응답 Step Flow
+적합한 이유: 사용자 공간에 어울리는 포터블 향수 추천 Flow로 활용.

@@ -1,0 +1,7 @@
+flowchart TD
+    Start(["스마트 랩 진입"]) --> AI["4단계 AI 무드 진단"]
+    AI --> Recipe["나만의 레시피 도출"]
+    Recipe --> Choice{"체험 / 구독"}
+    Choice -->|샘플| S1["디스커버리 킷"]
+    Choice -->|구독| S2["카트리지 구독"]
+    S1 &amp; S2 --> End(["디지털 보증서 발급 완료"])

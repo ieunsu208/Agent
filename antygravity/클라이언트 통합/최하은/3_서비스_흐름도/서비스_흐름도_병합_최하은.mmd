@@ -1,0 +1,23 @@
+flowchart TD
+    Start([방문자 랜딩 페이지 진입]) --> HomeVisual[메인 3D 마패 용기 & AI 퀴즈 CTA]
+    
+    HomeVisual --> Quiz{AI 취향 진단 진입 여부}
+    Quiz -->|Yes| StepQuiz[5문항 인터랙티브 취향 퀴즈]
+    StepQuiz --> ResultNote[개인 맞춤 Top/Middle/Base 향 노트 계산]
+    
+    Quiz -->|No| MixerDirect[Custom Note Mixer 슬라이더 직접 조율]
+    
+    ResultNote --> MixSync[Top/Middle/Base 믹싱 밸런서 동기화]
+    MixerDirect --> MixSync
+    
+    MixSync --> Engrave3D[3D 마패 용기 실시간 각인 프리뷰]
+    Engrave3D --> FontSel[서체 선택 & 문구 투영 - 한자/한글/영문]
+    
+    FontSel --> SafetyCheck[화해 비건 성분 & 알레르기 안전성 확인]
+    SafetyCheck --> EcoChoice{정기 구독 또는 1회 구매}
+    
+    EcoChoice -->|구독| SubPlan[친환경 카트리지 정기 구독 & 공병 회수 신청]
+    EcoChoice -->|1회 구매| GiftPackaging[선물용 포장 & 메시지 카드 선택]
+    
+    SubPlan --> Checkout([주문 결제 & Digital QR 보증서 발급])
+    GiftPackaging --> Checkout

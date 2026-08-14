@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" style="background-color: #0f172a; font-family: system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="flowStart" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="flowStep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="flowAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="flowEnd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <filter id="shadowFlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="45" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="bold">[사단(士團)] 최하은 클라이언트 최적 병합 서비스 흐름도 (Service Flowchart)</text>
+  
+  <!-- Step 1: Start -->
+  <rect x="50" y="80" width="220" height="50" rx="25" fill="url(#flowStart)" filter="url(#shadowFlow)"/>
+  <text x="160" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">1. 방문자 랜딩 페이지 진입</text>
+
+  <path d="M 160 130 L 160 160" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+
+  <!-- Step 2: Branch Quiz -->
+  <polygon points="160,160 260,200 160,240 60,200" fill="url(#flowAccent)" filter="url(#shadowFlow)"/>
+  <text x="160" y="197" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">AI 취향 진단</text>
+  <text x="160" y="212" text-anchor="middle" fill="#dbeafe" font-size="11">퀴즈 진행 여부?</text>
+
+  <!-- Branch Yes -->
+  <path d="M 260 200 L 370 200" stroke="#10b981" stroke-width="2" fill="none"/>
+  <text x="310" y="190" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">Yes (AI 진단)</text>
+  
+  <rect x="370" y="175" width="230" height="50" rx="8" fill="url(#flowStep)" stroke="#10b981" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="485" y="197" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">2.1 5문항 라이프스타일 퀴즈</text>
+  <text x="485" y="214" text-anchor="middle" fill="#94a3b8" font-size="11">맞춤 향 노트 매칭 계산</text>
+
+  <!-- Branch No -->
+  <path d="M 160 240 L 160 290" stroke="#f59e0b" stroke-width="2" fill="none"/>
+  <text x="185" y="265" fill="#f59e0b" font-size="11" font-weight="bold">No (직접 조율)</text>
+  
+  <rect x="50" y="290" width="220" height="50" rx="8" fill="url(#flowStep)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="160" y="312" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">2.2 Note Mixer 직접 조율</text>
+  <text x="160" y="329" text-anchor="middle" fill="#94a3b8" font-size="11">T/M/B 비율 슬라이더 조정</text>
+
+  <!-- Merge to Step 3 -->
+  <path d="M 485 225 L 485 380 L 390 380" stroke="#64748b" stroke-width="2" fill="none"/>
+  <path d="M 160 340 L 160 380 L 210 380" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <rect x="210" y="355" width="180" height="50" rx="8" fill="url(#flowAccent)" filter="url(#shadowFlow)"/>
+  <text x="300" y="377" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">3. 향 노트 피라미드 확정</text>
+  <text x="300" y="394" text-anchor="middle" fill="#dbeafe" font-size="11">비율 시각화 &amp; 성상 산출</text>
+
+  <path d="M 300 405 L 300 435" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <!-- Step 4: 3D Engraved Vessel -->
+  <rect x="180" y="435" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="300" y="457" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">4. 3D 마패 용기 각인 프리뷰</text>
+  <text x="300" y="474" text-anchor="middle" fill="#94a3b8" font-size="11">한자/한글 서체 &amp; 문구 실시간 렌더링</text>
+
+  <path d="M 300 485 L 300 515" stroke="#64748b" stroke-width="2" fill="none"/>
+
+  <!-- Step 5: Safety Check -->
+  <rect x="180" y="515" width="240" height="50" rx="8" fill="url(#flowStep)" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadowFlow)"/>
+  <text x="300" y="537" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">5. 화해 비건 성분 안전성 확인</text>
+  <text x="300" y="554" text-anchor="middle" fill="#94a3b8" font-size="11">비건 성분표 &amp; 알레르기 필터</text>
+
+  <path d="M 420 540 L 530 540" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+
+  <!-- Step 6: Checkout & QR -->
+  <rect x="530" y="515" width="250" height="50" rx="25" fill="url(#flowEnd)" filter="url(#shadowFlow)"/>
+  <text x="655" y="537" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">6. 주문 결제 &amp; Digital QR 보증서</text>
+  <text x="655" y="554" text-anchor="middle" fill="#ddd6fe" font-size="11">친환경 리필 카트리지 콤보 수령</text>
+</svg>

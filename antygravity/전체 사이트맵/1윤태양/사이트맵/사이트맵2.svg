@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 760" width="100%" height="100%" style="background:#0F1A30; font-family:'Pretendard', 'Noto Sans KR', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 24px; font-weight: 800; fill: #C5A059; text-anchor: middle; }
+    .subtitle { font-size: 13px; fill: #CBD5E1; text-anchor: middle; }
+    .gnb-box { fill: #1E293B; stroke: #C5A059; stroke-width: 2px; rx: 8px; filter: url(#shadow); }
+    .gnb-text { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .card-box { fill: #1E293B; stroke: #475569; stroke-width: 1px; rx: 6px; filter: url(#shadow); }
+    .card-accent { fill: #C5A059; stroke: #B45309; stroke-width: 1.5px; rx: 6px; filter: url(#shadow); }
+    .card-text { font-size: 12px; font-weight: 700; fill: #E2E8F0; text-anchor: middle; }
+    .accent-text { font-size: 12px; font-weight: 800; fill: #0F1A30; text-anchor: middle; }
+    .line { stroke: #C5A059; stroke-width: 2px; }
+    .sub-line { stroke: #64748B; stroke-width: 1.5px; }
+  </style>
+
+  <!-- Title -->
+  <text x="530" y="45" class="title">사단 어사 출두 페스티벌 사이트맵 v2 (윤태양 - 대안 구조)</text>
+  <text x="530" y="70" class="subtitle">디지털 컴패니언 앱 특화 · Live Hub · 첩보 미션 · 듀얼 시향 맵 · Fast-Pass 티케팅</text>
+
+  <!-- Root &amp; Main -->
+  <rect x="380" y="95" width="300" height="46" class="gnb-box"/>
+  <text x="530" y="123" class="gnb-text">1.0 Live Hub (P-HUB-02)</text>
+
+  <line x1="530" y1="141" x2="530" y2="165" class="line"/>
+  <line x1="140" y1="165" x2="920" y2="165" class="line"/>
+
+  <!-- Col 1: Mission -->
+  <line x1="140" y1="165" x2="140" y2="190" class="line"/>
+  <rect x="50" y="190" width="180" height="42" class="gnb-box"/>
+  <text x="140" y="216" class="gnb-text">2.0 Secret Mission</text>
+
+  <line x1="140" y1="232" x2="140" y2="260" class="sub-line"/>
+  <rect x="50" y="260" width="180" height="38" class="card-box"/>
+  <text x="140" y="284" class="card-text">어사 비밀 첩보 비디오</text>
+
+  <line x1="140" y1="298" x2="140" y2="315" class="sub-line"/>
+  <rect x="50" y="315" width="180" height="38" class="card-box"/>
+  <text x="140" y="339" class="card-text">K-헤리티지 향 모듈 서사</text>
+
+  <line x1="140" y1="353" x2="140" y2="370" class="sub-line"/>
+  <rect x="50" y="370" width="180" height="38" class="card-box"/>
+  <text x="140" y="394" class="card-text">스탬프 퀘스트 가이드</text>
+
+  <!-- Col 2: Dual Map -->
+  <line x1="400" y1="165" x2="400" y2="190" class="line"/>
+  <rect x="310" y="190" width="180" height="42" class="gnb-box"/>
+  <text x="400" y="216" class="gnb-text">3.0 Dual Fragrance Map</text>
+
+  <line x1="400" y1="232" x2="400" y2="260" class="sub-line"/>
+  <rect x="310" y="260" width="180" height="38" class="card-accent"/>
+  <text x="400" y="284" class="accent-text">성수·경복궁 듀얼 3D 맵</text>
+
+  <line x1="400" y1="298" x2="400" y2="315" class="sub-line"/>
+  <rect x="310" y="315" width="180" height="38" class="card-box"/>
+  <text x="400" y="339" class="card-text">1·2·3 마패 핀 향 노트</text>
+
+  <line x1="400" y1="353" x2="400" y2="370" class="sub-line"/>
+  <rect x="310" y="370" width="180" height="38" class="card-box"/>
+  <text x="400" y="394" class="card-text">DAY 1~3 타임테이블</text>
+
+  <!-- Col 3: Heritage Goods -->
+  <line x1="660" y1="165" x2="660" y2="190" class="line"/>
+  <rect x="570" y="190" width="180" height="42" class="gnb-box"/>
+  <text x="660" y="216" class="gnb-text">4.0 Heritage Goods</text>
+
+  <line x1="660" y1="232" x2="660" y2="260" class="sub-line"/>
+  <rect x="570" y="260" width="180" height="38" class="card-box"/>
+  <text x="660" y="284" class="card-text">한정판 어사 마패 뱃지</text>
+
+  <line x1="660" y1="298" x2="660" y2="315" class="sub-line"/>
+  <rect x="570" y="315" width="180" height="38" class="card-box"/>
+  <text x="660" y="339" class="card-text">패브릭 노리개 키링</text>
+
+  <line x1="660" y1="353" x2="660" y2="370" class="sub-line"/>
+  <rect x="570" y="370" width="180" height="38" class="card-box"/>
+  <text x="660" y="394" class="card-text">현장 키트 교환처 약도</text>
+
+  <!-- Col 4: Fast Pass -->
+  <line x1="920" y1="165" x2="920" y2="190" class="line"/>
+  <rect x="830" y="190" width="180" height="42" class="gnb-box"/>
+  <text x="920" y="216" class="gnb-text">5.0 Fast Pass Ticket</text>
+
+  <line x1="920" y1="232" x2="920" y2="260" class="sub-line"/>
+  <rect x="830" y="260" width="180" height="38" class="card-accent"/>
+  <text x="920" y="284" class="accent-text">Fast-Pass 얼리버드 모달</text>
+
+  <line x1="920" y1="298" x2="920" y2="315" class="sub-line"/>
+  <rect x="830" y="315" width="180" height="38" class="card-accent"/>
+  <text x="920" y="339" class="accent-text">예매자 &amp; 알림톡 발행</text>
+
+  <line x1="920" y1="353" x2="920" y2="370" class="sub-line"/>
+  <rect x="830" y="370" width="180" height="38" class="card-box"/>
+  <text x="920" y="394" class="card-text">참가 기대평 &amp; SNS 연동</text>
+
+  <!-- Member &amp; Exception Bottom Section -->
+  <g transform="translate(50, 440)">
+    <rect x="0" y="0" width="460" height="130" rx="8" fill="#1E293B" stroke="#818CF8" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="20" y="30" font-size="14" font-weight="800" fill="#818CF8">회원 상태별 영역 (가정)</text>
+    <rect x="20" y="50" width="420" height="60" rx="6" fill="#0F1A30" stroke="#818CF8"/>
+    <text x="230" y="76" class="card-text">마이 어사 첩보증 (P-MY-02)</text>
+    <text x="230" y="96" font-size="11" fill="#94A3B8" text-anchor="middle">카카오 알림톡 링크 ➔ 현장 모바일 QR 키트 교환권</text>
+  </g>
+
+  <g transform="translate(550, 440)">
+    <rect x="0" y="0" width="460" height="130" rx="8" fill="#1E293B" stroke="#F87171" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="20" y="30" font-size="14" font-weight="800" fill="#F87171">예외 페이지 (Exception)</text>
+    <rect x="20" y="50" width="200" height="60" rx="6" fill="#0F1A30" stroke="#F87171"/>
+    <text x="120" y="85" font-size="12" font-weight="700" fill="#FCA5A5" text-anchor="middle">404 페이지 없음</text>
+    
+    <rect x="240" y="50" width="200" height="60" rx="6" fill="#0F1A30" stroke="#F87171"/>
+    <text x="340" y="85" font-size="12" font-weight="700" fill="#FCA5A5" text-anchor="middle">Fast-Pass 조기 매진</text>
+  </g>
+
+  <!-- Bottom Footnote -->
+  <text x="530" y="620" font-size="12" fill="#94A3B8" text-anchor="middle">모바일 컴패니언 앱 특화 구조 · 성수·경복궁 듀얼 3D 맵 &amp; Fast-Pass 중심 구성</text>
+</svg>

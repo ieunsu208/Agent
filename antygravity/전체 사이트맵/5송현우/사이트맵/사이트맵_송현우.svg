@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1150" width="100%" height="100%" style="background:#F8FAFC; font-family:'Pretendard', 'Noto Sans KR', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 26px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .subtitle { font-size: 14px; fill: #475569; text-anchor: middle; }
+    .legend-text { font-size: 11px; fill: #475569; }
+    .card-title { font-size: 13px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .card-sub { font-size: 10px; fill: #64748B; text-anchor: middle; }
+    .gnb-title { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .gnb-sub { font-size: 11px; fill: #CBD5E1; text-anchor: middle; }
+    .section-head { font-size: 14px; font-weight: 800; fill: #1E293B; }
+    .journey-label { font-size: 12px; font-weight: 700; fill: #334155; }
+    .journey-node { font-size: 11px; fill: #1E293B; text-anchor: middle; }
+    .footnote { font-size: 11px; fill: #64748B; text-anchor: middle; }
+  </style>
+
+  <!-- Header -->
+  <text x="600" y="45" class="title">사단 AI 센트 랩 후각 성향 분석 &amp; 추천 챗봇 플랫폼 사이트맵 (송현우)</text>
+  <text x="600" y="70" class="subtitle">10만 DB 기술력 ➔ 1분 AI 진단 ➔ 실시간 대화형 챗봇 ➔ AI 3종 샘플 무상 배송 | 최대 3단계 깊이</text>
+
+  <!-- Top Legend Right Bar -->
+  <g transform="translate(820, 30)">
+    <rect x="0" y="0" width="350" height="40" rx="6" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <rect x="15" y="14" width="12" height="12" rx="2" fill="#1E3A8A"/>
+    <text x="32" y="24" class="legend-text">1차/GNB</text>
+    
+    <rect x="95" y="14" width="12" height="12" rx="2" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <text x="112" y="24" class="legend-text">공통</text>
+
+    <rect x="150" y="14" width="12" height="12" rx="2" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="167" y="24" class="legend-text">회원</text>
+
+    <rect x="205" y="14" width="12" height="12" rx="2" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="2,2"/>
+    <text x="222" y="24" class="legend-text">가정</text>
+
+    <rect x="260" y="14" width="12" height="12" rx="2" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="2,2"/>
+    <text x="277" y="24" class="legend-text">예외</text>
+  </g>
+
+  <!-- Root Node -->
+  <rect x="440" y="95" width="320" height="48" rx="8" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="118" class="gnb-title">홈 · 공통</text>
+  <text x="600" y="133" class="gnb-sub">브랜드 메시지 · 핵심 CTA · 전역 내비게이션</text>
+
+  <!-- Main 5 Columns Lines &amp; Headers -->
+  <line x1="600" y1="143" x2="600" y2="165" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="120" y1="165" x2="1080" y2="165" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Column 1 -->
+  <line x1="120" y1="165" x2="120" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="30" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="120" y="212" class="gnb-title">AI Tech Intro · 1차</text>
+  <text x="120" y="228" class="gnb-sub">후각 DB ➔ 기술 신뢰</text>
+
+  <!-- Column 2 -->
+  <line x1="360" y1="165" x2="360" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="270" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="360" y="212" class="gnb-title">1분 AI 진단 · 1차</text>
+  <text x="360" y="228" class="gnb-sub">기분 ➔ 날씨 ➔ TPO ➔ 진단</text>
+
+  <!-- Column 3 -->
+  <line x1="600" y1="165" x2="600" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="510" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="212" class="gnb-title">실시간 AI 챗봇 · 1차</text>
+  <text x="600" y="228" class="gnb-sub">비대면 대화 ➔ 믹싱 추천</text>
+
+  <!-- Column 4 -->
+  <line x1="840" y1="165" x2="840" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="750" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="840" y="212" class="gnb-title">AI 3종 샘플 키트 · 1차</text>
+  <text x="840" y="228" class="gnb-sub">3종 무상 ➔ 1-Click 신청</text>
+
+  <!-- Column 5 -->
+  <line x1="1080" y1="165" x2="1080" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="990" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="1080" y="212" class="gnb-title">혜택 &amp; 파트너십 · 1차</text>
+  <text x="1080" y="228" class="gnb-sub">만족도 98% ➔ SNS 공유 ➔ 전환</text>
+
+  <!-- Nodes Generation for Columns -->
+  <!-- Col 1 Nodes -->
+  <rect x="30" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="278" class="card-title">10만 후각 DB 매칭 영상</text>
+  <text x="120" y="293" class="card-sub">2차 · 공통</text>
+
+  <rect x="30" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="333" class="card-title">추천 만족도 98% 지표</text>
+  <text x="120" y="348" class="card-sub">2차 · 데이터 수치</text>
+
+  <rect x="30" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="388" class="card-title">AI 후각 알고리즘 노드</text>
+  <text x="120" y="403" class="card-sub">2차 · 공통</text>
+
+  <!-- Col 2 Nodes -->
+  <rect x="270" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="278" class="card-title">1분 AI 취향 진단 가이드</text>
+  <text x="360" y="293" class="card-sub">2차 · 초간편</text>
+
+  <rect x="270" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="333" class="card-title">4단계 선택 퀴즈 모달</text>
+  <text x="360" y="348" class="card-sub">2차 · 기분/TPO/스타일</text>
+
+  <rect x="270" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="388" class="card-title">AI 진단 결과 보고서 팝업</text>
+  <text x="360" y="403" class="card-sub">2차 · 추천 3종 확정</text>
+
+  <!-- Col 3 Nodes -->
+  <rect x="510" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="600" y="278" class="card-title">실시간 대화형 챗봇 UI</text>
+  <text x="600" y="293" class="card-sub">2차 · NLP 대화</text>
+
+  <rect x="510" y="315" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="333" class="card-title">상황별 커스텀 향 믹싱 팁</text>
+  <text x="600" y="348" class="card-sub">2차 · 조향사 AI</text>
+
+  <rect x="510" y="370" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="388" class="card-title">챗봇 추천 향 샘플 담기</text>
+  <text x="600" y="403" class="card-sub">2차 · 1-Click 연동</text>
+
+  <!-- Col 4 Nodes -->
+  <rect x="750" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="278" class="card-title">AI 3종 샘플 무상 증정</text>
+  <text x="840" y="293" class="card-sub">2차 · 100% 무료</text>
+
+  <rect x="750" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="333" class="card-title">샘플 신청 폼 모달</text>
+  <text x="840" y="348" class="card-sub">2차 · 주소/연락처</text>
+
+  <rect x="750" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="388" class="card-title">신청 완료 &amp; 배송 팝업</text>
+  <text x="840" y="403" class="card-sub">3차 · 3일 내 택배</text>
+
+  <!-- Col 5 Nodes -->
+  <rect x="990" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="278" class="card-title">AI 진단 사용자 후기</text>
+  <text x="1080" y="293" class="card-sub">2차 · 핀후기</text>
+
+  <rect x="990" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="333" class="card-title">FAQ</text>
+  <text x="1080" y="348" class="card-sub">2차 · AI진단/챗봇/샘플</text>
+
+  <rect x="990" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="388" class="card-title">AI 챗봇 대화하기 🤖</text>
+  <text x="1080" y="403" class="card-sub">2차 · 전역 Floating CTA</text>
+
+  <!-- Middle Section: Member State Area (Left) &amp; Exception Area (Right) -->
+  <g transform="translate(30, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEF3C7" fill-opacity="0.4" stroke="#F59E0B" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">회원 상태별 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">입력에 인증/마이페이지 명세가 없어 최소 구조로 제안</text>
+
+    <rect x="16" y="60" width="120" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="76" y="78" class="card-title">로그인</text>
+    <text x="76" y="92" class="card-sub">1차 · 비회원 · 가정</text>
+
+    <line x1="136" y1="80" x2="176" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="176" y="60" width="130" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="241" y="78" class="card-title">마이페이지 / Hub</text>
+    <text x="241" y="92" class="card-sub">1차 · 회원 · 가정</text>
+
+    <line x1="306" y1="80" x2="346" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="346" y="60" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="78" class="card-title">내 취향 분석 리포트</text>
+    <text x="443" y="92" class="card-sub">2차 · 진단 결과 연결</text>
+
+    <rect x="346" y="115" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="133" class="card-title">샘플 신청 &amp; 배송 내역</text>
+    <text x="443" y="147" class="card-sub">2차 · 배송 추적 연결</text>
+  </g>
+
+  <g transform="translate(610, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEE2E2" fill-opacity="0.4" stroke="#EF4444" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">예외/상태 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">시스템 오류 및 권한 예외 상황 대응 구조</text>
+
+    <rect x="16" y="60" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="76" class="card-title">404 페이지 없음</text>
+    <text x="280" y="89" class="card-sub">홈/GNB로 복구</text>
+
+    <rect x="16" y="103" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="119" class="card-title">챗봇 응답 지연 / 입력값 오류</text>
+    <text x="280" y="132" class="card-sub">입력 재유도/대화 재시도</text>
+
+    <rect x="16" y="146" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="162" class="card-title">세션 만료 / 접근 권한 없음</text>
+    <text x="280" y="175" class="card-sub">로그인/기술소개로 복구</text>
+  </g>
+
+  <!-- Bottom Section: User Journeys &amp; Cross-connections -->
+  <g transform="translate(30, 660)">
+    <rect x="0" y="0" width="1140" height="430" rx="10" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <text x="24" y="32" class="section-head">주요 사용자 여정 및 교차 연결</text>
+
+    <!-- Journey 1 -->
+    <g transform="translate(24, 60)">
+      <text x="0" y="20" class="journey-label">1. 기술력 확인 ➔ 1분 AI 진단</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">10만 DB 지표</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">1분 AI 진단 모달</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">4단계 퀴즈 작성</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">결과 보고서 확인</text>
+        <line x1="690" y1="18" x2="720" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="720" y="0" width="170" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="805" y="22" class="journey-node">3종 샘플 신청/완료</text>
+      </g>
+    </g>
+
+    <!-- Journey 2 -->
+    <g transform="translate(24, 130)">
+      <text x="0" y="20" class="journey-label">2. 실시간 챗봇 ➔ 회원 사용</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">대화형 챗봇 UI</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="255" y="22" class="journey-node">로그인·가정</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="445" y="22" class="journey-node">마이페이지 Hub</text>
+        <line x1="530" y1="18" x2="560" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="560" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="645" y="22" class="journey-node">내 취향 분석 리포트</text>
+      </g>
+    </g>
+
+    <!-- Journey 3 -->
+    <g transform="translate(24, 200)">
+      <text x="0" y="20" class="journey-label">3. AI 3종 샘플 무상 신청</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">샘플 키트 안내</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">신청 폼 작성</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">주소 유효성 통과</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">신청 완료 통보</text>
+      </g>
+    </g>
+
+    <!-- Journey 4 -->
+    <g transform="translate(24, 270)">
+      <text x="0" y="20" class="journey-label">4. 예외 복구</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="190" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="95" y="22" class="journey-node">챗봇 입력 오류</text>
+        <line x1="190" y1="18" x2="220" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="220" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="295" y="22" class="journey-node">질문 재입력</text>
+        <line x1="370" y1="18" x2="400" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="400" y="0" width="180" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="490" y="22" class="journey-node">세션 만료/권한 없음</text>
+        <line x1="580" y1="18" x2="610" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="610" y="0" width="170" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="695" y="22" class="journey-node">로그인 후 원위치</text>
+      </g>
+    </g>
+
+    <!-- Bottom Footnote -->
+    <text x="570" y="380" class="footnote">점선 테두리 = 입력 문서에 없는 최소 보완 가정 · 각 카테고리 간 단일 페이지 재사용 구조 적용</text>
+  </g>
+</svg>

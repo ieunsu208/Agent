@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1150" width="100%" height="100%" style="background:#F8FAFC; font-family:'Pretendard', 'Noto Sans KR', sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 26px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .subtitle { font-size: 14px; fill: #475569; text-anchor: middle; }
+    .legend-text { font-size: 11px; fill: #475569; }
+    .card-title { font-size: 13px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .card-sub { font-size: 10px; fill: #64748B; text-anchor: middle; }
+    .gnb-title { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .gnb-sub { font-size: 11px; fill: #CBD5E1; text-anchor: middle; }
+    .section-head { font-size: 14px; font-weight: 800; fill: #1E293B; }
+    .journey-label { font-size: 12px; font-weight: 700; fill: #334155; }
+    .journey-node { font-size: 11px; fill: #1E293B; text-anchor: middle; }
+    .footnote { font-size: 11px; fill: #64748B; text-anchor: middle; }
+  </style>
+
+  <!-- Header -->
+  <text x="600" y="45" class="title">사단 메디컬 뷰티 바이오 플랫폼 사이트맵 (김아린)</text>
+  <text x="600" y="70" class="subtitle">PDRN 앰플 ➔ 피부 데이터 ➔ AI 맞춤 솔루션 ➔ 제휴 피부과 진료 | 최대 3단계 깊이</text>
+
+  <!-- Top Legend Right Bar -->
+  <g transform="translate(820, 30)">
+    <rect x="0" y="0" width="350" height="40" rx="6" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <rect x="15" y="14" width="12" height="12" rx="2" fill="#1E3A8A"/>
+    <text x="32" y="24" class="legend-text">1차/GNB</text>
+    
+    <rect x="95" y="14" width="12" height="12" rx="2" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <text x="112" y="24" class="legend-text">공통</text>
+
+    <rect x="150" y="14" width="12" height="12" rx="2" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <text x="167" y="24" class="legend-text">회원</text>
+
+    <rect x="205" y="14" width="12" height="12" rx="2" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="2,2"/>
+    <text x="222" y="24" class="legend-text">가정</text>
+
+    <rect x="260" y="14" width="12" height="12" rx="2" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="2,2"/>
+    <text x="277" y="24" class="legend-text">예외</text>
+  </g>
+
+  <!-- Root Node -->
+  <rect x="440" y="95" width="320" height="48" rx="8" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="118" class="gnb-title">홈 · 공통</text>
+  <text x="600" y="133" class="gnb-sub">브랜드 메시지 · 핵심 CTA · 전역 내비게이션</text>
+
+  <!-- Main 5 Columns Lines &amp; Headers -->
+  <line x1="600" y1="143" x2="600" y2="165" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="120" y1="165" x2="1080" y2="165" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Column 1 -->
+  <line x1="120" y1="165" x2="120" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="30" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="120" y="212" class="gnb-title">메디컬 뷰티 서사 · 1차</text>
+  <text x="120" y="228" class="gnb-sub">피부 고민 ➔ 기술 신뢰</text>
+
+  <!-- Column 2 -->
+  <line x1="360" y1="165" x2="360" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="270" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="360" y="212" class="gnb-title">시그니처 PDRN 앰플 · 1차</text>
+  <text x="360" y="228" class="gnb-sub">성분 비교 ➔ 맞춤 앰플 ➔ 체험</text>
+
+  <!-- Column 3 -->
+  <line x1="600" y1="165" x2="600" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="510" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="600" y="212" class="gnb-title">AI 피부 데이터 진단 · 1차</text>
+  <text x="600" y="228" class="gnb-sub">진단 소개 ➔ AI 피부 리포트</text>
+
+  <!-- Column 4 -->
+  <line x1="840" y1="165" x2="840" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="750" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="840" y="212" class="gnb-title">협력 피부과 센터 · 1차</text>
+  <text x="840" y="228" class="gnb-sub">위치 검색 ➔ 병원 상세 ➔ 예약</text>
+
+  <!-- Column 5 -->
+  <line x1="1080" y1="165" x2="1080" y2="190" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="990" y="190" width="180" height="50" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="1080" y="212" class="gnb-title">웰컴 혜택 &amp; 체험 · 1차</text>
+  <text x="1080" y="228" class="gnb-sub">신뢰 ➔ 웰컴 샘플 ➔ 전환</text>
+
+  <!-- Nodes Generation for Columns -->
+  <!-- Col 1 Nodes -->
+  <rect x="30" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="278" class="card-title">바이오 스킨 웰니스</text>
+  <text x="120" y="293" class="card-sub">2차 · 공통</text>
+
+  <rect x="30" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="333" class="card-title">피부 탄력/장벽 통계</text>
+  <text x="120" y="348" class="card-sub">2차 · 94.2% 개선 지표</text>
+
+  <rect x="30" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="120" y="388" class="card-title">PDRN 원천 추출 기술</text>
+  <text x="120" y="403" class="card-sub">2차 · 공통</text>
+
+  <!-- Col 2 Nodes -->
+  <rect x="270" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="278" class="card-title">PDRN 고농축 부스터 앰플</text>
+  <text x="360" y="293" class="card-sub">2차 · 나노 입자</text>
+
+  <rect x="270" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="333" class="card-title">진정 쿨링 세럼</text>
+  <text x="360" y="348" class="card-sub">2차 · 피부 온화 핏</text>
+
+  <rect x="270" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="360" y="388" class="card-title">마이크로 리들 부스터</text>
+  <text x="360" y="403" class="card-sub">2차 · 흡수율 제어</text>
+
+  <!-- Col 3 Nodes -->
+  <rect x="510" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="600" y="278" class="card-title">AI 피부 진단 소개</text>
+  <text x="600" y="293" class="card-sub">2차 · 공통</text>
+
+  <rect x="510" y="315" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="333" class="card-title">실시간 피부 측정 대시보드</text>
+  <text x="600" y="348" class="card-sub">2차 · 회원 · 100점 지수</text>
+
+  <rect x="510" y="370" width="180" height="42" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="600" y="388" class="card-title">맞춤 케어 가이드</text>
+  <text x="600" y="403" class="card-sub">2차 · 회원</text>
+
+  <!-- Col 4 Nodes -->
+  <rect x="750" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="278" class="card-title">위치 기반 병원 찾기</text>
+  <text x="840" y="293" class="card-sub">2차 · 지도/전국 피부과</text>
+
+  <rect x="750" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="333" class="card-title">제휴 피부과 진료 예약</text>
+  <text x="840" y="348" class="card-sub">2차 · 4단계 이내</text>
+
+  <rect x="750" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="840" y="388" class="card-title">예약 완료</text>
+  <text x="840" y="403" class="card-sub">3차 · 진료 안내</text>
+
+  <!-- Col 5 Nodes -->
+  <rect x="990" y="260" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="278" class="card-title">실사용자 피부 후기</text>
+  <text x="1080" y="293" class="card-sub">2차 · 핀후기</text>
+
+  <rect x="990" y="315" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="333" class="card-title">FAQ</text>
+  <text x="1080" y="348" class="card-sub">2차 · 앰플/진단/병원</text>
+
+  <rect x="990" y="370" width="180" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="1080" y="388" class="card-title">웰컴 앰플 샘플 신청</text>
+  <text x="1080" y="403" class="card-sub">2차 · 전역 Floating CTA</text>
+
+  <!-- Middle Section: Member State Area (Left) &amp; Exception Area (Right) -->
+  <g transform="translate(30, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEF3C7" fill-opacity="0.4" stroke="#F59E0B" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">회원 상태별 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">입력에 인증/마이페이지 명세가 없어 최소 구조로 제안</text>
+
+    <rect x="16" y="60" width="120" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="76" y="78" class="card-title">로그인</text>
+    <text x="76" y="92" class="card-sub">1차 · 비회원 · 가정</text>
+
+    <line x1="136" y1="80" x2="176" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="176" y="60" width="130" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="241" y="78" class="card-title">마이페이지</text>
+    <text x="241" y="92" class="card-sub">1차 · 회원 · 가정</text>
+
+    <line x1="306" y1="80" x2="346" y2="80" stroke="#F59E0B" stroke-dasharray="2,2" stroke-width="2"/>
+
+    <rect x="346" y="60" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="78" class="card-title">내 피부 리포트</text>
+    <text x="443" y="92" class="card-sub">2차 · 대시보드 연결</text>
+
+    <rect x="346" y="115" width="195" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+    <text x="443" y="133" class="card-title">병원 예약 내역</text>
+    <text x="443" y="147" class="card-sub">2차 · 제휴 병원 연결</text>
+  </g>
+
+  <g transform="translate(610, 445)">
+    <rect x="0" y="0" width="560" height="190" rx="8" fill="#FEE2E2" fill-opacity="0.4" stroke="#EF4444" stroke-dasharray="4,4" stroke-width="1.5"/>
+    <text x="16" y="24" class="section-head">예외/상태 영역 · 가정</text>
+    <text x="16" y="42" class="footnote" style="text-anchor:start;">시스템 오류 및 권한 예외 상황 대응 구조</text>
+
+    <rect x="16" y="60" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="76" class="card-title">404 페이지 없음</text>
+    <text x="280" y="89" class="card-sub">홈/GNB로 복구</text>
+
+    <rect x="16" y="103" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="119" class="card-title">제휴 병원 결과 없음 / 위치 거부</text>
+    <text x="280" y="132" class="card-sub">지역 직접 검색/재시도</text>
+
+    <rect x="16" y="146" width="528" height="35" rx="6" fill="#FEE2E2" stroke="#EF4444"/>
+    <text x="280" y="162" class="card-title">세션 만료 / 접근 권한 없음</text>
+    <text x="280" y="175" class="card-sub">로그인/소개로 복구</text>
+  </g>
+
+  <!-- Bottom Section: User Journeys &amp; Cross-connections -->
+  <g transform="translate(30, 660)">
+    <rect x="0" y="0" width="1140" height="430" rx="10" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#shadow)"/>
+    <text x="24" y="32" class="section-head">주요 사용자 여정 및 교차 연결</text>
+
+    <!-- Journey 1 -->
+    <g transform="translate(24, 60)">
+      <text x="0" y="20" class="journey-label">1. 피부 고민 ➔ 앰플 체험</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">피부 장벽 통계</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">PDRN 원천 기술</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">앰플 상세</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">맞춤 추천</text>
+        <line x1="690" y1="18" x2="720" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="720" y="0" width="170" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="805" y="22" class="journey-node">웰컴 샘플 신청/완료</text>
+      </g>
+    </g>
+
+    <!-- Journey 2 -->
+    <g transform="translate(24, 130)">
+      <text x="0" y="20" class="journey-label">2. 피부 진단 ➔ 회원 사용</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">AI 진단 소개</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="255" y="22" class="journey-node">로그인·가정</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="445" y="22" class="journey-node">실시간 피부 대시보드</text>
+        <line x1="530" y1="18" x2="560" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="560" y="0" width="170" height="36" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+        <text x="645" y="22" class="journey-node">맞춤 케어 가이드</text>
+      </g>
+    </g>
+
+    <!-- Journey 3 -->
+    <g transform="translate(24, 200)">
+      <text x="0" y="20" class="journey-label">3. 제휴 피부과 예약</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="75" y="22" class="journey-node">병원 찾기</text>
+        <line x1="150" y1="18" x2="180" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="180" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="255" y="22" class="journey-node">병원 상세</text>
+        <line x1="330" y1="18" x2="360" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="360" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="435" y="22" class="journey-node">4단계 이내 예약</text>
+        <line x1="510" y1="18" x2="540" y2="18" stroke="#94A3B8" stroke-width="2"/>
+
+        <rect x="540" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="615" y="22" class="journey-node">예약 완료</text>
+      </g>
+    </g>
+
+    <!-- Journey 4 -->
+    <g transform="translate(24, 270)">
+      <text x="0" y="20" class="journey-label">4. 예외 복구</text>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="190" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="95" y="22" class="journey-node">검색 실패/위치 권한 거부</text>
+        <line x1="190" y1="18" x2="220" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="220" y="0" width="150" height="36" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <text x="295" y="22" class="journey-node">지역 직접 검색</text>
+        <line x1="370" y1="18" x2="400" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="400" y="0" width="180" height="36" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="3,3"/>
+        <text x="490" y="22" class="journey-node">세션 만료/권한 없음</text>
+        <line x1="580" y1="18" x2="610" y2="18" stroke="#EF4444" stroke-dasharray="3,3" stroke-width="2"/>
+
+        <rect x="610" y="0" width="170" height="36" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-dasharray="3,3"/>
+        <text x="695" y="22" class="journey-node">로그인 후 원위치</text>
+      </g>
+    </g>
+
+    <!-- Bottom Footnote -->
+    <text x="570" y="380" class="footnote">점선 테두리 = 입력 문서에 없는 최소 보완 가정 · 각 카테고리 간 단일 페이지 재사용 구조 적용</text>
+  </g>
+</svg>
