@@ -702,17 +702,10 @@ complex lines, cluttered lines, overly detailed, ornate patterns, text, letters,
 # 참고 이미지.jpg
 
 **Prompt**:
-A sophisticated haute perfumery logo emblem inspired by the silhouette geometry of 참고 이미지.jpg, featuring a sleek stylized black silhouette profile of a horse head with flowing parallel wave mane lines streaming backward, beneath a radial sunburst scent star medallion above the head, representing scent diffusion & olfactory depth motif and noble heritage, Neo-Korean minimalist aesthetic, subtle oriental spatial balance & elegance, haute perfumery fragrance logo mark, monochrome solid black 2D flat vector graphic on pure white background, symbol mark only, clean simple vector lines, no text, no letters, no words, no complex lines, sharp high-contrast emblem mark, no 3D effects, no gradient, no mockups
-
-**Negative Prompt**:
-complex lines, cluttered lines, overly detailed, ornate patterns, text, letters, words, font, typography, alphabet, brand name, color, gradient, 3d mockup, realistic photo, texture, shadow, chinese style, complex background
-
----
-
-# 로고 초안9_참고1.jpg
+A sophisticated haute perfumery logo emblem inspired by the silhouette geometry of 참고 이미지.jpg, featuring a sleek stylize# 로고 초안9_참고1.jpg
 
 **Prompt**:
-A high-end luxury perfume brand insignia combining Neo-Korean minimalist aesthetic with modern line art, reinterpreting the traditional Korean Mapae seal into an artisanal fragrance emblem. Inspired by the 4-quadrant geometric modular harmony of 로고 초안9_참고1.jpg, sleek geometric arcs and solid negative-space quadrants harmonize to symbolize the concentration of raw perfume essence and its graceful atmospheric diffusion into daily life, capturing the poetic tension between solid perfume depth and weightless olfactory notes. Solid monochrome black on pure flat white background, haute perfumery symbol mark only, clean sharp vector lines, flat 2D luxury emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
+A high-end luxury perfume brand insignia combining Neo-Korean minimalist aesthetic with modern line art, reinterpreting the traditional Korean Mapae seal into an artisanal fragrance emblem. Featuring an interlocking composition of sleek geometric arcs and solid negative-space quadrants that harmonize to symbolize the concentration of raw perfume essence and its graceful atmospheric diffusion into daily life, capturing the poetic tension between solid perfume depth and weightless olfactory notes. Solid monochrome black on pure flat white background, haute perfumery symbol mark only, clean sharp vector lines, flat 2D luxury emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
 chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, realistic photo, ornate patterns, cluttered lines, complex lines, generic shapes, basic clipart
@@ -722,7 +715,7 @@ chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, pap
 # 로고 초안9_참고2.jpg
 
 **Prompt**:
-A poetic haute perfumery logo mark reinterpreting traditional Korean Mapae equine motion into a sophisticated botanical scent vortex. Inspired by the 4-petal curved pinwheel geometry of 로고 초안9_참고2.jpg, featuring four sleek, stylized curving silhouette petals echoing the aerodynamic flowing mane of a galloping horse and the spiraling bloom of fragrance notes, rotating around a focal concentration core. Neo-Korean minimalist spatial restraint with timeless artisanal elegance, pure monochrome black on pure flat white background, symbol mark only, clean simple vector lines, luxury fragrance identity, no text, no letters, no words, no 3D effects, no gradient, no mockups
+A poetic haute perfumery logo mark reinterpreting traditional Korean Mapae equine motion into a sophisticated botanical scent vortex. Featuring four sleek, stylized curving silhouette petals echoing the aerodynamic flowing mane of a galloping horse and the spiraling bloom of fragrance notes, rotating around a focal concentration core. Neo-Korean minimalist spatial restraint with timeless artisanal elegance, pure monochrome black on pure flat white background, symbol mark only, clean simple vector lines, luxury fragrance identity, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
 chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, realistic photo, texture, shadow, text, letters, words, font, typography, complex lines, cluttered background, ornate decoration, basic geometric shapes
@@ -732,7 +725,7 @@ chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, rea
 # 로고 초안9_참고3.jpg
 
 **Prompt**:
-A prestigious niche perfume seal emblem reinterpreting Joseon royal Mapae medallions and secret inspector stamp heritage into contemporary luxury branding. Inspired by the geometric interlaced star structure of 로고 초안9_참고3.jpg, an exquisite eight-pointed geometric star medallion constructed from interlacing crisp vector ribbons, framing an ethereal center that embodies the purest extraction of perfume oil and radiant scent projection. Striking balance of traditional Korean seal authority and modern minimalist fragrance poise, solid monochrome black on pure flat white background, symbol mark only, clean sharp vector graphic, flat 2D mark, no text, no letters, no words, no 3D effects, no gradient, no mockups
+A prestigious niche perfume seal emblem reinterpreting Joseon royal Mapae medallions and secret inspector stamp heritage into contemporary luxury branding. An exquisite eight-pointed geometric star medallion constructed from interlacing crisp vector ribbons, framing an ethereal center that embodies the purest extraction of perfume oil and radiant scent projection. Striking balance of traditional Korean seal authority and modern minimalist fragrance poise, solid monochrome black on pure flat white background, symbol mark only, clean sharp vector graphic, flat 2D mark, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
 chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, realistic photo, complex cluttered background, ornate pattern, complex lines, generic polygon
@@ -742,7 +735,7 @@ chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, pap
 # 로고 초안9_참고4.jpg
 
 **Prompt**:
-An avant-garde haute perfumery brand logo embodying the profound Korean aesthetic of 'Yeobaek' (meaningful empty space), translating traditional Mapae circular geometry into the silent lingering trail of fragrance. Inspired by the circular quadrant cutout of 로고 초안9_참고4.jpg, a bold circular medallion silhouette seamlessly carved with a refined geometric void, illustrating how an invisible scent enriches and deepens everyday physical presence. Minimalist high-fashion fragrance identity, solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, flat 2D emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
+An avant-garde haute perfumery brand logo embodying the profound Korean aesthetic of 'Yeobaek' (meaningful empty space), translating traditional Mapae circular geometry into the silent lingering trail of fragrance. A bold circular medallion silhouette seamlessly carved with a refined geometric void, illustrating how an invisible scent enriches and deepens everyday physical presence. Minimalist high-fashion fragrance identity, solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, flat 2D emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
 chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, signature, complex cluttered lines, realistic photo, generic pie chart
@@ -752,7 +745,57 @@ chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, pap
 # 로고 초안9_참고5.jpg
 
 **Prompt**:
-An iconic luxury perfume insignia depicting the eternal resonance between fleeting top notes and enduring base notes, inspired by traditional Korean Mapae medal balance and the vertical twin-circle alignment of 로고 초안9_참고5.jpg. Two interconnected circular medallion spheres aligned along an ethereal vertical axis of scent diffusion, embodying artisanal perfume formulation and timeless daily depth. Refined Neo-Korean spatial harmony, solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, high-contrast flat 2D vector art, no text, no letters, no words, no 3D effects, no gradient, no mockups
+An iconic luxury perfume insignia depicting the eternal resonance between fleeting top notes and enduring base notes, inspired by traditional Korean Mapae medal balance. Two interconnected circular medallion spheres aligned along an ethereal vertical axis of scent diffusion, embodying artisanal perfume formulation and timeless daily depth. Refined Neo-Korean spatial harmony, solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, high-contrast flat 2D vector art, no text, no letters, no words, no 3D effects, no gradient, no mockups
+
+**Negative Prompt**:
+chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, cluttered decoration, complex lines, generic circles
+
+---
+
+# 로고 초안7_참고1.jpg
+
+**Prompt**:
+A high-end luxury fragrance logo insignia reinterpreting the traditional Korean Mapae seal arch into an architectural fragrance gateway. Featuring an interlocking composition of a minimalist archway outline and a continuous looping scent curve flowing through the portal, symbolizing the seamless transition of fine perfume notes from extraction to daily atmospheric diffusion. Neo-Korean minimalist aesthetic, subtle oriental spatial balance & elegance, monochrome solid black on pure flat white background, haute perfumery symbol mark only, clean sharp vector lines, flat 2D luxury emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
+
+**Negative Prompt**:
+chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, realistic photo, ornate patterns, cluttered lines, complex lines, generic shapes, basic clipart
+
+---
+
+# 로고 초안7_참고2.jpg
+
+**Prompt**:
+A prestigious haute perfumery emblem inspired by Joseon architectural sanctuary portals and sacred arch geometry. Showcasing three concentric cascading arch layers sculpted with bold solid black and luminous negative space, representing the triad of perfume composition—top, heart, and deeply concentrated base notes. Pure Neo-Korean aesthetic restraint and timeless artisanal prestige, solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, flat 2D graphic, no text, no letters, no words, no 3D effects, no gradient, no mockups
+
+**Negative Prompt**:
+chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, realistic photo, texture, shadow, text, letters, words, font, typography, complex lines, cluttered background, ornate decoration, basic geometric shapes
+
+---
+
+# 로고 초안7_참고3.jpg
+
+**Prompt**:
+An ultra-minimalist niche perfume logo mark translating traditional Korean Mapae medallion contours into a serene arched fragrance sanctum. Featuring a single refined outline arch harmonized with an internal sweeping curve that cradles an expansive negative-space void ('Yeobaek'), illustrating how the invisible lingering trail of luxury scent elevates daily quietude. Pure monochrome black on pure flat white background, haute perfumery symbol mark only, clean elegant vector lines, flat 2D mark, no text, no letters, no words, no 3D effects, no gradient, no mockups
+
+**Negative Prompt**:
+chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, realistic photo, complex cluttered background, ornate pattern, complex lines, generic polygon
+
+---
+
+# 로고 초안7_참고4.jpg
+
+**Prompt**:
+A sophisticated high-fashion perfume emblem combining Neo-Korean spatial elegance with dynamic architectural layering. Featuring three offset overlapping arch silhouettes—a solid black core flanked by delicate linear arch frames—capturing the atmospheric diffusion and depth of artisanal perfume formulation. Solid monochrome black on pure flat white background, symbol mark only, clean simple vector lines, high-contrast flat 2D luxury emblem, no text, no letters, no words, no 3D effects, no gradient, no mockups
+
+**Negative Prompt**:
+chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, signature, complex cluttered lines, realistic photo, generic shapes
+
+---
+
+# 로고 초안7_참고5.jpg
+
+**Prompt**:
+A majestic haute perfumery medallion logo mark reinterpreting traditional Korean Mapae stamp heritage into a modern celestial fragrance seal. Enclosed within an arched portal silhouette, concentric radiant curved scent waves rise toward a concentrated solid black droplet node, embodying the raw essence of artisanal perfume and its expansive olfactory aura. Refined Neo-Korean spatial harmony, solid monochrome black on pure flat white background, symbol mark only, clean sharp vector lines, flat 2D vector art, no text, no letters, no words, no 3D effects, no gradient, no mockups
 
 **Negative Prompt**:
 chinese style, chinese motifs, chinese patterns, color, gradient, 3d mockup, paper texture, shadow, text, letters, words, font, typography, complex background, cluttered decoration, complex lines, generic circles
