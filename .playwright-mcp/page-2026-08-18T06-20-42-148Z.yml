@@ -1,0 +1,86 @@
+- generic [ref=f24e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f24e15]:
+      - generic [ref=f24e17]:
+        - generic [ref=f24e18]:
+          - combobox "검색" [ref=f24e20]: minimalist geometric square monogram logo symbol black white
+          - generic [ref=f24e21]:
+            - button "검색 입력 삭제" [ref=f24e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f24e30]:
+              - button "Pinterest 렌즈" [ref=f24e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f24e38] [cursor=pointer]:
+          - generic [ref=f24e40]:
+            - generic [ref=f24e41]: 모든 핀
+            - img "드롭다운" [ref=f24e43]
+      - link "내 프로필" [ref=f24e49] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f24e61] [cursor=pointer]
+  - navigation [ref=f24e66]:
+    - generic [ref=f24e68]:
+      - generic [ref=f24e69]:
+        - generic "홈" [ref=f24e73]:
+          - link "홈" [ref=f24e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f24e81]:
+          - link "홈" [ref=f24e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f24e89]:
+          - link "내 보드" [ref=f24e90] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f24e97]:
+          - button "만들기" [ref=f24e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f24e114]:
+        - button "설정 및 지원" [ref=f24e115] [cursor=pointer]
+  - main [ref=f24e120]:
+    - generic [ref=f24e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f24e124]
+      - region "필터 및 세분화 검색" [ref=f24e128]:
+        - generic [ref=f24e131]:
+          - button "필터 표시" [ref=f24e137] [cursor=pointer]
+          - button "AI 줄이기" [ref=f24e148] [cursor=pointer]
+      - generic [ref=f24e160]:
+        - generic:
+          - generic:
+            - list:
+              - listitem [ref=f24e161]:
+                - button [ref=f24e162] [cursor=pointer]:
+                  - group "핀 카드" [ref=f24e165]:
+                    - generic [ref=f24e167]:
+                      - link "제목 없음 핀 페이지" [ref=f24e169]:
+                        - /url: /pin/12173861489841757/
+                        - img "포함된 이미지:" [ref=f24e179]
+                      - generic "추가 작업" [ref=f24e188]:
+                        - button "추가 작업" [ref=f24e189]
+              - listitem [ref=f24e194]:
+                - button [ref=f24e195] [cursor=pointer]:
+                  - group "핀 카드" [ref=f24e198]:
+                    - generic [ref=f24e200]:
+                      - generic [ref=f24e201]:
+                        - link "sharex.fastcampus.co.kr" [ref=f24e204]:
+                          - /url: https://sharex.fastcampus.co.kr/dgn_online_pxbx/?utm_source=pinterest&utm_medium=social&utm_campaign=prd%5E250725%5E255576&utm_content=3_4_3%5E255576&pp=0
+                          - img "2025 Plus X BX 마스터 패키지 BX 프로젝트 전략 수립부터 디자인 가이드까지 플러스엑스 BX 디자인의 모든 과정을 디테일하게 공유합니다. BX 프로세스 단계별 총 14개의 프로젝트 사례를 통해 누구나 쉽게 이해할 수 있도록 우리의 경험을 공유하고, 4개의 리뷰 사례를 더해 실무 전 과정을 아우를 수 있도록 구성한 독보적 커리큘럼! ■ 4개 BX 프로젝트의 단계별 디테일과 시안 발전 전과정 공유 ■14가지 실무 사례로 배우는 BX 디자인의 모든 것 ■디자인 템플릿, 체크리스트 등 Plus X BX Toolkit 제공" [ref=f24e220]
+                        - generic: 0:10
+                      - generic [ref=f24e224]:
+                        - generic [ref=f24e225]:
+                          - heading [level=2] [ref=f24e230]:
+                            - link "BX 프로젝트 전과정을 유기적으로 디테일하게 공유 (sharex.fastcampus.co.kr)" [ref=f24e234]:
+                              - /url: https://sharex.fastcampus.co.kr/dgn_online_pxbx/?utm_source=pinterest&utm_medium=social&utm_campaign=prd%5E250725%5E255576&utm_content=3_4_3%5E255576&pp=0
+                              - text: BX 프로젝트 전과정을 유기적으로 디테일하게 공유
+                          - link "후원 핀" [ref=f24e237]:
+                            - /url: /sharex_official/
+                            - generic [ref=f24e239]:
+                              - generic [ref=f24e240]: ShareX
+                              - generic "후원 핀" [ref=f24e246]
+                        - generic "추가 작업" [ref=f24e249]:
+                          - button "추가 작업" [ref=f24e250]
+              - listitem [ref=f24e255]:
+                - button [ref=f24e256] [cursor=pointer]:
+                  - group "핀 카드" [ref=f24e259]:
+                    - generic [ref=f24e261]:
+                      - link "제목 없음 핀 페이지" [ref=f24e263]:
+                        - /url: /pin/31947478604619595/
+                        - img "포함된 이미지:" [ref=f24e273]
+                      - generic "추가 작업" [ref=f24e282]:
+                        - button "추가 작업" [ref=f24e283]

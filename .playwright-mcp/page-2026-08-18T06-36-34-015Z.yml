@@ -1,0 +1,197 @@
+- generic [ref=f90e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f90e15]:
+      - generic [ref=f90e17]:
+        - generic [ref=f90e18]:
+          - combobox "검색" [ref=f90e20]: minimalist four petal floral emblem logo mark vector black white
+          - generic [ref=f90e21]:
+            - button "검색 입력 삭제" [ref=f90e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f90e30]:
+              - button "Pinterest 렌즈" [ref=f90e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f90e38] [cursor=pointer]:
+          - generic [ref=f90e40]:
+            - generic [ref=f90e41]: 모든 핀
+            - img "드롭다운" [ref=f90e43]
+      - link "내 프로필" [ref=f90e49] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f90e61] [cursor=pointer]
+  - navigation [ref=f90e66]:
+    - generic [ref=f90e68]:
+      - generic [ref=f90e69]:
+        - generic "홈" [ref=f90e73]:
+          - link "홈" [ref=f90e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f90e81]:
+          - link "홈" [ref=f90e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f90e89]:
+          - link "내 보드" [ref=f90e90] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f90e97]:
+          - button "만들기" [ref=f90e98] [cursor=pointer]
+        - generic "업데이트" [ref=f90e107]:
+          - button "업데이트" [ref=f90e108] [cursor=pointer]
+        - generic "메시지" [ref=f90e117]:
+          - button "메시지" [ref=f90e118] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f90e126]:
+        - button "설정 및 지원" [ref=f90e127] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f90e132]:
+    - generic [ref=f90e134]:
+      - heading "검색 결과 페이지" [level=1] [ref=f90e136]
+      - region "필터 및 세분화 검색" [ref=f90e140]:
+        - generic [ref=f90e143]:
+          - button "필터 표시" [ref=f90e149] [cursor=pointer]
+          - button "AI 줄이기" [ref=f90e160] [cursor=pointer]
+      - generic [ref=f90e171]:
+        - generic [ref=f90e172]: minimalist four petal floral emblem logo mark vector black white 검색 결과를 추가로 표시
+        - list [ref=f90e177]:
+          - listitem [ref=f90e178]:
+            - button [ref=f90e180] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e183]:
+                - generic [ref=f90e185]:
+                  - link "제목 없음 핀 페이지" [ref=f90e187]:
+                    - /url: /pin/633387444414034/
+                    - img "포함된 이미지:" [ref=f90e197]
+                  - generic "추가 작업" [ref=f90e206]:
+                    - button "추가 작업" [ref=f90e207]
+          - listitem [ref=f90e212]:
+            - button [ref=f90e214] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e217]:
+                - generic [ref=f90e219]:
+                  - link "Elegant Flower Logos | Minimalist Investment Brand Symbols 핀 페이지" [ref=f90e221]:
+                    - /url: /pin/74309462596576807/
+                    - 'img "포함된 이미지: Elegant Flower Logos | Minimalist Investment Brand Symbols" [ref=f90e231]'
+                  - generic [ref=f90e236]:
+                    - heading [level=2] [ref=f90e242]:
+                      - link "Elegant Flower Logos | Minimalist Investment Brand Symbols 핀 페이지" [ref=f90e244]:
+                        - /url: /pin/74309462596576807/
+                        - text: Elegant Flower Logos | Minimalist Investment Brand Symbols
+                    - generic "추가 작업" [ref=f90e247]:
+                      - button "추가 작업" [ref=f90e248]
+          - listitem [ref=f90e253]:
+            - button [ref=f90e255] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e258]:
+                - generic [ref=f90e260]:
+                  - 'link "Gfx_haniya: I will do 3 modern minimalist business 핀 페이지" [ref=f90e262]':
+                    - /url: /pin/16747829862715841/
+                    - 'img "포함된 내용: Logo Ideas" [ref=f90e272]'
+                  - generic [ref=f90e277]:
+                    - heading [level=2] [ref=f90e283]:
+                      - 'link "Gfx_haniya: I will do 3 modern minimalist business 핀 페이지" [ref=f90e285]':
+                        - /url: /pin/16747829862715841/
+                        - text: "Gfx_haniya: I will do 3 modern minimalist business"
+                    - generic "추가 작업" [ref=f90e288]:
+                      - button "추가 작업" [ref=f90e289]
+          - listitem [ref=f90e294]:
+            - button [ref=f90e296] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e299]:
+                - generic [ref=f90e301]:
+                  - link "プルーム 핀 페이지" [ref=f90e303]:
+                    - /url: /pin/2533343539222456/
+                    - 'img "포함된 이미지: プルーム" [ref=f90e313]'
+                  - generic [ref=f90e318]:
+                    - heading [level=2] [ref=f90e324]:
+                      - link "プルーム 핀 페이지" [ref=f90e326]:
+                        - /url: /pin/2533343539222456/
+                        - text: プルーム
+                    - generic "추가 작업" [ref=f90e329]:
+                      - button "추가 작업" [ref=f90e330]
+          - listitem [ref=f90e335]:
+            - button [ref=f90e337] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e340]:
+                - generic [ref=f90e342]:
+                  - link "Fourfold Floral Leaf Emblem 핀 페이지" [ref=f90e344]:
+                    - /url: /pin/872572496606061368/
+                    - 'img "포함된 이미지: Fourfold Floral Leaf Emblem" [ref=f90e354]'
+                  - generic [ref=f90e359]:
+                    - heading [level=2] [ref=f90e365]:
+                      - link "Fourfold Floral Leaf Emblem 핀 페이지" [ref=f90e367]:
+                        - /url: /pin/872572496606061368/
+                        - text: Fourfold Floral Leaf Emblem
+                    - generic "추가 작업" [ref=f90e370]:
+                      - button "추가 작업" [ref=f90e371]
+          - listitem [ref=f90e376]:
+            - button [ref=f90e378] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e381]:
+                - generic [ref=f90e383]:
+                  - link "trébol silueta. flor diagrama con pétalos floral tarta gráfico dividido en 4 4 igual segmentos en hoja formas aislado en blanco antecedentes. modelo para datos presentación. gráfico ilustración 핀 페이지" [ref=f90e385]:
+                    - /url: /pin/60798663714364160/
+                    - 'img "포함된 이미지: trébol silueta. flor diagrama con pétalos floral tarta gráfico dividido en 4 4 igual segmentos en hoja formas aislado en blanco antecedentes. modelo para datos presentación. gráfico ilustración" [ref=f90e395]'
+                  - generic [ref=f90e400]:
+                    - heading [level=2] [ref=f90e406]:
+                      - link "trébol silueta. flor diagrama con pétalos floral tarta gráfico dividido en 4 4 igual segmentos en hoja formas aislado en blanco antecedentes. modelo para datos presentación. gráfico ilustración 핀 페이지" [ref=f90e408]:
+                        - /url: /pin/60798663714364160/
+                        - text: trébol silueta. flor diagrama con pétalos floral tarta gráfico dividido en 4 4 igual segmentos en hoja formas aislado en blanco antecedentes. modelo para datos presentación. gráfico ilustración
+                    - generic "추가 작업" [ref=f90e411]:
+                      - button "추가 작업" [ref=f90e412]
+          - listitem [ref=f90e417]:
+            - button [ref=f90e419] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e422]:
+                - generic [ref=f90e424]:
+                  - link "Symmetry Symptom 핀 페이지" [ref=f90e426]:
+                    - /url: /pin/12033123995564132/
+                    - 'img "포함된 이미지: Symmetry Symptom" [ref=f90e436]'
+                  - generic [ref=f90e441]:
+                    - heading [level=2] [ref=f90e447]:
+                      - link "Symmetry Symptom 핀 페이지" [ref=f90e449]:
+                        - /url: /pin/12033123995564132/
+                        - text: Symmetry Symptom
+                    - generic "추가 작업" [ref=f90e452]:
+                      - button "추가 작업" [ref=f90e453]
+          - listitem [ref=f90e458]:
+            - button [ref=f90e460] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e463]:
+                - generic [ref=f90e465]:
+                  - link "4 circle with a flower icon. four circle flower symbol. 핀 페이지" [ref=f90e467]:
+                    - /url: /pin/57702438971448138/
+                    - 'img "포함된 내용: 4 circle with a flower icon. four circle flower symbol." [ref=f90e477]'
+                  - generic [ref=f90e482]:
+                    - heading [level=2] [ref=f90e488]:
+                      - link "4 circle with a flower icon. four circle flower symbol. 핀 페이지" [ref=f90e490]:
+                        - /url: /pin/57702438971448138/
+                        - text: 4 circle with a flower icon. four circle flower symbol.
+                    - generic "추가 작업" [ref=f90e493]:
+                      - button "추가 작업" [ref=f90e494]
+          - listitem [ref=f90e499]:
+            - button [ref=f90e501] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e504]:
+                - generic [ref=f90e506]:
+                  - link "Instagram 핀 페이지" [ref=f90e508]:
+                    - /url: /pin/172825704447538273/
+                    - img "포함된 이미지:" [ref=f90e518]
+                  - generic "추가 작업" [ref=f90e527]:
+                    - button "추가 작업" [ref=f90e528]
+          - listitem [ref=f90e533]:
+            - button [ref=f90e535] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e538]:
+                - generic [ref=f90e540]:
+                  - link "ilustração abstrata do logotipo da flor de quatro pétalas em estilo moderno e minimalista 핀 페이지" [ref=f90e542]:
+                    - /url: /pin/771241504983525601/
+                    - 'img "포함된 이미지: ilustração abstrata do logotipo da flor de quatro pétalas em estilo moderno e minimalista" [ref=f90e552]'
+                  - generic [ref=f90e557]:
+                    - heading [level=2] [ref=f90e563]:
+                      - link "ilustração abstrata do logotipo da flor de quatro pétalas em estilo moderno e minimalista 핀 페이지" [ref=f90e565]:
+                        - /url: /pin/771241504983525601/
+                        - text: ilustração abstrata do logotipo da flor de quatro pétalas em estilo moderno e minimalista
+                    - generic "추가 작업" [ref=f90e568]:
+                      - button "추가 작업" [ref=f90e569]
+          - listitem [ref=f90e574]:
+            - button [ref=f90e576] [cursor=pointer]:
+              - group "핀 카드" [ref=f90e579]:
+                - generic [ref=f90e581]:
+                  - link "Flower Logo 핀 페이지" [ref=f90e583]:
+                    - /url: /pin/371054456822930815/
+                    - 'img "포함된 이미지: Flower Logo" [ref=f90e593]'
+                  - generic [ref=f90e598]:
+                    - heading [level=2] [ref=f90e604]:
+                      - link "Flower Logo 핀 페이지" [ref=f90e606]:
+                        - /url: /pin/371054456822930815/
+                        - text: Flower Logo
+                    - generic "추가 작업" [ref=f90e609]:
+                      - button "추가 작업" [ref=f90e610]
+  - generic:
+    - contentinfo "꼬리말"

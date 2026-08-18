@@ -30,7 +30,7 @@
 ### [2단계] 레퍼런스 분석 및 Flow 프롬프트 작성 (`md파일/pin분석.md` 기반)
 1. 1단계에서 `로고/output/` 폴더에 저장이 완료된 후 자동으로 2단계를 개시합니다.
 2. 수집된 N개 이미지 각 레퍼런스의 visual 조형감과 **한국적 여백의 세련미(Neo-Korean Aesthetic) + 하이엔드 향수 감성(Haute Perfumery Elegance)**을 50:50으로 합성합니다. (마패/말 직관적 그림 및 텍스트/글자 제외)
-3. 분석 결과를 바탕으로 AI 이미지 생성 도구(Flow)용 **고품질 하이브리드 영문(English) 프롬프트**를 작성합니다. **(텍스트/글자 완전 배제, 심볼 마크 전용 지시어 `symbol mark only, no text, no letters` 필수 포함)**
+3. 분석 결과를 바탕으로 AI 이미지 생성 도구(Flow)용 **고품질 하이브리드 영문(English) 프롬프트**를 작성합니다. **(긍정 프롬프트는 순수 긍정문 `standalone symbol mark only, clean simple vector lines`으로만 기술하고, 제외할 모든 부정 요소는 네가티브 프롬프트로 전담 분리)**
 4. 새로운 프롬프트 작성 시 기존 flow.md 파일의 내용을 삭제하지 않고, 파일 끝에 누적(Append)하여 추가 기록합니다.
 
 ---
@@ -40,15 +40,16 @@
 ### 📄 `output/flow.md` 작성 규격
 - **누적 저장 수칙**: 새로운 프롬프트 작성 시 기존 flow.md 파일의 내용을 삭제하지 않고, 파일 끝에 누적(Append)하여 추가 기록한다.
 - **형식**: 각 레퍼런스 이미지 파일명을 대제목(`# 파일명.jpg`)으로 작성 후, 아래쪽에 Prompt와 Negative Prompt를 영문으로 기술합니다.
+- **프롬프트 분리 원칙**: `**Prompt**:`에는 'no ~' 부정어를 쓰지 않고 순수 긍정 묘사만 작성하며, 모든 제외/금지어는 `**Negative Prompt**:`에 집중 배치합니다.
 
 ```markdown
 # 로고_레퍼런스_1.jpg
 
 **Prompt**:
-A sophisticated haute perfumery logo mark combining Neo-Korean minimalist aesthetic with modern line art, featuring elegant concentric circular lines symbolizing scent diffusion and olfactory layering, refined oriental spatial balance, monochrome black on pure white background, sleek high-end fragrance identity, symbol mark only, no text, no letters, no words, no 3D effects, no gradient, no mockups
+A sophisticated haute perfumery logo mark combining Neo-Korean minimalist aesthetic with modern line art, featuring elegant concentric circular lines symbolizing scent diffusion and olfactory layering, refined oriental spatial balance, monochrome solid black on pure flat white background, sleek high-end fragrance identity, standalone symbol mark only, clean simple vector lines, flat 2D graphic emblem
 
 **Negative Prompt**:
-text, letters, words, font, typography, alphabet, brand name, color, gradient, 3d mockup, realistic photo, texture, shadow, Mapae illustration, horse picture, chinese style, complex background
+text, letters, words, font, typography, alphabet, brand name, color, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, Mapae illustration, horse picture, chinese style, japanese style, complex background, cluttered lines, complex lines, ornate patterns
 ```
 
 ---
@@ -59,9 +60,10 @@ text, letters, words, font, typography, alphabet, brand name, color, gradient, 3
 2. **누적 저장 보장**: 새로운 프롬프트 작성 시 기존 flow.md 파일의 내용을 삭제하지 않고, 파일 끝에 누적(Append)하여 추가 기록합니다.
 3. **재실행 제약 규칙 (Execution Guard)**: 이미 작성된 `output/`의 이미지 및 `flow.md` 결과물은 사용자가 **"재실행"** 명령을 입력하기 전까지 임의로 덮어쓰거나 재작성하지 않습니다.
 4. **직관적 오리엔탈 상징 배제**: 마패 그림이나 중국풍 일러스트가 들어가는 프롬프트를 배제하고 세련된 한국적 여백미와 미니멀리즘만 적용합니다.
-5. **텍스트/글자 배제 수칙 (No-Text Policy)**: AI 이미지 생성용 프롬프트 생성 시 글자, 알파벳, 브랜드명, 텍스트가 포함되지 않도록 `no text, no letters, no words`를 명시하고 Negative Prompt에 `text, letters, words, font, typography`를 필수로 넣습니다.
+5. **프롬프트 역할 분리 및 순수 긍정 서술 수칙 (Prompt Separation & Positive-Only Policy)**: AI 이미지 생성 시 긍정 프롬프트(`Prompt`)에는 "no ~"와 같은 부정어를 일체 작성하지 않고 순수하게 생성할 시각적 요소(`standalone symbol mark only, clean simple vector lines` 등)만 긍정문으로 기술하며, 글자/텍스트/3D/목업/중국풍/왜색 등 모든 제외 항목은 네가티브 프롬프트(`Negative Prompt`)에만 전담하여 기재합니다.
 6. **핀터레스트 캡처 필수 원칙**: 레퍼런스 이미지는 AI로 새로 생성하지 않고 반드시 핀터레스트(Pinterest) 수집/캡처 방식으로 확보합니다.
 7. **연속 번호 부여 및 기존 이미지 보존 (Sequential Preservation)**: 동일 초안 파일명(예: `로고 초안5.jpg`)으로 이미지 수집을 추가 실행할 때, `로고/output/` 폴더에 기존 파일(예: `로고 초안5_참고1.jpg` ~ `로고 초안5_참고3.jpg`)이 이미 존재하는 경우 절대 기존 이미지를 삭제하거나 덮어쓰지 않으며, 기존 마지막 번호 다음 번호(예: `로고 초안5_참고4.jpg`, `로고 초안5_참고5.jpg` ...)로 연장 부여하여 저장하고 `flow.md`에도 새 번호 파일명으로 누적 기록합니다.
-8. **복잡하고 선이 많은 로고 배제 (No Complex/Cluttered Lines)**: 지나치게 복잡하거나 선이 빽빽한 과도한 디테일 디자인은 배제하고 정갈하고 명확한 미니멀 그래픽 라인(`clean simple vector lines, no complex lines`)만 프롬프트로 작성하며 Negative Prompt에 `complex lines, cluttered lines, overly detailed, ornate patterns`를 명시합니다.
-9. **컬러 이미지 수집 허용 및 프롬프트 흑백/흰색 배경 고정 수칙 (Color Collection Allowed & Black-on-White Prompt Fixed)**: 핀터레스트 탐색 시 색상(컬러)이 들어간 로고 이미지도 레퍼런스로 수집 가능하지만 목업(Mockup) 로고는 엄격히 제외하며, `flow.md` 프롬프트 작성 시에는 수집 이미지의 색상과 관계없이 배경은 흰색(`pure white background`), 로고색은 단색 검정(`monochrome solid black`)으로 고정 작성합니다.
+8. **복잡하고 선이 많은 로고 배제 (No Complex/Cluttered Lines)**: 지나치게 복잡하거나 선이 빽빽한 과도한 디테일 디자인은 배제하고 정갈하고 명확한 미니멀 그래픽 라인(`clean simple vector lines`)만 긍정 프롬프트로 작성하며 Negative Prompt에 `complex lines, cluttered lines, overly detailed, ornate patterns`를 명시합니다.
+9. **컬러 이미지 수집 허용 및 프롬프트 흑백/흰색 배경 고정 수칙 (Color Collection Allowed & Black-on-White Prompt Fixed)**: 핀터레스트 탐색 시 색상(컬러)이 들어간 로고 이미지도 레퍼런스로 수집 가능하지만 목업(Mockup) 로고는 엄격히 제외하며, `flow.md` 프롬프트 작성 시에는 수집 이미지의 색상과 관계없이 배경은 흰색(`pure flat white background`), 로고색은 단색 검정(`monochrome solid black`)으로 고정 작성합니다.
 10. **초안별 하위 폴더 자동 정리 (Draft Subfolder Organization)**: 수집된 레퍼런스 이미지는 `로고/output/` 바로 아래에 늘어놓지 않고, 각 초안별 하위 폴더(`로고/output/로고 초안N/`)를 생성하여 체계적으로 분류 및 저장합니다.
+11. **동일/중복 이미지 수집 배제 수칙 (Strict Image Deduplication)**: 레퍼런스 수집 시 기존에 이미 수집된 이미지(동일 초안 폴더 내 기존 파일 및 이전 수집 결과)와 완전히 동일하거나 중복되는 이미지는 반드시 제외하며, 파일 해시(SHA-256) 및 시각적 조형 구조를 대조 검증하여 100% 서로 다른 독창적인 레퍼런스 이미지들만 선별하여 저장하고 분석 프롬프트를 작성합니다.
