@@ -1,0 +1,124 @@
+- generic [ref=f53e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f53e15]:
+      - generic [ref=f53e18]:
+        - generic:
+          - img "검색 아이콘"
+        - combobox "검색" [ref=f53e20]
+        - generic "이미지 업로드" [ref=f53e23]:
+          - button "Pinterest 렌즈" [ref=f53e24] [cursor=pointer]
+      - link "내 프로필" [ref=f53e33] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f53e45] [cursor=pointer]
+  - navigation [ref=f53e50]:
+    - generic [ref=f53e52]:
+      - generic [ref=f53e53]:
+        - generic "홈" [ref=f53e57]:
+          - link "홈" [ref=f53e58] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f53e65]:
+          - link "홈" [ref=f53e66] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f53e73]:
+          - link "내 보드" [ref=f53e74] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f53e81]:
+          - button "만들기" [ref=f53e82] [cursor=pointer]
+        - generic "업데이트" [ref=f53e91]:
+          - 'button "업데이트: 137개 알림" [ref=f53e92] [cursor=pointer]'
+        - generic "메시지" [ref=f53e101]:
+          - button "메시지" [ref=f53e102] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f53e110]:
+        - button "설정 및 지원" [ref=f53e111] [cursor=pointer]
+  - generic:
+    - complementary "꼬리말 부동 버튼"
+  - main [ref=f53e116]:
+    - generic [ref=f53e125]:
+      - button "뒤로" [ref=f53e127] [cursor=pointer]
+      - generic [ref=f53e136]:
+        - generic [ref=f53e137]: 관련 상품 결과를 불러오는 중
+        - list [ref=f53e142]:
+          - listitem [ref=f53e143]:
+            - group "Closeup content container" [ref=f53e150]:
+              - generic [ref=f53e155]:
+                - region "핀 이미지 및 탐색할 항목" [ref=f53e158]:
+                  - generic [ref=f53e168]:
+                    - button "더 크게 보기" [ref=f53e170] [cursor=pointer]:
+                      - generic [ref=f53e172]:
+                        - generic: 더 크게 보기
+                        - img "더 크게 보기" [ref=f53e174]
+                    - button "이미지 검색" [ref=f53e179] [cursor=pointer]:
+                      - generic [ref=f53e181]:
+                        - generic: 이미지 검색
+                        - img "이미지 검색" [ref=f53e183]
+                    - link "사이트 방문" [ref=f53e188] [cursor=pointer]:
+                      - /url: https://www.behance.net/gallery/57546137/The-Wave-Geometric-Logo-Creation?utm_source=Pinterest&utm_medium=organic
+                - generic [ref=f53e193]:
+                  - generic [ref=f53e196]:
+                    - list [ref=f53e197]:
+                      - generic [ref=f53e198]:
+                        - listitem [ref=f53e200]:
+                          - generic "반응" [ref=f53e203]:
+                            - button "반응" [ref=f53e204] [cursor=pointer]
+                          - generic [ref=f53e209]: "0"
+                        - listitem [ref=f53e211]:
+                          - generic "댓글" [ref=f53e214]:
+                            - button "댓글" [ref=f53e215] [cursor=pointer]
+                        - listitem [ref=f53e221]:
+                          - generic "공유" [ref=f53e225]:
+                            - button "이 핀 공유" [ref=f53e228] [cursor=pointer]
+                        - listitem [ref=f53e234]:
+                          - generic "추가 작업" [ref=f53e239]:
+                            - button "추가 작업" [ref=f53e242] [cursor=pointer]
+                    - generic [ref=f53e252]:
+                      - 'button "저장할 보드 선택: 로고" [ref=f53e255] [cursor=pointer]':
+                        - generic "로고" [ref=f53e258]
+                      - button "저장" [ref=f53e264] [cursor=pointer]
+                  - generic [ref=f53e272]:
+                    - generic [ref=f53e281]:
+                      - link [ref=f53e283] [cursor=pointer]:
+                        - /url: /behance/
+                        - img "Behance 아바타 링크" [ref=f53e290]
+                      - link [ref=f53e294] [cursor=pointer]:
+                        - /url: /behance/
+                        - heading [level=2] [ref=f53e295]:
+                          - generic [ref=f53e298]:
+                            - text: Behance
+                            - img "도메인 인증" [ref=f53e300]
+                    - generic [ref=f53e305]:
+                      - link "behance" [ref=f53e307] [cursor=pointer]:
+                        - /url: https://www.behance.net/gallery/57546137/The-Wave-Geometric-Logo-Creation
+                      - text: 에서 가져온
+                      - link "David Rothwell" [ref=f53e309] [cursor=pointer]:
+                        - /url: http://www.behance.net/davidrothwad1b
+                      - text: 님의 사진
+                    - generic [ref=f53e310]:
+                      - generic [ref=f53e312]:
+                        - link [ref=f53e318] [cursor=pointer]:
+                          - /url: https://www.behance.net/gallery/57546137/The-Wave-Geometric-Logo-Creation?utm_source=Pinterest&utm_medium=organic
+                          - heading "'The Wave' Geometric Logo Creation - David Rothwell" [level=1] [ref=f53e319]
+                        - link "사이트 방문" [ref=f53e327] [cursor=pointer]:
+                          - /url: https://www.behance.net/gallery/57546137/The-Wave-Geometric-Logo-Creation?utm_source=Pinterest&utm_medium=organic
+                      - generic [ref=f53e331]:
+                        - heading "설명" [level=4] [ref=f53e332]
+                        - generic [ref=f53e333]: A Wave logo design I decided to develop from a series of preliminary sketches.
+                  - generic [ref=f53e345]:
+                    - generic [ref=f53e347]:
+                      - button [ref=f53e349]
+                      - generic [ref=f53e353]:
+                        - generic: 댓글 추가
+                        - combobox "댓글 추가" [ref=f53e355]
+                    - generic [ref=f53e364]:
+                      - button "이모티콘 선택" [ref=f53e365] [cursor=pointer]
+                      - button "스티커 선택" [ref=f53e370] [cursor=pointer]
+                      - button "사진을 선택합니다." [ref=f53e376] [cursor=pointer]
+          - listitem [ref=f53e381]
+          - listitem [ref=f53e385]
+          - listitem [ref=f53e389]
+          - listitem [ref=f53e393]
+          - listitem [ref=f53e397]
+          - listitem [ref=f53e401]
+  - generic:
+    - contentinfo "꼬리말"

@@ -1,0 +1,83 @@
+- generic [ref=f197e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f197e15]:
+      - generic [ref=f197e17]:
+        - generic [ref=f197e18]:
+          - combobox "검색" [ref=f197e20]: arch padlock logo minimal geometric
+          - generic [ref=f197e21]:
+            - button "검색 입력 삭제" [ref=f197e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f197e30]:
+              - button "Pinterest 렌즈" [ref=f197e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f197e38] [cursor=pointer]:
+          - generic [ref=f197e40]:
+            - generic [ref=f197e41]: 모든 핀
+            - img "드롭다운" [ref=f197e43]
+      - link "내 프로필" [ref=f197e49] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f197e61] [cursor=pointer]
+  - navigation [ref=f197e66]:
+    - generic [ref=f197e68]:
+      - generic [ref=f197e69]:
+        - generic "홈" [ref=f197e73]:
+          - link "홈" [ref=f197e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f197e81]:
+          - link "홈" [ref=f197e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f197e89]:
+          - link "내 보드" [ref=f197e90] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f197e97]:
+          - button "만들기" [ref=f197e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f197e114]:
+        - button "설정 및 지원" [ref=f197e115] [cursor=pointer]
+  - main [ref=f197e120]:
+    - generic [ref=f197e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f197e124]
+      - region "필터 및 세분화 검색" [ref=f197e128]:
+        - generic [ref=f197e131]:
+          - button "필터 표시" [ref=f197e137] [cursor=pointer]
+          - button "AI 줄이기" [ref=f197e148] [cursor=pointer]
+      - generic [ref=f197e160]:
+        - generic:
+          - generic:
+            - list:
+              - listitem [ref=f197e161]:
+                - button [ref=f197e162] [cursor=pointer]:
+                  - group "핀 카드" [ref=f197e165]:
+                    - generic [ref=f197e167]:
+                      - link "제목 없음 핀 페이지" [ref=f197e169]:
+                        - /url: /pin/55380270414384514/
+                        - img "포함된 이미지:" [ref=f197e179]
+                      - generic "추가 작업" [ref=f197e188]:
+                        - button "추가 작업" [ref=f197e189]
+              - listitem [ref=f197e194]:
+                - button [ref=f197e195] [cursor=pointer]:
+                  - group "핀 카드" [ref=f197e198]:
+                    - generic [ref=f197e200]:
+                      - link "Logos &amp; Marks 2019-2020 핀 페이지" [ref=f197e202]:
+                        - /url: /pin/4081455905869566/
+                        - 'img "포함된 이미지: Logos & Marks 2019-2020" [ref=f197e212]'
+                      - generic [ref=f197e217]:
+                        - heading [level=2] [ref=f197e223]:
+                          - link "Logos &amp; Marks 2019-2020 핀 페이지" [ref=f197e225]:
+                            - /url: /pin/4081455905869566/
+                            - text: Logos & Marks 2019-2020
+                        - generic "추가 작업" [ref=f197e228]:
+                          - button "추가 작업" [ref=f197e229]
+              - listitem [ref=f197e234]:
+                - button [ref=f197e235] [cursor=pointer]:
+                  - group "핀 카드" [ref=f197e238]:
+                    - generic [ref=f197e240]:
+                      - link "Baixar arcos linha arte ícone logotipo com combinar carta uma r c h, arco logotipo Projeto. gratuitamente 핀 페이지" [ref=f197e242]:
+                        - /url: /pin/5770305768855842/
+                        - 'img "포함된 이미지: Baixar arcos linha arte ícone logotipo com combinar carta uma r c h, arco logotipo Projeto. gratuitamente" [ref=f197e252]'
+                      - generic [ref=f197e257]:
+                        - heading [level=2] [ref=f197e263]:
+                          - link "Baixar arcos linha arte ícone logotipo com combinar carta uma r c h, arco logotipo Projeto. gratuitamente 핀 페이지" [ref=f197e265]:
+                            - /url: /pin/5770305768855842/
+                            - text: Baixar arcos linha arte ícone logotipo com combinar carta uma r c h, arco logotipo Projeto. gratuitamente
+                        - generic "추가 작업" [ref=f197e268]:
+                          - button "추가 작업" [ref=f197e269]

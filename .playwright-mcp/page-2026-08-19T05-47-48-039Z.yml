@@ -1,0 +1,180 @@
+- generic [ref=f249e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f249e15]:
+      - generic [ref=f249e17]:
+        - generic [ref=f249e18]:
+          - combobox "검색" [ref=f249e20]: geometric floral solid logo negative space quatrefoil
+          - generic [ref=f249e21]:
+            - button "검색 입력 삭제" [ref=f249e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f249e30]:
+              - button "Pinterest 렌즈" [ref=f249e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f249e38] [cursor=pointer]:
+          - generic [ref=f249e40]:
+            - generic [ref=f249e41]: 모든 핀
+            - img "드롭다운" [ref=f249e43]
+      - link "내 프로필" [ref=f249e49] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f249e61] [cursor=pointer]
+  - navigation [ref=f249e66]:
+    - generic [ref=f249e68]:
+      - generic [ref=f249e69]:
+        - generic "홈" [ref=f249e73]:
+          - link "홈" [ref=f249e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f249e81]:
+          - link "홈" [ref=f249e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f249e89]:
+          - link "내 보드" [ref=f249e90] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f249e97]:
+          - button "만들기" [ref=f249e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f249e114]:
+        - button "설정 및 지원" [ref=f249e115] [cursor=pointer]
+  - main [ref=f249e120]:
+    - generic [ref=f249e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f249e124]
+      - region "필터 및 세분화 검색" [ref=f249e128]:
+        - generic [ref=f249e131]:
+          - button "필터 표시" [ref=f249e137] [cursor=pointer]
+          - button "AI 줄이기" [ref=f249e148] [cursor=pointer]
+      - generic [ref=f249e159]:
+        - generic [ref=f249e160]: geometric floral solid logo negative space quatrefoil 검색 결과를 추가로 불러오는 중
+        - list [ref=f249e165]:
+          - listitem [ref=f249e166]:
+            - button [ref=f249e168] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e171]:
+                - generic [ref=f249e173]:
+                  - link "Logo 핀 페이지" [ref=f249e175]:
+                    - /url: /pin/519884350758498091/
+                    - 'img "포함된 이미지: Logo" [ref=f249e185]'
+                  - generic [ref=f249e190]:
+                    - heading [level=2] [ref=f249e196]:
+                      - link "Logo 핀 페이지" [ref=f249e198]:
+                        - /url: /pin/519884350758498091/
+                        - text: Logo
+                    - generic "추가 작업" [ref=f249e201]:
+                      - button "추가 작업" [ref=f249e202]
+          - listitem [ref=f249e207]:
+            - button [ref=f249e209] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e212]:
+                - generic [ref=f249e214]:
+                  - link "제목 없음 핀 페이지" [ref=f249e216]:
+                    - /url: /pin/592645632217986852/
+                    - img "포함된 이미지:" [ref=f249e226]
+                  - generic "추가 작업" [ref=f249e235]:
+                    - button "추가 작업" [ref=f249e236]
+          - listitem [ref=f249e241]:
+            - button [ref=f249e243] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e246]:
+                - generic [ref=f249e248]:
+                  - link "제목 없음 핀 페이지" [ref=f249e250]:
+                    - /url: /pin/5488830793072943/
+                    - img "포함된 이미지:" [ref=f249e260]
+                  - generic "추가 작업" [ref=f249e269]:
+                    - button "추가 작업" [ref=f249e270]
+          - listitem [ref=f249e275]:
+            - button [ref=f249e277] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e280]:
+                - generic [ref=f249e282]:
+                  - link "제목 없음 핀 페이지" [ref=f249e284]:
+                    - /url: /pin/583779170494947930/
+                    - img "포함된 이미지:" [ref=f249e294]
+                  - generic "추가 작업" [ref=f249e303]:
+                    - button "추가 작업" [ref=f249e304]
+          - listitem [ref=f249e309]:
+            - button [ref=f249e311] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e314]:
+                - generic [ref=f249e316]:
+                  - link "Fourfold Floral Leaf Emblem 핀 페이지" [ref=f249e318]:
+                    - /url: /pin/872572496606061368/
+                    - 'img "포함된 이미지: Fourfold Floral Leaf Emblem" [ref=f249e328]'
+                  - generic [ref=f249e333]:
+                    - heading [level=2] [ref=f249e339]:
+                      - link "Fourfold Floral Leaf Emblem 핀 페이지" [ref=f249e341]:
+                        - /url: /pin/872572496606061368/
+                        - text: Fourfold Floral Leaf Emblem
+                    - generic "추가 작업" [ref=f249e344]:
+                      - button "추가 작업" [ref=f249e345]
+          - listitem [ref=f249e350]:
+            - button [ref=f249e352] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e355]:
+                - generic [ref=f249e357]:
+                  - link "Flower and Arrows Logo 핀 페이지" [ref=f249e359]:
+                    - /url: /pin/746471707032827313/
+                    - 'img "포함된 이미지: Flower and Arrows Logo" [ref=f249e369]'
+                  - generic [ref=f249e374]:
+                    - heading [level=2] [ref=f249e380]:
+                      - link "Flower and Arrows Logo 핀 페이지" [ref=f249e382]:
+                        - /url: /pin/746471707032827313/
+                        - text: Flower and Arrows Logo
+                    - generic "추가 작업" [ref=f249e385]:
+                      - button "추가 작업" [ref=f249e386]
+          - listitem [ref=f249e391]:
+            - button [ref=f249e393] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e396]:
+                - generic [ref=f249e398]:
+                  - link "Logos 핀 페이지" [ref=f249e400]:
+                    - /url: /pin/19210735905762693/
+                    - 'img "포함된 이미지: Logos" [ref=f249e410]'
+                  - generic [ref=f249e415]:
+                    - heading [level=2] [ref=f249e421]:
+                      - link "Logos 핀 페이지" [ref=f249e423]:
+                        - /url: /pin/19210735905762693/
+                        - text: Logos
+                    - generic "추가 작업" [ref=f249e426]:
+                      - button "추가 작업" [ref=f249e427]
+          - listitem [ref=f249e432]:
+            - button [ref=f249e434] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e437]:
+                - generic [ref=f249e439]:
+                  - link "Cada traço desta identidade visual da loja Évora foi pensado para transmitir singularidade e presença. ✨ O ícone, criado de forma exclusiva, carrega linhas e formas que traduzem a essência da marca, enquanto a tipografia forte e personalizada reforça sua personalidade e sofisticação. O resultado é uma marca que se destaca pela harmonia entre força e delicadeza, autenticidade e elegância. 핀 페이지" [ref=f249e441]:
+                    - /url: /pin/111253053294320510/
+                    - img "포함된 이미지:" [ref=f249e451]
+                  - generic "추가 작업" [ref=f249e460]:
+                    - button "추가 작업" [ref=f249e461]
+          - listitem [ref=f249e466]:
+            - button [ref=f249e468] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e471]:
+                - generic [ref=f249e473]:
+                  - 'link "Water Drops and Medical Leaves :: Behance 핀 페이지" [ref=f249e475]':
+                    - /url: /pin/539939442847975234/
+                    - img "포함된 이미지:" [ref=f249e485]
+                  - generic [ref=f249e490]:
+                    - link "Behance" [ref=f249e494]:
+                      - /url: /behance/
+                      - generic "Behance" [ref=f249e501]
+                    - generic "추가 작업" [ref=f249e504]:
+                      - button "추가 작업" [ref=f249e505]
+          - listitem [ref=f249e510]:
+            - button [ref=f249e512] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e516]:
+                - generic [ref=f249e518]:
+                  - link [ref=f249e520]:
+                    - /url: /pin/1196337405675689/
+                    - generic [ref=f249e527]:
+                      - 'img "Quarter Circles + Flower Available for Sale - Worldwide ©2026 JC Arpon Follow for more @logobyjc Work with me → DM for inquiries. #logo #logos #logodesign #logodesigns #logodesigner" [ref=f249e531]'
+                      - 'img "Quarter Circles + Flower Available for Sale - Worldwide ©2026 JC Arpon Follow for more @logobyjc Work with me → DM for inquiries. #logo #logos #logodesign #logodesigns #logodesigner" [ref=f249e535]'
+                  - generic [ref=f249e538]:
+                    - generic [ref=f249e541]:
+                      - button "2개 슬라이드 중 1번으로 이동" [ref=f249e543]
+                      - button "2개 슬라이드 중 2번으로 이동" [ref=f249e546]
+                    - generic "추가 작업" [ref=f249e553]:
+                      - button "추가 작업" [ref=f249e554]
+          - listitem [ref=f249e559]:
+            - button [ref=f249e561] [cursor=pointer]:
+              - group "핀 카드" [ref=f249e565]:
+                - generic [ref=f249e567]:
+                  - link [ref=f249e569]:
+                    - /url: /pin/165366617563431117/
+                    - generic [ref=f249e576]:
+                      - 'img "Are you looking for a logo designer? Want to Design Your Brand LOGO? Inbox us Work By @logo_sohel professionalogolads@gmail.com Whats-app Number: +447786153785 DM For Work #logo#logos#logosia #modernlogos#logotype#logoideas #instalogo#logopedia#logodesigner #logomaker#customlogo#brandlogo #brandidentity#graphicdesigner#bestlogo #designinspiration#icondesign #corporatelogo#companylogo#ilustrator #illustration#logodesign#australia #canada#usa#uk#elitelogos" [ref=f249e580]'
+                      - 'img "Are you looking for a logo designer? Want to Design Your Brand LOGO? Inbox us Work By @logo_sohel professionalogolads@gmail.com Whats-app Number: +447786153785 DM For Work #logo#logos#logosia #modernlogos#logotype#logoideas #instalogo#logopedia#logodesigner #logomaker#customlogo#brandlogo #brandidentity#graphicdesigner#bestlogo #designinspiration#icondesign #corporatelogo#companylogo#ilustrator #illustration#logodesign#australia #canada#usa#uk#elitelogos" [ref=f249e584]'
+                  - generic [ref=f249e587]:
+                    - generic [ref=f249e590]:
+                      - button "2개 슬라이드 중 1번으로 이동" [ref=f249e592]
+                      - button "2개 슬라이드 중 2번으로 이동" [ref=f249e595]
+                    - generic "추가 작업" [ref=f249e602]:
+                      - button "추가 작업" [ref=f249e603]

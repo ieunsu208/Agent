@@ -1,0 +1,24 @@
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:53312
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52951
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:53312
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52951
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:53312
+[    1140ms] Error: Unable to retrieve appVersion because #__PWS_DATA__ was not found in the DOM.
+    at i (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:54436)
+    at c (https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52353)
+    at https://s.pinimg.com/webapp/43568-446f0f24216d0ccc.mjs:5:52951

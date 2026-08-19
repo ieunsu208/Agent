@@ -1,0 +1,87 @@
+- generic [ref=f117e4]:
+  - banner:
+    - link "콘텐츠로 건너뛰기":
+      - /url: "#"
+    - generic [ref=f117e15]:
+      - generic [ref=f117e17]:
+        - generic [ref=f117e18]:
+          - combobox "검색" [ref=f117e20]: arch doorway circle logo design minimal
+          - generic [ref=f117e21]:
+            - button "검색 입력 삭제" [ref=f117e24] [cursor=pointer]
+            - generic "이미지 업로드" [ref=f117e30]:
+              - button "Pinterest 렌즈" [ref=f117e31] [cursor=pointer]
+        - button "모든 핀 드롭다운" [ref=f117e38] [cursor=pointer]:
+          - generic [ref=f117e40]:
+            - generic [ref=f117e41]: 모든 핀
+            - img "드롭다운" [ref=f117e43]
+      - link "내 프로필" [ref=f117e49] [cursor=pointer]:
+        - /url: /eunsu208/
+      - button "계정" [ref=f117e61] [cursor=pointer]
+  - navigation [ref=f117e66]:
+    - generic [ref=f117e68]:
+      - generic [ref=f117e69]:
+        - generic "홈" [ref=f117e73]:
+          - link "홈" [ref=f117e74] [cursor=pointer]:
+            - /url: /
+        - generic "홈" [ref=f117e81]:
+          - link "홈" [ref=f117e82] [cursor=pointer]:
+            - /url: /
+        - generic "내 보드" [ref=f117e89]:
+          - link "내 보드" [ref=f117e90] [cursor=pointer]:
+            - /url: /eunsu208/
+        - generic "만들기" [ref=f117e97]:
+          - button "만들기" [ref=f117e98] [cursor=pointer]
+      - generic "설정 및 지원" [ref=f117e114]:
+        - button "설정 및 지원" [ref=f117e115] [cursor=pointer]
+  - main [ref=f117e120]:
+    - generic [ref=f117e122]:
+      - heading "검색 결과 페이지" [level=1] [ref=f117e124]
+      - region "필터 및 세분화 검색" [ref=f117e128]:
+        - generic [ref=f117e131]:
+          - button "필터 표시" [ref=f117e137] [cursor=pointer]
+          - button "AI 줄이기" [ref=f117e148] [cursor=pointer]
+      - generic [ref=f117e160]:
+        - generic:
+          - generic:
+            - list:
+              - listitem [ref=f117e161]:
+                - button [ref=f117e162] [cursor=pointer]:
+                  - group "핀 카드" [ref=f117e165]:
+                    - generic [ref=f117e167]:
+                      - link "Download Abstract elements of arch line vector logo, for the construction of doors, windows, buildings and architecture. On a black and white isolated background. for free 핀 페이지" [ref=f117e169]:
+                        - /url: /pin/9077636744465852/
+                        - 'img "포함된 이미지: Download Abstract elements of arch line vector logo, for the construction of doors, windows, buildings and architecture. On a black and white isolated background. for free" [ref=f117e179]'
+                      - generic [ref=f117e184]:
+                        - generic [ref=f117e185]:
+                          - heading [level=2] [ref=f117e190]:
+                            - link "Download Abstract elements of arch line vector logo, for the construction of doors, windows, buildings and architecture. On a black and white isolated background. for free 핀 페이지" [ref=f117e192]:
+                              - /url: /pin/9077636744465852/
+                              - text: Download Abstract elements of arch line vector logo, for the construction of doors, windows, buildings and architecture. On a black and white isolated background. for free
+                          - link "Vecteezy" [ref=f117e195]:
+                            - /url: /vecteezy/
+                            - generic "Vecteezy" [ref=f117e202]
+                        - generic "추가 작업" [ref=f117e205]:
+                          - button "추가 작업" [ref=f117e206]
+              - listitem [ref=f117e211]:
+                - button [ref=f117e212] [cursor=pointer]:
+                  - group "핀 카드" [ref=f117e215]:
+                    - generic [ref=f117e217]:
+                      - link "Stories • Instagram 핀 페이지" [ref=f117e219]:
+                        - /url: /pin/140806235304553/
+                        - img "포함된 이미지:" [ref=f117e229]
+                      - generic "추가 작업" [ref=f117e238]:
+                        - button "추가 작업" [ref=f117e239]
+              - listitem [ref=f117e244]:
+                - button [ref=f117e245] [cursor=pointer]:
+                  - group "핀 카드" [ref=f117e248]:
+                    - generic [ref=f117e250]:
+                      - link "30 Best Door Logo Design Ideas You Should Check 핀 페이지" [ref=f117e252]:
+                        - /url: /pin/17944098511326448/
+                        - 'img "포함된 이미지: 30 Best Door Logo Design Ideas You Should Check" [ref=f117e262]'
+                      - generic [ref=f117e267]:
+                        - heading [level=2] [ref=f117e273]:
+                          - link "30 Best Door Logo Design Ideas You Should Check 핀 페이지" [ref=f117e275]:
+                            - /url: /pin/17944098511326448/
+                            - text: 30 Best Door Logo Design Ideas You Should Check
+                        - generic "추가 작업" [ref=f117e278]:
+                          - button "추가 작업" [ref=f117e279]

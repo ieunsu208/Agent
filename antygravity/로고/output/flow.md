@@ -929,3 +929,248 @@ A prestigious haute perfumery emblem combining delicate Korean Dancheong floral 
 
 **Negative Prompt**:
 text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안11_참고1.jpg 했음
+
+**Prompt**:
+A sophisticated haute perfumery logo mark combining modern geometric minimalism with dynamic fluid motion, featuring dual undulating ribbon arcs that intersect and flow in parallel wave rhythm, symbolizing the harmonious progression of top notes and lingering sillage, Neo-Korean minimalist spatial balance, monochrome solid black on pure flat white background, standalone fragrance symbol mark only, sharp clean vector lines, flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안11_참고2.jpg 했음
+
+**Prompt**:
+A minimalist luxury perfume logo insignia constructed with precise golden ratio circular arc geometry, featuring an elegant circular spiral wave crest embodying the circular distillation process and the eternal flow of olfactory essence, pristine spatial balance inspired by Neo-Korean minimalism, monochrome solid black on pure flat white background, clean vector line art symbol, flat 2D graphic mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안11_참고3.jpg 했음
+
+**Prompt**:
+An architectural haute perfumery brand logo emblem showcasing structural grid precision, featuring layered horizontal wave stripes transitioning through a mathematical coordinate grid, symbolizing the calculated formulation and atmospheric diffusion of high-end perfume layers, clean 2D vector graphic, monochrome solid black on pure flat white background, sharp geometric precision, luxury fragrance brand symbol
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안11_참고4.jpg 했음
+
+**Prompt**:
+A high-end luxury fragrance logo mark featuring multiple parallel flowing wave bands, capturing the smooth resonance of aromatic scent layers across the horizon, inspired by minimalist water ripple motifs and contemporary Korean spatial harmony, solid monochrome black on pure flat white background, standalone symbol mark only, sleek clean curves, flat 2D vector art
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안11_참고5.jpg 했음
+
+**Prompt**:
+A refined haute perfumery symbol mark blending sharp mountain peak silhouettes with gentle flowing wave ribbons, embodying the natural origins of botanical fragrance and the peak concentration of artisanal perfume notes, elegant Neo-Korean minimalist spatial restraint, monochrome solid black on pure flat white background, clean vector lines, high-contrast flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고1.jpg 했음
+
+**Prompt**:
+A minimalist luxury perfume logo insignia combining a solid architectural arch portal silhouette with a central keyhole negative space cutout, representing the sacred olfactory doorway and the unlocking of bespoke fragrance notes, balanced geometric proportions inspired by Neo-Korean spatial minimalism, monochrome solid black on pure flat white background, standalone perfume symbol mark only, clean sharp vector edges, flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고2.jpg 했음
+
+**Prompt**:
+A sophisticated haute perfumery emblem featuring concentric nested portal arches creating a visual scent tunnel perspective, symbolizing deep olfactory discovery and multilayered fragrance concentration, clean architectural line art vector, monochrome solid black on pure flat white background, high contrast, minimalist Korean spatial balance, flat 2D fragrance brand mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고3.jpg 했음
+
+**Prompt**:
+An elegant high-end fragrance logo mark depicting a grand architectural arch gateway crowned with radiating sunburst crest facets, framing a central four-pointed star and droplet scent core, capturing royal prestige and the radiant projection of haute perfumery, monochrome solid black on pure flat white background, sharp vector line art, flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고4.jpg 했음
+
+**Prompt**:
+A contemporary minimalist perfume emblem featuring a solid asymmetrical arch silhouette with a recessed inner portal void, embodying the modern interpretation of traditional Korean doorway aesthetics and the silent mystery of fine fragrance sillage, solid monochrome black on pure flat white background, standalone symbol mark only, sleek sharp vector silhouette, flat 2D graphic mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고5.jpg 했음
+
+**Prompt**:
+An artisanal niche perfume logo seal inspired by traditional Korean keyhole escutcheon geometry, featuring an arched keyhole silhouette adorned with delicate botanical vine and floral scent motifs, symbolizing the secret garden and rare herbal extractions of haute perfumery, clean line art vector emblem, monochrome solid black on pure flat white background, luxury fragrance brand insignia
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고6.jpg
+
+**Prompt**:
+A poetic haute perfumery logo mark combining a solid keyhole arch silhouette with a luminous botanical lotus void, featuring three negative space petals blooming from a central stem inside a solid circular keyhole arch, symbolizing the botanical extraction and radiant unfolding of rare perfume notes, Neo-Korean minimalist spatial elegance, monochrome solid black on pure flat white background, standalone fragrance emblem mark only, clean sharp 2D vector silhouette
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고7.jpg 했음
+
+**Prompt**:
+A minimalist geometric brand insignia featuring an arched doorway portal with an intersecting circular moon aperture and clean negative space cutouts, inspired by modern architectural geometry and Korean spatial void aesthetics, representing the transition between physical presence and invisible fragrance sillage, solid monochrome black on pure flat white background, minimalist line art and solid balance, clean sharp vector graphic, flat 2D emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고8.jpg 했음
+
+**Prompt**:
+An elegant high-fashion perfume logo emblem constructed from continuous minimalist curved outline strokes, featuring an arched doorway silhouette intersecting with an inner rounded quadrant curve, representing the gentle flow of air and the diffusion of top fragrance notes through an architectural portal, clean 2D line vector art, monochrome solid black on pure flat white background, sharp vector line art
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고9.jpg 했음
+
+**Prompt**:
+A prestigious haute perfumery insignia featuring multiple concentric nested arch curves within a clean rectangular frame, forming an optical tunnel portal that embodies the deep multilayered concentration and unfolding progression of niche perfume formulation, monochrome solid black on pure flat white background, clean vector lines, high contrast flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안10_참고10.jpg
+
+**Prompt**:
+A contemporary niche fragrance symbol mark combining a solid keyhole arch silhouette with a sleek peeling page and curved portal aperture, symbolizing the unveiling of hidden artisanal scents and the sensory revelation of fine perfumery, high-contrast monochrome solid black on pure flat white background, standalone luxury symbol mark only, clean sharp vector silhouette, flat 2D graphic mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안2_참고13.jpg
+
+**Prompt**:
+A sophisticated haute perfumery insignia embodying solid planar mass and delicate linear harmony, featuring a bold rounded-square solid black medallion silhouette sculpted with four curved negative-space petal blades that converge toward a radiant central four-pointed star void, capturing the tension between solid perfume essence and ethereal scent diffusion, Neo-Korean minimalist spatial elegance, monochrome solid black on pure flat white background, standalone luxury perfume emblem mark only, clean sharp vector edges, flat 2D emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안2_참고14.jpg 했음
+
+**Prompt**:
+A high-end luxury fragrance logo mark constructed from eight rotating quarter-circle solid planar petals arranged symmetrically around a central axis, creating a harmonious balance of bold geometric solid masses and fine intersecting negative-space linear gaps, inspired by traditional Korean Dancheong floral geometry and modern haute perfumery distillation, monochrome solid black on pure flat white background, sharp geometric vector graphic, flat 2D luxury mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안2_참고15.jpg 했음
+
+**Prompt**:
+A minimalist luxury niche perfume seal emblem featuring a bold solid quatrefoil ring frame enclosing a four-lobed floral void aperture, balancing authoritative solid planar presence with pure central Yeobaek spatial emptiness, representing the precious containment and eternal preservation of rare fragrance notes, solid monochrome black on pure flat white background, standalone symbol mark only, sleek clean 2D vector graphic
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안2_참고16.jpg 했음
+
+**Prompt**:
+An avant-garde haute perfumery logo mark composed of four bold solid black corner quadrant planes framing a luminous central four-petal floral blossom and square core void in pure negative space, perfectly uniting weighty solid planar mass with delicate line-art precision, Neo-Korean minimalist spatial restraint, monochrome solid black on pure flat white background, sharp vector emblem, flat 2D graphic
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안2_참고17.jpg 했음
+
+**Prompt**:
+An elegant luxury fragrance emblem combining a symmetrical floral cross axis with four solid geometric leaf planes and square accents, capturing the structural precision of artisanal perfume compounding and the refined poise of royal Korean insignia, solid monochrome black on pure flat white background, standalone fragrance symbol mark only, clean sharp vector lines, high-contrast flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안5_참고10.jpg
+
+**Prompt**:
+A sophisticated haute perfumery logo emblem showcasing intersecting solid planes and linear voids, featuring two overlapping offset square masses that merge diagonally to form a central square negative-space aperture, symbolizing the multidimensional layering of base accords and top notes in luxury fragrance formulation, Neo-Korean minimalist spatial balance, solid monochrome black on pure flat white background, standalone perfume symbol mark only, clean sharp vector edges, flat 2D graphic mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안5_참고11.jpg
+
+**Prompt**:
+A contemporary minimalist luxury perfume logo insignia balancing a bold solid square mass with a dynamic offset pixel block, featuring a heavy solid black square whose upper-right corner gracefully detaches and elevates into an accent square void, representing the liberation of concentrated scent essence into the surrounding air, monochrome solid black on pure flat white background, standalone symbol mark only, clean sharp geometric silhouette, flat 2D luxury emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안5_참고12.jpg
+
+**Prompt**:
+An architectural haute perfumery brand symbol composed of interlocking solid L-bracket framing planes and a central square core, separated by crisp negative-space linear channels, inspired by traditional Korean window lattice geometry and modern perfume bottle packaging architecture, solid monochrome black on pure flat white background, standalone fragrance emblem only, sharp vector line cuts, high-contrast flat 2D emblem
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+---
+
+# 로고 초안5_참고13.jpg
+
+**Prompt**:
+A prestigious niche fragrance insignia constructed on precise Cartesian and circular grid lines, featuring a bold square frame plane accented by an upper circular intersection cutout, embodying the mathematical precision of perfume compounding and oriental spatial harmony, solid monochrome black on pure flat white background, sharp geometric precision, flat 2D vector graphic mark
+
+**Negative Prompt**:
+text, letters, words, font, typography, alphabet, brand name, signature, watermark, color, colorful, gradient, 3d effects, 3d mockup, realistic photo, texture, shadow, paper texture, embossing, bottle mockup, card mockup, Mapae illustration, horse picture, ancient coin, brass token, folklore, rustic style, primitive, crude, complex background, cluttered decoration, complex lines, ornate patterns, chinese style, chinese motifs, chinese patterns, japanese style, japanese motifs, japanese crest, kamon, zen circle, torii
+
+
+
+
+
