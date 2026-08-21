@@ -8,6 +8,7 @@
         :root {
             --bg-white: #ffffff;
             --bg-base: #fafafa;
+            --bg-linen: #fbfbfa;
             --bg-surface: #f4f4f5;
             --bg-dark: #121212;
             --bg-dark-card: #18181b;
@@ -17,9 +18,11 @@
             --text-muted: #71717a;
             --border-line: #e4e4e7;
             --border-dark: #27272a;
-            --accent-brass: #b45309;
-            --accent-brass-light: #fef3c7;
-            --accent-red: #b91c1c;
+            --accent-brass: #ca8a04;
+            --accent-brass-light: #fef08a;
+            --accent-brass-dark: #a16207;
+            --accent-red: #991b1b;
+            --accent-pine: #15803d;
             --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-serif: 'Nanum Myeongjo', serif;
             --font-mono: 'SF Mono', 'Courier New', monospace;
@@ -33,7 +36,7 @@
 
         /* Typography */
         .section-header { text-align: center; margin-bottom: 56px; }
-        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brass); border-bottom: 1px solid var(--accent-brass); padding-bottom: 4px; margin-bottom: 16px; }
+        .section-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brass); border-bottom: 1px solid var(--accent-brass); padding-bottom: 4px; margin-bottom: 16px; font-family: var(--font-mono); }
         .section-title { font-size: 34px; font-weight: 900; letter-spacing: -0.6px; line-height: 1.4; color: var(--text-primary); margin-bottom: 16px; font-family: var(--font-serif); word-break: keep-all; }
         .section-desc { font-size: 15px; color: var(--text-secondary); max-width: 760px; margin: 0 auto; word-break: keep-all; line-height: 1.85; }
 
@@ -43,7 +46,7 @@
         .btn-outline { background: transparent; color: var(--text-primary); padding: 14px 30px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--border-dark); cursor: pointer; text-align: center; transition: all 0.2s; }
         .btn-outline:hover { background: var(--bg-surface); }
         .btn-brass { background: var(--accent-brass); color: #ffffff; padding: 14px 30px; border-radius: 2px; font-weight: 800; font-size: 13px; display: inline-block; text-decoration: none; border: 1px solid var(--accent-brass); cursor: pointer; text-align: center; transition: all 0.2s; }
-        .btn-brass:hover { background: #92400e; }
+        .btn-brass:hover { background: var(--accent-brass-dark); }
 
         /* Grids & Cards */
         .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
@@ -56,20 +59,26 @@
         .feature-title { font-size: 20px; font-weight: 900; font-family: var(--font-serif); margin-bottom: 10px; }
         .feature-text { font-size: 13px; color: var(--text-secondary); line-height: 1.8; word-break: keep-all; }
 
-        /* Stat Metrics */
+        /* Craft Principles Metrics */
         .stat-box { background: #ffffff; border: 1px solid var(--border-line); padding: 28px 20px; text-align: center; border-radius: 4px; }
-        .stat-num { font-size: 36px; font-weight: 900; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 4px; }
+        .stat-num { font-size: 24px; font-weight: 900; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 6px; }
         .stat-lbl { font-size: 12px; font-weight: 800; color: var(--text-secondary); }
 
         /* Heritage Badge */
-        .seal-badge { width: 44px; height: 44px; border: 2px solid var(--accent-red); color: var(--accent-red); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-weight: 900; font-size: 18px; border-radius: 3px; background: rgba(185,28,28,0.08); letter-spacing: -1px; }
+        .seal-badge { width: 44px; height: 44px; border: 1.5px solid var(--accent-red); color: var(--accent-red); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-weight: 900; font-size: 18px; border-radius: 3px; background: rgba(153,27,27,0.06); letter-spacing: -1px; }
 
         /* Timeline Box */
         .timeline-item { position: relative; padding-left: 32px; border-left: 2px solid var(--border-line); margin-bottom: 36px; }
         .timeline-item::before { content: ''; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-brass); }
-        .timeline-year { font-size: 13px; font-weight: 900; font-family: var(--font-mono); color: var(--accent-brass); margin-bottom: 4px; }
+        .timeline-year { font-size: 12.5px; font-weight: 900; font-family: var(--font-mono); color: var(--accent-brass); margin-bottom: 4px; }
         .timeline-title { font-size: 17px; font-weight: 900; font-family: var(--font-serif); margin-bottom: 6px; }
         .timeline-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+        /* Ultra Clean Transparent Minimal Badges */
+        .product-badge { font-size: 10.5px; font-weight: 800; font-family: var(--font-mono); background: transparent; padding: 3px 8px; border-radius: 2px; display: inline-block; letter-spacing: 0.5px; }
+        .product-badge-1mapae { color: var(--accent-pine); border: 1px solid rgba(21, 128, 61, 0.35); }
+        .product-badge-2mapae { color: var(--accent-red); border: 1px solid rgba(153, 27, 27, 0.4); }
+        .product-badge-3mapae { color: var(--accent-brass); border: 1px solid rgba(202, 138, 4, 0.45); }
     </style>
 </head>
 <body>
@@ -79,7 +88,7 @@
         <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
             <div>"내가 머무는 공간과 시간의 깊이, 나만의 시그니처 향으로 완성하는 어사 비밀 첩보" 『사단(士團)』</div>
             <div style="display:flex; gap:16px;">
-                <span>누적 12만병 완판</span><span>|</span><span>100% 환급 디스커버리 킷</span><span>|</span><span>북촌·성수 아틀리에</span><span>|</span><span>1:1 조향 예약</span>
+                <span>100% 커스텀 레이어링</span><span>|</span><span>100% 환급 디스커버리 킷</span><span>|</span><span>K-헤리티지 포터블 럭셔리</span><span>|</span><span>1:1 조향 도슨트</span>
             </div>
         </div>
     </div>
@@ -100,9 +109,8 @@
                 <a href="#heritage" style="text-decoration:none; color:var(--text-secondary);">마패 헤리티지</a>
                 <a href="#custom" style="text-decoration:none; color:var(--text-secondary);">어사 비밀 첩보</a>
                 <a href="#hardware" style="text-decoration:none; color:var(--text-secondary);">포터블 럭셔리</a>
-                <a href="#atelier" style="text-decoration:none; color:var(--text-secondary);">아틀리에 공간</a>
+                <a href="#atelier" style="text-decoration:none; color:var(--text-secondary);">아틀리에 콘셉트</a>
             </nav>
-            <a href="카테고리.html#cat-bespoke" class="btn-black" style="padding:10px 20px; font-size:12px;">디스커버리 킷 &gt;</a>
         </div>
     </header>
 
@@ -117,27 +125,27 @@
                 </h1>
                 <p style="font-size:16px; color:var(--text-secondary); line-height:1.9; margin-bottom:44px; word-break:keep-all;">
                     기존 프리미엄 향수 시장은 무겁고 깨지기 쉬운 대용량 유리병, 가방 속 누수 문제, 그리고 모두가 똑같은 향을 풍기는 '클론화'에 갇혀 있었습니다.<br>
-                    사단(士團)은 조선 암행어사의 마패(馬牌) 헤리티지에서 출발하여, <strong>가방과 바지에 달고 다니는 포터블 럭셔리 하드웨어</strong>와 <strong>어떤 비율로 섞어도 완벽한 조화를 이루는 100% 커스텀 레이어링 시스템</strong>으로 향의 새로운 패러다임을 제안합니다.
+                    사단(士團)은 조선 암행어사의 마패(馬牌) 헤리티지에서 영감을 받아, <strong>가방과 벨트에 걸 수 있는 포터블 럭셔리 하드웨어</strong>와 <strong>어떤 비율로 레이어링해도 불협화음 없이 조화로운 100% 커스텀 시스템</strong>으로 향의 새로운 패러다임을 제안합니다.
                 </p>
                 <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-                    <a href="#heritage" class="btn-black">사단 헤리티지 스토리 읽기 &gt;</a>
-                    <a href="카테고리.html" class="btn-outline">16대 마스터 라인업 보기</a>
+                    <a href="#heritage" class="btn-black">사단 헤리티지 철학 읽기 &gt;</a>
+                    <a href="카테고리.html" class="btn-outline">16대 마스터 컬렉션 보기</a>
                 </div>
             </div>
 
-            <!-- 4대 핵심 실적 매트릭스 -->
+            <!-- 4대 제작 원칙 및 가치 지표 매트릭스 -->
             <div class="grid-4" style="margin-top:70px;">
                 <div class="stat-box">
-                    <div class="stat-num">120,000+</div>
-                    <div class="stat-lbl">누적 완판 수량 (병)</div>
+                    <div class="stat-num">3-TIER</div>
+                    <div class="stat-lbl">1·2·3마패 체계적 등급제</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-num">0% LEAK</div>
-                    <div class="stat-lbl">마그네틱 원터치 누수율 제로</div>
+                    <div class="stat-num">MAGNETIC</div>
+                    <div class="stat-lbl">정밀 밀폐형 마그네틱 캡</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-num">16 MASTER</div>
-                    <div class="stat-lbl">충돌 없는 마패 포뮬러</div>
+                    <div class="stat-lbl">충돌 없는 마스터 포뮬러</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-num">100% REFUND</div>
@@ -160,41 +168,41 @@
 
             <div class="grid-3" style="margin-top:40px;">
                 <div class="feature-card">
-                    <div class="feature-num">01. 1마패 — BASE</div>
+                    <div class="feature-num" style="color:var(--accent-pine);">01. 1마패 — BASE</div>
                     <h3 class="feature-title">일상의 은은한 시작</h3>
                     <p class="feature-text">
                         가벼운 외출과 아침 미팅, 맑은 숨결처럼 피부에 얇게 밀착되어 하루의 든든한 밑바탕이 되어주는 데일리 컴팩트 베이스 향입니다.
                     </p>
                 </div>
-                <div class="feature-card" style="border:1.5px solid var(--accent-brass); background:#fffcf8;">
-                    <div class="feature-num">02. 2마패 — POINT</div>
+                <div class="feature-card">
+                    <div class="feature-num" style="color:var(--accent-red);">02. 2마패 — POINT</div>
                     <h3 class="feature-title">감성과 개성의 전환</h3>
                     <p class="feature-text">
-                        오후의 나른함을 깨우고 칠정(七情)의 감정 균형을 되찾아주는 포인트 향. 책상 위 인테리어 문진으로도 영구 소장되는 디깅 오브제입니다.
+                        오후의 나른함을 깨우고 감정의 균형을 되찾아주는 포인트 향. 책상 위 인테리어 문진으로도 소장되는 디깅 오브제입니다.
                     </p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-num">03. 3마패 — SIGNATURE</div>
+                    <div class="feature-num" style="color:var(--accent-brass);">03. 3마패 — SIGNATURE</div>
                     <h3 class="feature-title">공간을 압도하는 서명</h3>
                     <p class="feature-text">
-                        무형문화재 방짜유기 놋쇠 캡을 얹어 격식 있는 자리를 온종일 압도하는 올데이 하이엔드 침향·백단 시그니처 컬렉션입니다.
+                        전통 방짜유기 주조 놋쇠 캡을 얹어 격식 있는 자리를 온종일 압도하는 올데이 하이엔드 침향·백단 시그니처 컬렉션입니다.
                     </p>
                 </div>
             </div>
 
-            <!-- 규장각 500년 왕실 의궤 복원 박스 -->
+            <!-- 전통 향방 철학 박스 -->
             <div style="margin-top:48px; background:var(--bg-surface); border:1px solid var(--border-line); padding:40px; border-radius:4px; display:grid; grid-template-columns:1.5fr 1fr; gap:36px; align-items:center;">
                 <div>
-                    <span style="font-size:11px; font-weight:800; color:var(--accent-brass); letter-spacing:1px; font-family:var(--font-mono);">ROYAL ARCHIVE RECORD</span>
-                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin:8px 0 12px;">규장각 500년 조선 왕실 향방 의궤(儀軌) 고증</h3>
+                    <span style="font-size:11px; font-weight:800; color:var(--accent-brass); letter-spacing:1px; font-family:var(--font-mono);">K-HERITAGE PHILOSOPHY</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin:8px 0 12px;">조선 선비의 서재와 전통 향방 문화의 현대적 계승</h3>
                     <p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">
-                        사단 연구소는 규장각에 보존된 500년 전 조선 왕실 향방 의궤의 한자 원문을 정밀 고증하여, 침향과 백단, 송연묵을 다루던 옛 선조들의 절제된 조향 철학을 현대의 IFRA 글로벌 안전 기준과 융합 복원하였습니다.
+                        사단은 조선 선비들이 서재에서 먹을 갈고 침향을 훈향하며 마음을 정돈하던 고유의 절제미를 바탕으로, 현대의 글로벌 안전 기준(IFRA)에 부합하는 정교한 레이어링 하우스를 지향합니다.
                     </p>
                 </div>
                 <div style="background:#ffffff; border:1px solid var(--border-line); padding:24px; text-align:center; border-radius:4px;">
-                    <div style="font-size:12px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">조선 왕실 향방 의궤 기록</div>
+                    <div style="font-size:12px; font-weight:800; color:var(--text-muted); margin-bottom:8px;">조선 전통 조향 철학의 재해석</div>
                     <div style="font-size:24px; font-weight:900; font-family:var(--font-serif); letter-spacing:4px; color:var(--text-primary); margin-bottom:8px;">肆壇 御史 秘傳</div>
-                    <div style="font-size:11px; color:var(--accent-brass); font-family:var(--font-mono);">100% Botanical Heritage Formula</div>
+                    <div style="font-size:11px; color:var(--accent-brass); font-family:var(--font-mono);">Modern Heritage Perfumery</div>
                 </div>
             </div>
         </div>
@@ -207,23 +215,23 @@
                 <span class="section-tag">CUSTOM OLFACTIVE CIPHER</span>
                 <h2 class="section-title">충돌 없는 분자 결합 설계와<br>『어사 비밀 첩보』 레이어링 가이드</h2>
                 <p class="section-desc">
-                    어떤 원료를 혼합해도 불쾌한 충돌 없이 나만의 독창적인 향조로 완성되도록 설계된 사단만의 정밀 분자 결합 포뮬러입니다.
+                    어떤 원료를 혼합해도 불쾌한 충돌 없이 나만의 독창적인 향조로 완성되도록 설계된 사단만의 커스텀 레이어링 시스템입니다.
                 </p>
             </div>
 
             <div class="grid-3">
                 <div class="feature-card">
                     <div class="feature-num">STEP 01</div>
-                    <h3 class="feature-title">AI 맞춤 조향 진단</h3>
+                    <h3 class="feature-title">맞춤 조향 진단</h3>
                     <p class="feature-text">
-                        1분간의 후각 취향 설문을 통해 사용자의 일상 루틴, 선호 향조(우디/시트러스/플로럴), TPO에 최적화된 마패 베이스를 분석합니다.
+                        1분간의 후각 취향 설문을 통해 사용자의 일상 루틴, 선호 향조(우디/시트러스/플로럴), TPO에 최적화된 마패 베이스를 안내합니다.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">STEP 02</div>
-                    <h3 class="feature-title">어사 비밀 첩보 카드 발급</h3>
+                    <h3 class="feature-title">어사 비밀 첩보 카드 동봉</h3>
                     <p class="feature-text">
-                        제품 구매 시 고유 암호(#Cipher)가 기재된 실물 레시피 카드가 동봉되어, 실패 없는 완벽한 레이어링 분무 비율(3:1, 2:2)을 안내합니다.
+                        제품 구매 시 고유 암호(#Cipher)가 기재된 실물 레시피 카드가 동봉되어, 실패 없는 완벽한 레이어링 분무 비율(3:1, 2:2)을 가이드합니다.
                     </p>
                 </div>
                 <div class="feature-card">
@@ -242,32 +250,32 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">PORTABLE LUXURY & HIP-TRADITION</span>
-                <h2 class="section-title">가방에 걸고 다니는 포터블 오브제,<br>절대 새지 않는 마그네틱 원터치 캡</h2>
+                <h2 class="section-title">가방에 걸고 다니는 포터블 오브제,<br>누수를 방지하는 정밀 마그네틱 캡</h2>
                 <p class="section-desc">
-                    기존 향수의 휴대 한계를 극복하기 위해, 가방과 바지에 '백꾸 키링'으로 걸 수 있는 방짜유기 놋쇠 참(Charm)과 무결점 밀폐 설계를 완성했습니다.
+                    기존 향수의 휴대 한계를 극복하기 위해, 가방과 벨트에 '백꾸 키링'으로 걸 수 있는 방짜유기 놋쇠 참(Charm)과 밀폐 설계를 기획했습니다.
                 </p>
             </div>
 
             <div class="grid-3">
                 <div class="feature-card">
                     <div class="feature-num">HARDWARE 01</div>
-                    <h3 class="feature-title">마그네틱 세이프 캡</h3>
+                    <h3 class="feature-title">마그네틱 밀폐 캡</h3>
                     <p class="feature-text">
-                        격렬한 움직임에도 가방 속에서 절대 분리되거나 새지 않는 이중 자석 밀폐 캡 구조. 한 손으로 경쾌하게 열고 닫히는 손맛을 선사합니다.
+                        일상의 움직임 속에서도 가방 안에서 쉽게 분리되지 않도록 고려된 자석 밀폐 캡 구조로 한 손으로 경쾌하게 열고 닫히는 사용감을 제공합니다.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">HARDWARE 02</div>
                     <h3 class="feature-title">방짜유기 마패 참 (Charm)</h3>
                     <p class="feature-text">
-                        국가 무형문화재 주성장 장인이 주조한 100% 황동 놋쇠 마패 키체인. 가방, 벨트 고리, 파우치에 걸어 힙트래디션 룩을 완성합니다.
+                        전통 방짜유기 놋쇠 주조 기법에 착안한 메탈 마패 펜던트. 가방, 벨트 고리, 파우치에 걸어 나만의 힙트래디션 룩을 완성합니다.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-num">HARDWARE 03</div>
-                    <h3 class="feature-title">영구 소장형 디깅 문진</h3>
+                    <h3 class="feature-title">소장형 오브제 문진</h3>
                     <p class="feature-text">
-                        향수를 다 쓴 후에도 버려지지 않고, 책상 위의 고급 서예 문진이나 인센스 스틱 홀더로 평생 곁에 머무는 지속 가능한 오브제입니다.
+                        향수를 다 사용한 후에도 책상 위의 서예 문진이나 인센스 홀더로 영구 소장할 수 있는 지속 가능한 오브제 가치를 추구합니다.
                     </p>
                 </div>
             </div>
@@ -277,32 +285,32 @@
                 <div>
                     <span class="section-tag" style="margin-bottom:8px;">PACKAGING AESTHETIC</span>
                     <h4 style="font-size:18px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">능화창(菱花窓) 꽃살문 격자 상자 & 수제 한지 띠지 봉인</h4>
-                    <p style="font-size:13px; color:var(--text-secondary);">조선 전통 목판 수공예로 조각된 박스에 붉은색 수제 한지 띠지를 둘러 언박싱하는 순간부터 헤리티지의 감동을 전합니다.</p>
+                    <p style="font-size:13px; color:var(--text-secondary);">조선 전통 창호의 꽃살문 패턴 상자에 붉은색 수제 한지 띠지를 둘러 언박싱하는 순간부터 한국적 정취를 전합니다.</p>
                 </div>
                 <div class="seal-badge">士印</div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-06: 순수 원료 & 초임계 저온 추출 & 칠정(七情) 아로마 테라피 (Purity & Bio-Tech) -->
+    <!-- SEC-06: 순수 원료 & 초임계 저온 추출 (Purity & Bio-Extraction) -->
     <section style="padding:110px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">PURE BOTANICALS & BIO-EXTRACTION</span>
                 <h2 class="section-title">지리산 적송부터 천년 백단까지,<br>열 변형 없는 초임계 CO₂ 저온 추출</h2>
                 <p class="section-desc">
-                    자연 원료 고유의 생명력과 청정함을 100% 보존하기 위해 화학 잔여물이 전혀 남지 않는 친환경 초임계 저온 공법만을 고집합니다.
+                    자연 원료 고유의 생명력과 향조를 보존하기 위해 화학 잔여물을 최소화하는 친환경 초임계 저온 공법을 적용합니다.
                 </p>
             </div>
 
             <div class="grid-4">
                 <div class="feature-card">
-                    <div style="font-size:11px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:8px;">01. BOTANICAL</div>
+                    <div style="font-size:11px; font-weight:800; font-family:var(--font-mono); color:var(--accent-pine); margin-bottom:8px;">01. BOTANICAL</div>
                     <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">지리산 적송 (Pine)</h4>
                     <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">새벽 이슬 머금은 서늘한 솔잎의 청량함과 깊은 우디 잔향.</p>
                 </div>
                 <div class="feature-card">
-                    <div style="font-size:11px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:8px;">02. BOTANICAL</div>
+                    <div style="font-size:11px; font-weight:800; font-family:var(--font-mono); color:var(--accent-pine); margin-bottom:8px;">02. BOTANICAL</div>
                     <h4 style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:8px;">하동 청유자 (Yuzu)</h4>
                     <p style="font-size:12px; color:var(--text-secondary); line-height:1.7;">지리산 자락 청정 옥토에서 자라 껍질째 압착한 싱그러운 시트러스.</p>
                 </div>
@@ -318,82 +326,82 @@
                 </div>
             </div>
 
-            <!-- 동의보감 칠정 아로마 휠 배너 -->
+            <!-- 안전 및 품질 지향 가이드 배너 -->
             <div style="margin-top:40px; background:#ffffff; border:1px solid var(--border-line); padding:36px; border-radius:4px; text-align:center;">
-                <span class="section-tag" style="margin-bottom:8px;">7 EMOTIONS BALANCING</span>
-                <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px;">동의보감 칠정(七情)을 다스리는 마음 치유 아로마 테라피</h4>
+                <span class="section-tag" style="margin-bottom:8px;">QUALITY & SAFETY TARGETS</span>
+                <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px;">안전하고 편안한 착향을 위한 사단의 조향 기준</h4>
                 <p style="font-size:13px; color:var(--text-secondary); max-width:680px; margin:0 auto 20px; line-height:1.8;">
-                    기쁨(喜), 분노(怒), 슬픔(悲), 두려움(恐) 등 현대인의 흩어진 감정 상태에 맞춰 향기가 신경을 이완하고 중심을 잡아줍니다.
+                    국제향료협회(IFRA) 표준을 준수하며, 피부에 자극이 적고 은은하게 머무는 지속 가능한 포뮬러를 지향합니다.
                 </p>
-                <div style="display:inline-flex; gap:12px; font-size:12px; font-weight:800; color:var(--accent-brass);">
-                    <span>#EWG올그린</span><span>•</span><span>#IFRA국제인증</span><span>•</span><span>#비건포뮬러</span><span>•</span><span>#피부저자극테스트완료</span>
+                <div style="display:inline-flex; gap:12px; font-size:12px; font-weight:800; color:var(--text-secondary);">
+                    <span>#IFRA안전기준</span><span>•</span><span>#EWG올그린지향</span><span>•</span><span>#클린포뮬러</span><span>•</span><span>#피부저자극테스트목표</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-07: 공간 & 컬처럴 익스피리언스 (Spaces & Global Journey) -->
+    <!-- SEC-07: 공간 & 쇼룸 콘셉트 (Spaces & Atelier Concept) -->
     <section id="atelier" style="padding:110px 0; border-bottom:1px solid var(--border-line); background:#ffffff;">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">EXPERIENCE ATELIERS</span>
-                <h2 class="section-title">사단의 철학이 살아 숨 쉬는 공간과<br>프라이빗 1:1 아틀리에 클래스</h2>
+                <span class="section-tag">ATELIER & SHOWROOM CONCEPT</span>
+                <h2 class="section-title">사단의 철학이 살아 숨 쉬는 공간과<br>1:1 프라이빗 도슨트 프로그램</h2>
                 <p class="section-desc">
-                    전통 한옥의 고즈넉한 정취 속에서 나만의 마패 포뮬러를 조합하는 북촌·성수 아틀리에와 심야 시향 공간입니다.
+                    전통의 고즈넉한 정취 속에서 나만의 마패 포뮬러를 조합하는 아틀리에 쇼룸 기획안입니다.
                 </p>
             </div>
 
             <div class="grid-2">
                 <div style="background:var(--bg-surface); border:1px solid var(--border-line); padding:40px; border-radius:4px;">
-                    <span class="section-tag" style="margin-bottom:8px;">BUKCHON & SEONGSU</span>
-                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">북촌 한옥 본점 & 성수 아틀리에</h3>
+                    <span class="section-tag" style="margin-bottom:8px;">FLAGSHIP ATELIER</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">사단 프라이빗 아틀리에 (쇼룸 안내)</h3>
                     <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">
-                        조선 무형문화재 아티잔 장인 직속으로 16가지 원료를 직접 시향하고 배합 비율을 기록하는 1:1 타임슬롯 예약제 프라이빗 조향 클래스를 운영합니다.
+                        사단의 16가지 원료를 직접 시향하고 나만의 레이어링 배합 비율을 기록하는 1:1 예약제 시향 도슨트 공간을 준비 중입니다.
                     </p>
-                    <a href="카테고리.html#cat-bespoke" class="btn-black" style="width:100%;">1:1 아틀리에 예약 안내 &gt;</a>
+                    <a href="카테고리.html" class="btn-black" style="width:100%;">아틀리에 안내 &gt;</a>
                 </div>
 
                 <div style="background:var(--bg-surface); border:1px solid var(--border-line); padding:40px; border-radius:4px;">
-                    <span class="section-tag" style="margin-bottom:8px;">MIDNIGHT SPEAKEASY</span>
-                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">심야 성수 비밀 바 (22:00 ~ 02:00)</h3>
+                    <span class="section-tag" style="margin-bottom:8px;">SCENT PAIRING</span>
+                    <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin-bottom:12px;">전통 발효주 & 묵향 페어링 콘셉트</h3>
                     <p style="font-size:13px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">
-                        자정이 가까워지는 밤, 문경 사과 전통 증류주와 훈증 참숯 향수의 스모키한 공감각 페어링을 즐기는 사단만의 시크릿 심야 시향 프로그램입니다.
+                        전통 증류주와 훈증 향수의 스모키한 깊이를 공감각적으로 체험하는 사단만의 문화 시향 프로그램을 기획하고 있습니다.
                     </p>
-                    <a href="카테고리.html#cat-bespoke" class="btn-outline" style="width:100%; background:#fff;">심야 페어링 프로그램 보기 &gt;</a>
+                    <a href="카테고리.html" class="btn-outline" style="width:100%; background:#fff;">시향 프로그램 보기 &gt;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEC-08: 브랜드 타임라인 & 신뢰 지표 (Milestones & Trust) -->
+    <!-- SEC-08: 브랜드 철학 및 제작 로드맵 (Philosophy & Roadmap) -->
     <section style="padding:110px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
         <div class="container-narrow">
             <div class="section-header">
-                <span class="section-tag">BRAND TIMELINE & TRACK RECORD</span>
-                <h2 class="section-title">사단(士團)이 걸어온 발자취</h2>
-                <p class="section-desc">한국의 전통 헤리티지를 현대 포터블 럭셔리로 정립해 온 사단의 성장 기록입니다.</p>
+                <span class="section-tag">BRAND PHILOSOPHY & ROADMAP</span>
+                <h2 class="section-title">사단(士團)이 걸어가는 제작 여정</h2>
+                <p class="section-desc">한국의 전통 헤리티지를 현대 포터블 럭셔리로 완성해 나가는 사단의 제작 로드맵입니다.</p>
             </div>
 
             <div style="margin-top:50px;">
                 <div class="timeline-item">
-                    <div class="timeline-year">2023. 03</div>
-                    <div class="timeline-title">사단(士團) 하우스 설립 & 조선 암행어사 마패 IP 연구 착수</div>
-                    <div class="timeline-desc">규장각 500년 왕실 향방 의궤 복원 연구 및 초임계 CO₂ 저온 추출 기술 특허 출원.</div>
+                    <div class="timeline-year">STAGE 01. HERITAGE & ORIGIN</div>
+                    <div class="timeline-title">조선 암행어사 마패와 서재 묵향의 후각적 재해석</div>
+                    <div class="timeline-desc">조선 선비의 묵향 철학을 바탕으로, 자신을 드러내는 은밀한 인장으로서의 향수 콘셉트 정립.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2024. 05</div>
-                    <div class="timeline-title">1·2·3마패 등급제 및 방짜유기 놋쇠 참(Charm) 하드웨어 개발</div>
-                    <div class="timeline-desc">국가 무형문화재 주성장 협업을 통해 누수율 0% 마그네틱 원터치 용기 양산 성공.</div>
+                    <div class="timeline-year">STAGE 02. HARDWARE & CRAFT</div>
+                    <div class="timeline-title">1·2·3마패 체계 및 방짜유기 놋쇠 참(Charm) 디자인</div>
+                    <div class="timeline-desc">가방에 걸고 다니는 포터블 하드웨어와 밀폐형 마그네틱 캡 용기 설계 완성.</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2025. 09</div>
-                    <div class="timeline-title">북촌 한옥 본점 오픈 & 누적 12만병 완판 달성</div>
-                    <div class="timeline-desc">100% 환급 디스커버리 킷 론칭 및 B2B 전통 문화재단 공식 기념품 선정.</div>
+                    <div class="timeline-year">STAGE 03. FORMULATION ARCHIVE</div>
+                    <div class="timeline-title">초임계 저온 CO2 추출 기반 16대 마스터 포뮬러 완성</div>
+                    <div class="timeline-desc">하동 청유자, 지리산 적송, 송연묵 등 16종의 독창적 향조와 100% 환급 디스커버리 킷 론칭.</div>
                 </div>
                 <div class="timeline-item" style="margin-bottom:0;">
-                    <div class="timeline-year">2026. PRESENT</div>
-                    <div class="timeline-title">글로벌(파리·뉴욕·도쿄) 순회 팝업 & 디지털 마패 QR 패스 도입</div>
-                    <div class="timeline-desc">K-헤리티지 포터블 럭셔리 니치 퍼퓸 대표 하우스로서 글로벌 시장 진출 가속화.</div>
+                    <div class="timeline-year">STAGE 04. HORIZON & VISION</div>
+                    <div class="timeline-title">K-헤리티지 포터블 럭셔리 니치 하우스로의 도약</div>
+                    <div class="timeline-desc">한국 전통의 기품을 현대인의 일상과 글로벌 공간에 전하는 대표 하우스로 발전.</div>
                 </div>
             </div>
         </div>
@@ -402,7 +410,7 @@
     <!-- SEC-09: 브랜드 에필로그 (Brand Epilogue & Final Manifesto) -->
     <section id="epilogue" style="padding:120px 0; background:#18181b; color:#f4f4f5; border-bottom:1px solid var(--border-dark); position:relative; overflow:hidden;">
         <div class="container-narrow" style="text-align:center;">
-            <span style="display:inline-block; font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--accent-brass); border-bottom:1px solid var(--accent-brass); padding-bottom:4px; margin-bottom:20px;">
+            <span style="display:inline-block; font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--accent-brass); border-bottom:1px solid var(--accent-brass); padding-bottom:4px; margin-bottom:20px; font-family:var(--font-mono);">
                 THE EPILOGUE OF SADAN
             </span>
 
@@ -413,7 +421,7 @@
             <p style="font-size:14px; color:#a1a1aa; line-height:1.9; max-width:680px; margin:0 auto 48px; word-break:keep-all; font-weight:400;">
                 사단(士團)은 단순히 몸에 뿌리는 향을 짓지 않습니다.<br>
                 조선 암행어사가 품속 깊이 간직하던 마패처럼, 복잡한 일상 속에서 온전한 ‘나 자신’을 증명하고 드러내는 가장 은밀하고 기품 있는 인장(印章)을 조향합니다.<br>
-                지리산의 서늘한 적송부터 천년의 백단향, 그리고 가장 순수한 초임계 추출 정수까지—<br>
+                지리산의 서늘한 적송부터 천년의 백단향, 그리고 순수한 초임계 추출 정수까지—<br>
                 시대를 초월한 한국의 헤리티지를 당신의 고유한 숨결 위에 새겨 넣습니다.
             </p>
 
@@ -421,10 +429,10 @@
                 <div class="seal-badge">士印</div>
                 <div>
                     <div style="font-size:13px; font-weight:800; color:#e4e4e7; letter-spacing:1px; font-family:var(--font-serif);">
-                        사단 조향 장인단 · 肆壇 首席 調香師
+                        사단 조향 아티잔 일동 · 肆壇 調香師
                     </div>
                     <div style="font-size:11px; color:#71717a; font-family:var(--font-mono); margin-top:2px;">
-                        Master Perfumers of SADAN Haute Perfumery House
+                        SADAN Haute Perfumery House
                     </div>
                 </div>
             </div>
@@ -446,7 +454,7 @@
             <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;">
                 <div>
                     <div style="font-size:16px; font-weight:900; color:#fff; font-family:var(--font-serif); margin-bottom:14px;">士團 (SADAN)</div>
-                    <p style="line-height:1.8;">조선 암행어사 마패 헤리티지 & 100% 커스텀 레이어링 하우스.<br>서울시 종로구 북촌로 142 · 성수동 연무장길 88</p>
+                    <p style="line-height:1.8;">조선 암행어사 마패 헤리티지 & 100% 커스텀 레이어링 하우스.<br>SADAN Haute Perfumery House · Seoul, Korea</p>
                 </div>
                 <div>
                     <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">마패 컬렉션</div>
@@ -454,11 +462,11 @@
                 </div>
                 <div>
                     <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">기술 및 연구</div>
-                    <p style="line-height:2;">· 초임계 CO2 추출<br>· 분자 결합 포뮬러<br>· 포터블 하드웨어<br>· IFRA 안전 인증</p>
+                    <p style="line-height:2;">· 초임계 CO2 추출<br>· 분자 결합 포뮬러<br>· 포터블 하드웨어<br>· IFRA 안전 가이드라인</p>
                 </div>
                 <div>
                     <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">고객 지원</div>
-                    <p style="line-height:2;">· 100% 환급 쿠폰<br>· EWG 올그린 인증<br>· B2B 기업 견적<br>· 1:1 아틀리에 예약</p>
+                    <p style="line-height:2;">· 100% 환급 쿠폰<br>· EWG 올그린 지향<br>· B2B 기업 견적<br>· 1:1 아틀리에 도슨트</p>
                 </div>
             </div>
             <div style="border-top:1px solid var(--border-dark); padding-top:24px; text-align:center; color:#71717a;">
