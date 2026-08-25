@@ -99,9 +99,9 @@
             align-items: center;
         }
 
-        /* Prevent Horizontal Scroll */
-        html, body {
-            overflow-x: hidden;
+        /* Prevent Horizontal Scroll without breaking position: sticky */
+        body {
+            overflow-x: clip;
             width: 100%;
             max-width: 100%;
         }
@@ -118,57 +118,323 @@
             header nav { gap: 14px; font-size: 12px; }
         }
 
+        /* Center-Aligned GNB & Sticky Header */
+        .main-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-line);
+            z-index: 1000;
+            padding: 14px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+        .gnb-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+        .gnb-nav {
+            display: flex;
+            gap: 28px;
+            font-size: 13.5px;
+            font-weight: 700;
+            align-items: center;
+            justify-self: center;
+        }
+        .gnb-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 6px 0;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .gnb-link:hover {
+            color: var(--text-primary);
+        }
+        .gnb-link.active {
+            color: var(--text-primary);
+            font-weight: 900;
+            border-bottom-color: var(--text-primary);
+        }
+
+        .user-menu-btn {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: color 0.2s ease, transform 0.2s ease;
+            padding: 0;
+        }
+        .user-menu-btn:hover {
+            color: var(--accent-brass);
+            transform: scale(1.1);
+        }
+
+        /* Hero Typography & Elements */
+        .hero-main-title {
+            font-size: 38px;
+            font-weight: 900;
+            font-family: var(--font-serif);
+            line-height: 1.4;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+        .hero-main-desc {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 40px;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+        .desktop-br {
+            display: inline;
+        }
+
+        /* Floating Cart Sticky Pill Widget */
+        .floating-cart-pill {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: var(--bg-dark);
+            color: #ffffff;
+            border: 1px solid #27272a;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+            user-select: none;
+        }
+        .floating-cart-pill:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.3);
+            border-color: var(--accent-brass);
+        }
+
+        .gnb-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            justify-self: start;
+            flex-shrink: 0;
+            padding-left: 6px;
+            transition: opacity 0.2s ease;
+        }
+        .gnb-logo:hover {
+            opacity: 0.85;
+        }
+
         @media (max-width: 768px) {
-            .container, .container-narrow { padding: 0 16px; }
-            
-            /* Top Bar */
+            .container, .container-narrow { padding: 0 16px !important; }
             .top-bar-sub { display: none !important; }
+            .top-bar-desktop { display: none !important; }
+            .top-bar-mobile { display: block !important; font-size: 10.5px !important; text-align: center !important; width: 100% !important; letter-spacing: 0.2px !important; }
+            .desktop-br { display: none !important; }
             
-            /* Header Navigation Horizontal Scrolling */
-            header { padding: 14px 0 !important; }
-            header .container { flex-direction: column; align-items: flex-start !important; gap: 14px !important; }
-            header nav { width: 100%; overflow-x: auto; white-space: nowrap; gap: 16px !important; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-            header nav::-webkit-scrollbar { display: none; }
+            /* GNB Minimal Luxury Header for Mobile (Logo Left, User Menu Right) */
+            .gnb-nav { display: none !important; }
+            .gnb-grid {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                width: 100% !important;
+                padding: 0 4px !important;
+            }
+            .gnb-logo {
+                padding-left: 10px !important;
+            }
+            .user-menu-btn {
+                margin-right: 8px !important;
+            }
             
             /* Grids Collapse to 1-Column */
-            .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
-            .btn-dual-wrap { grid-template-columns: 1fr !important; gap: 10px !important; }
+            .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+            
+            /* Bottom Dual Buttons: Compact & Side-by-Side 1-Row Layout */
+            .btn-dual-wrap { 
+                display: grid !important; 
+                grid-template-columns: 1.15fr 1fr !important; 
+                gap: 8px !important; 
+                width: 100% !important;
+            }
+            .btn-dual-wrap .btn-black,
+            .btn-dual-wrap .btn-outline {
+                padding: 10px 6px !important;
+                font-size: 11px !important;
+                white-space: nowrap !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+            .epilogue-btn-wrap {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+                width: 100% !important;
+                margin-top: 24px !important;
+            }
+            .epilogue-btn-wrap a {
+                padding: 10px 6px !important;
+                font-size: 11px !important;
+                white-space: nowrap !important;
+                text-align: center !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
             
             /* 1·2·3 마패 체계 표 모바일 카드형 변환 (가독성 100% 확보) */
             .mapae-table-row {
                 grid-template-columns: 1fr !important;
-                gap: 14px !important;
-                padding: 22px 18px !important;
+                gap: 12px !important;
+                padding: 18px 16px !important;
                 background: var(--bg-surface);
                 border: 1px solid var(--border-line);
                 border-radius: 6px;
-                margin-bottom: 16px;
+                margin-bottom: 14px;
             }
             .mapae-table-row .mapae-badge-col {
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 8px;
             }
             
-            /* Typography Scaling */
-            .section-header { margin-bottom: 36px !important; }
-            .section-title { font-size: 23px !important; line-height: 1.35 !important; }
-            .section-desc { font-size: 13.5px !important; }
+            /* Universal Mobile Heading & Typography Overrides */
+            h1, .hero-main-title, section h1, div h1 {
+                font-size: clamp(22px, 6.5vw, 26px) !important;
+                line-height: 1.35 !important;
+                margin-bottom: 14px !important;
+            }
+            h2, .section-title, section h2, div h2, main h2 {
+                font-size: 19.5px !important;
+                line-height: 1.35 !important;
+                margin-bottom: 10px !important;
+            }
+            h3, .feature-title, section h3, div h3, main h3 {
+                font-size: 15px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+            h4, section h4, div h4 {
+                font-size: 13.5px !important;
+                line-height: 1.4 !important;
+            }
+            .hero-main-desc {
+                font-size: 13px !important;
+                line-height: 1.75 !important;
+                margin-bottom: 24px !important;
+            }
+            .section-header { margin-bottom: 24px !important; }
+            .section-tag { font-size: 9px !important; letter-spacing: 1.5px !important; margin-bottom: 8px !important; }
+            .section-desc { font-size: 12px !important; line-height: 1.7 !important; }
             
             /* Buttons Full Width / Optimized Touch */
-            .btn-black, .btn-outline, .btn-brass { padding: 14px 20px; font-size: 12.5px; }
+            .btn-black, .btn-outline, .btn-brass { padding: 10px 18px !important; font-size: 11.5px !important; }
             
             /* Stats & Timeline */
-            .stat-box { padding: 20px 14px; }
-            .stat-num { font-size: 20px; }
-            .timeline-item { padding-left: 24px; margin-bottom: 28px; }
+            .stat-box { padding: 14px 8px !important; }
+            .stat-num { font-size: 17px !important; }
+            .stat-lbl { font-size: 10px !important; }
+            .timeline-item { padding-left: 18px !important; margin-bottom: 18px !important; }
             
+            /* Floating Cart Responsive */
+            .floating-cart-pill { bottom: 16px !important; right: 16px !important; padding: 7px 14px !important; font-size: 10.5px !important; }
+
             /* Modal Responsive */
             #diagnosisModal > div {
                 width: 94% !important;
                 max-width: 100% !important;
-                padding: 24px 18px !important;
-                margin: 20px auto !important;
+                padding: 22px 16px !important;
+                margin: 16px auto !important;
+            }
+
+            /* ========================================================
+               Mobile Section Vertical Spacing & Distinct Chapter Separation
+               (구간 상하 여백 54px~56px 황금비율 + 명확한 챕터 구분감 부여)
+               ======================================================== */
+            section, main > section {
+                padding-top: 56px !important;
+                padding-bottom: 56px !important;
+                min-height: auto !important;
+                border-bottom: 1px solid var(--border-line) !important;
+            }
+            #heritage, #custom, #hardware, #atelier, #epilogue {
+                padding-top: 54px !important;
+                padding-bottom: 54px !important;
+            }
+            footer {
+                padding-top: 40px !important;
+                padding-bottom: 28px !important;
+            }
+            .section-header {
+                margin-bottom: 28px !important;
+            }
+            
+            /* Section Tag Pill Badge for Clear Section Identification */
+            .section-tag {
+                display: inline-block !important;
+                font-size: 9.5px !important;
+                letter-spacing: 1.5px !important;
+                margin-bottom: 10px !important;
+                background: rgba(202, 138, 4, 0.08) !important;
+                padding: 4px 10px !important;
+                border-radius: 20px !important;
+                border: 1px solid rgba(202, 138, 4, 0.2) !important;
+                font-family: var(--font-mono) !important;
+            }
+
+            /* Card Containers Elevation for Visual Separation */
+            .feature-card, .mapae-table-row, .stat-box {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
+            }
+
+            /* ========================================================
+               모바일 설명 폰트 & 본문 단락(Description Typography) 전면 통일
+               ======================================================== */
+            .section-desc, 
+            section p, 
+            main p,
+            .feature-text {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+                color: var(--text-secondary) !important;
+                word-break: keep-all !important;
+            }
+
+            div[style*="margin-top:70px"], div[style*="margin-top: 70px"] {
+                margin-top: 32px !important;
+            }
+            div[style*="margin-top:48px"], div[style*="margin-top: 48px"],
+            div[style*="margin-top:56px"], div[style*="margin-top: 56px"],
+            div[style*="margin-top:40px"], div[style*="margin-top: 40px"] {
+                margin-top: 26px !important;
+            }
+            .mobile-desc-hide {
+                display: none !important;
+            }
+            .mobile-ellipsis-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
         }
     </style>
@@ -176,33 +442,51 @@
 <body>
 
     <!-- SEC-01: Top Notification Bar & Sticky GNB -->
-    <div style="background:var(--bg-dark); color:#e4e4e7; font-size:11px; padding:9px 0; letter-spacing:0.5px;">
+    <div style="background:var(--bg-dark); color:#e4e4e7; font-size:11px; padding:8px 0; letter-spacing:0.5px;">
         <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <div>"내가 머무는 공간과 시간의 깊이, 나만의 시그니처 향으로 완성하는 어사 비밀 첩보" 『사단(士團)』</div>
+            <div style="width:100%;">
+                <span class="top-bar-desktop">"내가 머무는 공간과 시간의 깊이, 나만의 시그니처 향으로 완성하는 어사 비밀 첩보" 『사단(士團)』</span>
+                <span class="top-bar-mobile" style="display:none;">공간과 시간의 깊이, 나만의 시그니처 향 『사단(士團)』</span>
+            </div>
             <div class="top-bar-sub" style="display:flex; gap:16px;">
                 <span>100% 커스텀 레이어링</span><span>|</span><span>100% 환급 디스커버리 킷</span><span>|</span><span>K-헤리티지 포터블 럭셔리</span><span>|</span><span>1:1 조향 도슨트</span>
             </div>
         </div>
     </div>
     
-    <header style="position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-line); z-index:1000; padding:18px 0;">
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <a href="최종_와이어프레임.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
-                <div style="width:36px; height:36px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:16px;">士</div>
+    <header class="main-header">
+        <div class="container gnb-grid">
+            <!-- Left: Brand Identity Logo -->
+            <a href="메인_페이지.html" class="gnb-logo">
+                <div style="width:34px; height:34px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:15px;">士</div>
                 <div>
-                    <div style="font-size:17px; font-weight:900; font-family:var(--font-serif);">사단 (士團)</div>
-                    <div style="font-size:9px; font-weight:800; color:var(--text-muted); letter-spacing:1.5px;">SADAN HAUTE PERFUMERY</div>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); letter-spacing:-0.2px;">사단 (士團)</div>
+                    <div style="font-size:8px; font-weight:800; color:var(--text-muted); letter-spacing:1.2px; font-family:var(--font-mono);">HAUTE PERFUMERY</div>
                 </div>
             </a>
-            <nav style="display:flex; gap:22px; font-size:13px; font-weight:700;">
-                <a href="최종_와이어프레임.html" style="text-decoration:none; color:var(--text-secondary);">메인 홈</a>
-                <a href="브랜드_소개.html" style="text-decoration:none; color:var(--text-primary); font-weight:900; border-bottom:2px solid var(--text-primary); padding-bottom:2px;">브랜드 소개</a>
-                <a href="카테고리.html" style="text-decoration:none; color:var(--text-secondary);">전체 16종 카테고리</a>
-                <a href="#heritage" style="text-decoration:none; color:var(--text-secondary);">마패 헤리티지</a>
-                <a href="#custom" style="text-decoration:none; color:var(--text-secondary);">어사 비밀 첩보</a>
-                <a href="#hardware" style="text-decoration:none; color:var(--text-secondary);">포터블 럭셔리</a>
-                <a href="#atelier" style="text-decoration:none; color:var(--text-secondary);">아틀리에 콘셉트</a>
+
+            <!-- Center: Navigation Menus -->
+            <nav class="gnb-nav">
+                <a href="메인_페이지.html" class="gnb-link">
+                    <span class="gnb-text-full">메인 홈</span>
+                    <span class="gnb-text-short" style="display:none;">홈</span>
+                </a>
+                <a href="브랜드_소개.html" class="gnb-link active">브랜드 소개</a>
+                <a href="카테고리.html" class="gnb-link">
+                    <span class="gnb-text-full">전체 16종 카탈로그</span>
+                    <span class="gnb-text-short" style="display:none;">16종 카탈로그</span>
+                </a>
             </nav>
+
+            <!-- Right: User Menu Icon -->
+            <div style="display:flex; align-items:center; justify-self:end; flex-shrink:0;">
+                <button type="button" onclick="openUserMenuModal()" class="user-menu-btn" title="사용자 메뉴 (마이페이지)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -211,13 +495,13 @@
         <div class="container">
             <div style="text-align:center; max-width:880px; margin:0 auto;">
                 <span class="section-tag">BRAND MANIFESTO & ORIGIN</span>
-                <h1 style="font-size:38px; font-weight:900; font-family:var(--font-serif); line-height:1.4; margin-bottom:24px; word-break:keep-all;">
-                    흔해진 향의 클론화와 무거운 유리병을 넘어,<br>
+                <h1 class="hero-main-title">
+                    흔해진 향의 클론화와 무거운 유리병을 넘어,<br class="desktop-br">
                     나만의 온전한 후각적 정체성을 세우다
                 </h1>
-                <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.9; margin-bottom:40px; word-break:keep-all;">
-                    남들과 똑같은 향 대신 진짜 나다운 향을 찾고 싶었던 작은 고민에서 사단(士團)은 시작했습니다.<br>
-                    오후면 날아가는 향기, 가방에 넣기엔 무겁고 깨질까 불안한 유리병의 아쉬움을 넘어—<br>
+                <p class="hero-main-desc">
+                    남들과 똑같은 향 대신 진짜 나다운 향을 찾고 싶었던 작은 고민에서 사단(士團)은 시작했습니다.<br class="desktop-br">
+                    오후면 날아가는 향기, 가방에 넣기엔 무겁고 깨질까 불안한 유리병의 아쉬움을 넘어—<br class="desktop-br">
                     언제 덧뿌려도 내 살결처럼 자연스러운 <strong>1·2·3마패 레이어링</strong>과 가방에 툭 걸고 다니는 <strong>휴대용 마패 오브제</strong>로 새로운 향 경험을 완성합니다.
                 </p>
                 <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
@@ -837,8 +1121,8 @@
                 THE EPILOGUE OF SADAN
             </span>
 
-            <h2 style="font-size:34px; font-weight:900; line-height:1.45; font-family:var(--font-serif); margin-bottom:24px; color:#ffffff; word-break:keep-all;">
-                "조선의 묵향과 바람, <br>당신의 하루에 고유한 품격과 서사가 되다."
+            <h2 class="section-title" style="line-height:1.45; margin-bottom:20px; color:#ffffff; word-break:keep-all;">
+                "조선의 묵향과 바람, <br class="desktop-br">당신의 하루에 고유한 품격과 서사가 되다."
             </h2>
 
             <p style="font-size:14px; color:#a1a1aa; line-height:1.9; max-width:680px; margin:0 auto 48px; word-break:keep-all; font-weight:400;">
@@ -857,12 +1141,12 @@
                 </div>
             </div>
 
-            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-                <a href="최종_와이어프레임.html" style="display:inline-block; padding:12px 28px; background:transparent; color:#f4f4f5; border:1px solid #52525b; border-radius:2px; font-size:12px; font-weight:800; text-decoration:none; transition:all 0.2s;">
-                    ← 메인 홈으로 돌아가기
+            <div class="epilogue-btn-wrap">
+                <a href="메인_페이지.html" style="display:inline-block; padding:12px 28px; background:transparent; color:#f4f4f5; border:1px solid #52525b; border-radius:2px; font-size:12px; font-weight:800; text-decoration:none; transition:all 0.2s;">
+                    ← 메인 홈 이동
                 </a>
                 <a href="카테고리.html" style="display:inline-block; padding:12px 28px; background:var(--accent-brass); color:#ffffff; border:1px solid var(--accent-brass); border-radius:2px; font-size:12px; font-weight:800; text-decoration:none; transition:all 0.2s;">
-                    전체 16종 카테고리 보기 &gt;
+                    16종 카탈로그 &gt;
                 </a>
             </div>
         </div>
@@ -1079,10 +1363,321 @@
             renderQuizStep();
         }
 
-        // ESC 키로 모달 닫기
+        // ESC 키로 모달 및 카트 드로어 닫기
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeDiagnosisModal();
+            if (e.key === 'Escape') {
+                closeDiagnosisModal();
+                closeCartDrawer();
+            }
+        });
+
+        // ========================================================
+        // [CART ENGINE] LocalStorage Synchronization & Drawer Logic
+        // ========================================================
+        const productPriceMap = {
+            '01. 유자 청송': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '02. 백합 한지': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '03. 옥로 다원': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '04. 적송 홍화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '05. 달맞이꽃 야화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '06. 매화 설원': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '07. 치자 노을': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '08. 백단 묵향': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '09. 침향 흑호': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '10. 자개 영롱': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '11. 궁중 향낭': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
+            '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
+            '14. 방동 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방동 마패 홀더' },
+            '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 100% 환급 쿠폰' },
+            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' }
+        };
+
+        let cart = [];
+        try {
+            cart = JSON.parse(localStorage.getItem('sadan_cart') || '[]');
+        } catch(e) {
+            cart = [];
+        }
+
+        function saveCart() {
+            try {
+                localStorage.setItem('sadan_cart', JSON.stringify(cart));
+            } catch(e) {}
+            updateCartUI();
+        }
+
+        function addToCart(itemName) {
+            const cleanTitle = itemName.replace(' (柚子 靑松)', '').replace(' (百合 韓紙)', '').replace(' (玉露 茶園)', '').replace(' (赤松 紅花)', '').replace(' (月下 夜花)', '').replace(' (梅花 雪原)', '').replace(' (梔子 晚霞)', '').replace(' (白檀 墨香)', '').replace(' (沈香 黑虎)', '').replace(' (螺鈿 玲瓏)', '').replace(' (宮中 香囊)', '').trim();
+            const matchedKey = Object.keys(productPriceMap).find(k => cleanTitle.includes(k) || k.includes(cleanTitle)) || cleanTitle;
+            const meta = productPriceMap[matchedKey] || { price: 49000, spec: '사단 시그니처 에디션' };
+
+            const existing = cart.find(i => i.title === matchedKey);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    title: matchedKey,
+                    price: meta.price,
+                    spec: meta.spec,
+                    qty: 1
+                });
+            }
+            saveCart();
+            openCartDrawer();
+        }
+
+        function updateCartQty(title, delta) {
+            const item = cart.find(i => i.title === title);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.title !== title);
+                }
+                saveCart();
+            }
+        }
+
+        function removeCartItem(title) {
+            cart = cart.filter(i => i.title !== title);
+            saveCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            saveCart();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            const formattedPrice = totalPrice.toLocaleString() + ' KRW';
+
+            const headerCount = document.getElementById('headerCartCount');
+            if (headerCount) headerCount.innerText = totalCount;
+
+            const floatingBadge = document.getElementById('floatingCartBadge');
+            const floatingTotal = document.getElementById('floatingCartTotal');
+            if (floatingBadge) floatingBadge.innerText = totalCount;
+            if (floatingTotal) floatingTotal.innerText = formattedPrice;
+
+            const drawerCount = document.getElementById('drawerCartCount');
+            const drawerTotal = document.getElementById('drawerTotalAmount');
+            const drawerList = document.getElementById('drawerItemList');
+            const drawerEmpty = document.getElementById('drawerEmptyState');
+            const drawerFooter = document.getElementById('drawerFooter');
+
+            if (drawerCount) drawerCount.innerText = totalCount;
+            if (drawerTotal) drawerTotal.innerText = formattedPrice;
+
+            if (totalCount === 0) {
+                if (drawerEmpty) drawerEmpty.style.display = 'flex';
+                if (drawerList) drawerList.style.display = 'none';
+                if (drawerFooter) drawerFooter.style.opacity = '0.5';
+            } else {
+                if (drawerEmpty) drawerEmpty.style.display = 'none';
+                if (drawerList) {
+                    drawerList.style.display = 'flex';
+                    drawerList.innerHTML = cart.map(item => `
+                        <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                            <div style="flex:1;">
+                                <div style="font-size:13.5px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:3px;">${item.title}</div>
+                                <div style="font-size:10.5px; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:6px;">${item.spec}</div>
+                                <div style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">${(item.price * item.qty).toLocaleString()} KRW</div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <div style="display:flex; align-items:center; border:1px solid var(--border-line); border-radius:3px; background:#fff;">
+                                    <button type="button" onclick="updateCartQty('${item.title}', -1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">-</button>
+                                    <span style="font-size:11.5px; font-weight:800; font-family:var(--font-mono); padding:0 6px;">${item.qty}</span>
+                                    <button type="button" onclick="updateCartQty('${item.title}', 1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">+</button>
+                                </div>
+                                <button type="button" onclick="removeCartItem('${item.title}')" style="border:none; background:transparent; color:var(--text-muted); font-size:16px; cursor:pointer; padding:4px;">&times;</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                if (drawerFooter) drawerFooter.style.opacity = '1';
+            }
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+
+            const isOpened = drawer.getAttribute('data-open') === 'true';
+            if (isOpened) {
+                closeCartDrawer();
+            } else {
+                openCartDrawer();
+            }
+        }
+
+        function openCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+            drawer.setAttribute('data-open', 'true');
+            backdrop.style.display = 'block';
+            setTimeout(() => {
+                backdrop.style.opacity = '1';
+                drawer.style.transform = 'translateX(0%)';
+            }, 10);
+        }
+
+        function closeCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+            drawer.setAttribute('data-open', 'false');
+            drawer.style.transform = 'translateX(100%)';
+            backdrop.style.opacity = '0';
+            setTimeout(() => { backdrop.style.display = 'none'; }, 300);
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert('장바구니에 담긴 상품이 없습니다.');
+                return;
+            }
+            const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            alert(`[사단 HAUTE PERFUMERY 안전 주문서]\n\n총 ${totalCount}개 품목 (합계: ${totalPrice.toLocaleString()} KRW)\n전액 무료 배송 VIP 패키지로 안전하게 결제 단계로 이동합니다.`);
+        }
+
+        function openUserMenuModal() {
+            const modal = document.getElementById('userMenuModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeUserMenuModal() {
+            const modal = document.getElementById('userMenuModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
         });
     </script>
+
+    <!-- ========================================================
+         [USER & NAVIGATION MENU MODAL] 사용자 마이페이지 & 전체 메뉴 모달
+         ======================================================== -->
+    <div id="userMenuModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:440px; width:92%; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closeUserMenuModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <!-- User Profile Summary -->
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border-line);">
+                <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-dark); color:#ffffff; display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:16px;">士</div>
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:16px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary);">사단 회원</span>
+                        <span class="product-badge product-badge-3mapae" style="font-size:9.5px; padding:2px 6px;">VIP 멤버</span>
+                    </div>
+                    <div style="font-size:11.5px; color:var(--text-muted); font-family:var(--font-mono);">sadan.secret@mape.kr</div>
+                </div>
+            </div>
+
+            <!-- Page Navigation Links -->
+            <div style="margin-bottom:16px;">
+                <div style="font-size:10px; font-weight:800; color:var(--text-muted); letter-spacing:1.5px; margin-bottom:8px; font-family:var(--font-mono);">SITE NAVIGATION</div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <a href="메인_페이지.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>🏠 메인 홈</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                    <a href="브랜드_소개.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>📖 브랜드 소개 (스토리 &amp; 철학)</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                    <a href="카테고리.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>📦 사단 16종 전 상품 카탈로그</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Member Benefit Info -->
+            <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:20px;">
+                <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">보유 100% 환급 쿠폰</span>
+                    <span style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">19,000 KRW</span>
+                </div>
+                <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">30초 맞춤 향 진단</span>
+                    <button type="button" onclick="closeUserMenuModal(); openDiagnosisModal();" class="btn-brass" style="padding:4px 10px; font-size:10.5px;">진단하기</button>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+                <button type="button" class="btn-outline" onclick="closeUserMenuModal(); toggleCartDrawer();" style="padding:10px; font-size:11.5px;">장바구니 확인</button>
+                <button type="button" class="btn-black" onclick="closeUserMenuModal()" style="padding:10px; font-size:11.5px;">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         [FLOATING WIDGET] 우측 하단 스티키 플로팅 장바구니 바
+         ======================================================== -->
+    <div id="floatingCartWidget" class="floating-cart-pill" onclick="toggleCartDrawer()">
+        <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); letter-spacing:1px; color:#ffffff;">CART</span>
+            <span id="floatingCartBadge" style="background:var(--accent-brass); color:#ffffff; font-size:10px; font-weight:900; padding:2px 7px; border-radius:12px; font-family:var(--font-mono);">0</span>
+        </div>
+        <div style="width:1px; height:14px; background:#3f3f46;"></div>
+        <div id="floatingCartTotal" style="font-size:12.5px; font-weight:900; font-family:var(--font-mono); color:#fef08a;">0 KRW</div>
+        <span style="font-size:10.5px; color:#a1a1aa; font-weight:700;">주문 확인 &gt;</span>
+    </div>
+
+    <!-- ========================================================
+         [CART DRAWER] 우측 슬라이드형 실시간 장바구니 서랍 (한눈에 보기)
+         ======================================================== -->
+    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" style="position:fixed; inset:0; background:rgba(0,0,0,0.5); backdrop-filter:blur(3px); z-index:1500; display:none; opacity:0; transition:opacity 0.3s ease;"></div>
+    <div id="cartDrawer" data-open="false" style="position:fixed; top:0; right:0; width:420px; max-width:92vw; height:100vh; background:#ffffff; z-index:1501; box-shadow:-8px 0 32px rgba(0,0,0,0.18); display:flex; flex-direction:column; transform:translateX(100%); transition:transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+        
+        <!-- Drawer Header -->
+        <div style="padding:22px 24px; border-bottom:1px solid var(--border-line); display:flex; justify-content:space-between; align-items:center; background:var(--bg-linen);">
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:28px; height:28px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:13px;">士</div>
+                <h3 style="font-size:17px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0;">
+                    선택 상품 장바구니 (<span id="drawerCartCount" style="color:var(--accent-brass); font-family:var(--font-mono);">0</span>)
+                </h3>
+            </div>
+            <button type="button" onclick="closeCartDrawer()" style="background:transparent; border:none; font-size:22px; cursor:pointer; line-height:1; color:var(--text-secondary);">&times;</button>
+        </div>
+
+        <!-- Drawer Content / Item List -->
+        <div id="drawerItemList" style="flex:1; overflow-y:auto; padding:20px 24px; display:flex; flex-direction:column; gap:12px;">
+            <!-- Dynamic Items rendered here -->
+        </div>
+
+        <!-- Empty State in Drawer -->
+        <div id="drawerEmptyState" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:32px 24px; color:var(--text-muted);">
+            <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:8px;">CART IS EMPTY</div>
+            <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:8px;">장바구니가 비어 있습니다</div>
+            <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:20px;">
+                사단의 마패 향수와 헤리티지 라인을 둘러보고<br>나만의 시그니처 조합을 담아보세요.
+            </p>
+            <a href="카테고리.html" class="btn-black" onclick="closeCartDrawer()" style="padding:10px 22px; font-size:12px; text-decoration:none;">16종 상품 둘러보기</a>
+        </div>
+
+        <!-- Drawer Footer / Summary & Checkout -->
+        <div id="drawerFooter" style="padding:22px 24px; border-top:1px solid var(--border-line); background:var(--bg-linen);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:12px; color:var(--text-secondary);">
+                <span>배송비</span>
+                <span style="font-weight:800; color:var(--accent-pine);">무료 배송 (VIP 전액 지원)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <span style="font-size:14px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary);">총 결제 예상 금액</span>
+                <span id="drawerTotalAmount" style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass);">0 KRW</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:10px;">
+                <button type="button" class="btn-outline" onclick="clearCart()" style="padding:12px; font-size:12px;">전체 비우기</button>
+                <button type="button" class="btn-black" onclick="checkoutOrder()" style="padding:12px; font-size:12.5px;">주문 결제하기 &gt;</button>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

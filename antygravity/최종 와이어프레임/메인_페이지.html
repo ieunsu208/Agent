@@ -77,9 +77,9 @@
         .product-card-tpo { font-size: 10.5px; font-weight: 800; margin-bottom: 16px; word-break: keep-all; }
 
         .product-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-line); padding-top: 14px; margin-top: auto; }
-        /* Prevent Horizontal Overflow */
-        html, body {
-            overflow-x: hidden;
+        /* Prevent Horizontal Overflow without breaking position: sticky */
+        body {
+            overflow-x: clip;
             width: 100%;
             max-width: 100%;
         }
@@ -105,6 +105,48 @@
             align-items: center;
         }
 
+        .btn-outline-light {
+            display: inline-block;
+            padding: 14px 28px;
+            background: transparent;
+            color: #f4f4f5;
+            border: 1px solid #71717a;
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-outline-light:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: #ffffff;
+        }
+        .btn-brass-light {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--accent-brass);
+            color: #ffffff;
+            border: 1px solid var(--accent-brass);
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-brass-light:hover {
+            background: var(--accent-brass-dark);
+        }
+        .epilogue-btn-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         /* ========================================================
            Responsive Media Queries (Tablet & Mobile)
            ======================================================== */
@@ -119,42 +161,429 @@
             header nav { gap: 16px; font-size: 12px; }
         }
 
+        /* Center-Aligned GNB & Sticky Header */
+        .main-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-line);
+            z-index: 1000;
+            padding: 14px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+        .gnb-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+        .gnb-nav {
+            display: flex;
+            gap: 28px;
+            font-size: 13.5px;
+            font-weight: 700;
+            align-items: center;
+            justify-self: center;
+        }
+        .gnb-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 6px 0;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .gnb-link:hover {
+            color: var(--text-primary);
+        }
+        .gnb-link.active {
+            color: var(--text-primary);
+            font-weight: 900;
+            border-bottom-color: var(--text-primary);
+        }
+
+        .user-menu-btn {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: color 0.2s ease, transform 0.2s ease;
+            padding: 0;
+        }
+        .user-menu-btn:hover {
+            color: var(--accent-brass);
+            transform: scale(1.1);
+        }
+
+        /* Hero Typography & Elements */
+        .hero-main-title {
+            font-size: 40px;
+            font-weight: 900;
+            font-family: var(--font-serif);
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 22px;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+        .hero-main-desc {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            line-height: 1.95;
+            margin-bottom: 38px;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+        .hero-trust-bar {
+            display: flex;
+            gap: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-line);
+            padding-top: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .desktop-br {
+            display: inline;
+        }
+
+        /* Floating Cart Sticky Pill Widget */
+        .floating-cart-pill {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: var(--bg-dark);
+            color: #ffffff;
+            border: 1px solid #27272a;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+            user-select: none;
+        }
+        .floating-cart-pill:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.3);
+            border-color: var(--accent-brass);
+        }
+
+        .gnb-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            justify-self: start;
+            flex-shrink: 0;
+            padding-left: 6px;
+            transition: opacity 0.2s ease;
+        }
+        .gnb-logo:hover {
+            opacity: 0.85;
+        }
+
         @media (max-width: 768px) {
-            .container, .container-narrow { padding: 0 16px; }
-            
-            /* Top Bar */
+            .container, .container-narrow { padding: 0 16px !important; }
             .top-bar-sub { display: none !important; }
+            .top-bar-desktop { display: none !important; }
+            .top-bar-mobile { display: block !important; font-size: 10.5px !important; text-align: center !important; width: 100% !important; letter-spacing: 0.2px !important; }
+            .desktop-br { display: none !important; }
             
-            /* Header Navigation Horizontal Scrolling */
-            header { padding: 14px 0 !important; }
-            header .container { flex-direction: column; align-items: flex-start !important; gap: 14px !important; }
-            header nav { width: 100%; overflow-x: auto; white-space: nowrap; gap: 18px !important; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-            header nav::-webkit-scrollbar { display: none; }
+            /* GNB Minimal Luxury Header for Mobile (Logo Left, User Menu Right) */
+            .gnb-nav { display: none !important; }
+            .gnb-grid {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                width: 100% !important;
+                padding: 0 4px !important;
+            }
+            .gnb-logo {
+                padding-left: 10px !important;
+            }
+            .user-menu-btn {
+                margin-right: 8px !important;
+            }
             
             /* Grids Collapse to 1-Column */
-            .hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
-            .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-            .product-grid-4 { grid-template-columns: 1fr !important; gap: 20px !important; }
-            .signature-row-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 24px 18px !important; }
-            .btn-dual-wrap { grid-template-columns: 1fr !important; gap: 10px !important; }
+            .hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+            .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+            .product-grid-4 { grid-template-columns: 1fr !important; gap: 16px !important; }
+            .signature-row-grid { grid-template-columns: 1fr !important; gap: 14px !important; padding: 20px 16px !important; }
             
-            /* Typography Scaling */
-            .section-header { margin-bottom: 36px !important; }
-            .section-title { font-size: 24px !important; line-height: 1.35 !important; }
-            .section-desc { font-size: 13.5px !important; }
+            /* Bottom Dual Buttons: Compact & Side-by-Side 1-Row Layout */
+            .btn-dual-wrap { 
+                display: grid !important; 
+                grid-template-columns: 1.15fr 1fr !important; 
+                gap: 8px !important; 
+                width: 100% !important;
+            }
+            .btn-dual-wrap .btn-black,
+            .btn-dual-wrap .btn-outline {
+                padding: 10px 6px !important;
+                font-size: 11px !important;
+                white-space: nowrap !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+            .epilogue-btn-wrap {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+                width: 100% !important;
+                margin-top: 24px !important;
+            }
+            .btn-outline-light, .btn-brass-light {
+                padding: 10px 6px !important;
+                font-size: 11px !important;
+                white-space: nowrap !important;
+                text-align: center !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .desktop-only-btn-text {
+                display: none !important;
+            }
+            .mobile-only-btn-text {
+                display: inline !important;
+            }
+            
+            /* Universal Mobile Heading & Typography Overrides */
+            h1, .hero-main-title, section h1, div h1 {
+                font-size: clamp(22px, 6.5vw, 26px) !important;
+                line-height: 1.35 !important;
+                margin-bottom: 14px !important;
+            }
+            h2, .section-title, section h2, div h2, main h2 {
+                font-size: 19.5px !important;
+                line-height: 1.35 !important;
+                margin-bottom: 10px !important;
+            }
+            h3, .feature-title, section h3, div h3, main h3 {
+                font-size: 15px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+            h4, section h4, div h4 {
+                font-size: 13.5px !important;
+                line-height: 1.4 !important;
+            }
+            .hero-main-desc {
+                font-size: 13px !important;
+                line-height: 1.75 !important;
+                margin-bottom: 24px !important;
+            }
+            .hero-trust-bar {
+                gap: 6px 10px !important;
+                font-size: 10px !important;
+                line-height: 1.5 !important;
+            }
+            .section-header { margin-bottom: 24px !important; }
+            .section-tag { font-size: 9px !important; letter-spacing: 1.5px !important; margin-bottom: 8px !important; }
+            .section-desc { font-size: 12px !important; line-height: 1.7 !important; }
+
+            /* Feature & Product Cards */
+            .feature-card { padding: 22px 18px !important; }
+            .feature-num { font-size: 10.5px !important; margin-bottom: 8px !important; }
+            .feature-title { font-size: 16px !important; margin-bottom: 8px !important; }
+            .feature-text { font-size: 12px !important; line-height: 1.7 !important; }
+            
+            .product-card { padding: 20px 16px !important; }
+            .product-card-title { font-size: 15px !important; }
+            .product-card-desc { font-size: 11.5px !important; line-height: 1.6 !important; min-height: auto !important; }
+            .product-card-notes { font-size: 9.5px !important; padding: 6px 8px !important; }
+            .product-card-tpo { font-size: 10px !important; margin-bottom: 12px !important; }
+            .product-card-price { font-size: 16px !important; }
+
+            /* Story Section Price & Action Bar Scaling */
+            .story-action-bar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 12px !important;
+                margin-top: 14px !important;
+            }
+            .story-action-bar .btn-black,
+            .story-action-bar .btn-brass,
+            .story-action-bar .btn-outline {
+                padding: 9px 16px !important;
+                font-size: 11.5px !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+            }
+            .story-price-info {
+                text-align: left !important;
+            }
+            .story-price-val {
+                font-size: 18.5px !important;
+                line-height: 1.2 !important;
+            }
+
+            /* Stats & Matrix */
+            .stat-box { padding: 14px 8px !important; }
+            .stat-num { font-size: 17px !important; }
+            .stat-lbl { font-size: 10px !important; }
             
             /* Buttons Full Width / Optimized Touch */
-            .btn-black, .btn-outline, .btn-brass { padding: 14px 20px; font-size: 12.5px; }
+            .btn-black, .btn-outline, .btn-brass { padding: 9px 16px !important; font-size: 11.5px !important; }
             
             /* Hero Stage Object Container Responsive Height */
-            .wireframe-box { height: auto !important; min-height: 320px; padding: 28px 20px !important; }
+            .wireframe-box { height: auto !important; min-height: 200px !important; padding: 20px 14px !important; }
             
+            /* Floating Cart Responsive */
+            .floating-cart-pill { bottom: 16px !important; right: 16px !important; padding: 7px 14px !important; font-size: 10.5px !important; }
+
             /* Modal Responsive */
             #diagnosisModal > div {
                 width: 94% !important;
                 max-width: 100% !important;
-                padding: 24px 18px !important;
-                margin: 20px auto !important;
+                padding: 22px 16px !important;
+                margin: 16px auto !important;
+            }
+
+            /* ========================================================
+               Mobile Section Vertical Spacing & Distinct Chapter Separation
+               (구간 상하 여백 54px~58px 황금비율 + 명확한 챕터 구분감 부여)
+               ======================================================== */
+            section, main > section {
+                padding-top: 56px !important;
+                padding-bottom: 56px !important;
+                min-height: auto !important;
+                border-bottom: 1px solid var(--border-line) !important;
+            }
+            #manifesto, #perfumery-process, #discovery, #atelier-booking {
+                padding-top: 54px !important;
+                padding-bottom: 54px !important;
+            }
+            #story-1, #story-2, #story-3 {
+                padding-top: 50px !important;
+                padding-bottom: 52px !important;
+            }
+            #curated-showcase {
+                padding-top: 52px !important;
+                padding-bottom: 56px !important;
+            }
+            #epilogue {
+                padding-top: 58px !important;
+                padding-bottom: 58px !important;
+            }
+            footer {
+                padding-top: 40px !important;
+                padding-bottom: 28px !important;
+            }
+            .section-header {
+                margin-bottom: 28px !important;
+            }
+            
+            /* Section Tag Pill Badge for Clear Section Identification */
+            .section-tag {
+                display: inline-block !important;
+                font-size: 9.5px !important;
+                letter-spacing: 1.5px !important;
+                margin-bottom: 10px !important;
+                background: rgba(0, 0, 0, 0.04) !important;
+                padding: 4px 10px !important;
+                border-radius: 20px !important;
+                border: 1px solid rgba(0, 0, 0, 0.08) !important;
+                font-family: var(--font-mono) !important;
+            }
+            
+            /* Card Containers Elevation for Visual Separation */
+            .feature-card, .signature-row-grid, .wireframe-box {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
+            }
+
+            /* ========================================================
+               모바일 설명 폰트 & 본문 단락(Description Typography) 전면 통일
+               ======================================================== */
+            .section-desc, 
+            section p, 
+            main p,
+            .feature-text {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+                color: var(--text-secondary) !important;
+                word-break: keep-all !important;
+            }
+
+            /* THE MANIFESTO OF SADAN 전용 모바일 타이포그래피 정돈 */
+            #manifesto .section-tag {
+                font-size: 9.5px !important;
+                letter-spacing: 1.5px !important;
+                margin-bottom: 10px !important;
+                color: var(--accent-brass) !important;
+                border-color: rgba(202, 138, 4, 0.25) !important;
+                background: rgba(202, 138, 4, 0.06) !important;
+            }
+            #manifesto h2 {
+                font-size: clamp(19px, 5.8vw, 22px) !important;
+                line-height: 1.38 !important;
+                margin-bottom: 14px !important;
+            }
+            #manifesto p {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+                margin-bottom: 10px !important;
+                color: var(--text-secondary) !important;
+            }
+            #manifesto p strong {
+                color: var(--text-primary) !important;
+                font-weight: 800 !important;
+            }
+            #manifesto div[style*="margin-bottom:30px"],
+            #manifesto div[style*="margin-bottom: 30px"] {
+                margin-bottom: 18px !important;
+            }
+
+            /* 대표작 1, 2, 3 스토리 섹션 설명 폰트 통일 */
+            #story-1 p, #story-2 p, #story-3 p {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+            }
+            #story-1 div[style*="margin-bottom:48px"],
+            #story-1 div[style*="margin-bottom: 48px"] {
+                margin-bottom: 20px !important;
+            }
+
+            /* 디스커버리 킷 섹션 설명문 */
+            #discovery p {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+                margin-bottom: 16px !important;
+            }
+
+            /* 에필로그 섹션 설명문 */
+            #epilogue p {
+                font-size: 12.5px !important;
+                line-height: 1.72 !important;
+                color: #a1a1aa !important;
+            }
+
+            .mobile-desc-hide {
+                display: none !important;
+            }
+            .mobile-ellipsis-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
         }
     </style>
@@ -164,34 +593,51 @@
     <!-- ========================================================
          SEC-01: Top Notification Bar & Sticky GNB
          ======================================================== -->
-    <div style="background:var(--bg-dark); color:#e4e4e7; font-size:11px; padding:9px 0; letter-spacing:0.5px;">
+    <div style="background:var(--bg-dark); color:#e4e4e7; font-size:11px; padding:8px 0; letter-spacing:0.5px;">
         <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <div>"내가 머무는 공간과 시간의 깊이, 나만의 시그니처 향으로 완성하는 어사 비밀 첩보" 『사단(士團)』</div>
+            <div style="width:100%;">
+                <span class="top-bar-desktop">"내가 머무는 공간과 시간의 깊이, 나만의 시그니처 향으로 완성하는 어사 비밀 첩보" 『사단(士團)』</span>
+                <span class="top-bar-mobile" style="display:none;">공간과 시간의 깊이, 나만의 시그니처 향 『사단(士團)』</span>
+            </div>
             <div class="top-bar-sub" style="display:flex; gap:16px;">
                 <span>감각적인 맞춤 레이어링</span><span>|</span><span>100% 환급 디스커버리 킷</span><span>|</span><span>K-헤리티지 포터블 럭셔리</span><span>|</span><span>1:1 조향 도슨트</span>
             </div>
         </div>
     </div>
     
-    <header style="position:sticky; top:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-line); z-index:1000; padding:18px 0;">
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <a href="최종_와이어프레임.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
-                <div style="width:36px; height:36px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:16px;">士</div>
+    <header class="main-header">
+        <div class="container gnb-grid">
+            <!-- Left: Brand Identity Logo -->
+            <a href="메인_페이지.html" class="gnb-logo">
+                <div style="width:34px; height:34px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:15px;">士</div>
                 <div>
-                    <div style="font-size:17px; font-weight:900; font-family:var(--font-serif);">사단 (士團)</div>
-                    <div style="font-size:9px; font-weight:800; color:var(--text-muted); letter-spacing:1.5px;">SADAN HAUTE PERFUMERY</div>
+                    <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); letter-spacing:-0.2px;">사단 (士團)</div>
+                    <div style="font-size:8px; font-weight:800; color:var(--text-muted); letter-spacing:1.2px; font-family:var(--font-mono);">HAUTE PERFUMERY</div>
                 </div>
             </a>
-            <nav style="display:flex; gap:24px; font-size:13px; font-weight:700; align-items:center;">
-                <a href="최종_와이어프레임.html" style="text-decoration:none; color:var(--text-primary); font-weight:900; border-bottom:2px solid var(--text-primary); padding-bottom:2px;">메인 홈</a>
-                <a href="브랜드_소개.html" style="text-decoration:none; color:var(--text-secondary);">브랜드 소개</a>
-                <a href="#manifesto" style="text-decoration:none; color:var(--text-secondary);">브랜드 철학</a>
-                <a href="#story-1" style="text-decoration:none; color:var(--text-secondary);">3대 대표 향</a>
-                <a href="#perfumery-process" style="text-decoration:none; color:var(--text-secondary);">조향 및 제작 공정</a>
-                <a href="#discovery" style="text-decoration:none; color:var(--text-secondary);">디스커버리 킷</a>
-                <a href="#curated-showcase" style="text-decoration:none; color:var(--text-secondary);">4대 핵심 시그니처</a>
-                <a href="카테고리.html" style="text-decoration:none; color:var(--accent-brass); font-weight:800;">전체 16종 카테고리 &gt;</a>
+
+            <!-- Center: Navigation Menus -->
+            <nav class="gnb-nav">
+                <a href="메인_페이지.html" class="gnb-link active">
+                    <span class="gnb-text-full">메인 홈</span>
+                    <span class="gnb-text-short" style="display:none;">홈</span>
+                </a>
+                <a href="브랜드_소개.html" class="gnb-link">브랜드 소개</a>
+                <a href="카테고리.html" class="gnb-link">
+                    <span class="gnb-text-full">전체 16종 카탈로그</span>
+                    <span class="gnb-text-short" style="display:none;">16종 카탈로그</span>
+                </a>
             </nav>
+
+            <!-- Right: User Menu Icon -->
+            <div style="display:flex; align-items:center; justify-self:end; flex-shrink:0;">
+                <button type="button" onclick="openUserMenuModal()" class="user-menu-btn" title="사용자 메뉴 (마이페이지)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -205,13 +651,13 @@
                 <!-- [좌측 45%] 브랜드 내러티브 & 여유로운 탐색 가이드 -->
                 <div>
                     <span class="section-tag" style="margin-bottom:20px;">HAUTE PERFUMERY · BESPOKE CIPHER</span>
-                    <h1 style="font-size:40px; font-weight:900; font-family:var(--font-serif); line-height:1.45; color:var(--text-primary); margin-bottom:22px; word-break:keep-all;">
-                        내가 머무는 공간과 시간의 깊이,<br>
+                    <h1 class="hero-main-title">
+                        내가 머무는 공간과 시간의 깊이,<br class="desktop-br">
                         나만의 시그니처 향으로 완성하다
                     </h1>
-                    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.95; margin-bottom:38px; word-break:keep-all;">
-                        조선 암행어사가 품속 깊이 간직하던 마패(馬牌)의 기품에서 출발하여,<br>
-                        하루의 시간과 기분에 맞춰 자유롭게 향을 덧입는 일상 속 포터블 럭셔리를 제안합니다.<br>
+                    <p class="hero-main-desc">
+                        조선 암행어사가 품속 깊이 간직하던 마패(馬牌)의 기품에서 출발하여,<br class="desktop-br">
+                        하루의 시간과 기분에 맞춰 자유롭게 향을 덧입는 일상 속 포터블 럭셔리를 제안합니다.<br class="desktop-br">
                         흔해진 향의 클론화를 벗어나 당신만의 고유한 서사를 피부 위에 새겨보세요.
                     </p>
 
@@ -221,7 +667,7 @@
                     </div>
 
                     <!-- 은은한 신뢰 지표 바 (정직한 핵심 가치 4대 축) -->
-                    <div style="display:flex; gap:20px; font-size:11px; font-weight:800; color:var(--text-muted); border-top:1px solid var(--border-line); padding-top:18px;">
+                    <div class="hero-trust-bar">
                         <span>1·2·3마패 등급제</span>
                         <span>•</span>
                         <span>정밀 밀폐 마그네틱 캡</span>
@@ -281,25 +727,25 @@
                 
                 <!-- 좌측 내러티브 텍스트 (01.시작 ➡️ 02.불편 ➡️ 03.해답 3단계 공감 서사) -->
                 <div>
-                    <span class="section-tag" style="margin-bottom:16px;">THE MANIFESTO OF SADAN</span>
-                    <h2 style="font-size:32px; font-weight:900; font-family:var(--font-serif); line-height:1.4; color:var(--text-primary); margin-bottom:24px; word-break:keep-all;">
-                        "공간과 시간의 깊이,<br>나를 증명하는 가장 은밀한 인장(印章)"
+                    <span class="section-tag" style="margin-bottom:14px;">THE MANIFESTO OF SADAN</span>
+                    <h2 class="section-title" style="word-break:keep-all; line-height:1.4; margin-bottom:18px;">
+                        "공간과 시간의 깊이,<br class="desktop-br">나를 증명하는 가장 은밀한 인장(印章)"
                     </h2>
 
                     <!-- 자연스러운 에디토리얼 브랜드 서사 -->
-                    <div style="margin-bottom:30px;">
-                        <p style="font-size:15px; color:var(--text-secondary); line-height:1.9; margin-bottom:14px; word-break:keep-all;">
+                    <div style="margin-bottom:28px;">
+                        <p style="font-size:14.5px; color:var(--text-secondary); line-height:1.85; margin-bottom:12px; word-break:keep-all;">
                             남들과 똑같은 흔한 향 대신, 진짜 나다운 향을 찾고 싶었던 사람들의 작은 고민에서 사단(士團)은 시작했습니다.
                         </p>
-                        <p style="font-size:15px; color:var(--text-secondary); line-height:1.9; margin-bottom:16px; word-break:keep-all;">
+                        <p style="font-size:14.5px; color:var(--text-secondary); line-height:1.85; margin-bottom:14px; word-break:keep-all;">
                             오후면 날아가는 향기, 가방에 넣기엔 무겁고 깨질까 불안한 유리병… 매일 향수를 쓰면서도 늘 어딘가 아쉬운 불편함을 겪고 있었죠.
                         </p>
-                        <p style="font-size:15px; color:var(--text-primary); font-weight:700; line-height:1.9; margin:0; word-break:keep-all;">
+                        <p style="font-size:14.5px; color:var(--text-primary); font-weight:700; line-height:1.85; margin:0; word-break:keep-all;">
                             언제 덧뿌려도 내 살결처럼 자연스러운 <strong>1·2·3마패 레이어링</strong>과, 가방에 툭 걸고 다니는 <strong>휴대용 마패 오브제</strong>로 그 해답을 완성했습니다.
                         </p>
                     </div>
                     
-                    <div style="border-top:1px solid var(--border-line); padding-top:18px;">
+                    <div style="border-top:1px solid var(--border-line); padding-top:16px;">
                         <div style="font-size:13px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:4px;">조선 전통 향방 철학의 현대적 재해석</div>
                         <div style="font-size:11px; color:var(--text-muted); font-family:var(--font-mono);">SADAN HAUTE PERFUMERY HOUSE</div>
                     </div>
@@ -324,73 +770,79 @@
     <section id="mapae-system" style="padding:110px 0; border-bottom:1px solid var(--border-line); background:var(--bg-base);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">MAPAE HIERARCHY SYSTEM</span>
-                <h2 class="section-title">밀도와 존재감으로 완성되는 3단계 마패 체계</h2>
+                <span class="section-tag">MAPAE OLFACTIVE SCALE</span>
+                <h2 class="section-title">조선 마패의 영감에서 출발한 사단만의 3단계 향 선택 체계</h2>
                 <p class="section-desc">
-                    1마패의 맑은 일상 베이스부터 3마패의 압도적인 올데이 시그니처까지, 단계별 향의 밀도와 오브제 가치를 한눈에 비교해 보세요.
+                    조선시대 마패에서 영감을 받아 사단이 향의 농도와 오브제 경험을 세 단계로 재구성한 브랜드 고유의 선택 체계입니다.
                 </p>
             </div>
 
             <!-- 세로 수직 계단식 비교 도해 (Vertical Infographic Flow) -->
-            <div style="max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:24px;">
+            <div style="max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
                 
                 <!-- Tier 1 -->
-                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-pine); border-radius:4px; padding:32px 36px; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-pine); border-radius:4px; padding:28px 32px; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
                     <div>
                         <span class="product-badge product-badge-1mapae">LEVEL 01</span>
-                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-top:6px;">1마패</h4>
-                        <div style="font-size:11px; color:var(--text-muted); font-weight:800;">DAILY BASE</div>
+                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-top:4px;">1마패</h4>
+                        <div style="font-size:10.5px; color:var(--text-muted); font-weight:800; font-family:var(--font-mono);">MORNING BASE</div>
                     </div>
-                    <div>
-                        <div style="font-size:15px; font-weight:900; color:var(--text-primary); margin-bottom:6px;">"자극 없이 피부에 은은하게 밀착되는 일상의 시작"</div>
-                        <p style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin:0;">
-                            가벼운 아침 미팅과 외출, 누구에게나 맑고 편안하게 스며드는 데일리 베이스.
-                        </p>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:12.5px; line-height:1.65;">
+                        <div><strong style="color:var(--text-primary);">1. 추천 사용자 :</strong> <span style="color:var(--text-secondary);">은은하고 맑은 데일리 향 선호, 출근길 및 실내 일상</span></div>
+                        <div><strong style="color:var(--text-primary);">2. 향의 농도 :</strong> <span style="color:var(--text-secondary);">15%</span></div>
+                        <div><strong style="color:var(--text-primary);">3. 예상 지속 시간 :</strong> <span style="color:var(--text-secondary);">약 6시간</span></div>
+                        <div><strong style="color:var(--text-primary);">4. 휴대 방식 :</strong> <span style="color:var(--text-secondary);">닥나무 한지 캡 & 초경량 전용 파우치 휴대</span></div>
+                        <div><strong style="color:var(--text-primary);">5. 구성품 :</strong> <span style="color:var(--text-secondary);">50ml 본품 보틀 + 한지 캡 + 시향 엽서</span></div>
                     </div>
-                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px 18px; font-size:11.5px; font-family:var(--font-mono);">
-                        <div><strong>부향률:</strong> 15% (지속 6시간)</div>
-                        <div><strong>캡/소재:</strong> 닥나무 한지 캡</div>
-                        <div style="color:var(--accent-pine); font-weight:800; margin-top:4px;">대표작: 01. 유자 청송 (3.9만)</div>
+                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:16px 18px; font-size:12px; font-family:var(--font-mono); display:flex; flex-direction:column; gap:6px;">
+                        <div><strong style="color:var(--text-primary);">6. 가격대 :</strong> <span style="color:var(--text-primary); font-weight:800;">39,000 KRW</span></div>
+                        <div style="border-top:1px dashed rgba(0,0,0,0.08); padding-top:6px; margin-top:2px;">
+                            <strong style="color:var(--accent-pine);">7. 대표 향 :</strong> <span style="color:var(--accent-pine); font-weight:900; font-family:var(--font-serif); font-size:13.5px;">01. 유자 청송</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Tier 2 -->
-                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-red); border-radius:4px; padding:32px 36px; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-red); border-radius:4px; padding:28px 32px; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
                     <div>
                         <span class="product-badge product-badge-2mapae">LEVEL 02</span>
-                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-top:6px;">2마패</h4>
-                        <div style="font-size:11px; color:var(--text-muted); font-weight:800;">POINT & HEALING</div>
+                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin-top:4px;">2마패</h4>
+                        <div style="font-size:10.5px; color:var(--text-muted); font-weight:800; font-family:var(--font-mono);">AFTERNOON ACCENT</div>
                     </div>
-                    <div>
-                        <div style="font-size:15px; font-weight:900; color:var(--text-primary); margin-bottom:6px;">"단조로움을 깨고 감정의 균형을 되찾는 칠정(七情) 포인트"</div>
-                        <p style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin:0;">
-                            오후의 나른함과 감정 침체를 깨우는 화려한 컬러감. 1마패와 조합 시 입체적인 시너지.
-                        </p>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:12.5px; line-height:1.65;">
+                        <div><strong style="color:var(--text-primary);">1. 추천 사용자 :</strong> <span style="color:var(--text-secondary);">오후의 분위기 전환 및 감정 환기, 미팅 및 약속</span></div>
+                        <div><strong style="color:var(--text-primary);">2. 향의 농도 :</strong> <span style="color:var(--text-secondary);">20%</span></div>
+                        <div><strong style="color:var(--text-primary);">3. 예상 지속 시간 :</strong> <span style="color:var(--text-secondary);">약 8시간</span></div>
+                        <div><strong style="color:var(--text-primary);">4. 휴대 방식 :</strong> <span style="color:var(--text-secondary);">서재 문진형 인장 캡 & 가방 포켓 간편 수납</span></div>
+                        <div><strong style="color:var(--text-primary);">5. 구성품 :</strong> <span style="color:var(--text-secondary);">50ml 본품 보틀 + 인장 캡 + 칠정(七情) 가이드 카드</span></div>
                     </div>
-                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px 18px; font-size:11.5px; font-family:var(--font-mono);">
-                        <div><strong>부향률:</strong> 20% (지속 8시간)</div>
-                        <div><strong>캡/소재:</strong> 서재 문진형 인장 캡</div>
-                        <div style="color:var(--accent-red); font-weight:800; margin-top:4px;">대표작: 04. 적송 홍화 (4.9만)</div>
+                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:16px 18px; font-size:12px; font-family:var(--font-mono); display:flex; flex-direction:column; gap:6px;">
+                        <div><strong style="color:var(--text-primary);">6. 가격대 :</strong> <span style="color:var(--text-primary); font-weight:800;">49,000 KRW</span></div>
+                        <div style="border-top:1px dashed rgba(0,0,0,0.08); padding-top:6px; margin-top:2px;">
+                            <strong style="color:var(--accent-red);">7. 대표 향 :</strong> <span style="color:var(--accent-red); font-weight:900; font-family:var(--font-serif); font-size:13.5px;">04. 적송 홍화</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Tier 3 -->
-                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-brass); border-radius:4px; padding:32px 36px; box-shadow:0 8px 24px rgba(180,83,9,0.04);">
+                <div class="signature-row-grid" style="background:#ffffff; border:1px solid var(--border-line); border-left:4px solid var(--accent-brass); border-radius:4px; padding:28px 32px; box-shadow:0 8px 24px rgba(180,83,9,0.04);">
                     <div>
                         <span class="product-badge product-badge-3mapae">LEVEL 03</span>
-                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); color:var(--accent-brass); margin-top:6px;">3마패</h4>
-                        <div style="font-size:11px; color:var(--accent-brass); font-weight:800;">MASTER SIGNATURE</div>
+                        <h4 style="font-size:20px; font-weight:900; font-family:var(--font-serif); color:var(--accent-brass); margin-top:4px;">3마패</h4>
+                        <div style="font-size:10.5px; color:var(--accent-brass); font-weight:800; font-family:var(--font-mono);">ALL-DAY MASTER</div>
                     </div>
-                    <div>
-                        <div style="font-size:15px; font-weight:900; color:var(--accent-brass); margin-bottom:6px;">"공간과 시간을 압도하는 독보적 존재감, 평생 소장 오브제"</div>
-                        <p style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin:0;">
-                            1,200℃ 방짜유기 놋쇠 캡과 90일 암실 저온 숙성으로 12시간 이상 지속되는 올데이 품격.
-                        </p>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:12.5px; line-height:1.65;">
+                        <div><strong style="color:var(--text-primary);">1. 추천 사용자 :</strong> <span style="color:var(--text-secondary);">하루 종일 묵직한 품격과 존재감, 중요 비즈니스 및 특별한 저녁</span></div>
+                        <div><strong style="color:var(--text-primary);">2. 향의 농도 :</strong> <span style="color:var(--text-secondary);">25%</span></div>
+                        <div><strong style="color:var(--text-primary);">3. 예상 지속 시간 :</strong> <span style="color:var(--text-secondary);">12시간 이상</span></div>
+                        <div><strong style="color:var(--text-primary);">4. 휴대 방식 :</strong> <span style="color:var(--text-secondary);">1,200℃ 방짜유기 놋쇠 캡 & 마패 참(Charm) 가방 체결</span></div>
+                        <div><strong style="color:var(--text-primary);">5. 구성품 :</strong> <span style="color:var(--text-secondary);">50ml 보틀 + 놋쇠 캡 + 놋쇠 마패 참 + 한지 보증서</span></div>
                     </div>
-                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px 18px; font-size:11.5px; font-family:var(--font-mono); color:var(--accent-brass);">
-                        <div><strong>부향률:</strong> 25% (올데이 12시간+)</div>
-                        <div><strong>캡/소재:</strong> 전통 방짜유기 놋쇠 캡</div>
-                        <div style="color:var(--accent-brass); font-weight:900; margin-top:4px;">대표작: 08. 백단 묵향 (6.9만)</div>
+                    <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:16px 18px; font-size:12px; font-family:var(--font-mono); color:var(--accent-brass); display:flex; flex-direction:column; gap:6px;">
+                        <div><strong style="color:var(--text-primary);">6. 가격대 :</strong> <span style="color:var(--accent-brass); font-weight:900;">69,000 KRW</span></div>
+                        <div style="border-top:1px dashed rgba(202,138,4,0.2); padding-top:6px; margin-top:2px;">
+                            <strong style="color:var(--accent-brass);">7. 대표 향 :</strong> <span style="color:var(--accent-brass); font-weight:900; font-family:var(--font-serif); font-size:13.5px;">08. 백단 묵향</span>
+                        </div>
                     </div>
                 </div>
 
@@ -408,19 +860,19 @@
             <div class="grid-2" style="margin-bottom:48px; gap:40px; align-items:flex-end;">
                 <div>
                     <span class="section-tag" style="color:var(--accent-pine); border-color:var(--accent-pine);">MAPAE LEVEL 01 · WIDE EDITORIAL SHOWCASE</span>
-                    <h2 style="font-size:34px; font-weight:900; font-family:var(--font-serif); margin-bottom:14px;">
-                        남해 하동의 아침 햇살과 청유자,<br>01. 유자 청송 (柚子 靑松)
+                    <h2 class="section-title" style="margin-bottom:14px;">
+                        남해 하동의 아침 햇살과 청유자,<br class="desktop-br">01. 유자 청송 (柚子 靑松)
                     </h2>
                     <p style="font-size:15px; color:var(--text-secondary); line-height:1.85; margin:0;">
                         새벽안개를 머금은 남해 하동 청유자의 싱그러운 과즙과 지리산 청송 솔잎의 정갈함. 가열하지 않고 추출한 영하 30℃ 초임계 저온 CO2 정유가 맑은 하루의 시작을 열어줍니다.
                     </p>
                 </div>
-                <div style="display:flex; justify-content:flex-end; align-items:center; gap:20px; flex-wrap:wrap;">
-                    <div style="text-align:right;">
-                        <div style="font-size:26px; font-weight:900; font-family:var(--font-mono);">39,000 KRW</div>
-                        <div style="font-size:11px; color:var(--text-muted);">50ml / Eau de Parfum (부향률 15%)</div>
+                <div class="story-action-bar" style="justify-content:flex-end;">
+                    <div class="story-price-info" style="text-align:right;">
+                        <div class="story-price-val">39,000 KRW</div>
+                        <div style="font-size:10.5px; color:var(--text-muted);">50ml / Eau de Parfum (부향률 15%)</div>
                     </div>
-                    <a href="카테고리.html" class="btn-black" style="padding:14px 28px;">1마패 카테고리 보기 &gt;</a>
+                    <a href="카테고리.html" class="btn-black">1마패 카테고리 보기 &gt;</a>
                 </div>
             </div>
 
@@ -475,7 +927,7 @@
                 <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; padding:clamp(24px, 4vw, 40px); display:flex; flex-direction:column; justify-content:space-between; min-height:380px; box-shadow:0 8px 24px rgba(0,0,0,0.02);">
                     <div>
                         <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); color:var(--accent-red); letter-spacing:1.5px;">LEFT NOTE · FLORAL SPICE</span>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:12px 0; color:var(--accent-red);">남원 붉은 홍화 (紅花)</h3>
+                        <h3 class="feature-title" style="margin:10px 0; color:var(--accent-red);">남원 붉은 홍화 (紅花)</h3>
                         <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.8;">
                             동의보감에서 혈맥을 깨운다 기록된 홍화의 강렬하고 매혹적인 붉은 꽃잎 향조. 오후의 단조로움을 단숨에 환기합니다.
                         </p>
@@ -489,7 +941,7 @@
                 <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; padding:clamp(24px, 4vw, 40px); display:flex; flex-direction:column; justify-content:space-between; min-height:380px; box-shadow:0 8px 24px rgba(0,0,0,0.02);">
                     <div>
                         <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); color:var(--accent-pine); letter-spacing:1.5px;">RIGHT NOTE · WOODY RESIN</span>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:12px 0; color:var(--text-primary);">지리산 천년 적송 (赤松)</h3>
+                        <h3 class="feature-title" style="margin:10px 0; color:var(--text-primary);">지리산 천년 적송 (赤松)</h3>
                         <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.8;">
                             수백 년 풍파를 견딘 지리산 붉은 소나무 껍질의 깊은 송진(수지) 향이 단단한 베이스와 지속력을 부여합니다.
                         </p>
@@ -502,15 +954,15 @@
             </div>
 
             <!-- 중앙 레이어링 공식 & 구매 CTA 바 -->
-            <div style="margin-top:36px; background:var(--bg-dark); color:#ffffff; border-radius:4px; padding:26px clamp(20px, 4vw, 40px); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+            <div style="margin-top:36px; background:var(--bg-dark); color:#ffffff; border-radius:4px; padding:22px clamp(18px, 4vw, 36px); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
                 <div>
                     <span style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); letter-spacing:1.5px;">MASTER LAYERING RECIPE</span>
-                    <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-top:3px;">
+                    <div style="font-size:15px; font-weight:900; font-family:var(--font-serif); margin-top:3px; word-break:keep-all;">
                         【1마패 유자청송 2회】 + 【2마패 적송홍화 1회】 = '소나무 숲의 붉은 노을'
                     </div>
                 </div>
-                <div style="display:flex; align-items:center; gap:20px;">
-                    <div style="font-size:24px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass);">49,000 KRW</div>
+                <div class="story-action-bar">
+                    <div class="story-price-val" style="color:var(--accent-brass);">49,000 KRW</div>
                     <a href="카테고리.html" class="btn-brass">2마패 컬렉션 보기 &gt;</a>
                 </div>
             </div>
@@ -539,7 +991,7 @@
                 <div class="grid-2" style="gap:36px; align-items:center; background:var(--bg-linen); border:1px solid var(--border-line); padding:clamp(24px, 4vw, 40px); border-radius:4px;">
                     <div>
                         <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass); letter-spacing:1px;">CRAFT STEP 01</span>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:8px 0 14px;">1,200℃ 쇳물로 빚어내는 전통 방짜유기 놋쇠 캡</h3>
+                        <h3 class="feature-title" style="margin:8px 0 12px;">1,200℃ 쇳물로 빚어내는 전통 방짜유기 놋쇠 캡</h3>
                         <p style="font-size:14px; color:var(--text-secondary); line-height:1.85; margin:0;">
                             구리와 주석을 전통 황금비로 합금하여 1,200℃ 화로에서 한 점씩 주조합니다. 향수를 모두 쓴 후에도 서재 문진(Paperweight)으로 평생 곁에 머뭅니다.
                         </p>
@@ -556,12 +1008,12 @@
                     </div>
                     <div>
                         <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass); letter-spacing:1px;">CRAFT STEP 02 & MASTER OBJECT</span>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:8px 0 14px; color:var(--accent-brass);">천년 백단과 송연묵의 90일 숙성</h3>
+                        <h3 class="feature-title" style="margin:8px 0 12px; color:var(--accent-brass);">천년 백단과 송연묵의 90일 숙성</h3>
                         <p style="font-size:14px; color:var(--text-secondary); line-height:1.85; margin-bottom:24px;">
                             천년 백단향과 귀한 송연묵 원액을 90일간 빛이 차단된 암실에서 저온 숙성하여 알코올 향을 완전히 다스리고 12시간 이상 묵직하게 유지되는 서명을 완성합니다.
                         </p>
-                        <div style="display:flex; align-items:center; gap:20px;">
-                            <div style="font-size:26px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass);">69,000 KRW</div>
+                        <div class="story-action-bar" style="margin-top:20px;">
+                            <div class="story-price-val" style="color:var(--accent-brass);">69,000 KRW</div>
                             <a href="카테고리.html" class="btn-brass">3마패 컬렉션 보기 &gt;</a>
                         </div>
                     </div>
@@ -632,8 +1084,8 @@
             <div class="grid-2" style="background:#fffcf8; border:1.5px solid #fed7aa; border-radius:4px; padding:clamp(28px, 5vw, 64px); gap:40px; align-items:center; box-shadow:0 12px 36px rgba(180,83,9,0.04);">
                 <div>
                     <span style="display:inline-block; font-size:11px; font-weight:800; letter-spacing:2.5px; color:var(--accent-brass); margin-bottom:14px; font-family:var(--font-mono);">100% REFUNDABLE TASTING KIT</span>
-                    <h2 style="font-size:34px; font-weight:900; font-family:var(--font-serif); margin-bottom:18px; color:var(--text-primary);">
-                        실패 없는 시향 경험,<br>
+                    <h2 class="section-title" style="margin-bottom:14px; color:var(--text-primary);">
+                        실패 없는 시향 경험,<br class="desktop-br">
                         사단 3종 디스커버리 킷
                     </h2>
                     <p style="font-size:14.5px; color:var(--text-secondary); line-height:1.85; margin-bottom:28px;">
@@ -648,9 +1100,9 @@
                         <span class="product-badge product-badge-3mapae">08. 백단 묵향 (5ml)</span>
                     </div>
 
-                    <div style="display:flex; align-items:center; gap:24px;">
-                        <div style="font-size:26px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass);">19,000 KRW</div>
-                        <button class="btn-black">디스커버리 킷 신청하기 &gt;</button>
+                    <div class="story-action-bar" style="margin-top:20px;">
+                        <div class="story-price-val" style="color:var(--accent-brass);">19,000 KRW</div>
+                        <button type="button" class="btn-black" onclick="jumpToCategory('sec-gift')">디스커버리 킷 신청하기 &gt;</button>
                     </div>
                 </div>
 
@@ -834,7 +1286,7 @@
                             <span class="section-tag" style="margin:0;">GIFT PACKAGING</span>
                             <span style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass);">[선물 포장 옵션]</span>
                         </div>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:8px 0 16px;">능화창(菱花窓) 선물 패키징</h3>
+                        <h3 class="feature-title" style="margin:8px 0 14px;">능화창(菱花窓) 선물 패키징</h3>
                         
                         <div style="font-size:13px; color:var(--text-secondary); line-height:1.75; display:flex; flex-direction:column; gap:10px; margin-bottom:28px;">
                             <div>
@@ -861,7 +1313,7 @@
                             <span class="section-tag" style="margin:0;">PRIVATE ATELIER</span>
                             <span style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass);">[쇼룸 기획안]</span>
                         </div>
-                        <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); margin:8px 0 16px;">사단 프라이빗 아틀리에</h3>
+                        <h3 class="feature-title" style="margin:8px 0 14px;">사단 프라이빗 아틀리에</h3>
                         
                         <div style="font-size:13px; color:var(--text-secondary); line-height:1.75; display:flex; flex-direction:column; gap:10px; margin-bottom:28px;">
                             <div>
@@ -879,11 +1331,13 @@
                         </div>
                     </div>
                     <div class="btn-dual-wrap">
-                        <button type="button" class="btn-black" onclick="alert('사단 프라이빗 아틀리에는 현재 쇼룸 기획 단계로, 정식 오픈 시 사전 예약 알림을 등록해 드립니다.');" style="width:100%; cursor:pointer; padding:14px 12px; font-size:13px; white-space:nowrap; text-align:center;">
-                            아틀리에 예약 신청 &gt;
+                        <button type="button" class="btn-black" onclick="alert('사단 프라이빗 아틀리에는 현재 쇼룸 기획 단계로, 정식 오픈 시 사전 예약 알림을 등록해 드립니다.');">
+                            <span class="desktop-only-btn-text">아틀리에 예약 신청 &gt;</span>
+                            <span class="mobile-only-btn-text" style="display:none;">아틀리에 예약 &gt;</span>
                         </button>
-                        <button type="button" class="btn-outline" onclick="openDiagnosisModal()" style="width:100%; background:#ffffff; cursor:pointer; padding:14px 10px; font-size:13px; white-space:nowrap; text-align:center;">
-                            온라인 30초 진단 &gt;
+                        <button type="button" class="btn-outline" onclick="openDiagnosisModal()" style="background:#ffffff;">
+                            <span class="desktop-only-btn-text">온라인 30초 진단 &gt;</span>
+                            <span class="mobile-only-btn-text" style="display:none;">온라인 30초 진단 &gt;</span>
                         </button>
                     </div>
                 </div>
@@ -900,8 +1354,8 @@
                 THE EPILOGUE OF SADAN
             </span>
 
-            <h2 style="font-size:36px; font-weight:900; line-height:1.45; font-family:var(--font-serif); margin-bottom:28px; color:#ffffff; word-break:keep-all;">
-                "조선의 묵향과 바람, <br>당신의 하루에 고유한 품격과 서사가 되다."
+            <h2 class="section-title" style="line-height:1.45; margin-bottom:20px; color:#ffffff; word-break:keep-all;">
+                "조선의 묵향과 바람, <br class="desktop-br">당신의 하루에 고유한 품격과 서사가 되다."
             </h2>
 
             <p style="font-size:15px; color:#a1a1aa; line-height:1.95; max-width:720px; margin:0 auto 52px; word-break:keep-all; font-weight:400;">
@@ -920,12 +1374,14 @@
                 </div>
             </div>
 
-            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-                <a href="카테고리.html" style="display:inline-block; padding:14px 32px; background:transparent; color:#f4f4f5; border:1px solid #71717a; border-radius:2px; font-size:13px; font-weight:800; text-decoration:none; transition:all 0.2s;">
-                    전체 16종 마스터 카탈로그 보기 &gt;
+            <div class="epilogue-btn-wrap">
+                <a href="카테고리.html" class="btn-outline-light">
+                    <span class="desktop-only-btn-text">전체 16종 마스터 카탈로그 보기 &gt;</span>
+                    <span class="mobile-only-btn-text" style="display:none;">16종 카탈로그 &gt;</span>
                 </a>
-                <a href="카테고리.html" style="display:inline-block; padding:14px 32px; background:var(--accent-brass); color:#ffffff; border:1px solid var(--accent-brass); border-radius:2px; font-size:13px; font-weight:800; text-decoration:none; transition:all 0.2s;">
-                    100% 환급 디스커버리 킷 신청하기 &gt;
+                <a href="카테고리.html" class="btn-brass-light">
+                    <span class="desktop-only-btn-text">100% 환급 디스커버리 킷 신청 &gt;</span>
+                    <span class="mobile-only-btn-text" style="display:none;">100% 환급 킷 신청 &gt;</span>
                 </a>
             </div>
         </div>
@@ -1142,10 +1598,321 @@
             renderQuizStep();
         }
 
-        // ESC 키로 모달 닫기
+        // ESC 키로 모달 및 카트 드로어 닫기
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeDiagnosisModal();
+            if (e.key === 'Escape') {
+                closeDiagnosisModal();
+                closeCartDrawer();
+            }
+        });
+
+        // ========================================================
+        // [CART ENGINE] LocalStorage Synchronization & Drawer Logic
+        // ========================================================
+        const productPriceMap = {
+            '01. 유자 청송': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '02. 백합 한지': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '03. 옥로 다원': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '04. 적송 홍화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '05. 달맞이꽃 야화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '06. 매화 설원': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '07. 치자 노을': { price: 49000, spec: '50ml EDP · 2마패 Point' },
+            '08. 백단 묵향': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '09. 침향 흑호': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '10. 자개 영롱': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '11. 궁중 향낭': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
+            '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
+            '14. 방동 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방동 마패 홀더' },
+            '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 100% 환급 쿠폰' },
+            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' }
+        };
+
+        let cart = [];
+        try {
+            cart = JSON.parse(localStorage.getItem('sadan_cart') || '[]');
+        } catch(e) {
+            cart = [];
+        }
+
+        function saveCart() {
+            try {
+                localStorage.setItem('sadan_cart', JSON.stringify(cart));
+            } catch(e) {}
+            updateCartUI();
+        }
+
+        function addToCart(itemName) {
+            const cleanTitle = itemName.replace(' (柚子 靑松)', '').replace(' (百合 韓紙)', '').replace(' (玉露 茶園)', '').replace(' (赤松 紅花)', '').replace(' (月下 夜花)', '').replace(' (梅花 雪原)', '').replace(' (梔子 晚霞)', '').replace(' (白檀 墨香)', '').replace(' (沈香 黑虎)', '').replace(' (螺鈿 玲瓏)', '').replace(' (宮中 香囊)', '').trim();
+            const matchedKey = Object.keys(productPriceMap).find(k => cleanTitle.includes(k) || k.includes(cleanTitle)) || cleanTitle;
+            const meta = productPriceMap[matchedKey] || { price: 49000, spec: '사단 시그니처 에디션' };
+
+            const existing = cart.find(i => i.title === matchedKey);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    title: matchedKey,
+                    price: meta.price,
+                    spec: meta.spec,
+                    qty: 1
+                });
+            }
+            saveCart();
+            openCartDrawer();
+        }
+
+        function updateCartQty(title, delta) {
+            const item = cart.find(i => i.title === title);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.title !== title);
+                }
+                saveCart();
+            }
+        }
+
+        function removeCartItem(title) {
+            cart = cart.filter(i => i.title !== title);
+            saveCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            saveCart();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            const formattedPrice = totalPrice.toLocaleString() + ' KRW';
+
+            const headerCount = document.getElementById('headerCartCount');
+            if (headerCount) headerCount.innerText = totalCount;
+
+            const floatingBadge = document.getElementById('floatingCartBadge');
+            const floatingTotal = document.getElementById('floatingCartTotal');
+            if (floatingBadge) floatingBadge.innerText = totalCount;
+            if (floatingTotal) floatingTotal.innerText = formattedPrice;
+
+            const drawerCount = document.getElementById('drawerCartCount');
+            const drawerTotal = document.getElementById('drawerTotalAmount');
+            const drawerList = document.getElementById('drawerItemList');
+            const drawerEmpty = document.getElementById('drawerEmptyState');
+            const drawerFooter = document.getElementById('drawerFooter');
+
+            if (drawerCount) drawerCount.innerText = totalCount;
+            if (drawerTotal) drawerTotal.innerText = formattedPrice;
+
+            if (totalCount === 0) {
+                if (drawerEmpty) drawerEmpty.style.display = 'flex';
+                if (drawerList) drawerList.style.display = 'none';
+                if (drawerFooter) drawerFooter.style.opacity = '0.5';
+            } else {
+                if (drawerEmpty) drawerEmpty.style.display = 'none';
+                if (drawerList) {
+                    drawerList.style.display = 'flex';
+                    drawerList.innerHTML = cart.map(item => `
+                        <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                            <div style="flex:1;">
+                                <div style="font-size:13.5px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:3px;">${item.title}</div>
+                                <div style="font-size:10.5px; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:6px;">${item.spec}</div>
+                                <div style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">${(item.price * item.qty).toLocaleString()} KRW</div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <div style="display:flex; align-items:center; border:1px solid var(--border-line); border-radius:3px; background:#fff;">
+                                    <button type="button" onclick="updateCartQty('${item.title}', -1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">-</button>
+                                    <span style="font-size:11.5px; font-weight:800; font-family:var(--font-mono); padding:0 6px;">${item.qty}</span>
+                                    <button type="button" onclick="updateCartQty('${item.title}', 1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">+</button>
+                                </div>
+                                <button type="button" onclick="removeCartItem('${item.title}')" style="border:none; background:transparent; color:var(--text-muted); font-size:16px; cursor:pointer; padding:4px;">&times;</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                if (drawerFooter) drawerFooter.style.opacity = '1';
+            }
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+
+            const isOpened = drawer.getAttribute('data-open') === 'true';
+            if (isOpened) {
+                closeCartDrawer();
+            } else {
+                openCartDrawer();
+            }
+        }
+
+        function openCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+            drawer.setAttribute('data-open', 'true');
+            backdrop.style.display = 'block';
+            setTimeout(() => {
+                backdrop.style.opacity = '1';
+                drawer.style.transform = 'translateX(0%)';
+            }, 10);
+        }
+
+        function closeCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+            if (!drawer || !backdrop) return;
+            drawer.setAttribute('data-open', 'false');
+            drawer.style.transform = 'translateX(100%)';
+            backdrop.style.opacity = '0';
+            setTimeout(() => { backdrop.style.display = 'none'; }, 300);
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert('장바구니에 담긴 상품이 없습니다.');
+                return;
+            }
+            const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            alert(`[사단 HAUTE PERFUMERY 안전 주문서]\n\n총 ${totalCount}개 품목 (합계: ${totalPrice.toLocaleString()} KRW)\n전액 무료 배송 VIP 패키지로 안전하게 결제 단계로 이동합니다.`);
+        }
+
+        function openUserMenuModal() {
+            const modal = document.getElementById('userMenuModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeUserMenuModal() {
+            const modal = document.getElementById('userMenuModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
         });
     </script>
+
+    <!-- ========================================================
+         [USER & NAVIGATION MENU MODAL] 사용자 마이페이지 & 전체 메뉴 모달
+         ======================================================== -->
+    <div id="userMenuModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:440px; width:92%; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closeUserMenuModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <!-- User Profile Summary -->
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border-line);">
+                <div style="width:40px; height:40px; border-radius:50%; background:var(--bg-dark); color:#ffffff; display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:16px;">士</div>
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:16px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary);">사단 회원</span>
+                        <span class="product-badge product-badge-3mapae" style="font-size:9.5px; padding:2px 6px;">VIP 멤버</span>
+                    </div>
+                    <div style="font-size:11.5px; color:var(--text-muted); font-family:var(--font-mono);">sadan.secret@mape.kr</div>
+                </div>
+            </div>
+
+            <!-- Page Navigation Links -->
+            <div style="margin-bottom:16px;">
+                <div style="font-size:10px; font-weight:800; color:var(--text-muted); letter-spacing:1.5px; margin-bottom:8px; font-family:var(--font-mono);">SITE NAVIGATION</div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <a href="메인_페이지.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>🏠 메인 홈</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                    <a href="브랜드_소개.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>📖 브랜드 소개 (스토리 &amp; 철학)</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                    <a href="카테고리.html" style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-linen); border-radius:4px; text-decoration:none; color:var(--text-primary); font-size:13px; font-weight:700; transition:all 0.15s;">
+                        <span>📦 사단 16종 전 상품 카탈로그</span>
+                        <span style="font-size:11px; color:var(--text-muted);">&gt;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Member Benefit Info -->
+            <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:20px;">
+                <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">보유 100% 환급 쿠폰</span>
+                    <span style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">19,000 KRW</span>
+                </div>
+                <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">30초 맞춤 향 진단</span>
+                    <button type="button" onclick="closeUserMenuModal(); openDiagnosisModal();" class="btn-brass" style="padding:4px 10px; font-size:10.5px;">진단하기</button>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+                <button type="button" class="btn-outline" onclick="closeUserMenuModal(); toggleCartDrawer();" style="padding:10px; font-size:11.5px;">장바구니 확인</button>
+                <button type="button" class="btn-black" onclick="closeUserMenuModal()" style="padding:10px; font-size:11.5px;">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         [FLOATING WIDGET] 우측 하단 스티키 플로팅 장바구니 바
+         ======================================================== -->
+    <div id="floatingCartWidget" class="floating-cart-pill" onclick="toggleCartDrawer()">
+        <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:11px; font-weight:900; font-family:var(--font-mono); letter-spacing:1px; color:#ffffff;">CART</span>
+            <span id="floatingCartBadge" style="background:var(--accent-brass); color:#ffffff; font-size:10px; font-weight:900; padding:2px 7px; border-radius:12px; font-family:var(--font-mono);">0</span>
+        </div>
+        <div style="width:1px; height:14px; background:#3f3f46;"></div>
+        <div id="floatingCartTotal" style="font-size:12.5px; font-weight:900; font-family:var(--font-mono); color:#fef08a;">0 KRW</div>
+        <span style="font-size:10.5px; color:#a1a1aa; font-weight:700;">주문 확인 &gt;</span>
+    </div>
+
+    <!-- ========================================================
+         [CART DRAWER] 우측 슬라이드형 실시간 장바구니 서랍 (한눈에 보기)
+         ======================================================== -->
+    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" style="position:fixed; inset:0; background:rgba(0,0,0,0.5); backdrop-filter:blur(3px); z-index:1500; display:none; opacity:0; transition:opacity 0.3s ease;"></div>
+    <div id="cartDrawer" data-open="false" style="position:fixed; top:0; right:0; width:420px; max-width:92vw; height:100vh; background:#ffffff; z-index:1501; box-shadow:-8px 0 32px rgba(0,0,0,0.18); display:flex; flex-direction:column; transform:translateX(100%); transition:transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+        
+        <!-- Drawer Header -->
+        <div style="padding:22px 24px; border-bottom:1px solid var(--border-line); display:flex; justify-content:space-between; align-items:center; background:var(--bg-linen);">
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:28px; height:28px; border:1.5px solid var(--text-primary); display:flex; align-items:center; justify-content:center; font-weight:900; font-family:var(--font-serif); font-size:13px;">士</div>
+                <h3 style="font-size:17px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0;">
+                    선택 상품 장바구니 (<span id="drawerCartCount" style="color:var(--accent-brass); font-family:var(--font-mono);">0</span>)
+                </h3>
+            </div>
+            <button type="button" onclick="closeCartDrawer()" style="background:transparent; border:none; font-size:22px; cursor:pointer; line-height:1; color:var(--text-secondary);">&times;</button>
+        </div>
+
+        <!-- Drawer Content / Item List -->
+        <div id="drawerItemList" style="flex:1; overflow-y:auto; padding:20px 24px; display:flex; flex-direction:column; gap:12px;">
+            <!-- Dynamic Items rendered here -->
+        </div>
+
+        <!-- Empty State in Drawer -->
+        <div id="drawerEmptyState" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:32px 24px; color:var(--text-muted);">
+            <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:8px;">CART IS EMPTY</div>
+            <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:8px;">장바구니가 비어 있습니다</div>
+            <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:20px;">
+                사단의 대표 시그니처 향과 디스커버리 킷을 둘러보고<br>나만의 조합을 담아보세요.
+            </p>
+            <a href="카테고리.html" class="btn-black" onclick="closeCartDrawer()" style="padding:10px 22px; font-size:12px; text-decoration:none;">16종 상품 둘러보기</a>
+        </div>
+
+        <!-- Drawer Footer / Summary & Checkout -->
+        <div id="drawerFooter" style="padding:22px 24px; border-top:1px solid var(--border-line); background:var(--bg-linen);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:12px; color:var(--text-secondary);">
+                <span>배송비</span>
+                <span style="font-weight:800; color:var(--accent-pine);">무료 배송 (VIP 전액 지원)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                <span style="font-size:14px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary);">총 결제 예상 금액</span>
+                <span id="drawerTotalAmount" style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass);">0 KRW</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:10px;">
+                <button type="button" class="btn-outline" onclick="clearCart()" style="padding:12px; font-size:12px;">전체 비우기</button>
+                <button type="button" class="btn-black" onclick="checkoutOrder()" style="padding:12px; font-size:12.5px;">주문 결제하기 &gt;</button>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
