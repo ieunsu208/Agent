@@ -243,6 +243,17 @@
             }
         }
 
+        /* Card Highlight Animation for Quiz & Navigation */
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(202, 138, 4, 0.7); border-color: var(--accent-brass); transform: scale(1.02); }
+            50% { box-shadow: 0 0 0 10px rgba(202, 138, 4, 0); border-color: var(--accent-brass); transform: scale(1.02); }
+            100% { box-shadow: 0 0 0 0 rgba(202, 138, 4, 0); border-color: var(--accent-brass); transform: scale(1); }
+        }
+        .card-highlight-pulse {
+            animation: pulseBorder 1.8s ease-in-out;
+            border: 2px solid var(--accent-brass) !important;
+        }
+
         /* Category Section Divider & Cards */
         .category-section-block {
             margin-bottom: 56px;
@@ -632,14 +643,14 @@
                 line-height: 1.4 !important;
             }
             .section-tag { 
-                font-size: 8.5px !important; 
-                letter-spacing: 1.2px !important; 
+                display: inline-block !important;
+                font-size: 10.5px !important; 
+                letter-spacing: 1.5px !important; 
                 margin-bottom: 6px !important; 
                 font-family: var(--font-mono) !important;
-                background: rgba(202, 138, 4, 0.08) !important;
-                padding: 3px 8px !important;
-                border-radius: 16px !important;
-                border: 1px solid rgba(202, 138, 4, 0.2) !important;
+                background: transparent !important;
+                padding: 0 !important;
+                border: none !important;
             }
             .section-desc, section p, main p { 
                 font-size: 11.5px !important; 
@@ -704,6 +715,32 @@
                 padding-bottom: 28px !important;
             }
         }
+
+        /* Narrow Mobile (<= 480px & 360px) Zero-Overflow */
+        @media (max-width: 480px) {
+            .container, .container-narrow { padding: 0 14px !important; }
+            .section-tag {
+                white-space: normal !important;
+                word-break: keep-all !important;
+                max-width: 100% !important;
+            }
+            .floating-cart-pill {
+                bottom: 12px !important;
+                right: 12px !important;
+                padding: 6px 12px !important;
+                font-size: 10px !important;
+            }
+        }
+        @media (max-width: 360px) {
+            .container, .container-narrow { padding: 0 10px !important; }
+            .product-grid-3, .product-grid-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px !important;
+            }
+            .product-card { padding: 10px 8px !important; }
+            .product-card-title { font-size: 12.5px !important; }
+            .product-card-price { font-size: 12px !important; }
+        }
     </style>
 </head>
 <body>
@@ -713,8 +750,8 @@
         <div class="container" style="display:flex; justify-content:center; align-items:center;">
             <a href="카테고리.html" title="디스커버리 킷 보러가기">
                 <span class="top-badge">혜택</span>
-                <span class="desktop-announcement-text" style="font-weight:600;">첫 주문 한정, 본품 구매 시 100% 환급되는 ‘디스커버리 킷’ 혜택을 만나보세요.</span>
-                <span class="mobile-announcement-text" style="display:none; font-weight:600;">첫 주문 한정, 본품 구매 시 100% 환급 디스커버리 킷</span>
+                <span class="desktop-announcement-text" style="font-weight:600;">첫 주문 한정, 19,000원 웰컴 크레딧 증정 ‘디스커버리 킷’ 혜택을 만나보세요.</span>
+                <span class="mobile-announcement-text" style="display:none; font-weight:600;">첫 주문 한정, 19,000원 웰컴 크레딧 킷</span>
                 <span style="font-size:10px; opacity:0.6; font-family:var(--font-mono);">→</span>
             </a>
         </div>
@@ -760,21 +797,21 @@
     <section style="padding:48px 0 28px; background:var(--bg-base); border-bottom:1px solid var(--border-line);">
         <div class="container">
             <div style="text-align:center; max-width:820px; margin:0 auto 20px;">
-                <span class="section-tag">MASTER PRODUCT ARCHIVE</span>
+                <span class="section-tag">MASTER PRODUCT ARCHIVE · 사단 16대 전 상품 전체보기</span>
                 <h1 class="section-title">
                     사단(士團) 16대 전 상품 통합 마스터 카탈로그
                 </h1>
                 <p class="section-desc">
                     1·2·3마패 등급별 향수부터 웰니스 공간 오브제, 기프트 세트까지—<br class="desktop-br">
-                    카테고리별 상품 리스트와 주요 노트, 추천 상황(TPO)을 한눈에 탐색하고 비교해 보세요.
+                    카테고리별 상품 리스트와 주요 노트, 추천 시간·장소·상황에 맞춘 향을 한눈에 탐색하고 비교해 보세요.
                 </p>
             </div>
 
-            <!-- 디스커버리 킷 환급 브릿지 바 -->
+            <!-- 디스커버리 킷 웰컴 크레딧 브릿지 바 -->
             <div style="background:#fffcf8; border:1.5px solid #fed7aa; border-radius:4px; padding:14px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; box-shadow:0 4px 12px rgba(180,83,9,0.04);">
                 <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
-                    <span style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); background:var(--accent-brass-light); padding:2px 8px; border-radius:2px;">100% REFUND</span>
-                    <span><strong>대표 3종 시향 디스커버리 킷 (19,000 KRW)</strong> — 본품 구매 시 100% 전액 환급 쿠폰 지급</span>
+                    <span style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); background:var(--accent-brass-light); padding:2px 8px; border-radius:2px;">WELCOME CREDIT</span>
+                    <span><strong>대표 3종 시향 디스커버리 킷 (19,000 KRW)</strong> — 본품 구매용 19,000원 웰컴 크레딧 바우처 동봉</span>
                 </div>
                 <button type="button" class="btn-black" onclick="jumpToCategory('sec-gift')" style="padding:7px 16px; font-size:11.5px;">디스커버리 킷 보기 &gt;</button>
             </div>
@@ -878,9 +915,9 @@
                     </div>
                     <div style="min-height:220px; background:var(--bg-surface); border:1.5px dashed var(--border-line); border-radius:4px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px;">
                         <span style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--accent-pine); margin-bottom:6px;">[ 하동 유자 과수원 &amp; 모닝 셔츠 착향 씬 ]</span>
-                        <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">초임계 CO2 저온 추출 청유자 정유</div>
+                        <div style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">하동 청유자의 생생한 과즙 정수</div>
                         <p style="font-size:11.5px; color:var(--text-muted); max-width:320px; line-height:1.6; margin:0;">
-                            가열하지 않고 영하 30℃ 순수 이산화탄소로 유자 껍질의 생생한 프레시함을 그대로 담아내어 인공적인 알코올 취 없이 맑게 퍼집니다.
+                            경남 하동의 맑은 숲에서 자란 청유자 껍질을 정성스레 압착하여 인공적인 알코올 취 없이 맑고 산뜻한 시트러스 본연의 향을 전합니다.
                         </p>
                     </div>
                 </div>
@@ -909,17 +946,17 @@
                         </div>
                         <h4 style="font-size:15px; font-weight:900; font-family:var(--font-serif); margin-bottom:4px;">알싸하고 매혹적인 스파이시 플로럴</h4>
                         <p style="font-size:11.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
-                            조선 여인들이 연지를 찍던 붉은 잇꽃(홍화) 꽃잎에서 추출한 고혹적인 온기. 칠정(七情)의 우울함을 환기시키는 화려한 탑 노트.
+                            조선 여인들이 연지를 찍던 붉은 잇꽃(홍화) 꽃잎에서 착안한 고혹적인 온기. 마음의 피로를 환기시키는 화려한 탑 노트.
                         </p>
                     </div>
                     <div style="background:#ffffff; border:1px solid var(--border-line); padding:20px; border-radius:3px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
                             <span style="font-size:10.5px; font-weight:800; color:var(--accent-red); font-family:var(--font-mono);">02. PINE RESIN NOTE</span>
-                            <span style="font-size:10px; color:var(--accent-red); font-weight:800;">지리산 적송 수지 (赤松)</span>
+                            <span style="font-size:10px; color:var(--accent-red); font-weight:800;">지리산 적송 솔잎 (赤松)</span>
                         </div>
                         <h4 style="font-size:15px; font-weight:900; font-family:var(--font-serif); margin-bottom:4px;">깊고 서늘한 붉은 소나무 송진</h4>
                         <p style="font-size:11.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
-                            단단한 적송 줄기에서 배어 나오는 묵직한 송진 수지향이 플로럴의 가벼움을 든든하게 받쳐주어 들뜨지 않는 잔향을 완성.
+                            단단한 적송 줄기에서 배어 나오는 묵직한 솔잎 수지향이 플로럴의 가벼움을 든든하게 받쳐주어 들뜨지 않는 잔향을 완성.
                         </p>
                     </div>
                 </div>
@@ -938,36 +975,36 @@
                     <div>
                         <span class="product-badge product-badge-3mapae">LEVEL 03 · MASTER CRAFTSMANSHIP</span>
                         <h3 style="font-size:24px; font-weight:900; font-family:var(--font-serif); color:var(--accent-brass); margin-top:6px;">
-                            사단 3마패 백단 묵향: 무형문화재 놋쇠 캡과 천년 백단의 품격
+                            사단 3마패 백단 묵향: 전통 방짜유기 놋쇠 캡과 깊은 백단목의 품격
                         </h3>
                         <p style="font-size:12.5px; color:var(--text-secondary); margin-top:4px;">
-                            몸에 뿌리는 향을 넘어 책상 위 영구 소장되는 하나의 예술품이자 인장(印章)이 되기까지의 3단계 장인 공정입니다.
+                            몸에 뿌리는 향을 넘어 책상 위 영구 소장되는 하나의 예술품이자 인장(印章)이 되기까지의 3단계 공예 과정입니다.
                         </p>
                     </div>
                     <div style="font-size:11px; font-weight:900; font-family:var(--font-mono); color:var(--accent-brass); border:1px solid var(--accent-brass); padding:4px 10px; border-radius:2px; background:#fff;">
-                        100% HANDCRAFTED BRASS CAP
+                        HANDCRAFTED BRASS CAP
                     </div>
                 </div>
                 <div class="product-grid-3" style="margin-bottom:18px;">
                     <div style="background:#ffffff; border:1px solid var(--border-line); padding:18px; border-radius:3px;">
-                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 01. 1,200℃ 주조</div>
+                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 01. 주조 공예</div>
                         <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">방짜유기 놋쇠 캡 주조</h4>
                         <p style="font-size:11.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
-                            국가 무형문화재 주성장 장인이 구리와 주석 78:22 정밀 합금으로 주조하여 묵직한 그립감과 영구적인 보존성을 지닙니다.
+                            전통 방짜유기 주조 기법에 착안하여 구리와 주석의 정밀 합금으로 주조하여 묵직한 그립감과 영구적인 보존성을 지닙니다.
                         </p>
                     </div>
                     <div style="background:#ffffff; border:1px solid var(--border-line); padding:18px; border-radius:3px;">
-                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 02. 의궤 고증 묵향</div>
-                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">조선 송연묵(松煙墨) 추출</h4>
+                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 02. 서재의 묵향</div>
+                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">조선 송연묵(松煙墨) 재현</h4>
                         <p style="font-size:11.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
-                            조선 왕실 향방 의궤 비전대로 소나무 그을음 먹을 벼루에 정성껏 갈아낼 때 피어오르는 차분하고 지적인 먹향을 복원.
+                            조선 선비의 서재 정취에서 착안하여 소나무 그을음 먹을 벼루에 정성껏 갈아낼 때 피어오르는 차분하고 지적인 먹향을 재현.
                         </p>
                     </div>
                     <div style="background:#ffffff; border:1px solid var(--border-line); padding:18px; border-radius:3px;">
-                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 03. 90일 저온 숙성</div>
-                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">천년 백단목 &amp; 침향 숙성</h4>
+                        <div style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:4px;">STAGE 03. 조향 배합</div>
+                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">백단목 &amp; 침향 하모니</h4>
                         <p style="font-size:11.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
-                            최상급 백단 원목과 자연산 침향을 배합하여 90일간 암실 저온 숙성을 거쳐 피부 위에서 12시간 이상 머무는 지속력 완성.
+                            그윽한 백단 원목과 묵직한 침향 노트를 정밀 배합하여 피부 위에서 은은하고 오래 머무는 마스터 잔향 완성.
                         </p>
                     </div>
                 </div>
@@ -1040,7 +1077,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">39,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('01. 유자 청송');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p1');">담기</button>
                     </div>
                 </div>
 
@@ -1062,7 +1099,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">39,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('02. 백합 한지');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p2');">담기</button>
                     </div>
                 </div>
 
@@ -1084,7 +1121,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">39,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('03. 옥로 다원');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p3');">담기</button>
                     </div>
                 </div>
             </div>
@@ -1126,7 +1163,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">49,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('04. 적송 홍화');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p4');">담기</button>
                     </div>
                 </div>
 
@@ -1148,7 +1185,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">49,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('05. 달맞이꽃 야화');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p5');">담기</button>
                     </div>
                 </div>
 
@@ -1170,7 +1207,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">49,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('06. 매화 설원');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p6');">담기</button>
                     </div>
                 </div>
 
@@ -1192,7 +1229,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">49,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('07. 치자 노을');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p7');">담기</button>
                     </div>
                 </div>
             </div>
@@ -1208,33 +1245,33 @@
                         <span class="product-badge product-badge-3mapae">LEVEL 03</span>
                         3마패 컬렉션 (시그니처 Master 4종)
                     </h2>
-                    <p>국가 무형문화재 주성장 방짜유기 놋쇠 캡과 천년 백단·침향·송연묵의 12시간 지속 마스터피스</p>
+                    <p>전통 방짜유기 공예 놋쇠 캡과 그윽한 백단 원목·침향·송연묵의 고품격 마스터피스</p>
                 </div>
                 <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass);">
-                    방짜유기 놋쇠 캡 · 69,000 KRW
+                    50ml EDP · 69,000 KRW
                 </div>
             </div>
 
             <div class="product-grid-4">
                 <!-- Card 08 -->
-                <div class="product-card" data-tier="3mapae" data-scent="baekdan" data-tpo="evening" onclick="openProductModal('p8')">
+                <div class="product-card" data-tier="3mapae" data-scent="wood" data-tpo="evening" onclick="openProductModal('p8')">
                     <div>
                         <div class="product-card-top">
-                            <span class="product-badge product-badge-3mapae">3마패 · SIGNATURE</span>
-                            <span style="font-size:10px; font-weight:800; color:var(--accent-brass);">방짜유기 놋쇠 캡</span>
+                            <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
+                            <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">놋쇠 캡</span>
                         </div>
                         <div class="product-card-thumb">
                             <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[08. BOTTLE THUMBNAIL]</div>
-                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">백단 묵향 보틀 오브제</div>
+                            <div style="font-size:14px; font-weight:900; font-family:var(--font-serif);">백단 묵향 보틀 오브제</div>
                         </div>
                         <h4 class="product-card-title">08. 백단 묵향 (白檀 墨香)</h4>
-                        <p class="product-card-desc">"선비 서고에서 갈아낸 송연묵의 그윽한 먹향과 천년 백단의 압도적 시그니처."</p>
-                        <div class="product-card-notes">TOP: 조선 송연묵(墨) | MID: 천년 백단목 | BASE: 자연 침향</div>
+                        <p class="product-card-desc">"선비 서고에서 갈아낸 송연묵의 그윽한 먹향과 백단 원목의 압도적 시그니처."</p>
+                        <div class="product-card-notes">TOP: 조선 송연묵(墨) | MID: 그윽한 백단목 | BASE: 자연 침향</div>
                         <div class="product-card-tpo" style="color:var(--accent-brass);">추천 TPO: 저녁 모임 &amp; 비즈니스 / 지적 카리스마</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">69,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('08. 백단 묵향');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p8');">담기</button>
                     </div>
                 </div>
 
@@ -1256,7 +1293,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">69,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('09. 침향 흑호');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p9');">담기</button>
                     </div>
                 </div>
 
@@ -1278,7 +1315,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">69,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('10. 자개 영롱');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p10');">담기</button>
                     </div>
                 </div>
 
@@ -1300,7 +1337,7 @@
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">69,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('11. 궁중 향낭');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p11');">담기</button>
                     </div>
                 </div>
             </div>
@@ -1332,17 +1369,17 @@
                             <span style="font-size:11px; font-weight:800; color:var(--text-muted);">10ml / 놋쇠 참</span>
                         </div>
                         <div class="product-card-thumb">
-                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[12. OBJECT THUMBNAIL]</div>
+                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[WELLNESS OBJECT THUMBNAIL]</div>
                             <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">놋쇠 마패 롤온 오일</div>
                         </div>
-                        <h4 class="product-card-title">12. 놋쇠 마패 롤온 오일</h4>
+                        <h4 class="product-card-title">놋쇠 마패 롤온 오일</h4>
                         <p class="product-card-desc">"방짜유기 놋쇠 참이 결합되어 가방에 걸고 다니며 맥박에 바르는 고농축 오일."</p>
                         <div class="product-card-notes">KEY: 무형문화재 놋쇠 참 + 호호바 오일 베이스</div>
                         <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 외출 및 이동 중 / 맥박 부위에 퀵 터치</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">32,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('12. 놋쇠 마패 롤온 오일');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p12');">담기</button>
                     </div>
                 </div>
 
@@ -1354,17 +1391,17 @@
                             <span style="font-size:11px; font-weight:800; color:var(--text-muted);">200ml / 흑도자기</span>
                         </div>
                         <div class="product-card-thumb">
-                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[13. OBJECT THUMBNAIL]</div>
+                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[WELLNESS OBJECT THUMBNAIL]</div>
                             <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">여주 흑도자기 룸미스트</div>
                         </div>
-                        <h4 class="product-card-title">13. 흑도자기 룸 &amp; 패브릭 미스트</h4>
+                        <h4 class="product-card-title">흑도자기 룸 &amp; 패브릭 미스트</h4>
                         <p class="product-card-desc">"침실과 옷감에 한국의 자연 피톤치드를 불어넣는 여주 흑도자기 보틀 미스트."</p>
                         <div class="product-card-notes">KEY: 여주 수제 흑도자기 보틀 + 천연 편백 정유</div>
                         <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 취침 전 &amp; 외출 전 / 침실 침구와 옷감 훈향</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">38,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('13. 흑도자기 룸 미스트');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p13');">담기</button>
                     </div>
                 </div>
 
@@ -1376,17 +1413,17 @@
                             <span style="font-size:11px; font-weight:800; color:var(--text-muted);">30 Sticks + 홀더</span>
                         </div>
                         <div class="product-card-thumb">
-                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[14. OBJECT THUMBNAIL]</div>
-                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">방동 마패 인센스 스틱</div>
+                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[WELLNESS OBJECT THUMBNAIL]</div>
+                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">방짜유기 마패 인센스 스틱</div>
                         </div>
-                        <h4 class="product-card-title">14. 방동 마패 인센스 스틱</h4>
-                        <p class="product-card-desc">"자연 건조 침향 인센스 스틱과 묵직한 방동 마패 받침대로 완성하는 공간 훈향."</p>
-                        <div class="product-card-notes">KEY: 수제 자연 건조 침향 + 황동 마패 문진 홀더</div>
+                        <h4 class="product-card-title">방짜유기 마패 인센스 스틱</h4>
+                        <p class="product-card-desc">"자연 건조 침향 인센스 스틱과 묵직한 방짜유기 놋쇠 마패 받침대로 완성하는 공간 훈향."</p>
+                        <div class="product-card-notes">KEY: 수제 자연 건조 침향 + 방짜유기 놋쇠 마패 홀더</div>
                         <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 서재 독서 &amp; 명상 / 잡냄새 정화 및 깊은 몰입</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">45,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('14. 방동 마패 인센스 스틱');">담기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p14');">담기</button>
                     </div>
                 </div>
             </div>
@@ -1402,7 +1439,7 @@
                         <span class="product-badge product-badge-gift">SPECIAL GIFT</span>
                         스페셜 기프트 &amp; 디스커버리 킷 (2종)
                     </h2>
-                    <p>100% 환급 시향 디스커버리 킷부터 최고급 옻칠 오동나무 3마패 마스터 풀패키지 세트</p>
+                    <p>19,000원 웰컴 크레딧 시향 디스커버리 킷부터 최고급 옻칠 오동나무 3마패 마스터 풀패키지 세트</p>
                 </div>
                 <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--text-primary);">
                     19,000 ~ 248,000 KRW
@@ -1416,22 +1453,22 @@
                         <div class="product-card-top">
                             <div style="display:flex; gap:6px; align-items:center;">
                                 <span class="product-badge product-badge-gift">SPECIAL GIFT</span>
-                                <span style="font-size:9px; font-weight:800; border:1px solid #121212; color:#121212; padding:2px 6px; border-radius:2px;">100% 전액 환급</span>
+                                <span style="font-size:9px; font-weight:800; border:1px solid #121212; color:#121212; padding:2px 6px; border-radius:2px;">1.9만 크레딧 증정</span>
                             </div>
                             <span style="font-size:11px; font-weight:800; color:var(--text-muted);">5ml x 3종 킷</span>
                         </div>
                         <div class="product-card-thumb">
-                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[15. DISCOVERY KIT]</div>
-                            <div style="font-size:14px; font-weight:900; font-family:var(--font-serif);">3종 테이스팅 킷 &amp; 쿠폰</div>
+                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[DISCOVERY KIT]</div>
+                            <div style="font-size:14px; font-weight:900; font-family:var(--font-serif);">3종 테이스팅 킷 &amp; 크레딧</div>
                         </div>
-                        <h4 class="product-card-title">15. 사단 3종 디스커버리 킷</h4>
-                        <p class="product-card-desc">"1·2·3마패 대표 향을 집에서 먼저 시향. 본품 구매 시 100% 전액 환급 쿠폰 제공."</p>
-                        <div class="product-card-notes">구성: 유자청송 + 적송홍화 + 백단묵향 (각 5ml) + 1.9만 환급 쿠폰</div>
+                        <h4 class="product-card-title">사단 3종 디스커버리 킷</h4>
+                        <p class="product-card-desc">"1·2·3마패 대표 향을 집에서 먼저 시향. 본품 19,000원 웰컴 크레딧 바우처 제공."</p>
+                        <div class="product-card-notes">구성: 유자청송 + 적송홍화 + 백단묵향 (각 5ml) + 1.9만 웰컴 크레딧</div>
                         <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 첫 구매 전 / 집에서 대표 3종을 편안하게 테이스팅</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">19,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('15. 사단 3종 디스커버리 킷');">신청하기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p15');">신청하기</button>
                     </div>
                 </div>
 
@@ -1443,20 +1480,20 @@
                                 <span class="product-badge product-badge-gift">SPECIAL GIFT</span>
                                 <span style="font-size:9px; font-weight:800; border:1px solid #121212; color:#121212; padding:2px 6px; border-radius:2px;">풀패키지 기프트</span>
                             </div>
-                            <span style="font-size:11px; font-weight:800; color:var(--text-muted);">풀패키지</span>
+                            <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml VIP 세트</span>
                         </div>
                         <div class="product-card-thumb">
-                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[16. MASTER GIFT BOX]</div>
-                            <div style="font-size:14px; font-weight:900; font-family:var(--font-serif);">옻칠 오동나무 3단 보관함</div>
+                            <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:4px;">[MASTER GIFT SET]</div>
+                            <div style="font-size:14px; font-weight:900; font-family:var(--font-serif);">옻칠 오동나무 3마패 세트</div>
                         </div>
                         <h4 class="product-card-title">16. 옻칠 오동나무 3마패 세트</h4>
-                        <p class="product-card-desc">"50ml 본품 + 방짜유기 놋쇠 마패 캡 및 참 + 옻칠 오동나무 3단 보관함 + 비단 매듭."</p>
-                        <div class="product-card-notes">포함: 방짜유기 놋쇠 마패 참 증정 + VIP 멤버십 패스</div>
-                        <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 최고급 예단 &amp; 마스터 기프트</div>
+                        <p class="product-card-desc">"무형문화재 방짜유기 놋쇠 캡 본품과 수제 옻칠 보관함, VIP 도슨트 패스."</p>
+                        <div class="product-card-notes">구성: 50ml 본품 + 놋쇠 캡/참 + 옻칠 보관함 + 비단 노리개 + VIP 패스</div>
+                        <div class="product-card-tpo" style="color:var(--text-secondary);">추천 TPO: 최고급 예단 / 명절 및 은사님을 위한 품격 선물</div>
                     </div>
                     <div class="product-card-footer">
                         <div class="product-card-price">248,000 KRW</div>
-                        <button type="button" class="btn-black" onclick="event.stopPropagation(); addToCart('16. 옻칠 오동나무 3마패 세트');">주문하기</button>
+                        <button type="button" class="btn-black" onclick="event.stopPropagation(); openProductModal('p16');">신청하기</button>
                     </div>
                 </div>
             </div>
@@ -1485,7 +1522,7 @@
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:var(--bg-surface); padding:2px 8px; border-radius:2px; font-family:var(--font-mono);">[라이프스타일 굿즈]</span>
-                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">01. MAPAE CHARM</span>
+                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">MAPAE CHARM</span>
                         </div>
                         <h4 style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">방짜유기 놋쇠 마패 참 &amp; 백꾸 스트랩</h4>
                         <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
@@ -1499,7 +1536,7 @@
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:var(--bg-surface); padding:2px 8px; border-radius:2px; font-family:var(--font-mono);">[소장용 오브제]</span>
-                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">02. DIGGING OBJECT</span>
+                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">DIGGING OBJECT</span>
                         </div>
                         <h4 style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">영구 소장형 서예 문진 &amp; 인센스 홀더</h4>
                         <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
@@ -1513,7 +1550,7 @@
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:var(--bg-surface); padding:2px 8px; border-radius:2px; font-family:var(--font-mono);">[시즌 멤버십]</span>
-                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">03. VIP CIPHER PASS</span>
+                            <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">VIP CIPHER PASS</span>
                         </div>
                         <h4 style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">암행어사 비밀 레시피 정기구독</h4>
                         <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
@@ -1539,7 +1576,7 @@
             </p>
             <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
                 <button type="button" class="btn-brass" onclick="openDiagnosisModal()" style="padding:11px 26px; font-size:12.5px;">30초 나만의 마패 향 찾기 (시작) &gt;</button>
-                <button type="button" class="btn-outline" style="color:#fff; border-color:#52525b; padding:11px 22px; font-size:12.5px;" onclick="jumpToCategory('sec-gift')">100% 환급 디스커버리 킷 신청 &gt;</button>
+                <button type="button" class="btn-outline" style="color:#fff; border-color:#52525b; padding:11px 22px; font-size:12.5px;" onclick="jumpToCategory('sec-gift')">19,000원 웰컴 크레딧 킷 신청 &gt;</button>
             </div>
         </div>
     </section>
@@ -1550,22 +1587,39 @@
             <div class="footer-grid">
                 <div>
                     <div style="font-size:16px; font-weight:900; color:#fff; font-family:var(--font-serif); margin-bottom:12px;">士團 (SADAN)</div>
-                    <p style="line-height:1.8;">조선 암행어사 마패 헤리티지 &amp; 100% 커스텀 레이어링 하우스.<br>서울시 종로구 북촌로 142 · 성수동 연무장길 88</p>
+                    <p style="line-height:1.8; margin-bottom:12px;">조선 암행어사 마패 헤리티지 &amp; 100% 커스텀 레이어링 하우스.<br>서울시 종로구 북촌로 142 · 성수동 연무장길 88</p>
+                    <div style="font-size:11px; color:#71717a; font-family:var(--font-mono);">14종 향수·오브제 본품 + 2종 입문·선물 세트 (총 16대 컬렉션)</div>
                 </div>
                 <div>
-                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:10px;">마패 컬렉션</div>
-                    <p style="line-height:1.9;">· 1마패 (일상 Base 3종)<br>· 2마패 (감성 Point 4종)<br>· 3마패 (시그니처 4종)<br>· 웰니스 오브제 (3종)</p>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">5대 마패 컬렉션 (총 16종)</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; line-height:1.8;">
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-1mapae')" style="color:#a1a1aa; text-decoration:none;">· 1마패 · 일상 Base (3종)</a>
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-2mapae')" style="color:#a1a1aa; text-decoration:none;">· 2마패 · 감성 Point (4종)</a>
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-3mapae')" style="color:#a1a1aa; text-decoration:none;">· 3마패 · 시그니처 Master (4종)</a>
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-wellness')" style="color:#a1a1aa; text-decoration:none;">· 웰니스 오브제 (3종)</a>
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-gift')" style="color:#a1a1aa; text-decoration:none;">· 스페셜 기프트 &amp; 킷 (2종)</a>
+                    </div>
                 </div>
                 <div>
-                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:10px;">기술 및 연구</div>
-                    <p style="line-height:1.9;">· 초임계 CO2 추출<br>· 분자 결합 포뮬러<br>· 포터블 하드웨어<br>· IFRA 안전 인증</p>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">브랜드 &amp; 조향 철학</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; line-height:1.8;">
+                        <a href="브랜드_소개.html#botanical" style="color:#a1a1aa; text-decoration:none;">· 한국 자연 원료 &amp; 조향 철학</a>
+                        <a href="브랜드_소개.html#custom" style="color:#a1a1aa; text-decoration:none;">· 사단 3단계 레이어링 리추얼</a>
+                        <a href="브랜드_소개.html#hardware" style="color:#a1a1aa; text-decoration:none;">· 휴대용 마패 오브제 &amp; 공예</a>
+                        <a href="브랜드_소개.html#quality" style="color:#a1a1aa; text-decoration:none;">· 안전 조향 &amp; 원료 투명성 기준</a>
+                    </div>
                 </div>
                 <div>
-                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:10px;">고객 지원</div>
-                    <p style="line-height:1.9;">· 100% 환급 쿠폰<br>· EWG 올그린 인증<br>· B2B 기업 견적<br>· 1:1 아틀리에 예약</p>
+                    <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:12px;">고객 지원 &amp; 서비스</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; line-height:1.8;">
+                        <a href="javascript:void(0)" onclick="jumpToCategory('sec-gift')" style="color:#a1a1aa; text-decoration:none;">· 19,000원 웰컴 크레딧 디스커버리 킷</a>
+                        <a href="javascript:void(0)" onclick="openPackagingModal()" style="color:#a1a1aa; text-decoration:none;">· 사단 전통 선물 패키징 안내</a>
+                        <a href="javascript:void(0)" onclick="openAtelierModal()" style="color:#a1a1aa; text-decoration:none;">· 프라이빗 아틀리에 사전 신청</a>
+                        <a href="javascript:void(0)" onclick="openDiagnosisModal()" style="color:#a1a1aa; text-decoration:none;">· 30초 나만의 마패 향 찾기</a>
+                    </div>
                 </div>
             </div>
-            <div style="border-top:1px solid #27272a; padding-top:20px; text-align:center; color:#71717a;">
+            <div style="border-top:1px solid #27272a; padding-top:20px; margin-top:20px; text-align:center; color:#71717a; font-size:11px;">
                 © 2026 SADAN Haute Perfumery House. All Rights Reserved.
             </div>
         </div>
@@ -1606,21 +1660,26 @@
                 <span style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); letter-spacing:2px;">DIAGNOSIS RESULT</span>
                 <h3 style="font-size:20px; font-weight:900; font-family:var(--font-serif); margin:8px 0 14px;">당신을 위한 마패 조향 처방전</h3>
                 
+                <!-- 맞춤 분석 설명 박스 -->
+                <div id="resultReasonBox" style="background:rgba(202,138,4,0.08); border-left:3px solid var(--accent-brass); padding:10px 14px; margin-bottom:14px; text-align:left; font-size:12.5px; line-height:1.6; color:var(--text-primary); border-radius:2px;">
+                    <span id="resultReasonText"></span>
+                </div>
+
                 <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:20px; text-align:left; margin-bottom:20px;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                         <span id="resultBadge" class="product-badge product-badge-1mapae">1마패 · DAILY BASE</span>
-                        <span style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono);">RECOMMENDED BASE</span>
+                        <span id="resultSubBadge" style="font-size:10.5px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono);">RECOMMENDED BASE</span>
                     </div>
                     <h4 id="resultTitle" style="font-size:17px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">01. 유자 청송 (柚子 靑松)</h4>
-                    <p id="resultDesc" style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">남해 청유자의 싱그러운 과즙과 청송 소나무의 서늘함이 일상의 맑고 든든한 시작을 열어줍니다.</p>
+                    <p id="resultDesc" style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:12px;">경남 하동 청유자의 싱그러운 과즙과 청송 소나무의 서늘함이 일상의 맑고 든든한 시작을 열어줍니다.</p>
                     <div style="border-top:1px dashed var(--border-line); padding-top:10px; font-size:11.5px; color:var(--text-muted);">
                         <strong style="color:var(--text-primary);">추천 레이어링:</strong> <span id="resultLayering">오후에는 04. 적송 홍화(2마패)를 가볍게 덧뿌려 생기 있는 무드로 전환해 보세요.</span>
                     </div>
                 </div>
 
                 <div style="display:flex; flex-direction:column; gap:8px;">
-                    <button type="button" onclick="applyQuizResultProductFilter()" class="btn-black" style="width:100%; padding:11px; font-size:12.5px;">추천 마패 상품 보러가기 &gt;</button>
-                    <button type="button" onclick="closeDiagnosisModal(); jumpToCategory('sec-gift');" class="btn-outline" style="width:100%; padding:11px; font-size:12px; border-color:var(--accent-brass); color:var(--accent-brass);">100% 환급 디스커버리 킷으로 먼저 시향 &gt;</button>
+                    <button type="button" id="applyQuizResultBtn" onclick="applyQuizResultProductFilter()" class="btn-black" style="width:100%; padding:11px; font-size:12.5px;">추천 상품 [01. 유자 청송] 바로 보기 &gt;</button>
+                    <button type="button" onclick="closeDiagnosisModal(); jumpToCategory('sec-gift');" class="btn-outline" style="width:100%; padding:11px; font-size:12px; border-color:var(--accent-brass); color:var(--accent-brass);">19,000원 웰컴 크레딧 킷으로 먼저 시향 &gt;</button>
                     <button type="button" onclick="restartQuiz()" style="background:transparent; border:none; color:var(--text-muted); font-size:11px; cursor:pointer; text-decoration:underline; padding-top:6px;">처음부터 다시 진단하기</button>
                 </div>
             </div>
@@ -1634,19 +1693,19 @@
             p1: { title: "01. 유자 청송 (柚子 靑松)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW", top: "남해 하동 청유자 정유, 레몬그라스", mid: "지리산 청송 솔잎, 대나무 잎", base: "백삼, 시더우드", desc: "남해의 온화한 해풍을 맞고 자란 하동 청유자의 싱그러운 과즙과 지리산 청송 솔잎의 정갈한 피톤치드가 티 없이 맑은 하루의 톤을 완성합니다.", ritual: "아침 샤워 직후 맥박 부위와 셔츠 깃에 2회 분무하여 하루의 든든한 밑바탕을 만들어 보세요.", layering: "【1마패 유자청송 (2회)】 + 【2마패 적송홍화 (1회)】 = 감각적인 '소나무 숲의 붉은 노을' 레시피" },
             p2: { title: "02. 백합 한지 (百合 韓紙)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW", top: "순백 백합화, 맑은 알데히드", mid: "햇살에 말린 닥종이 한지, 은방울꽃", base: "화이트 머스크, 부드러운 코튼", desc: "햇살에 바짝 말린 전통 닥나무 한지의 포근함과 백합 꽃잎의 정갈한 파우더리함이 어우러져 티 없이 깨끗한 인상을 줍니다.", ritual: "외출 전 단정한 화이트 셔츠나 니트에 가볍게 분무하세요.", layering: "【1마패 백합한지 (2회)】 + 【3마패 백단묵향 (1회)】 = 단아하면서도 깊이 있는 학자의 서재향" },
             p3: { title: "03. 옥로 다원 (玉露 茶園)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW", top: "보성 어린 찻잎, 모닝 듀", mid: "서늘한 대나무 숲, 마테차", base: "삼나무, 화이트 앰버", desc: "이슬을 머금은 보성 다원의 어린 찻잎을 첫물차로 우려낼 때 피어오르는 서늘하고 맑은 녹차의 정수입니다.", ritual: "복잡한 생각이나 업무를 시작하기 전 차분한 마음 정돈용으로 착향하세요.", layering: "【1마패 옥로다원 (2회)】 + 【2마패 매화설원 (1회)】 = 고요한 겨울 차실의 향" },
-            p4: { title: "04. 적송 홍화 (赤松 紅花)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW", top: "남원 붉은 잇꽃(홍화), 핑크 페퍼", mid: "지리산 적송 송진 수지, 붉은 장미", base: "따뜻한 앰버 우드, 샌달우드", desc: "조선 여인들이 연지를 찍던 붉은 홍화의 매혹적인 온기와 지리산 붉은 소나무의 깊은 송진향이 대담하게 어우러진 시그니처 포인트입니다.", ritual: "오후 3~4시 나른함을 깨우고 감각을 전환하고 싶을 때 덧뿌리세요.", layering: "【1마패 유자청송 (2회)】 + 【2마패 적송홍화 (1회)】 = 충돌 없는 3:1 황금비율" },
+            p4: { title: "04. 적송 홍화 (赤松 紅花)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW", top: "남원 붉은 잇꽃(홍화), 핑크 페퍼", mid: "지리산 적송 송진 수지, 붉은 장미", base: "따뜻한 앰버 우드, 샌달우드", desc: "조선 여인들이 연지를 찍던 붉은 홍화의 매혹적인 온기와 지리산 붉은 소나무의 깊은 송진향이 대담하게 어우러진 시그니처 포인트입니다.", ritual: "오후 3~4시 나른함을 깨우고 감각을 전환하고 싶을 때 덧뿌리세요.", layering: "【1마패 유자청송 (손목 2회)】 + 【2마패 적송홍화 (손목 1회)】 = 2:1 시그니처 배합 (더 은은하게 즐기려면 3:1 권장)" },
             p5: { title: "05. 달맞이꽃 야화 (月下 夜花)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW", top: "노란 달맞이꽃, 베르가못", mid: "야생 재스민, 튜베로즈", base: "베티버, 스모키 앰버", desc: "달빛이 드리운 밤에만 꽃잎을 여는 노란 달맞이꽃의 은밀하고 관능적인 나이트 플로럴 향조입니다.", ritual: "저녁 약속이나 특별한 모임에 매혹적인 여운을 남기기에 적합합니다.", layering: "【1마패 백합한지 (1회)】 + 【2마패 달맞이꽃야화 (2회)】 = 우아한 야간 디너 향" },
             p6: { title: "06. 매화 설원 (梅花 雪原)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW", top: "설중 백매화, 냉수 스파크", mid: "냉차 에센스, 은방울꽃", base: "백단목, 크리스탈 머스크", desc: "한겨울 눈 덮인 들판에서 홀로 피어난 백매화의 서늘하고 기품 있는 차가운 꽃향기입니다.", ritual: "서재에서 집중이 필요할 때 머리를 맑게 식혀주는 아로마틱 리추얼.", layering: "【1마패 옥로다원 (1회)】 + 【2마패 매화설원 (2회)】 = 정갈하고 서늘한 서예실 향" },
             p7: { title: "07. 치자 노을 (梔子 晚霞)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW", top: "남해 치자꽃, 잘 익은 살구", mid: "오렌지 블라썸, 꿀향", base: "샌달우드, 통카빈", desc: "해질녘 남해 바다를 붉게 물들이는 저녁 노을과 만개한 치자꽃의 달콤하고 따뜻한 향연입니다.", ritual: "늦은 오후 따뜻한 위로와 풍성한 볼륨감이 필요할 때 사용하세요.", layering: "【1마패 유자청송 (1회)】 + 【2마패 치자노을 (2회)】 = 싱그러운 시트러스 플로럴 칵테일" },
-            p8: { title: "08. 백단 묵향 (白檀 墨香)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW", top: "조선 송연묵(松煙墨), 벼루 먹향", mid: "인도산 최고급 천년 백단목", base: "자연산 침향, 스모키 패출리", desc: "조선 왕실 향방 의궤 비전대로 벼루에 갈아낸 정갈한 송연묵 향과 백단목의 그윽함, 방짜유기 놋쇠 캡의 품격이 결합된 사단의 최상위 마스터피스입니다.", ritual: "온종일 묵직하고 지적인 존재감을 드러내야 하는 중요한 비즈니스 미팅이나 격식 있는 자리.", layering: "【1마패 맑은 베이스 (2회)】 + 【3마패 백단묵향 (1회 포인트)】 = 12시간 지속 독보적 카리스마" },
+            p8: { title: "08. 백단 묵향 (白檀 墨香)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 방짜유기 놋쇠 캡", price: "69,000 KRW", top: "조선 송연묵(松煙墨), 벼루 먹향", mid: "인도산 최고급 백단 원목", base: "자연산 침향, 스모키 패출리", desc: "조선 왕실 향방 의궤 비전대로 벼루에 갈아낸 정갈한 송연묵 향과 백단목의 그윽함, 방짜유기 놋쇠 캡의 품격이 결합된 사단의 최상위 마스터피스입니다.", ritual: "온종일 묵직하고 지적인 존재감을 드러내야 하는 중요한 비즈니스 미팅이나 격식 있는 자리.", layering: "【1마패 맑은 베이스 (2회)】 + 【3마패 백단묵향 (1회 포인트)】 = 온종일 지속되는 품격 카리스마" },
             p9: { title: "09. 침향 흑호 (沈香 黑虎)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW", top: "검은 가죽, 스파이시 카다멈", mid: "자연 건조 침향 수지", base: "패출리, 베티버, 스모키 앰버", desc: "깊은 산속 검은 호랑이의 웅장한 기백과 자연산 침향의 깊은 수지향이 어우러져 중후하고 카리스마 넘치는 아우라를 완성합니다.", ritual: "야간 리셉션이나 특별한 갈라 파티에서 단단한 인상을 남깁니다.", layering: "【2마패 적송홍화 (1회)】 + 【3마패 침향흑호 (1회)】 = 강렬한 레더 스모키 우디" },
             p10: { title: "10. 자개 영롱 (螺鈿 玲瓏)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW", top: "마린 오존, 솔티 브리즈", mid: "자개 앰버그리스, 화이트 플로럴", base: "화이트 시더우드, 미네랄 머스크", desc: "남해 바다 전복 껍질의 영롱한 오색 자개 빛깔을 투명한 아쿠아와 맑은 앰버로 재해석한 세련된 모던 마린 우디 향입니다.", ritual: "도심 속 깔끔하고 세련된 인상이 필요한 비즈니스 미팅.", layering: "【1마패 백합한지 (1회)】 + 【3마패 자개영롱 (1회)】 = 투명하고 맑은 럭셔리 무드" },
             p11: { title: "11. 궁중 향낭 (宮中 香囊)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW", top: "당귀, 육계(시나몬)", mid: "작약 꽃잎, 비단 매듭 향", base: "사향(머스크) 앰버, 침향", desc: "조선 왕실 비단 향낭 속에 담기던 8대 귀품 한방 약재와 향기로운 꽃잎이 어우러져 우아하고 기품 있는 왕실의 품격을 전합니다.", ritual: "소중한 기념일이나 전통 격식의 자리에서 화려하고 귀품 있는 발향.", layering: "【2마패 달맞이꽃야화 (1회)】 + 【3마패 궁중향낭 (1회)】 = 최고급 오리엔탈 부케" },
-            p12: { title: "12. 놋쇠 마패 롤온 오일", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "10ml 고농축 오일 / 방짜유기 놋쇠 참 결합", price: "32,000 KRW", top: "하동 유자 정유", mid: "청송 솔잎 오일", base: "골든 호호바 오일, 비타민 E", desc: "방짜유기 놋쇠 참이 결합되어 가방이나 키링에 걸고 다니며 건조한 맥박 부위에 가볍게 롤링하는 포터블 아로마 테라피 오일입니다.", ritual: "이동 중이나 미팅 직전 관자놀이, 손목 안쪽에 롤링하여 즉각적인 리프레시.", layering: "향수 분무 전 베이스 오일로 바르면 발향 지속력이 2배 증가합니다." },
-            p13: { title: "13. 흑도자기 룸 & 패브릭 미스트", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "200ml / 여주 수제 흑도자기 보틀", price: "38,000 KRW", top: "천연 편백 피톤치드", mid: "피톤치드 워터, 솔잎 추출물", base: "화이트 시더 정유", desc: "여주 장인이 빚은 수제 흑도자기 보틀에 천연 편백 피톤치드 정유를 담아 침실 베개와 옷감에 뿌려 공간의 결을 정갈하게 정화합니다.", ritual: "취침 10분 전 베개와 이불에 2회 가볍게 분무하여 깊은 숙면을 유도하세요.", layering: "외출 전 코트 깃 안쪽에 분무해 두면 은은한 숲속 잔향이 종일 맴돕니다." },
-            p14: { title: "14. 방동 마패 인센스 스틱", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "30 Sticks + 황동 마패 문진 홀더", price: "45,000 KRW", top: "자연 건조 침향 수지", mid: "백단 분말, 느릅나무 진", base: "순수 천연 목분", desc: "인공 향료 없이 자연 건조된 천연 침향 인센스 스틱과 묵직한 방동 마패 홀더로 완성하는 조선 선비의 서재 훈향 리추얼 세트입니다.", ritual: "독서나 명상, 다도 시간 10분 전 피워 공간의 잡냄새를 지우고 깊은 사색을 즐기세요.", layering: "인센스를 피운 방 안에서 3마패 백단묵향을 착향하면 깊은 공간 몰입감을 선사합니다." },
-            p15: { title: "15. 사단 3종 디스커버리 킷", tier: "스페셜 기프트", badgeClass: "product-badge-gift", spec: "5ml x 3종 테이스팅 킷 + 100% 전액 환급 쿠폰", price: "19,000 KRW", top: "01. 유자청송 (5ml)", mid: "04. 적송홍화 (5ml)", base: "08. 백단묵향 (5ml)", desc: "1·2·3마패 등급별 대표 시그니처 3종을 집에서 먼저 착향해 보세요. 본품 구매 시 디스커버리 킷 구매 금액(19,000원)을 100% 전액 할인해 드립니다.", ritual: "아침에는 1마패, 오후에는 2마패, 저녁에는 3마패를 번갈아 착향하며 나만의 취향을 찾아보세요.", layering: "동봉된 '어사 비밀 첩보 레이어링 가이드북'을 보며 3종을 직접 레이어링해 보세요." },
-            p16: { title: "16. 옻칠 오동나무 3마패 세트", tier: "스페셜 기프트", badgeClass: "product-badge-gift", spec: "50ml 본품 + 방짜유기 놋쇠 캡/참 + 옻칠 3단 보관함 + VIP 패스", price: "248,000 KRW", top: "50ml 마스터 보틀", mid: "방짜유기 놋쇠 마패 캡 & 참", base: "전통 옻칠 오동나무 수제 보관함", desc: "사단의 최고급 마스터피스. 50ml 본품과 방짜유기 놋쇠 캡, 전통 옻칠 오동나무 보관함과 비단 매듭으로 완성된 소장용 최고급 예단 풀패키지입니다.", ritual: "소중한 분을 위한 특별한 선물 및 평생 소장용 헤리티지 마스터피스.", layering: "VIP 멤버십 패스로 성수·북촌 아틀리에 프라이빗 1:1 조향 도슨트를 예약하세요." }
+            p12: { title: "놋쇠 마패 롤온 오일", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "10ml 고농축 오일 / 방짜유기 놋쇠 참 결합", price: "32,000 KRW", top: "하동 유자 정유", mid: "청송 솔잎 오일", base: "골든 호호바 오일, 비타민 E", desc: "방짜유기 놋쇠 참이 결합되어 가방이나 키링에 걸고 다니며 건조한 맥박 부위에 가볍게 롤링하는 포터블 아로마 테라피 오일입니다.", ritual: "이동 중이나 미팅 직전 관자놀이, 손목 안쪽에 롤링하여 즉각적인 리프레시.", layering: "향수 분무 전 베이스 오일로 바르면 발향 지속력이 2배 증가합니다." },
+            p13: { title: "흑도자기 룸 & 패브릭 미스트", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "200ml / 여주 수제 흑도자기 보틀", price: "38,000 KRW", top: "천연 편백 피톤치드", mid: "피톤치드 워터, 솔잎 추출물", base: "화이트 시더 정유", desc: "여주 장인이 빚은 수제 흑도자기 보틀에 천연 편백 피톤치드 정유를 담아 침실 베개와 옷감에 뿌려 공간의 결을 정갈하게 정화합니다.", ritual: "취침 10분 전 베개와 이불에 2회 가볍게 분무하여 깊은 숙면을 유도하세요.", layering: "외출 전 코트 깃 안쪽에 분무해 두면 은은한 숲속 잔향이 종일 맴돕니다." },
+            p14: { title: "방짜유기 마패 인센스 스틱", tier: "웰니스 오브제", badgeClass: "product-badge-wellness", spec: "30 Sticks + 방짜유기 놋쇠 마패 홀더", price: "45,000 KRW", top: "자연 건조 침향 수지", mid: "백단 분말, 느릅나무 진", base: "순수 천연 목분", desc: "인공 향료 없이 자연 건조된 천연 침향 인센스 스틱과 묵직한 방짜유기 놋쇠 마패 홀더로 완성하는 조선 선비의 서재 훈향 리추얼 세트입니다.", ritual: "독서나 명상, 다도 시간 10분 전 피워 공간의 잡냄새를 지우고 깊은 사색을 즐기세요.", layering: "인센스를 피운 방 안에서 3마패 백단묵향을 착향하면 깊은 공간 몰입감을 선사합니다." },
+            p15: { title: "사단 3종 디스커버리 킷", tier: "스페셜 기프트", badgeClass: "product-badge-gift", spec: "5ml x 3종 테이스팅 킷 + 본품 19,000원 웰컴 크레딧", price: "19,000 KRW", top: "01. 유자청송 (5ml)", mid: "04. 적송홍화 (5ml)", base: "08. 백단묵향 (5ml)", desc: "1·2·3마패 등급별 대표 시그니처 3종을 집에서 먼저 착향해 보세요. 본품 구매 시 현금처럼 차감되는 19,000원 웰컴 크레딧 바우처를 함께 드립니다.", ritual: "아침에는 1마패, 오후에는 2마패, 저녁에는 3마패를 번갈아 착향하며 나만의 취향을 찾아보세요.", layering: "동봉된 '어사 비밀 첩보 레이어링 가이드북'을 보며 3종을 직접 레이어링해 보세요." },
+            p16: { title: "옻칠 오동나무 3마패 세트", tier: "스페셜 기프트", badgeClass: "product-badge-gift", spec: "50ml 본품 + 방짜유기 놋쇠 캡/참 + 옻칠 3단 보관함 + VIP 패스", price: "248,000 KRW", top: "50ml 마스터 보틀", mid: "방짜유기 놋쇠 마패 캡 & 참", base: "전통 옻칠 오동나무 수제 보관함", desc: "사단의 최고급 마스터피스. 50ml 본품과 방짜유기 놋쇠 캡, 전통 옻칠 오동나무 보관함과 비단 매듭으로 완성된 소장용 최고급 예단 풀패키지입니다.", ritual: "소중한 분을 위한 특별한 선물 및 평생 소장용 헤리티지 마스터피스.", layering: "VIP 멤버십 패스로 성수·북촌 아틀리에 프라이빗 1:1 조향 도슨트를 예약하세요." }
         };
 
         // State Tracking
@@ -1872,10 +1931,12 @@
             }
         }
 
-        // Quick View Modal
+        // Quick View Modal with Gift Packaging Option
         function openProductModal(prodKey) {
             const data = productDetails[prodKey];
             if (!data) return;
+
+            const preSelectedPkg = sessionStorage.getItem('sadan_selected_packaging') || 'basic';
 
             const modalBody = document.getElementById('modalBody');
             modalBody.innerHTML = `
@@ -1884,27 +1945,40 @@
                     <span style="font-size:11px; font-weight:800; color:var(--text-muted); font-family:var(--font-mono);">${data.spec}</span>
                 </div>
                 <h3 style="font-size:22px; font-weight:900; font-family:var(--font-serif); margin-bottom:10px; color:var(--text-primary);">${data.title}</h3>
-                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px;">${data.desc}</p>
+                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:16px;">${data.desc}</p>
                 
-                <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:16px 20px; margin-bottom:18px;">
-                    <div style="font-size:11px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:8px;">OLFACTIVE PYRAMID</div>
-                    <div style="font-size:12px; line-height:1.8;">
+                <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:14px 18px; margin-bottom:14px;">
+                    <div style="font-size:11px; font-weight:800; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:6px;">OLFACTIVE PYRAMID</div>
+                    <div style="font-size:12px; line-height:1.7;">
                         <div><strong>TOP NOTE:</strong> ${data.top}</div>
                         <div><strong>MID NOTE:</strong> ${data.mid}</div>
                         <div><strong>BASE NOTE:</strong> ${data.base}</div>
                     </div>
                 </div>
 
-                <div style="background:var(--bg-surface); padding:14px 18px; border-radius:4px; margin-bottom:20px; font-size:12px;">
-                    <div style="margin-bottom:6px;"><strong>데일리 리추얼:</strong> ${data.ritual}</div>
+                <div style="background:var(--bg-surface); padding:12px 16px; border-radius:4px; margin-bottom:16px; font-size:12px;">
+                    <div style="margin-bottom:4px;"><strong>데일리 리추얼:</strong> ${data.ritual}</div>
                     <div><strong>추천 레이어링:</strong> ${data.layering}</div>
                 </div>
 
-                <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-line); padding-top:18px;">
+                <!-- Gift Packaging Option Selection -->
+                <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:14px 16px; margin-bottom:18px;">
+                    <label style="display:block; font-size:12px; font-weight:800; color:var(--text-primary); margin-bottom:8px;">
+                        선물 포장 패키징 옵션 선택 (GIFT PACKAGING)
+                    </label>
+                    <select id="modalPackagingSelect" style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px; background:#ffffff; margin-bottom:8px; cursor:pointer; color:var(--text-primary);">
+                        <option value="none" ${preSelectedPkg === 'none' ? 'selected' : ''}>선물 포장 없음 (친환경 기본 배송 상자)</option>
+                        <option value="basic" ${preSelectedPkg === 'basic' ? 'selected' : ''}>1. [기본] 능화창 슬리브 상자 &amp; 한지 엽서 (0원 · 무료)</option>
+                        <option value="premium" ${preSelectedPkg === 'premium' ? 'selected' : ''}>2. [프리미엄] 전통 수제 보자기 &amp; 노리개 (+5,000 KRW)</option>
+                    </select>
+                    <input type="text" id="modalGiftCardMsg" placeholder="감사 메시지 엽서 문구 (최대 50자 / 선택 사항)" maxlength="50" style="width:100%; box-sizing:border-box; padding:8px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:11.5px;">
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-line); padding-top:16px;">
                     <div style="font-size:20px; font-weight:900; font-family:var(--font-mono); color:var(--text-primary);">${data.price}</div>
-                    <div style="display:flex; gap:10px;">
-                        <button type="button" class="btn-outline" onclick="closeProductModal();">닫기</button>
-                        <button type="button" class="btn-black" onclick="addToCart('${data.title}'); closeProductModal();">장바구니 담기</button>
+                    <div style="display:flex; gap:8px;">
+                        <button type="button" class="btn-outline" onclick="closeProductModal();" style="padding:10px 16px; font-size:12px;">닫기</button>
+                        <button type="button" class="btn-black" onclick="addToCartFromModal('${data.title}');" style="padding:10px 20px; font-size:12px;">장바구니 담기</button>
                     </div>
                 </div>
             `;
@@ -1915,158 +1989,26 @@
             document.getElementById('productDetailModal').style.display = 'none';
         }
 
-        // Cart Notification Toast
-        function addToCart(itemName) {
-            const toast = document.getElementById('toastNotice');
-            const msg = document.getElementById('toastMsg');
-            if (toast && msg) {
-                msg.innerText = `[${itemName}] 상품이 장바구니에 담겼습니다.`;
-                toast.style.display = 'flex';
-                setTimeout(() => {
-                    toast.style.display = 'none';
-                }, 3000);
+        function addToCartFromModal(title) {
+            const pkgSelect = document.getElementById('modalPackagingSelect');
+            const pkgVal = pkgSelect ? pkgSelect.value : 'none';
+            const msgInput = document.getElementById('modalGiftCardMsg');
+            const msgVal = msgInput ? msgInput.value.trim() : '';
+
+            let pkgName = '';
+            let pkgPrice = 0;
+            if (pkgVal === 'basic') {
+                pkgName = '능화창 슬리브 상자 (무료)';
+                pkgPrice = 0;
+            } else if (pkgVal === 'premium') {
+                pkgName = '수제 보자기 & 노리개 (+5,000원)';
+                pkgPrice = 5000;
             }
+
+            addToCart(title, { packagingType: pkgVal, packagingName: pkgName, packagingPrice: pkgPrice, giftMessage: msgVal });
+            closeProductModal();
         }
 
-        // Olfactive Diagnosis Quiz
-        const quizData = [
-            {
-                q: "Q1. 평소 가장 편안하고 기분 좋게 느껴지는 향은?",
-                options: [
-                    { text: "남해 청유자의 싱그러운 과즙과 지리산 청송 솔잎 향", score: "1mapae" },
-                    { text: "서늘한 소나무 송진 위에 덧입혀진 붉은 꽃의 매혹적인 향", score: "2mapae" },
-                    { text: "천년 백단목의 그윽함과 조선 서재의 정갈한 먹향", score: "3mapae" }
-                ]
-            },
-            {
-                q: "Q2. 향수를 주로 사용하는 시간대와 목적은?",
-                options: [
-                    { text: "출근 전 아침 / 활력 넘치고 맑은 데일리 시작", score: "1mapae" },
-                    { text: "나른한 오후 & 저녁 약속 / 분위기 전환(리프레시)", score: "2mapae" },
-                    { text: "중요한 비즈니스 미팅 & 격식 있는 자리 / 묵직한 카리스마", score: "3mapae" }
-                ]
-            },
-            {
-                q: "Q3. 내가 선호하는 향의 밀도(존재감)는?",
-                options: [
-                    { text: "내 살결처럼 은은하게 스며드는 가벼운 맑은 밀도", score: "1mapae" },
-                    { text: "스쳐 지나갈 때 은은한 여운을 남기는 감각적 포인트", score: "2mapae" },
-                    { text: "공간을 온종일 채우는 깊고 묵직한 12시간 롱래스팅", score: "3mapae" }
-                ]
-            },
-            {
-                q: "Q4. 향을 즐기는 나만의 스타일은?",
-                options: [
-                    { text: "가방에 툭 걸고 다니며 가볍게 수시로 뿌리기", score: "1mapae" },
-                    { text: "시간과 기분에 따라 2가지 향을 덧입는 레이어링", score: "2mapae" },
-                    { text: "평생 곁에 둘 변함없는 나만의 단 하나의 시그니처 소장", score: "3mapae" }
-                ]
-            }
-        ];
-
-        let currentQuizStep = 0;
-        let quizAnswers = [];
-        let recommendedQuizTier = '1mapae';
-
-        function openDiagnosisModal() {
-            document.getElementById('diagnosisModal').style.display = 'flex';
-            currentQuizStep = 0;
-            quizAnswers = [];
-            renderQuizStep();
-        }
-
-        function closeDiagnosisModal() {
-            document.getElementById('diagnosisModal').style.display = 'none';
-        }
-
-        function renderQuizStep() {
-            document.getElementById('quizContainer').style.display = 'block';
-            document.getElementById('quizResultContainer').style.display = 'none';
-
-            const step = quizData[currentQuizStep];
-            document.getElementById('quizStepIndicator').innerText = `STEP ${currentQuizStep + 1} / ${quizData.length}`;
-            document.getElementById('quizQuestionTitle').innerText = step.q;
-
-            const optContainer = document.getElementById('quizOptions');
-            optContainer.innerHTML = '';
-
-            step.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'btn-outline';
-                btn.style.cssText = 'width:100%; text-align:left; padding:12px 16px; font-size:13px; line-height:1.5; border-radius:2px; transition:all 0.2s; background:#fff; cursor:pointer;';
-                btn.innerHTML = `<span style="font-family:var(--font-mono); font-weight:800; color:var(--accent-brass); margin-right:8px;">0${idx+1}.</span> ${opt.text}`;
-                btn.onmouseover = () => { btn.style.background = 'var(--bg-linen)'; btn.style.borderColor = 'var(--accent-brass)'; };
-                btn.onmouseout = () => { btn.style.background = '#fff'; btn.style.borderColor = 'var(--border-line)'; };
-                btn.onclick = () => handleQuizSelect(opt.score);
-                optContainer.appendChild(btn);
-            });
-        }
-
-        function handleQuizSelect(score) {
-            quizAnswers.push(score);
-            if (currentQuizStep < quizData.length - 1) {
-                currentQuizStep++;
-                renderQuizStep();
-            } else {
-                showQuizResult();
-            }
-        }
-
-        function showQuizResult() {
-            document.getElementById('quizContainer').style.display = 'none';
-            document.getElementById('quizResultContainer').style.display = 'block';
-
-            const count1 = quizAnswers.filter(a => a === '1mapae').length;
-            const count2 = quizAnswers.filter(a => a === '2mapae').length;
-
-            if (count1 >= 2) {
-                recommendedQuizTier = '1mapae';
-                document.getElementById('resultBadge').className = 'product-badge product-badge-1mapae';
-                document.getElementById('resultBadge').innerText = '1마패 · DAILY BASE';
-                document.getElementById('resultTitle').innerText = '01. 유자 청송 (柚子 靑松)';
-                document.getElementById('resultDesc').innerText = '남해 청유자의 싱그러운 과즙과 청송 소나무의 서늘한 솔잎 향이 일상의 맑고 든든한 밑바탕을 완성합니다.';
-                document.getElementById('resultLayering').innerText = '오후에는 04. 적송 홍화(2마패)를 가볍게 덧뿌려 생기 있는 무드로 전환해 보세요.';
-            } else if (count2 >= 2) {
-                recommendedQuizTier = '2mapae';
-                document.getElementById('resultBadge').className = 'product-badge product-badge-2mapae';
-                document.getElementById('resultBadge').innerText = '2마패 · POINT MOOD';
-                document.getElementById('resultTitle').innerText = '04. 적송 홍화 (赤松 紅花)';
-                document.getElementById('resultDesc').innerText = '깊고 서늘한 지리산 적송 위에 붉은 홍화의 감성을 덧입혀 나른함을 깨우고 감각적인 무드 체인지를 선사합니다.';
-                document.getElementById('resultLayering').innerText = '아침에는 01. 유자 청송(1마패)을 베이스로 깔고 오후에 덧뿌리는 3:1 레이어링을 추천합니다.';
-            } else {
-                recommendedQuizTier = '3mapae';
-                document.getElementById('resultBadge').className = 'product-badge product-badge-3mapae';
-                document.getElementById('resultBadge').innerText = '3마패 · ALL-DAY MASTER';
-                document.getElementById('resultTitle').innerText = '08. 백단 묵향 (白檀 墨香)';
-                document.getElementById('resultDesc').innerText = '천년 백단목의 그윽함과 송연묵의 정갈한 먹향, 방짜유기 놋쇠 캡이 격식 있는 자리를 온종일 압도합니다.';
-                document.getElementById('resultLayering').innerText = '1마패 맑은 베이스 위에 3마패를 단 한 번 분무하여 독보적인 카리스마를 완성해 보세요.';
-            }
-        }
-
-        function applyQuizResultProductFilter() {
-            closeDiagnosisModal();
-            jumpToCategory(`sec-${recommendedQuizTier}`);
-        }
-
-        function restartQuiz() {
-            currentQuizStep = 0;
-            quizAnswers = [];
-            renderQuizStep();
-        }
-
-        // ESC Key Modal Close & Cart Drawer Close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeProductModal();
-                closeDiagnosisModal();
-                closeCartDrawer();
-            }
-        });
-
-        // ========================================================
-        // [CART ENGINE] LocalStorage Synchronization & Drawer Logic
-        // ========================================================
         const productPriceMap = {
             '01. 유자 청송': { price: 39000, spec: '50ml EDP · 1마패 Base' },
             '02. 백합 한지': { price: 39000, spec: '50ml EDP · 1마패 Base' },
@@ -2079,12 +2021,20 @@
             '09. 침향 흑호': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
             '10. 자개 영롱': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
             '11. 궁중 향낭': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
+            '흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
+            '흑도자기 룸 & 패브릭 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
+            '방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
+            '사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
+            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
             '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
-            '13. 흑도자기 룸 & 패브릭 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
-            '14. 방동 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방동 마패 홀더' },
-            '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 100% 환급 쿠폰' },
+            '14. 방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
+            '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
             '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
+            '방짜유기 마패 참': { price: 35000, spec: '100% 방짜유기 놋쇠 마패 펜던트 & 스트랩' },
+            '서예 문진 홀더': { price: 42000, spec: '영구 소장형 서예 문진 & 인센스 홀더' },
+            'VIP 정기구독 멤버십': { price: 180000, spec: '계절별 5ml 시크릿 포뮬러 + 도슨트 패스' },
             '놋쇠 마패 서화 문진': { price: 58000, spec: '방짜유기 놋쇠 서화 문진 & 페이퍼웨이트' },
             '흑도자기 인센스 버너 & 향합': { price: 65000, spec: '여주 수제 흑도자기 향합 & 인센스 버너' },
             '사계절 비밀 첩보 정기구독 멤버십': { price: 180000, spec: '계절별 5ml 비밀 레시피 4회 + VIP 도슨트' }
@@ -2104,18 +2054,32 @@
             updateCartUI();
         }
 
-        function addToCart(itemName) {
+        function addToCart(itemName, options = {}) {
             const cleanTitle = itemName.replace(' (柚子 靑松)', '').replace(' (百合 韓紙)', '').replace(' (玉露 茶園)', '').replace(' (赤松 紅花)', '').replace(' (月下 夜花)', '').replace(' (梅花 雪原)', '').replace(' (梔子 晚霞)', '').replace(' (白檀 墨香)', '').replace(' (沈香 黑虎)', '').replace(' (螺鈿 玲瓏)', '').replace(' (宮中 香囊)', '').trim();
             const matchedKey = Object.keys(productPriceMap).find(k => cleanTitle.includes(k) || k.includes(cleanTitle)) || cleanTitle;
             const meta = productPriceMap[matchedKey] || { price: 49000, spec: '사단 시그니처 에디션' };
 
-            const existing = cart.find(i => i.title === matchedKey);
+            const pkgType = options.packagingType || 'none';
+            const pkgName = options.packagingName || (pkgType === 'premium' ? '수제 보자기 & 노리개 (+5,000원)' : (pkgType === 'basic' ? '능화창 슬리브 상자 (무료)' : ''));
+            const pkgPrice = options.packagingPrice || (pkgType === 'premium' ? 5000 : 0);
+            const giftMsg = options.giftMessage || '';
+
+            const itemKey = `${matchedKey}__${pkgType}`;
+            const existing = cart.find(i => (i.itemKey === itemKey) || (i.title === matchedKey && (i.packagingType || 'none') === pkgType));
+
             if (existing) {
                 existing.qty += 1;
+                if (giftMsg) existing.giftMessage = giftMsg;
             } else {
                 cart.push({
+                    itemKey: itemKey,
                     title: matchedKey,
-                    price: meta.price,
+                    basePrice: meta.price,
+                    price: meta.price + pkgPrice,
+                    packagingType: pkgType,
+                    packagingName: pkgName,
+                    packagingPrice: pkgPrice,
+                    giftMessage: giftMsg,
                     spec: meta.spec,
                     qty: 1
                 });
@@ -2126,25 +2090,25 @@
             const toast = document.getElementById('toastNotice');
             const msg = document.getElementById('toastMsg');
             if (toast && msg) {
-                msg.innerText = `[${matchedKey}] 상품이 장바구니에 담겼습니다.`;
+                msg.innerText = `[${matchedKey}] ${pkgPrice > 0 ? '(보자기 포장 포함) ' : ''}장바구니에 담겼습니다.`;
                 toast.style.display = 'flex';
                 setTimeout(() => { toast.style.display = 'none'; }, 3000);
             }
         }
 
-        function updateCartQty(title, delta) {
-            const item = cart.find(i => i.title === title);
+        function updateCartQty(itemKey, delta) {
+            const item = cart.find(i => (i.itemKey === itemKey) || (i.title === itemKey));
             if (item) {
                 item.qty += delta;
                 if (item.qty <= 0) {
-                    cart = cart.filter(i => i.title !== title);
+                    cart = cart.filter(i => (i.itemKey !== itemKey) && (i.title !== itemKey));
                 }
                 saveCart();
             }
         }
 
-        function removeCartItem(title) {
-            cart = cart.filter(i => i.title !== title);
+        function removeCartItem(itemKey) {
+            cart = cart.filter(i => (i.itemKey !== itemKey) && (i.title !== itemKey));
             saveCart();
         }
 
@@ -2190,16 +2154,18 @@
                         <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:14px; display:flex; justify-content:space-between; align-items:center; gap:12px;">
                             <div style="flex:1;">
                                 <div style="font-size:13.5px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:3px;">${item.title}</div>
+                                ${item.packagingName ? `<div style="font-size:11px; font-weight:700; color:var(--accent-brass); margin-bottom:3px;">선물 포장: ${item.packagingName}</div>` : ''}
+                                ${item.giftMessage ? `<div style="font-size:10.5px; color:var(--text-secondary); background:var(--bg-linen); border-left:2px solid var(--accent-brass); padding:4px 8px; margin-bottom:5px; border-radius:2px; font-style:italic;">엽서 문구: "${item.giftMessage}"</div>` : ''}
                                 <div style="font-size:10.5px; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:6px;">${item.spec}</div>
                                 <div style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">${(item.price * item.qty).toLocaleString()} KRW</div>
                             </div>
                             <div style="display:flex; align-items:center; gap:8px;">
                                 <div style="display:flex; align-items:center; border:1px solid var(--border-line); border-radius:3px; background:#fff;">
-                                    <button type="button" onclick="updateCartQty('${item.title}', -1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">-</button>
+                                    <button type="button" onclick="updateCartQty('${item.itemKey || item.title}', -1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">-</button>
                                     <span style="font-size:11.5px; font-weight:800; font-family:var(--font-mono); padding:0 6px;">${item.qty}</span>
-                                    <button type="button" onclick="updateCartQty('${item.title}', 1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">+</button>
+                                    <button type="button" onclick="updateCartQty('${item.itemKey || item.title}', 1)" style="border:none; background:transparent; padding:4px 8px; font-size:12px; cursor:pointer; font-weight:900;">+</button>
                                 </div>
-                                <button type="button" onclick="removeCartItem('${item.title}')" style="border:none; background:transparent; color:var(--text-muted); font-size:16px; cursor:pointer; padding:4px;">&times;</button>
+                                <button type="button" onclick="removeCartItem('${item.itemKey || item.title}')" style="border:none; background:transparent; color:var(--text-muted); font-size:16px; cursor:pointer; padding:4px;">&times;</button>
                             </div>
                         </div>
                     `).join('');
@@ -2207,6 +2173,226 @@
                 if (drawerFooter) drawerFooter.style.opacity = '1';
             }
         }
+
+        // Olfactive Diagnosis Quiz Data
+        const quizData = [
+            {
+                q: "Q1. 평소 가장 편안하고 기분 좋게 느껴지는 향의 인상은?",
+                options: [
+                    { text: "하동 청유자의 싱그러운 과즙과 지리산 청송 솔잎 향", score: "1mapae", kw: "싱그러운 시트러스 & 솔잎" },
+                    { text: "서늘한 소나무 송진 위에 덧입혀진 붉은 홍화의 매혹적인 향", score: "2mapae", kw: "스파이시 플로럴 & 송진" },
+                    { text: "그윽한 백단 원목의 온기와 조선 서재의 정갈한 먹향", score: "3mapae", kw: "깊고 그윽한 백단 묵향" }
+                ]
+            },
+            {
+                q: "Q2. 향수를 주로 사용하는 시간대와 목적은?",
+                options: [
+                    { text: "출근 전 아침 / 활력 넘치고 맑은 데일리 시작", score: "1mapae", kw: "출근 전 아침 데일리" },
+                    { text: "나른한 오후 & 저녁 약속 / 분위기 전환(리프레시)", score: "2mapae", kw: "오후·저녁 분위기 전환" },
+                    { text: "중요한 비즈니스 미팅 & 격식 있는 자리 / 묵직한 카리스마", score: "3mapae", kw: "격식 있는 비즈니스 미팅" }
+                ]
+            },
+            {
+                q: "Q3. 내가 선호하는 향의 밀도(존재감)는?",
+                options: [
+                    { text: "내 살결처럼 은은하게 스며드는 가벼운 맑은 밀도", score: "1mapae", kw: "은은하고 맑은 살결 밀도" },
+                    { text: "스쳐 지나갈 때 은은한 여운을 남기는 감각적 포인트", score: "2mapae", kw: "여운을 남기는 감각적 포인트" },
+                    { text: "공간을 채우며 하루 종일 지속되는 묵직하고 깊은 존재감", score: "3mapae", kw: "하루 종일 머무는 묵직한 존재감" }
+                ]
+            },
+            {
+                q: "Q4. 향을 즐기는 나만의 스타일은?",
+                options: [
+                    { text: "가방에 툭 걸고 다니며 가볍게 수시로 뿌리기", score: "1mapae", kw: "가벼운 수시 착향" },
+                    { text: "시간과 기분에 따라 2가지 향을 덧입는 레이어링", score: "2mapae", kw: "시간대별 레이어링" },
+                    { text: "변함없는 나만의 단 하나의 시그니처 소장", score: "3mapae", kw: "소장형 시그니처" }
+                ]
+            }
+        ];
+
+        let currentQuizStep = 0;
+        let quizAnswers = [];
+        let selectedQuizKeywords = [];
+        let recommendedQuizTarget = { prodId: 'p1', tier: '1mapae', title: '01. 유자 청송' };
+
+        function openDiagnosisModal() {
+            document.getElementById('diagnosisModal').style.display = 'flex';
+            currentQuizStep = 0;
+            quizAnswers = [];
+            selectedQuizKeywords = [];
+            renderQuizStep();
+        }
+
+        function closeDiagnosisModal() {
+            document.getElementById('diagnosisModal').style.display = 'none';
+        }
+
+        function renderQuizStep() {
+            document.getElementById('quizContainer').style.display = 'block';
+            document.getElementById('quizResultContainer').style.display = 'none';
+
+            const step = quizData[currentQuizStep];
+            document.getElementById('quizStepIndicator').innerText = `STEP ${currentQuizStep + 1} / ${quizData.length}`;
+            document.getElementById('quizQuestionTitle').innerText = step.q;
+
+            const optContainer = document.getElementById('quizOptions');
+            optContainer.innerHTML = '';
+
+            step.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'btn-outline';
+                btn.style.cssText = 'width:100%; text-align:left; padding:12px 16px; font-size:13px; line-height:1.5; border-radius:2px; transition:all 0.2s; background:#fff; cursor:pointer;';
+                btn.innerHTML = `<span style="font-family:var(--font-mono); font-weight:800; color:var(--accent-brass); margin-right:8px;">0${idx+1}.</span> ${opt.text}`;
+                btn.onmouseover = () => { btn.style.background = 'var(--bg-linen)'; btn.style.borderColor = 'var(--accent-brass)'; };
+                btn.onmouseout = () => { btn.style.background = '#fff'; btn.style.borderColor = 'var(--border-line)'; };
+                btn.onclick = () => handleQuizSelect(opt.score, opt.kw);
+                optContainer.appendChild(btn);
+            });
+        }
+
+        function handleQuizSelect(score, kw) {
+            quizAnswers.push(score);
+            selectedQuizKeywords.push(kw);
+            if (currentQuizStep < quizData.length - 1) {
+                currentQuizStep++;
+                renderQuizStep();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('quizResultContainer').style.display = 'block';
+
+            const count1 = quizAnswers.filter(a => a === '1mapae').length;
+            const count2 = quizAnswers.filter(a => a === '2mapae').length;
+            const count3 = quizAnswers.filter(a => a === '3mapae').length;
+
+            const kwTime = selectedQuizKeywords[1] || '아침 시간대';
+            const kwDensity = selectedQuizKeywords[2] || '편안한 밀도';
+
+            // 동점(2:2) 및 다수결 정밀 판정 로직
+            if (count1 === 2 && count2 === 2) {
+                // 1마패 + 2마패 동점: [유자 청송 + 적송 홍화] 2:1 레이어링 듀오 추천
+                recommendedQuizTarget = { prodId: 'p1', tier: 'all', title: '01. 유자 청송 × 04. 적송 홍화' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-2mapae';
+                document.getElementById('resultBadge').innerText = '1·2마패 · 시그니처 레이어링 듀오';
+                document.getElementById('resultSubBadge').innerText = 'PERFECT LAYERING DUO';
+                document.getElementById('resultTitle').innerText = '01. 유자 청송 × 04. 적송 홍화';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}]와 [${kwDensity}]를 함께 즐기시는 고객님을 위해, 맑은 베이스 위에 감각적인 포인트를 덧입히는 사단의 시그니처 듀오를 처방합니다.`;
+                document.getElementById('resultDesc').innerText = '아침을 깨우는 하동 청유자의 싱그러움과 오후의 나른함을 환기시키는 지리산 적송 홍화의 온기가 피부 위에서 가장 이상적인 조화를 이룹니다.';
+                document.getElementById('resultLayering').innerText = '손목에 01. 유자 청송(1마패) 2회 분사 후, 오후 3~4시경 04. 적송 홍화(2마패) 1회를 덧뿌려 분위기를 전환하세요. (2:1 황금 배합)';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 듀오 상품 [01. 유자 청송] 바로 보기 >';
+            } else if (count2 === 2 && count3 === 2) {
+                // 2마패 + 3마패 동점: [적송 홍화 + 백단 묵향] 마스터 레이어링 듀오 추천
+                recommendedQuizTarget = { prodId: 'p4', tier: 'all', title: '04. 적송 홍화 × 08. 백단 묵향' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-3mapae';
+                document.getElementById('resultBadge').innerText = '2·3마패 · 마스터 레이어링 듀오';
+                document.getElementById('resultSubBadge').innerText = 'MASTER LAYER DUO';
+                document.getElementById('resultTitle').innerText = '04. 적송 홍화 × 08. 백단 묵향';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}]와 [${kwDensity}]를 중요하게 생각하시는 고객님께, 화려한 포인트와 묵직한 카리스마를 결합한 마스터 듀오를 처방합니다.`;
+                document.getElementById('resultDesc').innerText = '붉은 홍화 꽃잎의 화려한 스파이시함에 그윽한 백단 원목과 묵향을 받쳐주어 잊히지 않는 깊은 품격과 여운을 완성합니다.';
+                document.getElementById('resultLayering').innerText = '손목에 04. 적송 홍화(2마패) 2회 분사 후, 08. 백단 묵향(3마패) 1회를 가볍게 레이어링하여 깊이를 더하세요.';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 듀오 상품 [04. 적송 홍화] 바로 보기 >';
+            } else if (count1 === 2 && count3 === 2) {
+                // 1마패 + 3마패 동점: [유자 청송 + 백단 묵향] 클래식 듀오 추천
+                recommendedQuizTarget = { prodId: 'p1', tier: 'all', title: '01. 유자 청송 × 08. 백단 묵향' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-3mapae';
+                document.getElementById('resultBadge').innerText = '1·3마패 · 클래식 레이어링 듀오';
+                document.getElementById('resultSubBadge').innerText = 'CLASSIC DUO';
+                document.getElementById('resultTitle').innerText = '01. 유자 청송 × 08. 백단 묵향';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}]의 맑은 시작과 [${kwDensity}]의 오랜 지속력을 모두 원하시는 고객님께, 맑음과 묵직함의 조화를 이루는 듀오를 처방합니다.`;
+                document.getElementById('resultDesc').innerText = '티 없이 맑은 유자 청송의 산뜻함 아래로 정갈한 조선 묵향이 잔잔하게 깔려 반전의 매력을 선사합니다.';
+                document.getElementById('resultLayering').innerText = '01. 유자 청송 2회 베이스 착향 후, 08. 백단 묵향 1회를 가슴이나 옷깃 안쪽에 분무하세요.';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 듀오 상품 [01. 유자 청송] 바로 보기 >';
+            } else if (count1 >= 2) {
+                recommendedQuizTarget = { prodId: 'p1', tier: '1mapae', title: '01. 유자 청송' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-1mapae';
+                document.getElementById('resultBadge').innerText = '1마패 · DAILY BASE';
+                document.getElementById('resultSubBadge').innerText = 'RECOMMENDED BASE';
+                document.getElementById('resultTitle').innerText = '01. 유자 청송 (柚子 靑松)';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}] 시간대에 [${kwDensity}]를 선호하시는 고객님께, 부담 없이 매일 착향할 수 있는 일상 베이스 [01. 유자 청송]을 추천합니다.`;
+                document.getElementById('resultDesc').innerText = '경남 하동 청유자의 싱그러운 과즙과 청송 소나무의 서늘한 솔잎 향이 일상의 맑고 든든한 밑바탕을 완성합니다.';
+                document.getElementById('resultLayering').innerText = '아침 샤워 후 손목/목덜미에 2회 분사하세요. 오후에 04. 적송 홍화(2마패)를 덧뿌리면 생기 있는 무드로 전환됩니다.';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 상품 [01. 유자 청송] 바로 보기 >';
+            } else if (count2 >= 2) {
+                recommendedQuizTarget = { prodId: 'p4', tier: '2mapae', title: '04. 적송 홍화' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-2mapae';
+                document.getElementById('resultBadge').innerText = '2마패 · POINT MOOD';
+                document.getElementById('resultSubBadge').innerText = 'RECOMMENDED POINT';
+                document.getElementById('resultTitle').innerText = '04. 적송 홍화 (赤松 紅花)';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}]와 [${kwDensity}]를 원하시는 고객님께, 감각적인 무드 체인지를 선사하는 [04. 적송 홍화]를 추천합니다.`;
+                document.getElementById('resultDesc').innerText = '지리산 적송의 묵직한 솔잎 위에 붉은 홍화의 온기를 덧입혀 나른함을 깨우고 감각적인 개성을 표현합니다.';
+                document.getElementById('resultLayering').innerText = '오후 3~4시경 맥박 부위에 1~2회 분사하여 기분을 전환하세요. (1마패 베이스와 2:1 조합 추천)';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 상품 [04. 적송 홍화] 바로 보기 >';
+            } else {
+                recommendedQuizTarget = { prodId: 'p8', tier: '3mapae', title: '08. 백단 묵향' };
+                document.getElementById('resultBadge').className = 'product-badge product-badge-3mapae';
+                document.getElementById('resultBadge').innerText = '3마패 · ALL-DAY MASTER';
+                document.getElementById('resultSubBadge').innerText = 'RECOMMENDED MASTER';
+                document.getElementById('resultTitle').innerText = '08. 백단 묵향 (白檀 墨香)';
+                document.getElementById('resultReasonText').innerText = `[${kwTime}] 및 [${kwDensity}]를 중시하시는 고객님께, 기품 있는 존재감을 드러내는 마스터피스 [08. 백단 묵향]을 추천합니다.`;
+                document.getElementById('resultDesc').innerText = '그윽한 백단 원목의 온기와 조선 서재의 정갈한 먹향, 전통 방짜유기 놋쇠 캡이 품격 있는 자리를 하루 종일 은은하게 채웁니다.';
+                document.getElementById('resultLayering').innerText = '1마패 맑은 베이스 위에 3마패를 단 1회 분무하여 독보적인 기품과 지속력을 완성하세요.';
+                document.getElementById('applyQuizResultBtn').innerText = '추천 상품 [08. 백단 묵향] 바로 보기 >';
+            }
+        }
+
+        function applyQuizResultProductFilter() {
+            closeDiagnosisModal();
+
+            // 1. 모든 필터 및 검색어 완전 초기화 (충돌 및 0개 노출 방지)
+            currentKeyword = '';
+            currentScentFilter = null;
+            currentTpoFilter = 'all';
+
+            const searchInput = document.getElementById('productSearchInput');
+            if (searchInput) searchInput.value = '';
+
+            document.querySelectorAll('.scent-chip').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-row:nth-child(2) .filter-chip').forEach((b, i) => {
+                if (i === 0) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+
+            const storyWrapper = document.getElementById('richStoryWrapper');
+            if (storyWrapper) storyWrapper.style.display = 'none';
+            document.querySelectorAll('.rich-story-card').forEach(c => c.style.display = 'none');
+
+            // 2. 카테고리 탭 전환
+            const targetTier = recommendedQuizTarget.tier || 'all';
+            const targetBtn = Array.from(document.querySelectorAll('.category-tab-btn')).find(b => b.getAttribute('onclick')?.includes(targetTier));
+            switchCategoryTab(targetTier, targetBtn);
+
+            // 3. 해당 추천 상품 카드로 직접 부드럽게 스크롤 & 하이라이트 효과
+            setTimeout(() => {
+                const targetCard = document.querySelector(`.product-card[onclick*="'${recommendedQuizTarget.prodId}'"]`);
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetCard.classList.add('card-highlight-pulse');
+                    setTimeout(() => {
+                        targetCard.classList.remove('card-highlight-pulse');
+                    }, 2200);
+                }
+            }, 250);
+        }
+
+        function restartQuiz() {
+            currentQuizStep = 0;
+            quizAnswers = [];
+            renderQuizStep();
+        }
+
+        // ESC Key Modal Close & Cart Drawer Close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeProductModal();
+                closeDiagnosisModal();
+                closeCartDrawer();
+            }
+        });
 
         function toggleCartDrawer() {
             const drawer = document.getElementById('cartDrawer');
@@ -2263,9 +2449,120 @@
             if (modal) modal.style.display = 'none';
         }
 
-        // Initialize on Load
+        let currentMainPkgChoice = 'basic';
+
+        function openPackagingModal() {
+            const modal = document.getElementById('packagingModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closePackagingModal() {
+            const modal = document.getElementById('packagingModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function setMainPackagingChoice(type) {
+            currentMainPkgChoice = type;
+            const cardBasic = document.getElementById('pkgSelectBasic');
+            const cardPremium = document.getElementById('pkgSelectPremium');
+            const radioBasic = document.getElementById('radioPkgBasic');
+            const radioPremium = document.getElementById('radioPkgPremium');
+
+            if (type === 'basic') {
+                if (radioBasic) radioBasic.checked = true;
+                if (radioPremium) radioPremium.checked = false;
+                if (cardBasic) {
+                    cardBasic.style.borderColor = 'var(--text-primary)';
+                    cardBasic.style.background = 'var(--bg-linen)';
+                }
+                if (cardPremium) {
+                    cardPremium.style.borderColor = 'var(--border-line)';
+                    cardPremium.style.background = '#ffffff';
+                }
+            } else {
+                if (radioBasic) radioBasic.checked = false;
+                if (radioPremium) radioPremium.checked = true;
+                if (cardPremium) {
+                    cardPremium.style.borderColor = 'var(--accent-brass)';
+                    cardPremium.style.background = '#fffcf8';
+                }
+                if (cardBasic) {
+                    cardBasic.style.borderColor = 'var(--border-line)';
+                    cardBasic.style.background = '#ffffff';
+                }
+            }
+        }
+
+        function goToCategoryWithSelectedPkg() {
+            sessionStorage.setItem('sadan_selected_packaging', currentMainPkgChoice);
+            closePackagingModal();
+            openProductModal('p16');
+        }
+
+        function openAtelierModal() {
+            const modal = document.getElementById('atelierModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeAtelierModal() {
+            const modal = document.getElementById('atelierModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function submitAtelierAlert(e) {
+            if (e) e.preventDefault();
+            const nameInput = document.getElementById('atelierName');
+            const name = nameInput ? nameInput.value.trim() : '';
+            closeAtelierModal();
+            showCartToast(`${name ? name + ' 님, ' : ''}사단 프라이빗 아틀리에 사전 오픈 알림 등록이 완료되었습니다.`);
+        }
+
+        // Initialize on Load (Support URL query param, hash direct jump, and direct modal open)
         window.addEventListener('DOMContentLoaded', () => {
-            applyCardVisibilityFilters();
+            const urlParams = new URLSearchParams(window.location.search);
+            const tabParam = urlParams.get('tab');
+            const pkgParam = urlParams.get('pkg');
+            const openProdParam = urlParams.get('openProd');
+            const hash = window.location.hash;
+
+            if (pkgParam) {
+                sessionStorage.setItem('sadan_selected_packaging', pkgParam);
+            }
+
+            if (tabParam === 'gift' || hash === '#sec-gift') {
+                jumpToCategory('sec-gift');
+            } else if (tabParam === '1mapae' || hash === '#sec-1mapae') {
+                jumpToCategory('sec-1mapae');
+            } else if (tabParam === '2mapae' || hash === '#sec-2mapae') {
+                jumpToCategory('sec-2mapae');
+            } else if (tabParam === '3mapae' || hash === '#sec-3mapae') {
+                jumpToCategory('sec-3mapae');
+            } else if (tabParam === 'goods' || hash === '#sec-goods') {
+                jumpToCategory('sec-goods');
+            } else {
+                applyCardVisibilityFilters();
+            }
+
+            // If user came with specific target product to highlight
+            const targetProdParam = urlParams.get('targetProd');
+            if (targetProdParam) {
+                setTimeout(() => {
+                    const targetCard = document.querySelector(`.product-card[onclick*="'${targetProdParam}'"]`);
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        targetCard.classList.add('card-highlight-pulse');
+                        setTimeout(() => targetCard.classList.remove('card-highlight-pulse'), 2200);
+                    }
+                }, 400);
+            }
+
+            // If user came from main page with specific product to open
+            if (openProdParam) {
+                setTimeout(() => {
+                    openProductModal(openProdParam);
+                }, 350);
+            }
+
             updateCartUI();
         });
     </script>
@@ -2311,7 +2608,7 @@
             <!-- Member Benefit Info -->
             <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:20px;">
                 <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
-                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">보유 100% 환급 쿠폰</span>
+                    <span style="font-size:12px; font-weight:700; color:var(--text-secondary);">보유 19,000원 웰컴 크레딧</span>
                     <span style="font-size:12.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">19,000 KRW</span>
                 </div>
                 <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
@@ -2388,6 +2685,145 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- ========================================================
+         [PACKAGING MODAL] 사단 전통 선물 패키징 선택 모달
+         ======================================================== -->
+    <div id="packagingModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center; padding:16px;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:480px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closePackagingModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <div style="margin-bottom:14px;">
+                <span class="section-tag" style="margin:0 0 8px;">GIFT PACKAGING SELECTION</span>
+                <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0;">
+                    사단(士團) 전통 선물 패키징 선택
+                </h3>
+            </div>
+
+            <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
+                원하시는 포장 방식을 선택하신 후 아래 버튼을 누르면, <strong>선택하신 옵션이 이미 적용된 선물 세트 주문 화면</strong>으로 바로 연결됩니다.
+            </p>
+
+            <!-- Option 1: Basic Free Box -->
+            <div id="pkgSelectBasic" onclick="setMainPackagingChoice('basic')" style="background:var(--bg-linen); border:2px solid var(--text-primary); border-radius:4px; padding:16px; margin-bottom:12px; cursor:pointer; box-sizing:border-box; transition:background-color 0.2s, border-color 0.2s;">
+                <div style="margin-bottom:8px;">
+                    <label style="display:flex; align-items:flex-start; gap:8px; cursor:pointer; margin:0;">
+                        <input type="radio" id="radioPkgBasic" name="mainPkgChoice" value="basic" checked style="accent-color:var(--text-primary); width:16px; height:16px; margin-top:2px; cursor:pointer; flex-shrink:0;">
+                        <strong style="font-size:14px; color:var(--text-primary); font-family:var(--font-serif); line-height:1.4;">1. [기본] 능화창 슬리브 상자 &amp; 한지 엽서</strong>
+                    </label>
+                </div>
+                <div style="font-size:12px; color:var(--text-secondary); line-height:1.7; padding-left:24px; margin-bottom:10px;">
+                    <div>· <strong>포장 구성:</strong> 조선 창호 꽃살문 하드 상자 + 붉은 한지 띠지</div>
+                    <div>· <strong>동봉 혜택:</strong> 캘리그라피 감사 메시지 한지 엽서 동봉</div>
+                    <div>· <strong>적용 대상:</strong> 50ml 본품 및 전 선물 세트 무료 기본 제공</div>
+                </div>
+                <div style="display:flex; justify-content:flex-end; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:8px; padding-left:24px;">
+                    <span style="font-size:12px; font-weight:800; color:var(--accent-pine); font-family:var(--font-mono);">추가 비용: 0 KRW (무료 기본 제공)</span>
+                </div>
+            </div>
+
+            <!-- Option 2: Premium Bojagi Wrapping -->
+            <div id="pkgSelectPremium" onclick="setMainPackagingChoice('premium')" style="background:#ffffff; border:2px solid var(--border-line); border-radius:4px; padding:16px; margin-bottom:18px; cursor:pointer; box-sizing:border-box; transition:background-color 0.2s, border-color 0.2s;">
+                <div style="margin-bottom:8px;">
+                    <label style="display:flex; align-items:flex-start; gap:8px; cursor:pointer; margin:0;">
+                        <input type="radio" id="radioPkgPremium" name="mainPkgChoice" value="premium" style="accent-color:var(--accent-brass); width:16px; height:16px; margin-top:2px; cursor:pointer; flex-shrink:0;">
+                        <strong style="font-size:14px; color:var(--accent-brass); font-family:var(--font-serif); line-height:1.4;">2. [프리미엄] 전통 수제 보자기 &amp; 노리개</strong>
+                    </label>
+                </div>
+                <div style="font-size:12px; color:var(--text-secondary); line-height:1.7; padding-left:24px; margin-bottom:10px;">
+                    <div>· <strong>포장 구성:</strong> 옥색·홍색 전통 수제 패브릭 보자기 래핑</div>
+                    <div>· <strong>오브제 장식:</strong> 방짜유기 놋쇠 마패 태슬 노리개 장식 결합</div>
+                    <div>· <strong>추천 대상:</strong> 은사님 선물, 격식 있는 예단 및 명절 추천</div>
+                </div>
+                <div style="display:flex; justify-content:flex-end; align-items:center; border-top:1px solid rgba(180,83,9,0.12); padding-top:8px; padding-left:24px;">
+                    <span style="font-size:12px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono);">추가 비용: +5,000 KRW (선택 옵션)</span>
+                </div>
+            </div>
+
+            <button type="button" class="btn-black" onclick="goToCategoryWithSelectedPkg()" style="width:100%; padding:14px; font-size:13px; font-weight:800; cursor:pointer; letter-spacing:0.5px;">
+                선택한 포장 옵션으로 선물 세트 보러가기 &gt;
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         [ATELIER ALERT MODAL] 사단 프라이빗 아틀리에 기획안 & 사전 알림 신청 모달
+         ======================================================== -->
+    <div id="atelierModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center; padding:16px;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:480px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closeAtelierModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <div style="margin-bottom:16px;">
+                <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;">
+                    <span class="section-tag" style="margin:0;">SHOWROOM CONCEPT</span>
+                    <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:rgba(202,138,4,0.1); padding:2px 6px; border-radius:2px;">사전 기획</span>
+                </div>
+                <h3 style="font-size:18px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0 0 6px;">
+                    사단 프라이빗 아틀리에 사전 오픈 알림
+                </h3>
+                <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin:0;">
+                    북촌 한옥·성수 쇼룸에서 펼쳐질 1:1 몰입형 조향 도슨트 프로그램입니다. 오픈 2주 전 우선 예약 링크를 전송해 드립니다.
+                </p>
+            </div>
+
+            <form id="atelierAlertForm" onsubmit="submitAtelierAlert(event)" style="display:flex; flex-direction:column; gap:14px; margin-bottom:18px;">
+                <!-- 희망 지역 선택 -->
+                <div>
+                    <label style="display:block; font-size:12px; font-weight:800; color:var(--text-primary); margin-bottom:6px;">
+                        1. 희망 방문 지역
+                    </label>
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:6px;">
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px; font-size:11.5px; text-align:center; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                            <input type="radio" name="catAtelierLocation" value="bukchon" checked> 북촌 한옥
+                        </label>
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px; font-size:11.5px; text-align:center; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                            <input type="radio" name="catAtelierLocation" value="seongsu"> 성수 쇼룸
+                        </label>
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px; font-size:11.5px; text-align:center; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                            <input type="radio" name="catAtelierLocation" value="samcheong"> 삼청동
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 방문 인원 선택 -->
+                <div>
+                    <label style="display:block; font-size:12px; font-weight:800; color:var(--text-primary); margin-bottom:6px;">
+                        2. 동반 방문 인원
+                    </label>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px; font-size:11.5px; text-align:center; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                            <input type="radio" name="catAtelierParty" value="1" checked> 1인 프라이빗 도슨트
+                        </label>
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px; font-size:11.5px; text-align:center; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                            <input type="radio" name="catAtelierParty" value="2"> 2인 동반 조향 체험
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 성함 & 연락처 -->
+                <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:8px;">
+                    <div>
+                        <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">신청자 성함</label>
+                        <input type="text" id="atelierName" placeholder="홍길동" required style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px;">
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">알림 수신 번호</label>
+                        <input type="tel" id="atelierPhone" placeholder="010-1234-5678" required style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px;">
+                    </div>
+                </div>
+
+                <!-- 개인정보 수집 동의 -->
+                <label style="display:flex; align-items:flex-start; gap:8px; font-size:11px; color:var(--text-muted); cursor:pointer; line-height:1.5;">
+                    <input type="checkbox" id="atelierPrivacyAgree" required style="margin-top:2px;">
+                    <span>[필수] 아틀리에 쇼룸 오픈 소식 및 우선 예약 링크 발송을 위한 개인정보(성함, 연락처) 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <button type="submit" class="btn-brass" style="width:100%; padding:13px; font-size:13px; font-weight:800; cursor:pointer;">
+                    오픈 사전 알림 신청 완료 &gt;
+                </button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
