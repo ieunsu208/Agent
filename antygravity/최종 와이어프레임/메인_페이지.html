@@ -1159,7 +1159,7 @@
                         <div><strong style="color:var(--text-primary);">추천 대상 :</strong> <span style="color:var(--text-secondary);">오후의 분위기 전환 및 나만의 독창적인 조합 향을 연출하고 싶은 분</span></div>
                         <div><strong style="color:var(--text-primary);">조향 설계 :</strong> <span style="color:var(--text-secondary);">설계 부향률 20% (EDP) · 발향 목표 약 6~8시간 내외</span></div>
                         <div><strong style="color:var(--text-primary);">캡 & 휴대 :</strong> <span style="color:var(--text-secondary);">서재 문진형 인장 캡 & 가방 포켓 간편 수납</span></div>
-                        <div><strong style="color:var(--text-primary);">구성품 :</strong> <span style="color:var(--text-secondary);">50ml 본품 보틀 + 인장 캡 + 칠정(七情) 가이드 카드</span></div>
+                        <div><strong style="color:var(--text-primary);">구성품 :</strong> <span style="color:var(--text-secondary);">50ml 본품 보틀 + 인장 캡 + 감성 무드 가이드 카드</span></div>
                     </div>
                     <div style="background:var(--bg-surface); border:1px solid var(--border-line); border-radius:4px; padding:16px 18px; font-size:12px; font-family:var(--font-mono); display:flex; flex-direction:column; gap:6px;">
                         <div><strong style="color:var(--text-primary);">가격대 :</strong> <span style="color:var(--text-primary); font-weight:800;">49,000 KRW</span></div>
@@ -1824,13 +1824,14 @@
             <div class="product-grid-4">
                 
                 <!-- Card 01 (1마패 대표 향) -->
-                <div class="product-card">
+                <div class="product-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="01. 유자 청송 상세 보기" onclick="location.href='카테고리.html?tab=1mapae&targetProd=p1#sec-1mapae'" onkeydown="if(event.key==='Enter'||event.key===' '){ location.href='카테고리.html?tab=1mapae&targetProd=p1#sec-1mapae'; event.preventDefault(); }">
                     <div>
                         <div class="product-card-top">
                             <div style="display:flex; gap:6px; align-items:center;">
-                                <span class="product-badge product-badge-1mapae">1마패</span>
-                                <span style="font-size:10px; font-weight:800; background:var(--bg-dark); color:#fff; padding:2px 6px; border-radius:2px;">대표 향</span>
+                                <span class="product-badge product-badge-1mapae">1마패 · BASE</span>
+                                <span style="font-size:10px; font-weight:800; background:var(--accent-pine); color:#fff; padding:2px 6px; border-radius:2px;">대표 향</span>
                             </div>
+                            <span style="font-size:10.5px; font-weight:800; color:var(--text-muted);">포터블 캡</span>
                         </div>
                         
                         <div class="product-card-thumb">
@@ -1839,7 +1840,7 @@
                         </div>
 
                         <h4 class="product-card-title">01. 유자 청송</h4>
-                        <p class="product-card-desc">"매일 아침 가볍게 덧입는 한국 자연의 산뜻한 시작."</p>
+                        <p class="product-card-desc">"하동 청유자의 싱그러운 과즙과 지리산 푸른 솔잎의 정갈한 피톤치드."</p>
                         
                         <div class="product-card-notes">
                             TOP: 하동 청유자 | MID: 지리산 솔잎 | BASE: 백삼
@@ -1850,89 +1851,102 @@
                     </div>
                     <div class="product-card-footer">
                         <div>
-                            <div class="product-card-price">39,000 KRW</div>
+                            <div class="product-card-price">39,000 KRW <span style="font-size:10px; font-weight:700; color:var(--text-muted); font-family:sans-serif;">[기획 가격]</span></div>
                             <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">50ml 본품 (EDP)</div>
                         </div>
-                        <button type="button" class="btn-black" style="padding:7px 14px; font-size:11px;" onclick="addToCart('01. 유자 청송')">담기</button>
+                        <div style="display:flex; gap:6px;">
+                            <button type="button" class="btn-outline" style="padding:6px 10px; font-size:11px;" onclick="event.stopPropagation(); location.href='카테고리.html?tab=1mapae&targetProd=p1#sec-1mapae';">상세 &gt;</button>
+                            <button type="button" class="btn-black" style="padding:6px 12px; font-size:11px;" onclick="event.stopPropagation(); addToCart('01. 유자 청송')">담기</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Card 04 (2마패 대표 향) -->
-                <div class="product-card">
+                <div class="product-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="04. 적송 홍화 상세 보기" onclick="location.href='카테고리.html?tab=2mapae&targetProd=p4#sec-2mapae'" onkeydown="if(event.key==='Enter'||event.key===' '){ location.href='카테고리.html?tab=2mapae&targetProd=p4#sec-2mapae'; event.preventDefault(); }">
                     <div>
                         <div class="product-card-top">
                             <div style="display:flex; gap:6px; align-items:center;">
-                                <span class="product-badge product-badge-2mapae">2마패</span>
-                                <span style="font-size:10px; font-weight:800; background:var(--bg-dark); color:#fff; padding:2px 6px; border-radius:2px;">대표 향</span>
+                                <span class="product-badge product-badge-2mapae">2마패 · POINT</span>
+                                <span style="font-size:10px; font-weight:800; background:var(--accent-red); color:#fff; padding:2px 6px; border-radius:2px;">대표 향</span>
                             </div>
+                            <span style="font-size:10.5px; font-weight:800; color:var(--text-muted);">마그네틱 캡</span>
                         </div>
 
                         <div class="product-card-thumb">
-                            <div style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[04. 50ml BOTTLE]</div>
-                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">적송 홍화</div>
+                            <div style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--accent-red); margin-bottom:4px;">[04. 50ml BOTTLE]</div>
+                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif); color:var(--accent-red);">적송 홍화</div>
+                            <div style="font-size:10px; color:#991b1b; margin-top:2px; font-weight:700;">[홍화색 틴트 · 赤松 紅花]</div>
                         </div>
 
                         <h4 class="product-card-title">04. 적송 홍화</h4>
-                        <p class="product-card-desc">"단조로운 일상에 색채를 더하는 붉은 홍화와 적송의 조화."</p>
+                        <p class="product-card-desc">"붉은 홍화의 매혹적인 온기와 지리산 천년 적송 송진의 깊이."</p>
                         
                         <div class="product-card-notes">
                             TOP: 붉은 홍화 | MID: 지리산 적송 | BASE: 앰버
                         </div>
                         <div class="product-card-tpo" style="color:var(--accent-red);">
-                            2마패 감성 포인트 · 2:1 레이어링
+                            2마패 감성 포인트 · 2:1 추천 배합
                         </div>
                     </div>
                     <div class="product-card-footer">
                         <div>
-                            <div class="product-card-price">49,000 KRW</div>
+                            <div class="product-card-price">49,000 KRW <span style="font-size:10px; font-weight:700; color:var(--text-muted); font-family:sans-serif;">[기획 가격]</span></div>
                             <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">50ml 본품 (EDP)</div>
                         </div>
-                        <button type="button" class="btn-black" style="padding:7px 14px; font-size:11px;" onclick="addToCart('04. 적송 홍화')">담기</button>
+                        <div style="display:flex; gap:6px;">
+                            <button type="button" class="btn-outline" style="padding:6px 10px; font-size:11px;" onclick="event.stopPropagation(); location.href='카테고리.html?tab=2mapae&targetProd=p4#sec-2mapae';">상세 &gt;</button>
+                            <button type="button" class="btn-black" style="padding:6px 12px; font-size:11px;" onclick="event.stopPropagation(); addToCart('04. 적송 홍화')">담기</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Card 08 (3마패 대표 향) -->
-                <div class="product-card">
+                <div class="product-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="08. 백단 묵향 상세 보기" onclick="location.href='카테고리.html?tab=3mapae&targetProd=p8#sec-3mapae'" onkeydown="if(event.key==='Enter'||event.key===' '){ location.href='카테고리.html?tab=3mapae&targetProd=p8#sec-3mapae'; event.preventDefault(); }">
                     <div>
                         <div class="product-card-top">
                             <div style="display:flex; gap:6px; align-items:center;">
-                                <span class="product-badge product-badge-3mapae">3마패</span>
-                                <span style="font-size:10px; font-weight:800; background:var(--accent-brass); color:#fff; padding:2px 6px; border-radius:2px;">대표 향 · 마스터</span>
+                                <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
+                                <span style="font-size:10px; font-weight:800; background:var(--accent-brass); color:#fff; padding:2px 6px; border-radius:2px;">대표 향</span>
                             </div>
+                            <span style="font-size:10.5px; font-weight:800; color:var(--accent-brass);">방짜유기 놋쇠 캡</span>
                         </div>
 
                         <div class="product-card-thumb">
-                            <div style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[08. 50ml + BRASS]</div>
-                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif);">백단 묵향</div>
+                            <div style="font-size:10.5px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:4px;">[08. 50ml + BRASS]</div>
+                            <div style="font-size:13px; font-weight:900; font-family:var(--font-serif); color:var(--accent-brass);">백단 묵향</div>
                         </div>
 
                         <h4 class="product-card-title">08. 백단 묵향</h4>
-                        <p class="product-card-desc">"선비 서재의 송연묵 먹향과 백단의 압도적 품격."</p>
+                        <p class="product-card-desc">"선비 서재의 송연묵 먹향과 백단 원목의 압도적 시그니처."</p>
                         
                         <div class="product-card-notes">
-                            TOP: 송연묵 | MID: 그윽한 백단목 | BASE: 흑단목 (Long-lasting)
+                            TOP: 송연묵 | MID: 그윽한 백단목 | BASE: 흑단목
                         </div>
                         <div class="product-card-tpo" style="color:var(--accent-brass);">
-                            3마패 황동 오브제 · 올데이 마스터 품격
+                            3마패 놋쇠 오브제 · 올데이 마스터 품격
                         </div>
                     </div>
                     <div class="product-card-footer">
                         <div>
-                            <div class="product-card-price">69,000 KRW</div>
-                            <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">50ml 본품 + 황동 캡</div>
+                            <div class="product-card-price">69,000 KRW <span style="font-size:10px; font-weight:700; color:var(--text-muted); font-family:sans-serif;">[기획 가격]</span></div>
+                            <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">50ml 본품 + 놋쇠 캡</div>
                         </div>
-                        <button type="button" class="btn-black" style="padding:7px 14px; font-size:11px;" onclick="addToCart('08. 백단 묵향')">담기</button>
+                        <div style="display:flex; gap:6px;">
+                            <button type="button" class="btn-outline" style="padding:6px 10px; font-size:11px;" onclick="event.stopPropagation(); location.href='카테고리.html?tab=3mapae&targetProd=p8#sec-3mapae';">상세 &gt;</button>
+                            <button type="button" class="btn-black" style="padding:6px 12px; font-size:11px;" onclick="event.stopPropagation(); addToCart('08. 백단 묵향')">담기</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Card 15 (입문용 키트) -->
-                <div class="product-card" style="border:1.5px dashed var(--text-primary);">
+                <div class="product-card" style="border:1.5px dashed var(--text-primary);" tabindex="0" role="button" aria-haspopup="dialog" aria-label="사단 3종 디스커버리 킷 상세 보기" onclick="location.href='카테고리.html?tab=gift&targetProd=p15#sec-gift'" onkeydown="if(event.key==='Enter'||event.key===' '){ location.href='카테고리.html?tab=gift&targetProd=p15#sec-gift'; event.preventDefault(); }">
                     <div>
                         <div class="product-card-top">
                             <div style="display:flex; gap:6px; align-items:center;">
                                 <span class="product-badge product-badge-gift">전 마패 통합</span>
-                                <span style="font-size:10px; font-weight:800; border:1px solid #121212; color:#121212; padding:2px 6px; border-radius:2px; background:#fff;">입문용 키트 · 1.9만 크레딧</span>
+                                <span style="font-size:10px; font-weight:800; border:1px solid #121212; color:#121212; padding:2px 6px; border-radius:2px; background:#fff;">1.9만 즉시 차감</span>
                             </div>
+                            <span style="font-size:10.5px; font-weight:800; color:var(--text-muted);">5ml x 3종</span>
                         </div>
 
                         <div class="product-card-thumb">
@@ -1941,7 +1955,7 @@
                         </div>
 
                         <h4 class="product-card-title">사단 3종 디스커버리 킷</h4>
-                        <p class="product-card-desc">"1·2·3마패 대표 향을 집에서 시향. 본품 19,000원 웰컴 크레딧 증정."</p>
+                        <p class="product-card-desc">"1·2·3마패 대표 향을 집에서 먼저 시향. 본품 19,000원 바우처 동봉."</p>
                         
                         <div class="product-card-notes">
                             유자청송 + 적송홍화 + 백단묵향 (각 5ml)
@@ -1952,10 +1966,13 @@
                     </div>
                     <div class="product-card-footer">
                         <div>
-                            <div class="product-card-price">19,000 KRW</div>
-                            <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">5ml x 3종 앰플 (1.9만 크레딧)</div>
+                            <div class="product-card-price">19,000 KRW <span style="font-size:10px; font-weight:700; color:var(--text-muted); font-family:sans-serif;">[기획 가격]</span></div>
+                            <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">5ml x 3종 앰플 (1.9만 바우처)</div>
                         </div>
-                        <button type="button" class="btn-black" style="padding:7px 14px; font-size:11px;" onclick="addToCart('사단 3종 디스커버리 킷')">담기</button>
+                        <div style="display:flex; gap:6px;">
+                            <button type="button" class="btn-outline" style="padding:6px 10px; font-size:11px;" onclick="event.stopPropagation(); location.href='카테고리.html?tab=gift&targetProd=p15#sec-gift';">상세 &gt;</button>
+                            <button type="button" class="btn-black" style="padding:6px 12px; font-size:11px;" onclick="event.stopPropagation(); addToCart('사단 3종 디스커버리 킷')">담기</button>
+                        </div>
                     </div>
                 </div>
 
@@ -2339,7 +2356,7 @@
                 document.getElementById('resultTitle').innerText = '01. 유자 청송 × 04. 적송 홍화';
                 document.getElementById('resultReasonText').innerText = `[${kwTime}]와 [${kwDensity}]를 함께 즐기시는 고객님을 위해, 맑은 베이스 위에 감각적인 포인트를 덧입히는 사단의 시그니처 듀오를 처방합니다.`;
                 document.getElementById('resultDesc').innerText = '아침을 깨우는 하동 청유자의 싱그러움과 오후의 나른함을 환기시키는 지리산 적송 홍화의 온기가 피부 위에서 가장 이상적인 조화를 이룹니다.';
-                document.getElementById('resultLayering').innerText = '손목에 01. 유자 청송(1마패) 2회 분사 후, 오후 3~4시경 04. 적송 홍화(2마패) 1회를 덧뿌려 분위기를 전환하세요. (2:1 황금 배합)';
+                document.getElementById('resultLayering').innerText = '손목에 01. 유자 청송(1마패) 2회 분사 후, 오후 3~4시경 04. 적송 홍화(2마패) 1회를 덧뿌려 분위기를 전환하세요. (2:1 추천 배합)';
                 document.getElementById('resultProductLink').href = '카테고리.html?tab=1mapae&targetProd=p1#sec-1mapae';
                 document.getElementById('resultProductLink').innerText = '추천 듀오 상품 [01. 유자 청송] 바로 보기 >';
             } else if (count2 === 2 && count3 === 2) {
@@ -2430,12 +2447,12 @@
             '방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
             '3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
+            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' },
             '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '14. 방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' }
+            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' }
         };
 
         let cart = [];
@@ -2709,7 +2726,7 @@
             </div>
 
             <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
-                원하시는 포장 방식을 선택하신 후 아래 버튼을 누르면, <strong>선택하신 옵션이 이미 적용된 선물 세트 주문 화면</strong>으로 바로 연결됩니다.
+                원하시는 포장 방식을 선택하신 후 아래 버튼을 누르면, <strong>선택하신 옵션이 적용된 선물 세트 상세 기획안 화면</strong>으로 바로 연결됩니다.
             </p>
 
             <!-- Option 1: Basic Free Box (Selectable Card) -->
@@ -2750,7 +2767,7 @@
 
             <!-- Single Action Button (No bottom close text) -->
             <button type="button" class="btn-black" onclick="goToCategoryWithSelectedPkg()" style="width:100%; padding:14px; font-size:13px; font-weight:800; cursor:pointer; letter-spacing:0.5px;">
-                선택한 포장 옵션으로 선물 세트 보러가기 &gt;
+                선택한 포장 옵션으로 기획안 보기 &gt;
             </button>
         </div>
     </div>
