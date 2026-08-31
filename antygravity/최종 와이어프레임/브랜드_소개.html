@@ -1123,7 +1123,7 @@
                             </div>
                             <div>
                                 <strong style="color:var(--text-primary);">대상 상품 :</strong><br>
-                                50ml 본품 단품(1·2·3마패) 및 전 세트 상품 (주문서에서 옵션 선택)
+                                전 등급 본품(20ml·50ml·75ml) 및 전 세트 상품 (주문서에서 옵션 선택)
                             </div>
                         </div>
                     </div>
@@ -1559,17 +1559,17 @@
         // [CART ENGINE] LocalStorage Synchronization & Drawer Logic
         // ========================================================
         const productPriceMap = {
-            '01. 유자 청송': { price: 39000, spec: '50ml EDP · 1마패 Base' },
-            '02. 백합 한지': { price: 39000, spec: '50ml EDP · 1마패 Base' },
-            '03. 옥로 다원': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '01. 유자 청송': { price: 39000, spec: '20ml EDP · 1마패 Base' },
+            '02. 백합 한지': { price: 39000, spec: '20ml EDP · 1마패 Base' },
+            '03. 옥로 다원': { price: 39000, spec: '20ml EDP · 1마패 Base' },
             '04. 적송 홍화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '05. 달맞이꽃 야화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '06. 매화 설원': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '07. 치자 노을': { price: 49000, spec: '50ml EDP · 2마패 Point' },
-            '08. 백단 묵향': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '09. 침향 흑호': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '10. 자개 영롱': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '11. 궁중 향낭': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '08. 백단 묵향': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '09. 침향 흑호': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '10. 자개 영롱': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '11. 궁중 향낭': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
             '놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '흑도자기 룸 & 패브릭 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
@@ -1578,12 +1578,12 @@
             '방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
             '3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' },
+            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '75ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' },
             '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '14. 방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' }
+            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '75ml 풀패키지 + 옻칠 보관함 + VIP 패스 (기획안)' }
         };
 
         let cart = [];
@@ -1995,7 +1995,7 @@
                 <div style="font-size:12px; color:var(--text-secondary); line-height:1.7; padding-left:24px; margin-bottom:10px;">
                     <div>· <strong>포장 구성:</strong> 조선 창호 꽃살문 하드 상자 + 붉은 한지 띠지</div>
                     <div>· <strong>동봉 혜택:</strong> 캘리그라피 감사 메시지 한지 엽서 동봉</div>
-                    <div>· <strong>적용 대상:</strong> 50ml 본품 및 전 선물 세트 무료 기본 제공</div>
+                    <div>· <strong>적용 대상:</strong> 전 등급(20ml·50ml·75ml) 본품 및 전 선물 세트 무료 기본 제공</div>
                 </div>
                 <div style="display:flex; justify-content:flex-end; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:8px; padding-left:24px;">
                     <span style="font-size:12px; font-weight:800; color:var(--accent-pine); font-family:var(--font-mono);">추가 비용: 0 KRW (무료 기본 제공)</span>

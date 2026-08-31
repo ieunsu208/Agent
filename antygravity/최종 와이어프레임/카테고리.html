@@ -444,36 +444,6 @@
             position: relative;
             width: 100%;
         }
-        .product-carousel-scroll-hint {
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 48px;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95) 75%);
-            display: none;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 8px;
-            pointer-events: auto;
-            cursor: pointer;
-            z-index: 20;
-        }
-        .product-carousel-scroll-hint .scroll-arrow {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--bg-dark);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            font-weight: 900;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            animation: pulseHint 1.8s infinite ease-in-out;
-        }
-
         .product-grid-3 { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
@@ -501,7 +471,7 @@
             box-sizing: border-box;
         }
 
-        /* Desktop Carousel Navigation Arrows */
+        /* Carousel Navigation Arrows */
         .carousel-nav-btn {
             position: absolute;
             top: 50%;
@@ -509,9 +479,9 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
             border: 1px solid var(--border-line);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -520,9 +490,10 @@
             line-height: 1;
             color: var(--text-primary);
             cursor: pointer;
-            z-index: 20;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 40;
+            transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
             user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
         .carousel-nav-btn:hover {
             background: var(--bg-dark);
@@ -532,23 +503,31 @@
             transform: translateY(-50%) scale(1.08);
         }
         .carousel-nav-btn.prev {
-            left: -20px;
+            left: 12px;
             opacity: 0;
             pointer-events: none;
             visibility: hidden;
         }
         .carousel-nav-btn.next {
-            right: -20px;
+            right: 12px;
             opacity: 1;
             pointer-events: auto;
             visibility: visible;
         }
         @media (max-width: 1260px) {
-            .carousel-nav-btn.prev { left: 4px; }
-            .carousel-nav-btn.next { right: 4px; }
+            .carousel-nav-btn.prev { left: 8px; }
+            .carousel-nav-btn.next { right: 8px; }
         }
         @media (max-width: 768px) {
-            .carousel-nav-btn { display: none !important; }
+            .carousel-nav-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 20px;
+                top: 42%;
+                box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+            }
+            .carousel-nav-btn.prev { left: 4px; }
+            .carousel-nav-btn.next { right: 4px; }
         }
 
         /* Standardized Uniform Product Card */
@@ -734,11 +713,10 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Prevent Horizontal Scroll */
+        /* Global Layout */
         html, body {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100% !important;
+            width: 100%;
+            max-width: 100%;
             margin: 0;
             padding: 0;
         }
@@ -897,12 +875,15 @@
             
             /* GNB Minimal Luxury Header for Mobile (Logo Left, User Menu Right) */
             .main-header {
+                position: sticky !important;
+                top: 0 !important;
                 height: 52px !important;
                 padding: 0 !important;
                 display: flex !important;
                 align-items: center !important;
                 background: #ffffff !important;
                 border-bottom: 1px solid var(--border-line) !important;
+                z-index: 1000 !important;
             }
             .gnb-nav { display: none !important; }
             .gnb-grid {
@@ -924,21 +905,6 @@
                 position: relative !important;
                 width: 100% !important;
                 margin: 0 0 12px 0 !important;
-            }
-            .product-carousel-scroll-hint { 
-                position: absolute !important;
-                right: -4px !important;
-                top: 0 !important;
-                bottom: 14px !important;
-                width: 40px !important;
-                background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95) 75%) !important;
-                padding-right: 4px !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: flex-end !important;
-                z-index: 15 !important;
-                pointer-events: auto !important;
-                cursor: pointer;
             }
             .product-grid-3, .product-grid-4, .grid-2 { 
                 display: flex !important;
@@ -1555,9 +1521,6 @@
             <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
             <div id="unifiedGrid" class="product-grid-3" onscroll="checkCarouselScroll(this)"></div>
             <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
-            <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                <span class="scroll-arrow">&gt;</span>
-            </div>
         </div>
 
         <!-- 정규 카테고리별 섹션 래퍼 (기본 뷰 및 탭 전환용) -->
@@ -1576,21 +1539,19 @@
                     <p>하동 청유자·백합 한지·보성 옥로차로 완성한 하루의 맑고 든든한 밑바탕 데일리 에디션</p>
                 </div>
                 <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--accent-pine);">
-                    50ml EDP · 39,000 KRW
+                    20ml EDP · 39,000 KRW
                 </div>
             </div>
 
             <div class="product-carousel-wrap">
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
                 <div class="product-grid-3" onscroll="checkCarouselScroll(this)">
                     <!-- Card 01 -->
                     <div class="product-card" data-tier="1mapae" data-scent="yuja jeoksong" data-tpo="morning" style="border:1.5px solid var(--accent-pine); box-shadow:0 4px 16px rgba(22, 101, 52, 0.08);" tabindex="0" role="button" aria-haspopup="dialog" aria-label="01. 유자 청송 상세 정보 보기" onclick="openProductModal('p1')" onkeydown="if(event.key==='Enter'||event.key===' '){ openProductModal('p1'); event.preventDefault(); }">
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-1mapae">1마패 · BASE</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml EDP · 포터블 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">20ml EDP · 포터블 캡</span>
                             </div>
                             <div class="product-card-thumb" style="border-color:var(--accent-pine); background:#f4fbf7;">
                                 <span class="hero-scent-badge hero-badge-1mapae">★ 1마패 대표 향</span>
@@ -1616,7 +1577,7 @@
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-1mapae">1마패 · BASE</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml EDP · 포터블 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">20ml EDP · 포터블 캡</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[02. BOTTLE THUMBNAIL]</div>
@@ -1641,7 +1602,7 @@
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-1mapae">1마패 · BASE</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">50ml EDP · 포터블 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--text-muted);">20ml EDP · 포터블 캡</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[03. BOTTLE THUMBNAIL]</div>
@@ -1661,9 +1622,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
             </div>
         </section>
 
@@ -1686,9 +1645,6 @@
 
             <div class="product-carousel-wrap">
                 <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
                 <div class="product-grid-4" onscroll="checkCarouselScroll(this)">
                     <!-- Card 04 -->
                     <div class="product-card" data-tier="2mapae" data-scent="jeoksong" data-tpo="refresh" style="border:1.5px solid var(--accent-red); box-shadow:0 4px 16px rgba(153, 27, 27, 0.08);" tabindex="0" role="button" aria-haspopup="dialog" aria-label="04. 적송 홍화 상세 정보 보기" onclick="openProductModal('p4')" onkeydown="if(event.key==='Enter'||event.key===' '){ openProductModal('p4'); event.preventDefault(); }">
@@ -1796,9 +1752,6 @@
                     </div>
                 </div>
                 <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
             </div>
         </section>
 
@@ -1815,22 +1768,19 @@
                     <p>전통 방짜유기 공예 놋쇠 캡과 그윽한 백단 원목·침향·송연묵의 고품격 마스터피스</p>
                 </div>
                 <div style="font-size:12px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass);">
-                    50ml EDP · 69,000 KRW
+                    75ml EDP · 69,000 KRW
                 </div>
             </div>
 
             <div class="product-carousel-wrap">
                 <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
                 <div class="product-grid-4" onscroll="checkCarouselScroll(this)">
                     <!-- Card 08 -->
                     <div class="product-card" data-tier="3mapae" data-scent="baekdan" data-tpo="evening" style="border:1.5px solid var(--accent-brass); box-shadow:0 4px 16px rgba(202, 138, 4, 0.1);" tabindex="0" role="button" aria-haspopup="dialog" aria-label="08. 백단 묵향 상세 정보 보기" onclick="openProductModal('p8')" onkeydown="if(event.key==='Enter'||event.key===' '){ openProductModal('p8'); event.preventDefault(); }">
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml EDP · 방짜유기 놋쇠 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">75ml EDP · 방짜유기 놋쇠 캡</span>
                             </div>
                             <div class="product-card-thumb" style="border-color:var(--accent-brass); background:#fffcf6;">
                                 <span class="hero-scent-badge hero-badge-3mapae">★ 3마패 대표 향</span>
@@ -1856,7 +1806,7 @@
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml EDP · 방짜유기 놋쇠 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">75ml EDP · 방짜유기 놋쇠 캡</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[09. BOTTLE THUMBNAIL]</div>
@@ -1881,7 +1831,7 @@
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml EDP · 방짜유기 놋쇠 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">75ml EDP · 방짜유기 놋쇠 캡</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[10. BOTTLE THUMBNAIL]</div>
@@ -1906,7 +1856,7 @@
                         <div>
                             <div class="product-card-top">
                                 <span class="product-badge product-badge-3mapae">3마패 · MASTER</span>
-                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml EDP · 방짜유기 놋쇠 캡</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">75ml EDP · 방짜유기 놋쇠 캡</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--text-muted); margin-bottom:4px;">[11. BOTTLE THUMBNAIL]</div>
@@ -1927,9 +1877,6 @@
                     </div>
                 </div>
                 <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
             </div>
         </section>
 
@@ -1951,9 +1898,7 @@
             </div>
 
             <div class="product-carousel-wrap">
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
                 <div class="product-grid-3" onscroll="checkCarouselScroll(this)">
                     <!-- Card 12 -->
                     <div class="product-card" data-tier="wellness" data-scent="yuja jeoksong" data-tpo="refresh" tabindex="0" role="button" aria-haspopup="dialog" aria-label="12. 놋쇠 마패 롤온 오일 상세 정보 보기" onclick="openProductModal('p12')" onkeydown="if(event.key==='Enter'||event.key===' '){ openProductModal('p12'); event.preventDefault(); }">
@@ -2030,9 +1975,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
             </div>
         </section>
 
@@ -2054,9 +1997,7 @@
             </div>
 
             <div class="product-carousel-wrap">
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
                 <div class="grid-2" onscroll="checkCarouselScroll(this)">
                     <!-- Card 15 -->
                     <div class="product-card" data-tier="gift" data-scent="yuja jeoksong baekdan" data-tpo="morning refresh evening" tabindex="0" role="button" aria-haspopup="dialog" aria-label="사단 3종 디스커버리 킷 상세 정보 보기" onclick="openProductModal('p15')" onkeydown="if(event.key==='Enter'||event.key===' '){ openProductModal('p15'); event.preventDefault(); }">
@@ -2094,7 +2035,7 @@
                                     <span class="product-badge product-badge-gift">SPECIAL GIFT</span>
                                     <span style="font-size:9px; font-weight:800; border:1px solid var(--accent-brass); color:var(--accent-brass); padding:2px 6px; border-radius:2px; background:#fffcf6;">[기프트 구성안]</span>
                                 </div>
-                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">50ml VIP 세트</span>
+                                <span style="font-size:11px; font-weight:800; color:var(--accent-brass);">75ml VIP 세트</span>
                             </div>
                             <div class="product-card-thumb">
                                 <div style="font-size:10px; font-weight:800; font-family:var(--font-mono); color:var(--accent-brass); margin-bottom:4px;">[MASTER GIFT SET · 기획안]</div>
@@ -2102,7 +2043,7 @@
                             </div>
                             <h4 class="product-card-title">옻칠 오동나무 3마패 세트</h4>
                             <p class="product-card-desc">"방짜유기 놋쇠 캡 본품과 수제 옻칠 보관함, VIP 도슨트 패스 풀세트."</p>
-                            <div class="product-card-notes">구성: 50ml 본품 + 놋쇠 캡/참 + 옻칠 보관함 + 비단 노리개 + VIP 패스 (기획안)</div>
+                            <div class="product-card-notes">구성: 75ml 본품 + 놋쇠 캡/참 + 옻칠 보관함 + 비단 노리개 + VIP 패스 (기획안)</div>
                             <div class="product-card-tpo" style="color:var(--text-secondary);">추천 상황: 최고급 예단 / 명절 및 은사님을 위한 품격 선물</div>
                         </div>
                         <div class="product-card-footer">
@@ -2114,9 +2055,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
             </div>
         </section>
         </div><!-- /#categorySectionsWrapper -->
@@ -2139,9 +2078,7 @@
             </div>
 
             <div class="product-carousel-wrap">
-                <div class="product-carousel-scroll-hint-left" onclick="scrollCarouselLeft(this)" style="display:none;">
-                    <span class="scroll-arrow">&lt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn prev" onclick="scrollCarousel(this, 'left')" aria-label="이전 상품">&#8249;</button>
                 <div class="product-grid-3" onscroll="checkCarouselScroll(this)">
                     <div class="goods-card" style="padding:22px; background:#ffffff;">
                         <div>
@@ -2185,9 +2122,7 @@
                         <button type="button" class="btn-outline" style="width:100%; font-size:11px; padding:8px;" onclick="addToCart('VIP 정기구독 멤버십');">VIP 멤버십 신청 &gt;</button>
                     </div>
                 </div>
-                <div class="product-carousel-scroll-hint" onclick="scrollCarouselRight(this)">
-                    <span class="scroll-arrow">&gt;</span>
-                </div>
+                <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
             </div>
         </section>
 
@@ -2319,17 +2254,17 @@
     <script>
         // Product Data Details for Quick View Modal
         const productDetails = {
-            p1: { categoryType: "perfume", title: "01. 유자 청송 (柚子 靑松)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "하동 청유자 정유, 레몬그라스", mid: "지리산 푸른 솔잎, 대나무 잎", base: "백삼, 시더우드", desc: "경남 하동 청유자의 싱그러운 과즙과 지리산 숲 푸른 소나무(靑松)의 정갈한 피톤치드가 티 없이 맑은 하루의 톤을 완성합니다.", ritual: "아침 샤워 직후 맥박 부위와 셔츠 깃에 2회 분무하여 하루의 든든한 밑바탕을 만들어 보세요.", layering: "【1마패 유자청송 (2회)】 + 【2마패 적송홍화 (1회)】 = 감각적인 '소나무 숲의 붉은 노을' 레시피" },
-            p2: { categoryType: "perfume", title: "02. 백합 한지 (百合 韓紙)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "순백 백합화, 맑은 알데히드", mid: "햇살에 말린 닥종이(한지 어코드), 은방울꽃", base: "포근한 코튼 머스크, 화이트 앰버", desc: "햇살에 바짝 말린 전통 닥종이의 보송하고 포근한 섬유질 감촉과 백합 꽃잎의 청초함이 어우러져 티 없이 깨끗한 인상을 줍니다.", ritual: "외출 전 단정한 화이트 셔츠나 니트에 가볍게 분무하세요.", layering: "【1마패 백합한지 (2회)】 + 【3마패 백단묵향 (1회)】 = 단아하면서도 깊이 있는 학자의 서재향" },
-            p3: { categoryType: "perfume", title: "03. 옥로 다원 (玉露 茶園)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "50ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "보성 어린 찻잎, 모닝 듀", mid: "서늘한 대나무 숲, 마테차", base: "삼나무, 화이트 앰버", desc: "이슬을 머금은 보성 다원의 어린 찻잎을 첫물차로 우려낼 때 피어오르는 서늘하고 맑은 녹차의 정수입니다.", ritual: "복잡한 생각이나 업무를 시작하기 전 차분한 마음 정돈용으로 착향하세요.", layering: "【1마패 옥로다원 (2회)】 + 【2마패 매화설원 (1회)】 = 고요한 겨울 차실의 향" },
+            p1: { categoryType: "perfume", title: "01. 유자 청송 (柚子 靑松)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "20ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "하동 청유자 정유, 레몬그라스", mid: "지리산 푸른 솔잎, 대나무 잎", base: "백삼, 시더우드", desc: "경남 하동 청유자의 싱그러운 과즙과 지리산 숲 푸른 소나무(靑松)의 정갈한 피톤치드가 티 없이 맑은 하루의 톤을 완성합니다.", ritual: "아침 샤워 직후 맥박 부위와 셔츠 깃에 2회 분무하여 하루의 든든한 밑바탕을 만들어 보세요.", layering: "【1마패 유자청송 (2회)】 + 【2마패 적송홍화 (1회)】 = 감각적인 '소나무 숲의 붉은 노을' 레시피" },
+            p2: { categoryType: "perfume", title: "02. 백합 한지 (百合 韓紙)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "20ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "순백 백합화, 맑은 알데히드", mid: "햇살에 말린 닥종이(한지 어코드), 은방울꽃", base: "포근한 코튼 머스크, 화이트 앰버", desc: "햇살에 바짝 말린 전통 닥종이의 보송하고 포근한 섬유질 감촉과 백합 꽃잎의 청초함이 어우러져 티 없이 깨끗한 인상을 줍니다.", ritual: "외출 전 단정한 화이트 셔츠나 니트에 가볍게 분무하세요.", layering: "【1마패 백합한지 (2회)】 + 【3마패 백단묵향 (1회)】 = 단아하면서도 깊이 있는 학자의 서재향" },
+            p3: { categoryType: "perfume", title: "03. 옥로 다원 (玉露 茶園)", tier: "1마패 (일상 Base)", badgeClass: "product-badge-1mapae", spec: "20ml EDP / 휴대용 포터블 보틀", price: "39,000 KRW [기획 가격]", top: "보성 어린 찻잎, 모닝 듀", mid: "서늘한 대나무 숲, 마테차", base: "삼나무, 화이트 앰버", desc: "이슬을 머금은 보성 다원의 어린 찻잎을 첫물차로 우려낼 때 피어오르는 서늘하고 맑은 녹차의 정수입니다.", ritual: "복잡한 생각이나 업무를 시작하기 전 차분한 마음 정돈용으로 착향하세요.", layering: "【1마패 옥로다원 (2회)】 + 【2마패 매화설원 (1회)】 = 고요한 겨울 차실의 향" },
             p4: { categoryType: "perfume", title: "04. 적송 홍화 (赤松 紅花)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW [기획 가격]", top: "남원 붉은 잇꽃(홍화), 핑크 페퍼", mid: "지리산 적송 송진 수지, 붉은 장미", base: "따뜻한 앰버 우드, 샌달우드", desc: "조선 여인들이 연지를 찍던 붉은 홍화의 매혹적인 온기와 지리산 붉은 소나무의 깊은 송진향이 대담하게 어우러진 시그니처 포인트입니다.", ritual: "오후 3~4시 나른함을 깨우고 감각을 전환하고 싶을 때 덧뿌리세요.", layering: "【1마패 유자청송 (손목 2회)】 + 【2마패 적송홍화 (손목 1회)】 = 2:1 추천 배합 (더 은은하게 즐기려면 3:1 권장)" },
             p5: { categoryType: "perfume", title: "05. 달맞이꽃 야화 (月下 夜花)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW [기획 가격]", top: "노란 달맞이꽃, 베르가못", mid: "야생 재스민, 튜베로즈", base: "베티버, 스모키 앰버", desc: "달빛이 드리운 밤에만 꽃잎을 여는 노란 달맞이꽃의 은밀하고 관능적인 나이트 플로럴 향조입니다.", ritual: "저녁 약속이나 특별한 모임에 매혹적인 여운을 남기기에 적합합니다.", layering: "【1마패 백합한지 (1회)】 + 【2마패 달맞이꽃야화 (2회)】 = 우아한 야간 디너 향" },
             p6: { categoryType: "perfume", title: "06. 매화 설원 (梅花 雪原)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW [기획 가격]", top: "설중 백매화, 냉수 스파크", mid: "냉차 에센스, 은방울꽃", base: "백단목, 크리스탈 머스크", desc: "한겨울 눈 덮인 들판에서 홀로 피어난 백매화의 서늘하고 기품 있는 차가운 꽃향기입니다.", ritual: "서재나 개인 작업 공간에서 정갈하고 차분한 무드를 연출하고 싶을 때 착향하세요.", layering: "【1마패 옥로다원 (1회)】 + 【2마패 매화설원 (2회)】 = 정갈하고 서늘한 서예실 향" },
             p7: { categoryType: "perfume", title: "07. 치자 노을 (梔子 晚霞)", tier: "2마패 (감성 Point)", badgeClass: "product-badge-2mapae", spec: "50ml EDP / 마그네틱 캡", price: "49,000 KRW [기획 가격]", top: "남해 치자꽃, 잘 익은 살구", mid: "오렌지 블라썸, 꿀향", base: "샌달우드, 통카빈", desc: "해질녘 남해 바다를 붉게 물들이는 저녁 노을과 만개한 치자꽃의 달콤하고 따뜻한 향연입니다.", ritual: "늦은 오후 따뜻한 위로와 풍성한 볼륨감이 필요할 때 사용하세요.", layering: "【1마패 유자청송 (1회)】 + 【2마패 치자노을 (2회)】 = 싱그러운 시트러스 플로럴 칵테일" },
-            p8: { categoryType: "perfume", title: "08. 백단 묵향 (白檀 墨香)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "조선 송연묵(松煙墨), 벼루 먹향", mid: "인도산 최고급 백단 원목", base: "자연산 침향, 스모키 패출리", desc: "조선 왕실 향방 의궤 비전대로 벼루에 갈아낸 정갈한 송연묵 향과 백단목의 그윽함, 방짜유기 놋쇠 캡의 품격이 결합된 사단의 최상위 마스터피스입니다.", ritual: "온종일 묵직하고 지적인 존재감을 드러내야 하는 중요한 비즈니스 미팅이나 격식 있는 자리.", layering: "【1마패 맑은 베이스 (2회)】 + 【3마패 백단묵향 (1회 포인트)】 = 온종일 지속되는 품격 카리스마" },
-            p9: { categoryType: "perfume", title: "09. 침향 흑호 (沈香 黑虎)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "검은 가죽, 스파이시 카다멈", mid: "자연 건조 침향 수지", base: "패출리, 베티버, 스모키 앰버", desc: "깊은 산속 검은 호랑이의 웅장한 기백과 자연산 침향의 깊은 수지향이 어우러져 중후하고 카리스마 넘치는 아우라를 완성합니다.", ritual: "야간 리셉션이나 특별한 갈라 파티에서 단단한 인상을 남깁니다.", layering: "【2마패 적송홍화 (1회)】 + 【3마패 침향흑호 (1회)】 = 강렬한 레더 스모키 우디" },
-            p10: { categoryType: "perfume", title: "10. 자개 영롱 (螺鈿 玲瓏)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "마린 오존, 솔티 브리즈", mid: "자개 앰버그리스, 화이트 플로럴", base: "화이트 시더우드, 미네랄 머스크", desc: "남해 바다 전복 껍질의 영롱한 오색 자개 빛깔을 투명한 아쿠아와 맑은 앰버로 재해석한 세련된 모던 마린 우디 향입니다.", ritual: "도심 속 깔끔하고 세련된 인상이 필요한 비즈니스 미팅.", layering: "【1마패 백합한지 (1회)】 + 【3마패 자개영롱 (1회)】 = 투명하고 맑은 럭셔리 무드" },
-            p11: { categoryType: "perfume", title: "11. 궁중 향낭 (宮中 香囊)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "50ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "당귀, 육계(시나몬)", mid: "작약 꽃잎, 비단 매듭 향", base: "사향(머스크) 앰버, 침향", desc: "조선 왕실 비단 향낭 속에 담기던 8대 귀품 한방 약재와 향기로운 꽃잎이 어우러져 우아하고 기품 있는 왕실의 품격을 전합니다.", ritual: "소중한 기념일이나 전통 격식의 자리에서 화려하고 귀품 있는 발향.", layering: "【2마패 달맞이꽃야화 (1회)】 + 【3마패 궁중향낭 (1회)】 = 최고급 오리엔탈 부케" },
+            p8: { categoryType: "perfume", title: "08. 백단 묵향 (白檀 墨香)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "75ml EDP / 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "조선 송연묵(松煙墨), 벼루 먹향", mid: "인도산 최고급 백단 원목", base: "자연산 침향, 스모키 패출리", desc: "조선 왕실 향방 의궤 비전대로 벼루에 갈아낸 정갈한 송연묵 향과 백단목의 그윽함, 방짜유기 놋쇠 캡의 품격이 결합된 사단의 최상위 마스터피스입니다.", ritual: "온종일 묵직하고 지적인 존재감을 드러내야 하는 중요한 비즈니스 미팅이나 격식 있는 자리.", layering: "【1마패 맑은 베이스 (2회)】 + 【3마패 백단묵향 (1회 포인트)】 = 온종일 지속되는 품격 카리스마" },
+            p9: { categoryType: "perfume", title: "09. 침향 흑호 (沈香 黑虎)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "75ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "검은 가죽, 스파이시 카다멈", mid: "자연 건조 침향 수지", base: "패출리, 베티버, 스모키 앰버", desc: "깊은 산속 검은 호랑이의 웅장한 기백과 자연산 침향의 깊은 수지향이 어우러져 중후하고 카리스마 넘치는 아우라를 완성합니다.", ritual: "야간 리셉션이나 특별한 갈라 파티에서 단단한 인상을 남깁니다.", layering: "【2마패 적송홍화 (1회)】 + 【3마패 침향흑호 (1회)】 = 강렬한 레더 스모키 우디" },
+            p10: { categoryType: "perfume", title: "10. 자개 영롱 (螺鈿 玲瓏)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "75ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "마린 오존, 솔티 브리즈", mid: "자개 앰버그리스, 화이트 플로럴", base: "화이트 시더우드, 미네랄 머스크", desc: "남해 바다 전복 껍질의 영롱한 오색 자개 빛깔을 투명한 아쿠아와 맑은 앰버로 재해석한 세련된 모던 마린 우디 향입니다.", ritual: "도심 속 깔끔하고 세련된 인상이 필요한 비즈니스 미팅.", layering: "【1마패 백합한지 (1회)】 + 【3마패 자개영롱 (1회)】 = 투명하고 맑은 럭셔리 무드" },
+            p11: { categoryType: "perfume", title: "11. 궁중 향낭 (宮中 香囊)", tier: "3마패 (시그니처 Master)", badgeClass: "product-badge-3mapae", spec: "75ml EDP / 무형문화재 방짜유기 놋쇠 캡", price: "69,000 KRW [기획 가격]", top: "당귀, 육계(시나몬)", mid: "작약 꽃잎, 비단 매듭 향", base: "사향(머스크) 앰버, 침향", desc: "조선 왕실 비단 향낭 속에 담기던 8대 귀품 한방 약재와 향기로운 꽃잎이 어우러져 우아하고 기품 있는 왕실의 품격을 전합니다.", ritual: "소중한 기념일이나 전통 격식의 자리에서 화려하고 귀품 있는 발향.", layering: "【2마패 달맞이꽃야화 (1회)】 + 【3마패 궁중향낭 (1회)】 = 최고급 오리엔탈 부케" },
             p12: { 
                 categoryType: "wellness", 
                 title: "놋쇠 마패 롤온 오일", 
@@ -2380,7 +2315,7 @@
                 spec: "5ml x 3종 테이스팅 킷 + 본품 19,000원 웰컴 바우처 (등록 후 7일)", 
                 price: "19,000 KRW [기획 가격]", 
                 components: "5ml x 3종 (01. 유자청송 + 04. 적송홍화 + 08. 백단묵향) + 어사 조향 가이드북", 
-                exclusiveBenefits: "본품(50ml) 구매 시 100% 전액 즉시 차감되는 19,000원 웰컴 크레딧 바우처 동봉", 
+                exclusiveBenefits: "본품(20ml·50ml·75ml) 구매 시 100% 전액 즉시 차감되는 19,000원 웰컴 크레딧 바우처 동봉", 
                 giftInfo: "사단 전용 능화창 미니 슬리브 하드 상자 무료 기본 패키징", 
                 desc: "1·2·3마패 등급별 대표 시그니처 3종을 집에서 먼저 착향해 보세요. 본품 구매 시 즉시 차감되는 19,000원 웰컴 바우처(코드 등록 후 7일 이내 사용, 본품 전용)를 함께 드립니다.", 
                 usageGuide: "아침(1마패) · 오후(2마패) · 저녁(3마패)을 번갈아 착향하며 나만의 취향을 찾아보세요.", 
@@ -2391,12 +2326,12 @@
                 title: "옻칠 오동나무 3마패 세트", 
                 tier: "스페셜 기프트 (기획안)", 
                 badgeClass: "product-badge-gift", 
-                spec: "50ml 본품 + 놋쇠 캡/참 + 옻칠 3단 보관함 + VIP 패스 (기획안)", 
+                spec: "75ml 본품 + 놋쇠 캡/참 + 옻칠 3단 보관함 + VIP 패스 (기획안)", 
                 price: "248,000 KRW [기획 가격]", 
-                components: "50ml 마스터 보틀 + 방짜유기 놋쇠 마패 캡 & 참 + 수제 옻칠 오동나무 보관함 + 비단 노리개", 
+                components: "75ml 마스터 보틀 + 방짜유기 놋쇠 마패 캡 & 참 + 수제 옻칠 오동나무 보관함 + 비단 노리개", 
                 exclusiveBenefits: "사단 VIP 정회원 자격 부여 + 성수·북촌 프라이빗 아틀리에 1:1 조향 도슨트 VIP 초대 패스", 
                 giftInfo: "국가 무형문화재 목공예 장인 100% 수제 공정 (1차 50세트 한정 / 수제 보자기 무료 포장)", 
-                desc: "사단의 최고급 마스터피스. 50ml 본품과 방짜유기 놋쇠 캡, 전통 옻칠 오동나무 보관함과 비단 매듭으로 완성되는 소장용 최고급 예단 풀패키지 기획(안)입니다.", 
+                desc: "사단의 최고급 마스터피스. 75ml 본품과 방짜유기 놋쇠 캡, 전통 옻칠 오동나무 보관함과 비단 매듭으로 완성되는 소장용 최고급 예단 풀패키지 기획(안)입니다.", 
                 usageGuide: "소중한 분을 위한 특별한 선물 및 평생 소장용 헤리티지 마스터피스.", 
                 synergy: "VIP 멤버십 패스로 성수·북촌 아틀리에 프라이빗 1:1 조향 도슨트를 예약하세요." 
             }
@@ -2460,15 +2395,16 @@
                 const grid = wrap.querySelector('.product-grid-4, .product-grid-3, .grid-2');
                 if (grid) {
                     const card = grid.querySelector('.product-card, .goods-card');
-                    const cardWidth = card ? card.offsetWidth : 320;
-                    const scrollAmount = cardWidth + 14;
+                    const cardWidth = card ? card.offsetWidth : 280;
+                    const gap = 24;
+                    const scrollAmount = cardWidth + gap;
 
                     grid.scrollBy({
                         left: direction === 'left' ? -scrollAmount : scrollAmount,
                         behavior: 'smooth'
                     });
 
-                    [50, 150, 300, 500].forEach(delay => {
+                    [30, 80, 150, 300, 500, 700].forEach(delay => {
                         setTimeout(() => checkCarouselScroll(grid), delay);
                     });
                 }
@@ -2480,49 +2416,67 @@
         }
 
         function checkCarouselScroll(el) {
+            if (!el) return;
             const wrap = el.closest('.product-carousel-wrap');
             if (!wrap) return;
             
             const prevBtn = wrap.querySelector('.carousel-nav-btn.prev');
             const nextBtn = wrap.querySelector('.carousel-nav-btn.next');
-            const hint = wrap.querySelector('.product-carousel-scroll-hint');
             
-            const maxScroll = el.scrollWidth - el.clientWidth;
-            const isScrolledRight = el.scrollLeft >= 20;
+            const maxScroll = Math.max(0, el.scrollWidth - el.clientWidth);
+            // 20px 이상 스크롤되었을 때만 왼쪽으로 넘기는 이전 화살표 표시 (시작 위치에서는 반드시 사라짐)
+            const isScrolledRight = el.scrollLeft > 20;
+            // 끝에서 20px 이내로 남았을 때 오른쪽으로 넘기는 다음 화살표 숨김
             const isAtEnd = maxScroll > 15 && el.scrollLeft >= (maxScroll - 20);
             
-            // 모바일 우측 화살표: 끝에 도달했거나 넘길 상품이 없으면 숨김, 아니면 표시
-            if (hint) {
-                hint.style.display = (isAtEnd || maxScroll <= 15) ? 'none' : 'flex';
-            }
-
-            // 데스크톱 이전/다음 버튼
+            // 왼쪽(이전) 화살표 제어: 왼쪽에 더 이상 넘길 상품이 없으면 숨김
             if (prevBtn) {
-                prevBtn.style.opacity = isScrolledRight ? '1' : '0';
-                prevBtn.style.pointerEvents = isScrolledRight ? 'auto' : 'none';
-                prevBtn.style.visibility = isScrolledRight ? 'visible' : 'hidden';
+                const showPrev = isScrolledRight && maxScroll > 15;
+                prevBtn.style.opacity = showPrev ? '1' : '0';
+                prevBtn.style.pointerEvents = showPrev ? 'auto' : 'none';
+                prevBtn.style.visibility = showPrev ? 'visible' : 'hidden';
             }
             
+            // 오른쪽(다음) 화살표 제어: 오른쪽에 더 이상 넘길 상품이 없으면 숨김
             if (nextBtn) {
-                nextBtn.style.opacity = isAtEnd ? '0' : '1';
-                nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-                nextBtn.style.visibility = isAtEnd ? 'hidden' : 'visible';
+                const showNext = !isAtEnd && maxScroll > 15;
+                nextBtn.style.opacity = showNext ? '1' : '0';
+                nextBtn.style.pointerEvents = showNext ? 'auto' : 'none';
+                nextBtn.style.visibility = showNext ? 'visible' : 'hidden';
             }
         }
 
         // Initialize Realtime Carousel Listeners
         function initCarouselListeners() {
             document.querySelectorAll('.product-grid-4, .product-grid-3, .grid-2').forEach(grid => {
-                grid.addEventListener('scroll', () => checkCarouselScroll(grid), { passive: true });
-                grid.addEventListener('touchmove', () => checkCarouselScroll(grid), { passive: true });
-                grid.addEventListener('touchend', () => {
-                    [30, 100, 250, 450].forEach(d => setTimeout(() => checkCarouselScroll(grid), d));
+                let ticking = false;
+                grid.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            checkCarouselScroll(grid);
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
                 }, { passive: true });
+
+                grid.addEventListener('touchend', () => {
+                    [50, 150, 300, 500].forEach(d => setTimeout(() => checkCarouselScroll(grid), d));
+                }, { passive: true });
+
                 checkCarouselScroll(grid);
             });
         }
-        window.addEventListener('DOMContentLoaded', initCarouselListeners);
+        window.addEventListener('DOMContentLoaded', () => {
+            initCarouselListeners();
+            setTimeout(initCarouselListeners, 100);
+        });
         window.addEventListener('load', initCarouselListeners);
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.product-grid-4, .product-grid-3, .grid-2').forEach(grid => {
+                checkCarouselScroll(grid);
+            });
+        });
 
         // Category Tab Switching (Accessible & Preserves Active Filters)
         function switchCategoryTab(catKey, btnEl) {
@@ -3054,17 +3008,17 @@
         }
 
         const productPriceMap = {
-            '01. 유자 청송': { price: 39000, spec: '50ml EDP · 1마패 Base' },
-            '02. 백합 한지': { price: 39000, spec: '50ml EDP · 1마패 Base' },
-            '03. 옥로 다원': { price: 39000, spec: '50ml EDP · 1마패 Base' },
+            '01. 유자 청송': { price: 39000, spec: '20ml EDP · 1마패 Base' },
+            '02. 백합 한지': { price: 39000, spec: '20ml EDP · 1마패 Base' },
+            '03. 옥로 다원': { price: 39000, spec: '20ml EDP · 1마패 Base' },
             '04. 적송 홍화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '05. 달맞이꽃 야화': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '06. 매화 설원': { price: 49000, spec: '50ml EDP · 2마패 Point' },
             '07. 치자 노을': { price: 49000, spec: '50ml EDP · 2마패 Point' },
-            '08. 백단 묵향': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '09. 침향 흑호': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '10. 자개 영롱': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
-            '11. 궁중 향낭': { price: 69000, spec: '50ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '08. 백단 묵향': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '09. 침향 흑호': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '10. 자개 영롱': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
+            '11. 궁중 향낭': { price: 69000, spec: '75ml EDP + 놋쇠 캡 · 3마패 Master' },
             '놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '흑도자기 룸 & 패브릭 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
@@ -3072,12 +3026,12 @@
             '13. 흑도자기 룸 & 패브릭 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
+            '옻칠 오동나무 3마패 세트': { price: 248000, spec: '75ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
             '12. 놋쇠 마패 롤온 오일': { price: 32000, spec: '10ml 롤온 + 놋쇠 참 · 웰니스 오브제' },
             '13. 흑도자기 룸 미스트': { price: 38000, spec: '200ml 여주 흑도자기 · 웰니스 미스트' },
             '14. 방짜유기 마패 인센스 스틱': { price: 45000, spec: '30 Sticks + 방짜유기 놋쇠 홀더' },
             '15. 사단 3종 디스커버리 킷': { price: 19000, spec: '5ml x 3종 + 19,000원 웰컴 크레딧' },
-            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '50ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
+            '16. 옻칠 오동나무 3마패 세트': { price: 248000, spec: '75ml 풀패키지 + 옻칠 보관함 + VIP 패스' },
             '방짜유기 마패 참': { price: 35000, spec: '100% 방짜유기 놋쇠 마패 펜던트 & 스트랩' },
             '서예 문진 홀더': { price: 42000, spec: '영구 소장형 서예 문진 & 인센스 홀더' },
             'VIP 정기구독 멤버십': { price: 180000, spec: '계절별 5ml 시크릿 포뮬러 + 도슨트 패스' },
@@ -3769,7 +3723,7 @@
                 <div style="font-size:12px; color:var(--text-secondary); line-height:1.7; padding-left:24px; margin-bottom:10px;">
                     <div>· <strong>포장 구성:</strong> 조선 창호 꽃살문 하드 상자 + 붉은 한지 띠지</div>
                     <div>· <strong>동봉 혜택:</strong> 캘리그라피 감사 메시지 한지 엽서 동봉</div>
-                    <div>· <strong>적용 대상:</strong> 50ml 본품 및 전 선물 세트 무료 기본 제공</div>
+                    <div>· <strong>적용 대상:</strong> 전 등급(20ml·50ml·75ml) 본품 및 전 선물 세트 무료 기본 제공</div>
                 </div>
                 <div style="display:flex; justify-content:flex-end; align-items:center; border-top:1px solid rgba(0,0,0,0.06); padding-top:8px; padding-left:24px;">
                     <span style="font-size:12px; font-weight:800; color:var(--accent-pine); font-family:var(--font-mono);">추가 비용: 0 KRW (무료 기본 제공)</span>
