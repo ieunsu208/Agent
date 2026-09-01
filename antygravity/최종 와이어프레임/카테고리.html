@@ -2098,14 +2098,14 @@
                         <div>
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                                 <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:var(--bg-surface); padding:2px 8px; border-radius:2px; font-family:var(--font-mono);">[소장용 오브제]</span>
-                                <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">DIGGING OBJECT</span>
+                                <span style="font-size:10px; font-weight:900; color:var(--text-muted); font-family:var(--font-mono);">4-IN-1 OBJECT</span>
                             </div>
                             <h4 style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">영구 소장형 서예 문진 &amp; 인센스 홀더</h4>
                             <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
-                                향수를 모두 사용한 후에도 버려지지 않고, 책상 위 품격 있는 서예 문진이나 인센스 홀더로 평생 곁에 머무는 지속 가능한 오브제.
+                                3마패 향수 완진 후, 놋쇠 캡을 뒤집으면 인센스 스틱 홀더로, 글래스 보틀은 서예 문진으로 영구 소장되는 지속 가능 하드웨어.
                             </p>
                         </div>
-                        <button type="button" class="btn-outline" style="width:100%; font-size:11px; padding:8px;" onclick="addToCart('서예 문진 홀더');">소장 오브제 가이드 &gt;</button>
+                        <button type="button" class="btn-outline" style="width:100%; font-size:11px; padding:8px;" onclick="openModularGuideModal();">소장 오브제 활용법 가이드 &gt;</button>
                     </div>
 
                     <div class="goods-card" style="padding:22px; background:#ffffff;">
@@ -2116,10 +2116,10 @@
                             </div>
                             <h4 style="font-size:16px; font-weight:900; font-family:var(--font-serif); margin-bottom:6px;">암행어사 비밀 레시피 정기구독</h4>
                             <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin-bottom:14px;">
-                                사계절마다 수석 조향사가 한정 배합한 시크릿 포뮬러 15ml와 북촌·성수 아틀리에 프라이빗 도슨트 초대권 제공.
+                                사계절마다 수석 조향사가 한정 배합한 시크릿 포뮬러 15ml 정기 배송과 북촌·성수 아틀리에 프라이빗 도슨트 VIP 패스.
                             </p>
                         </div>
-                        <button type="button" class="btn-outline" style="width:100%; font-size:11px; padding:8px;" onclick="addToCart('VIP 정기구독 멤버십');">VIP 멤버십 신청 &gt;</button>
+                        <button type="button" class="btn-outline" style="width:100%; font-size:11px; padding:8px;" onclick="openSubscriptionModal();">VIP 정기구독 신청서 작성 &gt;</button>
                     </div>
                 </div>
                 <button type="button" class="carousel-nav-btn next" onclick="scrollCarousel(this, 'right')" aria-label="다음 상품">&#8250;</button>
@@ -3385,12 +3385,29 @@
             renderQuizStep();
         }
 
+        // Toast Message Notification Helper
+        function showCartToast(text) {
+            const toast = document.getElementById('toastNotice');
+            const msg = document.getElementById('toastMsg');
+            if (toast && msg) {
+                msg.innerText = text;
+                toast.style.display = 'flex';
+                setTimeout(() => { toast.style.display = 'none'; }, 3500);
+            }
+        }
+
         // ESC Key Modal Close & Cart Drawer Close
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeProductModal();
                 closeDiagnosisModal();
                 closeCartDrawer();
+                closePackagingModal();
+                closeVipPreorderModal();
+                closeAtelierModal();
+                closeUserMenuModal();
+                closeModularGuideModal();
+                closeSubscriptionModal();
             }
         });
 
@@ -3541,6 +3558,36 @@
             const name = nameInput ? nameInput.value.trim() : '';
             closeAtelierModal();
             showCartToast(`${name ? name + ' 님, ' : ''}사단 프라이빗 아틀리에 사전 오픈 알림 등록이 완료되었습니다.`);
+        }
+
+        // 3마패 4-in-1 모듈러 업사이클링 오브제 사용방법 모달 제어
+        function openModularGuideModal() {
+            const modal = document.getElementById('modularGuideModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeModularGuideModal() {
+            const modal = document.getElementById('modularGuideModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        // 암행어사 비밀 레시피 VIP 사계절 정기구독 신청 모달 제어
+        function openSubscriptionModal() {
+            const modal = document.getElementById('subscriptionModal');
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeSubscriptionModal() {
+            const modal = document.getElementById('subscriptionModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function submitSubscription(e) {
+            if (e) e.preventDefault();
+            const nameInput = document.getElementById('subName');
+            const name = nameInput ? nameInput.value.trim() : '';
+            closeSubscriptionModal();
+            showCartToast(`${name ? name + ' 님, ' : ''}암행어사 비밀 레시피 VIP 사계절 정기구독 신청이 완료되었습니다. (카카오 알림톡으로 첫 배송 일정이 안내됩니다)`);
         }
 
         // Initialize on Load (Support URL query param, hash direct jump, and direct modal open)
@@ -3881,6 +3928,167 @@
 
                 <button type="submit" class="btn-brass" style="width:100%; padding:13px; font-size:13px; font-weight:800; cursor:pointer;">
                     오픈 사전 알림 신청 완료 &gt;
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         [MODULAR OBJECT GUIDE MODAL] 3마패 4-in-1 모듈러 업사이클링 오브제 사용방법 가이드 모달
+         ======================================================== -->
+    <div id="modularGuideModal" onclick="if(event.target === this) closeModularGuideModal();" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center; padding:16px;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:540px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closeModularGuideModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <div style="margin-bottom:18px;">
+                <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;">
+                    <span class="section-tag" style="margin:0;">4-IN-1 SUSTAINABLE OBJECT</span>
+                    <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:rgba(202,138,4,0.1); padding:2px 6px; border-radius:2px;">3마패 마스터 전용</span>
+                </div>
+                <h3 style="font-size:20px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0 0 6px;">
+                    영구 소장형 서예 문진 &amp; 인센스 홀더 사용법
+                </h3>
+                <p style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin:0;">
+                    사단(士團)의 3마패 컬렉션은 향수를 모두 비운 후에도 버려지지 않고, 서재 책상 위 품격 있는 <strong>서예 문진</strong>과 <strong>인센스 홀더</strong>로 평생 곁에 머무는 지속 가능한 헤리티지 하드웨어입니다.
+                </p>
+            </div>
+
+            <!-- Step Cards Container -->
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+                <!-- Step 1 -->
+                <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:14px 16px; display:flex; gap:12px; align-items:flex-start;">
+                    <div style="width:28px; height:28px; border-radius:50%; background:var(--bg-dark); color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; font-family:var(--font-mono); flex-shrink:0;">1</div>
+                    <div>
+                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:3px;">향수 완진 및 분리</h4>
+                        <p style="font-size:12px; color:var(--text-secondary); line-height:1.5; margin:0;">
+                            75ml 마스터 향수를 모두 사용한 후, 방짜유기 놋쇠 캡과 크리스탈 글래스 보틀을 분리하여 미온수로 가볍게 헹구어 건조합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:14px 16px; display:flex; gap:12px; align-items:flex-start;">
+                    <div style="width:28px; height:28px; border-radius:50%; background:var(--bg-dark); color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; font-family:var(--font-mono); flex-shrink:0;">2</div>
+                    <div>
+                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin-bottom:3px;">크리스탈 글래스 보틀 ➔ 서예 문진 (Paperweight)</h4>
+                        <p style="font-size:12px; color:var(--text-secondary); line-height:1.5; margin:0;">
+                            묵직한 통유리 하단 보틀을 서재 책상 위에서 펼쳐둔 책이나 독서 노트, 서예 한지를 정갈하게 눌러주는 고급 문진(누름쇠)으로 활용합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div style="background:#fffcf8; border:1.5px solid var(--accent-brass); border-radius:4px; padding:14px 16px; display:flex; gap:12px; align-items:flex-start;">
+                    <div style="width:28px; height:28px; border-radius:50%; background:var(--accent-brass); color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; font-family:var(--font-mono); flex-shrink:0;">3</div>
+                    <div>
+                        <h4 style="font-size:14px; font-weight:900; font-family:var(--font-serif); color:var(--accent-brass-dark); margin-bottom:3px;">방짜유기 놋쇠 캡 뒤집기 ➔ 선향 꽂이 (Incense Holder)</h4>
+                        <p style="font-size:12px; color:var(--text-secondary); line-height:1.5; margin:0;">
+                            묵직한 놋쇠 마패 캡을 <strong>180도 뒤집어 바닥에 놓으면</strong>, 상단에 정밀 가공된 3mm 선향 홈이 드러납니다. 인센스 스틱을 꽂아 실내 명상 공간 훈향을 즐기세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Note -->
+            <div style="background:var(--bg-surface); border-left:3px solid var(--accent-brass); padding:10px 14px; border-radius:2px; font-size:11.5px; color:var(--text-muted); line-height:1.6; margin-bottom:18px;">
+                💡 <strong>적용 컬렉션:</strong> 3마패 마스터 라인 (08. 백단 묵향, 09. 침향 흑호, 10. 자개 영롱, 11. 궁중 향낭) 본품 구매 시 100% 방짜유기 놋쇠 캡이 기본 결합되어 제공됩니다.
+            </div>
+
+            <!-- CTA Buttons -->
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <button type="button" class="btn-black" onclick="closeModularGuideModal(); switchCategoryTab('3mapae');" style="width:100%; padding:13px; font-size:12.5px; cursor:pointer;">
+                    3마패 마스터 컬렉션 (08~11번) 보러가기 &gt;
+                </button>
+                <button type="button" class="btn-outline" onclick="closeModularGuideModal()" style="width:100%; padding:10px; font-size:11.5px;">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         [VIP SUBSCRIPTION MODAL] 암행어사 비밀 레시피 사계절 VIP 정기구독 신청서 모달
+         ======================================================== -->
+    <div id="subscriptionModal" onclick="if(event.target === this) closeSubscriptionModal();" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); backdrop-filter:blur(4px); z-index:1600; align-items:center; justify-content:center; padding:16px;">
+        <div style="background:#ffffff; border:1px solid var(--border-line); border-radius:4px; max-width:490px; width:100%; max-height:90vh; overflow-y:auto; padding:28px 24px; position:relative; box-shadow:0 20px 48px rgba(0,0,0,0.2);">
+            <button type="button" onclick="closeSubscriptionModal()" style="position:absolute; top:16px; right:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary);">&times;</button>
+            
+            <div style="margin-bottom:16px;">
+                <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;">
+                    <span class="section-tag" style="margin:0;">VIP CIPHER MEMBERSHIP</span>
+                    <span style="font-size:10px; font-weight:800; color:var(--accent-brass); background:rgba(202,138,4,0.1); padding:2px 6px; border-radius:2px;">사계절 정기구독</span>
+                </div>
+                <h3 style="font-size:19px; font-weight:900; font-family:var(--font-serif); color:var(--text-primary); margin:0 0 6px;">
+                    암행어사 비밀 레시피 사계절 정기구독 신청서
+                </h3>
+                <p style="font-size:12px; color:var(--text-secondary); line-height:1.6; margin:0;">
+                    계절의 변화에 맞춰 수석 조향사가 한정 배합한 <strong>사계절 시크릿 포뮬러 15ml</strong>를 매 분기 집 앞까지 안전하게 배송해 드립니다.
+                </p>
+            </div>
+
+            <!-- Subscription Benefit Banner -->
+            <div style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:4px; padding:14px 16px; margin-bottom:16px;">
+                <div style="font-size:11.5px; font-weight:900; color:var(--accent-brass); font-family:var(--font-mono); margin-bottom:6px;">
+                    [ VIP 정기구독 회원 독점 혜택 ]
+                </div>
+                <ul style="padding-left:18px; font-size:11.5px; color:var(--text-secondary); line-height:1.7; margin:0;">
+                    <li><strong>사계절 한정 포뮬러 15ml 정기 배송 (연 4회)</strong> — 봄·여름·가을·겨울 시크릿 에디션</li>
+                    <li><strong>성수·북촌 프라이빗 아틀리에 VIP 1:1 도슨트 패스</strong> 상시 제공</li>
+                    <li><strong>사단 전 제품 10% 상시 할인</strong> &amp; 신제품 우선 시향 기회</li>
+                    <li><strong>구독료:</strong> 분기별 45,000 KRW (연 180,000 KRW / 언제든 위약금 없이 해지 가능)</li>
+                </ul>
+            </div>
+
+            <!-- Subscription Application Form -->
+            <form id="subForm" onsubmit="submitSubscription(event)" style="display:flex; flex-direction:column; gap:12px;">
+                <!-- 성함 & 연락처 -->
+                <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:8px;">
+                    <div>
+                        <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">신청자 성함</label>
+                        <input type="text" id="subName" placeholder="홍길동" required style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px;">
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">알림 수신 번호</label>
+                        <input type="tel" id="subPhone" placeholder="010-1234-5678" required style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px;">
+                    </div>
+                </div>
+
+                <!-- 첫 배송지 주소 -->
+                <div>
+                    <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">첫 배송 수령지 주소</label>
+                    <input type="text" id="subAddress" placeholder="기본 주소 (예: 서울시 종로구 북촌로 142)" required style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px; margin-bottom:6px;">
+                    <input type="text" id="subAddressDetail" placeholder="상세 주소 및 동·호수" style="width:100%; box-sizing:border-box; padding:9px 10px; border:1px solid var(--border-line); border-radius:3px; font-size:12px;">
+                </div>
+
+                <!-- 첫 배송 시작 희망 시점 -->
+                <div>
+                    <label style="display:block; font-size:11.5px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">첫 배송 시작 시점</label>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px 10px; font-size:11.5px; cursor:pointer; display:flex; align-items:center; gap:6px;">
+                            <input type="radio" name="subStartTiming" value="now" checked style="accent-color:var(--accent-brass);">
+                            <span>이번 시즌 즉시 시작</span>
+                        </label>
+                        <label style="background:var(--bg-linen); border:1px solid var(--border-line); border-radius:3px; padding:8px 10px; font-size:11.5px; cursor:pointer; display:flex; align-items:center; gap:6px;">
+                            <input type="radio" name="subStartTiming" value="next" style="accent-color:var(--accent-brass);">
+                            <span>다음 분기부터 시작</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 약관 동의 -->
+                <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+                    <label style="display:flex; align-items:flex-start; gap:8px; font-size:11px; color:var(--text-muted); cursor:pointer; line-height:1.5;">
+                        <input type="checkbox" required style="margin-top:2px;">
+                        <span>[필수] 분기별 정기 배송 및 알림톡 발송을 위한 개인정보 수집·이용에 동의합니다.</span>
+                    </label>
+                    <label style="display:flex; align-items:flex-start; gap:8px; font-size:11px; color:var(--text-muted); cursor:pointer; line-height:1.5;">
+                        <input type="checkbox" required style="margin-top:2px;">
+                        <span>[필수] 정기구독 서비스 이용약관 및 정기결제/해지 정책을 확인하였으며 이에 동의합니다.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-brass" style="width:100%; padding:13px; font-size:13px; font-weight:800; cursor:pointer; margin-top:6px;">
+                    VIP 사계절 정기구독 신청 완료 (알림톡 수신) &gt;
                 </button>
             </form>
         </div>
