@@ -882,10 +882,524 @@ body:has(#cartState input:checked) label.btn-card-cart:hover {
     transition: color 0.2s ease !important;
 }
 
+@media (max-width: 1024px) {
+    #curated-showcase .product-grid-4 {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 22px !important;
+        padding: 10px var(--gutter) 24px var(--gutter) !important;
+        margin-left: calc(-1 * var(--gutter)) !important;
+        margin-right: calc(-1 * var(--gutter)) !important;
+        scrollbar-width: none !important;
+    }
+    #curated-showcase .product-grid-4::-webkit-scrollbar {
+        display: none !important;
+    }
+    #curated-showcase .product-card {
+        flex: 0 0 280px !important;
+        min-width: 280px !important;
+        max-width: 280px !important;
+        scroll-snap-align: start !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #curated-showcase .product-card {
+        flex: 0 0 255px !important;
+        min-width: 255px !important;
+        max-width: 255px !important;
+    }
+}
+
+/* 장바구니 체크박스 클릭 시 상단 스크롤 튐 방지 (뷰포트 고정) */
+.state-controls,
+.state-controls input,
+form#cartState,
+form#cartState input {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+/* 장바구니 담긴 후에도 버튼 색상 영구 반전 및 체크 표시 방지 */
+body label.btn-card-cart::after,
+body:has(#cartState input:checked) label.btn-card-cart::after {
+    content: none !important;
+}
+
+body label.btn-card-cart,
+body:has(#cartState input:checked) label.btn-card-cart {
+    background: transparent !important;
+    color: #18181b !important;
+    border: 1px solid #18181b !important;
+}
+
+body label.btn-card-cart:hover,
+body:has(#cartState input:checked) label.btn-card-cart:hover {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   진단 모달 (Diagnosis Modal) 버튼 호버 시인성 최적화 (어두운 배경 + 순백색 텍스트)
+   ========================================================================== */
+#diagnosisModal .quiz-opt-btn {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 16px 18px !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-line) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    word-break: keep-all !important;
+    box-sizing: border-box !important;
+}
+
+#diagnosisModal .quiz-opt-btn .opt-num {
+    font-family: var(--font-mono, monospace) !important;
+    font-weight: 800 !important;
+    color: #71717a !important;
+    flex-shrink: 0 !important;
+    transition: color 0.2s ease !important;
+}
+
+#diagnosisModal .quiz-opt-btn .opt-text {
+    color: #18181b !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+}
+
+/* 선택지 호버 시: 배경 어두워짐 + 텍스트 전체 순백색(#ffffff) 전환 */
+#diagnosisModal .quiz-opt-btn:hover {
+    background: #18181b !important;
+    border-color: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .quiz-opt-btn:hover .opt-num,
+#diagnosisModal .quiz-opt-btn:hover .opt-text,
+#diagnosisModal .quiz-opt-btn:hover span,
+#diagnosisModal .quiz-opt-btn:hover * {
+    color: #ffffff !important;
+}
+
+/* 결과 화면 액션 버튼 */
+#diagnosisModal .btn-modal-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 14px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border: 1px solid #18181b !important;
+    background: #ffffff !important;
+    color: #18181b !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#diagnosisModal .btn-modal-action.btn-modal-primary {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action:hover {
+    background: #18181b !important;
+    border-color: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action.btn-modal-primary:hover {
+    background: #27272a !important;
+    border-color: #27272a !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action:hover * {
+    color: #ffffff !important;
+}
+
+/* 향수 상세 스토리 인라인 링크 (박스 없는 에디토리얼 선 스타일) */
+#diagnosisModal .story-inline-link {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #18181b !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+    cursor: pointer !important;
+    padding: 2px 2px !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+#diagnosisModal .story-inline-link:hover {
+    color: #71717a !important;
+    text-decoration: underline !important;
+}
+
+/* 하단 '다시 진행하기' 텍스트 링크 (박스 없는 깔끔한 밑줄 스타일) */
+#diagnosisModal .btn-restart-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 16px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    background: transparent !important;
+    color: #71717a !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+}
+
 #diagnosisModal .btn-restart-link:hover {
     color: #18181b !important;
     text-decoration: underline !important;
 }
 
+/* ==========================================================================
+   SEC-10: 10섹션 선물 패키징 & 아틀리에 (솔루션 1: 오픈 에디토리얼 레이아웃)
+   - 텍스트 박스/회색 배경 100% 제거
+   - 시원하고 넉넉한 여백과 정갈한 실선 분할
+   - 컴팩트 와이드 화보(16:10)와 자연스러운 지그재그 호흡
+   ========================================================================== */
+#atelier-booking {
+    padding: 110px 0 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--border-line) !important;
+}
 
+#atelier-booking .service-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 96px !important;
+}
 
+#atelier-booking .service-row {
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    gap: clamp(40px, 5.5vw, 84px) !important;
+    align-items: center !important;
+}
+
+#atelier-booking .service-row:nth-child(2) {
+    grid-template-columns: 1fr 1.15fr !important;
+}
+
+#atelier-booking .service-row:nth-child(2) > .editorial-photo {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+#atelier-booking .service-row:nth-child(2) > .editorial-copy {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+}
+
+/* 이미지: 딱딱한 테두리 박스 없이 깊이감 있는 갤러리 화보 */
+#atelier-booking .editorial-photo {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    max-height: 440px !important;
+    border-radius: 2px !important;
+    border: none !important;
+    background-size: cover !important;
+    background-position: center !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+}
+
+/* 텍스트 영역: 답답한 회색 박스/테두리를 100% 걷어낸 오픈 에디토리얼 */
+#atelier-booking .editorial-copy {
+    padding: 10px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+#atelier-booking .editorial-copy h3.feature-title {
+    font-family: var(--font-serif) !important;
+    font-size: clamp(24px, 2.4vw, 32px) !important;
+    font-weight: 700 !important;
+    color: #18181b !important;
+    margin: 10px 0 24px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.35 !important;
+}
+
+/* 상태 뱃지 (미니멀 브라스 엣지 라벨) */
+#atelier-booking .service-status-badge {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    color: #18181b !important;
+    padding: 3px 8px !important;
+    border-radius: 2px !important;
+    border: 1px solid rgba(24, 24, 27, 0.25) !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* 정보 스펙 리스트: 미니멀한 1px 수평 분할선으로 탁 트인 가독성 */
+#atelier-booking .service-specs-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    margin-bottom: 34px !important;
+    border-top: 1px solid var(--border-line) !important;
+    padding-top: 20px !important;
+}
+
+#atelier-booking .service-spec-item {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    color: #52525b !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid rgba(228, 228, 231, 0.6) !important;
+}
+
+#atelier-booking .service-spec-item:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+#atelier-booking .service-spec-item strong {
+    color: #18181b !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    margin-right: 8px !important;
+}
+
+/* 버튼 크기: 여백에 자연스럽게 안착하는 콤팩트 인라인 블록 */
+#atelier-booking .btn-single-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+#atelier-booking .btn-black,
+#atelier-booking .btn-outline {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 220px !important;
+    max-width: fit-content !important;
+    padding: 15px 30px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    margin: 0 !important;
+    transition: all 0.2s ease !important;
+}
+
+#atelier-booking .btn-black::after {
+    margin-left: 8px !important;
+}
+
+#atelier-booking .btn-dual-wrap {
+    display: flex !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+}
+
+/* 반응형 (태블릿 & 모바일) */
+@media (max-width: 960px) {
+    #atelier-booking {
+        padding: 70px 0 75px !important;
+    }
+    #atelier-booking .service-list {
+        gap: 60px !important;
+    }
+    #atelier-booking .service-row,
+    #atelier-booking .service-row:nth-child(2) {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+    #atelier-booking .service-row > .editorial-photo,
+    #atelier-booking .service-row:nth-child(2) > .editorial-photo {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        aspect-ratio: 16 / 10 !important;
+        max-height: 300px !important;
+    }
+    #atelier-booking .service-row > .editorial-copy,
+    #atelier-booking .service-row:nth-child(2) > .editorial-copy {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        padding: 0 !important;
+    }
+    #atelier-booking .btn-black,
+    #atelier-booking .btn-outline {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    #atelier-booking .btn-single-wrap,
+    #atelier-booking .btn-dual-wrap {
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+}
+
+/* ==========================================================================
+   SEC-11: 11섹션 에필로그 리파인 스타일 (레퍼런스 11-3 스타일: 감성 카피 + 심플 듀얼 경로)
+   ========================================================================== */
+.epilogue {
+    background: #ffffff !important;
+    padding: 120px 0 95px !important;
+    text-align: center !important;
+    border-bottom: 1px solid var(--border-line) !important;
+}
+
+.epilogue-inner {
+    max-width: 820px !important;
+    margin: 0 auto !important;
+}
+
+.epilogue-kicker {
+    display: inline-block !important;
+    font-size: 11px !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: #71717a !important;
+    font-family: var(--font-mono, sans-serif) !important;
+    font-weight: 700 !important;
+    margin-bottom: 24px !important;
+}
+
+.epilogue-title {
+    font-family: var(--font-serif) !important;
+    font-size: clamp(26px, 2.8vw, 40px) !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.8px !important;
+    color: #18181b !important;
+    margin: 0 0 20px 0 !important;
+    word-break: keep-all !important;
+}
+
+.epilogue-desc {
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+    color: #52525b !important;
+    margin: 0 auto 56px auto !important;
+    max-width: 600px !important;
+    word-break: keep-all !important;
+}
+
+/* 듀얼 CTA 버튼 래퍼 */
+.epilogue-cta-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+    margin-top: 16px !important;
+    margin-bottom: 56px !important;
+}
+
+.btn-epilogue-primary,
+.btn-epilogue-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 52px !important;
+    padding: 15px 32px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    letter-spacing: -0.2px !important;
+    box-sizing: border-box !important;
+}
+
+/* 1차 버튼: 솔리드 블랙 (디스커버리 킷 유도) */
+.btn-epilogue-primary {
+    background: #18181b !important;
+    color: #ffffff !important;
+    border: 1px solid #18181b !important;
+}
+
+.btn-epilogue-primary:hover {
+    background: #27272a !important;
+    border-color: #27272a !important;
+    color: #ffffff !important;
+}
+
+/* 2차 버튼: 사각 아웃라인 (브랜드 스토리) */
+.btn-epilogue-secondary {
+    background: transparent !important;
+    color: #18181b !important;
+    border: 1px solid #18181b !important;
+}
+
+.btn-epilogue-secondary:hover {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+.epilogue-est {
+    font-size: 11px !important;
+    color: #a1a1aa !important;
+    letter-spacing: 2px !important;
+    font-family: var(--font-mono, sans-serif) !important;
+}
+
+@media (max-width: 760px) {
+    .epilogue {
+        padding: 85px 0 70px !important;
+    }
+    .epilogue-title {
+        font-size: 24px !important;
+    }
+    .epilogue-desc {
+        font-size: 13.5px !important;
+        margin-bottom: 44px !important;
+    }
+    .epilogue-cta-wrap {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin-bottom: 48px !important;
+    }
+    .btn-epilogue-primary,
+    .btn-epilogue-secondary {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
