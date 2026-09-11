@@ -24,10 +24,10 @@
 .hero-text-col .product-badge{color:#d4d4d8!important;font-size:10px!important;letter-spacing:2px!important}.editorial-photo{background-size:300% auto}.scene-7{background-image:var(--gift-image);background-size:cover;background-position:center}.module-drawing{display:block;width:100%;height:150px;color:#71717a;margin:0 0 22px}.modular-parts .production-notes{margin-top:20px;padding-top:0!important}.modular-parts .production-notes .wireframe-box{height:auto!important;min-height:0!important;padding:12px 0!important;font-size:11px}.modular-parts .production-notes summary{font-size:10px}.hero-text-col .hero-trust-bar{border-top:1px solid rgba(255,255,255,0.15)}.skip-link{position:fixed;top:0;left:20px;z-index:200;padding:15px;background:#ffffff;transform:translateY(-120%)}.skip-link:focus{transform:translateY(0)}#quizStepIndicator{font-size:10px!important}#quizStepIndicator::after{content:' · 네 가지 문항을 순서대로 선택해 주세요';font-size:10px;color:#71717a}.cart-sheet>div:first-child>div>div{display:flex!important}.css-modal:has(:target){scroll-behavior:smooth}body:has(.css-modal:target),body:has(.css-modal :target){overflow:hidden}#previewNotice h2{margin-bottom:25px}#previewNotice p{margin-bottom:30px}
 @media(max-width:760px){.desktop-br{display:none}.hero-main-desc{max-width:540px}.module-drawing{height:130px}.hero-text-col .hero-trust-bar span{font-size:9px!important}.hero-photo{background-size:cover;background-position:65% center}.cart-sheet>div:first-child>div{flex-wrap:nowrap!important}.cart-sheet>div:first-child h3{font-size:15px!important}.cart-sheet>div:first-child .close-link{right:0!important}#quizStepIndicator::after{display:block}}
 .hero-production .mobile-hero-visual-card{display:block!important;padding:18px 0!important;border-bottom:1px solid var(--border-line);margin-bottom:20px}.hero-production .desktop-hero-visual-card{padding:18px 0!important}
-body:has(#cart1:checked) .cart-row-1{display:flex}body:has(#cart1:checked) label[for="cart1"].add-to-cart{background:#18181b!important;color:#ffffff!important}body:has(#cart1:checked) label[for="cart1"].add-to-cart::after{content:" ✓"}
-body:has(#cart2:checked) .cart-row-2{display:flex}body:has(#cart2:checked) label[for="cart2"].add-to-cart{background:#18181b!important;color:#ffffff!important}body:has(#cart2:checked) label[for="cart2"].add-to-cart::after{content:" ✓"}
-body:has(#cart3:checked) .cart-row-3{display:flex}body:has(#cart3:checked) label[for="cart3"].add-to-cart{background:#18181b!important;color:#ffffff!important}body:has(#cart3:checked) label[for="cart3"].add-to-cart::after{content:" ✓"}
-body:has(#cart4:checked) .cart-row-4{display:flex}body:has(#cart4:checked) label[for="cart4"].add-to-cart{background:#18181b!important;color:#ffffff!important}body:has(#cart4:checked) label[for="cart4"].add-to-cart::after{content:" ✓"}
+body:has(#cart1:checked) .cart-row-1{display:flex}
+body:has(#cart2:checked) .cart-row-2{display:flex}
+body:has(#cart3:checked) .cart-row-3{display:flex}
+body:has(#cart4:checked) .cart-row-4{display:flex}
 
 /* Hero Buttons Design Override */
 .hero-btn-wrap { display: flex !important; gap: 16px !important; align-items: center !important; flex-wrap: wrap !important; margin: 0 !important; }
@@ -290,7 +290,7 @@ body:has(#cart4:checked) .cart-row-4{display:flex}body:has(#cart4:checked) label
                 }
                 #story-2 .editorial-copy {
                     align-self: start !important;
-                    padding: 35px clamp(30px, 5.3vw, 88px) 35px 0 !important;
+                    padding: 35px clamp(30px, 5.3vw, 88px) !important;
                 }
                 #story-2 .story-photo {
                     width: 100%;
@@ -306,7 +306,7 @@ body:has(#cart4:checked) .cart-row-4{display:flex}body:has(#cart4:checked) label
                     box-shadow: none;
                 }
                 #story-2 .pairing-banner {
-                    margin-top: 48px;
+                    margin: 48px var(--gutter) 0;
                     padding: 24px 28px;
                     background: #fbfbfa;
                     border: 1px solid #e4e4e7;
@@ -447,3 +447,445 @@ body:has(#cart4:checked) .cart-row-4{display:flex}body:has(#cart4:checked) label
                         padding-bottom: 0 !important;
                     }
                 }
+
+/* ==========================================================================
+   SEC-09: Curated Showcase (4종 큐레이션 컬렉션 카드) 보더리스 에디토리얼 스타일
+   ========================================================================== */
+#curated-showcase {
+    background: #f7f7f8 !important;
+    padding: 110px 0 !important;
+}
+
+#curated-showcase .product-grid-4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 36px !important;
+    align-items: stretch !important;
+}
+
+/* 박스 테두리와 배경을 걷어낸 오픈형(Borderless) 카드 */
+#curated-showcase .product-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    transition: none !important;
+}
+
+#curated-showcase .product-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* 1) 썸네일 이미지 및 오버레이 뱃지 */
+#curated-showcase .product-card-thumb {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: #ebebee !important;
+    border-radius: 0 !important;
+}
+
+#curated-showcase .product-card-thumb .editorial-photo {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 !important;
+    transition: transform 0.4s ease, filter 0.3s ease !important;
+}
+
+#curated-showcase .product-card:hover .editorial-photo {
+    transform: scale(1.025) !important;
+    filter: brightness(1.03) !important;
+}
+
+#curated-showcase .product-card-badges {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+#curated-showcase .card-badge {
+    display: inline-block !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
+    background: rgba(24, 24, 27, 0.9) !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+}
+
+#curated-showcase .card-badge.badge-1mapae {
+    background: rgba(24, 24, 27, 0.9) !important;
+    color: #ffffff !important;
+}
+
+#curated-showcase .card-badge.badge-2mapae {
+    background: rgba(35, 20, 20, 0.92) !important;
+    color: #ffffff !important;
+}
+
+#curated-showcase .card-badge.badge-3mapae {
+    background: rgba(18, 18, 18, 0.95) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#curated-showcase .card-badge.badge-discovery {
+    background: rgba(24, 24, 27, 0.9) !important;
+    color: #ffffff !important;
+}
+
+/* 2) 본문 텍스트 영역 (테두리 없는 오픈형 에디토리얼 타이포그래피) */
+#curated-showcase .product-card-body {
+    padding: 18px 0 0 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+}
+
+#curated-showcase .product-card-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 6px !important;
+}
+
+#curated-showcase .product-card-title {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #18181b !important;
+    margin: 0 !important;
+    text-align: left !important;
+    letter-spacing: -0.3px !important;
+}
+
+#curated-showcase .product-card-vol {
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    color: #71717a !important;
+    font-family: var(--font-mono) !important;
+}
+
+#curated-showcase .product-card-desc {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    color: #52525b !important;
+    margin: 0 0 14px 0 !important;
+    min-height: 42px !important;
+    text-align: left !important;
+    word-break: keep-all !important;
+}
+
+/* 묶음 2) 스펙 영역: 상단 구분선으로 제품명·설명과 깔끔하게 분리 */
+#curated-showcase .product-card-spec-box {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 13px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-top: 1px solid #e4e4e7 !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#curated-showcase .spec-row {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 8px !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: #71717a !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+#curated-showcase .spec-label {
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #18181b !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* 묶음 3) 푸터 영역: 상단 구분선으로 스펙 영역과 분리하고 가격 및 버튼 배치 */
+#curated-showcase .product-card-footer {
+    margin-top: auto !important;
+    padding: 14px 0 0 0 !important;
+    border-top: 1px solid #e4e4e7 !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+#curated-showcase .product-card-price-wrap {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+}
+
+#curated-showcase .product-card-price {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: #18181b !important;
+    letter-spacing: -0.2px !important;
+}
+
+#curated-showcase .product-story-link {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #71717a !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+#curated-showcase .product-story-link:hover {
+    color: #18181b !important;
+    text-decoration: underline !important;
+}
+
+/* 사봉(9-2) 레퍼런스 스타일의 전폭 사각 아웃라인 버튼 */
+#curated-showcase .btn-card-cart {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 0 !important;
+    border: 1px solid #18181b !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #18181b !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+#curated-showcase .btn-card-cart:hover {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   태블릿 & 모바일 반응형: 1행 가로 스크롤 (Horizontal Carousel)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    #curated-showcase .product-grid-4 {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 22px !important;
+        padding: 10px var(--gutter) 24px var(--gutter) !important;
+        margin-left: calc(-1 * var(--gutter)) !important;
+        margin-right: calc(-1 * var(--gutter)) !important;
+        scrollbar-width: none !important;
+    }
+    #curated-showcase .product-grid-4::-webkit-scrollbar {
+        display: none !important;
+    }
+    #curated-showcase .product-card {
+        flex: 0 0 280px !important;
+        min-width: 280px !important;
+        max-width: 280px !important;
+        scroll-snap-align: start !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #curated-showcase .product-card {
+        flex: 0 0 255px !important;
+        min-width: 255px !important;
+        max-width: 255px !important;
+    }
+}
+
+/* 장바구니 체크박스 클릭 시 상단 스크롤 튐 방지 (뷰포트 고정) */
+.state-controls,
+.state-controls input,
+form#cartState,
+form#cartState input {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+/* 장바구니 담긴 후에도 버튼 색상 영구 반전 및 체크 표시 방지 */
+body label.btn-card-cart::after,
+body:has(#cartState input:checked) label.btn-card-cart::after {
+    content: none !important;
+}
+
+body label.btn-card-cart,
+body:has(#cartState input:checked) label.btn-card-cart {
+    background: transparent !important;
+    color: #18181b !important;
+    border: 1px solid #18181b !important;
+}
+
+body label.btn-card-cart:hover,
+body:has(#cartState input:checked) label.btn-card-cart:hover {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   진단 모달 (Diagnosis Modal) 버튼 호버 시인성 최적화 (어두운 배경 + 순백색 텍스트)
+   ========================================================================== */
+#diagnosisModal .quiz-opt-btn {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 16px 18px !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-line) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    word-break: keep-all !important;
+    box-sizing: border-box !important;
+}
+
+#diagnosisModal .quiz-opt-btn .opt-num {
+    font-family: var(--font-mono, monospace) !important;
+    font-weight: 800 !important;
+    color: #71717a !important;
+    flex-shrink: 0 !important;
+    transition: color 0.2s ease !important;
+}
+
+#diagnosisModal .quiz-opt-btn .opt-text {
+    color: #18181b !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+}
+
+/* 선택지 호버 시: 배경 어두워짐 + 텍스트 전체 순백색(#ffffff) 전환 */
+#diagnosisModal .quiz-opt-btn:hover {
+    background: #18181b !important;
+    border-color: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .quiz-opt-btn:hover .opt-num,
+#diagnosisModal .quiz-opt-btn:hover .opt-text,
+#diagnosisModal .quiz-opt-btn:hover span,
+#diagnosisModal .quiz-opt-btn:hover * {
+    color: #ffffff !important;
+}
+
+/* 결과 화면 액션 버튼 */
+#diagnosisModal .btn-modal-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 14px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border: 1px solid #18181b !important;
+    background: #ffffff !important;
+    color: #18181b !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#diagnosisModal .btn-modal-action.btn-modal-primary {
+    background: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action:hover {
+    background: #18181b !important;
+    border-color: #18181b !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action.btn-modal-primary:hover {
+    background: #27272a !important;
+    border-color: #27272a !important;
+    color: #ffffff !important;
+}
+
+#diagnosisModal .btn-modal-action:hover * {
+    color: #ffffff !important;
+}
+
+/* 향수 상세 스토리 인라인 링크 (박스 없는 에디토리얼 선 스타일) */
+#diagnosisModal .story-inline-link {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #18181b !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+    cursor: pointer !important;
+    padding: 2px 2px !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+#diagnosisModal .story-inline-link:hover {
+    color: #71717a !important;
+    text-decoration: underline !important;
+}
+
+/* 하단 '다시 진행하기' 텍스트 링크 (박스 없는 깔끔한 밑줄 스타일) */
+#diagnosisModal .btn-restart-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 16px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    background: transparent !important;
+    color: #71717a !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+}
+
+#diagnosisModal .btn-restart-link:hover {
+    color: #18181b !important;
+    text-decoration: underline !important;
+}
+
+
+
