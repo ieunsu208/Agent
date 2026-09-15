@@ -1,0 +1,261 @@
+- generic [ref=f5e5]:
+  - generic [ref=f5e6]:
+    - generic [ref=f5e7]:
+      - generic [ref=f5e33]:
+        - application [aria-hidden] [ref=f5e42]
+        - status [ref=f5e43]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=f5e45]
+        - generic: 메인페이지 수정 · Vector Webpage
+        - generic: 메인페이지 수정 · Vector Webpage
+        - generic:
+          - generic:
+            - generic:
+              - region "Comments on canvas":
+                - button "Create new comment"
+                - generic:
+                  - button [ref=f5e46]
+                  - button [ref=f5e53]:
+                    - generic [aria-hidden] [ref=f5e59]: "2"
+        - region "Left sidebar" [ref=f5e61]:
+          - toolbar "Navigation Bar" [ref=f5e62]:
+            - generic [ref=f5e63]:
+              - button "Main menu" [ref=f5e64]
+              - separator [ref=f5e65]
+              - button "File" [expanded] [ref=f5e66]
+              - button "Assets" [ref=f5e67]
+              - button "Tools" [ref=f5e68]
+              - separator [ref=f5e69]
+              - button "Variables" [ref=f5e70]
+            - generic [ref=f5e71]:
+              - generic [ref=f5e72]:
+                - status
+              - button "Missing fonts" [ref=f5e73]
+          - generic [ref=f5e74]:
+            - generic [ref=f5e76]:
+              - generic [ref=f5e77]:
+                - generic [ref=f5e78]:
+                  - generic [ref=f5e80]:
+                    - generic [ref=f5e82]:
+                      - button "이은수-강의 학습, file name" [ref=f5e83]: 이은수-강의 학습
+                      - generic [ref=f5e84]: File name
+                    - button "Edit file menu" [ref=f5e88]
+                  - button "Minimize UI" [ref=f5e89]
+                - link "Team project" [ref=f5e92]:
+                  - /url: https://www.figma.com/files/project/604082686
+              - generic [ref=f5e93]:
+                - generic [ref=f5e95]:
+                  - generic [ref=f5e96]:
+                    - generic [ref=f5e97]: Find
+                    - textbox "Find" [ref=f5e101]:
+                      - /placeholder: Find…
+                      - text: 메인페이지 수정 · Vector Webpage
+                  - button "Settings" [ref=f5e102]
+                  - button "Close" [ref=f5e103]
+                - generic [ref=f5e360]:
+                  - generic [ref=f5e361]:
+                    - generic [ref=f5e362]:
+                      - status [ref=f5e363]: 1 result
+                      - alert [ref=f5e365]: 메인페이지 수정 · Vector Webpage, result 1 of 1
+                      - generic [ref=f5e366]: ·
+                      - button "Search scope set to This page" [ref=f5e367]: This page
+                    - button "Previous result" [disabled] [ref=f5e368]
+                    - button "Next result" [disabled] [ref=f5e369]
+                  - listbox "Search results" [active] [ref=f5e374]:
+                    - option "Frame 메인페이지 수정 · Vector Webpage" [selected] [ref=f5e376]:
+                      - img "Frame" [ref=f5e378]
+                      - generic [ref=f5e382]: 메인페이지 수정 · Vector Webpage
+            - slider "Resize handle" [ref=f5e104]
+        - generic:
+          - generic:
+            - region "Right sidebar":
+              - generic [ref=f5e105]:
+                - generic [ref=f5e107]:
+                  - generic [ref=f5e109]:
+                    - generic [ref=f5e111]:
+                      - generic [ref=f5e112]:
+                        - status
+                      - button "Multiplayer tools" [ref=f5e114]
+                      - button "Follow 이은수" [ref=f5e121]
+                    - generic [ref=f5e130]:
+                      - group "Prototype view" [ref=f5e131]:
+                        - button "Present" [ref=f5e132]
+                        - button "Prototype view" [ref=f5e133]
+                      - generic [ref=f5e134]:
+                        - button "Share" [ref=f5e135]
+                        - status
+                  - generic [ref=f5e136]:
+                    - tablist [ref=f5e138]:
+                      - tab "Design" [selected] [ref=f5e139]:
+                        - generic [aria-hidden] [ref=f5e140]: Design
+                      - tab "Prototype" [ref=f5e142]:
+                        - generic [aria-hidden] [ref=f5e143]: Prototype
+                    - button "7%, zoom and view options" [ref=f5e146]: 7%
+                  - generic [ref=f5e152]:
+                    - generic [ref=f5e385]:
+                      - button "Frame, Frame Dimension Presets" [ref=f5e388]:
+                        - generic: Frame
+                      - generic [ref=f5e389]:
+                        - generic [ref=f5e392]:
+                          - checkbox "Toggle ready for dev status" [ref=f5e393]
+                          - generic: Toggle ready for dev status
+                        - button "Create component" [ref=f5e396]
+                        - button "More actions" [ref=f5e398]
+                    - generic [ref=f5e400]:
+                      - heading "Position" [level=2] [ref=f5e403]
+                      - group "Alignment" [ref=f5e406]:
+                        - generic [ref=f5e411]:
+                          - button "Align left" [ref=f5e412]
+                          - button "Align horizontal centers" [ref=f5e413]
+                          - button "Align right" [ref=f5e414]
+                        - generic [ref=f5e416]:
+                          - button "Align top" [ref=f5e417]
+                          - button "Align vertical centers" [ref=f5e418]
+                          - button "Align bottom" [ref=f5e419]
+                        - button "More actions" [ref=f5e422]
+                      - group "Position" [ref=f5e424]:
+                        - generic [ref=f5e430]:
+                          - generic [aria-hidden] [ref=f5e431]:
+                            - generic: X
+                          - spinbutton "X-position" [ref=f5e432]: "743"
+                        - generic [ref=f5e436]:
+                          - generic [aria-hidden] [ref=f5e437]:
+                            - generic: "Y"
+                          - spinbutton "Y-position" [ref=f5e438]: "265"
+                      - group "Rotation" [ref=f5e440]:
+                        - spinbutton "Rotation" [ref=f5e448]: 0°
+                        - generic [ref=f5e450]:
+                          - button "Rotate 90˚ right" [ref=f5e451]
+                          - button "Flip horizontal" [ref=f5e452]
+                          - button "Flip vertical" [ref=f5e453]
+                    - generic [ref=f5e456]:
+                      - generic [ref=f5e457]:
+                        - heading "Layout" [level=2] [ref=f5e459]
+                        - generic [ref=f5e460]:
+                          - button "Resize to fit" [ref=f5e462]
+                          - generic [ref=f5e463]:
+                            - checkbox "Toggle auto layout" [ref=f5e464]
+                            - generic: Toggle auto layout
+                      - group "Flow" [ref=f5e465]:
+                        - radiogroup "Layout" [ref=f5e468]:
+                          - generic [ref=f5e470]:
+                            - generic [ref=f5e471]:
+                              - radio "Freeform" [checked] [ref=f5e472]
+                              - generic [ref=f5e476]: Freeform
+                            - generic [ref=f5e477]:
+                              - radio "Vertical" [ref=f5e478]
+                              - generic [ref=f5e482]: Vertical
+                            - generic [ref=f5e483]:
+                              - radio "Horizontal" [ref=f5e484]
+                              - generic [ref=f5e488]: Horizontal
+                            - generic [ref=f5e489]:
+                              - radio "Grid" [ref=f5e490]
+                              - generic [ref=f5e494]: Grid
+                      - group "Dimensions" [ref=f5e497]:
+                        - generic "Width" [ref=f5e508]:
+                          - generic [ref=f5e509]: W
+                          - textbox "Width" [ref=f5e512]: "1440"
+                        - generic "Height" [ref=f5e517]:
+                          - generic [ref=f5e518]: H
+                          - textbox "Height" [ref=f5e521]: "12240"
+                        - generic [ref=f5e524]:
+                          - checkbox "Lock aspect ratio" [ref=f5e525]
+                          - generic: Lock aspect ratio
+                      - group "Spacing" [ref=f5e527]:
+                        - generic "Vertical spacing" [ref=f5e531]:
+                          - textbox "Vertical spacing" [ref=f5e533]: "0"
+                      - generic [ref=f5e536]:
+                        - checkbox "Clip content" [ref=f5e538]
+                        - generic [ref=f5e539]: Clip content
+                    - generic [ref=f5e541]:
+                      - generic [ref=f5e542]:
+                        - heading "Appearance" [level=2] [ref=f5e544]
+                        - generic [ref=f5e545]:
+                          - generic [ref=f5e548]:
+                            - checkbox "Hide" [ref=f5e549]
+                            - generic: Hide
+                          - button "Apply blend mode" [ref=f5e550]
+                      - group [ref=f5e552]:
+                        - generic [aria-hidden] [ref=f5e553]: Opacity
+                        - textbox [ref=f5e561]: 100%
+                        - generic [aria-hidden] [ref=f5e562]: Corner radius
+                        - textbox [ref=f5e571]: "0"
+                        - button "Individual corners" [ref=f5e574]
+                    - generic [ref=f5e580]:
+                      - button "Fill" [ref=f5e581]:
+                        - heading "Fill" [level=2]
+                      - generic [ref=f5e582]:
+                        - button "Fill, Apply styles and variables" [ref=f5e585]
+                        - button "Add fill" [ref=f5e590]
+                    - generic [ref=f5e595]:
+                      - button "Stroke" [ref=f5e596]:
+                        - heading "Stroke" [level=2]
+                      - generic [ref=f5e597]:
+                        - button "Stroke, Apply styles and variables" [ref=f5e600]
+                        - button "Add stroke" [ref=f5e605]
+                    - generic [ref=f5e610]:
+                      - button "Effects" [ref=f5e611]:
+                        - heading "Effects" [level=2]
+                      - generic [ref=f5e612]:
+                        - button "Effects, Apply styles" [ref=f5e615]
+                        - button "Add effect" [ref=f5e620]
+                    - button "Selection colors +10" [ref=f5e623]:
+                      - generic [ref=f5e624]:
+                        - heading "Selection colors" [level=2] [ref=f5e626]
+                        - generic [ref=f5e627]: "+10"
+                    - generic [ref=f5e643]:
+                      - button "Layout guide" [ref=f5e644]:
+                        - heading "Layout guide" [level=2]
+                      - generic [ref=f5e645]:
+                        - button "Layout guide, Apply styles" [ref=f5e648]
+                        - button "Add layout guide" [ref=f5e653]
+                    - generic [ref=f5e265]:
+                      - button "Export" [ref=f5e266]
+                      - button "Add export settings" [ref=f5e270]
+                - slider "Resize handle" [ref=f5e300]
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=f5e303]:
+                - generic [ref=f5e309]:
+                  - group "Move" [ref=f5e310]:
+                    - button "Move" [pressed] [ref=f5e311]
+                    - button "Move tools" [ref=f5e312]
+                  - group "Frame" [ref=f5e313]:
+                    - button "Frame" [ref=f5e314]
+                    - button "Region tools" [ref=f5e315]
+                  - group "Rectangle" [ref=f5e316]:
+                    - button "Rectangle" [ref=f5e317]
+                    - button "Shape tools" [ref=f5e318]
+                  - group "Pen" [ref=f5e319]:
+                    - button "Pen" [ref=f5e320]
+                    - button "Creation tools" [ref=f5e321]
+                  - group "Text" [ref=f5e322]:
+                    - button "Text" [ref=f5e323]
+                    - button "Type tools" [ref=f5e324]
+                  - group "Comment" [ref=f5e325]:
+                    - button "Comment" [ref=f5e326]
+                    - button "Comment tools" [ref=f5e327]
+                  - button "Actions" [ref=f5e328]
+                - radiogroup "Toolbelt Mode" [ref=f5e332]:
+                  - generic [ref=f5e334]:
+                    - generic [ref=f5e336]:
+                      - radio "Draw" [ref=f5e337]
+                      - generic [ref=f5e341]: Draw
+                    - generic [ref=f5e342]:
+                      - radio "Design" [checked] [ref=f5e343]
+                      - generic [ref=f5e347]: Design
+                    - generic [ref=f5e348]:
+                      - radio "Motion" [ref=f5e349]
+                      - generic [ref=f5e353]: Motion
+                    - generic [ref=f5e354]:
+                      - radio "Dev Mode" [ref=f5e355]
+                      - generic [ref=f5e359]: Dev Mode
+    - region "Help/zoom toolbar" [ref=f5e19]:
+      - toolbar "Help/zoom toolbar" [ref=f5e21]:
+        - button "Help" [ref=f5e23]
+  - generic:
+    - status
+    - group [ref=f5e25]:
+      - alert [ref=f5e27]
+      - alert [ref=f5e29]

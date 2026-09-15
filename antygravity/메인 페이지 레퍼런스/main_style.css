@@ -174,13 +174,21 @@ body:has(#cart4:checked) .cart-row-4{display:flex}
                     }
 
                     .m-spec-box {
-                        background: #ffffff;
-                        border: 1px solid #e4e4e7;
-                        border-radius: 6px;
-                        padding: 15px 18px;
+                        background: transparent;
+                        border: none;
+                        border-bottom: 1px solid #e4e4e7;
+                        border-radius: 0;
+                        padding: 16px 0;
                         display: flex;
                         flex-direction: column;
-                        gap: 4px;
+                        gap: 6px;
+                    }
+                    .m-spec-box:first-child {
+                        padding-top: 0;
+                    }
+                    .m-spec-box:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0;
                     }
 
                     /* 모바일 세로형 전환 */

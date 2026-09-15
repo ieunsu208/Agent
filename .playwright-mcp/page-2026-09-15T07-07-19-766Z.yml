@@ -1,0 +1,32 @@
+- generic [ref=f9e1]:
+  - link "Figma logo that can be used to navigate to homepage" [ref=f9e2] [cursor=pointer]:
+    - /url: /
+  - generic [ref=f9e12]:
+    - heading "Log in or create an account to collaborate" [active] [level=1] [ref=f9e14]
+    - button "Continue with Google" [ref=f9e15] [cursor=pointer]
+    - paragraph [ref=f9e25]: or
+    - generic [ref=f9e26]:
+      - generic [ref=f9e27]: Email
+      - textbox "Email" [ref=f9e28]
+    - generic [ref=f9e29]:
+      - generic [ref=f9e30]: Password
+      - textbox "Password" [ref=f9e31]
+    - button "Log in" [ref=f9e32] [cursor=pointer]
+    - generic [ref=f9e34]:
+      - link "Use single sign-on" [ref=f9e36] [cursor=pointer]:
+        - /url: "#"
+      - link "Reset password" [ref=f9e39] [cursor=pointer]:
+        - /url: "#"
+      - paragraph [ref=f9e43]:
+        - text: No account?
+        - link "Create one" [ref=f9e44] [cursor=pointer]:
+          - /url: "#"
+  - region "Consent Manager" [ref=f9e45]:
+    - generic [ref=f9e46]:
+      - text: This website uses cookies, pixel tags, and local storage for performance, personalization, and marketing purposes. We use our own cookies and some from third parties. Only essential cookies are turned on by default.
+      - link "Cookies settings" [ref=f9e47]:
+        - /url: /consent-preferences/
+    - generic [ref=f9e48]:
+      - button "Do not allow cookies" [ref=f9e49] [cursor=pointer]
+      - button "Allow all cookies" [ref=f9e50] [cursor=pointer]
+    - button "Dismiss" [ref=f9e52]

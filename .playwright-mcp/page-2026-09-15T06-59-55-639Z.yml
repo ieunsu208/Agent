@@ -1,0 +1,250 @@
+- generic [ref=f5e5]:
+  - generic [ref=f5e6]:
+    - generic [ref=f5e7]:
+      - generic [ref=f5e33]:
+        - application [active] [aria-hidden] [ref=f5e42]
+        - status [ref=f5e43]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=f5e45]
+        - generic:
+          - generic:
+            - generic:
+              - region "Comments on canvas":
+                - button "Create new comment"
+                - generic:
+                  - button [ref=f5e7000]
+                  - button [ref=f5e8317]:
+                    - generic [aria-hidden] [ref=f5e8323]: "2"
+        - region "Left sidebar" [ref=f5e61]:
+          - toolbar "Navigation Bar" [ref=f5e6646]:
+            - generic [ref=f5e6647]:
+              - button "Main menu" [ref=f5e6648]
+              - separator [ref=f5e6649]
+              - button "File" [expanded] [ref=f5e6650]
+              - button "Assets" [ref=f5e6651]
+              - button "Tools" [ref=f5e6652]
+              - separator [ref=f5e6653]
+              - button "Variables" [ref=f5e6654]
+            - generic [ref=f5e6655]:
+              - generic [ref=f5e6656]:
+                - status
+              - button "Missing fonts" [ref=f5e6657]
+          - generic [ref=f5e6658]:
+            - generic [ref=f5e6661]:
+              - generic [ref=f5e6662]:
+                - generic [ref=f5e6664]:
+                  - generic [ref=f5e6666]:
+                    - button "이은수-강의 학습, file name" [ref=f5e6667]: 이은수-강의 학습
+                    - generic [ref=f5e6668]: File name
+                  - button "Edit file menu" [ref=f5e6672]
+                - button "Minimize UI" [ref=f5e6673]
+              - link "Team project" [ref=f5e6676]:
+                - /url: https://www.figma.com/files/project/604082686
+            - slider "Resize handle" [ref=f5e6713]
+        - generic:
+          - generic:
+            - region "Right sidebar":
+              - generic [ref=f5e105]:
+                - generic [ref=f5e107]:
+                  - generic [ref=f5e109]:
+                    - generic [ref=f5e4668]:
+                      - generic [ref=f5e4669]:
+                        - status
+                      - button "Multiplayer tools" [ref=f5e4671]
+                      - button "Follow 이은수" [ref=f5e6602]
+                    - generic [ref=f5e130]:
+                      - group "Prototype view" [ref=f5e8332]:
+                        - button "Present" [ref=f5e8333]
+                        - button "Prototype view" [ref=f5e8334]
+                      - generic [ref=f5e134]:
+                        - button "Share" [ref=f5e135]
+                        - status
+                  - generic [ref=f5e6714]:
+                    - tablist [ref=f5e6716]:
+                      - tab "Design" [selected] [ref=f5e6717]:
+                        - generic [aria-hidden] [ref=f5e6718]: Design
+                      - tab "Prototype" [ref=f5e6720]:
+                        - generic [aria-hidden] [ref=f5e6721]: Prototype
+                    - button "5%, zoom and view options" [ref=f5e8324]: 5%
+                  - generic [ref=f5e6730]:
+                    - generic [ref=f5e8058]:
+                      - button "Mixed, Frame Dimension Presets" [ref=f5e8335]:
+                        - generic: Mixed
+                      - generic [ref=f5e8062]:
+                        - generic [ref=f5e8338]:
+                          - checkbox "Toggle ready for dev status" [ref=f5e8339]
+                          - generic: Toggle ready for dev status
+                        - button "Flatten" [ref=f5e8342]
+                        - button "Wrap in new section" [ref=f5e8345]
+                    - generic [ref=f5e8068]:
+                      - heading "Position" [level=2] [ref=f5e8071]
+                      - group "Alignment" [ref=f5e8074]:
+                        - generic [ref=f5e8079]:
+                          - button "Align left" [ref=f5e8080]
+                          - button "Align horizontal centers" [ref=f5e8081]
+                          - button "Align right" [ref=f5e8082]
+                        - generic [ref=f5e8084]:
+                          - button "Align top" [ref=f5e8085]
+                          - button "Align vertical centers" [ref=f5e8086]
+                          - button "Align bottom" [ref=f5e8087]
+                        - button "More actions" [ref=f5e8348]
+                      - group "Position" [ref=f5e8092]:
+                        - generic [ref=f5e8098]:
+                          - generic [aria-hidden] [ref=f5e8099]:
+                            - generic: X
+                          - spinbutton "X-position" [ref=f5e8100]: Mixed
+                        - generic [ref=f5e8104]:
+                          - generic [aria-hidden] [ref=f5e8105]:
+                            - generic: "Y"
+                          - spinbutton "Y-position" [ref=f5e8106]: Mixed
+                      - group "Rotation" [ref=f5e8350]:
+                        - spinbutton "Rotation" [ref=f5e8358]: 0°
+                        - generic [ref=f5e8360]:
+                          - button "Rotate 90˚ right" [disabled] [ref=f5e8361]
+                          - button "Flip horizontal" [disabled] [ref=f5e8362]
+                          - button "Flip vertical" [disabled] [ref=f5e8363]
+                    - generic [ref=f5e8109]:
+                      - generic [ref=f5e8110]:
+                        - heading "Layout" [level=2] [ref=f5e8112]
+                        - button "Resize to fit" [ref=f5e8365]
+                      - group "Dimensions" [ref=f5e8117]:
+                        - generic "Width" [ref=f5e8128]:
+                          - generic [ref=f5e8129]: W
+                          - textbox "Width" [ref=f5e8132]: Mixed
+                        - generic "Height" [ref=f5e8137]:
+                          - generic [ref=f5e8138]: H
+                          - textbox "Height" [ref=f5e8141]: Mixed
+                        - generic [ref=f5e8144]:
+                          - checkbox "Lock aspect ratio" [ref=f5e8145]
+                          - generic: Lock aspect ratio
+                      - generic [ref=f5e8368]:
+                        - checkbox "Clip content" [checked=mixed] [ref=f5e8370]
+                        - generic [ref=f5e8371]: Clip content
+                    - generic [ref=f5e8147]:
+                      - generic [ref=f5e8148]:
+                        - heading "Appearance" [level=2] [ref=f5e8150]
+                        - generic [ref=f5e8151]:
+                          - generic [ref=f5e8154]:
+                            - checkbox "Hide" [ref=f5e8155]
+                            - generic: Hide
+                          - button "Apply blend mode" [ref=f5e8156]
+                      - group [ref=f5e8158]:
+                        - generic [aria-hidden] [ref=f5e8159]: Opacity
+                        - textbox [ref=f5e8167]: 100%
+                        - generic [aria-hidden] [ref=f5e8168]: Corner radius
+                        - textbox [ref=f5e8177]: Mixed
+                        - button "Individual corners" [ref=f5e8180]
+                    - generic [ref=f5e8373]:
+                      - generic [ref=f5e8375]:
+                        - button "Fill" [ref=f5e8376]
+                        - generic [ref=f5e8377]:
+                          - button "Style" [ref=f5e8378]
+                          - button "Add fill" [ref=f5e8381]
+                      - generic [ref=f5e8382]: Click + to replace mixed content
+                    - generic [ref=f5e8230]:
+                      - generic [ref=f5e8231]:
+                        - generic [ref=f5e8233]:
+                          - heading "Stroke" [level=2] [ref=f5e8238]
+                          - generic [ref=f5e8239]:
+                            - button "Stroke, Apply styles and variables" [ref=f5e8242]
+                            - button "Add stroke fill" [ref=f5e8247]
+                        - grid [ref=f5e8250]:
+                          - row [ref=f5e8255]:
+                            - 'gridcell "Solid color hex: 000000 Color 000000 10 %" [ref=f5e8256]':
+                              - generic [ref=f5e8257]:
+                                - 'button "Solid color hex: 000000" [ref=f5e8258]'
+                                - generic [ref=f5e8259]:
+                                  - generic [ref=f5e8260]: Color
+                                  - generic [aria-hidden] [ref=f5e8261]: Autofill available. Type to see suggestions.
+                                  - combobox "Color" [ref=f5e8264]: "000000"
+                                - generic [ref=f5e8266]:
+                                  - textbox "%" [ref=f5e8267]: "10"
+                                  - generic [ref=f5e8268]: "%"
+                            - gridcell [ref=f5e8269]:
+                              - generic [ref=f5e8271]:
+                                - checkbox "Toggle visibility" [checked] [ref=f5e8272]
+                                - generic: Toggle visibility
+                            - gridcell [ref=f5e8273]:
+                              - button "Remove" [ref=f5e8275]
+                      - generic [ref=f5e8276]:
+                        - generic [aria-hidden] [ref=f5e8277]: Position
+                        - generic [ref=f5e8279]:
+                          - generic [ref=f5e8280]: Stroke align
+                          - combobox "Stroke align" [ref=f5e8281]:
+                            - generic [ref=f5e8282]: Inside
+                        - generic [aria-hidden] [ref=f5e8286]: Weight
+                        - generic "Stroke weight" [ref=f5e8290]:
+                          - textbox "Stroke weight" [ref=f5e8294]: Mixed
+                        - button "Advanced stroke settings" [ref=f5e8297]
+                        - button "Individual strokes" [ref=f5e8385]
+                      - generic [ref=f5e8387]:
+                        - generic [aria-hidden] [ref=f5e8388]: End points
+                        - generic [ref=f5e8390]:
+                          - generic [ref=f5e8391]: End points
+                          - combobox "End points" [ref=f5e8392]:
+                            - generic [ref=f5e8399]: None
+                    - generic [ref=f5e8407]:
+                      - button "Effects" [ref=f5e8408]:
+                        - heading "Effects" [level=2]
+                      - generic [ref=f5e8409]:
+                        - button "Effects, Apply styles" [ref=f5e8412]
+                        - button "Add effect" [ref=f5e8417]
+                    - generic [ref=f5e8299]:
+                      - heading "Selection colors" [level=2] [ref=f5e8423]
+                      - button "Show selection colors" [ref=f5e8427]
+                    - generic [ref=f5e8432]:
+                      - button "Layout guide" [ref=f5e8433]:
+                        - heading "Layout guide" [level=2]
+                      - generic [ref=f5e8434]:
+                        - button "Layout guide, Apply styles" [ref=f5e8437]
+                        - button "Add layout guide" [ref=f5e8442]
+                    - generic [ref=f5e6994]:
+                      - button "Export" [ref=f5e6995]
+                      - button "Add export settings" [ref=f5e6999]
+                - slider "Resize handle" [ref=f5e300]
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=f5e303]:
+                - generic [ref=f5e309]:
+                  - group "Move" [ref=f5e310]:
+                    - button "Move" [pressed] [ref=f5e311]
+                    - button "Move tools" [ref=f5e312]
+                  - group "Frame" [ref=f5e313]:
+                    - button "Frame" [ref=f5e314]
+                    - button "Region tools" [ref=f5e315]
+                  - group "Image/video…" [ref=f5e1068]:
+                    - button "Image/video…" [ref=f5e1069]
+                    - button "Shape tools" [ref=f5e318]
+                  - group "Pen" [ref=f5e319]:
+                    - button "Pen" [ref=f5e320]
+                    - button "Creation tools" [ref=f5e321]
+                  - group "Text" [ref=f5e322]:
+                    - button "Text" [ref=f5e323]
+                    - button "Type tools" [ref=f5e324]
+                  - group "Comment" [ref=f5e325]:
+                    - button "Comment" [ref=f5e326]
+                    - button "Comment tools" [ref=f5e327]
+                  - button "Actions" [ref=f5e328]
+                - radiogroup "Toolbelt Mode" [ref=f5e332]:
+                  - generic [ref=f5e334]:
+                    - generic [ref=f5e336]:
+                      - radio "Draw" [ref=f5e337]
+                      - generic [ref=f5e341]: Draw
+                    - generic [ref=f5e342]:
+                      - radio "Design" [checked] [ref=f5e343]
+                      - generic [ref=f5e347]: Design
+                    - generic [ref=f5e348]:
+                      - radio "Motion" [ref=f5e349]
+                      - generic [ref=f5e353]: Motion
+                    - generic [ref=f5e354]:
+                      - radio "Dev Mode" [ref=f5e355]
+                      - generic [ref=f5e359]: Dev Mode
+    - region "Help/zoom toolbar" [ref=f5e19]:
+      - toolbar "Help/zoom toolbar" [ref=f5e21]:
+        - button "Help" [ref=f5e23]
+  - generic:
+    - status
+    - group [ref=f5e25]:
+      - alert [ref=f5e6632]
+      - alert [ref=f5e6645]

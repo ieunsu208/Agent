@@ -1,0 +1,283 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - navigation "Sidebar" [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - button "Account dropdown for 이은수" [ref=e13]:
+                - generic: 이은수
+              - generic [ref=e15]:
+                - generic [ref=e16]:
+                  - status
+                - button "Notifications" [ref=e17]
+            - combobox "Search" [ref=e27]
+          - generic [ref=e33]:
+            - list [ref=e34]:
+              - listitem [ref=e35]:
+                - button "Recents" [ref=e36]
+            - 'button "Plan: UIUX A" [ref=e40]':
+              - generic:
+                - generic:
+                  - generic:
+                    - generic [aria-hidden]: U
+                - generic: UIUX A
+            - list [ref=e41]:
+              - listitem [ref=e42]:
+                - button "All shared folders" [ref=e43]
+              - listitem [ref=e44]:
+                - button "Trash" [ref=e45]
+            - button "Starred" [expanded] [ref=e51]
+      - generic [ref=e52]:
+        - generic [ref=e56]:
+          - heading "Recents" [active] [level=1] [ref=e58]
+          - generic [ref=e62]:
+            - button "New Design file" [disabled] [ref=e64]:
+              - generic: Design
+            - button "New FigJam file" [disabled] [ref=e66]:
+              - generic: FigJam
+            - button "New Slides file" [disabled] [ref=e68]:
+              - generic: Slides
+            - button "New Make file" [disabled] [ref=e70]:
+              - generic: Make
+            - button "More" [ref=e71]
+        - generic [ref=e74]:
+          - generic [ref=e75]: "Limited access:"
+          - text: To create new files, switch to a plan where you're a full member.
+        - generic:
+          - generic:
+            - generic:
+              - tablist [ref=e77]:
+                - tab "Recently viewed" [selected] [ref=e78]:
+                  - generic [aria-hidden] [ref=e79]: Recently viewed
+                - tab "Shared files" [ref=e81]:
+                  - generic [aria-hidden] [ref=e82]: Shared files
+                - tab "Shared folders" [ref=e84]:
+                  - generic [aria-hidden] [ref=e85]: Shared folders
+              - generic [ref=e87]:
+                - generic [ref=e89]:
+                  - combobox "All files" [ref=e90]
+                  - generic:
+                    - generic:
+                      - generic [aria-hidden]:
+                        - generic: All files
+                - radiogroup "View mode" [ref=e94]:
+                  - generic [ref=e96]:
+                    - generic [ref=e97]:
+                      - radio "Show as grid" [checked] [ref=e98]
+                      - generic [ref=e102]: Show as grid
+                    - generic [ref=e103]:
+                      - radio "Show as list" [ref=e104]
+                      - generic [ref=e108]: Show as list
+        - main [ref=e111]:
+          - tabpanel "Recently viewed" [ref=e112]:
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - group "이은수-강의 학습" [ref=e121]:
+                  - button "이은수-강의 학습, Design file" [ref=e122]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e129]: 이은수-강의 학습
+                        - generic [ref=e130]: Edited 7 minutes ago
+              - listitem [ref=e134]:
+                - group "(강의장)UIUX A" [ref=e136]:
+                  - button "(강의장)UIUX A, Design file" [ref=e137]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e144]: (강의장)UIUX A
+                        - generic [ref=e145]: Edited 2 minutes ago
+              - listitem [ref=e149]:
+                - group "이은수" [ref=e151]:
+                  - button "이은수, FigJam file" [ref=e152]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e159]: 이은수
+                        - generic [ref=e160]: Edited 1 day ago
+              - listitem [ref=e164]:
+                - group "UIUXA_이론 실습" [ref=e166]:
+                  - button "UIUXA_이론 실습, Design file" [ref=e167]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e174]: UIUXA_이론 실습
+                        - generic [ref=e175]: Edited 5 days ago
+              - listitem [ref=e179]:
+                - group "로고 시안" [ref=e181]:
+                  - button "로고 시안, Design file" [ref=e182]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e189]: 로고 시안
+                        - generic [ref=e190]: Edited 25 days ago
+              - listitem [ref=e194]:
+                - group "모작" [ref=e196]:
+                  - button "모작, Design file" [ref=e197]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e204]: 모작
+                        - generic [ref=e205]: Edited 21 days ago
+              - listitem [ref=e209]:
+                - group "MCP Apps for Claude (Community)" [ref=e211]:
+                  - button "MCP Apps for Claude (Community), Design file" [ref=e212]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e219]: MCP Apps for Claude (Community)
+                        - generic [ref=e220]: Edited 2 months ago
+              - listitem [ref=e224]:
+                - group "제목 없음" [ref=e226]:
+                  - button "제목 없음, FigJam file" [ref=e227]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e234]: 제목 없음
+                        - generic [ref=e235]: Edited 2 months ago
+              - listitem [ref=e239]:
+                - group "Untitled" [ref=e241]:
+                  - button "Untitled, Design file" [ref=e242]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e249]: Untitled
+                        - generic [ref=e250]: Edited 2 months ago
+              - listitem [ref=e254]:
+                - group "(강의장)UIUX A" [ref=e256]:
+                  - button "(강의장)UIUX A, FigJam file" [ref=e257]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e264]: (강의장)UIUX A
+                        - generic [ref=e265]: Edited 2 months ago
+              - listitem [ref=e269]:
+                - group "Untitled" [ref=e271]:
+                  - button "Untitled, FigJam file" [ref=e272]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e279]: Untitled
+                        - generic [ref=e280]: Edited 3 months ago
+              - listitem [ref=e284]:
+                - group "이은수-강의 학습 - 리서치" [ref=e286]:
+                  - button "이은수-강의 학습 - 리서치, Prototype file" [ref=e287]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e292]: 이은수-강의 학습 - 리서치
+                        - generic [ref=e293]: Viewed 3 months ago
+              - listitem [ref=e297]:
+                - group "Untitled" [ref=e299]:
+                  - button "Untitled, Slides file" [ref=e300]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e307]: Untitled
+                        - generic [ref=e308]: Edited 3 months ago
+              - listitem [ref=e312]:
+                - group "Untitled" [ref=e314]:
+                  - button "Untitled, Slides file" [ref=e315]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e322]: Untitled
+                        - generic [ref=e323]: Edited 3 months ago
+              - listitem [ref=e327]:
+                - group "(이은수)시각디자인 리서치" [ref=e329]:
+                  - button "(이은수)시각디자인 리서치, Slides file" [ref=e330]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e337]: (이은수)시각디자인 리서치
+                        - generic [ref=e338]: Edited 3 months ago
+              - listitem [ref=e342]:
+                - group "Untitled" [ref=e344]:
+                  - button "Untitled, Slides file" [ref=e345]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e352]: Untitled
+                        - generic [ref=e353]: Edited 3 months ago
+              - listitem [ref=e357]:
+                - group "UIUX A" [ref=e359]:
+                  - button "UIUX A, Design file" [ref=e360]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e367]: UIUX A
+                        - generic [ref=e368]: Edited 3 months ago
+              - listitem [ref=e372]:
+                - group "이은수-강의 학습 - 구현 능력단위평가" [ref=e374]:
+                  - button "이은수-강의 학습 - 구현 능력단위평가, Prototype file" [ref=e375]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e380]: 이은수-강의 학습 - 구현 능력단위평가
+                        - generic [ref=e381]: Viewed 3 months ago
+              - listitem [ref=e385]:
+                - group "10강 복습 학습" [ref=e387]:
+                  - button "10강 복습 학습, Design file" [ref=e388]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e395]: 10강 복습 학습
+                        - generic [ref=e396]: Edited 3 months ago
+              - listitem [ref=e400]:
+                - group "이은수-강의 학습 - figma (auto layout) & coding" [ref=e402]:
+                  - button "이은수-강의 학습 - figma (auto layout) & coding, Prototype file" [ref=e403]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e408]: 이은수-강의 학습 - figma (auto layout) & coding
+                        - generic [ref=e409]: Viewed 3 months ago
+              - listitem [ref=e413]:
+                - group "이은수" [ref=e415]:
+                  - button "이은수, Design file" [ref=e416]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e423]: 이은수
+                        - generic [ref=e424]: Edited 3 months ago
+              - listitem [ref=e428]:
+                - group "Untitled" [ref=e430]:
+                  - button "Untitled, Design file" [ref=e431]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e438]: Untitled
+                        - generic [ref=e439]: Edited 3 months ago
+              - listitem [ref=e443]:
+                - group "이은수-강의 학습 - flex 학습" [ref=e445]:
+                  - button "이은수-강의 학습 - flex 학습, Prototype file" [ref=e446]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e451]: 이은수-강의 학습 - flex 학습
+                        - generic [ref=e452]: Viewed 3 months ago
+              - listitem [ref=e456]:
+                - group "Untitled" [ref=e458]:
+                  - button "Untitled, Design file" [ref=e459]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e466]: Untitled
+                        - generic [ref=e467]: Edited 4 months ago
+              - listitem [ref=e471]:
+                - group "임시 피그마" [ref=e473]:
+                  - button "임시 피그마, Design file" [ref=e474]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=2] [ref=e481]: 임시 피그마
+                        - generic [ref=e482]: Edited 4 months ago
+            - status [ref=e487]:
+              - generic [ref=e488]: Loading
+    - toolbar "Help/zoom toolbar" [ref=e493]:
+      - button "Help" [ref=e495]
+  - generic:
+    - status
+    - group [ref=e498]:
+      - alert [ref=e500]
+      - alert [ref=e502]

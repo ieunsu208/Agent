@@ -1,0 +1,254 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e41]:
+        - application [aria-hidden] [ref=e4419]
+        - status [ref=e51]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=e53]
+        - generic:
+          - generic:
+            - generic:
+              - region "Comments on canvas":
+                - button "Create new comment"
+                - generic:
+                  - button [ref=e4431]
+                  - button [ref=e4438]:
+                    - generic [aria-hidden] [ref=e4444]: "2"
+        - region "Left sidebar" [ref=e71]:
+          - toolbar "Navigation Bar" [ref=e3315]:
+            - generic [ref=e3316]:
+              - button "Main menu" [ref=e3317]
+              - separator [ref=e3318]
+              - button "File" [expanded] [ref=e3319]
+              - button "Assets" [ref=e3320]
+              - button "Tools" [ref=e3321]
+              - separator [ref=e3322]
+              - button "Variables" [ref=e3323]
+            - generic [ref=e3324]:
+              - generic [ref=e3325]:
+                - status
+              - button "Missing fonts" [ref=e3326]
+          - generic [ref=e3327]:
+            - generic [ref=e3329]:
+              - generic [ref=e3330]:
+                - generic [ref=e3331]:
+                  - generic [ref=e3333]:
+                    - generic [ref=e3335]:
+                      - button "이은수-강의 학습, file name" [ref=e3336]: 이은수-강의 학습
+                      - generic [ref=e3337]: File name
+                    - button "Edit file menu" [ref=e3341]
+                  - button "Minimize UI" [ref=e3342]
+                - link "Team project" [ref=e3345]:
+                  - /url: https://www.figma.com/files/project/604082686
+              - generic [ref=e4420]:
+                - generic [ref=e4422]:
+                  - generic [ref=e4423]:
+                    - generic [ref=e4424]: Find
+                    - textbox "Find" [ref=e4428]:
+                      - /placeholder: Find…
+                      - text: 메인페이지 수정
+                  - button "Settings" [ref=e4429]
+                  - button "Close" [ref=e4430]
+                - generic [ref=e4445]:
+                  - generic [ref=e4446]:
+                    - generic [ref=e4447]:
+                      - status [ref=e4448]: 1 result
+                      - alert [ref=e4710]: 메인페이지 수정, result 1 of 1
+                      - generic [ref=e4451]: ·
+                      - button "Search scope set to This page" [ref=e4452]: This page
+                    - button "Previous result" [disabled] [ref=e4453]
+                    - button "Next result" [disabled] [ref=e4454]
+                  - listbox "Search results" [active] [ref=e4459]:
+                    - option "Section 메인페이지 수정" [selected] [ref=e4461]:
+                      - img "Section" [ref=e4463]
+                      - generic [ref=e4467]: 메인페이지 수정
+            - slider "Resize handle" [ref=e4254]
+        - generic:
+          - generic:
+            - region "Right sidebar":
+              - generic [ref=e788]:
+                - generic [ref=e790]:
+                  - generic [ref=e792]:
+                    - generic [ref=e794]:
+                      - generic [ref=e795]:
+                        - status
+                      - button "Multiplayer tools" [ref=e1340]
+                    - generic [ref=e813]:
+                      - group "Prototype view" [ref=e1342]:
+                        - button "Present" [ref=e1343]
+                        - button "Prototype view" [ref=e1344]
+                      - generic [ref=e817]:
+                        - button "Share" [ref=e1345]
+                        - status
+                  - generic [ref=e4255]:
+                    - tablist [ref=e4257]:
+                      - tab "Design" [selected] [ref=e4258]:
+                        - generic [aria-hidden] [ref=e4259]: Design
+                      - tab "Prototype" [ref=e4261]:
+                        - generic [aria-hidden] [ref=e4262]: Prototype
+                    - button "5%, zoom and view options" [ref=e4470]: 5%
+                  - generic [ref=e4271]:
+                    - generic [ref=e4712]:
+                      - button "Section, Frame Dimension Presets" [ref=e4715]:
+                        - generic: Section
+                      - generic [ref=e4719]:
+                        - checkbox "Toggle ready for dev status" [ref=e4720]
+                        - generic: Toggle ready for dev status
+                    - generic [ref=e4722]:
+                      - heading "Position" [level=2] [ref=e4725]
+                      - group "Alignment" [ref=e4728]:
+                        - generic [ref=e4733]:
+                          - button "Align left" [disabled] [ref=e4734]
+                          - button "Align horizontal centers" [disabled] [ref=e4735]
+                          - button "Align right" [disabled] [ref=e4736]
+                        - generic [ref=e4738]:
+                          - button "Align top" [disabled] [ref=e4739]
+                          - button "Align vertical centers" [disabled] [ref=e4740]
+                          - button "Align bottom" [disabled] [ref=e4741]
+                      - group "Position" [ref=e4743]:
+                        - generic [ref=e4749]:
+                          - generic [aria-hidden] [ref=e4750]:
+                            - generic: X
+                          - spinbutton "X-position" [ref=e4751]: "17636"
+                        - generic [ref=e4755]:
+                          - generic [aria-hidden] [ref=e4756]:
+                            - generic: "Y"
+                          - spinbutton "Y-position" [ref=e4757]: "-76"
+                    - generic [ref=e4760]:
+                      - generic [ref=e4761]:
+                        - heading "Layout" [level=2] [ref=e4763]
+                        - button "Resize to fit" [ref=e4766]
+                      - group "Dimensions" [ref=e4768]:
+                        - generic "Width" [ref=e4779]:
+                          - generic [ref=e4780]: W
+                          - textbox "Width" [ref=e4783]: "5058"
+                        - generic "Height" [ref=e4788]:
+                          - generic [ref=e4789]: H
+                          - textbox "Height" [ref=e4792]: "17514"
+                        - generic [ref=e4795]:
+                          - checkbox "Lock aspect ratio" [ref=e4796]
+                          - generic: Lock aspect ratio
+                    - generic [ref=e4798]:
+                      - generic [ref=e4799]:
+                        - heading "Appearance" [level=2] [ref=e4801]
+                        - generic [ref=e4802]:
+                          - generic [ref=e4805]:
+                            - checkbox "Hide" [ref=e4806]
+                            - generic: Hide
+                          - button "Apply blend mode" [ref=e4807]
+                      - group [ref=e4809]:
+                        - generic [aria-hidden] [ref=e4810]: Opacity
+                        - textbox [ref=e4818]: 100%
+                        - generic [aria-hidden] [ref=e4819]: Corner radius
+                        - textbox [ref=e4828]: "2"
+                        - button "Individual corners" [ref=e4831]
+                    - generic [ref=e4835]:
+                      - generic [ref=e4837]:
+                        - heading "Fill" [level=2] [ref=e4842]
+                        - generic [ref=e4843]:
+                          - button "Fill, Apply styles and variables" [ref=e4846]
+                          - button "Add fill" [ref=e4851]
+                      - grid [ref=e4854]:
+                        - row [ref=e4859]:
+                          - 'gridcell "Solid color hex: FFFFFF Color FFFFFF 100 %" [ref=e4860]':
+                            - generic [ref=e4861]:
+                              - 'button "Solid color hex: FFFFFF" [ref=e4862]'
+                              - generic [ref=e4863]:
+                                - generic [ref=e4864]: Color
+                                - generic [aria-hidden] [ref=e4865]: Autofill available. Type to see suggestions.
+                                - combobox "Color" [ref=e4868]: FFFFFF
+                              - generic [ref=e4870]:
+                                - textbox "%" [ref=e4871]: "100"
+                                - generic [ref=e4872]: "%"
+                          - gridcell [ref=e4873]:
+                            - generic [ref=e4875]:
+                              - checkbox "Toggle visibility" [checked] [ref=e4876]
+                              - generic: Toggle visibility
+                          - gridcell [ref=e4877]:
+                            - button "Remove" [ref=e4879]
+                    - generic [ref=e4881]:
+                      - generic [ref=e4882]:
+                        - generic [ref=e4884]:
+                          - heading "Stroke" [level=2] [ref=e4889]
+                          - generic [ref=e4890]:
+                            - button "Stroke, Apply styles and variables" [ref=e4893]
+                            - button "Add stroke fill" [ref=e4898]
+                        - grid [ref=e4901]:
+                          - row [ref=e4906]:
+                            - 'gridcell "Solid color hex: 000000 Color 000000 10 %" [ref=e4907]':
+                              - generic [ref=e4908]:
+                                - 'button "Solid color hex: 000000" [ref=e4909]'
+                                - generic [ref=e4910]:
+                                  - generic [ref=e4911]: Color
+                                  - generic [aria-hidden] [ref=e4912]: Autofill available. Type to see suggestions.
+                                  - combobox "Color" [ref=e4915]: "000000"
+                                - generic [ref=e4917]:
+                                  - textbox "%" [ref=e4918]: "10"
+                                  - generic [ref=e4919]: "%"
+                            - gridcell [ref=e4920]:
+                              - generic [ref=e4922]:
+                                - checkbox "Toggle visibility" [checked] [ref=e4923]
+                                - generic: Toggle visibility
+                            - gridcell [ref=e4924]:
+                              - button "Remove" [ref=e4926]
+                      - generic [ref=e4927]:
+                        - generic [aria-hidden] [ref=e4928]: Position
+                        - generic [ref=e4930]:
+                          - generic [ref=e4931]: Stroke align
+                          - combobox "Stroke align" [ref=e4932]:
+                            - generic [ref=e4933]: Inside
+                        - generic [aria-hidden] [ref=e4937]: Weight
+                        - generic "Stroke weight" [ref=e4941]:
+                          - textbox "Stroke weight" [ref=e4945]: "1"
+                        - button "Advanced stroke settings" [ref=e4948]
+                    - generic [ref=e4383]:
+                      - button "Export" [ref=e4384]
+                      - button "Add export settings" [ref=e4388]
+                - slider "Resize handle" [ref=e982]
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=e985]:
+                - generic [ref=e991]:
+                  - group "Move" [ref=e992]:
+                    - button "Move" [pressed] [ref=e993]
+                    - button "Move tools" [ref=e994]
+                  - group "Frame" [ref=e995]:
+                    - button "Frame" [ref=e996]
+                    - button "Region tools" [ref=e997]
+                  - group "Rectangle" [ref=e998]:
+                    - button "Rectangle" [ref=e999]
+                    - button "Shape tools" [ref=e1000]
+                  - group "Pen" [ref=e1001]:
+                    - button "Pen" [ref=e1002]
+                    - button "Creation tools" [ref=e1003]
+                  - group "Text" [ref=e1004]:
+                    - button "Text" [ref=e1005]
+                    - button "Type tools" [ref=e1006]
+                  - group "Comment" [ref=e1007]:
+                    - button "Comment" [ref=e1008]
+                    - button "Comment tools" [ref=e1009]
+                  - button "Actions" [ref=e1010]
+                - radiogroup "Toolbelt Mode" [ref=e1014]:
+                  - generic [ref=e1016]:
+                    - generic [ref=e1018]:
+                      - radio "Draw" [ref=e1019]
+                      - generic [ref=e1023]: Draw
+                    - generic [ref=e1024]:
+                      - radio "Design" [checked] [ref=e1025]
+                      - generic [ref=e1029]: Design
+                    - generic [ref=e1030]:
+                      - radio "Motion" [ref=e1031]
+                      - generic [ref=e1035]: Motion
+                    - generic [ref=e1036]:
+                      - radio "Dev Mode" [ref=e1037]
+                      - generic [ref=e1041]: Dev Mode
+    - region "Help/zoom toolbar" [ref=e3183]:
+      - toolbar "Help/zoom toolbar" [ref=e3185]:
+        - button "Help" [ref=e3187]
+  - generic:
+    - status
+    - group [ref=e1043]:
+      - alert [ref=e1045]
+      - alert [ref=e1047]

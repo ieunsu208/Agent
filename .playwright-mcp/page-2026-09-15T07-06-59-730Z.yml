@@ -1,0 +1,330 @@
+- generic [ref=f5e5]:
+  - generic [aria-hidden] [ref=f5e6]:
+    - generic [ref=f5e10172]:
+      - navigation [ref=f5e10791]:
+        - generic [ref=f5e10174]:
+          - generic [ref=f5e10175]:
+            - generic [ref=f5e10176]:
+              - button [expanded] [ref=f5e10792]:
+                - generic: 이은수
+              - button [ref=f5e10794]
+            - combobox [ref=f5e10795]
+          - generic [ref=f5e10197]:
+            - list [ref=f5e10198]:
+              - listitem [ref=f5e10199]:
+                - button [ref=f5e10796]:
+                  - generic: Recents
+              - listitem [ref=f5e10201]:
+                - generic [ref=f5e10202]:
+                  - generic:
+                    - button [ref=f5e10797]
+                    - generic:
+                      - generic [aria-hidden]: Community
+                    - button [ref=f5e10798]
+            - button [ref=f5e10799]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic [aria-hidden]: U
+                - generic: UIUX A
+            - list [ref=f5e10211]:
+              - listitem [ref=f5e10212]:
+                - button [ref=f5e10800]:
+                  - generic: All shared folders
+              - listitem [ref=f5e10214]:
+                - button [ref=f5e10801]:
+                  - generic: Resources
+              - listitem [ref=f5e10216]:
+                - button [ref=f5e10802]:
+                  - generic: Trash
+            - button [expanded] [ref=f5e10803]:
+              - generic: Starred
+      - generic [ref=f5e10224]:
+        - generic [ref=f5e10229]:
+          - navigation [ref=f5e10804]:
+            - button [disabled] [ref=f5e10805]: UIUX A
+          - generic [ref=f5e10234]:
+            - button [ref=f5e10806]:
+              - generic: Share
+            - button [ref=f5e10807]
+            - button [ref=f5e10808]
+        - generic [ref=f5e10242]:
+          - generic [ref=f5e10247]:
+            - heading [level=1] [ref=f5e10810]:
+              - generic [ref=f5e10249]: Team project
+            - button [ref=f5e10811]
+          - generic [ref=f5e10253]:
+            - generic [ref=f5e10254]:
+              - combobox [ref=f5e10812]
+              - generic:
+                - generic:
+                  - generic [aria-hidden]:
+                    - generic: All types
+            - generic [ref=f5e10256]:
+              - button [ref=f5e10813]
+              - generic:
+                - generic:
+                  - generic [aria-hidden]:
+                    - generic: Last modified
+            - radiogroup [ref=f5e10814]:
+              - generic [ref=f5e10260]: View mode
+              - generic [ref=f5e10261]:
+                - generic [ref=f5e10262]:
+                  - radio [checked] [ref=f5e10815]
+                  - generic [ref=f5e10267]: Show as grid
+                - generic [ref=f5e10268]:
+                  - radio [ref=f5e10816]
+                  - generic [ref=f5e10273]: Show as list
+        - main [ref=f5e10276]:
+          - list [ref=f5e10284]:
+            - listitem [ref=f5e10285]:
+              - group [ref=f5e10817]:
+                - button [ref=f5e10818]
+                - generic:
+                  - button [ref=f5e10819]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10299]: 이은수
+                      - generic [ref=f5e10300]: Edited 1 minute ago
+            - listitem [ref=f5e10304]:
+              - group [ref=f5e10820]:
+                - button [ref=f5e10821]
+                - generic:
+                  - button [ref=f5e10822]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10318]: 이은수-강의 학습
+                      - generic [ref=f5e10319]: Edited 2 minutes ago
+                    - button [ref=f5e10823]
+            - listitem [ref=f5e10327]:
+              - group [ref=f5e10824]:
+                - button [ref=f5e10825]
+                - generic:
+                  - button [ref=f5e10826]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10341]: (강의장)UIUX A
+                      - generic [ref=f5e10342]: Edited 9 minutes ago
+                    - generic [ref=f5e10347]:
+                      - button [ref=f5e10827]
+                      - button [ref=f5e10828]
+                      - generic [ref=f5e10352]: "+4"
+            - listitem [ref=f5e10354]:
+              - group [ref=f5e10829]:
+                - button [ref=f5e10830]
+                - generic:
+                  - button [ref=f5e10831]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10368]: 허지민
+                      - generic [ref=f5e10369]: Edited 10 minutes ago
+                    - button [ref=f5e10832]
+            - listitem [ref=f5e10377]:
+              - group [ref=f5e10833]:
+                - button [ref=f5e10834]
+                - generic:
+                  - button [ref=f5e10835]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10391]: 강민경
+                      - generic [ref=f5e10392]: Edited 1 hour ago
+            - listitem [ref=f5e10396]:
+              - group [ref=f5e10836]:
+                - button [ref=f5e10837]
+                - generic:
+                  - button [ref=f5e10838]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10410]: 이지희
+                      - generic [ref=f5e10411]: Edited 1 hour ago
+            - listitem [ref=f5e10415]:
+              - group [ref=f5e10839]:
+                - button [ref=f5e10840]
+                - generic:
+                  - button [ref=f5e10841]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10429]: 박찬미
+                      - generic [ref=f5e10430]: Edited 22 hours ago
+            - listitem [ref=f5e10434]:
+              - group [ref=f5e10842]:
+                - button [ref=f5e10843]
+                - generic:
+                  - button [ref=f5e10844]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10448]: 임연우-코딩
+                      - generic [ref=f5e10449]: Edited 1 day ago
+            - listitem [ref=f5e10453]:
+              - group [ref=f5e10845]:
+                - button [ref=f5e10846]
+                - generic:
+                  - button [ref=f5e10847]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10467]: 이은경
+                      - generic [ref=f5e10468]: Edited 2 days ago
+            - listitem [ref=f5e10472]:
+              - group [ref=f5e10848]:
+                - button [ref=f5e10849]
+                - generic:
+                  - button [ref=f5e10850]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10486]: 박주연
+                      - generic [ref=f5e10487]: Edited 5 days ago
+            - listitem [ref=f5e10491]:
+              - group [ref=f5e10851]:
+                - button [ref=f5e10852]
+                - generic:
+                  - button [ref=f5e10853]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10505]: 최지혜
+                      - generic [ref=f5e10506]: Edited 5 days ago
+            - listitem [ref=f5e10510]:
+              - group [ref=f5e10854]:
+                - button [ref=f5e10855]
+                - generic:
+                  - button [ref=f5e10856]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10524]: 임연우-디자인
+                      - generic [ref=f5e10525]: Edited 5 days ago
+                    - button [ref=f5e10857]
+            - listitem [ref=f5e10533]:
+              - group [ref=f5e10858]:
+                - button [ref=f5e10859]
+                - generic:
+                  - button [ref=f5e10860]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10547]: 허지민
+                      - generic [ref=f5e10548]: Edited 5 days ago
+            - listitem [ref=f5e10552]:
+              - group [ref=f5e10861]:
+                - button [ref=f5e10862]
+                - generic:
+                  - button [ref=f5e10863]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10566]: 이지희_
+                      - generic [ref=f5e10567]: Edited 5 days ago
+            - listitem [ref=f5e10571]:
+              - group [ref=f5e10864]:
+                - button [ref=f5e10865]
+                - generic:
+                  - button [ref=f5e10866]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10585]: 박주연
+                      - generic [ref=f5e10586]: Edited 7 days ago
+            - listitem [ref=f5e10590]:
+              - group [ref=f5e10867]:
+                - button [ref=f5e10868]
+                - generic:
+                  - button [ref=f5e10869]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10604]: 김정은
+                      - generic [ref=f5e10605]: Edited 7 days ago
+            - listitem [ref=f5e10609]:
+              - group [ref=f5e10870]:
+                - button [ref=f5e10871]
+                - generic:
+                  - button [ref=f5e10872]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10623]: 김정은
+                      - generic [ref=f5e10624]: Edited 8 days ago
+            - listitem [ref=f5e10628]:
+              - group [ref=f5e10873]:
+                - button [ref=f5e10874]
+                - generic:
+                  - button [ref=f5e10875]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10642]: 강민경_브랜딩 마인드맵
+                      - generic [ref=f5e10643]: Edited 8 days ago
+            - listitem [ref=f5e10647]:
+              - group [ref=f5e10876]:
+                - button [ref=f5e10877]
+                - generic:
+                  - button [ref=f5e10878]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10661]: 최지혜
+                      - generic [ref=f5e10662]: Edited 11 days ago
+            - listitem [ref=f5e10666]:
+              - group [ref=f5e10879]:
+                - button [ref=f5e10880]
+                - generic:
+                  - button [ref=f5e10881]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10680]: 이은경
+                      - generic [ref=f5e10681]: Edited 15 days ago
+            - listitem [ref=f5e10685]:
+              - group [ref=f5e10882]:
+                - button [ref=f5e10883]
+                - generic:
+                  - button [ref=f5e10884]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10699]: 박찬미
+                      - generic [ref=f5e10700]: Edited 2 months ago
+            - listitem [ref=f5e10704]:
+              - group [ref=f5e10885]:
+                - button [ref=f5e10886]
+                - generic:
+                  - button [ref=f5e10887]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10718]: 김지선[figma]
+                      - generic [ref=f5e10719]: Edited 2 months ago
+            - listitem [ref=f5e10723]:
+              - group [ref=f5e10888]:
+                - button [ref=f5e10889]
+                - generic:
+                  - button [ref=f5e10890]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10737]: (내꺼)MCP Apps for Claude (Community)
+                      - generic [ref=f5e10738]: Edited 2 months ago
+            - listitem [ref=f5e10742]:
+              - group [ref=f5e10891]:
+                - button [ref=f5e10892]
+                - generic:
+                  - button [ref=f5e10893]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10756]: 김지선
+                      - generic [ref=f5e10757]: Edited 2 months ago
+            - listitem [ref=f5e10761]:
+              - group [ref=f5e10894]:
+                - button [ref=f5e10895]
+                - generic:
+                  - button [ref=f5e10896]
+                  - generic:
+                    - generic:
+                      - heading [level=2] [ref=f5e10775]: (강의장)UIUX A
+                      - generic [ref=f5e10776]: Edited 2 months ago
+    - toolbar [ref=f5e10897]:
+      - button [ref=f5e10898]
+  - group [ref=f5e10786]:
+    - alert [ref=f5e10788]
+    - alert [ref=f5e10790]
+  - menu "Account dropdown for 이은수" [ref=f5e10904]:
+    - generic [aria-hidden] [ref=f5e10906]:
+      - button [ref=f5e10909]: 이은수
+      - generic [ref=f5e10910]: jennycorazon0808@gmail.com
+    - menuitem "View profile for 이은수, jennycorazon0808@gmail.com" [ref=f5e10911]
+    - menuitem "Change theme" [ref=f5e10912]
+    - menuitem "Settings" [ref=f5e10921]
+    - menuitem "Get desktop app" [ref=f5e10926]
+    - menuitem "Create a community profile jennycorazon0808@gmail.com" [ref=f5e10931]:
+      - generic [ref=f5e10937]:
+        - text: Create a community profile
+        - generic [ref=f5e10938]: jennycorazon0808@gmail.com
+    - menuitem "Add account" [ref=f5e10940]
+    - menuitem "Log out" [ref=f5e10945]

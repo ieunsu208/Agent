@@ -1,0 +1,611 @@
+- generic [active] [ref=e1]:
+  - link "본문 바로가기" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - form "대표 상품 선택":
+    - checkbox "유자 청송 담기"
+    - checkbox "적송 홍화 담기"
+    - checkbox "백단 묵향 담기"
+    - checkbox "디스커버리 킷 담기"
+  - link "혜택 첫 주문 한정, 19,000원 웰컴 크레딧 증정 ‘디스커버리 킷’ 혜택을 만나보세요. →" [ref=e5] [cursor=pointer]:
+    - /url: 카테고리.html
+    - generic [ref=e6]: 혜택
+    - generic [ref=e7]: 첫 주문 한정, 19,000원 웰컴 크레딧 증정 ‘디스커버리 킷’ 혜택을 만나보세요.
+    - generic [ref=e8]: →
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - link "密 밀도 (MILDO) HAUTE PERFUMERY" [ref=e11] [cursor=pointer]:
+        - /url: 메인_페이지_수정.html
+        - generic [ref=e12]: 密
+        - generic [ref=e13]:
+          - generic [ref=e14]: 밀도 (MILDO)
+          - generic [ref=e15]: HAUTE PERFUMERY
+      - navigation [ref=e16]:
+        - link "메인 홈" [ref=e17] [cursor=pointer]:
+          - /url: 메인_페이지_수정.html
+        - link "브랜드 소개" [ref=e18] [cursor=pointer]:
+          - /url: 브랜드_소개.html
+        - link "전체 16종 카탈로그" [ref=e19] [cursor=pointer]:
+          - /url: 카테고리.html
+      - link "사용자 메뉴 열기" [ref=e21] [cursor=pointer]:
+        - /url: "#userMenuModal"
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "가죽 가방에 결착된 황동 마패 보틀, 한국 서재의 오후 자연광" [ref=e27]
+      - generic [ref=e29]:
+        - generic [ref=e30]: Haute Perfumery · K-Heritage
+        - heading "짙은 연기 속, 나를 각인시키는 향의 밀도" [level=1] [ref=e32]
+        - paragraph [ref=e33]: 조선 암행어사의 기품에서 출발한 마패 오브제, 서로 다른 두 향이 살결 위에서 겹쳐지는 나만의 고유한 서사를 완성해 보세요.
+        - generic [ref=e34]:
+          - link "밀도의 마패 철학 알아보기 >" [ref=e35] [cursor=pointer]:
+            - /url: 브랜드_소개.html
+            - generic [ref=e36]: 밀도의 마패 철학 알아보기
+            - generic [ref=e37]: ">"
+          - link "16종 마스터 카탈로그" [ref=e38] [cursor=pointer]:
+            - /url: 카테고리.html
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: ( WHY MILDO · 마패 철학 )
+        - heading "조선의 품격에서 시작된 향, 오직 당신만의 고유한 밀도로." [level=2] [ref=e44]
+        - paragraph [ref=e45]: 흔한 유행을 좇기보다 살결 위에서 완성되는 나만의 고유한 잔향을 만듭니다. 조선 암행어사의 마패 오브제와 독창적인 레이어링으로 일상에 특별한 품격을 더해 보세요.
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: 기존의 불편
+            - paragraph [ref=e51]: 매일 똑같이 고정된 단일한 향 — 출근길, 미팅, 저녁 약속 등 상황과 기분에 맞춰 향의 무게감을 바꾸기 어려웠던 일상.
+          - generic [ref=e52]:
+            - generic [ref=e53]: 밀도의 해답
+            - paragraph [ref=e55]: 맑은 1마패(단향)부터 중후한 3마패(심향)까지, TPO에 맞추어 향의 농도와 존재감을 주도적으로 선택하는 맞춤 체계.
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: 기존의 불편
+            - paragraph [ref=e60]: 남들과 똑같이 겹치는 흔한 유행 향수 — 살결 본연의 체취와 겉돌아 나만의 고유한 개성을 표현하기 힘든 한계.
+          - generic [ref=e61]:
+            - generic [ref=e62]: 밀도의 해답
+            - paragraph [ref=e64]: 서로 다른 두 마패 향을 순서대로 겹쳐 뿌려 살결 위에서 조화를 이루는, 세상에 단 하나뿐인 나만의 시그니처 잔향 완성.
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]: 기존의 불편
+            - paragraph [ref=e69]: 무겁고 깨지기 쉬운 유리 보틀 — 가방에 넣고 다니기 늘 불안하고, 밖에서 향수를 다시 덧뿌리기 번거롭고 조심스러웠던 경험.
+          - generic [ref=e70]:
+            - generic [ref=e71]: 밀도의 해답
+            - paragraph [ref=e73]: 조선 장인의 마패 결착 설계를 계승하여, 가방 스트랩에 품위 있게 걸고 다니며 언제 어디서나 1초 만에 가볍게 덧입는 기능적 휴대성.
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e76]: 기존의 불편
+            - paragraph [ref=e78]: 코를 찌르는 강한 화학 알코올과 인공 향료 — 뿌린 직후 머리가 아프거나 살결에 자극적이었던 피로감.
+          - generic [ref=e79]:
+            - generic [ref=e80]: 밀도의 해답
+            - paragraph [ref=e82]: 소나무 잎, 닥나무 한지, 먹, 백단 등 한국 자연 원료 본연의 숨결을 그대로 보존하는 저온 침출 공법으로 완성한 편안하고 은은한 향.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]: MAPAE SYSTEM · 3단계 마패 체계
+        - heading "조선 마패의 영감에서 출발한 밀도만의 3단계 향 선택 체계" [level=2] [ref=e87]
+        - paragraph [ref=e88]: 조선시대 마패에서 영감을 받아 밀도가 향의 깊이와 일상 속 사용 경험을 세 단계로 재구성한 브랜드 고유의 선택 체계입니다. 서열이 아닌 개인의 취향과 라이프스타일 목적에 맞는 최적의 경험을 선택해 보세요.
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e93] [cursor=pointer]:
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - generic [ref=e96]: 1마패 · 데일리 베이스
+                - heading "1마패" [level=3] [ref=e98]
+                - generic [ref=e99]: 가벼운 일상 & 싱글 착향
+                - generic [ref=e100]:
+                  - generic [ref=e101]:
+                    - generic [ref=e102]: "오브제 캡 :"
+                    - generic [ref=e103]: 통기성 닥나무 한지 캡
+                  - generic [ref=e104]:
+                    - generic [ref=e105]: "기본 구성 :"
+                    - generic [ref=e106]: 20ml 본품 보틀 + 한지 캡 + 휴대용 파우치 + 시향 엽서
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e109]: 소비자가격
+                  - strong [ref=e110]: 39,000 KRW
+                  - generic [ref=e111]: (20ml)
+                - generic [ref=e113]:
+                  - generic [ref=e114]: 대표 시그니처
+                  - strong [ref=e115]: 01. 유자 청송
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - generic [ref=e118]: KEY EXPERIENCE · 경험 중심
+                - generic [ref=e119]: 가볍고 맑은 데일리 싱글 착향 & 모든 레이어링의 산뜻한 베이스
+                - paragraph [ref=e120]: 살결 본연의 체취와 자연스럽게 어우러져, 뿌린 듯 안 뿌린 듯 은은한 청결감을 선사합니다.
+              - generic [ref=e121]:
+                - generic [ref=e122]: RECOMMENDED FOR · 추천 대상 & TPO
+                - generic [ref=e123]: 출근길, 실내 사무 공간, 강한 향수가 부담스러운 일상
+                - paragraph [ref=e124]: 밀집된 대중교통이나 오피스에서도 타인에게 자극을 주지 않는 편안한 아침 루틴에 제격입니다.
+              - generic [ref=e125]:
+                - generic [ref=e126]: FORMULATION · 조향 설계 & 지속력
+                - generic [ref=e127]:
+                  - generic [ref=e128]:
+                    - text: "부향률:"
+                    - strong [ref=e129]: 15% (EDP)
+                  - generic [ref=e130]:
+                    - text: "지속 시간:"
+                    - strong [ref=e131]: 약 4~6시간
+                - paragraph [ref=e132]: 가벼운 에어리 탑노트 중심 설계로, 덧뿌려도 뭉치지 않고 투명하게 발향됩니다.
+          - generic [ref=e134] [cursor=pointer]:
+            - generic [ref=e135]:
+              - text: "02"
+              - generic [ref=e136]: 2마패 · 무드
+              - heading "2마패" [level=3] [ref=e138]
+              - paragraph [ref=e139]: 감각적 무드 & 레이어링
+            - generic [ref=e140]:
+              - generic [ref=e141]: 20% EDP · 50ml
+              - generic [ref=e142]: 49,000 KRW
+              - generic [ref=e143]:
+                - generic [ref=e144]: +
+                - text: 펼쳐보기
+          - generic [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]:
+              - text: "03"
+              - generic [ref=e148]: 3마패 · 럭셔리
+              - heading "3마패" [level=3] [ref=e150]
+              - paragraph [ref=e151]: 특별한 날 & 깊은 여운
+            - generic [ref=e152]:
+              - generic [ref=e153]: 25% Extrait · 75ml
+              - generic [ref=e154]: 69,000 KRW
+              - generic [ref=e155]:
+                - generic [ref=e156]: +
+                - text: 펼쳐보기
+        - paragraph [ref=e158]: "* 발향 지속 시간 및 체감 잔향은 개인의 체온, 피부 유수분 상태, 분사 위치 및 계절 환경에 따라 차이가 있을 수 있습니다."
+    - generic [ref=e161]:
+      - generic [ref=e162]:
+        - img "유자 청송, 청유자와 솔잎의 맑은 아침" [ref=e163]
+        - group [ref=e164]:
+          - generic "유자 청송 화보 · 원본 연출 설명" [ref=e165] [cursor=pointer]
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]: MAPAE LEVEL 01 · 1마패 대표 시그니처
+          - heading "경남 하동의 아침 햇살과 청유자, 01. 유자 청송 (柚子 靑松)" [level=2] [ref=e169]
+          - paragraph [ref=e170]: 새벽안개를 머금은 하동 청유자의 싱그러운 과즙과 지리산 숲 푸른 소나무(靑松)의 정갈함. 밀도의 세계를 처음 만나는 분도 부담 없이 즐길 수 있는 가장 맑고 편안한 진입점입니다.
+        - generic [ref=e171]:
+          - generic [ref=e172]:
+            - generic [ref=e173] [cursor=pointer]:
+              - generic [ref=e174]:
+                - heading "일상에서 경험하는 향의 변화 (시간대별 노트)" [level=3] [ref=e175]
+                - generic [ref=e176]: TIME FLOW
+              - generic [ref=e177]: +
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]: "[첫 분사 직후]"
+                - generic [ref=e181]: 경남 하동 청유자의 톡 쏘는 상큼함이 잠을 깨우는 산뜻한 순간
+              - generic [ref=e182]:
+                - generic [ref=e183]: "[30분 ~ 2시간]"
+                - generic [ref=e184]: 지리산 숲 푸른 소나무 솔잎의 맑고 정갈한 피톤치드
+              - generic [ref=e185]:
+                - generic [ref=e186]: "[4시간 이후~]"
+                - generic [ref=e187]: 피부에 은은하게 남는 백삼과 시더우드의 포근한 살결 잔향
+          - generic [ref=e188]:
+            - generic [ref=e189] [cursor=pointer]:
+              - generic [ref=e190]:
+                - heading "이런 분과 상황에 권합니다 (TPO)" [level=3] [ref=e191]
+                - generic [ref=e192]: TPO GUIDE
+              - generic [ref=e193]: +
+            - paragraph [ref=e194]: 강하고 무거운 향수가 부담스러운 분, 산뜻한 출근길이나 기분 좋은 아침 산책, 정돈된 실내 공간에서 단정한 인상을 남기고 싶을 때 가장 자연스럽습니다.
+        - generic [ref=e195]:
+          - strong [ref=e196]: "[1마패 활용 팁]"
+          - text: 오후에 2마패(적송 홍화)를 1회 덧뿌려 2:1 레이어링으로 전환하면 한층 더 입체적인 감성 무드를 연출할 수 있습니다.
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: 소비자가격
+              - strong [ref=e201]: 39,000 KRW
+            - generic [ref=e202]: 20ml · Eau de Parfum (부향률 15%)
+          - link "1마패 카테고리 보기 > ↗" [ref=e204] [cursor=pointer]:
+            - /url: "#catalog"
+            - generic [ref=e205]: 1마패 카테고리 보기
+            - generic [ref=e206]: ">"
+            - text: ↗
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - generic [ref=e212]: MAPAE LEVEL 02 · 2마패 대표 시그니처
+            - heading "꽃과 나무의 매혹적인 충돌, 04. 적송 홍화 (赤松 紅花)" [level=2] [ref=e213]
+            - paragraph [ref=e214]: 남원 붉은 홍화 꽃잎의 화려한 스파이시함과 지리산 천년 적송의 묵직한 송진향이 대담하게 어우러진 밀도의 포인트 향수입니다. 은은한 살결 위에 얹어지는 섬세한 온기와 깊은 우디 잔향이 일상에 지울 수 없는 강렬한 인상을 남깁니다.
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - generic [ref=e217]: 향의 성격
+                - strong [ref=e218]: 스파이시 플로럴 & 우디
+              - generic [ref=e219]:
+                - generic [ref=e220]: 추천 순간
+                - strong [ref=e221]: 기분 전환 · 저녁 약속
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - generic [ref=e225]: 소비자가격
+                - strong [ref=e226]: 59,000 KRW
+              - generic [ref=e227]: 50ml · Eau de Parfum (부향률 18%)
+            - link "2마패 카테고리 보기 > ↗" [ref=e229] [cursor=pointer]:
+              - /url: "#catalog"
+              - generic [ref=e230]: 2마패 카테고리 보기
+              - generic [ref=e231]: ">"
+              - text: ↗
+        - generic [ref=e232]:
+          - img "적송 홍화, 붉은 꽃잎과 깊은 적송의 향" [ref=e233]
+          - group [ref=e234]:
+            - generic "적송 홍화 화보 연출 원문 기록 보기" [ref=e235] [cursor=pointer]
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - generic [ref=e238]: 紅
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - generic [ref=e241]: "[KEY NOTE 01] FLORAL SPICE"
+              - generic [ref=e242]: 남원 붉은 홍화 꽃잎
+            - heading "붉은 홍화 (紅花)" [level=3] [ref=e243]
+            - paragraph [ref=e244]: 여름 볕을 머금은 홍화의 화려하고 매혹적인 붉은 꽃잎 향조. 은은한 온기와 섬세한 관능을 불어넣습니다.
+          - generic [ref=e245]:
+            - generic [ref=e246]: "산지: 전북 남원 지리산자락"
+            - generic [ref=e247]: 스파이시 플로럴 탑·미들 노트
+        - generic [ref=e248]:
+          - generic [ref=e249]: 松
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - generic [ref=e252]: "[KEY NOTE 02] WOODY RESIN"
+              - generic [ref=e253]: 지리산 천년 적송
+            - heading "천년 적송 (赤松)" [level=3] [ref=e254]
+            - paragraph [ref=e255]: 붉은 소나무 껍질에서 배어 나오는 짙은 송진과 단단한 목질 향이 흔들림 없는 베이스와 긴 지속력을 부여합니다.
+          - generic [ref=e256]:
+            - generic [ref=e257]: "산지: 지리산 피아골 적송림"
+            - generic [ref=e258]: 딥 레진 우디 베이스 노트
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]: SIGNATURE PAIRING
+            - strong [ref=e263]: 솔숲에 핀 붉은 꽃 (2:1 비율 제안)
+          - generic [ref=e264]:
+            - generic [ref=e265]: 01. 유자 청송 2회
+            - generic [ref=e266]: +
+            - generic [ref=e267]: 04. 적송 홍화 1회
+        - generic [ref=e268]: 아침에 뿌린 산뜻한 솔잎 베이스 위에 오후 1회 덧뿌려 완성하는 매혹적인 온기의 입체적 잔향.
+    - generic [ref=e270]:
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - img "백단 묵향, 놋쇠 마패와 선비 서재의 묵향" [ref=e273]
+          - group [ref=e274]:
+            - generic "백단 묵향 화보 연출 원문 기록 보기" [ref=e275] [cursor=pointer]
+        - generic [ref=e276]:
+          - generic [ref=e277]:
+            - generic [ref=e278]: MAPAE LEVEL 03 · 3마패 대표 시그니처
+            - heading "선비의 서재에서 피어난 묵향, 08. 백단 묵향 (白檀 墨香)" [level=2] [ref=e279]
+            - paragraph [ref=e280]: 조선 서재의 고서화와 벼루에 갈린 먹 향의 차분한 분위기에서 영감을 받아 조향한 최고급 시그니처 향수입니다. 역사적 유물의 단순 복제를 넘어, 서재 책상 위 품격 있는 종이 누름쇠(문진)와 공간 선향 꽂이(인센스 홀더)로 이어지는 평생의 라이프스타일 공예 오브제입니다.
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]: 향의 성격
+                - strong [ref=e284]: 인센스 우디 & 딥 잉크
+              - generic [ref=e285]:
+                - generic [ref=e286]: 오브제 가치
+                - strong [ref=e287]: 통황동 마패 문진 겸 홀더
+          - generic [ref=e288]:
+            - generic [ref=e289]:
+              - generic [ref=e290]:
+                - generic [ref=e291]: 소비자가격
+                - strong [ref=e292]: 128,000 KRW
+              - generic [ref=e293]: 75ml · Eau de Parfum (부향률 20%)
+            - link "3마패 카테고리 보기 > ↗" [ref=e295] [cursor=pointer]:
+              - /url: "#catalog"
+              - generic [ref=e296]: 3마패 카테고리 보기
+              - generic [ref=e297]: ">"
+              - text: ↗
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - generic [ref=e300]: "[모듈러 구성 분해 도식]"
+          - generic [ref=e301]: MODULAR CRAFT
+        - generic [ref=e302]:
+          - generic [ref=e303]:
+            - generic [ref=e309]: "[외출 휴대용]"
+            - heading "슬림 경량 밀폐 캡" [level=4] [ref=e310]
+            - paragraph [ref=e311]: 가벼운 슬림 알루미늄 캡. 1/4 회전 스크루 결합과 실리콘 링으로 가방 속 누수를 완벽 차단합니다.
+          - generic [ref=e312]:
+            - generic [ref=e317]: "[서재 데스크]"
+            - heading "황동 마패 문진 (종이 누름쇠)" [level=4] [ref=e318]
+            - paragraph [ref=e319]: 묵직한 통황동으로 깎아낸 마패 형태의 캡. 펼쳐둔 책이나 노트를 누르는 품격 있는 서재 문진으로 기능합니다.
+          - generic [ref=e320]:
+            - generic [ref=e325]: "[실내 공간 향]"
+            - heading "상단 선향 꽂이 홈" [level=4] [ref=e326]
+            - paragraph [ref=e327]: 황동 캡 상단 정밀 홈에 선향을 꽂아 실내 공간 향을 즐길 수 있어, 향수를 뿌리지 않는 시간에도 은은한 묵향과 함께합니다.
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - generic [ref=e331]: "[기능 01] 일상 속 완벽한 휴대 시스템"
+          - heading "언제 어디서나 향을 곁에" [level=3] [ref=e332]
+          - paragraph [ref=e333]: 가벼운 슬림 알루미늄 캡을 체결하여 가방이나 파우치 속 부담 없이 매일의 이동에 함께할 수 있는 완벽한 휴대 시스템입니다.
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - strong [ref=e336]: 캡 크기 & 무게
+              - generic [ref=e337]: 지름 32mm × 높이 108mm, 초경량 설계
+            - generic [ref=e338]:
+              - strong [ref=e339]: 결합 방식
+              - generic [ref=e340]: 한 손으로 여닫는 1/4 회전 퀵 트위스트 락
+            - generic [ref=e341]:
+              - strong [ref=e342]: 누수 방지
+              - generic [ref=e343]: 정밀 실리콘 패킹으로 샘 흐름 완전 차단
+            - generic [ref=e344]:
+              - strong [ref=e345]: 가방 스트랩
+              - generic [ref=e346]: 가죽 스트랩 및 키링에 결착 가능한 1초 원터치 휴대성
+        - generic [ref=e347]:
+          - generic [ref=e348]: "[기능 02] 서재를 채우는 황동 디자인 오브제"
+          - heading "책상 위 평생 곁을 지키는 문진과 선향 꽂이" [level=3] [ref=e349]
+          - paragraph [ref=e350]: 향수를 다 쓴 후에도 버려지지 않고, 평생 책상 위에서 책장을 누르는 서재 문진이자 은은한 선향을 피우는 인센스 홀더로 곁을 지킵니다.
+          - generic [ref=e351]:
+            - generic [ref=e352]:
+              - strong [ref=e353]: 소재 및 마감
+              - generic [ref=e354]: 솔리드 통황동 (약 280g) · 무광 헤어라인 변색 방지 특수 코팅
+            - generic [ref=e355]:
+              - strong [ref=e356]: 인테리어 비치
+              - generic [ref=e357]: 서재 책상, 서가, 침실 탁자 위 시선을 사로잡는 고요한 공예품
+            - generic [ref=e358]:
+              - strong [ref=e359]: 데스크 문진
+              - generic [ref=e360]: 독서 시 펼쳐둔 페이지를 안정감 있게 누르는 묵직한 누름쇠 기능
+            - generic [ref=e361]:
+              - strong [ref=e362]: 선향 꽂이 홀
+              - generic [ref=e363]: 상단 2mm 정밀 홈에 선향을 꽂아 일상 속 실내 공간 향 연출
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - generic [ref=e367]: PERFUMERY CRAFT · 4단계 정통 조향 및 숙성 과정
+        - heading "밀도(MILDO)의 4단계 정통 조향 프로세스" [level=2] [ref=e368]
+        - paragraph [ref=e369]: 한반도 청정 산지의 원료 확인부터 향의 손실을 줄이는 저온 추출 연구, 알코올을 다스리는 숙성, 정밀 황동 오브제 결합까지 밀도가 향을 짓는 정직한 순서입니다.
+      - generic [ref=e370]:
+        - generic [ref=e371]:
+          - generic [ref=e372]:
+            - generic [ref=e373]: "01"
+            - heading "자연 원료 채취" [level=4] [ref=e374]
+            - paragraph [ref=e375]: 하동 청유자, 지리산 솔잎, 남원 홍화 등 한반도 청정 산지에서 최적의 원료를 확인하고 수급합니다.
+          - generic [ref=e376]:
+            - generic [ref=e377]: 진행 상태
+            - generic [ref=e378]: 확정 공정
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - generic [ref=e381]: "02"
+            - heading "향 보존 저온 추출 연구" [level=4] [ref=e382]
+            - paragraph [ref=e383]: 열에 의한 향 분자 파괴와 변색을 최소화하기 위해 비가열 저온 추출 공정을 연구하고 설계합니다.
+          - generic [ref=e384]:
+            - generic [ref=e385]: 진행 상태
+            - generic [ref=e386]: 협력사 확인 중
+        - generic [ref=e387]:
+          - generic [ref=e388]:
+            - generic [ref=e389]: "03"
+            - heading "안정화 및 저온 숙성" [level=4] [ref=e390]
+            - paragraph [ref=e391]: 알코올의 날카로운 자극을 다스리고 원료 본연의 잔향이 깊게 배어들도록 충분한 숙성 기간을 거칩니다.
+          - generic [ref=e392]:
+            - generic [ref=e393]: 진행 상태
+            - generic [ref=e394]: 기획 목표
+        - generic [ref=e395]:
+          - generic [ref=e396]:
+            - generic [ref=e397]: "04"
+            - heading "한지 라벨 & 황동 캡" [level=4] [ref=e398]
+            - paragraph [ref=e399]: 전통 닥나무 한지 질감의 라벨과 정밀 가공된 황동 마패 캡을 결합하여 현대적 오브제로 완성합니다.
+          - generic [ref=e400]:
+            - generic [ref=e401]: 진행 상태
+            - generic [ref=e402]: 시각화 예시
+    - generic [ref=e405]:
+      - img "밀도 3종 디스커버리 키트" [ref=e407]
+      - generic [ref=e408]:
+        - generic [ref=e409]: WELCOME CREDIT TASTING KIT · 3종 디스커버리 킷
+        - heading "실패 없는 시향 경험, 밀도 3종 디스커버리 킷" [level=2] [ref=e410]
+        - paragraph [ref=e411]:
+          - text: 1마패(유자청송) · 2마패(적송홍화) · 3마패(백단묵향) 대표 3종 앰플을 집에서 편안하게 경험해 보세요. 본품 구매 시 결제하신 19,000원은 전액 100% 현금처럼 차감되는
+          - strong [ref=e412]: 19,000원 웰컴 크레딧 바우처
+          - text: 로 환급됩니다.
+        - generic [ref=e413]:
+          - generic [ref=e414]:
+            - strong [ref=e415]: 대표 시그니처 3종 앰플 (5ml × 3)
+            - generic [ref=e416]: 유자청송 · 적송홍화 · 백단묵향
+          - generic [ref=e417]:
+            - strong [ref=e418]: 19,000원 전액 환급 웰컴 크레딧
+            - generic [ref=e419]: 본품 첫 구매 시 100% 전액 차감
+        - generic [ref=e420]:
+          - generic [ref=e421]:
+            - generic [ref=e422]:
+              - generic [ref=e423]: 체험 키트가
+              - strong [ref=e424]: 19,000 KRW
+            - generic [ref=e425]: 5ml × 3종 앰플 (본품 구매 시 19,000원 전액 환급)
+          - generic [ref=e426] [cursor=pointer]: 19,000원 웰컴 크레딧 킷 담기 > ↗
+    - generic [ref=e428]:
+      - generic [ref=e429]:
+        - generic [ref=e430]: CURATED COLLECTION · 대표 향 3종과 첫 시향 키트
+        - heading "밀도를 시작하는 네 가지 선택 (대표 향 3종 & 첫 시향 키트)" [level=2] [ref=e431]
+        - paragraph [ref=e432]: 1·2·3마패 등급별 본품(20ml·50ml·75ml) 대표 향부터 부담 없이 집에서 먼저 경험하는 19,000원 웰컴 크레딧 입문용 시향 키트까지, 나에게 맞는 최적의 첫 선택을 확인해 보세요.
+      - generic [ref=e433]:
+        - generic [ref=e434]:
+          - generic [ref=e435]:
+            - img "밀도 유자 청송 20ml" [ref=e436]
+            - generic: 1마패 · BASE
+          - generic [ref=e437]:
+            - generic [ref=e438]:
+              - heading "01. 유자 청송" [level=4] [ref=e439]
+              - generic [ref=e440]: 20ml · EDP
+            - paragraph [ref=e441]: 하동 청유자의 싱그러운 과즙과 지리산 푸른 솔잎의 정갈한 피톤치드
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - generic [ref=e444]: 노트
+                - generic [ref=e445]: 하동 청유자 · 지리산 솔잎 · 백삼
+              - generic [ref=e446]:
+                - generic [ref=e447]: 무드
+                - generic [ref=e448]: 1마패 데일리 베이스 · 모닝 루틴
+          - generic [ref=e449]:
+            - generic [ref=e450]:
+              - generic [ref=e451]: 39,000 KRW
+              - link "스토리 보기 →" [ref=e452] [cursor=pointer]:
+                - /url: "#story-1"
+            - generic [ref=e453] [cursor=pointer]: 장바구니 담기
+        - generic [ref=e454]:
+          - generic [ref=e455]:
+            - img "밀도 적송 홍화 50ml" [ref=e456]
+            - generic: 2마패 · POINT
+          - generic [ref=e457]:
+            - generic [ref=e458]:
+              - heading "04. 적송 홍화" [level=4] [ref=e459]
+              - generic [ref=e460]: 50ml · EDP
+            - paragraph [ref=e461]: 붉은 홍화의 매혹적인 온기와 지리산 천년 적송 송진의 깊이
+            - generic [ref=e462]:
+              - generic [ref=e463]:
+                - generic [ref=e464]: 노트
+                - generic [ref=e465]: 남원 붉은 홍화 · 천년 적송 · 앰버
+              - generic [ref=e466]:
+                - generic [ref=e467]: 무드
+                - generic [ref=e468]: 2마패 감성 포인트 · 2:1 레이어링
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - generic [ref=e471]: 49,000 KRW
+              - link "스토리 보기 →" [ref=e472] [cursor=pointer]:
+                - /url: "#story-2"
+            - generic [ref=e473] [cursor=pointer]: 장바구니 담기
+        - generic [ref=e474]:
+          - generic [ref=e475]:
+            - img "밀도 백단 묵향 75ml" [ref=e476]
+            - generic: 3마패 · MASTER
+          - generic [ref=e477]:
+            - generic [ref=e478]:
+              - heading "08. 백단 묵향" [level=4] [ref=e479]
+              - generic [ref=e480]: 75ml · EDP
+            - paragraph [ref=e481]: 선비 서재의 송연묵 먹향과 백단 원목의 압도적 시그니처
+            - generic [ref=e482]:
+              - generic [ref=e483]:
+                - generic [ref=e484]: 노트
+                - generic [ref=e485]: 조선 송연묵 · 그윽한 백단목 · 흑단목
+              - generic [ref=e486]:
+                - generic [ref=e487]: 무드
+                - generic [ref=e488]: 놋쇠 문진 오브제 · 올데이 마스터
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - generic [ref=e491]: 69,000 KRW
+              - link "스토리 보기 →" [ref=e492] [cursor=pointer]:
+                - /url: "#story-3"
+            - generic [ref=e493] [cursor=pointer]: 장바구니 담기
+        - generic [ref=e494]:
+          - generic [ref=e495]:
+            - img "밀도 3종 디스커버리 킷" [ref=e496]
+            - generic: 입문 시향 킷
+          - generic [ref=e497]:
+            - generic [ref=e498]:
+              - heading "디스커버리 킷" [level=4] [ref=e499]
+              - generic [ref=e500]: 5ml × 3종
+            - paragraph [ref=e501]: 1·2·3마패 대표 향 사전 시향, 본품 19,000원 바우처 동봉
+            - generic [ref=e502]:
+              - generic [ref=e503]:
+                - generic [ref=e504]: 구성
+                - generic [ref=e505]: 유자청송 + 적송홍화 + 백단묵향
+              - generic [ref=e506]:
+                - generic [ref=e507]: 혜택
+                - generic [ref=e508]: 첫 주문 1.9만 크레딧 100% 환급
+          - generic [ref=e509]:
+            - generic [ref=e510]:
+              - generic [ref=e511]: 19,000 KRW
+              - link "스토리 보기 →" [ref=e512] [cursor=pointer]:
+                - /url: "#discovery"
+            - generic [ref=e513] [cursor=pointer]: 장바구니 담기
+      - link "밀도 16대 전 상품 전체보기 (더보기) →" [ref=e515] [cursor=pointer]:
+        - /url: "#catalog"
+    - generic [ref=e518]:
+      - generic [ref=e519]:
+        - img "능화창 문양 상자와 붉은 한지 띠지, 황동 노리개를 더한 옥색 보자기 포장" [ref=e520]
+        - generic [ref=e521]:
+          - generic [ref=e522]:
+            - generic [ref=e523]: GIFT PACKAGING · 전통 선물 포장
+            - heading "능화창(菱花窓) 선물 패키징" [level=3] [ref=e525]
+            - generic [ref=e526]:
+              - generic [ref=e527]:
+                - strong [ref=e528]: "포장 혜택 :"
+                - text: 전 등급 본품 및 기프트 세트 구매 시 정성스러운 무료 패키징 기본 제공
+              - generic [ref=e529]:
+                - strong [ref=e530]: "패키징 상자 :"
+                - text: 조선 전통 창호 능화창(꽃살문) 슬리브 하드 상자 & 붉은색 수제 한지 띠지 봉인
+              - generic [ref=e531]:
+                - strong [ref=e532]: "보자기 래핑 :"
+                - text: 단정한 수제 전통 보자기 및 황동 마패 태슬 노리개 포장 옵션
+              - generic [ref=e533]:
+                - strong [ref=e534]: "동봉 혜택 :"
+                - text: 한지 감사 메시지 카드, 전통 지류 시향지 10매 및 마패 참 전용 파우치 동봉
+          - link "선물 패키징 옵션 선택 > ↗" [ref=e536] [cursor=pointer]:
+            - /url: "#packagingModal"
+      - generic [ref=e537]:
+        - img "차분한 한옥 공간의 프라이빗 조향 아틀리에" [ref=e538]
+        - generic [ref=e539]:
+          - generic [ref=e540]:
+            - generic [ref=e541]: PRIVATE ATELIER · 1:1 조향 체험
+            - heading "밀도 프라이빗 아틀리에" [level=3] [ref=e543]
+            - generic [ref=e544]:
+              - generic [ref=e545]:
+                - strong [ref=e546]: "공간 경험 내용 :"
+                - text: 16가지 고유 원료와 마패 보틀을 직접 만지고 시향하는 1:1 몰입형 감각 체험
+              - generic [ref=e547]:
+                - strong [ref=e548]: "프로그램 순서 :"
+                - text: 취향 차트 진단 ➔ 1·2·3마패 원료 시향 및 조합 ➔ 나만의 첩보 카드 완성
+              - generic [ref=e549]:
+                - strong [ref=e550]: "운영 형태 (기획) :"
+                - text: 100% 프라이빗 사전 예약제 운영 기획 (회차당 1팀 한정 도슨트 쇼룸 준비 중)
+              - generic [ref=e551]:
+                - strong [ref=e552]: "사전 알림 안내 :"
+                - text: 정식 쇼룸 오픈 2주 전, 카카오 알림톡/문자로 우선 예약 시크릿 링크 제공
+          - generic [ref=e553]:
+            - link "아틀리에 기획 보기 / 알림 신청 > ↗" [ref=e554] [cursor=pointer]:
+              - /url: "#atelierModal"
+              - generic [ref=e555]: 아틀리에 기획 보기 / 알림 신청 >
+              - text: ↗
+            - link "온라인 30초 진단 >" [ref=e556] [cursor=pointer]:
+              - /url: "#diagnosisModal"
+    - generic [ref=e559]:
+      - generic [ref=e560]: THE EPILOGUE OF MILDO
+      - heading "\"조선의 묵향과 바람, 당신의 하루에 고유한 품격과 서사가 되다.\"" [level=2] [ref=e561]
+      - paragraph [ref=e562]: 복잡한 일상 속에서 나 자신을 증명하는 가장 기품 있는 향의 밀도를 완성해 보세요.
+      - generic [ref=e563]:
+        - link "밀도 브랜드 스토리 알아보기 →" [ref=e564] [cursor=pointer]:
+          - /url: "#manifesto"
+        - link "19,000원 디스커버리 킷 시작하기 →" [ref=e565] [cursor=pointer]:
+          - /url: "#curated-showcase"
+      - generic [ref=e566]: EST. 2026 · HAUTE PERFUMERY OF JOSEON HERITAGE · 밀도 (MILDO)
+  - contentinfo [ref=e567]:
+    - generic [ref=e568]:
+      - generic [ref=e569]:
+        - generic [ref=e570]:
+          - generic [ref=e571]: 밀도 (MILDO)
+          - paragraph [ref=e572]: 짙은 연기 속, 나를 각인시키는 향의 밀도.조선 암행어사 마패 헤리티지 & 100% 커스텀 레이어링 하우스.MILDO Haute Perfumery House · Seoul, Korea
+          - generic [ref=e573]: 14종 향수·오브제 본품 + 2종 입문·선물 세트 (총 16대 컬렉션)
+        - generic [ref=e574]:
+          - generic [ref=e575]: 5대 마패 컬렉션 (총 16종)
+          - generic [ref=e576]:
+            - link "· 1마패 · 일상 Base (3종)" [ref=e577] [cursor=pointer]:
+              - /url: "#catalog"
+            - link "· 2마패 · 감성 Point (4종)" [ref=e578] [cursor=pointer]:
+              - /url: "#catalog"
+            - link "· 3마패 · 시그니처 Master (4종)" [ref=e579] [cursor=pointer]:
+              - /url: "#catalog"
+            - link "· 웰니스 오브제 (3종)" [ref=e580] [cursor=pointer]:
+              - /url: "#catalog"
+            - link "· 스페셜 기프트 & 킷 (2종)" [ref=e581] [cursor=pointer]:
+              - /url: "#catalog"
+        - generic [ref=e582]:
+          - generic [ref=e583]: 브랜드 & 조향 철학
+          - generic [ref=e584]:
+            - link "· 한국 자연 원료 & 조향 철학" [ref=e585] [cursor=pointer]:
+              - /url: "#perfumery-process"
+            - link "· 밀도 3단계 레이어링 리추얼" [ref=e586] [cursor=pointer]:
+              - /url: "#layering-guide"
+            - link "· 휴대용 마패 오브제 & 공예" [ref=e587] [cursor=pointer]:
+              - /url: "#story-3"
+            - link "· 안전 조향 & 원료 투명성 기준" [ref=e588] [cursor=pointer]:
+              - /url: "#perfumery-process"
+        - generic [ref=e589]:
+          - generic [ref=e590]: 고객 지원 & 서비스
+          - generic [ref=e591]:
+            - link "· 19,000원 웰컴 크레딧 디스커버리 킷" [ref=e592] [cursor=pointer]:
+              - /url: "#discovery"
+            - link "· 밀도 전통 선물 패키징 안내" [ref=e593] [cursor=pointer]:
+              - /url: "#packagingModal"
+            - link "· 프라이빗 아틀리에 사전 신청" [ref=e594] [cursor=pointer]:
+              - /url: "#atelierModal"
+            - link "· 30초 나만의 마패 향 찾기" [ref=e595] [cursor=pointer]:
+              - /url: "#diagnosisModal"
+      - generic [ref=e596]: © 2026 MILDO Haute Perfumery House. All Rights Reserved.
+  - text: · 네 가지 문항을 순서대로 선택해 주세요 ↗ ↗ ↗ ↗ ↗
+  - link "선택 상품 장바구니 확인" [ref=e597] [cursor=pointer]:
+    - /url: "#cartDrawer"
+    - generic [ref=e598]:
+      - generic [ref=e599]: CART
+      - generic [ref=e600]: "0"
+    - generic [ref=e602]: 0 KRW
+    - generic [ref=e603]: 주문 확인 >
+  - text: 0 ↗ 0 KRW
+  - link "맨 위로" [ref=e604] [cursor=pointer]:
+    - /url: "#top"
+    - text: ↑
