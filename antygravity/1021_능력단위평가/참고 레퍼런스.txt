@@ -5,3 +5,6 @@ https://www.osulloc.com/kr/ko/brandstory
 카테고리 페이지 레퍼런스
 https://www.byredo.com/eu_en/c/perfume
 https://kr.aesop.com/kr/fragrance/woody/
+
+리포지터리:https://github.com/ieunsu208/1021_test.git
+깃허브: https://ieunsu208.github.io/1021_test/
